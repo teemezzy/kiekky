@@ -1,9 +1,9 @@
 import Navbar from "./Navbar/Navbar";
 import HeroSection from "./HeroSection/HeroSection";
 import Footer from "./Footer/Footer";
-import SectionTwo from "./SectionTwo/SectionTwo";
-import SectionThree from "./SectionThree/SectionThree";
-import SectionFour from "./SectionTwo/SectionFour";
+import SectionTwo from "./Section2/SectionTwo";
+import SectionThree from "./Section3/SectionThree";
+import SectionFour from "./Section4/SectionFour";
 import Sidebar from "./SideLayout/Sidebar";
 import SideLayout from "./SideLayout/SideLayout";
 
@@ -16,6 +16,5 @@ export {
   SectionFour,
   SideLayout,
   Sidebar,
-
   Footer,
 };

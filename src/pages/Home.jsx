@@ -1,7 +1,12 @@
 import React from "react";
-import { Navbar, HeroSection,  SectionTwo,
-    SectionThree,
-    SectionFour, Footer } from "../components";
+import {
+  Navbar,
+  HeroSection,
+  SectionTwo,
+  SectionThree,
+  SectionFour,
+  Footer,
+} from "../components";
 
 const Home = () => {
   return (
