@@ -1,19 +1,12 @@
 import React from "react";
+import Logo from "../../assets/logo.png";
+
 
 export const navList = [
-
-
   {
     id: 1,
-    link: "Login",
-    path: "/login",
+    link: <img src = {Logo} alt='logo'/>,
+    path: "/",
+  },
 
-  },
-  {
-    id: 2,
-    link: "Register",
-    path: "/register",
-    backgroundColor: '#6A52FD'
-    
-  },
 ];
