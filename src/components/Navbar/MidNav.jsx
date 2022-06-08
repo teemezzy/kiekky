@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { navList } from "./navList";
 import { NavLink } from "react-router-dom";
 import { GrClose } from "react-icons/gr";
-import { FiMenu } from "react-icons/fi";
+import { GiHamburgerMenu } from "react-icons/gi";
 import DrawerNav from "./DrawerNav";
 
 const MidNav = () => {
@@ -22,7 +22,7 @@ const MidNav = () => {
                 </NavLink>
             </div>
             ))}
-            <div>{toggle ? <GrClose onClick={handleClick} /> : <FiMenu onClick={handleClick}/>}</div>
+            <div>{toggle ? <GrClose onClick={handleClick} /> : <GiHamburgerMenu onClick={handleClick}/>}</div>
             
       </div>
 
