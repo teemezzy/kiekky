@@ -15,7 +15,7 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div className="flex justify-between items-center">
-          <button type="button" className="mx-8 px-10 text-lg">
+          <button type="button" className="mx-8 px-10 text-lg border-radius">
             <NavLink to="/login">Login</NavLink>
           </button>
           <button type="button" className="w-44 h-14 px-10 button text-base">

@@ -22,7 +22,7 @@ const MidNav = () => {
                 </NavLink>
             </div>
             ))}
-            <div>{toggle ? <GrClose onClick={handleClick} /> : <GiHamburgerMenu onClick={handleClick}/>}</div>
+            <div>{toggle ? <GrClose onClick={handleClick} /> : <GiHamburgerMenu className="duration-1000" onClick={handleClick}/>}</div>
             
       </div>
 
