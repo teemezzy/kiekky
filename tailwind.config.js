@@ -8,7 +8,7 @@ module.exports = {
         wText:'590px',
         heroPWidth: '55%',
         heroMobileWidth: '520px',
-        75:"85%"
+        75:"90%"
       },
 
       height: {
