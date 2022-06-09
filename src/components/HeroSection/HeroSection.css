@@ -4,20 +4,7 @@
   transform: translate();
 }
 
-.hero-header {
-  /* font-size: 50px; */
-  font-weight: 700;
-  /* line-height: 78px; */
-  
-}
-.hero-text {
-  font-weight: 400;
-  width: 90%;
-  color: #828282;
-}
-
 .img-anime {
- 
   animation-name: hero-anime;
   animation-duration: 5s;
   animation-iteration-count: infinite;

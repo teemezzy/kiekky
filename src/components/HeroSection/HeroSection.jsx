@@ -10,7 +10,7 @@ const HeroSection = () => {
         <div className="xl:flex justify-between">
           <div>
             <div className="">
-              <h2 className="hero-header w-full lg:w-3/4 lg:text-heroXLFont text-heroMobileFont h-full">
+              <h2 className="font-bold w-full lg:w-3/4 lg:text-heroXLFont text-heroMobileFont h-full">
                 Find New Friends, Dates,
                 <span className="flex lg:block">
                   <span className="lg: block">Models or People</span>
@@ -18,9 +18,9 @@ const HeroSection = () => {
                 </span>
               </h2>
             </div>
-            <p className="hero-text lg:text-heroPXLFont text-heroPMobileFont mt-9 mb-16">
+            <p className=" font-normal text-gray-400 lg:w-heroPWidth w-11/12 md:w-1/2 lg:text-heroPXLFont text-heroPMobileFont mt-9 mb-16">
               Kiekky is a one stop platform to meet new people, Share your photo
-              & Videos, go on a paid date.
+              {`${"&"}`} Videos, go on a paid date.
             </p>
             <CustomButton
               className="sm:mb-36 mb-0"

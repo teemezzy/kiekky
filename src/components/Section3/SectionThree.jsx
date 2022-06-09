@@ -11,8 +11,10 @@ const SectionThree = () => {
           className=" mb-3 mx-auto block md:h-[3rem]  md:mx-6"
         />
         <div className="">
-          <h1 className="text-md">Explore Our Community</h1>
-          <p className="text-base">
+          <h1 className="font-medium text-homeProfileFont">
+            Explore Our Community
+          </h1>
+          <p className=" text-gray-400">
             You explore our community to meet people and create connections that
             will become something magical to say the least. This feature allows
             you to meet people and choose those you want to meet.

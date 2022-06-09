@@ -5,7 +5,9 @@ module.exports = {
       width: {
         wHero: "500px",
         wHeroMobile: "261px",
-        wText:'590px'
+        wText:'590px',
+        heroPWidth: '55%',
+        heroMobileWidth: '520px'
       },
 
       height: {
