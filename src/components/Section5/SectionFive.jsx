@@ -1,7 +1,6 @@
 import React from "react";
-import chatIcon from "../../assets/chatIcon.png";
-import chat from "../../assets/chat.png";
-import message from "../../assets/message.png";
+import {chatIcon, Chat, Message} from "../../assets";
+;
 function SectionFive() {
   return (
     <div className="md:flex md:justify-center md:items-center ">
@@ -22,7 +21,7 @@ function SectionFive() {
       </div>
 
       <img
-        src={chat}
+        src={Chat}
         alt="chat"
         className="px-[6rem] md:px-0 ml-0 mx-[4rem] md:mx-0 md:ml-[3rem] md:w-5/12"
       />

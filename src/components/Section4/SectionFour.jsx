@@ -5,11 +5,11 @@ const SectionFour = () => {
   return (
     <div className="">
       <div className="flex flex-col-reverse md:flex-row  md:items-center  md:justify-center ">
-        <img src={Form} className=" mx-[5rem] md:mx-0 md:w-1/2" />
+        <img src={Form} alt="form" className=" mx-[5rem] md:mx-0 md:w-1/2" />
         <div className="md:flex md:w-4/12 ">
           <img
             src={Contact}
-            alt=" "
+            alt="contact"
             className="mb-4 mx-auto md:h-[3rem]  md:mx-6"
           />
 
