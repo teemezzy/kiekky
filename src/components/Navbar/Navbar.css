@@ -1,0 +1,13 @@
+.button {
+  background-color: #6a52fd;
+  color: #ffff;
+  border-radius: 0.5rem;
+}
+.sm-btn {
+  border-radius: 0.5rem;
+  border-image: linear-gradient(180deg, #6a52fd, #fd52ab) ;
+  border-width: 2px;
+  border-style: solid;
+  border-image-slice: 21;
+  color:#6A52FD;
+}
