@@ -5,6 +5,7 @@ import {
   SectionTwo,
   SectionThree,
   SectionFour,
+  SectionFive,
   Footer,
 } from "../components";
 
@@ -16,7 +17,9 @@ const Home = () => {
       <SectionTwo />
       <SectionThree />
       <SectionFour />
+      <SectionFive />
       <Footer />
+
     </div>
   );
 };
