@@ -34,12 +34,11 @@ const Footer = () => {
             </form>
           </div>
 
-          <div className="mt-10">
+          <div className="mt-10  ">
             <p>
               <NavLink to="/about">About</NavLink>{" "}
             </p>
             <p>
-              {" "}
               <NavLink to="/">Home</NavLink>{" "}
             </p>
             <p>
