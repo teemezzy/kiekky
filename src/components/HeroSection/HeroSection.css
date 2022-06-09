@@ -1,0 +1,52 @@
+.HeroSection {
+  background-image: url(../../assets/Ellipse55-webview.png);
+  background-repeat: no-repeat;
+  transform: translate();
+}
+
+.hero-header {
+  /* font-size: 50px; */
+  font-weight: 700;
+  /* line-height: 78px; */
+  
+}
+.hero-text {
+  font-weight: 400;
+  width: 90%;
+  color: #828282;
+}
+
+.img-anime {
+ 
+  animation-name: hero-anime;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  animation-timing-function: cubic-bezier(5, 5, 5, 5);
+  transition: all 0.35s ease-in-out;
+}
+
+@keyframes hero-anime {
+  0% {
+    background-image: url(../../assets/heroFrame1.png);
+  }
+  25% {
+    background-image: url(../../assets/heroFrame3.png);
+  }
+  50% {
+    background-image: url(../../assets/heroFrame2.png);
+  }
+  75% {
+    background-image: url(../../assets/heroFrame4.png);
+  }
+  100% {
+    background-image: url(../../assets/heroFrame5.png);
+  }
+}
+
+.hero-header-mobile {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+}

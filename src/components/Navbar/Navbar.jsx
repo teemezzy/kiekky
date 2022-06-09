@@ -1,8 +1,9 @@
 import React from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
-import Logo from "../../assets/logo.png";
+import {Logo} from "../../assets";
 import MidNav from "./MidNav";
+import CustomButton from '../../container/CustomButton'
 
 const Navbar = () => {
   return (
@@ -18,9 +19,8 @@ const Navbar = () => {
           <button type="button" className="mx-8 px-10 text-lg border-radius">
             <NavLink to="/login">Login</NavLink>
           </button>
-          <button type="button" className="w-44 h-14 px-10 button text-base">
-            <NavLink to="/register">Register</NavLink>
-          </button>
+          <CustomButton type="button" buttonDetails= 'Register' />
+          
         </div>
         </div>
       </nav>

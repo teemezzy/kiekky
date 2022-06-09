@@ -18,11 +18,11 @@ const MidNav = () => {
             {navList.map((nav) => (
             <div key={nav.id}>
                 <NavLink className="" to={nav.path}>
-                {nav.link}{" "}
+                {nav.link}
                 </NavLink>
             </div>
             ))}
-            <div>{toggle ? <GrClose onClick={handleClick} /> : <GiHamburgerMenu className="duration-1000" onClick={handleClick}/>}</div>
+            <div>{toggle ? <GrClose onClick={handleClick} /> : <GiHamburgerMenu onClick={handleClick}/>}</div>
             
       </div>
 
