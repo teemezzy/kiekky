@@ -10,7 +10,7 @@ const HeroSection = () => {
         <div className="xl:flex justify-between">
           <div>
             <div className="">
-              <h2 className="font-semibold w-full lg:w-4/5 lg:text-heroXLFont text-heroMobileFont h-full">
+              <h2 className="font-semibold w-full lg:w-75 lg:text-heroXLFont text-heroMobileFont h-full">
                 Find New Friends, Dates,
                 <span className="flex lg:block">
                   <span className="lg: block">Models or People</span>
