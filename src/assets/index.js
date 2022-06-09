@@ -16,9 +16,11 @@ import Submit from "./submit.png";
 import Chat from './chat.png'
 import chatIcon from './chatIcon.png'
 import Message  from "./message.png";
+import Contactus from './contact-us.png'
 
 export {
   Logo,
+  Contactus,
   Submit,
   LogoFooter,
   Ellipse55webview,
