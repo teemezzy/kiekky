@@ -4,6 +4,7 @@ import Footer from "./Footer/Footer";
 import SectionTwo from "./Section2/SectionTwo";
 import SectionThree from "./Section3/SectionThree";
 import SectionFour from "./Section4/SectionFour";
+import SectionFive from "./Section5/SectionFive";
 import Sidebar from "./SideLayout/Sidebar";
 import SideLayout from "./SideLayout/SideLayout";
 
@@ -15,6 +16,7 @@ export {
   SectionThree,
   SectionFour,
   SideLayout,
+  SectionFive,
   Sidebar,
   Footer,
 };
