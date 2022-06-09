@@ -6,7 +6,7 @@ const SectionTwo = () => {
     <div className="mx-5 xl:mx-32 mb-28">
       <div>
         <h3
-          className="text-center font-medium
+          className="text-center font-semibold
  text-heroPXLFont lg:text-sectionFont"
         >
           How It Works
