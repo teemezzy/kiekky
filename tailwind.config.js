@@ -4,12 +4,13 @@ module.exports = {
     extend: {
       width: {
         wHero: "500px",
-        wHeroMobile: "200px",
+        wHeroMobile: "261px",
+        wText:'590px'
       },
 
       height: {
         hHero: "500px",
-        hHeroMobile: "200px",
+        hHeroMobile: "261px",
       },
       backgroundColor: {
         bgGray: "#E5E5E5",
@@ -21,9 +22,13 @@ module.exports = {
       fontSize: {
         heroMobileFont:['24px',{lineHeight:''}],
         heroXLFont:['50px',{lineHeight:'78px'}],
+        sectionFont:['36px',{lineHeight:''}],
         heroPMobileFont:['14px', {lineHeight:''}],
         heroPXLFont:['18px', {lineHeight:'27px'}],
-      }
+        homeProfileFont:['28px', {lineHeight:'33.31px'}]
+      },
+
+  
     },
   },
   plugins: [],

@@ -28,7 +28,7 @@ const HeroSection = () => {
             />
           </div>
 
-          <div className="img-anime m-auto lg:pt-0 pt-20 lg:m-0 bg-contain xl:w-wHero xl:h-hHero w-wHeroMobile h-hHeroMobile">
+          <div className="img-anime m-auto lg:pt-0 pt-20 mt-28 lg:m-0 bg-contain xl:w-wHero xl:h-hHero w-wHeroMobile h-hHeroMobile">
             {/* <img src={HeroFrame1} alt="" />  */}
           </div>
         </div>
