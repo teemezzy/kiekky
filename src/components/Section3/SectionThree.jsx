@@ -2,7 +2,7 @@ import React from "react";
 import explore from "../../assets/explore.png";
 import contact from "../../assets/contactIcon.png";
 import { section3 } from "../../assets";
-import './SectionThree.css'
+import "./SectionThree.css";
 const SectionThree = () => {
   return (
     <div className="  text-center lg:text-left lg:justify-center lg:items-center lg:flex">
@@ -24,8 +24,12 @@ const SectionThree = () => {
         </div>
       </div>
 
-      <div className='image-crossfade '>
-        <img src={explore} alt=" " className="top mx-auto mt-5 lg:ml-[3rem] lg:5/12 " />
+      <div className="image-crossfade ">
+        <img
+          src={explore}
+          alt=" "
+          className="top mx-auto mt-5 lg:ml-[3rem] lg:5/12 "
+        />
         {/* <img src={section3} alt=" " className="bottom" /> */}
       </div>
     </div>

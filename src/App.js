@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import {Footer } from './components'
 import {
   Home,
   TermsConditions,
@@ -27,7 +28,9 @@ function App() {
         <Route path="privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
+
   );
 }
 

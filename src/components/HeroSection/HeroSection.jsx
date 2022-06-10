@@ -6,7 +6,7 @@ import CustomButton from "../../container/CustomButton";
 const HeroSection = () => {
   return (
     <div className="HeroSection ">
-      <div className="lg:pt-56  pt-32 mx-5 xl:mx-32 ">
+      <div className="lg:pt-32  pt-32 mx-5 xl:mx-32 ">
         <div className="xl:flex justify-between">
           <div>
             <div className="">
@@ -14,7 +14,7 @@ const HeroSection = () => {
                 Find New Friends, Dates,
                 <div className="flex lg:block">
                   <p className="lg: block">Models or People</p>
-                  <p className=" lg:w-1/2 ">Next Door.</p>
+                  <p className=" lg:w-1/2 pl-2 lg:pl-0">Next Door.</p>
                 </div>
               </h2>
             </div>

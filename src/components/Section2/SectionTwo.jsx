@@ -3,8 +3,8 @@ import { contactIcon2, profileDetails } from "../../assets";
 
 const SectionTwo = () => {
   return (
-    <div className="mx-5 xl:mx-32 lg:mb-28 mb-7">
-      <div>
+    <div className="mx-5 xl:mx-32 lg:mb-28 mb-20">
+      <div className='mb-16'>
         <h3
           className="text-center font-semibold
  text-heroPXLFont lg:text-sectionFont"
@@ -19,7 +19,7 @@ const SectionTwo = () => {
         </p>
       </div>
 
-      <div className="lg:flex lg:justify-around lg:items-center mt-14 flex-col lg:flex-row justify-center justify-items-center">
+      <div className="flex lg:justify-around lg:items-center mt-14 flex-col-reverse lg:flex-row justify-center justify-items-center">
         <div className=" lg:flex flex flex-col">
           <img src={profileDetails} alt="profileDetails" className='w-64 m-auto' />
         </div>
@@ -29,10 +29,10 @@ const SectionTwo = () => {
             <img src={contactIcon2} alt="contact" />
           </div>
           <div className="lg:w-heroMobileWidth">
-            <h3 className="flex lg:items-center font-medium text-homeProfileFont lg:flex-row flex-col justify-center lg:text-left text-center lg:w-64 w-80">
+            <h3 className="flex lg:items-center font-medium text-homeProfileFont lg:flex-row flex-col justify-center lg:text-left text-center ">
               Set up profile details
             </h3>
-            <p className="text-[#828282] text-center lg:text-left lg:w-full w-80 ">
+            <p className="text-[#828282] text-center lg:text-left lg:w-[470px] lg:mx-0 mx-5 w-80 mb-7">
               Our community is filled with unique individuals such as yourself.
               Therefore, the need for you to provide necessary information about
               yourself.

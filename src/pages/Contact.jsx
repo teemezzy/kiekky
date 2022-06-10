@@ -5,7 +5,7 @@ import { Navbar } from "../components";
 const Contact = () => {
   return (
     <div>
-      <Navbar className='' />
+      <Navbar />
       <div className='pt-24'>
         <img src={Contactus} alt="bg-contact" className="bg-center w-full" />
       </div>

@@ -8,7 +8,7 @@ import CustomButton from "../../container/CustomButton";
 const Navbar = () => {
   return (
     <>
-      <div className="fixed top-0 right-0 left-0 bg-white ">
+      <div className="fixed top-0 right-0 left-0 bg-white pb-5">
         <nav className="hidden xl:block xl:mx-32">
           <div className="flex justify-between pt-10 ">
             <div className=" flex items-center ">
