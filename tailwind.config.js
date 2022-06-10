@@ -19,7 +19,7 @@ module.exports = {
         bgGray: "#E5E5E5",
       },
       color: {
-        fontColor1: "#828282",
+        gray3: ["#828282"],
        
       },
       fontSize: {

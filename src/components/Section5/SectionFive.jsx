@@ -12,7 +12,7 @@ function SectionFive() {
                 />
                 <div className="text-center lg:text-left mx-5 lg:mx-0">
                     <h2 className="font-medium text-homeProfileFont">Chat With People</h2>
-                    <p className="text-gray-400">
+                    <p className="text-[#828282]">
                         You also get to chat with other members of the community. You get to
                         talk about secrets and desires. You can also share photos and videos
                         with other members of Kiekky.
