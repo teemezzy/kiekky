@@ -18,7 +18,7 @@ const HeroSection = () => {
                 </span>
               </h2>
             </div>
-            <p className=" font-normal text-gray-400 lg:w-heroPWidth w-11/12 md:w-1/2 lg:text-heroPXLFont text-heroPMobileFont mt-9 mb-14">
+            <p className=" font-normal text-[#828282] lg:w-heroPWidth w-11/12 md:w-1/2 lg:text-heroPXLFont text-heroPMobileFont mt-9 mb-14">
               Kiekky is a one stop platform to meet new people, Share your photo{" "}
               {`${"&"}`} Videos, go on a paid date.
             </p>

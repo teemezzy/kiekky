@@ -15,7 +15,7 @@ const SectionFour = () => {
 
           <div className="  lg:mx-0 text-center lg:text-left mx-5">
             <h1 className="font-medium text-homeProfileFont"> Go On Date </h1>
-            <p className="text-gray-400">
+            <p className="text-[#828282]">
               Our platform allows you to post a date request to know people that
               might be interested in going for drink, dinner or downtown. You
               can talk more on the details in the chat.

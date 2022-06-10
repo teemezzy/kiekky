@@ -15,15 +15,11 @@ import LogoFooter from "./logo-footer.png";
 import Submit from "./submit.png";
 import Chat from './chat.png'
 import chatIcon from './chatIcon.png'
-<<<<<<< HEAD
 import Message from "./message.png";
 import privacy from './privacy.png';
 import terms from './terms.png';
 import section3 from './section3.png'
-=======
-import Message  from "./message.png";
 import Contactus from './contact-us.png'
->>>>>>> e6e2036d7836bb6f05d7420c6fde9680fff286ed
 
 export {
   Logo,
