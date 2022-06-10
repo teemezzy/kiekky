@@ -6,7 +6,7 @@ const SectionTwo = () => {
     <div className="mx-5 xl:mx-32 mb-28">
       <div>
         <h3
-          className="text-center font-bold
+          className="text-center font-semibold
  text-heroPXLFont lg:text-sectionFont"
         >
           How It Works
@@ -34,8 +34,8 @@ const SectionTwo = () => {
             </h3>
             <p className="text-gray-400 ">
               Our community is filled with unique individuals such as yourself.
-              Therefore, the need for you to provide necessary information
-              about yourself.
+              Therefore, the need for you to provide necessary information about
+              yourself.
             </p>
           </div>
         </div>

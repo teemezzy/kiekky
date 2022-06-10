@@ -12,8 +12,8 @@ const MidNav = () => {
     setToggle(!toggle);
   };
   return (
-    <div className=" xl:hidden ">
-      <div className=" pt-10 flex justify-between mx-5 ">
+    <div className="set-position">
+      <div className=" xl:hidden pt-10 flex justify-between items-center px-5 bg-gray-700 ">
             
             {navList.map((nav) => (
             <div key={nav.id}>
