@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Footer } from "../components";
+import { Navbar } from "../components";
 import { terms } from "../assets";
 
 const TermsConditions = () => {
