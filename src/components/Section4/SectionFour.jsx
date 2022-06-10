@@ -4,7 +4,7 @@ import { Form, Contact } from "../../assets";
 const SectionFour = () => {
   return (
     <div className="">
-      <div className="flex flex-col-reverse lg:flex-row  lg:items-center lg:justify-center ">
+      <div className="flex flex-col-reverse lg:flex-row  lg:items-center lg:justify-center lg:bg-white bg-[#E5E5E5] ">
         <img src={Form} alt="form" className=" lg:mb-5 mx-[4rem] md:mx-auto md:w-1/2 lg:w-5/12" />
         <div className="lg:flex lg:w-4/12 ">
           <img

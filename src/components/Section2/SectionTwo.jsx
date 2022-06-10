@@ -3,7 +3,7 @@ import { contactIcon2, profileDetails } from "../../assets";
 
 const SectionTwo = () => {
   return (
-    <div className="px-5 xl:px-32 pt-5 lg:mb-28 mb-20 bg-[#E5E5E5]">
+    <div className="px-5 xl:px-32 pt-10 lg:pb-28 pb-20 lg:bg-white bg-[#E5E5E5]">
       <div className='mb-16'>
         <h3
           className="text-center font-semibold

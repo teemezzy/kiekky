@@ -5,7 +5,7 @@ import { section3 } from "../../assets";
 import "./SectionThree.css";
 const SectionThree = () => {
   return (
-    <div className="  text-center lg:text-left lg:justify-center lg:items-center lg:flex">
+    <div className="  text-center lg:text-left lg:justify-center lg:items-center lg:flex lg:bg-white bg-[#E5E5E5]">
       <div className="lg:flex lg:w-5/12 mx-5 ">
         <img
           src={contact}

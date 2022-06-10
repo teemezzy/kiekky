@@ -5,7 +5,7 @@ import CustomButton from "../../container/CustomButton";
 
 const HeroSection = () => {
   return (
-    <div className="HeroSection ">
+    <div className="HeroSection lg:bg-auto bg-contain ">
       <div className="lg:pt-32  pt-32 mx-5 xl:mx-32 ">
         <div className="xl:flex justify-between">
           <div>

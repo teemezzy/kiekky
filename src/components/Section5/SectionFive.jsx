@@ -3,7 +3,7 @@ import { chatIcon, Chat, Message } from "../../assets";
 ;
 function SectionFive() {
     return (
-        <div className="mt-10 lg:flex lg:justify-center lg:items-center ">
+        <div className="pt-10 lg:flex lg:justify-center lg:items-center lg:bg-white bg-[#E5E5E5] ">
             <div className=" lg:flex lg:w-5/12">
                 <img
                     src={chatIcon}
