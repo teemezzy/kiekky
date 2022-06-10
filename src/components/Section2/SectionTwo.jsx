@@ -25,7 +25,7 @@ const SectionTwo = () => {
         </div>
 
         <div className="lg:flex">
-          <div className="mr-4">
+          <div className="mx-7">
             <img src={contactIcon2} alt="contact" />
           </div>
           <div className="w-heroMobileWidth">

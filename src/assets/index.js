@@ -15,7 +15,10 @@ import LogoFooter from "./logo-footer.png";
 import Submit from "./submit.png";
 import Chat from './chat.png'
 import chatIcon from './chatIcon.png'
-import Message  from "./message.png";
+import Message from "./message.png";
+import privacy from './privacy.png';
+import terms from './terms.png';
+import section3 from './section3.png'
 
 export {
   Logo,
@@ -24,7 +27,7 @@ export {
   Ellipse55webview,
   Ellipse56mobileview,
   profileDetails,
-  Message, 
+  Message,
   Chat,
   chatIcon,
   Frame1,
@@ -36,4 +39,7 @@ export {
   HeroFrame3,
   HeroFrame4,
   HeroFrame5,
+  privacy,
+  terms,
+  section3
 };

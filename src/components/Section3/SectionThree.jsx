@@ -1,17 +1,19 @@
 import React from "react";
 import explore from "../../assets/explore.png";
 import contact from "../../assets/contactIcon.png";
+import { section3 } from "../../assets";
+import './SectionThree.css'
 const SectionThree = () => {
   return (
-    <div className="  text-center md:text-left mx-[4rem] md:justify-center md:items-center md:flex">
-      <div className="md:flex md:w-5/12  ">
+    <div className="  text-center lg:text-left lg:justify-center lg:items-center lg:flex">
+      <div className="lg:flex lg:w-5/12 mx-5 ">
         <img
           src={contact}
           alt="contact "
-          className=" mb-3 mx-auto block md:h-[3rem]  md:mx-6"
+          className=" mb-3 mx-auto lg:h-[3rem]  lg:mx-6"
         />
-        <div className="">
-          <h1 className="font-medium text-homeProfileFont">
+        <div className=" ">
+          <h1 className=" font-medium text-homeProfileFont">
             Explore Our Community
           </h1>
           <p className=" text-gray-400">
@@ -22,8 +24,9 @@ const SectionThree = () => {
         </div>
       </div>
 
-      <div>
-        <img src={explore} alt=" " className="mt-5 md:ml-[3rem] md:5/12" />
+      <div className='image-crossfade '>
+        <img src={explore} alt=" " className="top mx-auto mt-5 lg:ml-[3rem] lg:5/12 " />
+        {/* <img src={section3} alt=" " className="bottom" /> */}
       </div>
     </div>
   );

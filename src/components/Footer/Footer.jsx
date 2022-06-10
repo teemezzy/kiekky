@@ -17,51 +17,51 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="lg:flex lg:justify-between items-center pt-[1.5rem]">
+        <div className="lg:flex lg:justify-between pt-[1.5rem]">
           <div>
             <h1 className=" mb-5 md:mb-10 text-2xl">
               Subscribe to our <br /> newsletter
             </h1>
-            <form className="flex">
+            <form className="flex mb-10">
               <input
-                className="w-[13rem] bg-transparent pb-4 border-b border-opacity-10 border-b-[#ECECEC] "
+                className=" text-[#C4C4C4] w-[13rem] bg-transparent pb-4 border-b border-opacity-10 border-b-[#ECECEC] "
                 placeholder="Email address"
                 type="email"
               />
-              <button>
+              <button >
                 <img src={Submit} alt="btn-submit" />
               </button>
             </form>
           </div>
 
-          <div className="mt-10">
-            <p>
+          <div className=" mb-10 ">
+            <p className='pb-3' >
               <NavLink to="/about">About</NavLink>{" "}
             </p>
-            <p>
+            <p className='pb-3 text-[#C4C4C4]'>
               {" "}
               <NavLink to="/">Home</NavLink>{" "}
             </p>
-            <p>
+            <p className='pb-3 text-[#C4C4C4]'>
               <NavLink to="/terms">Terms {`${"&"}`} Conditions</NavLink>
             </p>
-            <p>
+            <p className='text-[#C4C4C4]'>
               <NavLink to="/privacy">Privacy Policy</NavLink>
             </p>
           </div>
 
-          <div className="mt-10">
-            <p>
+          <div className="mb-10">
+            <p className='pb-3 '>
               <NavLink to="/contact">Help</NavLink>
             </p>
-            <p>
+            <p className='pb-3 text-[#C4C4C4]'>
               <NavLink to="/faqs">FAQs</NavLink>
             </p>
-            <p>
+            <p className='pb-3 text-[#C4C4C4]'>
               <NavLink to="/contact">Contact Us</NavLink>
             </p>
           </div>
-          <div className="mt-10 pb-[3rem]">
+          <div className=" pb-[3rem]">
             <p>Follow Us</p>
             <div className="flex pt-5">
               <span className="">
