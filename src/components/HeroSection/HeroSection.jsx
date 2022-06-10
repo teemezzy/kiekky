@@ -13,8 +13,8 @@ const HeroSection = () => {
               <h2 className="font-semibold w-full lg:w-75 lg:text-heroXLFont text-heroMobileFont h-full">
                 Find New Friends, Dates,
                 <div className="flex lg:block">
-                  <p className="lg: block">Models or People</p>
-                  <p className=" lg:w-1/2 pl-2 lg:pl-0">Next Door.</p>
+                  <p className="lg: block w-">Models or People</p>
+                  <p className=" lg:w-1/2 lg:pl-0 pl-1 ">Next Door.</p>
                 </div>
               </h2>
             </div>

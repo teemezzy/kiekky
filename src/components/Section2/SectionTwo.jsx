@@ -3,7 +3,7 @@ import { contactIcon2, profileDetails } from "../../assets";
 
 const SectionTwo = () => {
   return (
-    <div className="mx-5 xl:mx-32 lg:mb-28 mb-20">
+    <div className="px-5 xl:px-32 pt-5 lg:mb-28 mb-20 bg-[#E5E5E5]">
       <div className='mb-16'>
         <h3
           className="text-center font-semibold
@@ -32,7 +32,7 @@ const SectionTwo = () => {
             <h3 className="flex lg:items-center font-medium text-homeProfileFont lg:flex-row flex-col justify-center lg:text-left text-center ">
               Set up profile details
             </h3>
-            <p className="text-[#828282] text-center lg:text-left lg:w-[470px] lg:mx-0 mx-5 w-80 mb-7">
+            <p className="text-[#828282] text-center lg:text-left lg:w-[470px] lg:mx-0 w-[17.5rem] m-auto mb-7 flex lg:items-center lg:flex-row flex-col justify-center">
               Our community is filled with unique individuals such as yourself.
               Therefore, the need for you to provide necessary information about
               yourself.
