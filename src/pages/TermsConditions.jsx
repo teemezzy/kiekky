@@ -6,9 +6,9 @@ const TermsConditions = () => {
   return (
     <div>
       <Navbar />
-      <header>
-        <img src={terms} />
-      </header>
+
+      <img className='pt-24 ' src={terms} />
+
 
       <main className='mx-10 my-10 lg:mx-20 lg:my-25'>
         <p className='pb-9'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio voluptatum quidem tempora. Veniam aspernatur magnam ab ratione debitis suscipit nihil possimus at? Reiciendis incidunt consectetur, cumque soluta molestiae eum cupiditate, laboriosam esse maxime adipisci illum perferendis, voluptates dicta? Exercitationem dignissimos, dolore voluptas eius dicta facere commodi minima earum excepturi molestiae eos optio ad ipsum magnam deleniti aliquam voluptatum nam!</p>
