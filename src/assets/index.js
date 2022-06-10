@@ -13,7 +13,7 @@ import Form from "./form.png";
 import Contact from "./contactIcon.png";
 import LogoFooter from "./logo-footer.png";
 import Submit from "./submit.png";
-import Chat from './chat.png'
+import Chat from './chat.png';
 import chatIcon from './chatIcon.png'
 import Message from "./message.png";
 import privacy from './privacy.png';

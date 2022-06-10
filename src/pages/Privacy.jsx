@@ -6,9 +6,9 @@ const Privacy = () => {
   return (
     <div>
       <Navbar />
-      <img src={privacy} />
+      <img className='pt-24' src={privacy} />
 
-      <main className='mx-6 my-10 lg:mx-20 lg:my-25'>
+      <main className=' my-10 lg:mx-20 lg:my-25'>
         <div className='mx-6 flex my-6'>
           <span className='mr-6 font-bold '>1</span>
           <div> <span className='font-bold font-5 text-xl'>Lorem ipsum dolor sit amet.</span>

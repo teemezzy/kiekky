@@ -7,7 +7,7 @@ const TermsConditions = () => {
     <div>
       <Navbar />
       <div className="mt-24">
-        <img src={terms} className="bg-center w-full" />
+        <img src={terms} alt='terms' className="bg-center w-full" />
       </div>
 
       <main className="mx-10 my-10 lg:mx-20 lg:my-25">
