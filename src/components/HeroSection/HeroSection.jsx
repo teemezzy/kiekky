@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
-import { Frame1, HeroFrame1 } from "../../assets/";
+import { Frame1, } from "../../assets/";
 import CustomButton from "../../container/CustomButton";
 
 const HeroSection = () => {

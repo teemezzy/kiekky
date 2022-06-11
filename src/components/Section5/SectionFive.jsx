@@ -1,5 +1,5 @@
 import React from "react";
-import { chatIcon, Chat, Message } from "../../assets";
+import { chatIcon, Chat } from "../../assets";
 ;
 function SectionFive() {
     return (

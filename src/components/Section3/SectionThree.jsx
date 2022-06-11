@@ -1,7 +1,7 @@
 import React from "react";
 import explore from "../../assets/explore.png";
 import contact from "../../assets/contactIcon.png";
-import { section3 } from "../../assets";
+// import { section3 } from "../../assets";
 import "./SectionThree.css";
 const SectionThree = () => {
   return (
