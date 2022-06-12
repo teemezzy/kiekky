@@ -13,17 +13,17 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="bg-[#F6F4FF] pb-40 ">
+    <div className="bg-[#F6F4FF] lg:pb-40 pb-12 ">
       <Navbar />
       <div className="pt-24">
         <img src={Contactus} alt="bg-contact" className="bg-center w-full" />
       </div>
 
       <div
-        className="lg:w-[1180px] w-[322px] m-auto lg:mt-20 mt-12 lg:p-28 p-6  bg-white "
+        className="lg:w-[1180px] w-[322px] m-auto lg:mt-20 mt-12 lg:p-28 p-6 bg-white "
       >
-        <h3 className="text-sectionFont ">Want to reach out?</h3>
-        <h3 className="text-sectionFont ">Send a message...</h3>
+        <h3 className="lg:text-sectionFont text-[20px] font-semibold ">Want to reach out?</h3>
+        <h3 className="lg:text-sectionFont text-[20px] mb-8 font-semibold">Send a message...</h3>
         <form onSubmit={submit} className="m-auto lg:mt-16">
           <label htmlFor="fullname" className="">
             <p className="text-base">Full Name</p>
