@@ -1,12 +1,12 @@
 import React from 'react'
-import { Navbar, Footer } from '../components'
+import { Navbar } from '../components'
 import { privacy } from "../assets";
 
 const Privacy = () => {
   return (
     <div>
       <Navbar />
-      <img className='pt-24' src={privacy} />
+      <img className='pt-24' src={privacy} alt='bg-privacy' />
 
       <main className=' my-10 lg:mx-20 lg:my-25'>
         <div className='mx-6 flex my-6'>
@@ -76,8 +76,6 @@ const Privacy = () => {
 
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }
