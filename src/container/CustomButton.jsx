@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const CustomButton = ({buttonDetails}) => {
+const CustomButton = ({ buttonDetails }) => {
   return (
     <div>
       <button type="button" className="w-44 h-14 button text-base">
@@ -12,3 +12,11 @@ const CustomButton = ({buttonDetails}) => {
 };
 
 export default CustomButton;
+
+export const CustomLogin = ({ loginDetails }) => {
+  return (
+    <button type="button">
+      <NavLink to="/login">{loginDetails}</NavLink>
+    </button>
+  );
+};

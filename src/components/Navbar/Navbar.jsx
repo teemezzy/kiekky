@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Logo } from "../../assets";
 import MidNav from "./MidNav";
 import CustomButton from "../../container/CustomButton";
+import CustomLogin from "../../container/CustomLogin";
 
 const Navbar = () => {
   return (
@@ -17,6 +18,7 @@ const Navbar = () => {
               </NavLink>
             </div>
             <div className="flex justify-between items-center">
+              <CustomLogin type="button" loginDetails="Login" className="mx-8 px-10 text-lg border-radius" />
               <button
                 type="button"
                 className="mx-8 px-10 text-lg border-radius"
