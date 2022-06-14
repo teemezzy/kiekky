@@ -7,11 +7,13 @@ import NotFound from "./NotFound";
 import Contact from "./Contact";
 import About from "./About";
 import Faqs from "./Faqs";
+import User from "./User";
 
 export {
   Home,
   Login,
   Register,
+  User,
   Privacy,
   TermsConditions,
   NotFound,

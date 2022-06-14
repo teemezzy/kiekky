@@ -1,7 +1,7 @@
 import React from "react";
 import "./HeroSection.css";
 import { Frame1, } from "../../assets/";
-import CustomButton from "../../container/CustomButton";
+import CustomRegister from "../../container/CustomButton";
 
 const HeroSection = () => {
   return (
@@ -22,7 +22,7 @@ const HeroSection = () => {
               Kiekky is a one stop platform to meet new people, Share your photo{" "}
               {`${"&"}`} Videos, go on a paid date.
             </p>
-            <CustomButton
+            <CustomRegister
               className="sm:mb-36 mb-0"
               buttonDetails="Get Started ⇾"
             />

@@ -6,7 +6,7 @@ const Privacy = () => {
   return (
     <div>
       <Navbar />
-      <img className='pt-24' src={privacy} alt='bg-privacy' />
+      <img className='pt-24 bg-center w-full' src={privacy} alt='bg-privacy' />
 
       <main className=' my-10 lg:mx-20 lg:my-25'>
         <div className='mx-6 flex my-6'>

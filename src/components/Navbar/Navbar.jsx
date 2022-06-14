@@ -3,8 +3,8 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import { Logo } from "../../assets";
 import MidNav from "./MidNav";
-import CustomButton from "../../container/CustomButton";
-import CustomLogin from "../../container/CustomLogin";
+import CustomRegister from "../../container/CustomButton";
+import CustomLogin from "../../container/CustomButton";
 
 const Navbar = () => {
   return (
@@ -18,14 +18,14 @@ const Navbar = () => {
               </NavLink>
             </div>
             <div className="flex justify-between items-center">
-              <CustomLogin type="button" loginDetails="Login" className="mx-8 px-10 text-lg border-radius" />
+              {/* <CustomLogin type="button" loginDetails="Login" className="mx-8 px-10 text-lg border-radius" /> */}
               <button
                 type="button"
                 className="mx-8 px-10 text-lg border-radius"
               >
                 <NavLink to="/login">Login</NavLink>
               </button>
-              <CustomButton type="button" buttonDetails="Register" />
+              <CustomRegister type="button" buttonDetails="Register"  className="w-44 h-14 button text-base"/>
             </div>
           </div>
         </nav>
