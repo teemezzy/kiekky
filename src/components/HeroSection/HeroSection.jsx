@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
-import { Frame1, } from "../../assets/";
+import { Frame1 } from "../../assets/";
 import CustomRegister from "../../container/CustomButton";
 
 const HeroSection = () => {
@@ -33,8 +33,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="flex m-auto justify-center">
-          <img src={Frame1} alt="" />
+        <div className="flex m-auto justify-center lg:mt-16">
+          <img src={Frame1} alt="" className="" />
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { contactIcon2, profileDetails, setupProfileVid } from "../../assets";
+import { contactIcon2, setupProfileVid } from "../../assets";
 
 const SectionTwo = () => {
   return (

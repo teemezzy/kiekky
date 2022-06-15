@@ -3,9 +3,9 @@ import { Navbar } from '../components'
 import { privacy } from "../assets";
 
 const Privacy = () => {
-  
+
   useEffect(() => {
-    document.title ="Privacy Policy  | Kiekky"
+    document.title ="Privacy Policy | Kiekky"
   }, [])
 
   return (

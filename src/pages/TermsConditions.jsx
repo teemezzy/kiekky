@@ -4,7 +4,7 @@ import { terms } from "../assets";
 
 const TermsConditions = () => {
   useEffect(() => {
-    document.title ="Terms & Conditions  | Kiekky"
+    document.title ="Terms & Conditions | Kiekky"
   }, [])
   return (
     <div>

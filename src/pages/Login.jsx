@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 
 const Login = () => {
   useEffect(() => {
-    document.title ="Login  | Kiekky"
+    document.title ="Login | Kiekky"
   }, [])
   return (
     <div>Login</div>
