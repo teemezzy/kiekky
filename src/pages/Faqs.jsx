@@ -1,26 +1,45 @@
-import React,{useState} from "react";
-import IoIosArrowDown from "react-icons/io";
-import Faq from "../assets";
-import data from "./data";
+import React, { useState } from "react";
+import { Faq } from "../assets";
+import { data } from "./data";
+import { Navbar } from "../components";
 
 const Faqs = () => {
-  const [active, setActive] = useState ('')
-  const handleClick = () => {
-    setActive(active)
+  const [active, setActive] = useState(false);
+  const handleClick = (index) => {
+    if (active === index) {
+      return setActive(null);
+    }
+    setActive(index);
   };
 
   return (
-    <div>
-      <div>
-        <img src={Faq} alt="faq-img" />
+    <div className="bg-[#FCFCFC]">
+      <Navbar />
+      <div className="mt-24">
+        <img src={Faq} alt="faq-img" className="w-full bg-center" />
       </div>
-      <div>
-        {data.map((data) => (
-          <div key={data.id}>
-            <div>
-              {/* {data.title} <span onClick={handleClick}>{? active {data.icon} : {data.iconn}}</span> */}
+      <div className="mt-[6.5rem]  lg:w-[62rem] w-[300px] flex flex-col m-auto ">
+        {data.map((data, index) => (
+          <div className=" ">
+            <div
+              className="flex justify-between my-3 bg-white p-[1.5rem] m-auto "
+              onClick={() => handleClick(index)}
+              key={index}
+            >
+              <div className="">{data.title}</div>
+              <span>
+                {active === index ? (
+                  <div>{data.iconn}</div>
+                ) : (
+                  <div>{data.icon}</div>
+                )}
+              </span>
             </div>
-            <div>{data.body}</div>
+            <div className=" w-full">
+              {active === index ? (
+                <div className="bg-[#F6F4FF] p-[1.8rem]">{data.body}</div>
+              ) : null}
+            </div>
           </div>
         ))}
       </div>

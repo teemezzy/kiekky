@@ -20,7 +20,7 @@ import privacy from './privacy.png';
 import terms from './terms.png';
 import section3 from './section3.png'
 import Contactus from './contact-us.png'
-import Faq from './Faq.png'
+import Faq from './faq.png'
 
 export {
   Logo,
