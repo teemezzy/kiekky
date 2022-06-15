@@ -20,12 +20,12 @@ import privacy from './privacy.png';
 import terms from './terms.png';
 import section3 from './section3.png';
 import Contactus from './contact-us.png';
-import chatVid from './chatVid.webm';
-import dateVid from './dateVid.webm';
-import exploreVid from './exploreVid.webm';
-import heroVid from './heroVid.webm';
+import chatVid from './chatVid.mp4';
+import dateVid from './dateVid.mp4';
+import exploreVid from './exploreVid.mp4';
+import heroVid from './heroVid.mp4';
 import Faq from './faq.png';
-import setupProfileVid from './setupProfileVid.webm'
+import setupProfileVid from './setupProfileVid.mp4'
 export {
   Logo,
   Contactus,

@@ -38,14 +38,14 @@ const Footer = () => {
             <p className='pb-3' >
               <NavLink to="/about">About</NavLink>{" "}
             </p>
-            <p className='pb-3 text-[#C4C4C4]'>
+            <p className='pb-3 text-[#C4C4C4]' onClick={()=> window.scrollTo(0, 0)}>
               {" "}
               <NavLink to="/">Home</NavLink>{" "}
             </p>
-            <p className='pb-3 text-[#C4C4C4]'>
+            <p className='pb-3 text-[#C4C4C4]' onClick={()=> window.scrollTo(0, 0)}>
               <NavLink to="/terms">Terms {`${"&"}`} Conditions</NavLink>
             </p>
-            <p className='text-[#C4C4C4]'>
+            <p className='text-[#C4C4C4]' onClick={()=> window.scrollTo(0, 0)}>
               <NavLink to="/privacy">Privacy Policy</NavLink>
             </p>
           </div>
@@ -54,10 +54,10 @@ const Footer = () => {
             <p className='pb-3 '>
               <NavLink to="/contact">Help</NavLink>
             </p>
-            <p className='pb-3 text-[#C4C4C4]'>
+            <p className='pb-3 text-[#C4C4C4]' onClick={()=> window.scrollTo(0, 0)}>
               <NavLink to="/faqs">FAQs</NavLink>
             </p>
-            <p className='pb-3 text-[#C4C4C4]'>
+            <p className='pb-3 text-[#C4C4C4]'  onClick={()=> window.scrollTo(0, 0)}>
               <NavLink to="/contact">Contact Us</NavLink>
             </p>
           </div>
