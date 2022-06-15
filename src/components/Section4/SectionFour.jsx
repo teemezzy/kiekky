@@ -5,7 +5,7 @@ import { Form, Contact, dateVid } from "../../assets";
 const SectionFour = () => {
   return (
     <div className="">
-      <div className="flex flex-col-reverse lg:flex-row lg:mr-[2rem] lg:items-center lg:justify-center lg:bg-white bg-[#E5E5E5] ">
+      <div className="flex flex-col-reverse lg:flex-row lg:mr-[2rem] lg:items-center lg:justify-center bg-white  ">
       <video 
           autoPlay muted loop
           className=" lg:mb-5 mx-[4rem] lg:mx-0 md:mx-auto md:w-1/2 lg:w-[40rem]" 
