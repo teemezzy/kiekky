@@ -25,7 +25,7 @@ import dateVid from './dateVid.mp4';
 import exploreVid from './exploreVid.mp4';
 import heroVid from './heroVid.mp4';
 import Faq from './faq.png';
-import setupProfileVid from './setupProfileVid.mp4'
+import setupProfileVid from './setupProfileVid.mov'
 import bgLogin from './bgLogin.png'
 export {
   Logo,
