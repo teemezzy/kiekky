@@ -8,11 +8,13 @@ const Footer = () => {
     <footer>
       <div className=" px-5 pt-[2rem] md:p-[6rem] bg-[#1B1158] text-white divide-y divide-opacity-10  divide-gray-300">
         <div className="Top-footer lg:flex lg:justify-between lg:items-center mb-[2rem] ">
-          <img src={LogoFooter} alt="logo_white" />
-          <div className=" mt-10 lg:mt-0 text-2xl lg:flex lg:items-center">
+          <NavLink to="/" onClick={()=> window.scrollTo(0, 0)}>
+            <img src={LogoFooter} alt="logo_white" />
+          </NavLink>
+          <div className="mt-10 lg:mt-0 text-2xl lg:flex lg:items-center ">
             <p>Ready to get started?</p>
-            <button className="mt-5 text-[#6A52FD] bg-white text-xs py-3 px-9 md:mx-2 rounded-md">
-              Register
+            <button className="mt-5 lg:mt-0 text-[#6A52FD] bg-white text-xs py-3 px-9 md:mx-2 rounded-md">
+              <NavLink to="/register">Register</NavLink>
             </button>
           </div>
         </div>
@@ -28,36 +30,47 @@ const Footer = () => {
                 placeholder="Email address"
                 type="email"
               />
-              <button >
+              <button>
                 <img src={Submit} alt="btn-submit" />
               </button>
             </form>
           </div>
 
           <div className=" mb-10 ">
-            <p className='pb-3' >
+            <p className="pb-3">
               <NavLink to="/about">About</NavLink>{" "}
             </p>
-            <p className='pb-3 text-[#C4C4C4]' onClick={()=> window.scrollTo(0, 0)}>
-              {" "}
+            <p
+              className="pb-3 text-[#C4C4C4]"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               <NavLink to="/">Home</NavLink>{" "}
             </p>
-            <p className='pb-3 text-[#C4C4C4]' onClick={()=> window.scrollTo(0, 0)}>
+            <p
+              className="pb-3 text-[#C4C4C4]"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               <NavLink to="/terms">Terms {`${"&"}`} Conditions</NavLink>
             </p>
-            <p className='text-[#C4C4C4]' onClick={()=> window.scrollTo(0, 0)}>
+            <p className="text-[#C4C4C4]" onClick={() => window.scrollTo(0, 0)}>
               <NavLink to="/privacy">Privacy Policy</NavLink>
             </p>
           </div>
 
           <div className="mb-10">
-            <p className='pb-3 '>
+            <p className="pb-3 ">
               <NavLink to="/contact">Help</NavLink>
             </p>
-            <p className='pb-3 text-[#C4C4C4]' onClick={()=> window.scrollTo(0, 0)}>
+            <p
+              className="pb-3 text-[#C4C4C4]"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               <NavLink to="/faqs">FAQs</NavLink>
             </p>
-            <p className='pb-3 text-[#C4C4C4]'  onClick={()=> window.scrollTo(0, 0)}>
+            <p
+              className="pb-3 text-[#C4C4C4]"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               <NavLink to="/contact">Contact Us</NavLink>
             </p>
           </div>
