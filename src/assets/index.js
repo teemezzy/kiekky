@@ -24,6 +24,7 @@ import chatVid from './chatVid.webm';
 import dateVid from './dateVid.webm';
 import exploreVid from './exploreVid.webm';
 import heroVid from './heroVid.webm';
+import Faq from './faq.png';
 import setupProfileVid from './setupProfileVid.webm'
 export {
   Logo,
@@ -47,6 +48,7 @@ export {
   HeroFrame5,
   privacy,
   terms,
+  Faq,
   section3,
   chatVid,
   exploreVid,

@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 
-const CustomInput = () => {
-  return (<div>CustomInput</div>);
-};
-
-export default CustomInput;
-
-export const FooterInput = () => {
+export const CustomInput = (placeholder, getDetails, type) => {
+  const { register } = useForm();
   return (
     <div>
-      <input type="text" placeholder="Email Address" />
-      <button>Submit</button>
+      <input
+        type={type}
+        {...register({ getDetails }, { required: true })}
+        placeholder={placeholder}
+      />
     </div>
   );
 };
