@@ -1,11 +1,11 @@
 import React from "react";
 import explore from "../../assets/explore.png";
 import contact from "../../assets/contactIcon.png";
-// import { section3 } from "../../assets";
-import "./SectionThree.css";
+import { exploreVid } from "../../assets";
+
 const SectionThree = () => {
   return (
-    <div className="  text-center lg:text-left lg:justify-center lg:items-center lg:flex lg:bg-white bg-[#E5E5E5]">
+    <div className="  text-center lg:text-left lg:justify-center lg:items-center lg:flex lg:bg-white ">
       <div className="lg:flex lg:w-5/12 mx-5 ">
         <img
           src={contact}
@@ -25,12 +25,16 @@ const SectionThree = () => {
       </div>
 
       <div className="image-crossfade ">
-        <img
+        {/* <img
           src={explore}
           alt=" "
           className="top mx-auto mt-5 lg:ml-[3rem] lg:5/12 "
-        />
-        {/* <img src={section3} alt=" " className="bottom" /> */}
+        /> */}
+
+        <video src={exploreVid}
+        autoPlay loop muted
+         className=" m-auto mt-5 lg:ml-[3rem] lg:w-[35rem] "/>
+       
       </div>
     </div>
   );

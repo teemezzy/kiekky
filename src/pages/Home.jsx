@@ -6,7 +6,7 @@ import {
   SectionThree,
   SectionFour,
   SectionFive,
-  Footer,
+  
 } from "../components";
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
       <SectionThree />
       <SectionFour />
       <SectionFive />
-      <Footer />
+      
 
     </div>
   );

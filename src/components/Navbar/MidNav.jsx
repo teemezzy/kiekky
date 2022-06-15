@@ -26,6 +26,7 @@ const MidNav = () => {
             
       </div>
 
+
       <div>
         {toggle && (
           <div className="flex flex-col justify-end">

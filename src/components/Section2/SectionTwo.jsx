@@ -1,9 +1,9 @@
 import React from "react";
-import { contactIcon2, profileDetails } from "../../assets";
+import { contactIcon2, profileDetails, setupProfileVid } from "../../assets";
 
 const SectionTwo = () => {
   return (
-    <div className="px-5 xl:px-32 pt-10 lg:pb-28 pb-20 lg:bg-white bg-[#E5E5E5]">
+    <div className="px-5 xl:px-32 pt-10 lg:pb-28 pb-20  bg-white">
       <div className='mb-16'>
         <h3
           className="text-center font-semibold
@@ -21,7 +21,12 @@ const SectionTwo = () => {
 
       <div className="flex lg:justify-around lg:items-center mt-14 flex-col-reverse lg:flex-row justify-center justify-items-center">
         <div className=" lg:flex flex flex-col">
-          <img src={profileDetails} alt="profileDetails" className='w-64 m-auto' />
+          <video 
+          className='w-[35rem] m-auto'
+          src={setupProfileVid}
+          autoPlay loop muted
+          />
+          {/* <img src={profileDetails} alt="profileDetails" className='w-64 m-auto' /> */}
         </div>
 
         <div className="lg:flex lg:flex-row flex flex-col">
@@ -29,7 +34,7 @@ const SectionTwo = () => {
             <img src={contactIcon2} alt="contact" />
           </div>
           <div className="lg:w-heroMobileWidth">
-            <h3 className="flex lg:items-center font-medium text-homeProfileFont lg:flex-row flex-col justify-center lg:text-left text-center ">
+            <h3 className="flex font-medium text-homeProfileFont lg:flex-row flex-col justify-center lg:text-left text-center ">
               Set up profile details
             </h3>
             <p className="text-[#828282] text-center lg:text-left lg:w-[470px] lg:mx-0 w-[17.5rem] m-auto mb-7 flex lg:items-center lg:flex-row flex-col justify-center">

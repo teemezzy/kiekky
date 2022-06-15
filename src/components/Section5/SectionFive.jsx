@@ -1,15 +1,18 @@
 import React from "react";
-import { chatIcon, Chat } from "../../assets";
+import { chatIcon, Chat,chatVid } from "../../assets";
 ;
 function SectionFive() {
     return (
-        <div className="pt-10 lg:flex lg:justify-center lg:items-center lg:bg-white bg-[#E5E5E5] ">
+        <div className="pt-10 lg:flex lg:justify-center lg:items-center bg-white ">
             <div className=" lg:flex lg:w-5/12">
                 <img
                     src={chatIcon}
                     alt="chat"
                     className=" mb-4 mx-auto  lg:h-[3rem]  lg:mx-6"
                 />
+
+               
+
                 <div className="text-center lg:text-left mx-5 lg:mx-0">
                     <h2 className="font-medium text-homeProfileFont">Chat With People</h2>
                     <p className="text-[#828282]">
@@ -20,11 +23,20 @@ function SectionFive() {
                 </div>
             </div>
 
-            <img
+            <div  className="px-[6rem] object-fit
+                 md:mx-auto lg:px-0 ml-0  lg:mx-0 lg:ml-[3rem] lg:w-5/12">
+            <video 
+               className="w-5/4"
+               src={chatVid}  autoPlay muted loop
+               />
+            </div>
+             
+
+               {/* <img
                 src={Chat}
                 alt="chat"
                 className="px-[6rem] md:mx-auto lg:px-0 ml-0  lg:mx-0 lg:ml-[3rem] lg:w-5/12"
-            />
+            /> */}
         </div>
     );
 }

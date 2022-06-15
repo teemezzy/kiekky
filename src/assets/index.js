@@ -18,9 +18,13 @@ import chatIcon from './chatIcon.png'
 import Message from "./message.png";
 import privacy from './privacy.png';
 import terms from './terms.png';
-import section3 from './section3.png'
-import Contactus from './contact-us.png'
-
+import section3 from './section3.png';
+import Contactus from './contact-us.png';
+import chatVid from './chatVid.webm';
+import dateVid from './dateVid.webm';
+import exploreVid from './exploreVid.webm';
+import heroVid from './heroVid.webm';
+import setupProfileVid from './setupProfileVid.webm'
 export {
   Logo,
   Contactus,
@@ -43,5 +47,10 @@ export {
   HeroFrame5,
   privacy,
   terms,
-  section3
+  section3,
+  chatVid,
+  exploreVid,
+  dateVid,
+  heroVid,
+  setupProfileVid,
 };

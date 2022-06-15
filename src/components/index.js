@@ -7,6 +7,8 @@ import SectionFour from "./Section4/SectionFour";
 import SectionFive from "./Section5/SectionFive";
 import Sidebar from "./SideLayout/Sidebar";
 import SideLayout from "./SideLayout/SideLayout";
+import loginEmail from "./LoginEmail/loginEmail.jsx";
+import loginPhone from "./LoginPhoneNo/loginPhoneNo.jsx";
 
 
 export {
@@ -19,4 +21,6 @@ export {
   SectionFive,
   Sidebar,
   Footer,
+  loginPhone,
+  loginEmail
 };
