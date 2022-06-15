@@ -3,7 +3,7 @@ import { chatIcon, Chat,chatVid } from "../../assets";
 ;
 function SectionFive() {
     return (
-        <div className="pt-10 lg:flex lg:justify-center lg:items-center bg-white ">
+        <div className="pt-10 lg:flex lg:justify-center lg:items-center bg-white lg:mx-32 ">
             <div className=" lg:flex lg:w-5/12">
                 <img
                     src={chatIcon}
@@ -13,7 +13,7 @@ function SectionFive() {
 
                
 
-                <div className="text-center lg:text-left mx-5 lg:mx-0">
+                <div className="text-center lg:text-left mx-5 lg:mx-0 lg:w-[27rem]">
                     <h2 className="font-medium text-homeProfileFont">Chat With People</h2>
                     <p className="text-[#828282]">
                         You also get to chat with other members of the community. You get to

@@ -12,7 +12,7 @@ const SectionThree = () => {
           alt="contact "
           className=" mb-3 mx-auto lg:h-[3rem]  lg:mx-6"
         />
-        <div className=" ">
+        <div className=" lg:w-[30rem]">
           <h1 className=" font-medium text-homeProfileFont">
             Explore Our Community
           </h1>
@@ -25,12 +25,6 @@ const SectionThree = () => {
       </div>
 
       <div className="image-crossfade ">
-        {/* <img
-          src={explore}
-          alt=" "
-          className="top mx-auto mt-5 lg:ml-[3rem] lg:5/12 "
-        /> */}
-
         <video src={exploreVid}
         autoPlay loop muted
          className=" m-auto mt-5 lg:ml-[3rem] lg:w-[35rem] "/>

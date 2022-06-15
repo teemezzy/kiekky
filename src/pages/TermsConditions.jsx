@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Navbar } from "../components";
 import { terms } from "../assets";
 
 const TermsConditions = () => {
+  useEffect(() => {
+    document.title ="Terms & Conditions | Kiekky"
+  }, [])
   return (
     <div>
       <Navbar />

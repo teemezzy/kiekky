@@ -1,8 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Navbar } from '../components'
 import { privacy } from "../assets";
 
 const Privacy = () => {
+
+  useEffect(() => {
+    document.title ="Privacy Policy | Kiekky"
+  }, [])
+
   return (
     <div>
       <Navbar />

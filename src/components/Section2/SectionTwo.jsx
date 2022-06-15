@@ -1,5 +1,5 @@
 import React from "react";
-import { contactIcon2, profileDetails, setupProfileVid } from "../../assets";
+import { contactIcon2, setupProfileVid } from "../../assets";
 
 const SectionTwo = () => {
   return (
@@ -26,7 +26,6 @@ const SectionTwo = () => {
           src={setupProfileVid}
           autoPlay loop muted
           />
-          {/* <img src={profileDetails} alt="profileDetails" className='w-64 m-auto' /> */}
         </div>
 
         <div className="lg:flex lg:flex-row flex flex-col">
@@ -34,7 +33,7 @@ const SectionTwo = () => {
             <img src={contactIcon2} alt="contact" />
           </div>
           <div className="lg:w-heroMobileWidth">
-            <h3 className="flex font-medium text-homeProfileFont lg:flex-row flex-col justify-center lg:text-left text-center ">
+            <h3 className="flex font-medium text-homeProfileFont lg:flex-row flex-col lg:text-left text-center ">
               Set up profile details
             </h3>
             <p className="text-[#828282] text-center lg:text-left lg:w-[470px] lg:mx-0 w-[17.5rem] m-auto mb-7 flex lg:items-center lg:flex-row flex-col justify-center">
