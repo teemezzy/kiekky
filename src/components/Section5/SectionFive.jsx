@@ -27,7 +27,7 @@ function SectionFive() {
                  md:mx-auto lg:px-0 ml-0  lg:mx-0 lg:ml-[3rem] lg:w-5/12">
             <video 
                className="w-5/4"
-               src={chatVid}  autoPlay muted loop
+               src={chatVid}  autoPlay muted loop playsInline
                />
             </div>
              

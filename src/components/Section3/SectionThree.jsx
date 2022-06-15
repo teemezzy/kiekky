@@ -26,7 +26,7 @@ const SectionThree = () => {
 
       <div className="image-crossfade ">
         <video src={exploreVid}
-        autoPlay loop muted
+        autoPlay loop muted playsInline
          className=" m-auto mt-5 lg:ml-[3rem] lg:w-[35rem] "/>
        
       </div>

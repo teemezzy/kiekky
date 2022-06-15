@@ -7,7 +7,7 @@ const SectionFour = () => {
     <div className="">
       <div className="flex flex-col-reverse lg:flex-row lg:mx-32 lg:items-center lg:justify-between bg-white  ">
         <video 
-            autoPlay muted loop
+            autoPlay muted loop playsInline
             className=" lg:mb-5 mx-[4rem] lg:mx-0 md:mx-auto md:w-1/2 lg:w-[40rem]" 
             src={dateVid}/>
           {/* <img src={Form} alt="form" className=" lg:mb-5 mx-[4rem] md:mx-auto md:w-1/2 lg:w-5/12" /> */}

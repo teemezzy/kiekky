@@ -24,7 +24,7 @@ const SectionTwo = () => {
           <video 
           className='w-[35rem] m-auto'
           src={setupProfileVid}
-          autoPlay loop muted
+          autoPlay loop muted playsInline
           />
         </div>
 
