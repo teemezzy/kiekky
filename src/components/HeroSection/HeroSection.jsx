@@ -29,7 +29,7 @@ const HeroSection = () => {
           </div>
 
           <div className="m-auto lg:pt-0 pt-20 lg:m-0 bg-contain xl:w-wHero xl:h-hHero w-wHeroMobile h-hHeroMobile">
-            <video src= {heroVid}  autoPlay loop muted/>
+            <video src= {heroVid}  autoPlay loop muted playsInline/>
           </div>
         </div>
 
