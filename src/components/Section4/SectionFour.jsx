@@ -20,7 +20,7 @@ const SectionFour = () => {
 
          
 
-          <div className=" text-center lg:text-left mx-5">
+          <div className=" text-center lg:text-left mx-5 lg:w-[21rem] ">
             <h1 className="font-medium text-homeProfileFont"> Go On Date </h1>
             <p className="text-[#828282]">
               Our platform allows you to post a date request to know people that

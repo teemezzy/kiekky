@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Faq } from "../assets";
 import { data } from "./data";
 import { Navbar } from "../components";
@@ -11,6 +11,11 @@ const Faqs = () => {
     }
     setActive(index);
   };
+
+  useEffect(() => {
+    document.title ="FAQs | Kiekky"
+  }, [])
+  
 
   return (
     <div className="bg-[#FCFCFC]">
