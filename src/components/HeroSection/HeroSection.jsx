@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
-import { Frame1 } from "../../assets/";
+import { heroVid, Frame1 } from "../../assets/";
 import CustomRegister from "../../container/CustomButton";
 
 const HeroSection = () => {
@@ -28,12 +28,12 @@ const HeroSection = () => {
             />
           </div>
 
-          <div className="img-anime m-auto lg:pt-0 pt-20 mt-28 lg:m-0 bg-contain xl:w-wHero xl:h-hHero w-wHeroMobile h-hHeroMobile">
-            {/* <img src={HeroFrame1} alt="" />  */}
+          <div className="m-auto lg:pt-0 pt-20 lg:m-0 bg-contain xl:w-wHero xl:h-hHero w-wHeroMobile h-hHeroMobile">
+            <video src= {heroVid}  autoPlay loop muted/>
           </div>
         </div>
 
-        <div className="flex m-auto justify-center lg:mt-16">
+        <div className="flex m-auto justify-center lg:mt-16 mt-28">
           <img src={Frame1} alt="" className="" />
         </div>
       </div>
