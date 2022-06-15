@@ -25,12 +25,8 @@ import dateVid from './dateVid.mp4';
 import exploreVid from './exploreVid.mp4';
 import heroVid from './heroVid.mp4';
 import Faq from './faq.png';
-<<<<<<< HEAD
-import setupProfileVid from './setupProfileVid.webm'
-import bgLogin from './bgLogin.png'
-=======
 import setupProfileVid from './setupProfileVid.mp4'
->>>>>>> f50c84a1537307ea25f4e65aec0d8e0ddbad42dd
+import bgLogin from './bgLogin.png'
 export {
   Logo,
   Contactus,
