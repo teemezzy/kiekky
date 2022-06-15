@@ -26,6 +26,7 @@ import exploreVid from './exploreVid.webm';
 import heroVid from './heroVid.webm';
 import Faq from './faq.png';
 import setupProfileVid from './setupProfileVid.webm'
+import bgLogin from './bgLogin.png'
 export {
   Logo,
   Contactus,
@@ -55,4 +56,5 @@ export {
   dateVid,
   heroVid,
   setupProfileVid,
+  bgLogin
 };

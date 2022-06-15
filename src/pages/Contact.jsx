@@ -49,7 +49,7 @@ const Contact = () => {
         </h3>
         <form method="POST" onSubmit={submit} className="m-auto lg:mt-16">
           <label htmlFor="fullname" className="">
-            <p className="text-base">Full Name</p>
+            <p className="text-base mb-1">Full Name</p>
             <input
               type="text"
               {...register("full_name", { required: true })}
@@ -58,7 +58,7 @@ const Contact = () => {
             />
           </label>
           <label htmlFor="email" className="mb-6">
-            <p className="text-base">Email Address</p>
+            <p className="text-base  mb-1">Email Address</p>
             <input
               type="email"
               {...register("email", { required: true })}
@@ -67,7 +67,7 @@ const Contact = () => {
             />
           </label>
           <label htmlFor="phone_no" className="mb-6">
-            <p className="text-base">Phone Number</p>
+            <p className="text-base  mb-1">Phone Number</p>
             <input
               type="number"
               {...register("phoneNumber")}
@@ -77,7 +77,7 @@ const Contact = () => {
           </label>
 
           <label htmlFor="text">
-            <p className="text-base ">Message</p>
+            <p className="text-base  mb-1">Message</p>
             <textarea
               {...register("message", { required: true })}
               placeholder="Enter Message"

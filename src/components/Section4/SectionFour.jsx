@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Contact, dateVid } from "../../assets";
+import { Contact, dateVid } from "../../assets";
 
 
 const SectionFour = () => {
