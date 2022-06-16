@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="mt-10 lg:mt-0 text-2xl lg:flex lg:items-center ">
             <p>Ready to get started?</p>
             <button className="mt-5 lg:mt-0 text-[#6A52FD] bg-white text-xs py-3 px-9 md:mx-2 rounded-md">
-              <NavLink to="/register">Register</NavLink>
+              <NavLink to="/register" onClick={()=> window.scrollTo(0, 0)}>Register</NavLink>
             </button>
           </div>
         </div>
@@ -38,13 +38,13 @@ const Footer = () => {
 
           <div className=" mb-10 ">
             <p className="pb-3">
-              <NavLink to="/about">About</NavLink>{" "}
+              <NavLink to="/about">About</NavLink>
             </p>
             <p
               className="pb-3 text-[#C4C4C4]"
               onClick={() => window.scrollTo(0, 0)}
             >
-              <NavLink to="/">Home</NavLink>{" "}
+              <NavLink to="/">Home</NavLink>
             </p>
             <p
               className="pb-3 text-[#C4C4C4]"
