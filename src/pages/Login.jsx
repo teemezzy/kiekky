@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useNavigate, NavLink} from 'react'
+import React, { useEffect, useState, useNavigate, Link} from 'react'
 import { IconContext } from 'react-icons'
 import {bgLogin} from '../assets'
 import {LoginEmail, LoginPhone} from '../components';
 import{ BsPhone} from "react-icons/bs"
 import{ BiEnvelope} from "react-icons/bi"
+// import {Navbar} from '../components';
 import './Login.css';
 const Login = () => {
 
@@ -21,7 +22,9 @@ const Login = () => {
 
   return (
 
-    <div className="flex ">
+    <div>
+      
+      <div className="flex ">
      <div className="background w-2/5 hidden lg:block "> 
       <img
       className=' h-full'src={bgLogin} alt="Login" /> 
@@ -61,9 +64,12 @@ const Login = () => {
                             }
 
 <p className='text-center mt-5 text:sm '>
-  Don't have an account ? <span className='mx-1 text-[#6A52FD]'>Register  </span>
+  Don't have an account ?
+   <span className='mx-1 text-[#6A52FD]'>
+  <Link to="/register"> Register </Link>
+    
+     </span>
   
-  {/* <NavLink to="/register"> </NavLink> */}
 
  
 </p>
@@ -72,6 +78,8 @@ const Login = () => {
  
     
  </div>
+       </div>
+    
 
 
   )
