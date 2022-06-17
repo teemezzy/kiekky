@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useNavigate, Link} from 'react'
+import React, { useEffect, useState, useNavigate, NavLink} from 'react'
 import { IconContext } from 'react-icons'
 import {bgLogin} from '../assets'
 import {LoginEmail, LoginPhone} from '../components';
@@ -66,9 +66,8 @@ const Login = () => {
 <p className='text-center mt-5 text:sm '>
   Don't have an account ?
    <span className='mx-1 text-[#6A52FD]'>
-  <Link to="/register"> Register </Link>
     
-     </span>
+    Register  </span>
   
 
  
