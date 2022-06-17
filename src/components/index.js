@@ -7,8 +7,8 @@ import SectionFour from "./Section4/SectionFour";
 import SectionFive from "./Section5/SectionFive";
 import Sidebar from "./SideLayout/Sidebar";
 import SideLayout from "./SideLayout/SideLayout";
-import LoginEmail from "./LoginEmail/LoginEmail.jsx";
-import LoginPhone from "./LoginPhoneNo/LoginPhoneNo.jsx";
+import LoginEmail from "./LoginEmail/loginEmail";
+import LoginPhone from "./LoginPhoneNo/loginPhoneNo";
 import MidNav from "./Navbar/MidNav"
 
 
