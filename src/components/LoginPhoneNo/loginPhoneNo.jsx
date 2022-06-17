@@ -1,16 +1,9 @@
-
-
-import React, {useState, useEffect, useRef, useContext
-} from 'react'
+import React, {useState, useEffect, useRef, useContext} from 'react'
 import { bgLogin } from '../../assets';
-// import { useForm } from 'react-hook-form'
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../context/user';
 import axios from 'axios';
 const LoginEmail = () => {
-  // const { register, handleSubmit } = useForm();
-  // const [data, setData] = useState("");
-  // const submit = handleSubmit((data) => setData(data));
 
 const userRef = useRef();
 const errRef = useRef();
