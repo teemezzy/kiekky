@@ -1,7 +1,6 @@
 
 
-import React, {useState, useEffect, useRef, useContext
-} from 'react'
+import React, {useState, useEffect, useRef, useContext} from 'react'
 import { bgLogin } from '../../assets';
 // import { useForm } from 'react-hook-form'
 import { NavLink } from 'react-router-dom';

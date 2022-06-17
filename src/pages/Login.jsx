@@ -66,7 +66,6 @@ const Login = () => {
 <p className='text-center mt-5 text:sm '>
   Don't have an account ?
    <span className='mx-1 text-[#6A52FD]'>
-    
     Register  </span>
   
 
