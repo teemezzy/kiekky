@@ -69,7 +69,7 @@ const Contact = () => {
           <label htmlFor="phone_no" className="mb-6">
             <p className="text-base  mb-1">Phone Number</p>
             <input
-              type="number"
+              type="tel"
               {...register("phoneNumber")}
               placeholder="Enter Phone Number"
               className="lg:w-[961px] w-[269px] pl-5 py-2 border bg-[#F6F4FF] mb-6"

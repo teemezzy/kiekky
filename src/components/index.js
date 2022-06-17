@@ -9,6 +9,7 @@ import Sidebar from "./SideLayout/Sidebar";
 import SideLayout from "./SideLayout/SideLayout";
 import loginEmail from "./LoginEmail/loginEmail.jsx";
 import loginPhone from "./LoginPhoneNo/loginPhoneNo.jsx";
+import MidNav from "./Navbar/MidNav"
 
 
 export {
@@ -22,5 +23,6 @@ export {
   Sidebar,
   Footer,
   loginPhone,
-  loginEmail
+  loginEmail,
+  MidNav
 };
