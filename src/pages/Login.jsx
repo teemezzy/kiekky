@@ -20,7 +20,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="flex ">
+      <div className="flex relative m-auto ">
         <div className="background w-2/5 hidden lg:block ">
           <img className=" h-full" src={bgLogin} alt="Login" />
         </div>
@@ -64,8 +64,8 @@ const Login = () => {
           {toggleState === 1 ? <LoginEmail /> : <LoginPhone />}
 
           <p className="text-center mt-5 text:sm ">
-            Don't have an account ?
-            <Link className="mx-1 text-[#6A52FD]">Register </Link>
+            Don't have an account?
+            <Link to='/register' className="mx-1 text-[#6A52FD]">Register </Link>
           </p>
         </div>
       </div>

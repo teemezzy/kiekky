@@ -28,7 +28,7 @@ const handleSubmit =  (e)=> {
 
   try{
 
-    const response = axios.post("https://api.kiekky.com/users/",
+    const response = axios.post("https://api.kiekky.com/login",
     JSON.stringify({user, pwd}),
     {
       headers: {'content-Type': 'application/json'},
