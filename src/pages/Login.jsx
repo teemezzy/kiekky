@@ -20,7 +20,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="flex relative m-auto ">
+      <div className="flex lg:relative lg:last:m-auto ">
         <div className="background w-2/5 hidden lg:block ">
           <img className=" h-full" src={bgLogin} alt="Login" />
         </div>
@@ -37,7 +37,7 @@ const Login = () => {
           >
             <div
               onClick={() => toggleTab(1)}
-              className={toggleState === 1 ? "login-tab-active" : ""}
+              className={toggleState === 1 ? "login-tab-active" : null}
             >
               <IconContext.Provider
                 value={{ color: "#6a52fd", className: "global-class-name" }}
@@ -49,7 +49,7 @@ const Login = () => {
             </div>
             <div
               onClick={() => toggleTab(2)}
-              className={toggleState === 2 ? "login-tab-active" : ""}
+              className={toggleState === 2 ? "login-tab-active" : null}
             >
               <IconContext.Provider
                 value={{ color: "#6a52fd", className: "global-class-name" }}

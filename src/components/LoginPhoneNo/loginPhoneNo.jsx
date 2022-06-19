@@ -38,15 +38,14 @@ const handleSubmit =  (e)=> {
     setPwd('');
     setSuccess(true);
   } catch(err){
+    
 
   }
 
 }
   return (
  
-    <div >
-     
-
+    <div>
  <div className="form-container  ">
   <div >
   <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} 

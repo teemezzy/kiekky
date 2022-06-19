@@ -4,6 +4,7 @@ import "./App.css";
 import { Footer } from "./components";
 import {
   Home,
+  HomePage,
   TermsConditions,
   Privacy,
   NotFound,
@@ -19,6 +20,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/*" element={<Home />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="contact" element={<Contact />} />

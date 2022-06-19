@@ -1,4 +1,5 @@
 import Home from "./Home";
+import HomePage from "./HomePage";
 import Login from "./Login";
 import Register from "./Register";
 import Privacy from "./Privacy";
@@ -11,6 +12,7 @@ import User from "./User";
 
 export {
   Home,
+  HomePage,
   Login,
   Register,
   User,
