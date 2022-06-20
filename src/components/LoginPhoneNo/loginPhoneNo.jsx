@@ -1,89 +1,67 @@
-import React, {useState, useEffect, useRef, useContext} from 'react'
-import { bgLogin } from '../../assets';
-import { NavLink } from 'react-router-dom';
-import { AuthContext } from '../../context/user';
-import axios from 'axios';
-const LoginEmail = () => {
+import React from "react";
+import { useForm } from "react-hook-form";
 
-const userRef = useRef();
-const errRef = useRef();
+import { connect } from "react-redux";
+import { loginUser } from "../../auth/actions/userActions";
 
-const {setAuth} = useContext(AuthContext)
-
-const [user, setUser] = useState('');
-const [pwd, setPwd] = useState('');
-const [errMsg, setErrMsg] = useState ('');
-const [success, setSuccess] = useState(false);
-
-useEffect(() => {
- userRef.current.focus();
-}, [])
-
-useEffect(() => {
-  setErrMsg('');
-}, [user, pwd])
-
-const handleSubmit =  (e)=> {
-  e.prevent.default(); 
-
-  try{
-
-    const response = axios.post("https://api.kiekky.com/login",
-    JSON.stringify({user, pwd}),
-    {
-      headers: {'content-Type': 'application/json'},
-      withCredentials: true
-    });
-    setUser('');
-    setPwd('');
-    setSuccess(true);
-  } catch(err){
-    
-
-  }
-
-}
-  return (
+const LoginPhoneNo = ({ loginUser }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
  
+  const onSubmit = (data, errors) => {
+    console.log(data);
+    loginUser(data, errors);
+  };
+
+  return (
     <div>
- <div className="form-container  ">
-  <div >
-  <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} 
-  aria-live='assertive' >{errMsg}</p>
-  
+      <div className="form-container ">
+        <div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label>Phone Number</label>
+            <input
+              type="tel"
+              placeholder="Enter Email Here"
+              className="outline-none w-full mt-1 rounded-md py-2 px-5 bg-[#F6F4FF] "
+              {...register("email", {
+                required: true,
+                pattern:
+                  /^(([^<>()\[\]\\.,;\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              })}
+            />
+            {errors.email && (
+              <p className="text-[#e03434] text-sm">Please check the email</p>
+            )}
 
-  <form onSubmit={handleSubmit}>
-    <label htmlFor="email"> Phone Number </label>
-    <input className='w-full outline-none mt-1 rounded-md py-2 px-5 bg-[#F6F4FF] '
-  placeholder='Enter here'
-     type="tel" id="email"  ref={userRef} onChange={ (e)=>
-  setUser(e.target.value)}
-    value={user} required/>
-
-<label  className=' flex justify-between mt-5' htmlFor="password "> Password <span className='text-xs text-[#6A52FD]' >Forgot password?</span> </label>
-
-    <input  className='w-full outline-none mt-1 rounded-md py-2 px-5 bg-[#F6F4FF]' type="password" id="password"  
-     onChange={(e)=> 
-  setPwd(e.target.value) }
-    value={pwd} required placeholder='Enter password'/>
-
-<button className='text-white w-full mt-5 rounded-md py-3 px-auto bg-[#6A52FD] '>
-  Log In</button>
-
-
-</form>
-  </div>
-  
-
-
- </div>
-
-
-
+            <label className=" flex justify-between mt-5">
+              Password{" "}
+              <span className="text-xs text-[#6A52FD]">Forgot password?</span>{" "}
+            </label>
+            <input
+              type="password"
+              placeholder="Enter Password Here"
+              className="w-full outline-none mt-1 rounded-md py-2 px-5 bg-[#F6F4FF]"
+              {...register("password", {
+                required: true,
+                pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/,
+              })}
+            />
+            {errors.password && (
+              <p className="text-[#e03434] text-sm">
+                Password should begin with caps and contain a number
+              </p>
+            )}
+            <button className=" text-white w-full mt-10 rounded-md py-3 px-auto bg-[#6A52FD] ">
+              Log In
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
+  );
+};
 
-  )
-
-  }
-
-export default LoginEmail;
+export default connect(null, { loginUser })(LoginPhoneNo);
