@@ -28,7 +28,7 @@ const Login = () => {
           <img className=" h-full" src={bgLogin} alt="Login" />
         </div>
 
-        <div className="container w-3/5 mx-auto lg:mx-auto  lg:w-1/3 border-1 box-border mt-[4rem] lg:mt-[10rem] ">
+        <div className="container w-4/5 m-auto lg:mx-auto  lg:w-1/3 border-1 box-border mt-[4rem] lg:mt-[10rem] ">
           <h1 className="welcome mb-5 text-xl text-center ">Welcome Back</h1>
 <div>
 
