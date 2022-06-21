@@ -65,8 +65,8 @@ const Register = () => {
                 }`}
                 {...register("full_name", { required: true })}
               />
-              {errors.fullname && (
-                <p className="text-red-600 text-sm">Fullname is required</p>
+              {errors.full_name && (
+                <p className="text-red-600 text-sm">Full Name is required</p>
               )}
             </div>
 
@@ -108,12 +108,12 @@ const Register = () => {
                 type="tel"
                 placeholder="Phone Number"
                 className={`border-2 bg-[#F6F4FF] py-2 pl-4 ${
-                  errors.phonenumber &&
+                  errors.phone &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
                 {...register("phone", { required: true })}
               />
-              {errors.phonenumber && (
+              {errors.phone && (
                 <p className="text-red-600 text-sm">Phone Number is required</p>
               )}
             </div>
