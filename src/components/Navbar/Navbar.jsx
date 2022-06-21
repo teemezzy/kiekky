@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Logo } from "../../assets";
 import MidNav from "./MidNav";
 import CustomRegister from "../../container/CustomButton";
-import CustomLogin from "../../container/CustomButton";
+// import CustomLogin from "../../container/CustomButton";
 
 const Navbar = () => {
   return (

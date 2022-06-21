@@ -1,62 +1,22 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect } from "react";
 import { bgLogin } from "../assets";
 import { Link } from "react-router-dom";
 import { MidNav } from "../components";
-// import { statesandlocals } from "./statesandlocals";
-
-const USER_REGEX = /^[A-z][A-z0-9-_]{4,26}$/;
-// const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+import { useForm } from "react-hook-form";
+// import { ErrorMessage } from "@hookform/error-message";
+import { country } from "./data";
 
 const Register = () => {
-  const userRef = useRef();
-  const errRef = useRef();
-
-  const [user, setUser] = useState("");
-  const [validName, setValidName] = useState(false);
-  const [userFocus, setUserFocus] = useState(false);
-
-  const [password, setPassword] = useState("");
-  const [validPassword, setValidPassword] = useState(false);
-  const [passwordFocus, setPasswordFocus] = useState(false);
-
-  const [matchPassword, setMatchPassword] = useState("");
-  const [validMatch, setValidMatch] = useState(false);
-  const [matchFocus, setMatchFocus] = useState(false);
-
-  const [errMessage, setErrMessage] = useState("");
-  const [success, setSuccess] = useState(false);
-
-  const [stateData, setStateData] = useState(true);
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   // Set Page Title
   useEffect(() => {
     document.title = "Register | Kiekky";
-  }, []);
-
-  // Setting Focus When Component Loads
-  // useEffect(() => {
-  //   userRef.current.focus();
-  // }, []);
-
-  //
-  useEffect(() => {
-    const result = USER_REGEX.test(user);
-    console.log(result);
-    console.log(user);
-    setValidName(result);
-  }, [user]);
-
-  useEffect(() => {
-    fetch("http://localhost:8000/countries")
-      .then((response) => {
-        return response.json();
-      })
-      .then((statesandlocals) => {
-        setStateData(statesandlocals);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
   }, []);
 
   return (
@@ -74,31 +34,44 @@ const Register = () => {
         <div className="relative m-auto rounded-lg w-[29rem] lg:mt-[50px] mt-[150px] lg:px-0 px-[24px]">
           <h3 className="text-4xl">Get Started</h3>
           <p className="mb-9">Please enter the details to create an account</p>
-          <form action="" className="">
+          <form onSubmit={handleSubmit(onSubmit)} className="">
             <div className="flex flex-col mb-4">
-              <label htmlFor="full_name">Full Name:</label>
+              <label htmlFor="fullname">Full Name:</label>
               <input
                 type="text"
                 placeholder="FirstName and LastName"
                 className="border-2 bg-[#F6F4FF] py-2 pl-4"
+                {...register("fullname", { required: true })}
               />
+              {errors.fullname && (
+                <p className="text-red-600 text-sm">Fullname is required</p>
+              )}
             </div>
+
             <div className="flex flex-col mb-4">
               <label htmlFor="username">Username:</label>
               <input
                 type="text"
                 placeholder="Username"
                 className="border-2 bg-[#F6F4FF] py-2 pl-4"
+                {...register("username", { required: true })}
               />
+              {errors.username && (
+                <p className="text-red-600 text-sm">Username is required</p>
+              )}
             </div>
 
             <div className="flex flex-col mb-4">
               <label htmlFor="email">Email:</label>
               <input
-                type="text"
+                type="email"
                 placeholder="Email"
                 className="border-2 bg-[#F6F4FF] py-2 pl-4"
+                {...register("email", { required: true })}
               />
+              {errors.email && (
+                <p className="text-red-600 text-sm">Email is required</p>
+              )}
             </div>
 
             <div className="flex flex-col mb-4">
@@ -107,57 +80,90 @@ const Register = () => {
                 type="tel"
                 placeholder="Phone Number"
                 className="border-2 bg-[#F6F4FF] py-2 pl-4"
+                {...register("phonenumber", { required: true })}
               />
+              {errors.phonenumber && (
+                <p className="text-red-600 text-sm">Phone Number is required</p>
+              )}
             </div>
 
             <div className="flex flex-col mb-4">
               <label htmlFor="">Country:</label>
               <select
-                defaultValue="Select Country"
+                {...register("country")}
+                defaultValue="country"
                 name="country"
                 id="country"
-                className="border-2 bg-[#F6F4FF] py-2 pl-4"
+                className="border-2 bg-[#F6F4FF] py-2 pl-4 w-full"
               >
-                <option selected disabled>
+                <option selected disabled placeholder="Select Country">
                   Select Country
                 </option>
-                <option value="Nigeria">Nigeria</option>
-                <option value="">Ireland</option>
-                <option value="">United States</option>
-                <option value="city">United Kingdom</option>
-                <option value="city">China</option>
-                <option value="city">Ghana</option>
-                <option value="city">Togo</option>
+                {country.map((country) => (
+                  <option
+                    value={country.name}
+                    className="bg-[#F6F4FF] py-2 pl-4"
+                    key={country.id}
+                  >
+                    {country.name}
+                  </option>
+                ))}
               </select>
+              {errors.country && (
+                <p className="text-red-600 text-sm">Country is needed</p>
+              )}
             </div>
 
             <div className="flex flex-col mb-4">
               <label htmlFor="">City:</label>
+
               <select
-                defaultValue="Select City"
+                {...register("city")}
+                defaultValue="city"
                 name="city"
                 id="city"
-                className="border-2 bg-[#F6F4FF] py-2 pl-4"
+                className="border-2 bg-[#F6F4FF] py-2 pl-4 w-full"
               >
                 <option selected disabled>
                   Select City
                 </option>
-                <option value="Nigeria">Nigeria</option>
-                <option value="">Ireland</option>
-                <option value="">United States</option>
-                <option value="city">United Kingdom</option>
-                <option value="city">China</option>
-                <option value="city">Ghana</option>
-                <option value="city">Togo</option>
+                <option value="city">Abia</option>
+                <option value="city">Adamawa</option>
+                <option value="city">Akwa Ibom</option>
+                <option value="city">Anambra</option>
+                <option value="city">Bauchi</option>
+                <option value="city">Benue</option>
+                <option value="city">Borno</option>
+                <option value="city">Cross River</option>
+                <option value="city">Delta</option>
+                <option value="city">Edo</option>
+                <option value="city">Enugu</option>
+                <option value="city">Imo</option>
+                <option value="city">Jigawa</option>
+                <option value="city">Kaduna</option>
+                <option value="city">Katsina</option>
+                <option value="city">Kano</option>
+                <option value="city">Kebbi</option>
+                <option value="city">Kogi</option>
+                <option value="city">Kwara</option>
+                <option value="Lagos">Lagos</option>
+                <option value="city">Niger</option>
               </select>
+              {errors.city && (
+                <p className="text-red-600 text-sm">City is needed</p>
+              )}
             </div>
             <div className="flex flex-col mb-4">
-              <label htmlFor="password">Password:</label>
+              <label htmlFor="">Password:</label>
               <input
                 type="password"
                 placeholder="Password"
                 className="border-2 bg-[#F6F4FF] py-2 pl-4"
+                {...register("password", { required: true })}
               />
+              {errors.password && (
+                <p className="text-red-600 text-sm">Password is required</p>
+              )}
             </div>
 
             <div className="flex flex-col mb-4">
@@ -166,18 +172,25 @@ const Register = () => {
                 type="password"
                 placeholder="Confirm Password"
                 className="border-2 bg-[#F6F4FF] py-2 pl-4"
+                {...register("password", { required: true })}
               />
             </div>
 
             <div className="">
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                {...register("checked", { required: true })}
+              />
               <label className="pl-2 text-[13px]">
                 I guarantee that I am 18 years and above.
               </label>
             </div>
 
             <div className="">
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                {...register("checked", { required: true })}
+              />
               <label className="pl-2 text-[13px]">
                 I have read and accept the privacy policy and the general terms
                 and conditions.
