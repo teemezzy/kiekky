@@ -12,6 +12,9 @@ import {
   About,
   Contact,
   Faqs,
+  ForgotPassword,
+  ResetPassword,
+  AccountSetup
 } from "./pages";
 
 function App() {
@@ -27,6 +30,11 @@ function App() {
         <Route path="terms" element={<TermsConditions />} />
         <Route path="privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="forgotpassword" element={<ForgotPassword />} />
+        <Route path="reset" element={<ResetPassword />} />
+        <Route path="setup" element={<AccountSetup />} />
+
+      
       </Routes>
       <Footer />
     </div>

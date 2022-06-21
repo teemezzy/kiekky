@@ -29,7 +29,7 @@ const Login = () => {
         </div>
 
         <div className="container w-4/5 m-auto lg:mx-auto  lg:w-1/3 border-1 box-border mt-[4rem] lg:mt-[10rem] ">
-          <h1 className="welcome mb-5 text-xl text-center ">Welcome Back</h1>
+          <h1 className="welcome mb-5 text-3xl text-center ">Welcome Back</h1>
 <div>
 
 <div className="mx-auto mb-6 ">

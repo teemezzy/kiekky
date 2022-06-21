@@ -1,14 +1,13 @@
 
 
-import React, {useState, useEffect, useRef, useNavigate} from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 import {connect} from 'react-redux'
 import { loginUser } from '../../auth/actions/userActions';
 const LoginEmail = ({loginUser}) => {
   const { register, handleSubmit , formState:{errors}} = useForm();
-  // const history = useNavigate();
+  const navigate = useNavigate();
   const onSubmit= (data, errors) => {
     console.log(data);
     loginUser(data, errors)
@@ -30,7 +29,7 @@ const LoginEmail = ({loginUser}) => {
    pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })} />
 {errors.email && <p className='text-[#e03434] text-sm'>Please check the email</p> }
 
-  <label className=' flex justify-between mt-5'>Password  <span className='text-xs text-[#6A52FD]' >Forgot password?</span> </label>
+  <label className=' flex justify-between mt-5'>Password  <span className='text-xs text-[#6A52FD]' onClick={()=> navigate('/forgotpassword')} > Forgot password?</span> </label>
   <input type="password" placeholder='Enter here' className='w-full outline-none mt-1 rounded-md py-2 px-5 bg-[#F6F4FF]' {...register('password',{ 
   required:true,
     pattern:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/})}

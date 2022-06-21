@@ -1,0 +1,17 @@
+
+
+input[type='radio']{
+    display: none;
+}
+/* input[type='checkbox']{
+    display: none;
+} */
+
+input[type="radio"]:checked  +label{
+   border: solid 1px blue;
+}
+
+input[type="checkbox"]:checked  +label{
+    border: solid 1px blue;
+ }
+
