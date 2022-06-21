@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { sessionService } from "redux-react-session";
+
 export const loginUser = (credentials, history, errors) => {
   axios
-    .post("https://www.kiekky.com/user/login", credentials, {
+    .post("https://kiekky.com/endpoints/public/api/v2/login", credentials, {
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type" : "application/json",
       },
     })
     .then((response) => {
@@ -20,8 +21,8 @@ export const loginUser = (credentials, history, errors) => {
         } else if (message.include("password")) {
           errors("password", message);
         }
-      } else if (data.status === "SUCCESS") {
-        const userData = data.data[0];
+      } else if (data.status === "success") {
+        const userData = data.data[''];
 
         sessionService
           .saveSession(userData.id)
@@ -29,7 +30,7 @@ export const loginUser = (credentials, history, errors) => {
             sessionService
               .saveUser(userData)
               .then(() => {
-                useNavigate("/homepage");
+                useNavigate("/home");
               })
               .catch((err) => console.error(err));
           })
@@ -37,10 +38,14 @@ export const loginUser = (credentials, history, errors) => {
       }
     })
     .catch((err) => console.error(err));
+    
 };
 
-export const signupUser = (credentials, history, errors) => {};
+export const registerUser = (credentials, history, errors) => {
+
+};
 
 export const logoutUser = (credentials, history, errors) => {
+  return("")
   
 };

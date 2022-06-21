@@ -1,27 +1,9 @@
-import React from "react";
-import {
-  Navbar,
-  HeroSection,
-  SectionTwo,
-  SectionThree,
-  SectionFour,
-  SectionFive,
-  
-} from "../components";
+import React from 'react'
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
-      <HeroSection />
-      <SectionTwo />
-      <SectionThree />
-      <SectionFour />
-      <SectionFive />
-      
+    <div> Home</div>
+  )
+}
 
-    </div>
-  );
-};
-
-export default Home;
+export default Home

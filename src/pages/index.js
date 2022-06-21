@@ -1,5 +1,5 @@
+import KiekkyHome from "./KiekkyHome";
 import Home from "./Home";
-import HomePage from "./HomePage";
 import Login from "./Login";
 import Register from "./Register";
 import Privacy from "./Privacy";
@@ -11,8 +11,8 @@ import Faqs from "./Faqs";
 import User from "./User";
 
 export {
+  KiekkyHome,
   Home,
-  HomePage,
   Login,
   Register,
   User,

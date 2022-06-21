@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components";
 import {
+  KiekkyHome,
   Home,
-  HomePage,
   TermsConditions,
   Privacy,
   NotFound,
@@ -19,8 +19,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/*" element={<Home />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/*" element={<KiekkyHome />} />
+        <Route path="/home" element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="contact" element={<Contact />} />
