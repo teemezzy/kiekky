@@ -45,17 +45,14 @@ const LoginEmail = () => {
         }
       }
 
-
-
   };
 
   return (
     <div>
-      
       <div className="form-container ">
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
-          <p className={errorMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errorMsg}</p>
+          <p className={`text-[#e03434] text-center mb-5 ${errorMsg ? "errmsg" : "offscreen"}`} aria-live="assertive">{errorMsg}</p>
             <label>Email</label>
             <input
               type="email"
@@ -66,7 +63,7 @@ const LoginEmail = () => {
               })}
             />
             {errors.email && (
-              <p className="text-[#e03434] text-sm">Please check the email</p>
+              <p className="text-[#e03434] text-sm">Please check your email</p>
             )}
 
             <label className=" flex justify-between mt-5">
@@ -83,7 +80,7 @@ const LoginEmail = () => {
             />
             {errors.password && (
               <p className="text-[#e03434] text-sm">
-                Password should begin with caps letter and contain a number
+               Please check your password
               </p>
             )}
             <button className=" text-white w-full mt-10 rounded-md py-3 px-auto bg-[#6A52FD] ">
