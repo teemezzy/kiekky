@@ -52,7 +52,7 @@ const LoginEmail = () => {
 
   return (
     <div>
-      <div className="form-container ">
+      <div className="form-container  ">
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
           <p className={`text-[#e03434] text-center mb-5 ${errorMsg ? "errmsg" : "offscreen"}`} aria-live="assertive">{errorMsg}</p>

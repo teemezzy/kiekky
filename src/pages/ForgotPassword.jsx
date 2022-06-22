@@ -29,7 +29,7 @@ const navigate = useNavigate()
 
 <label >Email</label>
 <input type="email" placeholder='Enter email' className='outline-none w-full mt-1 rounded-md py-2 px-5 bg-[#F6F4FF] ' />
-<button className=' text-white w-full mt-10 rounded-md py-3 px-auto bg-[#6A52FD] ' onClick={()=> navigate('/reset')}>
+<button className=' text-white mb-4 w-full mt-10 rounded-md py-3 px-auto bg-[#6A52FD] ' onClick={()=> navigate('/reset')}>
 continue </button>
 </form>
       </div>  </div>

@@ -6,7 +6,7 @@ import './AccountSetup.css'
 
 import React from 'react';
 
-function ResetPassword() {
+function AccountSetup() {
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit= (data, errors) => {
@@ -29,7 +29,7 @@ function ResetPassword() {
             <form onSubmit={handleSubmit(onSubmit)}>
 
 <label >1. Gender</label>
-<p className='text-sm mb-5 text-[gray]'>Check one option that reflexs your gender</p>
+<p className='text-sm mb-5 text-[gray]'>Check one option that reflects your gender</p>
 
 <div className="gender_select flex flex-col mb-8 ">
 
@@ -68,11 +68,11 @@ function ResetPassword() {
 
 
 
-<button className=' text-white w-full mt-10 rounded-md py-3 px-auto bg-[#6A52FD] '>
+<button className=' text-white w-full mt-10 mb-4 rounded-md py-3 px-auto bg-[#6A52FD] '>
 Submit </button>
 </form>
       </div>  </div>
     );
 }
 
-export default ResetPassword;
+export default AccountSetup;

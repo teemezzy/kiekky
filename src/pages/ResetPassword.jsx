@@ -31,7 +31,7 @@ function ResetPassword() {
 <label className=''>Confirm New Password</label>
 <input type="password" placeholder='Re-type new password' className='outline-none w-full mt-1 rounded-md py-2 px-5 bg-[#F6F4FF] ' />
 
-<button className=' text-white w-full mt-10 rounded-md py-3 px-auto bg-[#6A52FD] '>
+<button className=' text-white w-full mt-10 mb-4 rounded-md py-3 px-auto bg-[#6A52FD] '>
 continue </button>
 </form>
       </div>  </div>
