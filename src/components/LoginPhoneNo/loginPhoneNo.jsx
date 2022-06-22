@@ -1,10 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-
+import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginUser } from "../../auth/actions/userActions";
 
 const LoginPhoneNo = ({ loginUser }) => {
+  const navigate = useNavigate() 
   const {
     register,
     handleSubmit,
@@ -38,7 +39,7 @@ const LoginPhoneNo = ({ loginUser }) => {
 
             <label className=" flex justify-between mt-5">
               Password{" "}
-              <span className="text-xs text-[#6A52FD]">Forgot password?</span>{" "}
+              <span className="text-xs text-[#6A52FD]" onClick={()=>navigate('/forgotpassword')}>Forgot password?</span>{" "}
             </label>
             <input
               type="password"

@@ -27,6 +27,8 @@ import heroVid from './heroVid.mp4';
 import Faq from './faq.png';
 import setupProfileVid from './setupProfileVid.mp4'
 import bgLogin from './bgLogin.png'
+import woman from './woman.png'
+import male from './male.png'
 export {
   Logo,
   Contactus,
@@ -56,5 +58,7 @@ export {
   dateVid,
   heroVid,
   setupProfileVid,
-  bgLogin
+  bgLogin,
+  woman,
+  male
 };

@@ -1,7 +1,8 @@
 import { useForm } from 'react-hook-form'
 import { MidNav } from '../components'
-import {bgLogin } from '../assets'
+import {bgLogin, woman, male } from '../assets'
 import './AccountSetup.css'
+
 
 import React from 'react';
 
@@ -32,11 +33,16 @@ function ResetPassword() {
 
 <div className="gender_select flex flex-col mb-8 ">
 
-<input type="radio"  name="gender" id='test' value='I am a woman'  /> 
-<label className=' outline-none mb-5 text-[gray] rounded-md py-2 px-5 bg-[#F6F4FF] ' htmlFor="test">I am a woman</label>
-
 <input type="radio"  name="gender" id='test2' value='I am a man'  /> 
-<label className=' outline-none text-[gray] rounded-md py-2 px-5 bg-[#F6F4FF] ' htmlFor="test2">I am a man</label>
+<label className=' flex flex-row items-center justify-between mb-4 outline-none text-[gray] rounded-md pl-5 bg-[#F6F4FF] ' htmlFor="test2">I am a man
+<img className='h-[2.5rem]  py-[0.6rem] px-[1rem] rounded-r-md' src={male} alt='man-icon'/> </label>
+
+<input type="radio"  name="gender" id='test' value='I am a woman'  /> 
+<label className='flex flex-row items-center justify-between outline-none mb-5 text-[gray] rounded-md  pl-5 bg-[#F6F4FF] ' htmlFor="test">
+  I am a woman 
+<img   className='h-[2.5rem]  py-[0.6rem] px-[1.3rem] rounded-r-md' src={woman} alt='woman-icon'/> </label>
+
+
 
 </div>
 
@@ -45,11 +51,18 @@ function ResetPassword() {
 
 <div className="gender_select flex flex-col ">
 
-<input type="checkbox"  name="genderP" id='test' value='I am a woman'  /> 
-<label className=' outline-none text-[gray] mb-5 rounded-md py-2 px-5 bg-[#F6F4FF] ' htmlFor="test4">I am a woman</label>
+<input className='opacity-0' type="checkbox"  name="genderM" id='test4' value='I am a man'  /> 
+<label className=' flex flex-row items-center justify-between mb-4 outline-none text-[gray] rounded-md pl-5  bg-[#F6F4FF] ' htmlFor="test4">I am a man 
+<img className=' h-[2.5rem]  py-[0.6rem] px-[1rem] rounded-r-md' src={male} alt='man-icon'/> </label>
 
-<input type="checkbox"  name="genderP" id='test2' value='I am a man' /> 
-<label className=' outline-none text-[gray] rounded-md py-2 px-5 bg-[#F6F4FF] ' htmlFor="test4">I am a man</label>
+<input className='opacity-0' type="checkbox"  name="genderF" id='test3' value='I am a woman' />
+<label className=' flex items-center flex-row justify-between outline-none mb-5 text-[gray] rounded-md pl-5 bg-[#F6F4FF] ' htmlFor="test3">
+
+  I am a woman 
+  
+  <img className='h-[2.5rem]  py-[0.6rem] px-[1.3rem] rounded-r-md' src={woman} alt='woman-icon'/> 
+  </label>
+ 
 
 </div>
 

@@ -10,8 +10,16 @@ input[type='radio']{
 input[type="radio"]:checked  +label{
    border: solid 1px blue;
 }
+input[type="radio"]:checked  +label img{
+    background-color: #6A52FD;
+ }
 
 input[type="checkbox"]:checked  +label{
     border: solid 1px blue;
+ }
+
+ input[type="checkbox"]:checked  +label img{
+    
+    background-color: #6A52FD;
  }
 
