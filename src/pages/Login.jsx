@@ -76,7 +76,7 @@ const Login = () => {
           <p className="text-center my-5 text-sm ">
             Don't have an account ?
             <Link to="/register" className="mx-1 text-[#6A52FD]">
-              Register{" "}
+              Register
             </Link>
           </p>
         </div>

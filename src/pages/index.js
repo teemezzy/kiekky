@@ -1,5 +1,5 @@
+import KiekkyHome from "./KiekkyHome";
 import Home from "./Home";
-import HomePage from "./HomePage";
 import Login from "./Login";
 import Register from "./Register";
 import Privacy from "./Privacy";
@@ -9,16 +9,18 @@ import Contact from "./Contact";
 import About from "./About";
 import AccountSetup from './AccountSetup'
 import Faqs from "./Faqs";
-import User from "./User";
+import Community from "./Community";
+import Profile from "./Profile"
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword'
 
 export {
+  KiekkyHome,
   Home,
-  HomePage,
   Login,
   Register,
-  User,
+  Community,
+  Profile,
   Privacy,
   TermsConditions,
   NotFound,

@@ -47,7 +47,7 @@ const LoginPhoneNo = ({ loginUser }) => {
               className="w-full outline-none mt-1 rounded-md py-2 px-5 bg-[#F6F4FF]"
               {...register("password", {
                 required: true,
-                pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/,
+                // pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/,
               })}
             />
             {errors.password && (
