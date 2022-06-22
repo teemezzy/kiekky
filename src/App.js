@@ -3,7 +3,7 @@ import { Routes, Route, useParams } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components";
 import RequireAuth from "./features/auth/RequireAuth";
-import {Sidebar} from './components'
+import { Sidebar } from "./components";
 import {
   KiekkyHome,
   Home,
@@ -20,10 +20,11 @@ import {
   ForgotPassword,
   ResetPassword,
   AccountSetup,
-  OTPVerification
+  OTPVerification,
 } from "./pages";
 
 function App() {
+  
   return (
     <div className="App">
       <Routes>
@@ -41,7 +42,6 @@ function App() {
         <Route path="user_setup" element={<AccountSetup />} />
         <Route path="otp" element={<OTPVerification />} />
         <Route path="sidebar" element={<Sidebar />} />
-      
         <Route path="/home" element={<Home />}>
           <Route element={<RequireAuth />}>
             <Route path="user/:userid" element={<Profile />} />
