@@ -3,15 +3,15 @@ import { useForm } from 'react-hook-form'
 import { MidNav } from '../components'
 import {bgLogin } from '../assets'
 import {Link }from 'react-router-dom'
-
-import React, {useEffect} from 'react'
+// import OTPInput, {ResendOTP} from 'otp-input-react' 
+import React, {useEffect, useState} from 'react'
 
 function OTPVerification() {
   useEffect(() => {
     document.title = "OTP SetUp | Kiekky";
   }, []);
     const { register, handleSubmit, errors } = useForm();
-
+// const [OTP, setOTP] = useState('')
     const onSubmit= (data, errors) => {
         console.log(data);
       }
@@ -39,6 +39,7 @@ function OTPVerification() {
   <input type="text" className='mx-2 outline-none border-[0.1rem] border-[#6A52FD] w-10  rounded-md py-2 text-center bg-[#F6F4FF] ' name="" id="" />
   <input type="text" className='mx-2 outline-none w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2 text-center bg-[#F6F4FF] ' name="" id="" />
   <input type="text" className='mx-2 outline-none  w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2  text-center bg-[#F6F4FF] 'name="" id="" />
+  <input type="text" className='mx-2 outline-none  w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2  text-center bg-[#F6F4FF] 'name="" id="" />
   
  
 </div>
@@ -52,8 +53,29 @@ Verify </button>
               Resend OTP
             </Link>
           </p>
-      </div>  </div>
+      </div> 
+
+</div>
+//       <OTPInput 
+//       value = {OTP}
+//       onChange= {setOTP} 
+//       autoFocus
+//       OTPLength= {6}
+//       otpType='number'
+//       disabled={false}
+//       secure
+//       />
+
+      
+// <ResendOTP handleResendClick= {()=> 
+//   console.log("Resend clicked")} />
+
+     
+
+
+
     );
 }
+
 
 export default OTPVerification;
