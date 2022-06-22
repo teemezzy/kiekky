@@ -40,6 +40,7 @@ function App() {
         <Route path="reset" element={<ResetPassword />} />
         <Route path="user_setup" element={<AccountSetup />} />
         <Route path="otp" element={<OTPVerification />} />
+        <Route path="sidebar" element={<Sidebar />} />
       
         <Route path="/home" element={<Home />}>
           <Route element={<RequireAuth />}>

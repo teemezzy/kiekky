@@ -1,8 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { connect } from "react-redux";
-import { loginUser } from "../../auth/actions/userActions";
+// import { connect } from "react-redux";
+// import { loginUser } from "../../auth/actions/userActions";
 
 const LoginPhoneNo = ({ loginUser }) => {
   const navigate = useNavigate() 
@@ -65,4 +65,4 @@ const LoginPhoneNo = ({ loginUser }) => {
   );
 };
 
-export default connect(null, { loginUser })(LoginPhoneNo);
+export default (LoginPhoneNo);
