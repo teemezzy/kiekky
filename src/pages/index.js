@@ -13,6 +13,7 @@ import Community from "./Community";
 import Profile from "./Profile"
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword'
+import OTPVerification from './OTPVerification'
 
 export {
   KiekkyHome,
@@ -29,5 +30,6 @@ export {
   Contact,
   ForgotPassword,
   ResetPassword,
-  AccountSetup
+  AccountSetup,
+  OTPVerification
 };

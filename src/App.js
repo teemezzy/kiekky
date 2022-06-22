@@ -18,7 +18,8 @@ import {
   Faqs,
   ForgotPassword,
   ResetPassword,
-  AccountSetup
+  AccountSetup,
+  OTPVerification
 } from "./pages";
 
 function App() {
@@ -37,7 +38,8 @@ function App() {
         <Route path="forgotpassword" element={<ForgotPassword />} />
         <Route path="reset" element={<ResetPassword />} />
         <Route path="setup" element={<AccountSetup />} />
-        
+        <Route path="otp" element={<OTPVerification />} />
+      
         <Route path="/home" element={<Home />}>
           <Route element={<RequireAuth />}>
             <Route path="user/:userid" element={<Profile />} />

@@ -2,11 +2,15 @@ import { useForm } from 'react-hook-form'
 import { MidNav } from '../components'
 import {bgLogin, woman, male } from '../assets'
 import './AccountSetup.css'
+import React, {useEffect} from 'react'
 
 
-import React from 'react';
+
 
 function AccountSetup() {
+  useEffect(() => {
+    document.title = "Account SetUp | Kiekky";
+  }, []);
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit= (data, errors) => {
