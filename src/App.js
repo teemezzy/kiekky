@@ -1,13 +1,16 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components";
+import RequireAuth from "./features/auth/RequireAuth";
 import {
   KiekkyHome,
   Home,
   TermsConditions,
   Privacy,
   NotFound,
+  Profile,
+  Community,
   Login,
   Register,
   About,
@@ -20,7 +23,6 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/*" element={<KiekkyHome />} />
-        <Route path="/home" element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="contact" element={<Contact />} />
@@ -29,6 +31,13 @@ function App() {
         <Route path="terms" element={<TermsConditions />} />
         <Route path="privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
+
+        <Route path="/home" element={<Home />}>
+          <Route element={<RequireAuth />}>
+            <Route path="user/:userid" element={<Profile />} />
+            <Route path="community" element={<Community />} />
+          </Route>
+        </Route>
       </Routes>
       <Footer />
     </div>

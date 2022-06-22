@@ -8,14 +8,16 @@ import NotFound from "./NotFound";
 import Contact from "./Contact";
 import About from "./About";
 import Faqs from "./Faqs";
-import User from "./User";
+import Community from "./Community";
+import Profile from "./Profile"
 
 export {
   KiekkyHome,
   Home,
   Login,
   Register,
-  User,
+  Community,
+  Profile,
   Privacy,
   TermsConditions,
   NotFound,

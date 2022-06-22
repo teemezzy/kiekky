@@ -35,7 +35,7 @@ const LoginEmail = () => {
             // isLoading: true until timeout occurs
             setErrorMsg('Server Not Responding, Try again later.');
         } else if (error.originalStatus === 400) {
-            setErrorMsg('Missing Email or Password');
+            setErrorMsg('Please Check Email or Password');
         } else if (error.originalStatus === 401) {
             setErrorMsg('Unauthorized User');
         } else if (error.originalStatus === 404) {
