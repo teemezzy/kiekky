@@ -19,7 +19,8 @@ import {
   Faqs,
   ForgotPassword,
   ResetPassword,
-  AccountSetup
+  AccountSetup,
+  OTPVerification
 } from "./pages";
 
 function App() {
@@ -38,8 +39,8 @@ function App() {
         <Route path="forgotpassword" element={<ForgotPassword />} />
         <Route path="reset" element={<ResetPassword />} />
         <Route path="user_setup" element={<AccountSetup />} />
-        <Route path="sidebar" element={<Sidebar />} />
-        
+        <Route path="otp" element={<OTPVerification />} />
+      
         <Route path="/home" element={<Home />}>
           <Route element={<RequireAuth />}>
             <Route path="user/:userid" element={<Profile />} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useForm } from "react-hook-form";
 import { MidNav } from "../components";
 import { bgLogin, woman, male } from "../assets";
@@ -6,9 +6,13 @@ import "./AccountSetup.css";
 import { IoMdMale } from "react-icons/io";
 import { IoMdFemale } from "react-icons/io";
 
-function AccountSetup() {
-  const { register, handleSubmit, errors } = useForm();
 
+function AccountSetup() {
+  useEffect(() => {
+    document.title = "Account SetUp | Kiekky";
+  }, []);
+  
+  const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data, errors) => {
     console.log(data);
   };
