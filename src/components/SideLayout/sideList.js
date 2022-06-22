@@ -1,9 +1,9 @@
 import React from "react";
-import { MdDashboard } from "react-icons/md";
-import { HiOutlineSave } from "react-icons/hi";
-import { BsSafe } from "react-icons/bs";
-import { BiIdCard } from "react-icons/bi";
-import { BsCalculator } from "react-icons/bs";
+import { BsHouseDoor } from "react-icons/bs";
+import { FiSettings } from "react-icons/fi";
+import { FiHeart } from "react-icons/fi";
+import { BiEnvelope } from "react-icons/bi";
+import { BiWallet} from "react-icons/bi";
 
 
 export const sideList = [
@@ -12,7 +12,7 @@ export const sideList = [
     id: 1,
     link: "Home",
     path: "/home",
-    // icon: <MdDashboard />,
+    icon: <BsHouseDoor />,
   },
 
   {
@@ -26,25 +26,25 @@ export const sideList = [
     id: 3,
     link: "Dates",
     path: "/dates",
-    // icon: <BsSafe />,
+    icon: <FiHeart />,
   },
   {
     id: 4,
-    link: "Message",
+    link: "Messages",
     path: "/message",
-    // icon: <BiIdCard />,
+    icon: <BiEnvelope />,
   },
   {
     id: 5,
     link: "Wallet",
     path: "/wallet",
-    // icon: <BsCalculator />,
+    icon: <BiWallet />,
   },
   {
     id: 6,
     link: "Settings",
     path: "/settings",
-    // icon: <BsCalculator />,
+    icon: <FiSettings />,
   },
  
 ];
