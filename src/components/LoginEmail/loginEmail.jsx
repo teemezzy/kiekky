@@ -5,9 +5,6 @@ import {useNavigate} from 'react-router-dom'
 import { setCredentials } from "../../features/auth/authSlice";
 import { useLoginMutation } from "../../features/auth/authApiSlice";
 
-// import { login } from "../../redux/userSlice";
-// import { useParams } from "react-router-dom";
-
 const LoginEmail = () => {
  
   const [email, setEmail] = useState('')
