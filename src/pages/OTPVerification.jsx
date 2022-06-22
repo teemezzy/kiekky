@@ -34,7 +34,7 @@ function OTPVerification() {
 
 <div className="Otp_input flex justify-center ">
  
-  <input  type="text"  className=' outline-none w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2 text-center bg-[#F6F4FF] ' autoFocus name="" id="" />
+  <input  type="text"  className=' mx-2 outline-none w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2 text-center bg-[#F6F4FF] ' autoFocus name="" id="" />
   <input type="text" className='mx-2 outline-none w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2 text-center bg-[#F6F4FF] ' name="" id="" />
   <input type="text" className='mx-2 outline-none border-[0.1rem] border-[#6A52FD] w-10  rounded-md py-2 text-center bg-[#F6F4FF] ' name="" id="" />
   <input type="text" className='mx-2 outline-none w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2 text-center bg-[#F6F4FF] ' name="" id="" />
