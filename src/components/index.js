@@ -12,6 +12,7 @@ import LoginPhone from "./LoginPhoneNo/loginPhoneNo";
 import MidNav from "./Navbar/MidNav"
 
 
+
 export {
   Navbar,
   HeroSection,
@@ -24,5 +25,6 @@ export {
   Footer,
   LoginPhone,
   LoginEmail,
-  MidNav
+  MidNav, 
+  
 };

@@ -3,23 +3,26 @@
 input[type='radio']{
     display: none;
 }
-/* input[type='checkbox']{
-    display: none;
-} */
+
 
 input[type="radio"]:checked  +label{
    border: solid 1px blue;
+
 }
-input[type="radio"]:checked  +label img{
+input[type="radio"]:checked  +label span{
     background-color: #6A52FD;
+    color: #fff;
  }
 
 input[type="checkbox"]:checked  +label{
     border: solid 1px blue;
+   
  }
 
- input[type="checkbox"]:checked  +label img{
+ input[type="checkbox"]:checked  +label span{
     
     background-color: #6A52FD;
+    color: #fff;
+    
  }
 

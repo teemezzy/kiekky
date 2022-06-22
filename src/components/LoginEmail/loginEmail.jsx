@@ -5,9 +5,6 @@ import {useNavigate} from 'react-router-dom'
 import { setCredentials } from "../../features/auth/authSlice";
 import { useLoginMutation } from "../../features/auth/authApiSlice";
 
-// import { login } from "../../redux/userSlice";
-// import { useParams } from "react-router-dom";
-
 const LoginEmail = () => {
  
   const [email, setEmail] = useState('')
@@ -52,7 +49,7 @@ const LoginEmail = () => {
 
   return (
     <div>
-      <div className="form-container  ">
+      <div className="form-container ">
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
           <p className={`text-[#e03434] text-center mb-5 ${errorMsg ? "errmsg" : "offscreen"}`} aria-live="assertive">{errorMsg}</p>

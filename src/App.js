@@ -3,6 +3,7 @@ import { Routes, Route, useParams } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components";
 import RequireAuth from "./features/auth/RequireAuth";
+import {Sidebar} from './components'
 import {
   KiekkyHome,
   Home,
@@ -37,7 +38,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="forgotpassword" element={<ForgotPassword />} />
         <Route path="reset" element={<ResetPassword />} />
-        <Route path="setup" element={<AccountSetup />} />
+        <Route path="user_setup" element={<AccountSetup />} />
         <Route path="otp" element={<OTPVerification />} />
       
         <Route path="/home" element={<Home />}>

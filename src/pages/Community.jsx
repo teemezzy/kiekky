@@ -1,9 +1,9 @@
 import React from 'react'
 
-const User = () => {
+const Community = () => {
   return (
-    <div>User</div>
+    <div> Community</div>
   )
 }
 
-export default User
+export default Community
