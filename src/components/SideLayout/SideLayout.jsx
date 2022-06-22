@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const SideLayout = () => {
   return (
     <div>
-      <div className="w-60 fixed">
+      <div className="w-60 fixed bg-[#E5E5E5] ">
         <Sidebar />
         <Outlet />
       </div>

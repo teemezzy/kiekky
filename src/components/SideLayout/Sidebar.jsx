@@ -18,7 +18,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="sidebar">
+      <div className="sidebar bg-[#E5E5E5] w-[15rem]">
         <div className="p-10">
           <img src='' alt="" className="w-16" />
           <p>Valerie Walker</p>
