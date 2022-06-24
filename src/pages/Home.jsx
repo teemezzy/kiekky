@@ -72,7 +72,7 @@ const Home = () => {
 
 </div>
 
-<div className="border-2 rounded-lg "> 
+<div className="border-2 pt-4 rounded-lg "> 
 <div className="postItem  items-center mb-7 ">
   <div className="username flex items-center mx-5 ">
     <div className="img-container">

@@ -33,32 +33,32 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/*" element={<KiekkyHome />} />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="about" element={<About />} />
-        <Route path="faqs" element={<Faqs />} />
-        <Route path="terms" element={<TermsConditions />} />
-        <Route path="privacy" element={<Privacy />} />
+        <Route  path="/" element={<KiekkyHome />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/faqs" element={<Faqs />} />
+        <Route path="/terms" element={<TermsConditions />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="forgotpassword" element={<ForgotPassword />} />
-        <Route path="reset" element={<ResetPassword />} />
-        <Route path="user_setup" element={<AccountSetup />} />
-        <Route path="otp" element={<OTPVerification />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/reset" element={<ResetPassword />} />
+        <Route path="/user_setup" element={<AccountSetup />} />
+        <Route path="/otp" element={<OTPVerification />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="/wallet" element={<Wallet />} /> */}
+        {/* <Route path="community" element={<Community />} /> */}
+
+
+        <Route path="/messages" element={<Messages />} />
+        <Route path="/dates" element={<Dates />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="/wallet" element={<Wallet />} />
-
-
-        {/* <Route path="messages" element={<Messages />} />
-        <Route path="dates" element={<Dates />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="wallet" element={<Wallet />} /> */}
 
         <Route path="/home" element={<Home />}>
           <Route element={<RequireAuth />}>
             <Route path="user/:userid" element={<Profile />} />
-            <Route path="community" element={<Community />} />
           </Route>
         </Route>
       </Routes>

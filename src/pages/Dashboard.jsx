@@ -27,15 +27,15 @@ useEffect(()=> {
             </div>
 
             <div className="pages">
+{/* 
+            <Routes> 
+                <Route exact path="/" element={<Navigate to= "/home" />} />
+                        <Route path="/home" element={<Home />} />
 
-{/*     <Routes> <Route path="/" element={<Navigate to="/dashboard" />} />
                         <Route path="/dates" element={<Dates />} />
                         <Route path="/settings" element={<Settings />} />
-                        <Route path="/wallet" element={<Wallet />} />
+                        <Route path="/wallet/*" element={<Wallet />} />
                     </Routes> */}
-               
-    
-               
             </div>
             
         </div>  
