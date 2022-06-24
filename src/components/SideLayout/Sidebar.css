@@ -1,16 +1,20 @@
 .sidebar {
-    /* background-color: #e5e5e5; */
-    height: 100vh;
+    /* background-color: #e5e5e5;  */
+    /* height: 50vh; */
   }
   .link {
-    background-image: gray;
+    /* background-image: gray;
     margin-bottom: 0rem;
     
     border-radius: 20px;
-    color: #ffff;
+    color: #ffff; */
   }
   
   .sidelayout{
     /* background-color:#E5E5E5; */
-    height: 100vh;
+    /* height: 100vh; */
+  }
+
+  .active{
+    border-left: 2px solid #6a52fd;
   }

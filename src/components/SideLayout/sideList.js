@@ -1,7 +1,7 @@
 import React from "react";
-import { BsHouseDoor } from "react-icons/bs";
+import { BsHouseDoor, BsGrid1X2 } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
-import { FiHeart } from "react-icons/fi";
+import { FiHeart , FiLogOut  } from "react-icons/fi";
 import { BiEnvelope } from "react-icons/bi";
 import { BiWallet} from "react-icons/bi";
 
@@ -19,7 +19,7 @@ export const sideList = [
     id: 2,
     link: "Community",
     path: "/community",
-    // icon: <HiOutlineSave />,
+    icon: <BsGrid1X2 />,
   },
 
   {
@@ -31,7 +31,7 @@ export const sideList = [
   {
     id: 4,
     link: "Messages",
-    path: "/message",
+    path: "/messages",
     icon: <BiEnvelope />,
   },
   {
@@ -45,6 +45,12 @@ export const sideList = [
     link: "Settings",
     path: "/settings",
     icon: <FiSettings />,
+  },
+  {
+    id: 7,
+    link: "Logout",
+    path: "/logout",
+    icon: <FiLogOut />,
   },
  
 ];

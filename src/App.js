@@ -21,6 +21,11 @@ import {
   ResetPassword,
   AccountSetup,
   OTPVerification,
+  Dates,
+  Messages,
+  Wallet,
+  Settings,
+  Dashboard
 } from "./pages";
 
 function App() {
@@ -41,7 +46,15 @@ function App() {
         <Route path="reset" element={<ResetPassword />} />
         <Route path="user_setup" element={<AccountSetup />} />
         <Route path="otp" element={<OTPVerification />} />
-        <Route path="sidebar" element={<Sidebar />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/wallet" element={<Wallet />} />
+
+
+        {/* <Route path="messages" element={<Messages />} />
+        <Route path="dates" element={<Dates />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="wallet" element={<Wallet />} /> */}
+
         <Route path="/home" element={<Home />}>
           <Route element={<RequireAuth />}>
             <Route path="user/:userid" element={<Profile />} />

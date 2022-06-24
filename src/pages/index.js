@@ -14,8 +14,12 @@ import Profile from "./Profile"
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword'
 import OTPVerification from './OTPVerification'
-
-export {
+import Dates from './Dates'
+import Messages from './Messages'
+import Wallet from './Wallet'
+import Settings from './Settings'
+import Dashboard from './Dashboard'
+ export {
   KiekkyHome,
   Home,
   Login,
@@ -31,5 +35,10 @@ export {
   ForgotPassword,
   ResetPassword,
   AccountSetup,
-  OTPVerification
+  OTPVerification,
+  Settings,
+  Messages,
+  Wallet,
+Dates,
+Dashboard
 };
