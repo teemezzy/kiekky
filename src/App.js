@@ -24,7 +24,6 @@ import {
 } from "./pages";
 
 function App() {
-  
   return (
     <div className="App">
       <Routes>
@@ -42,11 +41,10 @@ function App() {
         <Route path="user_setup" element={<AccountSetup />} />
         <Route path="otp" element={<OTPVerification />} />
         <Route path="sidebar" element={<Sidebar />} />
-        <Route path="/home" element={<Home />}>
-          <Route element={<RequireAuth />}>
-            <Route path="user/:userid" element={<Profile />} />
-            <Route path="community" element={<Community />} />
-          </Route>
+        <Route path="/home" element={<Home />} />
+        <Route element={<RequireAuth />}>
+          <Route path="user/:id" element={<Profile />} />
+          <Route path="community" element={<Community />} />
         </Route>
       </Routes>
       <Footer />

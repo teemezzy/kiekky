@@ -6,9 +6,11 @@ import { setCredentials } from "../../features/auth/authSlice";
 import { useLoginMutation } from "../../features/auth/authApiSlice";
 
 const LoginEmail = () => {
-  const [email, setEmail] = useState("");
+  const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+ 
+
 
   const {
     register,
@@ -19,14 +21,18 @@ const LoginEmail = () => {
   const navigate = useNavigate();
   const [login, { isLoading }] = useLoginMutation();
   const dispatch = useDispatch();
-  const onSubmit = async (e, data, errors) => {
-    console.log(data);
-    setCredentials(data, errors);
+  const onSubmit = async ( data, errors) => {
+    console.log(data)
+    setCredentials(data, errors ) 
+  
+
+    
+    
 
     try {
-      const userData = await login({ email, password }).unwrap();
-      dispatch(setCredentials({ ...userData, email }));
-      setEmail("");
+      const userData = await login({ user, password }).unwrap();
+      dispatch(setCredentials({ ...userData, user}));
+      setUser("");
       setPassword("");
       navigate("/home");
     } catch (error) {
@@ -60,10 +66,10 @@ const LoginEmail = () => {
             </p>
             <label>Email</label>
             <input
-              type="email"
+              type="text"
               placeholder="Enter here"
               className="outline-none w-full mt-1 rounded-md py-2 px-5 bg-[#F6F4FF] "
-              {...register("email", {
+              {...register("username", {
                 required: true,
               })}
             />
