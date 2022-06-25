@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Sidebar } from "../components";
 
 const Community = () => {
   return (
-    <div> Community</div>
-  )
-}
+    <div className='flex'>
+      <Sidebar />
 
-export default Community
+      <div>Community</div>
+    </div>
+  );
+};
+
+export default Community;

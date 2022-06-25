@@ -1,11 +1,13 @@
-import React from 'react';
-
+import React from "react";
+import { Sidebar } from "../components";
 function Wallet(props) {
-    return (
-        <div>
-            Wallet
-        </div>
-    );
+  return (
+    <div className="flex">
+      <Sidebar />
+
+      <div>Wallet</div>
+    </div>
+  );
 }
 
 export default Wallet;

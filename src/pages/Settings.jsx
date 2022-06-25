@@ -1,10 +1,12 @@
 import React from 'react';
-
+import {Sidebar} from '../components'
 function Settings(props) {
     return (
-        <div>
-            Settings
-        </div>
+        <div className="flex">
+        <Sidebar />
+  
+        <div>Settings</div>
+      </div>
     );
 }
 

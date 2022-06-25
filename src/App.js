@@ -1,9 +1,10 @@
 import React from "react";
 import { Routes, Route, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./App.css";
 import { Footer } from "./components";
-import RequireAuth from "./features/auth/RequireAuth";
-import { Sidebar } from "./components";
+// import RequireAuth from "./features/auth/RequireAuth";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 import {
   KiekkyHome,
   Home,
@@ -11,6 +12,7 @@ import {
   Privacy,
   NotFound,
   Profile,
+  Dashboard,
   Community,
   Login,
   Register,
@@ -21,13 +23,19 @@ import {
   ResetPassword,
   AccountSetup,
   OTPVerification,
+  Dates,
+  Messages,
+  Wallet,
+  Settings,
 } from "./pages";
 
 function App() {
+  let params = useParams("");
+
   return (
     <div className="App">
       <Routes>
-        <Route path="/*" element={<KiekkyHome />} />
+        <Route exact path ='/' element={<KiekkyHome />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="contact" element={<Contact />} />
@@ -36,16 +44,23 @@ function App() {
         <Route path="terms" element={<TermsConditions />} />
         <Route path="privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="forgotpassword" element={<ForgotPassword />} />
+        <Route path="forgot-password" element={<ForgotPassword />} />
         <Route path="reset" element={<ResetPassword />} />
-        <Route path="user_setup" element={<AccountSetup />} />
-        <Route path="otp" element={<OTPVerification />} />
-        <Route path="sidebar" element={<Sidebar />} />
-        <Route path="/home" element={<Home />} />
-        <Route element={<RequireAuth />}>
-          <Route path="user/:id" element={<Profile />} />
+
+        {/* Protected Routes */}
+        {/* <Route element={<ProtectedRoutes />}> */}
+          <Route path="user_setup" element={<AccountSetup />} />
+          <Route path="otp" element={<OTPVerification />} />
+          <Route path="home" element={<Home />} />
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
           <Route path="community" element={<Community />} />
-        </Route>
+          <Route path="messages" element={<Messages />} />
+          <Route path="dates" element={<Dates />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="wallet" element={<Wallet />} />
+          <Route element={<Dashboard />} />
+          <Route path="user" element={<Profile />} />
+        {/* </Route> */}
       </Routes>
       <Footer />
     </div>

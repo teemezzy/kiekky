@@ -10,7 +10,7 @@ import SideLayout from "./SideLayout/SideLayout";
 import LoginEmail from "./LoginEmail/loginEmail";
 import LoginPhone from "./LoginPhoneNo/loginPhoneNo";
 import MidNav from "./Navbar/MidNav"
-
+// import ProtectedRoutes from './ProtectedRoutes.js'
 
 
 export {
@@ -26,5 +26,6 @@ export {
   LoginPhone,
   LoginEmail,
   MidNav, 
+  // ProtectedRoutes
   
 };

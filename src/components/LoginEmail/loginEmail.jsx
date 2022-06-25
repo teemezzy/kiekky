@@ -1,55 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { setCredentials } from "../../features/auth/authSlice";
-import { useLoginMutation } from "../../features/auth/authApiSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useLocation } from "react-router-dom";
+import { login } from "../../Redux/Actions/authHead";
 
 const LoginEmail = () => {
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
- 
-
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const navigate = useNavigate();
-  const [login, { isLoading }] = useLoginMutation();
-  const dispatch = useDispatch();
-  const onSubmit = async ( data, errors) => {
-    console.log(data)
-    setCredentials(data, errors ) 
   
 
-    
-    
-
-    try {
-      const userData = await login({ user, password }).unwrap();
-      dispatch(setCredentials({ ...userData, user}));
-      setUser("");
-      setPassword("");
-      navigate("/home");
-    } catch (error) {
-      if (!error?.originalStatus) {
-        // isLoading: true until timeout occurs
-        setErrorMsg("Server Not Responding, Try again later.");
-      } else if (error.originalStatus === 400) {
-        setErrorMsg("Please Check Email or Password");
-      } else if (error.originalStatus === 401) {
-        setErrorMsg("Unauthorized User");
-      } else if (error.originalStatus === 404) {
-        setErrorMsg("User Not Found");
-      } else {
-        setErrorMsg("Login Failed");
-      }
-    }
+  const [errorMsg, setErrorMsg] = useState("");
+  const [isSignup, setIsSignup] = useState(false);
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { message } = useSelector((state) => state.message);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const redirect = location.search ? location.search.split("=")[1] : "/home";
+  
+  const methods = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = methods;
+  
+  const onSubmit = (data) => {
+    console.log(data);
+    dispatch(login(data.email, data.password));
   };
+
+
+    useEffect(() => {
+      if (isLoggedIn) {
+        navigate(redirect);
+      }
+    }, [isLoggedIn, navigate, redirect]);
+
+
+
+
 
   return (
     <div>
@@ -69,7 +62,7 @@ const LoginEmail = () => {
               type="text"
               placeholder="Enter here"
               className="outline-none w-full mt-1 rounded-md py-2 px-5 bg-[#F6F4FF] "
-              {...register("username", {
+              {...register("email", {
                 required: true,
               })}
             />

@@ -6,7 +6,7 @@ import {
   SectionThree,
   SectionFour,
   SectionFive,
-  
+  Footer,
 } from "../components";
 
 const KiekkyHome = () => {
@@ -18,6 +18,7 @@ const KiekkyHome = () => {
       <SectionThree />
       <SectionFour />
       <SectionFive />
+      <Footer />
       
 
     </div>
