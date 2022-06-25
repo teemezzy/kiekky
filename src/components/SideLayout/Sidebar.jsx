@@ -6,7 +6,7 @@ import { FiLogOut } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 
-const Sidebar = () => {
+const Sidebar = ({children}) => {
   const [isActive, setIsActive] = useState(1);
   const sideClick = (id) => {
     setIsActive(id);

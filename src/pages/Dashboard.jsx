@@ -10,7 +10,7 @@ import Settings from './Settings'
 import Home from './Home'
 
 
-function Dashboard() {
+function Dashboard({children}) {
 
     const pathname = useLocation();
 useEffect(()=> {
@@ -20,7 +20,7 @@ useEffect(()=> {
 
 
     return (
-        <div className=' bg-[#E5E5E5] h-[100vh]'>
+        <div className=' flex bg-[#E5E5E5] h-[100%]'>
             <div className="  sidebar_prt pt-8">
             <Sidebar />
 
@@ -37,7 +37,7 @@ useEffect(()=> {
                         <Route path="/wallet/*" element={<Wallet />} />
                     </Routes> */}
             </div>
-            
+            <main> {children}</main>
         </div>  
          );}
 export default Dashboard;
