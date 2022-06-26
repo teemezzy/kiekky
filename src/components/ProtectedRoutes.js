@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-const useAuth = () => {
+export const useAuth = () => {
   const user = window.localStorage.getItem("user");
   if (user) {
     return true;
@@ -11,5 +11,5 @@ const useAuth = () => {
 };
 export default function ProtectedRoutes({ children }) {
   const auth = useAuth();
-  return auth ? children (<Outlet/>) : <Navigate to="/login" />;
+  return auth ? children (<Outlet />) : <Navigate to="/login" />;
 }

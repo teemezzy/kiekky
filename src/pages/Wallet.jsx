@@ -3,7 +3,7 @@ import { Sidebar } from "../components";
 function Wallet(props) {
   return (
     <div className="flex">
-      <Sidebar />
+      
 
       <div>Wallet</div>
     </div>
