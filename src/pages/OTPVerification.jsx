@@ -31,9 +31,9 @@ const handleChange = (OTP) => setOTP(OTP);
           <img className=" h-full" src={bgLogin} alt="Login" />
         </div>
 
-        <div className="container w-4/5 md:w-1/2 m-auto lg:mx-auto  lg:w-1/3 border-1 box-border mt-[4rem] lg:mt-[10rem] ">
-          <h1 className="welcome text-3xl pt-[3rem] mb-2 font-bold ">Get Started</h1>
-          <p className='text-sm mb-5 text-[gray]'>Kindly provide the required details to set up your account.</p>
+      <div className="background w-2/5 hidden lg:block ">
+        <img className=" h-full" src={bgLogin} alt="Login" />
+      </div>
 
           
             <form 
@@ -67,15 +67,7 @@ Verify </button>
           </p>
       </div> 
 
-</div>
-
-
-     
-
-
-
-    );
+ );
 }
-
 
 export default OTPVerification;

@@ -1,9 +1,9 @@
 import React from "react";
-import { Routes, Route, useParams, Navigate } from "react-router-dom";
+import { Routes, Route, useParams, Navigate, Outlet } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components";
-import RequireAuth from "./features/auth/RequireAuth";
-import { Sidebar } from "./components";
+// import RequireAuth from "./features/auth/RequireAuth";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 import {
   KiekkyHome,
   Home,
@@ -11,6 +11,7 @@ import {
   Privacy,
   NotFound,
   Profile,
+  Dashboard,
   Community,
   Login,
   Register,
@@ -25,53 +26,49 @@ import {
   Messages,
   Wallet,
   Settings,
-  Dashboard
+  Logout,
 } from "./pages";
 
 function App() {
-  
+  let params = useParams("");
+
   return (
     <div className="App">
       <Routes>
-        <Route  path="/" element={<KiekkyHome />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/faqs" element={<Faqs />} />
-        <Route path="/terms" element={<TermsConditions />} />
-        <Route path="/privacy" element={<Privacy />} />
+        <Route exact path="/" element={<KiekkyHome />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="about" element={<About />} />
+        <Route path="faqs" element={<Faqs />} />
+        <Route path="terms" element={<TermsConditions />} />
+        <Route path="privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/reset" element={<ResetPassword />} />
-        <Route path="/user_setup" element={<AccountSetup />} />
-        <Route path="/otp" element={<OTPVerification />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        {/* <Route path="community" element={<Community />} /> */}
-
+        <Route path="forgot-password" element={<ForgotPassword />} />
+        <Route path="reset" element={<ResetPassword />} />
+        <Route path="user_setup" element={<AccountSetup />} />
+        <Route path="otp" element={<OTPVerification />} />
+        {/* <Route path="/wallet" element={<Wallet />} /> */}
 
         {/* <Route path="/home" element={<Home />}> */}
-          <Route element={<RequireAuth />}>
-            <Route path="user/:userid" element={<Profile />} />
-          </Route>
-        {/* </Route> */}
       </Routes>
 
-      <Dashboard>    
-<Routes>   
-  
-      <Route path="/dashboard" element={<Navigate to='/home'  />} />
-    <Route path="/home" element={<Home />} />
-<Route path="/messages" element={<Messages />} />
-<Route path="/dates" element={<Dates />} />
-<Route path="/settings" element={<Settings />} />
-<Route path="/wallet" element={<Wallet />} />   
-        </Routes>
-        </Dashboard> 
-
-
- 
-      {/* <Footer /> */}
+      <Dashboard>
+        {/* <ProtectedRoutes> */}
+          <Routes>
+            {/* <Route element={<Navigate to='/home'  />} /> */}
+            <Route path="home" element={<Home />} />
+            <Route path="community" element={<Community />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="dates" element={<Dates />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="wallet" element={<Wallet />} />
+            <Route path="logout" element={<Logout />} />
+            <Route path="user/:userid" element={<Profile />} />
+          </Routes>
+        {/* </ProtectedRoutes> */}
+      </Dashboard>
+      <Footer />
     </div>
   );
 }

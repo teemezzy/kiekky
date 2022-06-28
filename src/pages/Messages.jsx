@@ -1,10 +1,12 @@
 import React from 'react';
+import {Sidebar} from '../components'
 
 function Messages(props) {
     return (
-        <div className='ml-[16rem]'>
-            Messages
-        </div>
+        <div className="flex">
+        
+        <div>Messages</div>
+      </div>
     );
 }
 

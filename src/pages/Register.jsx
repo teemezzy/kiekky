@@ -3,7 +3,6 @@ import { bgLogin } from "../assets";
 import { Link } from "react-router-dom";
 import { MidNav } from "../components";
 import { useForm } from "react-hook-form";
-// import { ErrorMessage } from "@hookform/error-message";
 import { country } from "./data";
 
 const Register = () => {
@@ -18,6 +17,10 @@ const Register = () => {
 //     "country": "Nigeria"
    
 // }
+
+useEffect(() => {
+  
+})
 
 
 

@@ -15,8 +15,6 @@ import Post from "./Post/Post"
 import Feeds from "./Feeds/Feeds"
 import Recommendations from "./Recomendations/Recommendations";
 
-
-
 export {
   Navbar,
   HeroSection,
