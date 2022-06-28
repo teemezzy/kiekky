@@ -5,9 +5,10 @@ import { MidNav } from "../components";
 import { useForm } from "react-hook-form";
 import { country } from "./data";
 import { useDispatch, useSelector } from "react-redux";
-// import  registerUser  from "../Redux/features/authService";
+import { regUser } from "../Redux/features/authSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { regUser} from "../Redux/features/authSlice";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -16,26 +17,7 @@ const Register = () => {
   );
 
   console.log(user, isError);
-  let navigate = useNavigate()
-  //   {
-  //     "email": "toromo.ade06@gmail.com",
-  //     "password": "mystyle1",
-  //     "full_name": "Toromo Adegboyega",
-  //     "phone": "08133429917",
-  //     "username": "torth",
-  //     "city": "Lagos",
-  //     "country": "Nigeria"
-
-  // }
-
-  useEffect(() => {
-    if (isError ) {
-      // toast.error(message)
-    }
-    if (isSuccess) {
-      navigate ('/login')
-    }
-  });
+  let navigate = useNavigate();
 
   // Handle Form Event
   const {
@@ -48,7 +30,7 @@ const Register = () => {
   const onSubmit = (data) => {
     let userdata = {
       full_name: data.full_name,
-      email: data.email,     
+      email: data.email,
       username: data.username,
       phone: data.phone,
       password: data.password,
@@ -58,7 +40,15 @@ const Register = () => {
 
     dispatch(regUser(userdata));
   };
-
+  
+  useEffect(() => {
+    if (isError) {
+      // toast.error(message)
+    }
+    if (isSuccess) {
+      navigate("/user_otp");
+    }
+  });
   // Set Page Title
   useEffect(() => {
     document.title = "Register | Kiekky";
@@ -80,6 +70,7 @@ const Register = () => {
           <h3 className="text-4xl">Get Started</h3>
           <p className="mb-9">Please enter the details to create an account</p>
           <form onSubmit={handleSubmit(onSubmit)} className="">
+                  <ToastContainer />
             <div className="flex flex-col mb-4">
               <label htmlFor="full_name" className="text-[15px]">
                 Full Name:

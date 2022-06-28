@@ -46,14 +46,14 @@ export const sideList = [
     path: "/settings",
     icon: <FiSettings />,
   },
-  {
-    id: 7,
-    link: "Logout",
-    path: "/logout",
-    icon: <FiLogOut />,
-    handleClick: localStorage.clear('user'),
+  // {
+  //   id: 7,
+  //   link: "Logout",
+  //   path: "/logout",
+  //   icon: <FiLogOut />,
+  //   handleClick: ,
     
  
-  },
+  // },
  
 ];
