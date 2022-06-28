@@ -51,6 +51,9 @@ export const sideList = [
     link: "Logout",
     path: "/logout",
     icon: <FiLogOut />,
+    handleClick: localStorage.clear('user'),
+    
+ 
   },
  
 ];

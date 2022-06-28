@@ -1,30 +1,41 @@
 import React, { useEffect } from "react";
 import { bgLogin } from "../assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MidNav } from "../components";
 import { useForm } from "react-hook-form";
 import { country } from "./data";
+import { useDispatch, useSelector } from "react-redux";
+// import  registerUser  from "../Redux/features/authService";
+
+import { regUser} from "../Redux/features/authSlice";
 
 const Register = () => {
+  const dispatch = useDispatch();
+  const { user, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.auth
+  );
 
-//   {
-//     "email": "toromo.ade06@gmail.com",
-//     "password": "mystyle1",
-//     "full_name": "Toromo Adegboyega",
-//     "phone": "08133429917",
-//     "username": "torth",
-//     "city": "Lagos",
-//     "country": "Nigeria"
-   
-// }
+  console.log(user, isError);
+  let navigate = useNavigate()
+  //   {
+  //     "email": "toromo.ade06@gmail.com",
+  //     "password": "mystyle1",
+  //     "full_name": "Toromo Adegboyega",
+  //     "phone": "08133429917",
+  //     "username": "torth",
+  //     "city": "Lagos",
+  //     "country": "Nigeria"
 
-useEffect(() => {
-  
-})
+  // }
 
-
-
-
+  useEffect(() => {
+    if (isError ) {
+      // toast.error(message)
+    }
+    if (isSuccess) {
+      navigate ('/login')
+    }
+  });
 
   // Handle Form Event
   const {
@@ -34,7 +45,19 @@ useEffect(() => {
   } = useForm();
 
   // Handle form submit
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    let userdata = {
+      full_name: data.full_name,
+      email: data.email,     
+      username: data.username,
+      phone: data.phone,
+      password: data.password,
+      city: data.city,
+      country: data.country,
+    };
+
+    dispatch(regUser(userdata));
+  };
 
   // Set Page Title
   useEffect(() => {
@@ -58,7 +81,9 @@ useEffect(() => {
           <p className="mb-9">Please enter the details to create an account</p>
           <form onSubmit={handleSubmit(onSubmit)} className="">
             <div className="flex flex-col mb-4">
-              <label htmlFor="full_name" className='text-[15px]'>Full Name:</label>
+              <label htmlFor="full_name" className="text-[15px]">
+                Full Name:
+              </label>
               <input
                 type="text"
                 placeholder="Firstname and Lastname (Surname)"
@@ -66,7 +91,14 @@ useEffect(() => {
                   errors.confirmpassword &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
-                {...register("full_name", { required: true })}
+                {...register("full_name", {
+                  required: true,
+                  pattern: {
+                    value: /[A-Za-z]/,
+                    message:
+                      "Sorry this CodeSandbox can only handle names with characters",
+                  },
+                })}
               />
               {errors.full_name && (
                 <p className="text-red-600 text-xs">Full Name is required</p>
@@ -74,7 +106,9 @@ useEffect(() => {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label htmlFor="username" className='text-[15px]'>Username:</label>
+              <label htmlFor="username" className="text-[15px]">
+                Username:
+              </label>
               <input
                 type="text"
                 placeholder="Username"
@@ -90,7 +124,9 @@ useEffect(() => {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label htmlFor="email" className='text-[15px]'>Email:</label>
+              <label htmlFor="email" className="text-[15px]">
+                Email:
+              </label>
               <input
                 type="email"
                 placeholder="Email"
@@ -106,7 +142,9 @@ useEffect(() => {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label htmlFor="phone" className='text-[15px]'>Phone Number:</label>
+              <label htmlFor="phone" className="text-[15px]">
+                Phone Number:
+              </label>
               <input
                 type="tel"
                 placeholder="Phone Number"
@@ -122,7 +160,9 @@ useEffect(() => {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label htmlFor="" className='text-[15px]'>Country:</label>
+              <label htmlFor="" className="text-[15px]">
+                Country:
+              </label>
               <select
                 {...register("country", { required: true })}
                 defaultValue={"default"}
@@ -133,10 +173,9 @@ useEffect(() => {
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
               >
-                <option
-                  value={"default"}
-                  disabled className='text-[15px]'
-                >Select Country</option>
+                <option value={"default"} disabled className="text-[15px]">
+                  Select Country
+                </option>
 
                 {country.map((country) => (
                   <option
@@ -154,7 +193,9 @@ useEffect(() => {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label htmlFor="" className='text-[15px]'>City:</label>
+              <label htmlFor="" className="text-[15px]">
+                City:
+              </label>
 
               <select
                 {...register("city")}
@@ -163,7 +204,12 @@ useEffect(() => {
                 id="city"
                 className="border-2 bg-[#F6F4FF] py-1 pl-4 w-full"
               >
-                <option value={"default"} placeholder="Select City" disabled className='text-[15px]'>
+                <option
+                  value={"default"}
+                  placeholder="Select City"
+                  disabled
+                  className="text-[15px]"
+                >
                   Select City
                 </option>
 
@@ -194,7 +240,9 @@ useEffect(() => {
               )}
             </div>
             <div className="flex flex-col mb-4">
-              <label htmlFor="" className='text-[15px]'>Password:</label>
+              <label htmlFor="" className="text-[15px]">
+                Password:
+              </label>
               <input
                 type="password"
                 placeholder="Password"
@@ -212,8 +260,10 @@ useEffect(() => {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label htmlFor="" className='text-[15px]'>Confirm Password:</label>
-              <input
+              <label htmlFor="" className="text-[15px]">
+                Confirm Password:
+              </label>
+              {/* <input
                 type="password"
                 placeholder="Confirm Password"
                 className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
@@ -223,7 +273,7 @@ useEffect(() => {
                 {...register("confirmpassword", {
                   required: "Password mismatch",
                 })}
-              />
+              /> */}
               {errors.confirmpassword && (
                 <p className="text-red-600 text-xs">
                   {errors.confirmpassword.message}
@@ -243,10 +293,11 @@ useEffect(() => {
               {errors.checkbox && (
                 <p className="text-red-600 text-xs">{errors.checkbox}</p>
               )}
-              <label className={`pl-2 text-[13px] ${
-                  errors.checkbox &&
-                  "text-red-600"
-                }`}>
+              <label
+                className={`pl-2 text-[13px] ${
+                  errors.checkbox && "text-red-600"
+                }`}
+              >
                 I guarantee that I am 18 years and above.
               </label>
             </div>
@@ -256,10 +307,11 @@ useEffect(() => {
                 type="checkbox"
                 {...register("checked", { required: true })}
               />
-               <label className={`pl-2 text-[13px] ${
-                  errors.checkbox &&
-                  "text-red-600"
-                }`}>
+              <label
+                className={`pl-2 text-[13px] ${
+                  errors.checkbox && "text-red-600"
+                }`}
+              >
                 I have read and accept the privacy policy and the general terms
                 and conditions.
               </label>
