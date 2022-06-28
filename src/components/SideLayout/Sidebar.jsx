@@ -47,7 +47,7 @@ const Sidebar = ({children}) => {
 
     <div className="side ">
 
-      <div className="user_name mx-10 bg-white px-5 py-10 my-8 w-[15rem]">
+      <div className="user_name mx-10 bg-white px-5 py-10 mb-8 w-[15rem]">
       <img src='' alt="" className="w-16" />
          <p>Valerie Walker</p>
       </div>

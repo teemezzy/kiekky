@@ -10,6 +10,10 @@ import SideLayout from "./SideLayout/SideLayout";
 import LoginEmail from "./LoginEmail/loginEmail";
 import LoginPhone from "./LoginPhoneNo/loginPhoneNo";
 import MidNav from "./Navbar/MidNav"
+import Status from "./Status/Status"
+import Post from "./Post/Post"
+import Feeds from "./Feeds/Feeds"
+import Recommendations from "./Recomendations/Recommendations";
 
 
 
@@ -26,5 +30,8 @@ export {
   LoginPhone,
   LoginEmail,
   MidNav, 
-  
+  Feeds,
+  Post,
+  Status,
+  Recommendations
 };

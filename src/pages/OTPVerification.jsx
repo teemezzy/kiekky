@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form'
 import { MidNav } from '../components'
 import {bgLogin } from '../assets'
 import {Link }from 'react-router-dom'
-// import OTPInput, {ResendOTP} from 'otp-input-react' 
+import OtpInput from "react-otp-input" 
+
 import React, {useEffect, useState} from 'react'
 
 function OTPVerification() {
@@ -11,10 +12,15 @@ function OTPVerification() {
     document.title = "OTP SetUp | Kiekky";
   }, []);
     const { register, handleSubmit, errors } = useForm();
-// const [OTP, setOTP] = useState('')
-    const onSubmit= (data, errors) => {
-        console.log(data);
+const [OTP, setOTP] = useState('')
+const handleChange = (OTP) => setOTP(OTP);
+    const onSubmit= (OTP, errors) => {
+        console.log(OTP);
       }
+
+
+
+
 
     return (
         <div className="flex relative m-auto ">
@@ -30,19 +36,25 @@ function OTPVerification() {
           <p className='text-sm mb-5 text-[gray]'>Kindly provide the required details to set up your account.</p>
 
           
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form 
+            onSubmit={handleSubmit(onSubmit)}
+            >
 
 <div className="Otp_input flex justify-center ">
- 
-  <input  type="text"  className=' mx-2 outline-none w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2 text-center bg-[#F6F4FF] ' autoFocus name="" id="" />
-  <input type="text" className='mx-2 outline-none w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2 text-center bg-[#F6F4FF] ' name="" id="" />
-  <input type="text" className='mx-2 outline-none border-[0.1rem] border-[#6A52FD] w-10  rounded-md py-2 text-center bg-[#F6F4FF] ' name="" id="" />
-  <input type="text" className='mx-2 outline-none w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2 text-center bg-[#F6F4FF] ' name="" id="" />
-  <input type="text" className='mx-2 outline-none  w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2  text-center bg-[#F6F4FF] 'name="" id="" />
-  <input type="text" className='mx-2 outline-none  w-10 border-[0.1rem] border-[#6A52FD] rounded-md py-2  text-center bg-[#F6F4FF] 'name="" id="" />
+ <OtpInput 
+value={OTP} onChange={handleChange} 
+
+ numInputs={6} separator={<span style={{width:"1rem"}}> </span>} isInputNum={true}
+shouldAutoFocus = {true} inputStyle ={{ border: "1px solid #6a52fd",
+borderRadius:"8px", width:"3rem", height:"54px", fontSize: "12px", color:"#000", fontWeight: "400", careColour:"blue"
+}} focusStyle={{ outline:"none"}}
+
+/>
   
- 
+  
 </div>
+
+
 <button className=' text-white w-full mt-10 mb-4 rounded-md py-3 px-auto bg-[#6A52FD] '>
 Verify </button>
 
@@ -56,19 +68,7 @@ Verify </button>
       </div> 
 
 </div>
-//       <OTPInput 
-//       value = {OTP}
-//       onChange= {setOTP} 
-//       autoFocus
-//       OTPLength= {6}
-//       otpType='number'
-//       disabled={false}
-//       secure
-//       />
 
-      
-// <ResendOTP handleResendClick= {()=> 
-//   console.log("Resend clicked")} />
 
      
 
