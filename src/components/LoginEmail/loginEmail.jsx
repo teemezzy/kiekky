@@ -74,7 +74,7 @@ const LoginEmail = () => {
               Password
               <span
                 className="text-xs text-[#6A52FD]"
-                onClick={() => navigate("/forgotpassword")}
+                onClick={() => navigate("/forgot-password")}
               >
                 Forgot password?
               </span>{" "}

@@ -48,14 +48,11 @@ function App() {
         <Route path="reset" element={<ResetPassword />} />
         <Route path="user_setup" element={<AccountSetup />} />
         <Route path="otp" element={<OTPVerification />} />
-        {/* <Route path="/wallet" element={<Wallet />} /> */}
+    
 
-        {/* <Route path="/home" element={<Home />}> */}
-      </Routes>
-
-      <Dashboard>
+      
         {/* <ProtectedRoutes> */}
-          <Routes>
+          
             {/* <Route element={<Navigate to='/home'  />} /> */}
             <Route path="home" element={<Home />} />
             <Route path="community" element={<Community />} />
@@ -65,10 +62,10 @@ function App() {
             <Route path="wallet" element={<Wallet />} />
             <Route path="logout" element={<Logout />} />
             <Route path="user/:userid" element={<Profile />} />
-          </Routes>
+          
         {/* </ProtectedRoutes> */}
-      </Dashboard>
-      <Footer />
+        </Routes>
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -24,11 +24,10 @@ useEffect(()=> {
 </div>
         <div className=' flex'>
      
-            <div className=" hidden lg:block sidebar_prt pt-8">
+            <div className=" fixed hidden lg:block sidebar_prt pt-8">
             <Sidebar />
             </div>
             <div className="pages">
-            <main> {children}</main>
             </div>
         </div>  
         </div>

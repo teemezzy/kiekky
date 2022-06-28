@@ -1,3 +1,10 @@
 .status::-webkit-scrollbar{
     display:none
 }
+/* .blink{
+    animation: blink 1s infinite
+}
+@keyframes blink{
+    0%{opacity:1 ;}
+    100%{opacity:0}
+} */

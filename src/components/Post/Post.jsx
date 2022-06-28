@@ -7,13 +7,13 @@ import axios from "axios";
 
 
 function Post() {
-  const [story, setStory] = useState([])
+  const [display, setDisplay] = useState([])
 
   const url = 'https://fakerapi.it/api/v1/books?_quantity=1';
 
   useEffect(() => {
     axios.get(url)
-    .then(response => setStory(response.data.data) )
+    .then(response => setDisplay(response.data.data) )
   }, [])
 
 
@@ -22,8 +22,21 @@ function Post() {
             <div className="post_box bg-white  rounded-lg border-2 items-center mb-9 ">
 <div className="username flex items-center">
     <div className="img-container pt-5 pr-5 pl-5">
-   <img className='mb-2 w-[4rem] h-[4rem]  p-[1.5px] border-red-500 border-2 rounded-[50%] cursor-pointer hover:scale-110 transition transform duration-200 ease-out' src={story.image} alt="icon" />
+
+    {
+        display ? display.map((display, idx )=> (
+          <div key={idx} className='story-status '>
+
+            <div className='bookstore-card-image'>
+              <img className='mb-2 w-[4rem]  h-[4rem]  p-[1.5px] border-[#625fad] border-2 rounded-[50%] cursor-pointer hover:scale-110 transition transform duration-200 ease-out' src={display.image} alt="icon" />
+            </div>
+        </div>
+        ) )
+        : null
+      }
+
     </div>
+
     <p className='text-[gray] '>Whats new..</p>
   </div>
   

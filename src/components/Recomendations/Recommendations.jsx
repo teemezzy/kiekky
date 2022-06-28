@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {elena} from '../../assets';
 import axios from 'axios'
+import './Recommendations.css'
+
 
 function Recommendations(props) {
     const [story, setStory] = useState([])
@@ -15,26 +17,23 @@ function Recommendations(props) {
     
     return (
         <div>
-        <div className="recommendations inline-grid  mt-[10rem] mx-10 h-full w-[7rem] hidden lg:block">
+
         <p className="lg:block hidden">Recommendations </p>
-  
-  
-{
+        <div className="recommendations hidden  mt-[1rem] mx-10  w-[16rem] lg:block">
+  {
         story ? story.map((story, idx )=> (
-          <div key={idx} className='story-status grid-cols-2 gap-4 '>
+          <div key={idx} className='story-status '>
 
             <div className='image'>
-              <img className='mb-2 w-[4rem] h-[4rem] ' src={story.image} alt="icon" />
+              <img className='w-[7rem] h-[7rem]' src={story.image} alt="icon" />
             </div>
   
-            {/* <div>
-              <h5 className="text-sm w-14 truncate"> {story.title} </h5>  
-            </div> */}
         </div>
         ) )
         : null
       }
 </div>
+
         </div>
     );
 }

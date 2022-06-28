@@ -39,7 +39,7 @@ const LoginPhoneNo = ({ loginUser }) => {
 
             <label className=" flex justify-between mt-5">
               Password{" "}
-              <span className="text-xs text-[#6A52FD]" onClick={()=>navigate('/forgotpassword')}>Forgot password?</span>{" "}
+              <span className="text-xs text-[#6A52FD]" onClick={()=>navigate('/forgot-password')}>Forgot password?</span>{" "}
             </label>
             <input
               type="password"
