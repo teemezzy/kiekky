@@ -2,8 +2,7 @@ import React from "react";
 import { Routes, Route, useParams, Navigate, Outlet } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components";
-// import RequireAuth from "./features/auth/RequireAuth";
-import ProtectedRoutes from "./components/ProtectedRoutes";
+// import ProtectedRoutes from "./components/ProtectedRoutes";
 import {
   KiekkyHome,
   Home,
@@ -28,10 +27,12 @@ import {
   Settings,
   Logout,
 } from "./pages";
+// import { createBrowserHistory } from "history";
 
 function App() {
-  let params = useParams("");
+  // let params = useParams("");
 
+  // const history = createBrowserHistory();
   return (
     <div className="App">
       <Routes>
@@ -48,10 +49,9 @@ function App() {
         <Route path="reset" element={<ResetPassword />} />
         <Route path="user_setup" element={<AccountSetup />} />
         <Route path="otp" element={<OTPVerification />} />
-    
-
+        <Route path="/dashboard/*" element={<Dashboard />} />
       
-        {/* <ProtectedRoutes> */}
+       {/* <ProtectedRoutes> */}
           
             {/* <Route element={<Navigate to='/home'  />} /> */}
             <Route path="home" element={<Home />} />
@@ -64,7 +64,11 @@ function App() {
             <Route path="user/:userid" element={<Profile />} />
           
         {/* </ProtectedRoutes> */}
-        </Routes>
+      </Routes>
+
+    
+       
+        
       {/* <Footer /> */}
     </div>
   );

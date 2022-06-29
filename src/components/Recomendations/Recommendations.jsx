@@ -5,9 +5,9 @@ import './Recommendations.css'
 
 
 function Recommendations(props) {
-    const [story, setStory] = useState([])
+  const [story, setStory] = useState([]);
 
-  const url = 'https://fakerapi.it/api/v1/books?_quantity=9';
+  const url = "https://fakerapi.it/api/v1/books?_quantity=16";
 
   useEffect(() => {
     axios.get(url)
@@ -18,14 +18,14 @@ function Recommendations(props) {
     return (
         <div>
 
-        <p className="lg:block hidden">Recommendations </p>
-        <div className="recommendations hidden  mt-[1rem] mx-10  w-[16rem] lg:block">
+        <p className="lg:block mx-10 hidden">Recommendations </p>
+        <div className="recommendations hidden mt-[2rem] mx-10  w-[16rem] lg:block">
   {
         story ? story.map((story, idx )=> (
           <div key={idx} className='story-status '>
 
             <div className='image'>
-              <img className='w-[7rem] h-[7rem]' src={story.image} alt="icon" />
+              <img className='w-[7rem] h-[7rem] blink' src={story.image} alt="icon" />
             </div>
   
         </div>

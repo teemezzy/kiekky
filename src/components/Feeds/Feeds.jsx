@@ -1,26 +1,21 @@
-import React, {useState, useEffect} from 'react';
-import {PostImg }from '../../assets'
-import {val, elena} from '../../assets';
-import axios from "axios"
+import React, { useState, useEffect } from "react";
+// import { PostImg } from "../../assets";
+// import { val, elena } from "../../assets";
+import axios from "axios";
 
 function Feeds() {
-
-  const [feed, setFeed] = useState([])
+  const [feed, setFeed] = useState([]);
 
   const url = 'https://fakerapi.it/api/v1/persons?_quantity=10';
-
-  useEffect(() => {
-    axios.get(url)
-    .then(response => setFeed(response.data.data) )
-  }, [])
-
-    return (
-        
- 
+    useEffect(() => {
+      axios.get(url)
+      .then((response) => 
+      setFeed(response.data.data));
+    }, []);
+    
+ return (
           <div className=" "> 
-
-          {
-        feed ? feed.map((feed, idx )=> (
+{feed ? feed.map((feed, idx )=> (
           <div key={idx} className='story-status border-2 bg-white py-4 rounded-lg mb-5'>
             <div>
 <div className="postItem  items-center mb-7 ">

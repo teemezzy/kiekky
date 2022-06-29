@@ -1,10 +1,10 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Sidebar } from "../components";
 import { Outlet, Navigate, useLocation } from "react-router-dom";
-import { Logo } from '../assets'
-import {BsBell,} from  "react-icons/bs";
+import { Logo } from "../assets";
+import { BsBell } from "react-icons/bs";
 
-function Dashboard({children}) {
+function Dashboard({ children }) {
 
     const pathname = useLocation();
 useEffect(()=> {
@@ -16,12 +16,7 @@ useEffect(()=> {
     return (
 <div className=' bg-[#E5E5E5] h-[100%]'>
         
-<div className="nav-home flex justify-between items-center p-7 bg-white">
 
-<img src={Logo} alt="" />
-<p><BsBell color="gray"/> </p>
-
-</div>
         <div className=' flex'>
      
             <div className=" fixed hidden lg:block sidebar_prt pt-8">
@@ -30,6 +25,7 @@ useEffect(()=> {
             <div className="pages">
             </div>
         </div>  
-        </div>
-         );}
+    </div>
+  );
+}
 export default Dashboard;

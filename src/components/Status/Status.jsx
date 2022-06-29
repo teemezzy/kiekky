@@ -20,13 +20,13 @@ function Status() {
 //   console.log(story)
     return (
         <div>
-            <div className="status flex w-[90vw] space-x-5 overflow-x-scroll  px-4 pt-10 mb-8  ">
+            <div className="status flex  space-x-3 overflow-x-scroll  px-4 pt-10 mb-8  ">
  <p className="flex items-center "><BsArrowLeft color="gray"/> </p>
 
 {/* <Stories 
 stories = {storys} /> */}
-{/* 
-<div className=" mx-5">
+
+{/* <div className=" mx-5">
 <img className='mb-2 w-[4rem] h-[4rem]' src={val} alt="" /> 
 <p>Ecstacy</p>
 </div>
@@ -59,7 +59,7 @@ stories = {storys} /> */}
           <div key={idx} className='story-status '>
 
             <div className='bookstore-card-image'>
-              <img className='mb-2 w-[4.5rem] h-[4.rem]  p-[1.5px] border-[#625fad] border-2 rounded-[50%] cursor-pointer hover:scale-110 transition transform duration-200 ease-out' src={story.image} alt="icon" />
+              <img className='mb-2 w-[4rem] h-[4rem]  p-[1.5px] border-[#625fad] border-2 rounded-[50%] cursor-pointer hover:scale-110 transition transform duration-200 ease-out' src={story.image} alt="icon" />
             </div>
   
             <div>

@@ -1,48 +1,53 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useLocation } from "react-router-dom";
-import { login } from "../../Redux/Actions/authHead";
+import { useNavigate } from "react-router-dom";
+import { login } from "../../Redux/features/authSlice";
 
 const LoginEmail = () => {
-  
-
   const [errorMsg, setErrorMsg] = useState("");
-  const [isSignup, setIsSignup] = useState(false);
-  const { isLoggedIn } = useSelector((state) => state.auth);
-  const { message } = useSelector((state) => state.message);
-  const dispatch = useDispatch();
+  // const [isSignup, setIsSignup] = useState(false);
+  // const { isLoggedIn } = useSelector((state) => state.auth);
+  // const { message } = useSelector((state) => state.message);
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
-  const redirect = location.search ? location.search.split("=")[1] : "/home";
-  
-  const methods = useForm({
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  });
+  // const location = useLocation();
+ 
+
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = methods;
-  
+  } = useForm({});
+
+  const dispatch = useDispatch();
+  const { user, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.auth
+  );
+
+  console.log(user, isError);
+
   const onSubmit = (data) => {
-    console.log(data);
-    dispatch(login(data.email, data.password));
+    let userdata = {
+      email: data.email,
+      password: data.password,
+      client_id: process.env.REACT_APP_CLIENT_ID,
+      client_secret: process.env.REACT_APP_CLIENT_SECRET,
+      grant_type: process.env.REACT_APP_GRANT_TYPE
+
+    };
+
+    dispatch(login(userdata));
   };
 
-
-    useEffect(() => {
-      if (isLoggedIn) {
-        navigate(redirect);
-      }
-    }, [isLoggedIn, navigate, redirect]);
-
-
-
-
+  useEffect(() => {
+    if (isError ) {
+      // toast.error(message)
+    }
+    if (isSuccess) {
+      navigate ('/home')
+    }
+  });
 
   return (
     <div>
