@@ -36,8 +36,7 @@ function Post() {
       }
 
     </div>
-
-    <p className='text-[gray] '>Whats new..</p>
+<p className='text-[gray] '>Whats new..</p>
   </div>
   
   <div className="but flex justify-end items-center mr-5 mb-5">
