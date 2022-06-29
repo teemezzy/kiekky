@@ -3,8 +3,6 @@ import {val, elena} from '../../assets';
 import { BsArrowLeft, BsArrowRight} from  "react-icons/bs";
 // import './Status.css';
 import axios from 'axios';
-
-
 import Stories from 'react-insta-stories'
 
 
@@ -34,7 +32,7 @@ function Status() {
 
     return (
         <div>
-            <div className="status flex w-[100vw] lg:w-[100vw] overflow-x-auto space-x-2 px-4 pt-10 mb-8  ">
+            <div className="status flex w-full lg:w-full overflow-x-auto space-x-2 px-4 pt-10 mb-8  ">
  <p className="flex items-end"><BsArrowLeft color="gray"/> </p>
 
 {/* <Stories 

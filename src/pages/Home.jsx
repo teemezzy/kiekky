@@ -1,23 +1,21 @@
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 // import { selectCurrentUser, selectCurrentToken} from "../features/auth/authSlice"
-import { Link, Outlet } from "react-router-dom";
-import { BsBell, BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import Profile from "../assets";
-import { PostImg } from "../assets";
-import { val, elena } from "../assets";
-import { loLocationOutline } from "react-icons/io5";
+// import { BsBell, BsArrowLeft, BsArrowRight } from "react-icons/bs";
+// import Profile from "../assets";
+// import { PostImg } from "../assets";
+// import { val, elena } from "../assets";
+// import { loLocationOutline } from "react-icons/io5";
 import { Status, Post, Feeds, Recommendations } from "../components";
 
 const Home = () => {
   return (
-    <div className=" ">
+    <div className="m-auto flex flex-col justify-center w-auto">
       <Status />
-      <div className="post-recommendation flex justify-center md:justify-start                                   ">
-        <div className="post-area md:w-[30rem] lg:w-[40rem] px-5 ">
-          <div className="home-post ">
+      <div className=" flex">
+        <div className="md:w-[30rem] lg:w-[40rem] px-5">
+          <div className="home-post">
             <Post />
-
             <Feeds />
           </div>
         </div>

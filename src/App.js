@@ -63,7 +63,7 @@ function App() {
             <Route path="settings" element={<Settings />} />
             <Route path="wallet" element={<Wallet />} />
             <Route path="logout" element={<Logout />} />
-            <Route path="user/:userid" element={<Profile />} />
+            <Route path="user/:id" element={<Profile />} />
           </Routes>
         {/* </ProtectedRoutes> */}
       </Dashboard>

@@ -13,7 +13,7 @@ function Recommendations(props) {
 
   return (
     <div>
-      <div className="recommendations mt-[10rem] mx-10 h-full w-[7rem] hidden lg:block">
+      <div className="recommendations mt-[10rem] mx-10 h-full w-[10rem] hidden lg:block ">
         <p className="lg:block hidden">Recommendations </p>
 
         {story

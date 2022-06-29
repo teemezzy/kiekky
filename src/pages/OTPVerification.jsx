@@ -1,24 +1,37 @@
+import React, { useEffect, useState } from "react"
 import { useForm } from "react-hook-form";
 import { MidNav } from "../components";
 import { bgLogin } from "../assets";
 import { Link } from "react-router-dom";
 import OtpInput from "react-otp-input";
+import { useDispatch, useSelector } from "react-redux";
 
-import React, { useEffect, useState } from "react";
 
-function OTPVerification() {
+const OTPVerification = () => {
   useEffect(() => {
     document.title = "OTP SetUp | Kiekky";
   }, []);
   const { register, handleSubmit, errors } = useForm();
-  const [OTP, setOTP] = useState("");
-  const handleChange = (OTP) => setOTP(OTP);
-  const onSubmit = (OTP, errors) => {
-    console.log(OTP);
+  const dispatch = useDispatch();
+  const [otp, setOtp] = useState("");
+  const handleChange = (otp) => setOtp(otp);
+
+
+  const { user, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.auth
+  );
+  console.log(user, isError);
+  const onSubmit = (otp, errors) => {
+    let userdata = {
+      otp_code : otp.otp
+    };
+
+    dispatch(otp(userdata));
+    console.log(otp);
   };
 
   return (
-    <div className="flex relative m-auto ">
+    <div className="flex relative m-auto ">  
       <MidNav className="lg:hidden block" />
 
       <div className="background w-2/5 hidden lg:block ">
@@ -32,7 +45,7 @@ function OTPVerification() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="Otp_input flex justify-center ">
           <OtpInput
-            value={OTP}
+            value={otp}
             onChange={handleChange}
             numInputs={6}
             separator={<span style={{ width: "1rem" }}> </span>}
