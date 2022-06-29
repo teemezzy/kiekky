@@ -1,35 +1,30 @@
 import React from "react";
-// import { useSelector } from "react-redux";
-// import { selectCurrentUser, selectCurrentToken} from "../features/auth/authSlice"
-// import { BsBell, BsArrowLeft, BsArrowRight } from "react-icons/bs";
-// import Profile from "../assets";
-// import { PostImg } from "../assets";
-// import { val, elena } from "../assets";
-// import { loLocationOutline } from "react-icons/io5";
-import { Status, Post, Feeds, Recommendations } from "../components";
+import { Status, Post, Feeds, Recommendations, UserNav } from "../components";
+import { Sidebar } from "../components";
+import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="m-auto flex flex-col justify-center w-auto">
-      <Status />
-      <div className="flex">
-        <div className="md:w-[30rem] lg:w-[40rem] px-5">
-          <div className="home-post">
-            <Post />
-            <Feeds />
+    <div className="home">
+      <UserNav />
+      <div className="side-home flex mt-[6rem] bg-[#E5E5E5]">
+        <div className=" fixed h-[100%] hidden lg:block sidebar_prt pt-8">
+          <Sidebar />
+        </div>
+        <div className=" lg:ml-[24rem] ">
+          <Status />
+          <div className="ml-post-recommendation flex justify-center lg:justify-star                                   ">
+            <div className="post-area md:w-[30rem] lg:w-[40rem] px-5 ">
+              <Post />
+              <div className="flex ">
+                <Feeds />
+                <Recommendations />
+              </div>
+             
+            </div>
           </div>
         </div>
-
-        <Recommendations />
       </div>
-      {/*     
-       <div>
-        
-         <h1>{welcome}</h1> 
-        <p>Token: {tokenAbbr}</p>
-        
-        <p><Link to="/userslist">Go to the Users List</Link></p>
-      </div> */}
     </div>
   );
 };

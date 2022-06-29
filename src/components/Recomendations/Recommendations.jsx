@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { elena } from "../../assets";
 import axios from "axios";
+import "./Recommendations.css";
 
 function Recommendations(props) {
   const [story, setStory] = useState([]);
-
-  const url = "https://fakerapi.it/api/v1/books?_quantity=9";
+  const url = "https://fakerapi.it/api/v1/books?_quantity=16";
 
   useEffect(() => {
     axios.get(url).then((response) => setStory(response.data.data));
@@ -13,23 +12,18 @@ function Recommendations(props) {
 
   return (
     <div>
-      <div className="recommendations mt-[10rem] mx-10 h-full w-[10rem] hidden lg:block ">
-        <p className="lg:block hidden">Recommendations </p>
-
+      <p className="lg:block mx-10 hidden">Recommendations </p>
+      <div className="recommendations hidden mt-[2rem] mx-10  w-[16rem] lg:block">
         {story
           ? story.map((story, idx) => (
-              <div key={idx} className="story-status grid-cols-2 gap-4 ">
+              <div key={idx} className="story-status ">
                 <div className="image">
                   <img
-                    className="mb-2 w-[4rem] h-[4rem] "
+                    className="w-[7rem] h-[7rem]"
                     src={story.image}
                     alt="icon"
                   />
                 </div>
-
-                {/* <div>
-              <h5 className="text-sm w-14 truncate"> {story.title} </h5>  
-            </div> */}
               </div>
             ))
           : null}
@@ -37,5 +31,4 @@ function Recommendations(props) {
     </div>
   );
 }
-
 export default Recommendations;

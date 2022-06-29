@@ -50,11 +50,9 @@ function App() {
         <Route path="user_setup" element={<AccountSetup />} />
         <Route path="otp" element={<OTPVerification />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
-      </Routes>
-
-      <Dashboard>
-        {/* <ProtectedRoutes> */}
-          <Routes>
+      
+       {/* <ProtectedRoutes> */}
+          
             {/* <Route element={<Navigate to='/home'  />} /> */}
             <Route path="home" element={<Home />} />
             <Route path="community" element={<Community />} />
@@ -63,11 +61,15 @@ function App() {
             <Route path="settings" element={<Settings />} />
             <Route path="wallet" element={<Wallet />} />
             <Route path="logout" element={<Logout />} />
-            <Route path="user/:id" element={<Profile />} />
-          </Routes>
+            <Route path="user/:userid" element={<Profile />} />
+          
         {/* </ProtectedRoutes> */}
-      </Dashboard>
-      <Footer />
+      </Routes>
+
+    
+       
+        
+      {/* <Footer /> */}
     </div>
   );
 }

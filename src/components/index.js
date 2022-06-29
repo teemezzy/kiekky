@@ -14,6 +14,8 @@ import Status from "./Status/Status"
 import Post from "./Post/Post"
 import Feeds from "./Feeds/Feeds"
 import Recommendations from "./Recomendations/Recommendations";
+import UserNav from "./UserNav/UserNav"
+
 
 export {
   Navbar,
@@ -31,5 +33,6 @@ export {
   Feeds,
   Post,
   Status,
-  Recommendations
+  Recommendations,
+  UserNav
 };

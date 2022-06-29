@@ -7,7 +7,7 @@ import TermsConditions from "./TermsConditions";
 import NotFound from "./NotFound";
 import Contact from "./Contact";
 import About from "./About";
-import AccountSetup from "./AccountSetup";
+import AccountSetup from './AccountSetup/AccountSetup.jsx'
 import Faqs from "./Faqs";
 import Community from "./Community";
 import Profile from "./Profile";
