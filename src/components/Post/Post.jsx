@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BiCamera, BiVideoPlus } from "react-icons/bi";
-import { val } from "../../assets";
-
+// import { val } from "../../assets";
 import axios from "axios";
 
-function Post() {
+const Post = () => {
   const [story, setStory] = useState([]);
 
   const url = "https://fakerapi.it/api/v1/books?_quantity=1";
@@ -29,11 +28,10 @@ function Post() {
 
         <div className="but flex justify-end items-center mr-5 mb-5">
           <p className="mx-1">
-            <BiCamera color="gray" />{" "}
+            <BiCamera color="gray" />
           </p>
           <p className="mx-1">
-            {" "}
-            <BiVideoPlus color="gray" />{" "}
+            <BiVideoPlus color="gray" />
           </p>
           <button
             className="mx-1 flex px-6 py-1 bg-[#6a52fd] text-white rounded-lg "
@@ -45,6 +43,6 @@ function Post() {
       </div>
     </div>
   );
-}
+};
 
 export default Post;
