@@ -46,7 +46,7 @@ const Register = () => {
       // toast.error(message)
     }
     if (isSuccess) {
-      navigate("/user_otp");
+      navigate("/otp");
     }
   });
   // Set Page Title

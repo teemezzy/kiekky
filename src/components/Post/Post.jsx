@@ -31,7 +31,7 @@ function Post() {
               <img className='mb-2 w-[4rem]  h-[4rem]  p-[1.5px] border-[#625fad] border-2 rounded-[50%] cursor-pointer hover:scale-110 transition transform duration-200 ease-out' src={display.image} alt="icon" />
             </div>
         </div>
-        ) )
+        ))
         : null
       }
 

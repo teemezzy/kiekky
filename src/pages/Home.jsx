@@ -5,7 +5,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="bg-[#E5E5E5]">
       <UserNav />
       <div className="side-home flex mt-[6rem] bg-[#E5E5E5]">
         <div className=" fixed h-[100%] hidden lg:block sidebar_prt pt-8">
