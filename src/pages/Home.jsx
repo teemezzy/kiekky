@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className="m-auto flex flex-col justify-center w-auto">
       <Status />
-      <div className=" flex">
+      <div className="flex">
         <div className="md:w-[30rem] lg:w-[40rem] px-5">
           <div className="home-post">
             <Post />
