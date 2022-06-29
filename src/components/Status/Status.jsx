@@ -10,7 +10,7 @@ function Status() {
    
     const [story, setStory] = useState([])
 
-  const url = 'https://fakerapi.it/api/v1/books?_quantity=5';
+  const url = 'https://fakerapi.it/api/v1/books?_quantity=3';
 
   useEffect(() => {
     axios.get(url)
@@ -20,7 +20,7 @@ function Status() {
 //   console.log(story)
     return (
         <div>
-            <div className="status flex  space-x-3 overflow-x-scroll  px-4 pt-10 mb-8  ">
+            <div className="status flex space-x-3 overflow-x-scroll  px-4 pt-10 mb-8  ">
  <p className="flex items-center "><BsArrowLeft color="gray"/> </p>
 
 {/* <Stories 

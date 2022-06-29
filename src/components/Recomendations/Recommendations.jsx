@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {elena} from '../../assets';
 import axios from 'axios'
 import './Recommendations.css'
 
