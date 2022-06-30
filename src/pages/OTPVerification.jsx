@@ -39,9 +39,8 @@ const OTPVerification = () => {
         <img className=" h-full" src={bgLogin} alt="Login" />
       </div>
 
-
-      <form onSubmit={handleSubmit(onSubmit)} className= 'm-auto'>
-      <h1 className= ' font-bold text-5xl -mt-32'>Get Started </h1>
+      <form onSubmit={handleSubmit(onSubmit)} className= ' mx-auto'>
+      <h1 className= ' font-bold text-5xl mt-32'>Get Started </h1>
       <p className='mb-10'>Please enter the verification code sent to s************@gmail.com</p>
         <div className="Otp_input flex justify-center items-center">
           <OtpInput
