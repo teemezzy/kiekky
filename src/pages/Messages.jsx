@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sidebar, UserNav} from '../components'
+import {Sidebar, UserNav, MobileNav} from '../components'
 
 
 function Messages(props) {
@@ -13,6 +13,10 @@ return (
     <Sidebar />
     </div>
 <div className='ml-[22rem] '>Messages</div>
+</div>
+
+<div className="mobile-nav">
+  <MobileNav />
 </div>
         </div>
        

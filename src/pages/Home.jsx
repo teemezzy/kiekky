@@ -1,5 +1,5 @@
 import React from "react";
-import { Status, Post, Feeds, Recommendations, UserNav } from "../components";
+import { Status, Post, Feeds, Recommendations, UserNav, MobileNav } from "../components";
 import { Sidebar } from "../components";
 import "./Home.css";
 
@@ -23,8 +23,12 @@ const Home = () => {
              
             </div>
           </div>
+
         </div>
       </div>
+      <div className="">
+          <MobileNav />
+          </div>
     </div>
   );
 };

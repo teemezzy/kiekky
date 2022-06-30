@@ -5,6 +5,11 @@
     background-color: #F6F4FF;
     color: #6a52fd;
   }
+
+  .side_list2 .active{
+    color: #6a52fd;
+  }
+
   .blink{
     animation:blink 1s infinite;
   }

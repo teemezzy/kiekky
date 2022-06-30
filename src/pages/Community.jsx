@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Sidebar, UserNav, Status, HotPicks, Members} from '../components'
+import {Sidebar, UserNav, Status, HotPicks, Members, MobileNav} from '../components'
 
 function Community(props) {
  
@@ -20,6 +20,10 @@ return (
   <HotPicks />
   <Members />
   Community</div>
+</div>
+
+<div className="mobile-nav">
+  <MobileNav />
 </div>
         </div>
        
