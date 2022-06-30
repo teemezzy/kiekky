@@ -37,7 +37,7 @@ const Sidebar = ({ children }) => {
               <div className="user_name mx-10 bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem]">
                 <div className="display-image">
                   <img
-                    className="  w-[4rem] blink h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
+                    className="  w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
                     src={post.image}
                     alt="icon"
                   />
@@ -45,7 +45,7 @@ const Sidebar = ({ children }) => {
 
                 <div className="names ml-4 ">
                   <h5 className=" font-bold "> {post.author} </h5>
-                  <h5 className="text-sm text-[gray]  "> @{post.author} </h5>
+                  <h5 className="text-sm text-[#828282]  "> @{post.author} </h5>
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ const Sidebar = ({ children }) => {
               to={side.path}
               className={`${
                 window.location.pathname === side.path ? "active" : null
-              }  flex items-center w-full h-[3.5rem] pl-5   hover:bg-[#E5E5E5] `}
+              }  flex items-center w-full h-[3.5rem] pl-5 text-[#828282]   hover:text-[#6a52fd] `}
               onClick={side.handleClick}
             >
               <span className="mr-3 ">{side.icon}</span>

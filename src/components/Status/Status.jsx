@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Status = () => {
   const [story, setStory] = useState([]);
-  const url = "https://fakerapi.it/api/v1/books?_quantity=4";
+  const url = "https://fakerapi.it/api/v1/books?_quantity=3";
 
   useEffect(() => {
     axios.get(url).then((response) => setStory(response.data.data));
@@ -13,7 +13,7 @@ const Status = () => {
 
   return (
     <div>
-      <div className="status flex space-x-3  overflow-x-scroll  px-4 pt-10 mb-8  ">
+      <div className="status flex space-x-8  overflow-x-scroll  px-4 pt-10 mb-8  ">
         <p className="flex items-center ">
           <BsArrowLeft color="gray" />
         </p>

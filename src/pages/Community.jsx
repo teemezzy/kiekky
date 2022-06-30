@@ -7,7 +7,7 @@ function Community(props) {
 
     
 return (
-        <div className="messages mt-[6.3rem] bg-[#E5E5E5]"> 
+        <div className="messages mt-[6.3rem] bg-[#F9FAFA]"> 
         <UserNav />
          <div className="flex ">
 

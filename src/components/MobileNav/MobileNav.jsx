@@ -9,7 +9,7 @@ function MobileNav(props) {
     return (
         <div>
 
-<div className="mobile-nav bg-[#FFFFFF] h-[4.75rem] sm:block lg:hidden shadow-sm fixed bottom-0 right-0 left-0 z-50 ">
+<div className="mobile-nav bg-[#FFFFFF] h-[4.75rem] block lg:hidden shadow-sm fixed bottom-0 right-0 left-0 z-50 ">
 
 <div className="side_list2 flex space-x-10 justify-center py-[1rem] items-center">
         {sideList2.map((side) => (
