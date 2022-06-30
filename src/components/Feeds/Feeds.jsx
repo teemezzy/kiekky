@@ -51,9 +51,9 @@ function Feeds() {
                   </div>
                 </div>
 
-                <div className="post-img h-[9rem] md:h-[10rem] flex mx-5">
+                <div className="post-img h-[9rem] md:h-[10rem] flex justify-around mx-5">
                   <img
-                    className="mr-5 w-[9rem] lg:w-[16rem]"
+                    className=" w-[9rem] lg:w-[16rem]"
                     src={feed.image}
                     alt=""
                   />
