@@ -13,7 +13,7 @@ function Recommendations(props) {
 
   return (
     <div>
-      <p className="lg:block mx-10 hidden">Recommendations </p>
+      <p className="xl:block mx-10 hidden">Recommendations </p>
       <div className="recommendations hidden mt-[2rem] mx-10  w-[16rem] lg:block">
         {story
           ? story.map((story, idx) => (

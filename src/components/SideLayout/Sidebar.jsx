@@ -37,7 +37,7 @@ const Sidebar = ({ children }) => {
               <div className="user_name mx-10 bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem]">
                 <div className="display-image">
                   <img
-                    className="  w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
+                    className="  w-[4rem] blink h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
                     src={post.image}
                     alt="icon"
                   />
