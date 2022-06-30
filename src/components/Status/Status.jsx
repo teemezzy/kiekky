@@ -21,10 +21,10 @@ const Status = () => {
         {story
           ? story.map((story, idx) => (
               <div key={idx} className="story-status ">
-                <div className="bookstore-card-image">
+                <div className="status-image  ">
                   <img
-                    className="mb-2 w-[4rem] h-[4rem]  p-[1.5px] border-[#625fad] border-2 rounded-[50%] cursor-pointer hover:scale-110 transition transform duration-200 ease-out"
-                    src={story.image}
+                    className="stats mb-2 w-[4rem] h-[4rem] border-red-500 p-[1.5px] border-2 cursor-pointer hover:scale-110 transition transform duration-200 ease-out"
+                    src={story.image} 
                     alt="icon"
                   />
                 </div>
@@ -35,7 +35,8 @@ const Status = () => {
             ))
           : null}
         <p className="flex items-center">
-          <BsArrowRight color="gray" />
+          <BsArrowRight color="#FF60C8;
+" />
         </p>
       </div>
     </div>
