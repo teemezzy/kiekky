@@ -15,7 +15,8 @@ import Post from "./Post/Post"
 import Feeds from "./Feeds/Feeds"
 import Recommendations from "./Recomendations/Recommendations";
 import UserNav from "./UserNav/UserNav"
-
+import HotPicks from "./HotPicks/HotPicks"
+import Members from './Members/Members'
 
 export {
   Navbar,
@@ -34,5 +35,7 @@ export {
   Post,
   Status,
   Recommendations,
-  UserNav
+  UserNav,
+  HotPicks,
+  Members
 };

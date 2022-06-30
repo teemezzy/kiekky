@@ -22,7 +22,7 @@ const Status = () => {
               <div key={idx} className="story-status ">
                 <div className="status-image">
                   <img
-                    className="stats w-[4rem] h-[4rem] p-[2.5px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
+                    className="stats w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
                     src={story.image}
                     alt="icon"
                   />
@@ -35,8 +35,7 @@ const Status = () => {
           : null}
         <p className="flex items-center">
           <BsArrowRight
-            color="#FF60C8;
-"
+            color="#FF60C8"
           />
         </p>
       </div>

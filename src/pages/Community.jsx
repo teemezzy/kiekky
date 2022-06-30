@@ -1,18 +1,25 @@
-import React from 'react';
-import {Sidebar, UserNav} from '../components'
-
+import React, {useEffect, useState} from 'react';
+import {Sidebar, UserNav, Status, HotPicks, Members} from '../components'
 
 function Community(props) {
+ 
+
+
     
 return (
         <div className="messages mt-[6.3rem] bg-[#E5E5E5]"> 
         <UserNav />
          <div className="flex ">
 
-<div className="  hidden  lg:block sidebar_prt pt-8">
+<div className=" hidden  lg:block sidebar_prt pt-8">
     <Sidebar />
     </div>
-<div className='ml-[22rem] '>Community</div>
+<div className=' '>
+  <Status />
+
+  <HotPicks />
+  <Members />
+  Community</div>
 </div>
         </div>
        
