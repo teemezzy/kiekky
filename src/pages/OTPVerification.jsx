@@ -17,47 +17,46 @@ const OTPVerification = () => {
   const [otp, setOtp] = useState("");
   const handleChange = (otp) => setOtp(otp);
 
-  const { user, isError, isSuccess, isLoading, message } = useSelector(
-    (state) => state.auth
+  const { otp:otpdata, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.otptoken
   );
+
+
+  const { user,} = useSelector((state) => state.auth);
+
+
+  const { data } = user;
+  const { email } = data;
+
+  console.log(email);
+
 
   useEffect(() => {
     if (isError) {
       // toast.error(message)
     }
-    if (isSuccess) {
+    if (otpdata) {
       navigate("/user_setup");
     }
   });
 
   const handleresend = () => {
 
-    const { data } = user;
-    const { email } = data;
-  
-    
     console.log(email);
     dispatch(resendotp(email));
-
-  }
+  };
   // console.log(user, isError);
   const onSubmit = (errors) => {
-    const { data } = user;
-    const { email } = data;
+
     let userdata = {
       email: email,
       otp: otp,
-      // console.log(otp)
-      // console.log(id);
-      // console.log(email);
+
     };
     console.log(userdata);
 
     dispatch(otptoken(userdata));
   };
-
-
-
 
   return (
     <div className="flex relative m-auto ">
@@ -88,7 +87,7 @@ const OTPVerification = () => {
               fontSize: "12px",
               color: "#000",
               fontWeight: "400",
-              careColour: "blue",
+              careColor: "blue",
             }}
             focusStyle={{ outline: "none" }}
           />
@@ -99,11 +98,7 @@ const OTPVerification = () => {
         </button>
         <p className="text-center text-gray-400 my-5 text-sm ">
           Didn't receive an OTP?
-          <Link to="/login" className="mx-1 text-[#6A52FD]">
-            Resend OTP
-          </Link>
-
-          <button onClick={handleresend}>  Resend OTP 2</button>
+          <button className="mx-1 text-[#6A52FD]" onClick={handleresend}> Resend OTP</button>
         </p>
       </form>
     </div>

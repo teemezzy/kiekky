@@ -3,6 +3,7 @@ import { Routes, Route, useParams, Navigate, Outlet } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import InnerElement from "./components/InnerElement";
 import {
   KiekkyHome,
   Home,
@@ -29,7 +30,7 @@ import {
 } from "./pages";
 // import { createBrowserHistory } from "history";
 
-function App() {
+function App(children) {
   // let params = useParams("");
 
   // const history = createBrowserHistory();
@@ -50,17 +51,18 @@ function App() {
         <Route path="user_setup" element={<AccountSetup />} />
         <Route path="otp" element={<OTPVerification />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
-        {/* <Route element={<ProtectedRoutes />}> */}
-          {/* <Route element={<Navigate to='/home'  />} /> */}
-          <Route path="home" element={<Home />} />
-          <Route path="community" element={<Community />} />
-          <Route path="messages" element={<Messages />} />
-          <Route path="dates" element={<Dates />} />
-          <Route path="settings" element={<Settings />} />
-          <Route path="wallet" element={<Wallet />} />
-          <Route path="logout" element={<Logout />} />
-          <Route path="user/:userid" element={<Profile />} />
-        {/* </Route> */}
+        <Route path="/" element={<ProtectedRoutes />}>
+          {/* <Route path="/" element={<InnerElement />}> */}
+            <Route path="home" element={<Home />} />
+            <Route path="community" element={<Community />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="dates" element={<Dates />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="wallet" element={<Wallet />} />
+            <Route path="logout" element={<Logout />} />
+            <Route path="user/:userid" element={<Profile />} />
+          {/* </Route> */}
+        </Route>
       </Routes>
       {/* <Footer /> */}
     </div>

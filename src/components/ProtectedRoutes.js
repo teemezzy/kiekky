@@ -9,7 +9,7 @@ export const useAuth = () => {
     return false;
   }
 };
-export default function ProtectedRoutes({ children }) {
+export default function ProtectedRoutes({ props:any }) {
   const auth = useAuth();
-  return auth ? children (<Outlet />) : <Navigate to="/login" />;
+  return auth ? <Outlet /> : <Navigate to="/login" />;
 }

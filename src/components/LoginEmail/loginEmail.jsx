@@ -5,15 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../../Redux/features/authSlice";
 
 const LoginEmail = () => {
+  const login = () => {
+    localStorage.setItem("user", "test");
+  };
   const [errorMsg, setErrorMsg] = useState("");
-  // const [isSignup, setIsSignup] = useState(false);
-  // const { isLoggedIn } = useSelector((state) => state.auth);
-  // const { message } = useSelector((state) => state.message);
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const location = useLocation();
- 
-
   const {
     handleSubmit,
     register,
@@ -33,19 +29,18 @@ const LoginEmail = () => {
       password: data.password,
       client_id: process.env.REACT_APP_CLIENT_ID,
       client_secret: process.env.REACT_APP_CLIENT_SECRET,
-      grant_type: process.env.REACT_APP_GRANT_TYPE
-
+      grant_type: process.env.REACT_APP_GRANT_TYPE,
     };
 
     dispatch(login(userdata));
   };
 
   useEffect(() => {
-    if (isError ) {
+    if (isError) {
       // toast.error(message)
     }
     if (isSuccess) {
-      navigate ('/home')
+      navigate("/home");
     }
   });
 
