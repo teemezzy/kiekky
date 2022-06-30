@@ -27,8 +27,9 @@ function Post() {
         display ? display.map((display, idx )=> (
           <div key={idx} className='story-status '>
 
-            <div className='bookstore-card-image'>
-              <img className='mb-2 w-[4rem]  h-[4rem]  p-[1.5px] border-[#625fad] border-2 rounded-[50%] cursor-pointer hover:scale-110 transition transform duration-200 ease-out' src={display.image} alt="icon" />
+            <div className='post-image'>
+
+              <img className=' w-[4rem] blink h-[4rem]  p-[2.7px]  cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full' src={display.image} alt="icon" />
             </div>
         </div>
         ))

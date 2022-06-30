@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Status = () => {
   const [story, setStory] = useState([]);
-  const url = "https://fakerapi.it/api/v1/books?_quantity=7";
+  const url = "https://fakerapi.it/api/v1/books?_quantity=3";
 
   useEffect(() => {
     axios.get(url).then((response) => setStory(response.data.data));
