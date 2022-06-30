@@ -42,8 +42,10 @@ const OTPVerification = () => {
         <img className=" h-full" src={bgLogin} alt="Login" />
       </div> */}
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="Otp_input flex justify-center ">
+      <form onSubmit={handleSubmit(onSubmit)} className= 'm-auto'>
+      <h1 className= ' font-bold text-5xl -mt-32'>Get Started </h1>
+      <p className='mb-10'>Please enter the verification code sent to s************@gmail.com</p>
+        <div className="Otp_input flex justify-center items-center">
           <OtpInput
             value={otp}
             onChange={handleChange}
@@ -68,13 +70,14 @@ const OTPVerification = () => {
         <button className=" text-white w-full mt-10 mb-4 rounded-md py-3 px-auto bg-[#6A52FD] ">
           Verify
         </button>
-      </form>
-      <p className="text-center my-5 text-sm ">
+        <p className="text-center text-gray-400 my-5 text-sm ">
         Didn't receive an OTP?
         <Link to="/login" className="mx-1 text-[#6A52FD]">
           Resend OTP
         </Link>
       </p>
+      </form>
+      
     </div>
   );
 }
