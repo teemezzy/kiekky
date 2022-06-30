@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import OtpInput from "react-otp-input";
+// import OtpInput from "react-otptoken-input";
 
 import authService from "./authService";
 
@@ -47,12 +47,12 @@ export const logout = createAsyncThunk("auth/logout", async () => {
   await authService.logout();
 });
 
-export const otp = createAsyncThunk(
-  "auth/otp",
+export const otptoken = createAsyncThunk(
+  "auth/otptoken",
   async (user, thunkAPI) => {
     try {
       console.log(user);
-      return await authService.register(user);
+      return await authService.otptoken(user);
     } catch (error) {
       const message =
         (error.response &&
@@ -116,15 +116,15 @@ export const authSlice = createSlice({
         state.user = null;
       })
 
-      .addCase(otp.pending, (state) => {
+      .addCase(otptoken.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(otp.fulfilled, (state, action) => {
+      .addCase(otptoken.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
         state.user = action.payload;
       })
-      .addCase(otp.rejected, (state, action) => {
+      .addCase(otptoken.rejected, (state, action) => {
         state.isLoading = false;
         state.isSuccess = false;
         state.message = action.payload;

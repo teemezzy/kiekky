@@ -5,7 +5,7 @@ import { bgLogin } from "../assets";
 import { Link } from "react-router-dom";
 import OtpInput from "react-otp-input";
 import { useDispatch, useSelector } from "react-redux";
-import { otp } from "../Redux/features/authSlice";
+import { otptoken } from "../Redux/features/authSlice";
 
 
 const OTPVerification = () => {
@@ -27,9 +27,10 @@ const OTPVerification = () => {
       otp_code : otp.otp
     };
 
-    dispatch(otp(userdata));
-    console.log(otp);
+    dispatch(otptoken(userdata));
+    console.log(otptoken);
   };
+  // console.log('otp)
 
   return (
     <div className="flex relative m-auto ">  
@@ -63,6 +64,7 @@ const OTPVerification = () => {
             }}
             focusStyle={{ outline: "none" }}
           />
+        
         </div>
 
         <button className=" text-white w-full mt-10 mb-4 rounded-md py-3 px-auto bg-[#6A52FD] ">

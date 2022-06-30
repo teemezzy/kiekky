@@ -23,7 +23,7 @@ const logout = () => {
   localStorage.removeItem("user");
 };
 
-const otp = async (userData) => {
+const otptoken = async (userData) => {
   console.log(userData);
   const response = await axios.post(API_URL + "register/confirm_otp", userData);
 
@@ -36,7 +36,7 @@ const authService = {
   register,
   login,
   logout,
-  otp,
+  otptoken,
 };
 
 export default authService;
