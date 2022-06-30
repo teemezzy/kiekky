@@ -1,9 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import OtpInput from "react-otp-input";
+// import OtpInput from "react-otptoken-input";
 
 import authService from "./authService";
 
 const user = JSON.parse(localStorage.getItem("user"));
+const otp = JSON.parse(localStorage.getItem("otp"));
+
 
 const initialState = {
   user: user ? user : null,
@@ -11,6 +13,8 @@ const initialState = {
   isSuccess: false,
   isLoading: false,
   message: "",
+  otp: otp ? otp : null,
+
 };
 
 export const regUser = createAsyncThunk(
@@ -47,23 +51,7 @@ export const logout = createAsyncThunk("auth/logout", async () => {
   await authService.logout();
 });
 
-export const otp = createAsyncThunk(
-  "auth/otp",
-  async (user, thunkAPI) => {
-    try {
-      console.log(user);
-      return await authService.register(user);
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
+
 
 
 
@@ -116,20 +104,6 @@ export const authSlice = createSlice({
         state.user = null;
       })
 
-      .addCase(otp.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(otp.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.user = action.payload;
-      })
-      .addCase(otp.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = false;
-        state.message = action.payload;
-        state.isError = true;
-      })
       
   },
 });

@@ -25,11 +25,11 @@ const Register = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-
+ 
   // Handle form submit
   const onSubmit = (data) => {
     let userdata = {
-      
+      full_name: data.full_name,
       email: data.email,
       username: data.username,
       phone: data.phone,

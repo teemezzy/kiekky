@@ -5,7 +5,7 @@ import axios from "axios";
 function Feeds() {
   const [feed, setFeed] = useState([]);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=20";
+  const url = "https://fakerapi.it/api/v1/persons?_quantity=50";
 
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));
