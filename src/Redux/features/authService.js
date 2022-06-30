@@ -23,11 +23,12 @@ const logout = () => {
   localStorage.removeItem("user");
 };
 
-const otp = async (data) => {
-  const response = await axios.post(API_URL + "register/confirm_otp", data);
-  if (response.data) {
-    localStorage.setItem("user", JSON.stringify(response.data));
-  }
+const otp = async (userData) => {
+  console.log(userData);
+  const response = await axios.post(API_URL + "register/confirm_otp", userData);
+
+  console.log(response.data);
+
   return response.data;
 };
 
