@@ -32,7 +32,7 @@ const UserDrawer = () => {
     };
   return (
     <div className=' border-1  '>
-      <div className="flex flex-col overflow-y-scroll justify-between items-center sm:w-80 w-72 h-72 absolute left-0 right-32 m-auto z-10 py-10 px-8 mr-5 bg-white ">
+      <div className="flex flex-col overflow-scroll justify-between pr-3 items-center sm:w-80 w-[17rem] h-[100vh] absolute left-0 right-32 m-auto z-10 py-10 px-8 mr-5 bg-white ">
        
       {post
         ? post.map((post, idx) => (
