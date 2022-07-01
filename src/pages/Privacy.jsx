@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { Navbar } from '../components'
+import { Navbar, Footer } from '../components'
 import { privacy } from "../assets";
 
 const Privacy = () => {
@@ -81,6 +81,8 @@ const Privacy = () => {
 
         </div>
       </main>
+      <Footer />
+
     </div>
   )
 }

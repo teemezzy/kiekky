@@ -11,7 +11,7 @@ function HotPicks(props) {
     }, []);
 
     return (
-        <div className=' mt-[6rem] w-[60rem]'>
+        <div className=' mt-[6rem] lg:w-[60rem]'>
             <div className="sub flex  space-x-3 items-center">
             <p>Members</p>
 <p className='bg-[#F6F4FF] text-xs text-[#999999] px-3 py-1 rounded-md '>Gender :Female</p>

@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { Navbar } from "../components";
+import { Navbar, Footer } from "../components";
 import { terms } from "../assets";
 
 const TermsConditions = () => {
@@ -38,6 +38,8 @@ const TermsConditions = () => {
 
         </p>
       </main>
+      <Footer />
+
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Faq } from "../assets";
 import { data } from "./data";
-import { Navbar } from "../components";
+import { Navbar, Footer } from "../components";
 
 const Faqs = () => {
   const [active, setActive] = useState(false);
@@ -48,6 +48,8 @@ const Faqs = () => {
           </div>
         ))}
       </div>
+      <Footer />
+
     </div>
   );
 };

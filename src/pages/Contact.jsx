@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Contactus } from "../assets";
-import { Navbar } from "../components";
+import { Navbar,Footer } from "../components";
 
 const Contact = () => {
   const { register, handleSubmit } = useForm();
@@ -92,6 +92,8 @@ const Contact = () => {
           />
         </form>
       </div>
+      <Footer />
+
     </div>
   );
 };

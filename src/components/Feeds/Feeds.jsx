@@ -25,7 +25,7 @@ function Feeds() {
                     <div className="feed-image">
                       <img
 
-                        className=" w-[4rem] lg:w-full h-[4rem] p-[1.5px] rounded-[50%]"
+                        className=" w-[4rem] lg:w-full h-[4rem] p-[2.7px] rounded-[50%]"
                         src={feed.image}
                         alt="icon"
                       />
@@ -34,7 +34,7 @@ function Feeds() {
                     <div className="lg:w-[42rem] sm:w-[17rem] md:w-[23rem]">
                       <p className="font-[700]">{feed.firstname}</p>
                       <div className="location flex justify-between  pr-5 text-gray text-sm ">
-                        <p className="md:text-sm sm:text-[0.4rem] flex items-center">
+                        <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
                           <span>
                             <MdOutlineLocationOn color="gray" />
                           </span>

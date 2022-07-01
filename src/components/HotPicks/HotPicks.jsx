@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function HotPicks(props) {
     const [story, setStory] = useState([]);
-    const url = "https://fakerapi.it/api/v1/books?_quantity=3";
+    const url = "https://fakerapi.it/api/v1/books?_quantity=4";
   
     useEffect(() => {
       axios.get(url).then((response) => setStory(response.data.data));
@@ -11,17 +11,17 @@ function HotPicks(props) {
 
     return (
         <div className='  '>
-            <div className="sub flex  space-x-3 items-center">
+            <div className="sub flex px-3 items-center">
             <p>Hot Picks</p>
 <p className='bg-[#F6F4FF] text-xs text-[#999999] px-3 py-1 rounded-md '>Gender :Female</p>
             </div>
 
-            <div className="images  flex  lg:w-[60rem] space-x-5 mt-5">
+            <div className="images  flex px-3  lg:w-[60rem]  space-x-5 mt-5">
 
 {story
           ? story.map((story, idx) => (
-              <div key={idx} className="story-status ">
-                <div className="">
+              <div key={idx} className="story-status  ">
+                <div className=" space-x-4   ">
                   <img
                     className="stats mb-2 w-[9.5rem] h-[8rem] rounded-lg  "
                     src={story.image} 
@@ -29,7 +29,7 @@ function HotPicks(props) {
                   />
                 </div>
                 <div>
-                  <h5 className="text-sm truncate"> {story.title} </h5>
+                  <h5 className="text-sm w-14 truncate"> {story.title} </h5>
                 </div>
               </div>
             ))
