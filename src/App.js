@@ -51,18 +51,18 @@ function App(children) {
         <Route path="user_setup" element={<AccountSetup />} />
         <Route path="otp" element={<OTPVerification />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
-        <Route path="/" element={<ProtectedRoutes />}>
-          {/* <Route path="/" element={<InnerElement />}> */}
-            <Route path="home" element={<Home />} />
-            <Route path="community" element={<Community />} />
-            <Route path="messages" element={<Messages />} />
-            <Route path="dates" element={<Dates />} />
-            <Route path="settings" element={<Settings />} />
-            <Route path="wallet" element={<Wallet />} />
-            <Route path="logout" element={<Logout />} />
-            <Route path="user/:userid" element={<Profile />} />
-          {/* </Route> */}
-        </Route>
+        {/* <Route path="/" element={<ProtectedRoutes />}> */}
+        {/* <Route path="/" element={<InnerElement />}> */}
+        <Route path="home" element={<Home />} />
+        <Route path="community" element={<Community />} />
+        <Route path="messages" element={<Messages />} />
+        <Route path="dates" element={<Dates />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="wallet" element={<Wallet />} />
+        <Route path="logout" element={<Logout />} />
+        <Route path="user/:userid" element={<Profile />} />
+        {/* </Route> */}
+        {/* </Route> */}
       </Routes>
       {/* <Footer /> */}
     </div>

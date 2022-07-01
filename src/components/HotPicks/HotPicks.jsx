@@ -11,11 +11,13 @@ function HotPicks(props) {
 
     return (
         <div className='  '>
+          <div className="top-text flex justify-between">
             <div className="sub flex px-3 items-center">
             <p>Hot Picks</p>
 <p className='bg-[#F6F4FF] text-xs text-[#999999] px-3 py-1 rounded-md '>Gender :Female</p>
             </div>
-
+            <p className="view text-sm text-[#6f52ad]">View all <span> {`${'>>'}`}</span></p>
+            </div>
             <div className="images  flex px-3  lg:w-[60rem]  space-x-5 mt-5">
 
 {story
