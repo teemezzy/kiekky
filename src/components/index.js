@@ -13,7 +13,7 @@ import MidNav from "./Navbar/MidNav"
 import Status from "./Status/Status"
 import Post from "./Post/Post"
 import Feeds from "./Feeds/Feeds"
-import Recommendations from "./Recomendations/Recommendations";
+import Recommendations from "./Recommendations/Recommendations";
 import UserNav from "./UserNav/UserNav"
 import HotPicks from "./HotPicks/HotPicks"
 import Members from './Members/Members'
