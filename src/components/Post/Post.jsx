@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {BiCamera, BiVideoPlus} from  "react-icons/bi";
-import {val} from "../../assets";
+
 
 import axios from "axios";
 
@@ -27,8 +27,9 @@ function Post() {
         display ? display.map((display, idx )=> (
           <div key={idx} className='story-status '>
 
-            <div className='bookstore-card-image'>
-              <img className='mb-2 w-[4rem]  h-[4rem]  p-[1.5px] border-[#625fad] border-2 rounded-[50%] cursor-pointer hover:scale-110 transition transform duration-200 ease-out' src={display.image} alt="icon" />
+            <div className='post-image'>
+
+              <img className=' w-[4rem] h-[4rem]  p-[2.7px]  cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full' src={display.image} alt="icon" />
             </div>
         </div>
         ))
@@ -39,10 +40,10 @@ function Post() {
 <p className='text-[gray] '>Whats new..</p>
   </div>
   
-  <div className="but flex justify-end items-center mr-5 mb-5">
-  <p className='mx-1'><BiCamera color="gray"/>  </p>
- <p className='mx-1'> <BiVideoPlus color="gray"/> </p> 
-<button className='mx-1 flex px-6 py-1 bg-[#6a52fd] text-white rounded-lg '  type="submit">Post it!</button>
+  <div className="but flex justify-end items-center mr-5 space-x-5 mb-5">
+  <p className='text-xl'><BiCamera color="gray"/>  </p>
+ <p className='text-xl'> <BiVideoPlus color="gray"/> </p> 
+<button className='flex px-6 py-1 bg-[#6a52fd] text-white rounded-lg '  type="submit">Post it!</button>
   </div>
 
 </div>

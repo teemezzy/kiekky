@@ -17,6 +17,7 @@ import Recommendations from "./Recomendations/Recommendations";
 import UserNav from "./UserNav/UserNav"
 import HotPicks from "./HotPicks/HotPicks"
 import Members from './Members/Members'
+import MobileNav from './MobileNav/MobileNav'
 
 export {
   Navbar,
@@ -37,5 +38,6 @@ export {
   Recommendations,
   UserNav,
   HotPicks,
-  Members
+  Members,
+  MobileNav
 };

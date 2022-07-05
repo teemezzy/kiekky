@@ -5,7 +5,7 @@ import axios from "axios";
 function Feeds() {
   const [feed, setFeed] = useState([]);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=100";
+  const url = "https://fakerapi.it/api/v1/persons?_quantity=50";
 
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));
@@ -21,23 +21,26 @@ function Feeds() {
             >
               <div>
                 <div className="postItem  items-center mb-7 ">
-                  <div className=" flex gap-10 items-center ml-5 ">
-                    <div className="img-container">
+                  <div className=" flex gap-2 items-center ml-5 ">
+                    <div className="feed-image">
                       <img
-                        className="mb-2 w-full h-[4rem] p-[1.5px] border-[#6a52fd] border-2 rounded-[50%]"
+
+                        className=" w-[4rem] lg:w-full h-[4rem] p-[2.7px] rounded-[50%]"
                         src={feed.image}
                         alt="icon"
                       />
                     </div>
 
-                    <div className="lg:w-[42rem] w-[23rem]">
+                    <div className="lg:w-[42rem] sm:w-[17rem] md:w-[23rem]">
                       <p className="font-[700]">{feed.firstname}</p>
-                      <div className="location flex justify-between pr-5 text-gray text-sm ">
-                        <p className="text-sm flex">
+                      <div className="location flex justify-between  pr-5 text-gray text-sm ">
+                        <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
                           <span>
                             <MdOutlineLocationOn color="gray" />
                           </span>
-                          {feed.address.country}, {feed.address.city}
+                          {feed.address.country},
+                           {feed.address.city}
+                          {/* Lagos, Nigeria */}
                         </p>
                         <p className="text-[gray] hidden lg:block text-sm">
                           2 days ago

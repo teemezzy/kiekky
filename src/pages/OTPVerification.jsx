@@ -1,48 +1,76 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { MidNav } from "../components";
 import { bgLogin } from "../assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import OtpInput from "react-otp-input";
 import { useDispatch, useSelector } from "react-redux";
-import { otptoken } from "../Redux/features/authSlice";
-
+import { otptoken, resendotp } from "../Redux/features/otp/otpSlice";
 
 const OTPVerification = () => {
   useEffect(() => {
     document.title = "OTP SetUp | Kiekky";
   }, []);
-  const { register, handleSubmit, errors } = useForm();
+  const navigate = useNavigate();
+  const { handleSubmit } = useForm();
   const dispatch = useDispatch();
   const [otp, setOtp] = useState("");
   const handleChange = (otp) => setOtp(otp);
 
-
-  const { user, isError, isSuccess, isLoading, message } = useSelector(
-    (state) => state.auth
+  const { otp:otpdata, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.otptoken
   );
-  console.log(user, isError);
-  const onSubmit = (otp, errors) => {
+
+
+  const { user,} = useSelector((state) => state.auth);
+
+
+  const { data } = user;
+  const { email } = data;
+
+  console.log(email);
+
+
+  useEffect(() => {
+    if (isError) {
+      // toast.error(message)
+    }
+    if (otpdata) {
+      navigate("/user_setup");
+    }
+  });
+
+  const handleresend = () => {
+
+    console.log(email);
+    dispatch(resendotp(email));
+  };
+  // console.log(user, isError);
+  const onSubmit = (errors) => {
+
     let userdata = {
-      otp_code : otp.otp
+      email: email,
+      otp: otp,
+
     };
+    console.log(userdata);
 
     dispatch(otptoken(userdata));
-    console.log(otptoken);
   };
-  // console.log('otp)
 
   return (
-    <div className="flex relative m-auto ">  
+    <div className="flex relative m-auto ">
       <MidNav className="lg:hidden block" />
 
       <div className="background w-2/5 hidden lg:block ">
         <img className=" h-full" src={bgLogin} alt="Login" />
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className= ' mx-auto'>
-      <h1 className= ' font-bold text-5xl mt-32'>Get Started </h1>
-      <p className='mb-10'>Please enter the verification code sent to s************@gmail.com</p>
+      <form onSubmit={handleSubmit(onSubmit)} className=" mx-auto">
+        <h1 className=" font-bold text-5xl mt-32">Get Started </h1>
+        <p className="mb-10">
+          Please enter the verification code sent to s************@gmail.com
+        </p>
         <div className="Otp_input flex justify-center items-center">
           <OtpInput
             value={otp}
@@ -59,26 +87,22 @@ const OTPVerification = () => {
               fontSize: "12px",
               color: "#000",
               fontWeight: "400",
-              careColour: "blue",
+              careColor: "blue",
             }}
             focusStyle={{ outline: "none" }}
           />
-        
         </div>
 
         <button className=" text-white w-full mt-10 mb-4 rounded-md py-3 px-auto bg-[#6A52FD] ">
           Verify
         </button>
         <p className="text-center text-gray-400 my-5 text-sm ">
-        Didn't receive an OTP?
-        <Link to="/login" className="mx-1 text-[#6A52FD]">
-          Resend OTP
-        </Link>
-      </p>
+          Didn't receive an OTP?
+          <button className="mx-1 text-[#6A52FD]" onClick={handleresend}> Resend OTP</button>
+        </p>
       </form>
-      
     </div>
   );
-}
+};
 
 export default OTPVerification;

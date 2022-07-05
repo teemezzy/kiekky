@@ -1,11 +1,11 @@
 import React from 'react';
-import {Sidebar, UserNav} from '../components'
+import {Sidebar, UserNav, MobileNav} from '../components'
 
 
 function Messages(props) {
     
 return (
-        <div className="messages mt-[6.3rem] bg-[#E5E5E5]"> 
+        <div className="messages mt-[6.3rem] bg-[#F9FAFA]"> 
         <UserNav />
          <div className="flex ">
 
@@ -13,6 +13,10 @@ return (
     <Sidebar />
     </div>
 <div className='ml-[22rem] '>Messages</div>
+</div>
+
+<div className="mobile-nav">
+  <MobileNav />
 </div>
         </div>
        

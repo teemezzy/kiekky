@@ -1,36 +1,39 @@
-import React, { useState, useEffect } from "react";
-import "./Sidebar.css";
-import { sideList } from "./sideList";
 import { NavLink } from "react-router-dom";
+import '../Navbar/Navbar.css'
+import React, { useState, useEffect } from "react";
+import "../SideLayout/Sidebar.css";
+import { sideList3 } from "../SideLayout/sideList3";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-// import { logout, reset } from "../../Redux/features/authSlice";
-// import { useDispatch } from "react-redux";
+
 import { FiLogOut } from "react-icons/fi";
 
-const Sidebar = ({ children }) => {
-  // const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [post, setPost] = useState([]);
+const UserDrawer = () => {
 
-  const url = "https://fakerapi.it/api/v1/books?_quantity=1";
 
-  const pathname = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  useEffect(() => {
-    axios.get(url).then((response) => setPost(response.data.data));
-  }, []);
-  const onLogout = () => {
-    // dispatchEvent(logout());
-    // dispatch(reset());
-    localStorage.removeItem("user");
-    navigate("/");
-  };
+    const navigate = useNavigate();
+    const [post, setPost] = useState([]);
+  
+    const url = "https://fakerapi.it/api/v1/books?_quantity=1";
+  
+    const pathname = useLocation();
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  
+    useEffect(() => {
+      axios.get(url).then((response) => setPost(response.data.data));
+    }, []);
+    const onLogout = () => {
+      // dispatchEvent(logout());
+      // dispatch(reset());
+      localStorage.removeItem("user");
+      navigate("/");
+    };
   return (
-    <div className="side ">
+    <div className=' border-1  '>
+      <div className="flex flex-col overflow-scroll justify-between pr-3 items-center sm:w-80 w-[17rem] h-[100vh] absolute left-0 right-32 m-auto z-10 py-10 px-8 mr-5 bg-white ">
+       
       {post
         ? post.map((post, idx) => (
             <div key={idx} className="story-status ">
@@ -53,7 +56,7 @@ const Sidebar = ({ children }) => {
         : null}
 
       <div className="side_list mx-10 bg-white w-[17rem] h-[40rem] divide-y divide-opacity-50  divide-gray-300">
-        {sideList.map((side) => (
+        {sideList3.map((side) => (
           <div
             key={side.id}
             className="ml-5 pt-5 items-center text-sm text-gray"
@@ -87,7 +90,16 @@ const Sidebar = ({ children }) => {
         </div>
       </div>
     </div>
+
+
+      </div>
+  
   );
 };
 
-export default Sidebar;
+export default UserDrawer; 
+
+
+
+
+
