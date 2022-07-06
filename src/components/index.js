@@ -18,6 +18,12 @@ import UserNav from "./UserNav/UserNav"
 import HotPicks from "./HotPicks/HotPicks"
 import Members from './Members/Members'
 import MobileNav from './MobileNav/MobileNav'
+import Tokens from './Tokens/Tokens'
+import Subscriptions from './Subscriptions/Subscriptions'
+import KYC from './KYC/KYC'
+import Referrals from './Referrals/Referrals'
+import RequestPayment from './RequestPayment/RequestPayment'
+import Vouchers from './Vouchers/Vouchers'
 
 export {
   Navbar,
@@ -39,5 +45,9 @@ export {
   UserNav,
   HotPicks,
   Members,
-  MobileNav
+  Tokens,
+  MobileNav,
+  Subscriptions,
+  KYC, Vouchers, RequestPayment, Referrals
+
 };

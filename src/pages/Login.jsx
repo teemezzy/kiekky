@@ -16,7 +16,6 @@ const Login = () => {
 
   const toggleTab = (tab) => {
     setToggleState(tab);
-    console.log(tab);
   };
 
   return (
