@@ -20,7 +20,7 @@ function Wallet() {
   const activeTabs =
     "text-[#6A52FD]  text-[16px] py-[16.5px] px-[53px] m-auto text-center border-t-2 border-r-2 border-l-2 bg-white cursor-pointer outline-none";
   const tabs =
-    " text-[#BDBDBD] w-[157px] text-[16px] py-[16.5px] px-[53px] text-center m-auto cursor-pointer outline-none";
+    " text-[#BDBDBD] w-[157px] text-[16px]  text-center m-auto cursor-pointer outline-none";
 
   const activeContent = "";
   const content = "bg-white w-full hidden p-[20px]";

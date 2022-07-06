@@ -4,28 +4,9 @@ import { GiToken } from "react-icons/gi";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useEffect } from "react";
 import { transaction } from "./Transaction";
+import { FiDivide } from "react-icons/fi";
 
 const Tokens = () => {
-  useEffect(() => {
-    const options = {
-      method: "GET",
-      url: "https://my-money-exchanger.p.rapidapi.com/list",
-      headers: {
-        "X-RapidAPI-Key": "33f4d5d5a1mshb026919c34c25e6p11ef50jsn5b95ce8a30bf",
-        "X-RapidAPI-Host": "my-money-exchanger.p.rapidapi.com",
-      },
-    };
-
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  });
-
   return (
     <div>
       <div className="flex justify-around px-[53px] py-[65px] bg-white">
@@ -47,14 +28,30 @@ const Tokens = () => {
 
       <div>
         <p>My Transactions</p>
-        {transaction.map((transactions) => (
-          <div className="flex justify-around text-left" key={transactions.id}>
-            <div> {transactions.date} </div>
-            <div> {transactions.recipient} </div>
-            <div> {transactions.amount} </div>
-            <div> {transactions.status} </div>
-          </div>
-        ))}
+
+        <table className="border-2 w-[984px]">
+          <thead className="flex order-0 justify-around text-center border-b-2">
+            <div className="px-10">Date</div>
+            <div className="px-10">Description</div>
+            <div className="px-10">Recipient</div>
+            <div className="px-10">Amount</div>
+            <div className="px-10">Status</div>
+          </thead>
+          <tbody className="justify-evenly text-center ">
+            {transaction.map((transactions) => (
+              <tr
+                className=" flex order-1 justify-around text-center border-b-2"
+                key={transactions.id}
+              >
+                <th className="px-10 text-left">{transactions.date}</th>
+                <th className="px-10 text-left"> {transactions.description} </th>
+                <th className="px-10 text-left">{transactions.recipient}</th>
+                <th className="px-10 text-left">{transactions.amount}</th>
+                <th>{transactions.status}</th>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

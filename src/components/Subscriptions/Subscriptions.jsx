@@ -2,7 +2,12 @@ import React from 'react'
 
 const Subscriptions = () => {
   return (
-    <div>Subscriptions</div>
+    <div>
+
+      Subscriptions
+      
+
+    </div>
   )
 }
 
