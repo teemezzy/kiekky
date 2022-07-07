@@ -26,28 +26,28 @@ const Tokens = () => {
         <div className="border-2 w-64 h-36 pl-[22px] rounded-2xl"></div>
       </div>
 
-      <div>
-        <p>My Transactions</p>
+      <div className='mt-[80px]'>
+        <p className='text-2xl font-semibold mb-[24px]'>My Transactions</p>
 
         <table className="border-2 w-[984px]">
-          <thead className="flex order-0 justify-around text-center border-b-2">
-            <div className="px-10">Date</div>
-            <div className="px-10">Description</div>
-            <div className="px-10">Recipient</div>
-            <div className="px-10">Amount</div>
-            <div className="px-10">Status</div>
+          <thead className="flex order-0 justify-around text-center border-b-2 bg-[#F5F3FF]">
+            <th className="w-28 text-left">Date</th>
+            <th className="w-28 text-left">Description</th>
+            <th className="w-28 text-left">Recipient</th>
+            <th className="w-28 text-left">Amount</th>
+            <th className="w-28 text-left">Status</th>
           </thead>
-          <tbody className="justify-evenly text-center ">
+          <tbody className="justify-evenly text-center bg-white">
             {transaction.map((transactions) => (
               <tr
                 className=" flex order-1 justify-around text-center border-b-2"
                 key={transactions.id}
               >
-                <th className="px-10 text-left">{transactions.date}</th>
-                <th className="px-10 text-left"> {transactions.description} </th>
-                <th className="px-10 text-left">{transactions.recipient}</th>
-                <th className="px-10 text-left">{transactions.amount}</th>
-                <th>{transactions.status}</th>
+                <td className="w-28 text-left">{transactions.date}</td>
+                <td className="w-28 text-left"> {transactions.description} </td>
+                <td className="w-28 text-left">{transactions.recipient}</td>
+                <td className="w-28 text-left">{transactions.amount}</td>
+                <td className="w-28 text-left">{transactions.status}</td>
               </tr>
             ))}
           </tbody>

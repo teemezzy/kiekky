@@ -26,13 +26,13 @@ function Wallet() {
   const content = "bg-white w-full hidden p-[20px]";
 
   return (
-    <div className="messages mt-[6.3rem] bg-[#F9FAFA]">
+    <div className="messages mt-[6.3rem] bg-[#F9FAFA] pb-[117px] ">
       <UserNav />
       <div className="flex">
         <div className="hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className="mt-10">
+        <div className="mt-10 w-[984px] m-auto ">
           {/* Title For TabMenu */}
           <div className="flex m-auto w-[58.9rem]">
             <div

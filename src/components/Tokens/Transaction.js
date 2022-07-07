@@ -4,7 +4,7 @@ import { GiSamuraiHelmet } from "react-icons/gi";
 export const transaction = [
   {
     id: 1,
-    recipient: "sarah",
+    recipient: "David",
     date: "21-06-2022",
     status: "successful",
     amount: 385,
@@ -13,7 +13,7 @@ export const transaction = [
 
   {
     id: 2,
-    recipient: "sarah",
+    recipient: "Joan",
     date: "21-06-2022",
     status: "successful",
     amount: 450,
@@ -21,7 +21,7 @@ export const transaction = [
   },
   {
     id: 3,
-    recipient: "sarah",
+    recipient: "TEEJAY",
     date: "21-06-2022",
     status: "successful",
     amount: 600,
@@ -29,15 +29,15 @@ export const transaction = [
   },
   {
     id: 4,
-    recipient: "sarah",
+    recipient: "Silver",
     date: "21-06-2022",
-    status: "fail",
+    status: "Failed",
     amount: 200,
     description: "for stuff",
   },
   {
     id: 5,
-    recipient: "sarah",
+    recipient: "Henry",
     date: "21-06-2022",
     status: "successful",
     amount: 700,
@@ -45,7 +45,7 @@ export const transaction = [
   },
   {
     id: 6,
-    recipient: "sarah",
+    recipient: "Vincent",
     date: "21-06-2022",
     status: "successful",
     amount: 500,
