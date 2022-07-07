@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {NavLink} from 'react-router-dom';
-import Recommendations from '../Recomendations/Recommendations'
+import Recommendations from '../Recommendations/Recommendations'
 function ProfilePost() {
   const [feed, setFeed] = useState([]);
 
