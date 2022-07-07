@@ -13,25 +13,28 @@ import Form from "./form.png";
 import Contact from "./contactIcon.png";
 import LogoFooter from "./logo-footer.png";
 import Submit from "./submit.png";
-import Chat from './chat.png';
-import chatIcon from './chatIcon.png'
+import Chat from "./chat.png";
+import chatIcon from "./chatIcon.png";
 import Message from "./message.png";
-import privacy from './privacy.png';
-import terms from './terms.png';
-import section3 from './section3.png';
-import Contactus from './contact-us.png';
-import chatVid from './chatVid.mp4';
-import dateVid from './dateVid.mp4';
-import exploreVid from './exploreVid.mp4';
-import heroVid from './heroVid.mp4';
-import Faq from './faq.png';
-import setupProfileVid from './setupProfileVid.mp4'
-import bgLogin from './bgLogin.png'
-import woman from './woman.png'
-import male from './male.png'
-import val from './val.png'
-import PostImg from './PostImg.png'
-import elena from './elena.png'
+import privacy from "./privacy.png";
+import terms from "./terms.png";
+import section3 from "./section3.png";
+import Contactus from "./contact-us.png";
+import chatVid from "./chatVid.mp4";
+import dateVid from "./dateVid.mp4";
+import exploreVid from "./exploreVid.mp4";
+import heroVid from "./heroVid.mp4";
+import Faq from "./faq.png";
+import setupProfileVid from "./setupProfileVid.mp4";
+import bgLogin from "./bgLogin.png";
+import woman from "./woman.png";
+import male from "./male.png";
+import val from "./val.png";
+import PostImg from "./PostImg.png";
+import elena from "./elena.png";
+import yellowCone from "./yellowCone.png";
+import co from "./co.png";
+
 export {
   Logo,
   Contactus,
@@ -66,6 +69,7 @@ export {
   woman,
   male,
   PostImg,
-  val
-
+  val,
+  co,
+  yellowCone,
 };

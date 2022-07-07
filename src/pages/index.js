@@ -1,6 +1,6 @@
 import KiekkyHome from "./KiekkyHome";
-import Home from "./Home";
-import Login from "./Login";
+import Home from "./Home/Home";
+import Login from "./Login/Login.jsx";
 import Register from "./Register";
 import Privacy from "./Privacy";
 import TermsConditions from "./TermsConditions";
@@ -20,6 +20,11 @@ import Wallet from "./Wallet";
 import Settings from "./Settings";
 import Dashboard from "./Dashboard";
 import Logout from "./Logout";
+import Notifications from './Notifications/Notifications.jsx'
+import UserProfile from './UserProfile/UserProfile'
+import PersonalProfile from './PersonalProfile/PersonalProfile'
+import UserSubscribe from './UserSubscribe'
+
 export {
   KiekkyHome,
   Home,
@@ -43,4 +48,8 @@ export {
   Dates,
   Dashboard,
   Logout,
+  Notifications,
+  UserProfile,
+  PersonalProfile,
+  UserSubscribe
 };

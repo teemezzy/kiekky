@@ -28,7 +28,12 @@ const UserNav = () => {
       <div className="absolute h-[100%] flex items-center flex-end pl-[9rem] ">
             <BsFilter className="h-5 w-5 pl-1 text-gray-500" />
             </div>
-         <p><BsBell color="gray"/> </p>
+
+            <NavLink to='/notifications '  className={`${
+                window.location.pathname === '/notifications' ? " active1 " : null
+              }  `}>
+            <p clasName='hover:bg-[#6a52fd] bell'><BsBell color="gray"/> </p>
+            </NavLink>
 
             </div>
           </div>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
-import { bgLogin } from "../assets";
-import { LoginEmail, LoginPhone } from "../components";
+import { bgLogin } from "../../assets";
+import { LoginEmail, LoginPhone } from "../../components";
 import { BsPhone } from "react-icons/bs";
 import { BiEnvelope } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { MidNav } from "../components";
+import { MidNav } from "../../components";
 import "./Login.css";
 const Login = () => {
   useEffect(() => {

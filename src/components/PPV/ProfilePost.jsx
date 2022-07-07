@@ -4,18 +4,19 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 import {NavLink} from 'react-router-dom';
-
-function Feeds() {
+import Recommendations from '../Recomendations/Recommendations'
+function ProfilePost() {
   const [feed, setFeed] = useState([]);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=50";
+  const url = "https://fakerapi.it/api/v1/persons?_quantity=5";
 
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="feed-recommendation flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
+    <div className=" lg:w-[66%]">
       {feed
         ? feed.map((feed, idx) => (
             <div
@@ -80,8 +81,14 @@ function Feeds() {
             </div>
           ))
         : null}
+
+    </div>
+    <Recommendations />
+
+
+
     </div>
   );
 }
 
-export default Feeds;
+export default ProfilePost;

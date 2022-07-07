@@ -1,6 +1,6 @@
 import React from "react";
-import { Status, Post, Feeds, Recommendations, UserNav, MobileNav } from "../components";
-import { Sidebar } from "../components";
+import { Status, Post, Feeds, Recommendations, UserNav, MobileNav } from "../../components";
+import { Sidebar } from "../../components";
 import "./Home.css";
 
 const Home = () => {

@@ -1,0 +1,19 @@
+
+ .input-option-tab .login-tab-active
+
+ {
+    background-color:  #EAEAEA;
+   border-radius: 0.4rem;
+   border: 1px solid #EAEAEA;
+}
+
+.input-option-tab .login-tab-active1
+{ background: #FFFFFF;
+   color: #6f52ad
+}
+
+.input-option-tab .login-tab-active2
+{ background: #6f52ad;
+   color: white;
+   border-radius: 10px
+}

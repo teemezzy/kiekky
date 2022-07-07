@@ -27,6 +27,10 @@ import {
   Wallet,
   Settings,
   Logout,
+  Notifications,
+  PersonalProfile,
+  UserProfile,
+  UserSubscribe
 } from "./pages";
 // import { createBrowserHistory } from "history";
 
@@ -60,6 +64,11 @@ function App(children) {
         <Route path="settings" element={<Settings />} />
         <Route path="wallet" element={<Wallet />} />
         <Route path="logout" element={<Logout />} />
+        <Route path="notifications" element={<Notifications />} />
+        <Route path="user_profile" element={<UserProfile />} />
+        
+        <Route path="subscribe" element={<UserSubscribe />} />
+        {/* <Route path="personal_profile" element={<PersonalProfile />} /> */}
         <Route path="user/:userid" element={<Profile />} />
         {/* </Route> */}
         {/* </Route> */}

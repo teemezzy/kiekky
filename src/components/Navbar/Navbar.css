@@ -12,6 +12,14 @@
   color: #6a52fd;
 }
 
+.inner-content {
+  border-radius: 0.5rem;
+  border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  border-width: 2px;
+  border-style: solid;
+  border-image-slice: 21;
+}
+
 .set-position {
   position: fixed;
   z-index: 1;
