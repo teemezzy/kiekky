@@ -15,13 +15,13 @@ function ProfilePost() {
 
   return (
     <div className="feed-recommendation flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
-    <div className=" w-[66%] pictures">
+    <div className="  w-[66%] pictures">
     {feed
           ? feed.map((feed, idx) => (
               <div key={idx} className="story-status ">
                 <div className="image">
                   <img
-                    className="w-[17rem] h-[15rem] rounded-md"
+                    className=" w-[17rem] h-[7rem] lg:h-[16rem] rounded-md"
                     src={feed.image}
                     alt="icon"
                   />

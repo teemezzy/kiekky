@@ -68,7 +68,7 @@ function App(children) {
         <Route path="user_profile" element={<UserProfile />} />
         
         <Route path="subscribe" element={<UserSubscribe />} />
-        {/* <Route path="personal_profile" element={<PersonalProfile />} /> */}
+        <Route path="personal_profile" element={<PersonalProfile />} />
         <Route path="user/:userid" element={<Profile />} />
         {/* </Route> */}
         {/* </Route> */}

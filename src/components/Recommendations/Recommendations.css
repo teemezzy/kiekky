@@ -2,14 +2,14 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 18px;
-        row-gap: 18px;  
+        row-gap: 21px;  
 }
 
 .pictures{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 18px;
-    row-gap: 40px;  
+    column-gap: 30px;
+    row-gap: 45px;  
 }
 
 .blink{

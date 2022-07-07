@@ -42,7 +42,7 @@ function OpenChat({ visible, onClose }) {
                     </div>
                   </div>
 
-                  <p className="pb-5 text-sm flex justify-center">Chat with {feed.firstname} for 16 tokens </p>
+                  <p className="pb-5 text-sm sm:mb-5 lg:mb-0 flex justify-center">Chat with {feed.firstname} for 16 tokens </p>
 
 
                 </div>
@@ -53,7 +53,7 @@ function OpenChat({ visible, onClose }) {
         </div>
 
 
-        <button className='flex justify-center m-auto w-[8rem] text-xs lg:text-base lg:w-[8rem] px-2 lg:px-6 py-1 bg-[#6a52fd] text-white rounded-lg ' type="submit">Open Chat</button>
+        <button className='flex justify-center m-auto w-[8rem] lg:text-base lg:w-[8rem] my-4 px-2 lg:px-6 py-1 bg-[#6a52fd] text-white rounded-lg ' type="submit">Open Chat</button>
 
 
       </div>

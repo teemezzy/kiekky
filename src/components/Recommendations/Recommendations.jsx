@@ -20,7 +20,7 @@ function Recommendations(props) {
               <div key={idx} className="story-status ">
                 <div className="image">
                   <img
-                    className="w-[7rem] h-[7rem]"
+                    className="w-[7rem] h-[7rem] rounded-md"
                     src={story.image}
                     alt="icon"
                   />
