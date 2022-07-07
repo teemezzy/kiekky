@@ -9,21 +9,25 @@ import Sidebar from "./SideLayout/Sidebar";
 import SideLayout from "./SideLayout/SideLayout";
 import LoginEmail from "./LoginEmail/loginEmail";
 import LoginPhone from "./LoginPhoneNo/loginPhoneNo";
-import MidNav from "./Navbar/MidNav"
-import Status from "./Status/Status"
-import Post from "./Post/Post"
-import Feeds from "./Feeds/Feeds"
+import MidNav from "./Navbar/MidNav";
+import Status from "./Status/Status";
+import Post from "./Post/Post";
+import Feeds from "./Feeds/Feeds";
 import Recommendations from "./Recommendations/Recommendations";
-import UserNav from "./UserNav/UserNav"
-import HotPicks from "./HotPicks/HotPicks"
-import Members from './Members/Members'
-import MobileNav from './MobileNav/MobileNav'
-import Tokens from './Tokens/Tokens'
-import Subscriptions from './Subscriptions/Subscriptions'
-import KYC from './KYC/KYC'
-import Referrals from './Referrals/Referrals'
-import RequestPayment from './RequestPayment/RequestPayment'
-import Vouchers from './Vouchers/Vouchers'
+import UserNav from "./UserNav/UserNav";
+import HotPicks from "./HotPicks/HotPicks";
+import Members from "./Members/Members";
+import MobileNav from "./MobileNav/MobileNav";
+import Tokens from "./Tokens/Tokens";
+import Subscriptions from "./Subscriptions/Subscriptions";
+import KYC from "./KYC/KYC";
+import Referrals from "./Referrals/Referrals";
+import RequestPayment from "./RequestPayment/RequestPayment";
+import Vouchers from "./Vouchers/Vouchers";
+import SetSubscription from "./SetSubscription/SetSubscription";
+import Notifications from "./Notifications/Notifications";
+import Password from "./Password/Password";
+import ProfileVerification from "./ProfileVerification/ProfileVerification";
 
 export {
   Navbar,
@@ -37,7 +41,7 @@ export {
   Footer,
   LoginPhone,
   LoginEmail,
-  MidNav, 
+  MidNav,
   Feeds,
   Post,
   Status,
@@ -48,6 +52,12 @@ export {
   Tokens,
   MobileNav,
   Subscriptions,
-  KYC, Vouchers, RequestPayment, Referrals
-
+  KYC,
+  Vouchers,
+  RequestPayment,
+  Referrals,
+  SetSubscription,
+  Notifications,
+  Password,
+  ProfileVerification,
 };

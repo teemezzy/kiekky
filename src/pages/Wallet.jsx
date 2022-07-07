@@ -26,7 +26,7 @@ function Wallet() {
   const content = "bg-white w-full hidden p-[20px]";
 
   return (
-    <div className="messages mt-[6.3rem] bg-[#F9FAFA] pb-[117px] ">
+    <div className="mt-[6.3rem] bg-[#F9FAFA] pb-[117px] ">
       <UserNav />
       <div className="flex">
         <div className="hidden lg:block sidebar_prt pt-8">
