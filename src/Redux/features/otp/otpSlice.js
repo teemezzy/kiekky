@@ -1,10 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import OtpInput from "react-otptoken-input";
-
 import otpService from "./otpService";
 
 const otp = JSON.parse(localStorage.getItem("otp"));
-
 
 const initialState = {
   otp: otp ? otp : null,
@@ -13,7 +10,6 @@ const initialState = {
   isLoading: false,
   message: "",
 };
-
 
 
 export const otptoken = createAsyncThunk(
@@ -52,8 +48,6 @@ export const resendotp = createAsyncThunk(
     }
   );
   
-
-
 
 export const otpSlice = createSlice({
   name: "otptoken",

@@ -23,6 +23,16 @@ import User from "./User/User.jsx";
 import UserInfo from "./UserInfo/UserInfo";
 import PPV from './PPV/PPV.jsx'
 import Subscribe from './Subscribe/Subscribe'
+import Tokens from "./Tokens/Tokens";
+import Subscriptions from "./Subscriptions/Subscriptions";
+import KYC from "./KYC/KYC";
+import Referrals from "./Referrals/Referrals";
+import RequestPayment from "./RequestPayment/RequestPayment";
+import Vouchers from "./Vouchers/Vouchers";
+import SetSubscription from "./SetSubscription/SetSubscription";
+import Notifications from "./Notifications/Notifications";
+import Password from "./Password/Password";
+import ProfileVerification from "./ProfileVerification/ProfileVerification";
 
 export {
   Navbar,
@@ -49,5 +59,15 @@ export {
   User,
   UserInfo,
   PPV,
-  Subscribe
+  Subscribe,
+  Tokens,
+  Subscriptions,
+  KYC,
+  Vouchers,
+  RequestPayment,
+  Referrals,
+  SetSubscription,
+  Notifications,
+  Password,
+  ProfileVerification,
 };
