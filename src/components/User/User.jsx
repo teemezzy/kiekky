@@ -51,7 +51,7 @@ function User() {
                 <p className="font-[700]">{feed.firstname}</p>
 
                 <div className="location flex justify-between  pr-5 text-gray text-sm ">
-                  <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-start">
+                  <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
                     <span>
                       <MdOutlineLocationOn color="gray" />
                     </span>
@@ -68,7 +68,7 @@ function User() {
 
                 <div className="buttons mt-6 text-sm space-x-5 space-y-7 pb-4">
                   <button onClick={() => setShowMyModal(true)} className=' w-[8rem] text-xs lg:text-base lg:w-[8rem] px-2 lg:px-6 py-1 bg-[#6a52fd] text-white rounded-lg ' type="submit">Open Chat</button>
-                  <NavLink to='/subscribe'>  <button className=' w-[5rem] text-xs lg:text-base lg:w-[8rem] lg:px-6 py-1 bg-[#6a52fd] text-white rounded-lg ' type="submit">Subscribe</button> </NavLink>
+                  <NavLink to='/subscribe'>  <button className=' w-[5rem] text-xs lg:text-base lg:w-[8rem] lg:px-6 py-1 text-[#6a52fd] border-[1px] border-[#6a52fd] text-white rounded-lg ' type="submit">Subscribe</button> </NavLink>
 
                 </div>
               </div>

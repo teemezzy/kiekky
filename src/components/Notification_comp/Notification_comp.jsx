@@ -13,14 +13,14 @@ function Notification_comp() {
   }, []);
 
   return (
-    <div className=" notify flex flex-col mt-10 divide-y border-2 divide-slate-200 mx-6  justify-center  sm:items-center lg:items-start sm:w-[100vw] lg:w-[50rem] ">
+    <div className=" notify flex flex-col mt-10 divide-y  divide-slate-200 mx-6  justify-center  sm:items-center lg:items-start sm:w-[100vw] lg:w-[50rem] ">
       
       <p className='p-5 '>Notification</p>
       {feed
         ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="story-status not w-full px-4 bg-white py-4  "            >
+              className="story-status not w-full px-4 bg-white py-6  "            >
                 
                 <div className="pic-not flex gap-2 items-center  ">
                 <div className="feed-image">

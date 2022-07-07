@@ -24,15 +24,14 @@ const UserNav = () => {
             </div>
             <div className="flex relative justify-between space-x-6 items-center">
            
-      <input className="bg-gray-50 p-2 block focus:outline-none w-full pl-5 sm:text-sm focus:border-[gray]" type="text" name="" placeholder="search..." />
+      <input className="bg-gray-50 p-2 block rounded-md focus:outline-none w-full pl-5 sm:text-sm focus:border-[gray]" type="text" name="" placeholder="search..." />
       <div className="absolute h-[100%] flex items-center flex-end pl-[9rem] ">
-            <BsFilter className="h-5 w-5 pl-1 text-gray-500" />
             </div>
 
             <NavLink to='/notifications '  className={`${
                 window.location.pathname === '/notifications' ? " active1 " : null
               }  `}>
-            <p clasName='hover:bg-[#6a52fd] bell'><BsBell color="gray"/> </p>
+            <p clasName='hover:text-[#6a52fd] bell'><BsBell color="gray"/> </p>
             </NavLink>
 
             </div>

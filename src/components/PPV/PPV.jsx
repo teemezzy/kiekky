@@ -27,7 +27,7 @@ function UserInfo(props) {
                   onClick={() => toggleTab(1)}
                   className={`${
                     toggleState === 1 ? "login-tab-active2" : ""
-                  }  py-[0.5rem] px-[3rem]  self-center  `}
+                  }  py-[0.3rem] px-[2rem]  self-center  `}
                 >
                   
                     <div>
@@ -38,7 +38,7 @@ function UserInfo(props) {
                   onClick={() => toggleTab(2)}
                   className={`${
                     toggleState === 2 ? "login-tab-active2" : ""
-                  }  py-[0.7rem]  px-[3rem] self-center `}
+                  }  py-[0.3rem]  px-[2rem] self-center `}
                 >
                   
                     <div>

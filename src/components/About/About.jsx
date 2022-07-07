@@ -21,7 +21,7 @@ function About() {
         ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="inner-content lg:w-[35rem] rounded-xl px-4 bg-white border-2 py-4  "            >
+              className="inner-content lg:w-[40rem] rounded-[2rem] px-8 bg-white border-2 py-4  "            >
                  
                 <p className="content p-5">
                     {feed.description}

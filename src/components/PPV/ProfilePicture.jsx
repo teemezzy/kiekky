@@ -7,7 +7,7 @@ import Recommendations from '../Recommendations/Recommendations'
 function ProfilePost() {
   const [feed, setFeed] = useState([]);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=8";
+  const url = "https://fakerapi.it/api/v1/persons?_quantity=20";
 
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));
@@ -15,7 +15,7 @@ function ProfilePost() {
 
   return (
     <div className="feed-recommendation flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
-    <div className=" w-[66%] recommendations">
+    <div className=" w-[66%] pictures">
     {feed
           ? feed.map((feed, idx) => (
               <div key={idx} className="story-status ">

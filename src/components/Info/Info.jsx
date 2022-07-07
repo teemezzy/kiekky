@@ -21,7 +21,7 @@ function Info() {
         ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="inner-content lg:w-[35rem] rounded-xl px-4 bg-white border-2 py-4 space-y-5 " >
+              className="inner-content lg:w-[40rem] rounded-xl px-8 bg-white border-2 py-4 space-y-5 " >
                 <div className='flex justify-around'>
                   <p className='flex flex-col'> City <span className="text-sm text-[#828282]" >Lagos </span></p>
                   <p className='flex flex-col'>Profession <span className="text-sm text-[#828282]" >Lagos </span></p>

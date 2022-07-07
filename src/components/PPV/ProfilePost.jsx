@@ -8,7 +8,7 @@ import Recommendations from '../Recommendations/Recommendations'
 function ProfilePost() {
   const [feed, setFeed] = useState([]);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=5";
+  const url = "https://fakerapi.it/api/v1/persons?_quantity=10";
 
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));

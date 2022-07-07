@@ -12,10 +12,10 @@ function OpenChat({ visible, onClose }) {
   }, [])
   if (!visible) return null;
   return (
-    <div className='fixed inset-0  bg-black bg-opacity-20
+    <div className='fixed inset-0  bg-black bg-opacity-20 z-50
         backdrop-blur-sm flex justify-center items-center'>
       <div className="bg-white lg:h-[20rem] lg:w-[20rem] ">
-        <button className=' p-5 ' onClick={onClose}> x </button>
+        <button className=' p-5 flex ml-auto' onClick={onClose}> x </button>
 
         <div className=" notify flex flex-col   mx-6 justify-center sm:items-center   ">
           {feed
@@ -42,7 +42,7 @@ function OpenChat({ visible, onClose }) {
                     </div>
                   </div>
 
-                  <p className="pb-5 text-sm flex justify-center">Chat with {feed.firstname} for 16tokens </p>
+                  <p className="pb-5 text-sm flex justify-center">Chat with {feed.firstname} for 16 tokens </p>
 
 
                 </div>

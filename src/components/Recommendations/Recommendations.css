@@ -1,9 +1,17 @@
 .recommendations{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* column-gap: 5px; */
-        row-gap: 10px;  
+        column-gap: 18px;
+        row-gap: 18px;  
 }
+
+.pictures{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 18px;
+    row-gap: 40px;  
+}
+
 .blink{
         animation: blink 1s infinite
     }
