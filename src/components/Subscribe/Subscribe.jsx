@@ -12,7 +12,7 @@ function User() {
   const [feed, setFeed] = useState([]);
   const [showMyModal, setShowMyModal] = useState(false);
 
-  const handleOnClose = ()=> setShowMyModal(false)
+  const handleOnClose = () => setShowMyModal(false)
   const url = "https://fakerapi.it/api/v1/persons?_quantity=1";
 
   useEffect(() => {
@@ -20,12 +20,12 @@ function User() {
   }, []);
 
   return (
-    <div className=" notify flex flex-col mt-10  mx-6 justify-center  sm:items-center lg:items-start sm:w-[60rem] lg:w-[60rem] ">
+    <div className=" notify flex flex-col mt-10  mx-6 justify-center  sm:items-center lg:items-start sm:w-[90%] lg:w-[60rem] ">
       {feed
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="story-status w-full  px-4  bg-white py-4  "
+            className="story-status sm:w-[27rem] m-auto lg:w-full border-2 px-4  bg-white py-4  "
           >
             <div className="display-section ">
               <p className=" ">
@@ -229,7 +229,7 @@ function User() {
           </div>
         ))
         : null}
-      <SubscribeModal onClose={ handleOnClose } visible={showMyModal} />
+      <SubscribeModal onClose={handleOnClose} visible={showMyModal} />
     </div>
   );
 }
