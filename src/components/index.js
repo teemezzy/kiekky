@@ -33,6 +33,7 @@ import SetSubscription from "./SetSubscription/SetSubscription";
 import Notifications from "./Notifications/Notifications";
 import Password from "./Password/Password";
 import ProfileVerification from "./ProfileVerification/ProfileVerification";
+import PersonalInfo from './PersonalInfo/PersonalInfo'
 
 export {
   Navbar,
@@ -70,4 +71,5 @@ export {
   Notifications,
   Password,
   ProfileVerification,
+  PersonalInfo
 };

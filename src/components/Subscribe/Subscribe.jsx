@@ -20,12 +20,12 @@ function User() {
   }, []);
 
   return (
-    <div className=" notify flex flex-col mt-10  mx-6 justify-center  sm:items-center lg:items-start sm:w-[90%] lg:w-[60rem] ">
+    <div className=" notify flex flex-col mt-10  mx-6 justify-center  sm:items-center  lg:w-[60rem] ">
       {feed
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="story-status sm:w-[27rem] m-auto lg:w-full border-2 px-4  bg-white py-4  "
+            className="story-status lg:w-full m-auto  border-2 px-4  bg-white py-4  "
           >
             <div className="display-section ">
               <p className=" ">
@@ -37,7 +37,7 @@ function User() {
               <div className=" pic-not mt-4 flex flex-col justify-center items-center m-auto pt-4  ">
                 <div className="">
                   <img
-                    className=" w-[6rem]  h-[6rem] p-[2.7px] rounded-[50%]"
+                    className=" w-[6rem] feed-image h-[6rem] p-[2.7px] rounded-[50%]"
                     src={feed.image}
                     alt="profileImage"
                   />
@@ -51,14 +51,16 @@ function User() {
                       <span>
                         <MdOutlineLocationOn color="gray" />
                       </span>
-                      {feed.address.country},{feed.address.city}
-                      {/* Lagos, Nigeria */}
+                      {/* {feed.address.country},{feed.address.city} */}
+                      {/* Lagos State, Nigeria */}
+                      {/* Trinidad and Tobago,West Darrellborough */}
+                      United Arab Emirates,New Krystina Trinidad and Tobago
                     </p>
                   </div>
                 </div>
                 <p className="mt-7 ">Select a plan and subscribe.</p>
                 <div className="subs  lg:w-[95%] mt-7 flex lg:flex-row flex-col  lg:h-[20rem]  lg:space-y-0 space-y-5  lg:space-x-5">
-                  <div className="subs-plan pl-7 pt-6  w-[13rem] h-[18.5rem] space-y-3 bg-[#F6F4FF] rounded-xl ">
+                  <div className="subs-plan pl-7 pt-6  sm:w-[25rem] lg:w-[13rem] h-[18.5rem] space-y-3 bg-[#F6F4FF] rounded-xl ">
                     <h1 className="text-[#6a52fd] text-2xl mb-4 font-bold">
                       100 Tokens
                     </h1>
