@@ -33,14 +33,14 @@ const KYC = () => {
       <div className="w-[625px] m-auto bg-white">
         <p className="pt-[47px] pb-[24px] #828282">Please verify your identity</p>
         <form onSubmit={handleSubmit(onSubmit)} className="">
-          <div className="flex flex-col mb-4">
-            <label htmlFor="full_name" className="text-[15px]">
+          <div className="flex flex-col mb-5">
+            <label htmlFor="full_name" className="text-[15px] mb-2">
               Full Name:
             </label>
             <input
               type="text"
               placeholder="Firstname and Lastname (Surname)"
-              className={`rounded-lg bg-[#F6F4FF] py-1 pl-4 ${
+              className={`rounded-lg bg-[#F6F4FF] py-[10px] pl-5 ${
                 errors.full_name &&
                 "focus:border-red-600 focus:ring-red-600 border-red-600"
               }`}
@@ -57,14 +57,14 @@ const KYC = () => {
             )}
           </div>
 
-          <div className="flex flex-col mb-4">
-            <label htmlFor="username" className="text-[15px]">
+          <div className="flex flex-col mb-5">
+            <label htmlFor="username" className="text-[15px] mb-2">
               Date Of Birth:
             </label>
             <input
               type="text"
               placeholder="Date Of Birth"
-              className={` rounded-lg bg-[#F6F4FF] py-1 pl-4 ${
+              className={` rounded-lg bg-[#F6F4FF] py-[10px] pl-5 ${
                 errors.dob &&
                 "focus:border-red-600 focus:ring-red-600 border-red-600"
               }`}
@@ -75,14 +75,14 @@ const KYC = () => {
             )}
           </div>
 
-          <div className="flex flex-col mb-4">
-            <label htmlFor="email" className="text-[15px]">
+          <div className="flex flex-col mb-5">
+            <label htmlFor="email" className="text-[15px] mb-2">
               Nationality
             </label>
             <input
               type="email"
               placeholder="Enter Nationality"
-              className={` rounded-lg bg-[#F6F4FF] py-1 pl-4 ${
+              className={` rounded-lg bg-[#F6F4FF] py-[10px] pl-5 ${
                 errors.nationality &&
                 "focus:border-red-600 focus:ring-red-600 border-red-600"
               }`}
@@ -93,32 +93,16 @@ const KYC = () => {
             )}
           </div>
 
-          <div className="flex flex-col mb-4">
-            <label htmlFor="phone" className="text-[15px]">
-              Phone Number:
-            </label>
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className={`rounded-lg bg-[#F6F4FF] py-1 pl-4 ${
-                errors.phone &&
-                "focus:border-red-600 focus:ring-red-600 border-red-600"
-              }`}
-              {...register("phone", { required: true })}
-            />
-            {errors.phone && (
-              <p className="text-red-600 text-xs">Phone Number is required</p>
-            )}
-          </div>
+          
 
-          <div className="flex flex-col mb-4">
-            <label htmlFor="" className="text-[15px]">
+          <div className="flex flex-col mb-5">
+            <label htmlFor="" className="text-[15px] mb-2">
               Country of Residence:
             </label>
             <input
               type="tel"
               placeholder="Country"
-              className={`rounded-lg bg-[#F6F4FF] py-1 pl-4 ${
+              className={`rounded-lg bg-[#F6F4FF] py-[10px] pl-5 ${
                 errors.phone &&
                 "focus:border-red-600 focus:ring-red-600 border-red-600"
               }`}
@@ -130,28 +114,28 @@ const KYC = () => {
             )}
           </div>
 
-          <div className="flex flex-col mb-4">
-            <label htmlFor="" className="text-[15px]">
+          <div className="flex flex-col mb-5">
+            <label htmlFor="" className="text-[15px] mb-2">
               City:
             </label>
             <input
               type="tel"
               placeholder="City"
-              className={`rounded-lg bg-[#F6F4FF] py-1 pl-4 ${
-                errors.phone &&
+              className={`rounded-lg bg-[#F6F4FF] py-[10px] pl-5 ${
+                errors.city &&
                 "focus:border-red-600 focus:ring-red-600 border-red-600"
               }`}
               {...register("city", { required: true })}
             />
           </div>
-          <div className="flex flex-col mb-4">
-            <label htmlFor="phone" className="text-[15px]">
+          <div className="flex flex-col mb-5">
+            <label htmlFor="phone" className="text-[15px] mb-2">
               Phone Number:
             </label>
             <input
               type="tel"
               placeholder="Phone Number"
-              className={`rounded-lg bg-[#F6F4FF] py-1 pl-4 ${
+              className={`rounded-lg bg-[#F6F4FF] py-[10px] pl-5 ${
                 errors.phone &&
                 "focus:border-red-600 focus:ring-red-600 border-red-600"
               }`}
@@ -163,7 +147,7 @@ const KYC = () => {
           </div>
 
           <div className="flex flex-col mb-4">
-            <label htmlFor="" className="text-[15px]">
+            <label htmlFor="" className="text-[15px] mb-2">
               Document Type:
             </label>
             <select
@@ -171,7 +155,7 @@ const KYC = () => {
               defaultValue={"default"}
               name="document_type"
               id="document_type"
-              className="rounded-lg bg-[#F6F4FF] py-1 pl-4 w-full"
+              className="rounded-lg bg-[#F6F4FF] py-[10px] pl-5 w-full "
             >
               <option
                 value={"default"}
@@ -204,7 +188,7 @@ const KYC = () => {
           <input
             type="submit"
             value="Save"
-            className="border-2 mt-5 w-full bg-[#6A52FD] py-2 pl-4 rounded-xl text-white"
+            className="border-2 mt-5 w-full bg-[#6A52FD] py-3 pl-4 rounded-xl text-white"
           />
         </form>
       </div>

@@ -5,9 +5,7 @@ import {
   Password,
   SetSubscription,
   ProfileVerification,
-  Vouchers,
   Notifications,
-  Referrals,
 } from "../components";
 
 function Settings() {
@@ -18,12 +16,12 @@ function Settings() {
   };
 
   const activeTabs =
-    "text-[#6A52FD]  text-[16px] py-[16.5px] px-[53px] m-auto text-center border-t-2 border-r-2 border-l-2 bg-white cursor-pointer outline-none";
+    "text-[#6A52FD] text-[16px] py-[16.5px] px-[53px] m-auto text-center border-t-2 border-r-2 border-l-2 bg-white cursor-pointer outline-none";
   const tabs =
-    " text-[#BDBDBD] w-[157px] text-[16px]  text-center m-auto cursor-pointer outline-none";
-
+    "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
   const activeContent = "";
   const content = "bg-white w-full hidden p-[20px]";
+
   return (
     <div className="flex bg-[#F9FAFA] pb-[117px]">
       <div className="messages mt-[6.3rem] bg-[#F9FAFA]">
@@ -61,19 +59,6 @@ function Settings() {
           >
             Profile Verification
           </div>
-          <div
-            className={toggleState === 5 ? (tabs, activeTabs) : tabs}
-            onClick={() => toggleTab(5)}
-          >
-            Referrals
-          </div>
-
-          <div
-            className={toggleState === 6 ? (tabs, activeTabs) : tabs}
-            onClick={() => toggleTab(6)}
-          >
-            Voucher
-          </div>
         </div>
 
         {/* The content within each box  */}
@@ -88,12 +73,6 @@ function Settings() {
         </div>
         <div className={toggleState === 4 ? (content, activeContent) : content}>
           <ProfileVerification />
-        </div>
-        <div className={toggleState === 5 ? (content, activeContent) : content}>
-          <Referrals />
-        </div>
-        <div className={toggleState === 6 ? (content, activeContent) : content}>
-          <Vouchers />
         </div>
       </div>
     </div>

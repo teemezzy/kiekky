@@ -1,14 +1,13 @@
 
 
 import React, { useState, useEffect } from "react";
-import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 import {NavLink} from 'react-router-dom';
 import Recommendations from '../Recommendations/Recommendations'
-function ProfileVideo() {
+function ProfilePost() {
   const [feed, setFeed] = useState([]);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=5";
+  const url = "https://fakerapi.it/api/v1/persons?_quantity=20";
 
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));
@@ -16,71 +15,20 @@ function ProfileVideo() {
 
   return (
     <div className="feed-recommendation flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
-    <div className=" lg:w-[66%]">
-      {feed
-        ? feed.map((feed, idx) => (
-            <div
-              key={idx}
-              className="story-status border-2 bg-white py-4 rounded-lg mb-5"
-            >
-              <div>
-                <div className="postItem  items-center mb-7 ">
-                  <div className=" flex gap-2 items-center ml-5 ">
-                    <div className="feed-image">
-
-                      <NavLink to='/user_profile'> 
-                      <img
-
-                        className=" w-[4rem] lg:w-full h-[4rem] p-[2.7px] rounded-[50%]"
-                        src={feed.image}
-                        alt="icon"
-                      />
-                      </NavLink>
-                    </div>
-
-                    <div className="lg:w-[42rem] sm:w-[17rem] md:w-[23rem]">
-                    <NavLink to='/user_profile'> 
-
-                      <p className="font-[700]">{feed.firstname}</p>
-                      </NavLink>
-                     
-                      <div className="location flex justify-between  pr-5 text-gray text-sm ">
-                        <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
-                          <span>
-                            <MdOutlineLocationOn color="gray" />
-                          </span>
-                          {feed.address.country},
-                           {feed.address.city}
-                          {/* Lagos, Nigeria */}
-                        </p>
-                        <p className="text-[gray] hidden lg:block text-sm">
-                          2 days ago
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="caption pt-5 mx-5">
-                    <p>{feed.email}.</p>
-                  </div>
-                </div>
-
-                <div className="post-img h-[9rem] md:h-[10rem] flex justify-around mx-5">
+    <div className="  w-[66%] pictures">
+    {feed
+          ? feed.map((feed, idx) => (
+              <div key={idx} className="story-status ">
+                <div className="image">
                   <img
-                    className=" w-[9rem] lg:w-[16rem]"
+                    className=" w-[17rem] h-[7rem] lg:h-[16rem] rounded-md"
                     src={feed.image}
-                    alt=""
-                  />
-                  <img
-                    className=" w-[9rem] lg:w-[16rem]"
-                    src={feed.image}
-                    alt=""
+                    alt="icon"
                   />
                 </div>
               </div>
-            </div>
-          ))
-        : null}
+            ))
+          : null}
 
     </div>
     <Recommendations />
@@ -91,4 +39,4 @@ function ProfileVideo() {
   );
 }
 
-export default ProfileVideo;
+export default ProfilePost;

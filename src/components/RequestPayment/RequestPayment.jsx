@@ -5,15 +5,17 @@ import { BsArrowReturnRight } from "react-icons/bs";
 const RequestPayment = () => {
   return (
     <div className="bg-white h-screen pl-[55px]">
-      <p className="pt-[47px] pb-[26px]">You can request for payout</p>
+      <p className="pt-[47px] pb-[26px] text-[#828282]">You can request for payout</p>
       <div className="request ">
-        <div className=" w-64 h-36 flex justify-center items-center border-2 rounded-2xl">
+        <div className=" w-64 h-36 flex flex-col justify-center items-center border-2 rounded-2xl">
           <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
    
             <button onClick={() => {}}>
               <BsArrowReturnRight />
             </button>
+            
           </div>
+          <p className='text-[14px]'>Request Payout</p>
         </div>
       </div>
 
