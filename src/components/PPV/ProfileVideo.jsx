@@ -1,10 +1,9 @@
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {NavLink} from 'react-router-dom';
 import Recommendations from '../Recommendations/Recommendations'
-function ProfilePost() {
+
+const ProfileVideo = ()=> {
   const [feed, setFeed] = useState([]);
 
   const url = "https://fakerapi.it/api/v1/persons?_quantity=20";
@@ -39,4 +38,4 @@ function ProfilePost() {
   );
 }
 
-export default ProfilePost;
+export default ProfileVideo;

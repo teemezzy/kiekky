@@ -20,6 +20,14 @@
   border-image-slice: 21;
 }
 
+.inner-content1 {
+  border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  border-radius: 1rem;
+  border-width: 2px;
+  border-style: solid;
+  border-image-slice: 21;
+}
+
 .set-position {
   position: fixed;
   z-index: 1;

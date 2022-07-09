@@ -22,9 +22,13 @@ const Tokens = () => {
           </div>
         </div>
 
-        <div className="border-2 w-64 h-36 pl-[22px] rounded-2xl"></div>
+        <div className=" inner-content1 rounded-2xl"> 
+        <div className="  bg-white w-64 h-36 pl-[22px] rounded-2xl"></div> 
+        </div>
 
-        <div className="border-2 w-64 h-36 pl-[22px] rounded-2xl"></div>
+        <div className=" inner-content1 rounded-2xl">
+          <div className="bg-white w-64 h-36 pl-[22px] rounded-2xl"></div>
+        </div>
       </div>
 
       <div className="mt-[80px]">

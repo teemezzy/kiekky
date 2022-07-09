@@ -10,7 +10,7 @@ import {
   Referrals,
 } from "../components";
 
-function Wallet() {
+const Wallet= ()=> {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (tab) => {
