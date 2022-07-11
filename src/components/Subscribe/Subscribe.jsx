@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
-import { BiCamera, BiVideoPlus } from "react-icons/bi";
+// import { BiCamera, BiVideoPlus } from "react-icons/bi";
 import { TiTick } from "react-icons/ti";
 import { BsArrowLeft } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
@@ -76,7 +76,7 @@ function User() {
 
                         <TiTick />
                       </span>
-                      <span> View all photos</span>{" "}
+                      <span> View all photos</span>
                     </p>
                     <p className="text-[#828282] space-x-2 flex text-sm">
 
