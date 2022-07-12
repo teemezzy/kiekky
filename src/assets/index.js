@@ -15,17 +15,16 @@ import heroVid from "./heroVid.mp4";
 import Faq from "./faq.png";
 import setupProfileVid from "./setupProfileVid.mp4";
 import bgLogin from "./bgLogin.png";
-import val from "./val.png";
-import PostImg from "./PostImg.png";
 import elena from "./elena.png";
 import co from "./co.png";
 
+
 export {
   Logo,
+  LogoFooter,
   Contactus,
   Submit,
   elena,
-  LogoFooter,
   chatIcon,
   Frame1,
   Contact,
@@ -39,7 +38,5 @@ export {
   heroVid,
   setupProfileVid,
   bgLogin,
-  PostImg,
-  val,
   co,
 };
