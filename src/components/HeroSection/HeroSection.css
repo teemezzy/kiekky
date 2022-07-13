@@ -1,9 +1,4 @@
-.HeroSection {
-  background-image: url(../../assets/Ellipse55-webview.png);
-  background-repeat: no-repeat;
-  transform: translate();
-  /* background-size: 25rem; */
-}
+
 
 .img-anime {
   animation-name: hero-anime;
@@ -12,24 +7,6 @@
   background-repeat: no-repeat;
   animation-timing-function: cubic-bezier(5, 5, 5, 5);
   transition: all 0.35s ease-in-out;
-}
-
-@keyframes hero-anime {
-  0% {
-    background-image: url(../../assets/heroFrame1.png);
-  }
-  25% {
-    background-image: url(../../assets/heroFrame3.png);
-  }
-  50% {
-    background-image: url(../../assets/heroFrame2.png);
-  }
-  75% {
-    background-image: url(../../assets/heroFrame4.png);
-  }
-  100% {
-    background-image: url(../../assets/heroFrame5.png);
-  }
 }
 
 .hero-header-mobile {
