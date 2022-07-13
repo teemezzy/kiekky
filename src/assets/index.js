@@ -17,6 +17,9 @@ import setupProfileVid from "./setupProfileVid.mp4";
 import bgLogin from "./bgLogin.png";
 import elena from "./elena.png";
 import co from "./co.png";
+import reg from './reg.png'
+import link from './link.png'
+import token from "./token.png";
 
 
 export {
@@ -38,5 +41,5 @@ export {
   heroVid,
   setupProfileVid,
   bgLogin,
-  co,
+  co, token, reg, link
 };

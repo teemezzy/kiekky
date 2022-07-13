@@ -19,8 +19,7 @@ const HeroSection = () => {
               </h2>
             </div>
             <p className=" font-normal text-[#828282] lg:w-heroPWidth w-11/12 md:w-1/2 lg:text-heroPXLFont text-heroPMobileFont mt-9 mb-14">
-              Kiekky is a one stop platform to meet new people, Share your photo{" "}
-              {`${"&"}`} Videos, go on a paid date.
+              Kiekky is a one stop platform to meet new people, Share your photo {`${"&"}`} Videos, go on a paid date.
             </p>
             <CustomRegister
               className="sm:mb-36 mb-0"
@@ -29,7 +28,7 @@ const HeroSection = () => {
           </div>
 
           <div className="m-auto lg:pt-0 pt-20 lg:m-0 bg-contain xl:w-wHero xl:h-hHero w-wHeroMobile h-hHeroMobile">
-            <video src= {heroVid}  autoPlay loop muted playsInline/>
+            <video src= {heroVid}  autoPlay loop muted playsInline />
           </div>
         </div>
 
