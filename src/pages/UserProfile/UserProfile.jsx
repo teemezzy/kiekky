@@ -10,7 +10,7 @@ function UserProfile(props) {
         <div className="  fixed h-[100%] hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className="lg:ml-[20rem] lg:w-[60rem] m-auto ">
+        <div className="lg:ml-[20rem] lg:w-[60rem] ">
           <User />
 
           <UserInfo />

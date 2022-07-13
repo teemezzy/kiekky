@@ -8,8 +8,8 @@ function Block({ visibleBlock, onCloseBlock }) {
 
     if (!visibleBlock) return null;
     return (
-        <div className='fixed  '>
-            <div className="fixed lg:h-[10rem] lg:w-[14rem]  top-48 shadow left-0 right-12 m-auto z-20 py-3 px-3 mr-5 bg-white">
+        <div className=' '>
+            <div className="fixed absolute lg:h-[10rem] lg:w-[14rem]  top-[40rem] shadow left-0 right-48 m-auto z-20 py-3 px-3 mr-5 bg-white">
                 <button className=' flex justify-between px-2 pb-1 ml-auto ' onClick={onCloseBlock}> x </button>
 
                 <div className="text text-[#828282] cursor-pointer">
