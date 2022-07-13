@@ -10,11 +10,9 @@ function UserProfile(props) {
           <Sidebar />
         </div>
         <div className="lg:ml-[20rem] lg:w-[60rem] ">
-          <div>
-            <User />
-            <UserInfo />
-            <PPV />
-          </div>
+          <User />
+          <UserInfo />
+          <PPV />
         </div>
       </div>
     </div>

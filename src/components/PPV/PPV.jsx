@@ -15,7 +15,7 @@ function UserInfo(props) {
 
   return (
     <div>
-      <div className=" flex mx-6 mt-5 mb-5 sm:items-center lg:items-start sm:w-[100vw] lg:w-[60rem] ">
+      <div className=" flex mx-6 mt-5  mb-5 sm:items-center lg:items-start sm:w-[100vw] lg:w-[60rem] ">
         <div
           className={`${
             toggleState === 1 ? "input-option-tab em " : "input-option-tab"

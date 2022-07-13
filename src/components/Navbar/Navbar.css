@@ -27,10 +27,17 @@
   border-style: solid;
   border-image-slice: 21;
 }
+ .input-option-tab .login-tab-active3 {
+  border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  border-width: 2px;
+  border-style: solid;
+  border-image-slice: 1;
+  background: white;
+ }
 
 .set-position {
   position: fixed;
-  z-index: 1;
+  z-index: 1; 
   top: 0;
   left: 0;
   right: 0;

@@ -34,7 +34,7 @@ import Notifications from "./Notifications/Notifications";
 import Password from "./Password/Password";
 import ProfileVerification from "./ProfileVerification/ProfileVerification";
 import PersonalInfo from './PersonalInfo/PersonalInfo'
-
+import PersonalProfileInfo from "./PersonalProfileInfo/PersonalProfileInfo";
 export {
   Navbar,
   HeroSection,
@@ -71,5 +71,6 @@ export {
   Notifications,
   Password,
   ProfileVerification,
-  PersonalInfo
+  PersonalInfo,
+  PersonalProfileInfo
 };

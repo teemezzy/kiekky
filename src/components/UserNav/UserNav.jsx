@@ -14,7 +14,7 @@ import CustomRegister from "../../container/CustomButton";
 const UserNav = () => {
   return (
     <>
-      <div className="fixed shadow-sm top-0 right-0 left-0 bg-white z-50 pb-5">
+      <div className="fixed shadow-sm top-0 right-0 left-0 bg-white z-40 pb-5">
         <nav className="hidden xl:block xl:mx-32">
           <div className="flex justify-between pt-10 ">
             <div className=" flex items-center ">
