@@ -14,8 +14,8 @@ function ProfilePost() {
   }, []);
 
   return (
-    <div className="feed-recommendation flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
-    <div className="  w-[66%] pictures">
+    <div className="feed-recommendation flex  justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[978px] m-auto ">
+    <div className="   pictures">
     {feed
           ? feed.map((feed, idx) => (
               <div key={idx} className="story-status ">

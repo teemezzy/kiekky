@@ -17,6 +17,8 @@ function PersonalSubscribers() {
 
   return (
     <div className="flex flex-col mt-10 divide-y divide-slate-200 justify-center items-center lg:items-start sm:w-[100vw] lg:w-[986px] m-auto">
+ <div className="m-auto w-[90vw] lg:w-full ">
+     
       {feed
         ? feed.map((feed, idx) => (
             <div
@@ -49,6 +51,7 @@ function PersonalSubscribers() {
         : null}
 
       <Block visibleBlock={showMyBlock} onCloseBlock={handleOnCloseBlock} />
+    </div>
     </div>
   );
 }

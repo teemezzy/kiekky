@@ -24,8 +24,8 @@ function MobileInfo() {
                         key={idx}
                         className="story-status w-full px-4 bg-white py-4  "            >
 
-<p className="text-[#6a52fd] ">Bio</p>
-
+<p className="text-[#6a52fd] px-7 ">Bio</p>
+ 
 <div className="flex justify-evenly">
                 <p className="flex flex-col ">
                   City <span className="text-sm text-[#828282]">Lagos </span>
@@ -39,7 +39,7 @@ function MobileInfo() {
                 </p>
               </div>
 
-              <div className="flex justify-evenly ">
+              <div className="flex justify-evenly mt-4">
                 <p className="flex flex-col">
                   Age <span className="text-sm text-[#828282]">Lagos </span>
                 </p>

@@ -11,7 +11,7 @@ function PersonalProfile(props) {
                 <div className="  fixed h-[100%] hidden lg:block sidebar_prt pt-8">
                     <Sidebar />
                 </div>
-                <div className='lg:ml-[20rem] w-[100vw] '>
+                <div className='lg:ml-[20rem] w-[100vw] m-auto '>
                     <div className="sub-section border-2 lg:w-[97%] sm:w-[90%] m-auto ">
                         <PersonalProfileInfo />
                         <PersonalInfo />

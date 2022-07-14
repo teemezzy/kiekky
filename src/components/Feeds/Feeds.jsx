@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Feeds() {
   const [feed, setFeed] = useState([]);
@@ -18,67 +18,67 @@ function Feeds() {
     <div className="w-full">
       {feed
         ? feed.map((feed, idx) => (
-            <div
-              key={idx}
-              className="story-status border-2 bg-white py-4 rounded-lg mb-5"
-            >
-              <div>
-                <div className="postItem  items-center mb-7 ">
-                  <div className=" flex gap-2 items-center ml-5 ">
-                    <div className="feed-image">
+          <div
+            key={idx}
+            className="story-status bg-white py-4 rounded-lg mb-5 lg:w-[672px] m-auto"
+          >
+            <div>
+              <div className="postItem  items-center mb-7 ">
+                <div className=" flex gap-2 items-center ml-5 ">
+                  <div className="feed-image">
 
-                      <NavLink to='/user_profile'> 
+                    <NavLink to='/user_profile'>
                       <img
 
                         className=" w-[4rem] lg:w-full h-[4rem] p-[2.7px] rounded-[50%]"
                         src={feed.image}
                         alt="icon"
                       />
-                      </NavLink>
-                    </div>
+                    </NavLink>
+                  </div>
 
-                    <div className="lg:w-[42rem] sm:w-[17rem] md:w-[23rem]">
-                    <NavLink to='/user_profile'> 
+                  <div className="lg:w-[42rem] sm:w-[17rem] md:w-[23rem]">
+                    <NavLink to='/user_profile'>
 
                       <p className="font-[700]">{feed.firstname}</p>
-                      </NavLink>
-                     
-                      <div className="location flex justify-between  pr-5 text-gray text-sm ">
-                        <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
-                          <span>
-                            <MdOutlineLocationOn color="gray" />
-                          </span>
-                          {feed.address.country},
-                           {feed.address.city}
-                          {/* Lagos, Nigeria */}
-                        </p>
-                        <p className="text-[gray] hidden lg:block text-sm">
-                          2 days ago
-                        </p>
-                      </div>
+                    </NavLink>
+
+                    <div className="location flex justify-between  pr-5 text-gray text-sm ">
+                      <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
+                        <span>
+                          <MdOutlineLocationOn color="gray" />
+                        </span>
+                        {feed.address.country},
+                        {feed.address.city}
+                        {/* Lagos, Nigeria */}
+                      </p>
+                      <p className="text-[gray] hidden lg:block text-sm">
+                        2 days ago
+                      </p>
                     </div>
                   </div>
-
-                  <div className="caption pt-5 mx-5">
-                    <p>{feed.email}.</p>
-                  </div>
                 </div>
 
-                <div className="post-img h-[9rem] md:h-[10rem] flex justify-around mx-5">
-                  <img
-                    className=" w-[9rem] lg:w-[16rem]"
-                    src={feed.image}
-                    alt=""
-                  />
-                  <img
-                    className=" w-[9rem] lg:w-[16rem]"
-                    src={feed.image}
-                    alt=""
-                  />
+                <div className="caption pt-5 mx-5">
+                  <p>{feed.email}.</p>
                 </div>
               </div>
+
+              <div className="post-img h-[9rem] md:h-[10rem] flex justify-around mx-5">
+                <img
+                  className=" w-[8.5rem]  lg:w-[16rem] rounded-xl"
+                  src={feed.image}
+                  alt=""
+                />
+                <img
+                  className=" w-[8.5rem]  lg:w-[16rem] rounded-xl"
+                  src={feed.image}
+                  alt=""
+                />
+              </div>
             </div>
-          ))
+          </div>
+        ))
         : null}
     </div>
   );
