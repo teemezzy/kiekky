@@ -19,7 +19,7 @@ const PersonalVideo = ()=> {
     <Info />
    
    
-    <div className="  rounded-md ml-6 p-12 w-[42rem] pictures bg-white">
+    <div className=" sm-w-[90%] m-auto rounded-md md:ml-6 p-12 lg:w-[42rem] pictures bg-white">
     {feed
           ? feed.map((feed, idx) => (
               <div key={idx} className="story-status ">

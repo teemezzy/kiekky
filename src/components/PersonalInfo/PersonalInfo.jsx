@@ -5,6 +5,8 @@ import PersonalVideo from "./PersonalVideo";
 import PersonalFollowing from "./PersonalFollowing";
 import PersonalFollowers from "./PersonalFollowers";
 import PersonalSubscribers from "./PersonalSubscribers";
+import MobileInfo from "./MobileInfo";
+import './PersonalInfo.css'
 
 function UserInfo(props) {
     const [toggleState, setToggleState] = useState(1);
@@ -18,10 +20,12 @@ function UserInfo(props) {
 
     return (
         <div>
-            <div className=" flex mx-6 mt-5 mb-5 sm:items-center lg:items-start sm:w-[100vw] lg:w-[60rem] ">
+            <MobileInfo />
+            <div className=" scale flex mx-4 mt-5 mb-5 sm:w-[100vw] overflow-x-scroll lg:w-[60rem]   ">
+                <div className="width-scale sm:w-[80%] ">
                 <div
                     className={`${toggleState === 1 ? "input-option-tab em " : "input-option-tab"
-                        } flex h-[3rem] space-x-5 `}
+                        } flex h-[3rem] sm:space-x-4 lg:space-x-5 `}
                 >
                     <div
                         onClick={() => toggleTab(1)}
@@ -39,7 +43,7 @@ function UserInfo(props) {
                             }  py-[0.3rem]  px-[2rem] self-center `}
                     >
                         <div>
-                            <p>Pictures</p>
+                            <p>Photos</p>
                         </div>
                     </div>
 
@@ -83,6 +87,7 @@ function UserInfo(props) {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
 
             <div className={toggleState === 1 ? (content, activeContent) : content}>

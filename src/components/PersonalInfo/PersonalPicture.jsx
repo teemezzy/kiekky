@@ -13,10 +13,10 @@ const PersonalPicture = ()=> {
   }, []);
 
   return (
-    <div className="feed-recommendation flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
+    <div className="feed-recommendation flex lg:mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
     <Info />
    
-    <div className="  rounded-md ml-6 p-12 w-[42rem] pictures bg-white">
+    <div className=" border-2 rounded-md sm-w-[90%] m-auto lg:ml-6 p-12 lg:w-[42rem] pictures bg-white">
     {feed
           ? feed.map((feed, idx) => (
               <div key={idx} className="story-status ">
