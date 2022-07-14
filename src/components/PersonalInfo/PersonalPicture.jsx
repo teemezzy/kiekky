@@ -13,7 +13,7 @@ const PersonalPicture = ()=> {
   }, []);
 
   return (
-    <div className="feed-recommendation md:flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
+    <div className="feed-recommendation md:flex justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[986px] m-auto ">
     <Info />
    
     <div className="  sm-w-[90%] m-auto rounded-md md:ml-6 md:px-12 lg:w-[42rem] pictures bg-white">
