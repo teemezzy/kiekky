@@ -13,16 +13,18 @@ const PersonalPicture = ()=> {
   }, []);
 
   return (
-    <div className="feed-recommendation flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
+    <div className="feed-recommendation md:flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
     <Info />
    
-    <div className="  rounded-md ml-6 p-12 w-[42rem] pictures bg-white">
+    <div className="  sm-w-[90%] m-auto rounded-md md:ml-6 md:px-12 lg:w-[42rem] pictures bg-white">
     {feed
           ? feed.map((feed, idx) => (
               <div key={idx} className="story-status ">
                 <div className="image">
-                <div className="edit w-[2.5rem] h-[2.5rem] bg-[black] opacity-20 lg:ml-[13.7rem] mt-1 absolute flex justify-center items-center rounded-full ">
+                  <div className="icon flex justify-end px-1 ">
+                <div className=" edit w-[2.5rem] h-[2.5rem] bg-[black] opacity-20 left-[] lg:ml-[13.7rem] mt-1 absolute flex justify-center items-center rounded-full ">
                    <AiOutlineEdit size='1.5rem' color='white' />
+                  </div>
                   </div>
                   <img
                     className=" w-[17rem] h-[7rem] lg:h-[16rem] rounded-md"

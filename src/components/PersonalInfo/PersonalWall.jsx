@@ -16,10 +16,10 @@ function PersonalWall() {
   }, []);
 
   return (
-    <div className="feed-recommendation flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
+    <div className="feed-recommendation md:flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
     <Info />
    
-    <div className=" lg:w-[66%]  ">
+    <div className=" lg:w-[66%]   ">
       {feed
         ? feed.map((feed, idx) => (
             <div
@@ -70,12 +70,12 @@ function PersonalWall() {
 
                 <div className="post-img h-[9rem] md:h-[10rem] flex justify-around mx-5">
                   <img
-                    className=" w-[9rem] lg:w-[16rem]"
+                    className=" w-[9rem] lg:w-[16rem] rounded-lg"
                     src={feed.image}
                     alt=""
                   />
                   <img
-                    className=" w-[9rem] lg:w-[16rem]"
+                    className=" w-[9rem] lg:w-[16rem] rounded-lg"
                     src={feed.image}
                     alt=""
                   />

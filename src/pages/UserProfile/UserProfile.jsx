@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar, UserNav, User, UserInfo, PPV } from "../../components";
+import { Sidebar, UserNav, User, UserInfo, PPV, MobileNav } from "../../components";
 
 function UserProfile(props) {
   return (
@@ -15,6 +15,7 @@ function UserProfile(props) {
           <PPV />
         </div>
       </div>
+      <MobileNav />
     </div>
   );
 }

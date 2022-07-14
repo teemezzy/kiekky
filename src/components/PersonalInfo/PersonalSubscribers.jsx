@@ -18,7 +18,7 @@ function PersonalSubscribers() {
     }, []);
 
     return (
-        <div className=" notify flex flex-col mt-10 divide-y  divide-slate-200 mx-6  justify-center  sm:items-center lg:items-start sm:w-[100vw] lg:w-[60rem] ">
+        <div className=" flex flex-col mt-10 divide-y  divide-slate-200 mx-6  justify-center  sm:items-center lg:items-start sm:w-[100vw] lg:w-[60rem] ">
 
 
             {feed

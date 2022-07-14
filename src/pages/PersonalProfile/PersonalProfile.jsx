@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sidebar, UserNav, PPV, PersonalProfileInfo, User, PersonalInfo } from '../../components'
+import { Sidebar, UserNav, PPV, PersonalProfileInfo, User, PersonalInfo, MobileNav } from '../../components'
 
 function PersonalProfile(props) {
 
@@ -11,13 +11,16 @@ function PersonalProfile(props) {
                 <div className="  fixed h-[100%] hidden lg:block sidebar_prt pt-8">
                     <Sidebar />
                 </div>
-                <div className='lg:ml-[20rem] lg:w-[60rem] '>
+                <div className='lg:ml-[20rem] w-[100vw] '>
+                    <div className="sub-section border-2 lg:w-[97%] sm:w-[90%] m-auto ">
+                        <PersonalProfileInfo />
+                        <PersonalInfo />
+                    </div>
 
-                    <PersonalProfileInfo />
-<PersonalInfo/>
                 </div>
 
             </div>
+            <MobileNav />
         </div>
 
     );
