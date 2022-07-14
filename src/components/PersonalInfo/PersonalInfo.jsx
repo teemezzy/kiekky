@@ -20,7 +20,7 @@ function UserInfo(props) {
   return (
     <div>
       <MobileInfo />
-      <div className=" scale flex mx-4 mt-5 mb-5 sm:w-[100vw] overflow-x-scroll lg:w-[60rem]   ">
+      <div className=" scale flex mt-5 mb-5 w-[986px] overflow-x-scroll lg:w-[60rem] m-auto ">
         <div className=" sm:w-[80%] ">
           <div
             className={`${

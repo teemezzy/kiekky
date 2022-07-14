@@ -16,7 +16,7 @@ function PersonalWall() {
   }, []);
 
   return (
-    <div className="feed-recommendation md:flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
+    <div className="feed-recommendation md:flex justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[986px] m-auto ">
     <Info />
    
     <div className=" lg:w-[66%]   ">

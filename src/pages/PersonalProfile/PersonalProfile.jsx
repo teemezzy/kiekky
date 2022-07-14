@@ -4,7 +4,7 @@ import { Sidebar, UserNav, PPV, PersonalProfileInfo, User, PersonalInfo, MobileN
 function PersonalProfile(props) {
 
     return (
-        <div className="notifications bg-[#F9FAFA]">
+        <div className="notifications bg-[#F9FAFA] ">
             <UserNav />
             <div className="flex mt-[6rem] bg-[#F9FAFA] ">
 

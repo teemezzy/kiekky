@@ -2,12 +2,12 @@ import React from "react";
 
 const Vouchers = () => {
   return (
-    <div className='lg:w-[984px] lg:h-[1044px] m-auto'>
-      <div className="w-[689px] mt-[98px] m-auto">
+    <div className='lg:w-[984px] lg:h-[1044px] m-auto bg-white'>
+      <div className="w-[689px] pt-[98px] m-auto">
         <h2 className="text-[18px] font-semibold text-[#212121]">
           How do I get a Voucher?
         </h2>
-        <p className="text-[#4F4F4F]">
+        <p className="text-[#4F4F4F] text-[18px]">
           You can receive a promo code on Kiekky social media platform, through
           our newsletter or our customer service. Valid codes are visible on
           your Kiekky account after activation.
@@ -18,7 +18,7 @@ const Vouchers = () => {
         <h2 className="text-[18px] font-semibold text-[#212121]">
           How do I use my code?
         </h2>
-        <p className="text-[#4F4F4F]">
+        <p className="text-[#4F4F4F] text-[18px] ">
           Here you can redeem your code. Enter it in the field below and your
           free credit will be automatically added to your Kiekky account. Don't
           forget that codes can expire or only be active for a short time, so
