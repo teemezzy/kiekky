@@ -1,17 +1,16 @@
 import React from "react";
 import axios from "axios";
 import { GiToken } from "react-icons/gi";
-import { FaRegEyeSlash } from "react-icons/fa";
+import { IoAdd } from "react-icons/io5";
+import { FaRegEyeSlash, FaRegPaperPlane } from "react-icons/fa";
 import { useEffect } from "react";
 import { transaction } from "./Transaction";
-// import { FiDivide } from "react-icons/fi";
-// import { card } from "../../assets/card.png";
 
 const Tokens = () => {
   return (
     <div>
-      <div className="flex justify-around px-[53px] py-[65px] bg-white lg:w-full w-[327px]">
-        <div className = "border-2 w-64 h-36 pl-[22px] rounded-2xl bg-[#474749] text-white">
+      <div className="flex lg:flex-row flex-col lg:justify-around px-[53px] py-[65px] bg-white lg:w-full w-[347px]">
+        <div className="border-2 w-64 h-36 pl-[22px] rounded-2xl bg-[#474749] text-white">
           <GiToken className="mt-[30.45px]" />
           <p className="font-bold mt-[34.75px] text-[22px]">5000</p>
           <div className="flex items-center w-[120px] justify-between pb-[33px]">
@@ -22,25 +21,58 @@ const Tokens = () => {
           </div>
         </div>
 
-        <div className=" inner-content1 rounded-2xl hidden lg:block"> 
-        <div className="  bg-white w-64 h-36 pl-[22px] rounded-2xl"></div> 
-        </div>
+       
+         {/* Desktop */}
+          <div className=" inner-content1 rounded-2xl hidden lg:block ">
+            <div className=" bg-white w-64 h-36 pl-[22px] rounded-2xl flex flex-col justify-center items-center">
+              <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center mb-[10px]">
+                <IoAdd />
+              </div>
+              <p>Top Up Token</p>
+            </div>
+          </div>
 
-        <div className=" inner-content1 rounded-2xl hidden lg:block">
-          <div className="bg-white w-64 h-36 pl-[22px] rounded-2xl"></div>
+          <div className=" inner-content1 rounded-2xl hidden lg:block ">
+            <div className=" bg-white w-64 h-36 pl-[22px] rounded-2xl flex flex-col justify-center items-center">
+              <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center mb-[10px]">
+                <FaRegPaperPlane />
+              </div>
+              <p>Transfer Token</p>
+            </div>
+          </div>
+         
+        
+
+        {/* Mobile */}
+        <div className=" lg:hidden block mt-5">
+          <div className='flex justify-around'>
+          <div className="flex flex-col items-center justify-center">
+            <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
+              <IoAdd />
+            </div>
+            <p className="pt-[10px]">Top Up Token</p>
+          </div>
+
+          <div className="flex flex-col items-center justify-center">
+            <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
+              <FaRegPaperPlane />
+            </div>
+            <p className="pt-[10px]">Transfer Token</p>
+          </div>
+          </div>
         </div>
       </div>
 
-      <div className="mt-[80px] w-[327px] lg:w-full ">
-        <p className="text-2xl font-semibold mb-[24px]">My Transactions</p>
+      <div className="mt-[80px] w-[347px] lg:w-full ">
+        <p className="text-2xl font-semibold mb-[24px] text-[#212121]">My Transactions</p>
 
-        <table className=" lg:w-[984px] w-[327px]">
+        <table className=" lg:w-[984px] w-[347px]">
           <thead className="flex order-0 h-[46px] items-center justify-around text-center border-b-2 border-[#F2F2F2] bg-[#F5F3FF]">
-            <th className="lg:w-28 text-left">Date</th>
-            <th className="lg:w-28 text-left">Description</th>
-            <th className="lg:w-28 text-left">Recipient</th>
-            <th className="lg:w-28 text-left">Amount</th>
-            <th className="lg:w-28 text-left">Status</th>
+            <th className="lg:w-28 w-8 text-left lg:text-[16px] text-[12px] text-[#212121]">Date</th>
+            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">Description</th>
+            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">Recipient</th>
+            <th className="lg:w-28 w-12 text-left lg:text-[16px] text-[12px] text-[#212121]">Amount</th>
+            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">Status</th>
           </thead>
           <tbody className="justify-evenly text-center bg-white">
             {transaction.map((transactions) => (
@@ -48,11 +80,21 @@ const Tokens = () => {
                 className=" flex order-1 h-[46px] items-center justify-around text-center border-b-2 border-[#F2F2F2]"
                 key={transactions.id}
               >
-                <td className="lg:w-28 text-left">{transactions.date}</td>
-                <td className="lg:w-28 text-left">{transactions.description} </td>
-                <td className="lg:w-28 text-left">{transactions.recipient}</td>
-                <td className="lg:w-28 text-left">{transactions.amount}</td>
-                <td className="lg:w-28 text-left">{transactions.status}</td>
+                <td className="lg:w-28 w-8 text-left lg:text-[16px] text-[12px] text-[#4F4F4F]">
+                  {transactions.date}
+                </td>
+                <td className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#4F4F4F]">
+                  {transactions.description}
+                </td>
+                <td className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#4F4F4F]">
+                  {transactions.recipient}
+                </td>
+                <td className="lg:w-28 w-12 text-left lg:text-[16px] text-[12px] text-[#4F4F4F]">
+                  {transactions.amount}
+                </td>
+                <td className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#4F4F4F]">
+                  {transactions.status}
+                </td>
               </tr>
             ))}
           </tbody>

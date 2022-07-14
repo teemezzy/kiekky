@@ -35,9 +35,10 @@ const Wallet = () => {
         <div className="hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className="mt-10 lg:w-[984px] m-auto ">
+        <div className=" mt-10 lg:w-[984px] m-auto ">
           {/* Title For TabMenu */}
-          <div className="flex lg:w-[58.9rem] ">
+          <div className=" lg:w-[58.9rem] w-[327px] overflow-x-scroll lg:overflow-x-auto scale ">
+            <div className="flex lg:w-auto w-[200vw] ">
             <div
               className={toggleState === 1 ? (tabs, activeTabs) : tabs}
               onClick={() => toggleTab(1)}
@@ -70,13 +71,14 @@ const Wallet = () => {
             >
               Referrals
             </div>
-
             <div
               className={toggleState === 6 ? (tabs, activeTabs) : tabs}
               onClick={() => toggleTab(6)}
             >
               Voucher
             </div>
+            </div>
+
           </div>
 
           {/* The content within each box  */}

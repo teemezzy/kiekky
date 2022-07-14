@@ -5,7 +5,7 @@ import { FileUploader } from "react-drag-drop-files";
 
 const KYC = () => {
   const [file, setFile] = useState(null);
-  const fileTypes = ["JPG", "PNG", "PDF", "JPEG"];
+  const fileTypes = ["JPG", "PNG", "PDF"];
   const handleChange = (file) => {
     setFile(file);
   };
@@ -30,11 +30,13 @@ const KYC = () => {
   };
   return (
     <div className="bg-white pb-20">
-      <div className="w-[625px] m-auto bg-white">
-        <p className="pt-[47px] pb-[24px] #828282">Please verify your identity</p>
+      <div className="lg:w-[625px] w-[347px] m-auto bg-white">
+        <p className="pt-[47px] pb-[24px] text-[#828282] w-[183px] m-auto">
+          Please verify your identity
+        </p>
         <form onSubmit={handleSubmit(onSubmit)} className="">
-          <div className="flex flex-col mb-5">
-            <label htmlFor="full_name" className="text-[15px] mb-2">
+          <div className="flex flex-col mb-5 lg:w-auto w-[276px] m-auto">
+            <label htmlFor="full_name" className="text-[15px] font-semibold mb-2">
               Full Name:
             </label>
             <input
@@ -57,8 +59,8 @@ const KYC = () => {
             )}
           </div>
 
-          <div className="flex flex-col mb-5">
-            <label htmlFor="username" className="text-[15px] mb-2">
+          <div className="flex flex-col mb-5 lg:w-auto w-[276px] m-auto">
+            <label htmlFor="username" className="text-[15px] mb-2 font-semibold">
               Date Of Birth:
             </label>
             <input
@@ -75,8 +77,8 @@ const KYC = () => {
             )}
           </div>
 
-          <div className="flex flex-col mb-5">
-            <label htmlFor="email" className="text-[15px] mb-2">
+          <div className="flex flex-col mb-5 lg:w-auto w-[276px] m-auto">
+            <label htmlFor="email" className="text-[15px] mb-2 font-semibold">
               Nationality
             </label>
             <input
@@ -93,10 +95,8 @@ const KYC = () => {
             )}
           </div>
 
-          
-
-          <div className="flex flex-col mb-5">
-            <label htmlFor="" className="text-[15px] mb-2">
+          <div className="flex flex-col mb-5 lg:w-auto w-[276px] m-auto">
+            <label htmlFor="" className="text-[15px] mb-2 font-semibold">
               Country of Residence:
             </label>
             <input
@@ -114,8 +114,8 @@ const KYC = () => {
             )}
           </div>
 
-          <div className="flex flex-col mb-5">
-            <label htmlFor="" className="text-[15px] mb-2">
+          <div className="flex flex-col mb-5 lg:w-auto w-[276px] m-auto">
+            <label htmlFor="" className="text-[15px] mb-2 font-semibold">
               City:
             </label>
             <input
@@ -128,8 +128,8 @@ const KYC = () => {
               {...register("city", { required: true })}
             />
           </div>
-          <div className="flex flex-col mb-5">
-            <label htmlFor="phone" className="text-[15px] mb-2">
+          <div className="flex flex-col mb-5 lg:w-auto w-[276px] m-auto">
+            <label htmlFor="phone" className="text-[15px] mb-2 font-semibold">
               Phone Number:
             </label>
             <input
@@ -146,8 +146,8 @@ const KYC = () => {
             )}
           </div>
 
-          <div className="flex flex-col mb-4">
-            <label htmlFor="" className="text-[15px] mb-2">
+          <div className="flex flex-col mb-4 lg:w-auto w-[276px] m-auto">
+            <label htmlFor="" className="text-[15px] mb-2 font-semibold">
               Document Type:
             </label>
             <select
@@ -172,24 +172,25 @@ const KYC = () => {
             </select>
           </div>
 
-          <div className="rounded-lg w-[500px] m-auto">
+          <div className="lg:w-[500px] w-[252px] mr-[400px] m-auto ">
             <FileUploader
               multiple={true}
               handleChange={handleChange}
               name="file"
               types={fileTypes}
-              
+              className="w-[272px] lg:w-[500px] p-auto"
             />
             <p>
               {file ? `File name: ${file[0].name}` : "No files uploaded yet"}
             </p>
           </div>
-
-          <input
-            type="submit"
-            value="Save"
-            className="border-2 mt-5 w-full bg-[#6A52FD] py-3 pl-4 rounded-xl text-white"
-          />
+          <div className="w-[276px] m-auto">
+            <input
+              type="submit"
+              value="Save"
+              className="border-2 mt-5 lg:w-full w-[276px] m-auto bg-[#6A52FD] py-3 pl-4 rounded-xl text-white"
+            />
+          </div>
         </form>
       </div>
     </div>

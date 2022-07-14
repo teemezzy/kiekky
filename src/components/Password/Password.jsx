@@ -21,18 +21,19 @@ const Password = () => {
   };
 
   return (
-    <div className='w-[605px] h-[596px] bg-white px-[70.5px] '>
+    <div className='lg:w-[42.125rem] h-[596px] bg-white px-[70.5px] '>
+      <p className='pt-[56px] text-[#828282] text-[15px] font-extralight'>You can change your password by filling the form</p>
       
-      <form onSubmit={handleSubmit(onSubmit)} className="py-[79px]">
+      <form onSubmit={handleSubmit(onSubmit)} className="py-[29px]">
 
       <div className="flex flex-col mb-4">
-              <label htmlFor="" className="text-[15px]">
+              <label htmlFor="" className="text-[15px] mb-2">
                Old Password:
               </label>
               <input
                 type="password"
                 placeholder="Enter Old Password"
-                className={` bg-[#F6F4FF] py-1 pl-4 ${
+                className={` bg-[#F6F4FF] py-[10px] pl-5 rounded-lg ${
                   errors.password &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -46,13 +47,13 @@ const Password = () => {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label htmlFor="" className="text-[15px]">
+              <label htmlFor="" className="text-[15px] mb-2">
                 New Password:
               </label>
               <input
                 type="password"
                 placeholder=" Enter New Password"
-                className={` bg-[#F6F4FF] py-1 pl-4 ${
+                className={` bg-[#F6F4FF] py-[10px] pl-5 rounded-lg ${
                   errors.password &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -66,13 +67,13 @@ const Password = () => {
             </div>
 
             <div className="flex flex-col mb-4">
-              <label htmlFor="" className="text-[15px]">
+              <label htmlFor="" className="text-[15px] mb-2">
                Confirm New Password:
               </label>
               <input
                 type="password"
                 placeholder="Confirm New Password"
-                className={` bg-[#F6F4FF] py-1 pl-4 ${
+                className={` bg-[#F6F4FF] py-[10px] pl-5 rounded-lg ${
                   errors.password &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -88,7 +89,7 @@ const Password = () => {
             <input
               type="submit"
               value="Save Changes"
-              className="border-2 mt-5 w-full bg-[#6A52FD] py-2 pl-4 rounded-xl text-white"
+              className="border-2 mt-5 w-full bg-[#6A52FD] py-[10px] rounded-lg text-white"
             />
 
       </form>
