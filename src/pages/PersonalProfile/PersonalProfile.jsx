@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Sidebar, UserNav, PPV, PersonalProfileInfo, User, PersonalInfo, MobileNav } from '../../components'
 
 function PersonalProfile(props) {

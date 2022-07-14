@@ -16,7 +16,7 @@ function PersonalProfileInfo() {
     }, []);
 
     return (
-        <div className=" flex justify-center items-center mt-10  border-2 m-auto lg:w-[968px] ">
+        <div className=" flex justify-center items-center mt-10 m-auto lg:w-[968px] ">
 
             {feed
                 ? feed.map((feed, idx) => (
