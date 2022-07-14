@@ -9,9 +9,40 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 30px;
-    row-gap: 45px;  
+    row-gap: 28px;  
 }
 
+.videos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 20px;  
+}
+
+.datess{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;  
+}
+@media only screen and (max-width:700px) {
+    .datess{
+            display:grid;
+            grid-template-columns: repeat(1, 1fr);
+            column-gap: 10px;
+            row-gap: 10px; 
+    }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1200px){
+    .datess{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+        row-gap: 10px; 
+}
+    }
+    
 .blink{
         animation: blink 1s infinite
     }

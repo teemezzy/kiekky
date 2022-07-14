@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sidebar, UserNav, MobileNav} from '../components'
+import {Sidebar, UserNav, MobileNav, DatesComp} from '../components'
 
 
 function Dates(props) {
@@ -9,10 +9,12 @@ return (
         <UserNav />
          <div className="flex ">
 
-<div className="  hidden  lg:block sidebar_prt pt-8">
+<div className="  fixed hidden  lg:block sidebar_prt pt-8">
     <Sidebar />
     </div>
-<div className='ml-[22rem] '>Dates</div>
+<div className='md:ml-[24rem] '>
+    <DatesComp />
+</div>
 </div>
 
 <div className="mobile-nav">

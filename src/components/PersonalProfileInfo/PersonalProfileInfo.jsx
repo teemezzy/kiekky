@@ -16,20 +16,20 @@ function PersonalProfileInfo() {
     }, []);
 
     return (
-        <div className=" flex justify-center items-center notify  mt-10  mx-6  border-2  sm:w-[90%] m-auto lg:w-[60rem] ">
+        <div className=" flex justify-center items-center notify  mt-5   w-[90%] m-auto lg:w-[61rem] ">
 
             {feed
                 ? feed.map((feed, idx) => (
                     <div
                         key={idx}
-                        className="story-status w-full px-4 bg-white py-4  "            >
+                        className="story-status w-full px-4 rounded-xl bg-white  "            >
 
-                        <div className="icons">
+                        <div className="icons mt-5 px-4">
                             <p className="flex justify-end">
 
                                 <label for="small-toggle" class="inline-flex relative items-center mb-5 cursor-pointer">
                                     <input type="checkbox" value="" id="small-toggle" class="sr-only peer" />
-                                    <div class="w-14 h-[1.3rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[2rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                                    <div class="w-[40px] h-[1.2rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[2rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                                     <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Stealth mode</span>
                                 </label>
 
@@ -37,7 +37,7 @@ function PersonalProfileInfo() {
                         </div>
 
 
-                        <div className="pic-not mt-4 flex gap-2 items-start pt-4   ">
+                        <div className="pic-not  flex px-[45px] gap-2 items-start  ">
                             <div className="feed-image ">
                                 <img
                                     className=" min-w-[4rem]  max-h-[4rem]  md:min-w-[6rem]  md:min-h-[6rem] p-[2.5px] rounded-[50%]"
@@ -46,9 +46,9 @@ function PersonalProfileInfo() {
                                 />
                             </div>
 
-                            <div className="lg:w-[42rem] sm:w-[17rem] md:w-[23rem] ml-5">
+                            <div className="lg:w-[42rem] mt-[1rem] sm:w-[17rem] md:w-[23rem] ml-5">
 
-                                <p className="font-[700]">{feed.author}</p>
+                                <p className="font-[700] text-[24px] ">{feed.author}</p>
                                 <p className="text-[#BDBDBD] text-sm ">@{feed.author}</p>
 
 

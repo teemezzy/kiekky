@@ -12,8 +12,8 @@ function Info(props) {
 
   return (
     <div className='pr-8 '>
-      <p className="lg:block  hidden">Recommendations </p>
-      <div className=" hidden mt-[2rem] pt-5 rounded-md bg-white h-[33.5rem] w-[15.5rem] lg:block">
+      <p className="lg:block  hidden"> </p>
+      <div className=" hidden pt-5 rounded-md bg-white h-[33.5rem] w-[15.5rem] lg:block">
         {story
           ? story.map((story, idx) => (
               <div key={idx} className="story-status ">

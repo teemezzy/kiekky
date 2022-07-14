@@ -38,7 +38,7 @@ function PersonalSubscribers() {
                             </div>
 
                             <div className="text-content">
-                                <p className="font-bold text-xl mx-2 " >{feed.firstname}</p>
+                                <p className="font text-xl mx-2 " >{feed.firstname}</p>
                                 <p> </p>
                             </div>
                         </div>

@@ -21,10 +21,10 @@ function UserInfo(props) {
     return (
         <div>
             <MobileInfo />
-            <div className=" scale flex mx-4 mt-5 mb-5 sm:w-[100vw] overflow-x-scroll lg:w-[60rem]   ">
-                <div className="width-scale sm:w-[80%] ">
+            <div className=" scale flex m-auto mt-5 mb-5 w-[100vw] overflow-x-scroll lg:w-[60rem]   ">
+                <div className="width-scale w-[80%] ">
                 <div
-                    className={`${toggleState === 1 ? "input-option-tab em " : "input-option-tab"
+                    className={`${toggleState === 1 ? "input-option-tab em " : "input-option-tab2"
                         } flex h-[3rem] sm:space-x-4 lg:space-x-5 `}
                 >
                     <div
@@ -33,7 +33,7 @@ function UserInfo(props) {
                             }  py-[0.3rem] px-[2rem]  self-center  `}
                     >
                         <div>
-                            <p>Wall</p>
+                            <p className="   ">Wall</p>
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@ function UserInfo(props) {
                             }  py-[0.3rem]  px-[2rem] self-center `}
                     >
                         <div>
-                            <p>Photos</p>
+                            <p className=" ">Photos</p>
                         </div>
                     </div>
 
@@ -53,7 +53,7 @@ function UserInfo(props) {
                             }  py-[0.3rem]  px-[2rem] self-center `}
                     >
                         <div>
-                            <p>Videos</p>
+                            <p className="">Videos</p>
                         </div>
                     </div>
 
@@ -63,7 +63,7 @@ function UserInfo(props) {
                             }  py-[0.3rem]  px-[2rem] self-center `}
                     >
                         <div>
-                            <p>Followers</p>
+                            <p className=" ">Followers</p>
                         </div>
                     </div>
 
@@ -73,7 +73,7 @@ function UserInfo(props) {
                             }  py-[0.3rem]  px-[2rem] self-center `}
                     >
                         <div>
-                            <p>Following</p>
+                            <p className=" text-[#BDBDBD]">Following</p>
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@ function UserInfo(props) {
                             }  py-[0.3rem]  px-[2rem] self-center `}
                     >
                         <div>
-                            <p>Subscribers</p>
+                            <p className=" text-[#BDBDBD]">Subscribers</p>
                         </div>
                     </div>
                 </div>

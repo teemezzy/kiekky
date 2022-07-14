@@ -24,7 +24,7 @@ const UserNav = () => {
             </div>
             <div className="flex relative justify-between space-x-6 items-center">
            
-      <input className="bg-gray-50 p-2 block rounded-md focus:outline-none w-full pl-5 sm:text-sm focus:border-[gray]" type="text" name="" placeholder="search..." />
+      <input className="bg-[#F6F4FF] p-2 block rounded-md focus:outline-none w-full pl-5 sm:text-sm focus:border-[gray]" type="text" name="" placeholder="search..." />
       <div className="absolute h-[100%] flex items-center flex-end pl-[9rem] ">
             </div>
 

@@ -5,6 +5,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 import {NavLink} from 'react-router-dom';
 import Info from "./Info";
+import Post from '../Post/Post'
  
 function PersonalWall() {
   const [feed, setFeed] = useState([]);
@@ -16,15 +17,16 @@ function PersonalWall() {
   }, []);
 
   return (
-    <div className="feed-recommendation md:flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
+    <div className="feed-recommendation md:flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[61rem] ">
     <Info />
    
     <div className=" lg:w-[66%]   ">
+      <Post />
       {feed
         ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="story-status border-2 bg-white py-4 rounded-lg mb-5"
+              className="story-status bg-white py-4 rounded-lg mb-5"
             >
               <div>
                 <div className="postItem  items-center mb-7 ">
