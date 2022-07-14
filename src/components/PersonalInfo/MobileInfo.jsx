@@ -24,7 +24,7 @@ function MobileInfo() {
                         key={idx}
                         className="story-status w-full px-4 bg-white py-4  "            >
 
-
+<p className="text-[#6a52fd] ">Bio</p>
 
 <div className="flex justify-evenly">
                 <p className="flex flex-col ">

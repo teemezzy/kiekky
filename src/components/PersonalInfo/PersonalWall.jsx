@@ -70,12 +70,12 @@ function PersonalWall() {
 
                 <div className="post-img h-[9rem] md:h-[10rem] flex justify-around mx-5">
                   <img
-                    className=" w-[9rem] lg:w-[16rem]"
+                    className=" w-[9rem] lg:w-[16rem] rounded-lg"
                     src={feed.image}
                     alt=""
                   />
                   <img
-                    className=" w-[9rem] lg:w-[16rem]"
+                    className=" w-[9rem] lg:w-[16rem] rounded-lg"
                     src={feed.image}
                     alt=""
                   />

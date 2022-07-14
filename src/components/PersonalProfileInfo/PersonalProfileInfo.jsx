@@ -29,7 +29,7 @@ function PersonalProfileInfo() {
 
                                 <label for="small-toggle" class="inline-flex relative items-center mb-5 cursor-pointer">
                                     <input type="checkbox" value="" id="small-toggle" class="sr-only peer" />
-                                    <div class="w-14 h-[1.3rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-[2rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                                    <div class="w-14 h-[1.3rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[2rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                                     <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Stealth mode</span>
                                 </label>
 

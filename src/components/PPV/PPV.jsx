@@ -19,7 +19,7 @@ function UserInfo(props) {
         <div
           className={`${
             toggleState === 1 ? "input-option-tab em " : "input-option-tab"
-          } flex h-[3rem] space-x-5 `}
+          } flex h-[3rem] `}
         >
           <div
             onClick={() => toggleTab(1)}
@@ -35,7 +35,7 @@ function UserInfo(props) {
             onClick={() => toggleTab(2)}
             className={`${
               toggleState === 2 ? "login-tab-active2" : ""
-            }  py-[0.3rem]  px-[2rem] self-center `}
+            }  py-[0.3rem]  px-[1.5rem] self-center `}
           >
             <div>
               <p>Pictures</p>
@@ -45,7 +45,7 @@ function UserInfo(props) {
             onClick={() => toggleTab(3)}
             className={`${
               toggleState === 3 ? "login-tab-active2" : ""
-            }  py-[0.3rem]  px-[2rem] self-center `}
+            }  py-[0.3rem]  px-[1.8rem] self-center `}
           >
             <div>
               <p>Videos</p>

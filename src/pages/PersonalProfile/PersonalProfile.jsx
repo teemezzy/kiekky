@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sidebar, UserNav, PPV, PersonalProfileInfo, User, PersonalInfo } from '../../components'
+import { Sidebar, UserNav, PPV, PersonalProfileInfo, User, PersonalInfo, MobileNav } from '../../components'
 
 function PersonalProfile(props) {
 
@@ -12,14 +12,15 @@ function PersonalProfile(props) {
                     <Sidebar />
                 </div>
                 <div className='lg:ml-[20rem] w-[100vw] '>
- <div className="sub-section border-2 lg:w-[97%] sm:w-[90%] m-auto ">
- <PersonalProfileInfo />
-                    <PersonalInfo />
- </div>
-                   
+                    <div className="sub-section border-2 lg:w-[97%] sm:w-[90%] m-auto ">
+                        <PersonalProfileInfo />
+                        <PersonalInfo />
+                    </div>
+
                 </div>
 
             </div>
+            <MobileNav />
         </div>
 
     );

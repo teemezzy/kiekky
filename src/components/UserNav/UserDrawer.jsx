@@ -39,17 +39,21 @@ const UserDrawer = () => {
             <div key={idx} className="story-status ">
               <div className="user_name mx-10 bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem]">
                 <div className="display-image">
+                  <NavLink to='/personal_profile'>
                   <img
                     className="  w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
                     src={post.image}
                     alt="icon"
                   />
+                  </NavLink>
+                  
                 </div>
-
+<NavLink to='/personal_profile'>
                 <div className="names ml-4 ">
                   <h5 className=" font-bold "> {post.author} </h5>
                   <h5 className="text-sm text-[#828282]  "> @{post.author} </h5>
                 </div>
+                </NavLink>
               </div>
             </div>
           ))
