@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 
-const PayoutModal = ({visible, onClose}) => {
+const AccountModal= ({visible, onClose}) => {
     if(!visible) return null;
   return (
     <div className="w-[699px] border-2 h-[575px] mt-[150px] ml-[700px] m-auto fixed inset-0 bg-opacity-80 backdrop-blur-3xl bg-white flex flex-col justify-center items-center">
@@ -11,7 +11,7 @@ const PayoutModal = ({visible, onClose}) => {
             </div>
 
             <div className=''>
-            <h2 className='text-[24px]'>Request for Payout </h2>
+            <h2 className='text-[24px]'>Saved Account </h2>
             <p className='text-[#828282]'>Please fill this form to request for payout</p>
             </div>
             <div className=' mt-[40px]'>
@@ -28,4 +28,4 @@ const PayoutModal = ({visible, onClose}) => {
   );
 };
 
-export default PayoutModal;
+export default AccountModal;

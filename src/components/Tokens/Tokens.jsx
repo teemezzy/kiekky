@@ -10,7 +10,7 @@ import { transaction } from "./Transaction";
 const Tokens = () => {
   return (
     <div>
-      <div className="flex justify-around px-[53px] py-[65px] bg-white">
+      <div className="flex justify-around px-[53px] py-[65px] bg-white lg:w-full w-[327px]">
         <div className = "border-2 w-64 h-36 pl-[22px] rounded-2xl bg-[#474749] text-white">
           <GiToken className="mt-[30.45px]" />
           <p className="font-bold mt-[34.75px] text-[22px]">5000</p>
@@ -22,25 +22,25 @@ const Tokens = () => {
           </div>
         </div>
 
-        <div className=" inner-content1 rounded-2xl"> 
+        <div className=" inner-content1 rounded-2xl hidden lg:block"> 
         <div className="  bg-white w-64 h-36 pl-[22px] rounded-2xl"></div> 
         </div>
 
-        <div className=" inner-content1 rounded-2xl">
+        <div className=" inner-content1 rounded-2xl hidden lg:block">
           <div className="bg-white w-64 h-36 pl-[22px] rounded-2xl"></div>
         </div>
       </div>
 
-      <div className="mt-[80px]">
+      <div className="mt-[80px] w-[327px] lg:w-full ">
         <p className="text-2xl font-semibold mb-[24px]">My Transactions</p>
 
-        <table className=" w-[984px] ">
+        <table className=" lg:w-[984px] w-[327px]">
           <thead className="flex order-0 h-[46px] items-center justify-around text-center border-b-2 border-[#F2F2F2] bg-[#F5F3FF]">
-            <th className="w-28 text-left">Date</th>
-            <th className="w-28 text-left">Description</th>
-            <th className="w-28 text-left">Recipient</th>
-            <th className="w-28 text-left">Amount</th>
-            <th className="w-28 text-left">Status</th>
+            <th className="lg:w-28 text-left">Date</th>
+            <th className="lg:w-28 text-left">Description</th>
+            <th className="lg:w-28 text-left">Recipient</th>
+            <th className="lg:w-28 text-left">Amount</th>
+            <th className="lg:w-28 text-left">Status</th>
           </thead>
           <tbody className="justify-evenly text-center bg-white">
             {transaction.map((transactions) => (
@@ -48,11 +48,11 @@ const Tokens = () => {
                 className=" flex order-1 h-[46px] items-center justify-around text-center border-b-2 border-[#F2F2F2]"
                 key={transactions.id}
               >
-                <td className="w-28 text-left">{transactions.date}</td>
-                <td className="w-28 text-left"> {transactions.description} </td>
-                <td className="w-28 text-left">{transactions.recipient}</td>
-                <td className="w-28 text-left">{transactions.amount}</td>
-                <td className="w-28 text-left">{transactions.status}</td>
+                <td className="lg:w-28 text-left">{transactions.date}</td>
+                <td className="lg:w-28 text-left">{transactions.description} </td>
+                <td className="lg:w-28 text-left">{transactions.recipient}</td>
+                <td className="lg:w-28 text-left">{transactions.amount}</td>
+                <td className="lg:w-28 text-left">{transactions.status}</td>
               </tr>
             ))}
           </tbody>

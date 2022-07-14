@@ -10,7 +10,7 @@ import {
   Referrals,
 } from "../components";
 
-const Wallet= ()=> {
+const Wallet = () => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (tab) => {
@@ -22,7 +22,8 @@ const Wallet= ()=> {
   const tabs =
     "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
 
-    const activePayout = "w-[255px] text-[#6A52FD] text-[16px] py-[16.5px] px-[53px] m-auto text-center bg-white cursor-pointer outline-none"
+  const activePayout =
+    "w-[255px] text-[#6A52FD] text-[16px] py-[16.5px] px-[53px] m-auto text-center bg-white cursor-pointer outline-none";
 
   const activeContent = " ";
   const content = "bg-white w-full hidden p-[20px]";
@@ -34,9 +35,9 @@ const Wallet= ()=> {
         <div className="hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className="mt-10 w-[984px] m-auto ">
+        <div className="mt-10 lg:w-[984px] m-auto ">
           {/* Title For TabMenu */}
-          <div className="flex w-[58.9rem]">
+          <div className="flex lg:w-[58.9rem] ">
             <div
               className={toggleState === 1 ? (tabs, activeTabs) : tabs}
               onClick={() => toggleTab(1)}
@@ -56,7 +57,9 @@ const Wallet= ()=> {
               KYC
             </div>
             <div
-              className={toggleState === 4 ? (tabs, activeTabs, activePayout) : tabs}
+              className={
+                toggleState === 4 ? (tabs, activeTabs, activePayout) : tabs
+              }
               onClick={() => toggleTab(4)}
             >
               Request Payout
@@ -111,6 +114,6 @@ const Wallet= ()=> {
       </div>
     </div>
   );
-}
+};
 
 export default Wallet;
