@@ -78,17 +78,17 @@ const Footer = () => {
             <p>Follow Us</p>
             <div className="flex pt-5">
               <span className="">
-                <a href="https://www.facebook.com/kiekky">
+                <a href="https://www.facebook.com/kiekkysupport">
                   <FaFacebookF />
                 </a>
               </span>
               <span className="pl-4">
-                <a href="https://www.instagram.com/kiekky">
+                <a href="https://www.instagram.com/kiekkysupport">
                   <FaInstagram />
                 </a>
               </span>
               <span className="pl-4">
-                <a href="https://twitter.com/kiekky">
+                <a href="https://twitter.com/kiekkysupport">
                   <FaTwitter />
                 </a>
               </span>

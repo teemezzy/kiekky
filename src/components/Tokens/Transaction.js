@@ -1,5 +1,3 @@
-import React from "react";
-import { GiSamuraiHelmet } from "react-icons/gi";
 
 export const transaction = [
   {
