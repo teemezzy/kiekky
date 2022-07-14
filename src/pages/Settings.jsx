@@ -16,9 +16,13 @@ function Settings() {
   };
 
   const activeTabs =
-    "text-[#6A52FD] text-[16px] py-[16.5px] px-[53px] m-auto text-center border-t-2 border-r-2 border-l-2 bg-white cursor-pointer outline-none";
-  const tabs =
-    "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
+  "text-[#6A52FD] text-[16px] py-[16.5px] w-[167px] m-auto text-center bg-white cursor-pointer outline-none";
+const tabs =
+  "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
+
+  const activePayout =
+    "w-[255px] text-[#6A52FD] text-[16px] py-[16.5px] px-[53px] m-auto text-center bg-white cursor-pointer outline-none";
+
   const activeContent = "";
   const content = "bg-white w-full hidden p-[20px]";
 
@@ -34,7 +38,8 @@ function Settings() {
       </div>
       <div className=" mt-[8.5rem] w-[984px] m-auto ">
         {/* Title For TabMenu */}
-        <div className="flex m-auto w-[58.9rem]">
+        <div className="lg:w-[42.125rem] w-[327px] overflow-x-scroll lg:overflow-x-auto scale">
+        <div className="flex lg:w-auto w-[200vw]">
           <div
             className={toggleState === 1 ? (tabs, activeTabs) : tabs}
             onClick={() => toggleTab(1)}
@@ -59,6 +64,7 @@ function Settings() {
           >
             Profile Verification
           </div>
+        </div>
         </div>
 
         {/* The content within each box  */}

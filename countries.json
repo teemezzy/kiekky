@@ -200,7 +200,7 @@
     "code": "CG"
   },
   {
-    "name": "Congo, The Democratic Republic of the",
+    "name": "Congo",
     "code": "CD"
   },
   {
@@ -276,7 +276,7 @@
     "code": "ET"
   },
   {
-    "name": "Falkland Islands (Malvinas)",
+    "name": "Falkland Islands",
     "code": "FK"
   },
   {
@@ -380,7 +380,7 @@
     "code": "HM"
   },
   {
-    "name": "Holy See (Vatican City State)",
+    "name": "Vatican City State",
     "code": "VA"
   },
   {
@@ -408,7 +408,7 @@
     "code": "ID"
   },
   {
-    "name": "Iran, Islamic Republic Of",
+    "name": "Iran",
     "code": "IR"
   },
   {
@@ -460,11 +460,11 @@
     "code": "KI"
   },
   {
-    "name": "Korea, Democratic People'S Republic of",
+    "name": "Korea",
     "code": "KP"
   },
   {
-    "name": "Korea, Republic of",
+    "name": "Korea",
     "code": "KR"
   },
   {
@@ -476,7 +476,7 @@
     "code": "KG"
   },
   {
-    "name": "Lao People'S Democratic Republic",
+    "name": "Lao",
     "code": "LA"
   },
   {
@@ -516,7 +516,7 @@
     "code": "MO"
   },
   {
-    "name": "Macedonia, The Former Yugoslav Republic of",
+    "name": "Macedonia",
     "code": "MK"
   },
   {
@@ -568,11 +568,11 @@
     "code": "MX"
   },
   {
-    "name": "Micronesia, Federated States of",
+    "name": "Micronesia",
     "code": "FM"
   },
   {
-    "name": "Moldova, Republic of",
+    "name": "Moldova",
     "code": "MD"
   },
   {
@@ -668,7 +668,7 @@
     "code": "PW"
   },
   {
-    "name": "Palestinian Territory, Occupied",
+    "name": "Palestinian Territory",
     "code": "PS"
   },
   {
@@ -804,7 +804,7 @@
     "code": "ZA"
   },
   {
-    "name": "South Georgia and the South Sandwich Islands",
+    "name": "South Georgia",
     "code": "GS"
   },
   {
@@ -844,7 +844,7 @@
     "code": "SY"
   },
   {
-    "name": "Taiwan, Province of China",
+    "name": "Taiwan",
     "code": "TW"
   },
   {
@@ -852,7 +852,7 @@
     "code": "TJ"
   },
   {
-    "name": "Tanzania, United Republic of",
+    "name": "Tanzania",
     "code": "TZ"
   },
   {
@@ -948,7 +948,7 @@
     "code": "VG"
   },
   {
-    "name": "Virgin Islands, U.S.",
+    "name": "U.S. Virgin Islands",
     "code": "VI"
   },
   {

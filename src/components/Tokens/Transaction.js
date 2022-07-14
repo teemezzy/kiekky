@@ -5,7 +5,7 @@ export const transaction = [
   {
     id: 1,
     recipient: "David",
-    date: "21-06-2022",
+    date: "21/06",
     status: "successful",
     amount: 385,
     description: "date night",
@@ -14,7 +14,7 @@ export const transaction = [
   {
     id: 2,
     recipient: "Joan",
-    date: "21-06-2022",
+    date: "21/06",
     status: "successful",
     amount: 450,
     description: "hangout",
@@ -22,7 +22,7 @@ export const transaction = [
   {
     id: 3,
     recipient: "TEEJAY",
-    date: "21-06-2022",
+    date: "21/06",
     status: "successful",
     amount: 600,
     description: "for stuff",
@@ -30,7 +30,7 @@ export const transaction = [
   {
     id: 4,
     recipient: "Silver",
-    date: "21-06-2022",
+    date: "21/06",
     status: "Failed",
     amount: 200,
     description: "for stuff",
@@ -38,7 +38,7 @@ export const transaction = [
   {
     id: 5,
     recipient: "Henry",
-    date: "21-06-2022",
+    date: "21/06",
     status: "successful",
     amount: 700,
     description: "for stuff",
@@ -46,7 +46,7 @@ export const transaction = [
   {
     id: 6,
     recipient: "Vincent",
-    date: "21-06-2022",
+    date: "21/06",
     status: "successful",
     amount: 500,
     description: "for stuff",

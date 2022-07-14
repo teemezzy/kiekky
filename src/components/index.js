@@ -28,6 +28,7 @@ import Subscriptions from "./Subscriptions/Subscriptions";
 import KYC from "./KYC/KYC";
 import Referrals from "./Referrals/Referrals";
 import RequestPayment from "./RequestPayment/RequestPayment";
+import PayoutModal from "./RequestPayment/PayoutModal";
 import Vouchers from "./Vouchers/Vouchers";
 import SetSubscription from "./SetSubscription/SetSubscription";
 import Notifications from "./Notifications/Notifications";
@@ -67,6 +68,7 @@ export {
   KYC,
   Vouchers,
   RequestPayment,
+  PayoutModal,
   Referrals,
   SetSubscription,
   Notifications,

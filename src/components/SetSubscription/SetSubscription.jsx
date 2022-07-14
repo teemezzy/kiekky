@@ -4,10 +4,10 @@ const SetSubscription = () => {
   return (
     <div className="w-[984px] h-[684px] bg-white">
       <div className="w-[903px] m-auto">
-        <h2 className="text-[18px] font-semibold pt-[39px]">
+        <h2 className="text-[18px] font-semibold pt-[39px] mb-[12px]">
           Set the price for your subscriptions
         </h2>
-        <p>
+        <p className='text-[#828282]'>
           Offer a subscription and your subscribers can view your photos and
           videos for a set price. You can also offer several months as a package
           or a discounted subscription to attract new subscribers or to win back
@@ -24,7 +24,7 @@ const SetSubscription = () => {
         >
           Upgrade your account
         </h2>
-        <p>Please be aware that you can only enable subscriptions if you have a verified profile and bank connection. We will check your information and send you a confirmation email as soon as this process has been completed.</p>
+        <p className='text-[#828282]'>Please be aware that you can only enable subscriptions if you have a verified profile and bank connection. We will check your information and send you a confirmation email as soon as this process has been completed.</p>
         <button className="bg-[#EB5757] mt-[24px] text-white py-[8.5px] rounded-md px-[45.5px]">Upgrade</button>
       </div>
     </div>

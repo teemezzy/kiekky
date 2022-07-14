@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import "./Payout.CSS";
-import { BsArrowReturnRight } from "react-icons/bs";
+import PayoutModal from "./PayoutModal";
+import AccountModal from "./AccountModal";
+import { BsArrowReturnRight } from "react-icons/bs"
+import { MdOutlineModeEditOutline } from "react-icons/md";
 
 const RequestPayment = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [accountModal, setAccountModal] = useState(false);
 
-  const openModalHandler = () => {
-    setOpenModal(true);
-  };
+  const openModalHandler = () => setOpenModal(true);
+  const closeModalHandler = () => setOpenModal(false);
+  
+  const accountModalOpen = () => setAccountModal(true);
+  const accountModalClose = () => setAccountModal(false);
 
   return (
-    <div className="bg-white h-screen pl-[55px]">
+    <div className="bg-white h-screen pl-[55px] m-auto ">
       <p className="pt-[47px] pb-[26px] text-[#828282]">
         You can request for payout
       </p>
@@ -24,9 +30,14 @@ const RequestPayment = () => {
           </div>
         </button>
       </div>
-
+      
       <div className="mt-[116px]">
-        <h3 className="mb-[20px] font-semibold">Saved Account</h3>
+        <div className='flex items-center gap-8 mb-[20px]'>
+          <h3 className=" font-semibold">Saved Account</h3>
+          <div onClick={accountModalOpen} className='text-[#6A52FD] w-[36px] h-[36px] rounded-full flex items-center justify-center bg-[#F6F4FF]' >
+          <MdOutlineModeEditOutline/>
+          </div>
+        </div>
 
         <div>
           <h3 className="text-[#828282] mb-[6px]">Account Name</h3>
@@ -37,6 +48,9 @@ const RequestPayment = () => {
           <p className="text-[#212121]">Sanchy Kreations</p>
         </div>
       </div>
+
+      <PayoutModal onClose={closeModalHandler} visible={openModal} />
+      <AccountModal onClose={accountModalClose} visible={accountModal} />
     </div>
   );
 };

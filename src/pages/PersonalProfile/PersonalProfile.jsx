@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Sidebar, UserNav, PPV, PersonalProfileInfo, User, PersonalInfo, MobileNav } from '../../components'
 
 function PersonalProfile(props) {
 
     return (
-        <div className="notifications bg-[#F9FAFA]">
+        <div className="notifications bg-[#F9FAFA] ">
             <UserNav />
             <div className="flex mt-[6rem] bg-[#F9FAFA] ">
 

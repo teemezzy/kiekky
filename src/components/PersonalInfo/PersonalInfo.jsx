@@ -23,71 +23,71 @@ function UserInfo(props) {
             <MobileInfo />
             <div className=" scale flex m-auto mt-5 mb-5 w-[100vw] overflow-x-scroll lg:w-[60rem]   ">
                 <div className="width-scale w-[80%] ">
-                <div
-                    className={`${toggleState === 1 ? "input-option-tab em " : "input-option-tab2"
-                        } flex h-[3rem] sm:space-x-4 lg:space-x-5 `}
-                >
                     <div
-                        onClick={() => toggleTab(1)}
-                        className={`${toggleState === 1 ? "login-tab-active3" : ""
-                            }  py-[0.3rem] px-[2rem]  self-center  `}
+                        className={`${toggleState === 1 ? "input-option-tab em " : "input-option-tab2"
+                            } flex h-[3rem] sm:space-x-4 lg:space-x-5 `}
                     >
-                        <div>
-                            <p className="  ">Wall</p>
+                        <div
+                            onClick={() => toggleTab(1)}
+                            className={`${toggleState === 1 ? "login-tab-active3" : ""
+                                }  py-[0.3rem] px-[2rem]  self-center  `}
+                        >
+                            <div>
+                                <p className="  ">Wall</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div
-                        onClick={() => toggleTab(2)}
-                        className={`${toggleState === 2 ? "login-tab-active3" : ""
-                            }  py-[0.3rem]  px-[2rem] self-center `}
-                    >
-                        <div>
-                            <p className=" ">Photos</p>
+                        <div
+                            onClick={() => toggleTab(2)}
+                            className={`${toggleState === 2 ? "login-tab-active3" : ""
+                                }  py-[0.3rem]  px-[2rem] self-center `}
+                        >
+                            <div>
+                                <p className=" ">Photos</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div
-                        onClick={() => toggleTab(3)}
-                        className={`${toggleState === 3 ? "login-tab-active3" : ""
-                            }  py-[0.3rem]  px-[2rem] self-center `}
-                    >
-                        <div>
-                            <p className="">Videos</p>
+                        <div
+                            onClick={() => toggleTab(3)}
+                            className={`${toggleState === 3 ? "login-tab-active3" : ""
+                                }  py-[0.3rem]  px-[2rem] self-center `}
+                        >
+                            <div>
+                                <p className="">Videos</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div
-                        onClick={() => toggleTab(4)}
-                        className={`${toggleState === 4 ? "login-tab-active3" : ""
-                            }  py-[0.3rem]  px-[2rem] self-center `}
-                    >
-                        <div>
-                            <p className=" ">Followers</p>
+                        <div
+                            onClick={() => toggleTab(4)}
+                            className={`${toggleState === 4 ? "login-tab-active3" : ""
+                                }  py-[0.3rem]  px-[2rem] self-center `}
+                        >
+                            <div>
+                                <p className=" ">Followers</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div
-                        onClick={() => toggleTab(5)}
-                        className={`${toggleState === 5 ? "login-tab-active3" : ""
-                            }  py-[0.3rem]  px-[2rem] self-center `}
-                    >
-                        <div>
-                            <p className=" ">Following</p>
+                        <div
+                            onClick={() => toggleTab(5)}
+                            className={`${toggleState === 5 ? "login-tab-active3" : ""
+                                }  py-[0.3rem]  px-[2rem] self-center `}
+                        >
+                            <div>
+                                <p className=" ">Following</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div
-                        onClick={() => toggleTab(6)}
-                        className={`${toggleState === 6 ? "login-tab-active3" : ""
-                            }  py-[0.3rem]  px-[2rem] self-center `}
-                    >
-                        <div>
-                            <p className=" ">Subscribers</p>
+                        <div
+                            onClick={() => toggleTab(6)}
+                            className={`${toggleState === 6 ? "login-tab-active3" : ""
+                                }  py-[0.3rem]  px-[2rem] self-center `}
+                        >
+                            <div>
+                                <p className=" ">Subscribers</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
 
             <div className={toggleState === 1 ? (content, activeContent) : content}>
