@@ -1,9 +1,10 @@
+
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Recommendations from '../Recommendations/Recommendations'
-
-const ProfileVideo = ()=> {
+function ProfileVideo() {
   const [feed, setFeed] = useState([]);
 
   const url = "https://fakerapi.it/api/v1/persons?_quantity=20";
@@ -13,24 +14,25 @@ const ProfileVideo = ()=> {
   }, []);
 
   return (
-    <div className="feed-recommendation flex mx-6 justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[60rem] ">
-    <div className="  w-[66%] pictures">
-    {feed
+    <div className="feed-recommendation flex  justify-center lg:justify-start lg:items-start sm:items-center sm:w-[100vw] lg:w-[px] m-auto ">
+      <div className=" bg-white lg:p-10 mx-6   pictures">
+        {feed
           ? feed.map((feed, idx) => (
-              <div key={idx} className="story-status ">
-                <div className="image">
-                  <img
-                    className=" w-[17rem] h-[7rem] lg:h-[16rem] rounded-md"
-                    src={feed.image}
-                    alt="icon"
-                  />
-                </div>
+            <div key={idx} className="story-status ">
+              <div className="image">
+                <img
+                  className=" w-[17rem] h-[7rem] lg:h-[16rem] rounded-md"
+                  src={feed.image}
+                  alt="icon"
+                />
               </div>
-            ))
+            </div>
+          ))
           : null}
 
-    </div>
-    <Recommendations />
+      </div>
+      <div className="div lg:ml-[-7rem]">
+        <Recommendations /></div>
 
 
 

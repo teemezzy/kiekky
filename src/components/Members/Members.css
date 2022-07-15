@@ -8,7 +8,7 @@
 @media only screen and (max-width:1200px) {
     .members{
         display: grid;
-        grid-template-columns: repeat(2, 160px );
-        row-gap: 2px;  
+        grid-template-columns: repeat(2, 150px );
+        row-gap: 30px;  
     }
 }

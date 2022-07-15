@@ -13,11 +13,11 @@ function HotPicks(props) {
   }, []);
 
   return (
-    <div className=' mt-[2.5rem] flex flex-col justify-center ml-4 lg:ml-0 lg:justify-start items-center lg:items-start lg:w-[68rem]'>
-      <div className="top-text flex justify-between lg:w-[67rem]">
+    <div className=' flex flex-col justify-center ml-4 lg:ml-0 lg:justify-start items-center lg:items-start lg:w-[68rem]'>
+      <div className="top-text flex justify-between lg:w-[66rem] ">
 
 
-        <div className="sub flex px-4 space-x-3 items-center">
+        <div className="sub flex lg:px-6  space-x-3 items-center">
           <p>Members</p>
           <p className=' text-sm text-[#999999]  py-1 rounded-md '>Gender: </p>
           <button className=' border-[1px] border-[#E5E5E5]  text-[#999999] px-4 py-1 text-xs  rounded-[0.3rem] '>Male</button>
@@ -25,7 +25,7 @@ function HotPicks(props) {
 
         </div>
         <div className="hidden lg:block">
-          <div className="flex relative pr-9 mb-3 j space-x-6 items-center">
+          <div className="flex relative  mb-3  space-x-6 items-center">
 
             <input className=" p-2 block  pl-12 sm:text-sm focus:outline-none border-[1px] border-[#6a52fd] rounded-lg focus:border-[gray]" type="text" name="" placeholder="Sort by : Location" />
             <div className="absolute h-[100%] flex items-center  ">
@@ -34,7 +34,7 @@ function HotPicks(props) {
         </div>
 
       </div>
-      <div className="members images  mt-2">
+      <div className="members images lg:w-[64rem] m-auto mt-2">
 
         {story
           ? story.map((story, idx) => (
