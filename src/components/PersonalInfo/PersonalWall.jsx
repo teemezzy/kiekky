@@ -71,7 +71,7 @@ function PersonalWall() {
                   </div>
                 </div>
 
-                <div className="post-img h-[9rem] md:h-[10rem] flex justify-around mx-5">
+                <div className="post-img h-[9rem] md:h-[10rem] space-x-5 flex justify-around mx-5">
                   <img
                     className=" w-[9rem] lg:w-[16rem] rounded-lg"
                     src={feed.image}

@@ -21,7 +21,7 @@ function ProfilePost() {
         ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="story-status border-2 bg-white py-4 rounded-lg mb-5"
+              className="story-status bg-white py-4 rounded-lg mb-5"
             >
               <div>
                 <div className="postItem  items-center mb-7 ">
@@ -65,14 +65,14 @@ function ProfilePost() {
                   </div>
                 </div>
 
-                <div className="post-img h-[9rem] md:h-[10rem] flex justify-around mx-5">
+                <div className="post-img space-x-4 h-[9rem] md:h-[10rem] flex justify-around mx-5">
                   <img
-                    className=" w-[9rem] lg:w-[16rem]"
+                    className=" w-[9rem] lg:w-[16rem] rounded-xl"
                     src={feed.image}
                     alt=""
                   />
                   <img
-                    className=" w-[9rem] lg:w-[16rem]"
+                    className=" w-[9rem] lg:w-[16rem] rounded-xl"
                     src={feed.image}
                     alt=""
                   />
@@ -83,7 +83,8 @@ function ProfilePost() {
         : null}
 
     </div>
-    <Recommendations />
+    <div className="div lg:ml-[-7rem]">
+    <Recommendations /></div>
 
 
 
