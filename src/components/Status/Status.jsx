@@ -12,14 +12,14 @@ const Status = () => {
   }, []);
 
   return (
-    <div>
-      <div className="status flex space-x-8  overflow-x-scroll  px-4 pt-10 mb-8  ">
+    <div className='lg:w-[970px] m-auto'>
+      <div className="status flex space-x-8 overflow-x-scroll pt-10 mb-8  ">
         <p className="flex items-center ">
           <BsArrowLeft color="gray" />
         </p>
         {story
           ? story.map((story, idx) => (
-              <div key={idx} className="story-status ">
+              <div key={idx} className="story-status  ">
                 <div className="status-image">
                   <img
                     className="stats w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"

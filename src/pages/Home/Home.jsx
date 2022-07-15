@@ -8,15 +8,15 @@ const Home = () => {
     <div className="bg-[#F9FAFA]">
       <UserNav /> 
       <div className="side-home flex mt-[6rem] bg-[#F9FAFA]">
-        <div className=" fixed h-[100%] hidden lg:block sidebar_prt pt-8">
+        <div className=" h-[100vh] hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className=" lg:ml-[24rem] ">
+        <div className="  lg:w-[970px] m-auto ">
           <Status />
-          <div className="flex justify-center lg:justify-start">
-            <div className=" md:w-[30rem] lg:w-[40rem] px-5 ">
+          <div className=" ">
+            <div className=" md:w-[30rem] w-[970px] ">
               <Post />
-              <div className="flex ">
+              <div className="flex gap-7 justify-between">
                 <Feeds />
                 <Recommendations />
               </div>

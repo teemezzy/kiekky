@@ -30,10 +30,10 @@ const Sidebar = ({ children }) => {
     navigate("/");
   };
   return (
-    <div className="side ">
+    <div className="side">
       {post
         ? post.map((post, idx) => (
-            <div key={idx} className="story-status ">
+            <div key={idx} className="story-status  ">
               <div className="user_name mx-10 bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem]">
                 <div className="display-image">
                 <NavLink to='/personal_profile'>  <img
