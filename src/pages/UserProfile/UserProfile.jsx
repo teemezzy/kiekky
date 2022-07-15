@@ -9,7 +9,7 @@ function UserProfile(props) {
         <div className="  fixed h-[100%] hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className=" lg:w-[986px] m-auto lg:ml-24  ">
+        <div className="lg:ml-[24rem] lg:w-[60rem] ">
           <User />
           <UserInfo />
           <PPV />

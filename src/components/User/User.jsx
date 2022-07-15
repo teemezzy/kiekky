@@ -21,7 +21,7 @@ function User() {
   }, []);
 
   return (
-    <div className="flex flex-col mt-10 justify-center lg:w-[986px] m-auto">
+    <div className="flex flex-col mt-10  mx-6  justify-center items-center lg:items-start w-[100vw] lg:w-[60rem] ">
 
       {feed
         ? feed.map((feed, idx) => (
