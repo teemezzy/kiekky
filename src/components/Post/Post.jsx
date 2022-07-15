@@ -19,7 +19,7 @@ function Post() {
 
     return (
         <div>
-            <div className="post_box bg-white  rounded-lg items-center mb-9 ">
+            <div className="post_box bg-white  rounded-lg items-center mb-9 lg:w-[672px] m-auto">
 <div className="username flex items-center">
     <div className="img-container pt-5 pr-5 pl-5">
 

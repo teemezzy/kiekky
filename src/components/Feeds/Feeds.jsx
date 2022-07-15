@@ -20,7 +20,7 @@ function Feeds() {
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="story-status bg-white py-4 rounded-lg mb-5"
+            className="story-status bg-white py-4 rounded-lg mb-5 lg:w-[672px] m-auto"
           >
             <div>
               <div className="postItem  items-center mb-7 ">
@@ -66,12 +66,12 @@ function Feeds() {
 
               <div className="post-img h-[9rem] md:h-[10rem] flex justify-around mx-5">
                 <img
-                  className=" w-[9rem] lg:w-[16rem]"
+                  className=" w-[8.5rem]  lg:w-[16rem] rounded-xl"
                   src={feed.image}
                   alt=""
                 />
                 <img
-                  className=" w-[9rem] lg:w-[16rem]"
+                  className=" w-[8.5rem]  lg:w-[16rem] rounded-xl"
                   src={feed.image}
                   alt=""
                 />

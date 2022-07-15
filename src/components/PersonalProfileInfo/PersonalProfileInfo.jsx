@@ -16,12 +16,8 @@ function PersonalProfileInfo() {
     }, []);
 
     return (
-<<<<<<< HEAD
-        <div className=" flex justify-center items-center notify  mt-5   w-[90%] m-auto lg:w-[61rem] ">
-=======
         <div className=" flex justify-center items-center mt-10 m-auto lg:w-[968px] ">
->>>>>>> dc327b19d1bf3be74d7889a4215556483ea8af9a
-
+ <div className="m-auto w-[90vw] lg:w-full ">
             {feed
                 ? feed.map((feed, idx) => (
                     <div
@@ -33,11 +29,7 @@ function PersonalProfileInfo() {
 
                                 <label for="small-toggle" className="inline-flex relative items-center mb-5 cursor-pointer">
                                     <input type="checkbox" value="" id="small-toggle" className="sr-only peer" />
-<<<<<<< HEAD
                                     <div className="w-[40px] h-[1.2rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[1rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-=======
-                                    <div className="w-14 h-[1.3rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[2rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
->>>>>>> dc327b19d1bf3be74d7889a4215556483ea8af9a
                                     <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Stealth mode</span>
                                 </label>
 
@@ -84,7 +76,7 @@ function PersonalProfileInfo() {
 
                 ))
                 : null}
-
+</div>
 
         </div>
     );
