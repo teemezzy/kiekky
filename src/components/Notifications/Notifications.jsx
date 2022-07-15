@@ -2,7 +2,7 @@ import React from "react";
 
 const Notifications = () => {
   return (
-    <div className="lg:h-[456px] h-[400px] lg:w-[984px] w-[347px] bg-white pl-[55px] ">
+    <div className="lg:h-[456px] h-[400px] lg:w-[984px] w-[347px] m-auto bg-white px-[55px] ">
       <p className="text-[#828282] text-[15px] font-extralight mb-[61px] pt-[56px]">
         You can turn on and off your notification settings
       </p>
