@@ -20,10 +20,12 @@ import co from "./co.png";
 import reg from './reg.png'
 import link from './link.png'
 import token from "./token.png";
+import nounFace from "./nounFace.png"
 
 
 export {
   Logo,
+  nounFace,
   LogoFooter,
   Contactus,
   Submit,
