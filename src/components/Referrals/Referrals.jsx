@@ -66,15 +66,15 @@ const Referrals = () => {
 
           <div className="flex justify-between w-[172px]">
             <div className="w-[36px] h-[36px] m-auto rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
-              <a href="#"><FiFacebook /></a>
+              <a href="https://facebook.com/kiekkysupport"><FiFacebook /></a>
               
             </div>
             <div className="w-[36px] h-[36px] m-auto rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
-              <a href="#"><AiOutlineInstagram/></a>
+              <a href="https://instagram.com/kiekkysupport"><AiOutlineInstagram/></a>
               
             </div>
             <div className="w-[36px] h-[36px] m-auto rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
-              <a href="#"><TbBrandTwitter /></a>
+              <a href="https://twitter.com/kiekkysupport"><TbBrandTwitter /></a>
               
             </div>
           </div>

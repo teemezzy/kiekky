@@ -20,8 +20,6 @@ function Settings() {
 const tabs =
   "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
 
-  const activePayout =
-    "w-[255px] text-[#6A52FD] text-[16px] py-[16.5px] px-[53px] m-auto text-center bg-white cursor-pointer outline-none";
 
   const activeContent = "";
   const content = "bg-white w-full hidden p-[20px]";

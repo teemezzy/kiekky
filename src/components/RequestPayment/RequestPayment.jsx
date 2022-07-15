@@ -16,13 +16,13 @@ const RequestPayment = () => {
   const accountModalClose = () => setAccountModal(false);
 
   return (
-    <div className="bg-white h-screen pl-[55px] m-auto ">
-      <p className="pt-[47px] pb-[26px] text-[#828282]">
+    <div className="bg-white h-screen lg:pl-[55px] m-auto w-[327px] lg:w-[986px]">
+      <p className="pt-[47px] pb-[26px] text-[#828282] flex lg:flex-none justify-center lg:justify-start">
         You can request for payout
       </p>
-      <div className="request ">
+      <div className="request flex lg:flex-none justify-center lg:justify-start lg:block ">
         <button onClick={openModalHandler}>
-          <div className=" w-64 h-36 flex flex-col justify-center items-center border-2 rounded-2xl">
+          <div className=" lg:w-64 w-[293px] m-auto h-[161px] lg:h-36  flex flex-col justify-center items-center border-2 rounded-2xl">
             <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
               <BsArrowReturnRight />
             </div>
@@ -31,8 +31,8 @@ const RequestPayment = () => {
         </button>
       </div>
       
-      <div className="mt-[116px]">
-        <div className='flex items-center gap-8 mb-[20px]'>
+      <div className="mt-[116px] w-[320px] pl-5 ">
+        <div className='flex items-center gap-8 mb-[20px] '>
           <h3 className=" font-semibold">Saved Account</h3>
           <div onClick={accountModalOpen} className='text-[#6A52FD] w-[36px] h-[36px] rounded-full flex items-center justify-center bg-[#F6F4FF]' >
           <MdOutlineModeEditOutline/>

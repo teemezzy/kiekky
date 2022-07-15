@@ -21,13 +21,13 @@ function User() {
   }, []);
 
   return (
-    <div className="flex flex-col mt-10  mx-6  justify-center  sm:items-center lg:items-start sm:w-[100vw] lg:w-[60rem] ">
+    <div className="flex flex-col mt-10  mx-6  justify-center items-center lg:items-start w-[100vw] lg:w-[60rem] ">
 
       {feed
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="story-status w-full px-4 bg-white py-4  "            >
+            className="story-status px-4 bg-white py-4 w-[986px] "            >
 
             <div className="icons">
               <p className="flex items-center ">
@@ -40,13 +40,13 @@ function User() {
             <div className="pic-not mt-4 flex gap-2 items-start pt-4  ">
               <div className="feed-image ">
                 <img
-                  className=" w-[4rem]  h-[4rem] p-[2.7px] rounded-[50%]"
+                  className=" w-[4rem] h-[4rem] p-[2.7px] rounded-[50%]"
                   src={feed.image}
                   alt="icon"
                 />
               </div>
 
-              <div className="lg:w-[42rem] sm:w-[17rem] md:w-[23rem]">
+              <div className="lg:w-[42rem] w-[17rem] md:w-[23rem]">
 
                 <p className="font-[700]">{feed.firstname}</p>
 
