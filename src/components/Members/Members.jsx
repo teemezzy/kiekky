@@ -41,7 +41,7 @@ function HotPicks(props) {
             <div key={idx} className="members-feed ">
               <div className=" rounded-xl ">
                 <img
-                  className="stats mb-2 w-[9rem] h-[9.2rem] lg:w-[14.5rem] lg:h-[14.5rem] rounded-xl "
+                  className=" mb-2 w-[9rem] h-[9.2rem] lg:w-[14.5rem] lg:h-[14.5rem] rounded-xl "
                   src={story.image}
                   alt="icon"
                 />
