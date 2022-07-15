@@ -13,8 +13,8 @@ const Home = () => {
         </div>
         <div className=" lg:ml-[24rem] ">
           <Status />
-          <div className="ml-post-recommendation flex justify-center lg:justify-star                                   ">
-            <div className="post-area md:w-[30rem] lg:w-[40rem] px-5 ">
+          <div className="flex justify-center lg:justify-start">
+            <div className=" md:w-[30rem] lg:w-[40rem] px-5 ">
               <Post />
               <div className="flex ">
                 <Feeds />

@@ -23,7 +23,7 @@ function Feeds() {
             className="story-status bg-white py-4 rounded-lg mb-5 lg:w-[672px] m-auto"
           >
             <div>
-              <div className="postItem  items-center mb-7 ">
+              <div className="postItem items-center mb-7 ">
                 <div className=" flex gap-2 items-center ml-5 ">
                   <div className="feed-image">
 
@@ -59,7 +59,7 @@ function Feeds() {
                   </div>
                 </div>
 
-                <div className="caption pt-5 mx-5">
+                <div className=" pt-5 mx-5">
                   <p>{feed.email}.</p>
                 </div>
               </div>

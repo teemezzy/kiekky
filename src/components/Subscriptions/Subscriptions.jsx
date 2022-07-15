@@ -4,20 +4,39 @@ import { TiTick } from "react-icons/ti";
 const Subscriptions = () => {
   return (
     <div className="lg:w-[984px] w-[347px] h-[792px] m-auto bg-white">
-      <div className="text-center pt-[44px]">
+      <div className="text-center  pt-[44px]">
         <p className="font-bold text-[20px] text-[#6A52FD]">
           Personalized Plans For You
         </p>
         <p className="text-[#666666] mt-[7px]">
           Choose a plan that works best for you.
         </p>
+    <div className='flex items-center w-[960px]'>
+          <div>Bill Monthly</div>
+            <label
+              for="bill-toggle"
+              className="inline-flex relative items-center mb-5 cursor-pointer mt-[42.96px] flex flex-col justify-center"
+            >
+              <input
+                type="checkbox"
+                value=""
+                id="bill-toggle"
+                className="sr-only peer"
+              />
+              <div className="w-14 h-[1.3rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[2rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+            </label>
+        <div>Bill Annually</div>
+    </div>
+
       </div>
-      <div className="flex md:flex-row flex-col items-center justify-center m-auto mt-[98px]">
+      <div className="flex md:flex-row flex-col items-center justify-center m-auto lg:mt-[98px] mt-[28.19px]">
         <div className="w-[260px] bg-[#F6F4FF] pl-[25px] rounded-lg">
           <p className="text-[#6A52FD] font-extrabold text-[32px] mt-[29px]">
             500
           </p>
-          <p className="font-bold text-[20px] mt-[28px] text-[#212121]">Basic</p>
+          <p className="font-bold text-[20px] mt-[28px] text-[#212121]">
+            Basic
+          </p>
           <p className="flex items-center mt-[20px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
@@ -111,7 +130,9 @@ const Subscriptions = () => {
               Save 400
             </p>
           </div>
-          <p className="font-bold text-[20px] mt-[28px] text-[#212121">Premium</p>
+          <p className="font-bold text-[20px] mt-[28px] text-[#212121">
+            Premium
+          </p>
           <p className="flex items-center mt-[20px] text-[#828282]">
             <span className="text-[#6A52FD]  mr-[15.33px]">
               <TiTick />
