@@ -20,24 +20,24 @@ function Feeds() {
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="bg-white py-[30px] px-[24px] lg:px-[42px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  m-auto "
+            className="bg-white py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  "
           >
             <div>
-              <div className="mb-7 lg:w-[586px] m-auto ">
-                <div className=" flex gap-2 items-center  ">
+              <div className="mb-7 lg:w-[586px] w-[294px] m-auto ">
+                <div className=" flex  space-x-[18px] lg:space-x-[12px] items-center  ">
                   <div className="feed-image">
 
                     <NavLink to='/user_profile'>
                       <img
 
-                        className=" w-[4rem] h-[4rem] p-[2.7px] rounded-full"
+                        className="  max-w-[50px] h-[50px] lg:w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
                         src={feed.image}
                         alt="icon"
                       />
                     </NavLink>
                   </div>
 
-                  <div className=" w-[17rem] md:w-[23rem] lg:w-[506.67px]">
+                  <div className="  w-[17rem] md:w-[23rem] lg:w-[506.67px]">
                     <NavLink to='/user_profile'>
 
                       <p className="font-[700] ">{feed.firstname}</p>
@@ -59,7 +59,7 @@ function Feeds() {
                   </div>
                 </div>
               </div>
-              <div className=" m-auto pt-5 lg:w-[586px]">
+              <div className=" m-auto w-[294px] pt-5 lg:w-[586px]">
                   <p>{feed.email}.</p>
                 </div>
 
