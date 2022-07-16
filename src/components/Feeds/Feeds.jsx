@@ -30,7 +30,7 @@ function Feeds() {
                     <NavLink to='/user_profile'>
                       <img
 
-                        className="  max-w-[50px] h-[50px] lg:w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
+                        className="  max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
                         src={feed.image}
                         alt="icon"
                       />

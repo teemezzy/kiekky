@@ -11,13 +11,13 @@ function Info(props) {
   }, []);
 
   return (
-    <div className='pr-8 '>
+    <div className=' lg:mr-[59px] '>
       <p className="lg:block  hidden"> </p>
-      <div className=" hidden pt-5 rounded-md bg-white h-[33.5rem] w-[15.5rem] lg:block">
+      <div className=" hidden pt-5 rounded-md bg-white h-[536px] w-[248px] lg:block">
         {story
           ? story.map((story, idx) => (
-              <div key={idx} className="story-status ">
-                <div className="image  space-y-6 mx-5">
+              <div key={idx} className=" ">
+                <div className="image  space-y-6 w-[186px] m-auto ">
                <p className='text-[#6a52fd]'>Bio</p>
 
                <div className='data'>

@@ -8,11 +8,11 @@ function PersonalProfile(props) {
             <UserNav />
             <div className="flex mt-[6rem] bg-[#F9FAFA] ">
 
-                <div className="  fixed h-[100%] hidden lg:block sidebar_prt pt-8">
+                <div className="  h-[100%] hidden lg:block sidebar_prt pt-8">
                     <Sidebar />
                 </div>
-                <div className='lg:ml-[20rem] w-[100vw] m-auto '>
-                    <div className="sub-section border-2 lg:w-[97%] sm:w-[90%] m-auto ">
+                <div className='lg:w-[984px] w-[327px] m-auto   '>
+                    <div className=" ">
                         <PersonalProfileInfo />
                         <PersonalInfo />
                     </div>

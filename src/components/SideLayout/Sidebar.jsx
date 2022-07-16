@@ -34,7 +34,7 @@ const Sidebar = ({ children }) => {
       {post
         ? post.map((post, idx) => (
             <div key={idx} className="story-status  ">
-              <div className="user_name mx-10 bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem]">
+              <div className="user_name ml-10 bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem]">
                 <div className="display-image">
                 <NavLink to='/personal_profile'>  <img
                     className="  w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
@@ -53,7 +53,7 @@ const Sidebar = ({ children }) => {
           ))
         : null}
 
-      <div className="side_list mx-10 bg-white w-[17rem] h-[40rem] divide-y divide-opacity-50  divide-gray-300">
+      <div className="side_list ml-10 bg-white w-[17rem] h-[40rem] divide-y divide-opacity-50  divide-gray-300">
         {sideList.map((side) => (
           <div
             key={side.id}

@@ -16,15 +16,15 @@ function MobileInfo() {
     }, []);
 
     return (
-        <div className=" notify flex flex-col mt-10 block lg:hidden mx-6  justify-center  sm:items-center lg:items-start sm:w-[100vw] lg:w-[60rem] ">
+        <div className=" notify flex flex-col mt-10 block lg:hidden  justify-center  sm:items-center lg:items-start sm:w-[100vw] lg:w-[60rem] ">
 
             {feed
                 ? feed.map((feed, idx) => (
                     <div
                         key={idx}
-                        className="story-status w-full px-4 bg-white py-4  "            >
+                        className="story-status w-full  bg-white py-4  "            >
 
-<p className="text-[#6a52fd] px-7 ">Bio</p>
+<p className="text-[#6a52fd] w-[278px] mx-11 ">Bio</p>
  
 <div className="flex justify-evenly">
                 <p className="flex flex-col ">
