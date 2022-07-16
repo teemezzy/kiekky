@@ -30,7 +30,7 @@ const Sidebar = ({ children }) => {
     navigate("/");
   };
   return (
-    <div className="side">
+    <div className="side  ">
       {post
         ? post.map((post, idx) => (
             <div key={idx} className="story-status  ">

@@ -15,12 +15,12 @@ function Feeds() {
   }, []);
 
   return (
-    <div className=" lg:w-[672px] m-auto">
+    <div className=" lg:w-[672px] w-[327px] ">
       {feed
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="bg-white py-[30px] px-[42px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  "
+            className="bg-white py-[30px] px-[24px] lg:px-[42px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  m-auto "
           >
             <div>
               <div className="mb-7 lg:w-[586px] m-auto ">
@@ -63,14 +63,14 @@ function Feeds() {
                   <p>{feed.email}.</p>
                 </div>
 
-              <div className=" m-auto md:h-[10rem] lg:w-[586px] flex justify-between ">
+              <div className=" m-auto md:h-[10rem] w-[294px] lg:w-[586px] flex justify-between ">
                 <img
-                  className=" w-[8.5rem]  lg:w-[281px] lg:h-[256px] rounded-lg"
+                  className=" w-[142px] h-[130px]  lg:w-[281px] lg:h-[256px] rounded-lg"
                   src={feed.image}
                   alt=""
                 />
                 <img
-                  className=" w-[8.5rem]  lg:w-[281px] lg:h-[256px] rounded-lg"
+                  className=" w-[142px] h-[130px]  lg:w-[281px] lg:h-[256px] rounded-lg"
                   src={feed.image}
                   alt=""
                 />

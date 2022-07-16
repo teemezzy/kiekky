@@ -8,7 +8,7 @@ import { BiFemaleSign, BiMaleSign } from 'react-icons/bi'
 function Apply() {
   const [feed, setFeed] = useState([]);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=8";
+  const url = "https://fakerapi.it/api/v1/persons?_quantity=21";
 
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));
