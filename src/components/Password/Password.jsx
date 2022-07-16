@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const Password = () => {
   const {
@@ -21,7 +21,7 @@ const Password = () => {
   };
 
   return (
-    <div className='lg:w-[42.125rem] h-[596px] bg-white px-[70.5px] '>
+    <div className='lg:w-[42.125rem] w-[347px] m-auto h-[596px] bg-white px-[70.5px] '>
       <p className='pt-[56px] text-[#828282] text-[15px] font-extralight'>You can change your password by filling the form</p>
       
       <form onSubmit={handleSubmit(onSubmit)} className="py-[29px]">
@@ -33,7 +33,7 @@ const Password = () => {
               <input
                 type="password"
                 placeholder="Enter Old Password"
-                className={` bg-[#F6F4FF] py-[10px] pl-5 rounded-lg ${
+                className={` bg-[#F6F4FF] py-[10px] px-5 rounded-lg ${
                   errors.password &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -53,7 +53,7 @@ const Password = () => {
               <input
                 type="password"
                 placeholder=" Enter New Password"
-                className={` bg-[#F6F4FF] py-[10px] pl-5 rounded-lg ${
+                className={` bg-[#F6F4FF] py-[10px] px-5 rounded-lg ${
                   errors.password &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -73,7 +73,7 @@ const Password = () => {
               <input
                 type="password"
                 placeholder="Confirm New Password"
-                className={` bg-[#F6F4FF] py-[10px] pl-5 rounded-lg ${
+                className={` bg-[#F6F4FF] py-[10px] px-5 rounded-lg ${
                   errors.password &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}

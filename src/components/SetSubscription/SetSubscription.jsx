@@ -2,7 +2,7 @@ import React from "react";
 
 const SetSubscription = () => {
   return (
-    <div className="lg:w-[984px] w-[347px] h-[684px] bg-white">
+    <div className="lg:w-[984px] w-[347px] m-auto lg:h-[684px] h-[800px] bg-white">
       <div className="lg:w-[903px] w-[300px] m-auto">
         <h2 className="text-[18px] font-semibold pt-[39px] mb-[12px]">
           Set the price for your subscriptions
@@ -19,8 +19,7 @@ const SetSubscription = () => {
 
       <div className="bg-[#FFF0EF] inner-content rounded-md px-[35px] pb-[33px] pt-[31px] mt-[45px] lg:w-[903px] w-[300px] m-auto">
         <h2
-          className="text-[#EF3D39] mb-[14px]
-]"
+          className="text-[#EF3D39] mb-[14px]"
         >
           Upgrade your account
         </h2>
