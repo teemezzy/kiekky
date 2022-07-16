@@ -8,6 +8,7 @@ import {
   Vouchers,
   RequestPayment,
   Referrals,
+  MobileNav
 } from "../components";
 
 const Wallet = () => {
@@ -114,6 +115,8 @@ const Wallet = () => {
           </div>
         </div>
       </div>
+      <MobileNav />
+
     </div>
   );
 };

@@ -6,6 +6,7 @@ import {
   SetSubscription,
   ProfileVerification,
   Notifications,
+  MobileNav
 } from "../components";
 
 function Settings() {
@@ -16,9 +17,9 @@ function Settings() {
   };
 
   const activeTabs =
-  "text-[#6A52FD] text-[16px] py-[16.5px] w-[167px] m-auto text-center bg-white cursor-pointer outline-none";
-const tabs =
-  "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
+    "text-[#6A52FD] text-[16px] py-[16.5px] w-[167px] m-auto text-center bg-white cursor-pointer outline-none";
+  const tabs =
+    "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
 
 
   const activeContent = "";
@@ -33,36 +34,38 @@ const tabs =
             <Sidebar />
           </div>
         </div>
+        <MobileNav />
+
       </div>
       <div className=" mt-[8.5rem] w-[984px] m-auto ">
         {/* Title For TabMenu */}
         <div className="lg:w-[42.125rem] w-[327px] overflow-x-scroll lg:overflow-x-auto scale">
-        <div className="flex lg:w-auto w-[200vw]">
-          <div
-            className={toggleState === 1 ? (tabs, activeTabs) : tabs}
-            onClick={() => toggleTab(1)}
-          >
-            Password
+          <div className="flex lg:w-auto w-[200vw]">
+            <div
+              className={toggleState === 1 ? (tabs, activeTabs) : tabs}
+              onClick={() => toggleTab(1)}
+            >
+              Password
+            </div>
+            <div
+              className={toggleState === 2 ? (tabs, activeTabs) : tabs}
+              onClick={() => toggleTab(2)}
+            >
+              Notification
+            </div>
+            <div
+              className={toggleState === 3 ? (tabs, activeTabs) : tabs}
+              onClick={() => toggleTab(3)}
+            >
+              Set Subscription
+            </div>
+            <div
+              className={toggleState === 4 ? (tabs, activeTabs) : tabs}
+              onClick={() => toggleTab(4)}
+            >
+              Profile Verification
+            </div>
           </div>
-          <div
-            className={toggleState === 2 ? (tabs, activeTabs) : tabs}
-            onClick={() => toggleTab(2)}
-          >
-            Notification
-          </div>
-          <div
-            className={toggleState === 3 ? (tabs, activeTabs) : tabs}
-            onClick={() => toggleTab(3)}
-          >
-            Set Subscription
-          </div>
-          <div
-            className={toggleState === 4 ? (tabs, activeTabs) : tabs}
-            onClick={() => toggleTab(4)}
-          >
-            Profile Verification
-          </div>
-        </div>
         </div>
 
         {/* The content within each box  */}
