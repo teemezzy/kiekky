@@ -11,12 +11,12 @@ const Home = () => {
         <div className=" fixed h-[100%] hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className=" lg:ml-[24rem] ">
+        <div className="  lg:w-[970px] m-auto  ">
           <Status />
-          <div className="ml-post-recommendation flex justify-center lg:justify-star                                   ">
-            <div className="post-area md:w-[30rem] lg:w-[40rem] px-5 ">
+          <div className=" post-recommendation                                     ">
+            <div className=" md:w-[30rem] w-[970px] m-auto">
               <Post />
-              <div className="flex ">
+              <div className="flex justify-between">
                 <Feeds />
                 <Recommendations />
               </div>

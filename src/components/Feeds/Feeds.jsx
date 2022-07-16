@@ -15,35 +15,35 @@ function Feeds() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className=" lg:w-[672px] ">
       {feed
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="story-status bg-white py-4 rounded-lg mb-5 lg:w-[672px] m-auto"
+            className="bg-white py-[30px] px-[42px]  rounded-lg mb-5 lg:h-[440px]  "
           >
             <div>
-              <div className="postItem  items-center mb-7 ">
-                <div className=" flex gap-2 items-center ml-5 ">
+              <div className="postItem  items-center mb-7 lg:w-[586px] m-auto ">
+                <div className=" flex gap-2 items-center  ">
                   <div className="feed-image">
 
                     <NavLink to='/user_profile'>
                       <img
 
-                        className=" w-[4rem] lg:w-full h-[4rem] p-[2.7px] rounded-[50%]"
+                        className=" w-[4rem]  h-[4rem] p-[2.7px] rounded-full"
                         src={feed.image}
                         alt="icon"
                       />
                     </NavLink>
                   </div>
 
-                  <div className="lg:w-[42rem] sm:w-[17rem] md:w-[23rem]">
+                  <div className=" w-[17rem] md:w-[23rem] lg:w-[506.67px]">
                     <NavLink to='/user_profile'>
 
-                      <p className="font-[700]">{feed.firstname}</p>
+                      <p className="font-[700] ">{feed.firstname}</p>
                     </NavLink>
 
-                    <div className="location flex justify-between  pr-5 text-gray text-sm ">
+                    <div className="location flex justify-between lg:w-[506.67px] text-gray text-sm ">
                       <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
                         <span>
                           <MdOutlineLocationOn color="gray" />
@@ -58,20 +58,19 @@ function Feeds() {
                     </div>
                   </div>
                 </div>
-
-                <div className="caption pt-5 mx-5">
+              </div>
+              <div className=" m-auto pt-5 lg:w-[586px]">
                   <p>{feed.email}.</p>
                 </div>
-              </div>
 
-              <div className="post-img h-[9rem] md:h-[10rem] flex justify-around mx-5">
+              <div className=" m-auto md:h-[10rem] lg:w-[586px] flex justify-between ">
                 <img
-                  className=" w-[8.5rem]  lg:w-[16rem] rounded-xl"
+                  className=" w-[8.5rem]  lg:w-[281px] lg:h-[256px] rounded-lg"
                   src={feed.image}
                   alt=""
                 />
                 <img
-                  className=" w-[8.5rem]  lg:w-[16rem] rounded-xl"
+                  className=" w-[8.5rem]  lg:w-[281px] lg:h-[256px] rounded-lg"
                   src={feed.image}
                   alt=""
                 />
