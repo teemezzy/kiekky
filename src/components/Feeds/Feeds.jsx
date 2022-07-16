@@ -15,29 +15,29 @@ function Feeds() {
   }, []);
 
   return (
-    <div className=" lg:w-[672px] m-auto">
+    <div className=" lg:w-[672px] w-[327px] ">
       {feed
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="bg-white py-[30px] px-[42px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  "
+            className="bg-white py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  "
           >
             <div>
-              <div className="mb-7 lg:w-[586px] m-auto ">
-                <div className=" flex gap-2 items-center  ">
+              <div className="mb-7 lg:w-[586px] w-[294px] m-auto ">
+                <div className=" flex  space-x-[18px] lg:space-x-[12px] items-center  ">
                   <div className="feed-image">
 
                     <NavLink to='/user_profile'>
                       <img
 
-                        className=" w-[4rem] h-[4rem] p-[2.7px] rounded-full"
+                        className="  max-w-[50px] h-[50px] lg:w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
                         src={feed.image}
                         alt="icon"
                       />
                     </NavLink>
                   </div>
 
-                  <div className=" w-[17rem] md:w-[23rem] lg:w-[506.67px]">
+                  <div className="  w-[17rem] md:w-[23rem] lg:w-[506.67px]">
                     <NavLink to='/user_profile'>
 
                       <p className="font-[700] ">{feed.firstname}</p>
@@ -59,18 +59,18 @@ function Feeds() {
                   </div>
                 </div>
               </div>
-              <div className=" m-auto pt-5 lg:w-[586px]">
+              <div className=" m-auto w-[294px] pt-5 lg:w-[586px]">
                   <p>{feed.email}.</p>
                 </div>
 
-              <div className=" m-auto md:h-[10rem] lg:w-[586px] flex justify-between ">
+              <div className=" m-auto md:h-[10rem] w-[294px] lg:w-[586px] flex justify-between ">
                 <img
-                  className=" w-[8.5rem]  lg:w-[281px] lg:h-[256px] rounded-lg"
+                  className=" w-[142px] h-[130px]  lg:w-[281px] lg:h-[256px] rounded-lg"
                   src={feed.image}
                   alt=""
                 />
                 <img
-                  className=" w-[8.5rem]  lg:w-[281px] lg:h-[256px] rounded-lg"
+                  className=" w-[142px] h-[130px]  lg:w-[281px] lg:h-[256px] rounded-lg"
                   src={feed.image}
                   alt=""
                 />

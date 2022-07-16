@@ -8,13 +8,13 @@ const Home = () => {
     <div className="bg-[#F9FAFA]">
       <UserNav /> 
       <div className="side-home flex mt-[6rem] bg-[#F9FAFA]">
-        <div className=" h-[100vh] hidden lg:block sidebar_prt pt-8">
+        <div className=" h-[100vh] hidden lg:block pt-8">
           <Sidebar />
         </div>
-        <div className="  lg:w-[970px] m-auto ">
+        <div className="  lg:w-[970px] w-[327px]  m-auto ">
           <Status />
           <div className=" ">
-            <div className=" md:w-[30rem] w-[970px] ">
+            <div className=" md:w-[30rem] lg:w-[970px] w-[327px]  ">
               <Post />
               <div className="flex gap-7 justify-between">
                 <Feeds />
