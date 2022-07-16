@@ -4,9 +4,9 @@ import { sideList } from "./sideList";
 import { NavLink } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import { FiLogOut } from "react-icons/fi";
 // import { logout, reset } from "../../Redux/features/authSlice";
 // import { useDispatch } from "react-redux";
-import { FiLogOut } from "react-icons/fi";
 
 const Sidebar = ({ children }) => {
   // const dispatch = useDispatch();

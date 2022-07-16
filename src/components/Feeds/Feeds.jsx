@@ -24,13 +24,13 @@ function Feeds() {
           >
             <div>
               <div className="mb-7 lg:w-[586px] w-[294px] m-auto ">
-                <div className=" flex  space-x-[18px] lg:space-x-[12px] items-center  ">
+                <div className=" flex space-x-[15px] w-full lg:space-x-[12px] items-center  ">
                   <div className="feed-image">
 
                     <NavLink to='/user_profile'>
                       <img
 
-                        className="  max-w-[50px] h-[50px] lg:w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
+                        className=" lg:w-[4rem] lg:h-[4rem] w-[50px] h-[50px] p-[2.6px] rounded-full"
                         src={feed.image}
                         alt="icon"
                       />
