@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { MdOutlineLocationOn } from "react-icons/md";
+// import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
-import { BsArrowLeft } from "react-icons/bs";
+// import { BsArrowLeft } from "react-icons/bs";
 import { NavLink } from 'react-router-dom'
 
 

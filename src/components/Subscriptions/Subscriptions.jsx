@@ -11,11 +11,11 @@ const Subscriptions = () => {
         <p className="text-[#666666] mt-[7px]">
           Choose a plan that works best for you.
         </p>
-    <div className='flex items-center w-[960px]'>
-          <div>Bill Monthly</div>
+    <div className='flex items-center justify-center m-auto lg:w-[960px] h-[24px] w-[] '>
+          <div className='w-[86px] '>Bill Monthly</div>
             <label
               for="bill-toggle"
-              className="inline-flex relative items-center mb-5 cursor-pointer mt-[42.96px] flex flex-col justify-center"
+              className=" relative items-center mb-5 cursor-pointer mt-[19px] flex flex-col justify-center"
             >
               <input
                 type="checkbox"
@@ -23,9 +23,9 @@ const Subscriptions = () => {
                 id="bill-toggle"
                 className="sr-only peer"
               />
-              <div className="w-14 h-[1.3rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[2rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+              <div className="w-[54px] h-[24px] bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[2rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-[15.43px] after:w-[16px] after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             </label>
-        <div>Bill Annually</div>
+        <div className='w-[89px] '>Bill Annually</div>
     </div>
 
       </div>
