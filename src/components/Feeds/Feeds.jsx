@@ -35,8 +35,6 @@ function Feeds() {
                     </NavLink>
                   </div>
 
-                
-
                 <div className="  w-[17rem] md:w-[23rem] lg:w-[506.67px]">
                   <NavLink to='/user_profile'>
 

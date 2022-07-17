@@ -18,45 +18,49 @@ const PersonalVideo = () => {
     <div className="feed-recommendation flex lg:w-[986px] m-auto ">
       <Info />
 
+      <div className="  w-[672px] pt-10 videos bg-white rounded-xl ">
 
-      <div className="   m-auto pt-10 videos w-[672px] bg-white">
+        <div className="    grid grid-cols-2 gap-[7px] lg:gap-[32px] w-[295px] lg:w-[567px]  m-auto ">
 
-        {feed
-          ? feed.map((feed, idx) => (
-            <div key={idx} className="story-status relative ">
+          {feed
+            ? feed.map((feed, idx) => (
+              <div key={idx} className="story-status relative border-2 border-white ">
 
-              <div className=" ">
-                <div >
+                <div className=" ">
+                  <div >
 
 
-                  <div className="image ">
-                    {/* <div className="flex justify-end p-1">
-                      <div className="edit w-[2.5rem] h-[2.5rem] bg-[black] opacity-20  mt-1 absolute flex justify-center items-center rounded-full ">
-                        <AiOutlineEdit size='1.5rem' color='white' />
-                      </div></div>
-
-                    <div className="flex justify-center items-center  ">
-                      <div className="edit   absolute lg:top-[37%] top-9 ">
-                        <BsPlay size='4rem ' color='white' />
+                    <div className="image ">
+                      <div className="flex justify-end  ">
+                        <div className="edit w-[25px] h-[25px] lg:w-[2.5rem] lg:h-[2.5rem] bg-[black] opacity-20  mt-1 absolute flex justify-center items-center rounded-full ">
+                          <AiOutlineEdit size='1.4rem' color='white' />
+                        </div>
                       </div>
-                    </div> */}
 
-                    <img
-                      className=" w-[264px] h-[7rem] lg:h-[271px] rounded-md"
-                      src={feed.image}
-                      alt="icon"
-                    />
+                      <div className="flex    ">
+                        <div className="edit absolute top-[32%] left-[33%] lg:top-[37%] lg:left-[40%] ">
+                          <BsPlay size='3.5rem ' color='white' />
+                        </div>
+                      </div>
+                      <div className="div  ">
+                        <img
+                          className=" lg:w-[264px] w-[144px] h-[148px]  lg:h-[271px] rounded-md"
+                          src={feed.image}
+                          alt="icon"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))
-          : null}
+            ))
+            : null}
+
+        </div>
+
+
 
       </div>
-
-
-
     </div>
   );
 }

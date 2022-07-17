@@ -12,12 +12,12 @@
     row-gap: 28px;  
 }
 
-.videos{
+/* .videos{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, );
     column-gap: 30px;
     row-gap: 20px;  
-}
+} */
 
 .datess{
     display: grid;
