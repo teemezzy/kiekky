@@ -46,7 +46,7 @@ const ProfileVideo = () => {
                             <div className="flex flex-col justify-center items-center">
                               <BsPlay size='2rem ' color='white' />
                               {/* <VscLock color="white" /> */}
-                              <p className="text-white text-xs ">Unlock for 10 tokens</p>
+                              <p className="text-white text-sm lg:text-base ">Unlock for 10 tokens</p>
                             </div>
                             
                           </div>

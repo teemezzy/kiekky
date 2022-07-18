@@ -26,7 +26,7 @@ function ProfilePost() {
             className="bg-white py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  "
           >
             <div>
-              <div className="mb-7 lg:w-[586px] w-[294px] m-auto ">
+              <div className=" lg:w-[586px] w-[294px] m-auto ">
                 <div className=" flex  space-x-[18px] lg:space-x-[12px] items-center  ">
                   <div className="feed-image">
 
@@ -62,7 +62,7 @@ function ProfilePost() {
                   </div>
                 </div>
               </div>
-              <div className=" m-auto w-[294px] pt-5 lg:w-[586px]">
+              <div className=" m-auto w-[294px] py-[1rem] lg:w-[586px]">
                   <p>{feed.email}.</p>
                 </div>
 

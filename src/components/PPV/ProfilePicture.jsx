@@ -32,7 +32,7 @@ const ProfilePicture = () => {
 
             {feed
               ? feed.map((feed, idx) => (
-                <div key={idx} className="story-status relative border-2 border-white ">
+                <div key={idx} className="story-status relative  border-white ">
 
                   <div className=" ">
                     <div >
@@ -46,7 +46,7 @@ const ProfilePicture = () => {
                             <div className="flex flex-col justify-center items-center">
                               {/* <BsPlay size='2rem ' color='white' /> */}
                               <VscLock color="white" />
-                              <p className="text-white text-xs ">Unlock for 10 tokens</p>
+                              <p className="text-white mt-3 text-sm lg:text-base">Unlock for 10 tokens</p>
                             </div>
                             
                           </div>

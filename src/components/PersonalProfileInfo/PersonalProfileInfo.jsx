@@ -16,7 +16,7 @@ function PersonalProfileInfo() {
     }, []);
 
     return (
-        <div className=" flex mt-10  w-[326px] lg:w-[984px] ">
+        <div className=" flex mt-10  w-[326px] lg:w-[984px]  ">
             <div className=" lg:w-[984px] w-[326px] ">
                 {feed
                     ? feed.map((feed, idx) => (
@@ -56,7 +56,7 @@ function PersonalProfileInfo() {
 
 
 
-                                            <p className="icons text-[#828282] mt-4  ">
+                                            <p className="icons text-[#828282] mt-4 mb-5  ">
                                                 {feed.description}
                                             </p>
 
@@ -69,7 +69,7 @@ function PersonalProfileInfo() {
 
 
                                     </div>
-                                    <div className="buttons flex items-center justify-center mt-9  space-x-5 lg:space-y-7 pb-4  lg:hidden block">
+                                    <div className="buttons flex items-center justify-center  py-[2rem] space-x-5 lg:space-y-7   lg:hidden block">
                                         <button className=' w-[8rem]  lg:w-[8rem]  px-6 py-[0.5rem] bg-[#6a52fd] text-white rounded-lg ' type="submit">Edit Profile</button>
                                         <NavLink to='/share'>  <button className=' w-[8rem] px-[2.5rem] py-2 text-[#6a52fd] border-[1px] border-[#6a52fd] rounded-lg ' type="submit">Share</button> </NavLink>
                                     </div>

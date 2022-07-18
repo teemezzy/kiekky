@@ -5,24 +5,28 @@ import axios from "axios";
 
 const Status = () => {
   const [story, setStory] = useState([]);
-  const url = "https://fakerapi.it/api/v1/books?_quantity=3";
+  const url = "https://fakerapi.it/api/v1/books?_quantity=35";
 
   useEffect(() => {
     axios.get(url).then((response) => setStory(response.data.data));
   }, []);
 
   return (
-    <div className='lg:w-[970px] m-auto'>
-      <div className="status flex space-x-8 overflow-x-scroll pt-10 mb-8  ">
-        <p className="flex items-center ">
+    <div className='lg:w-[968px] m-auto'>
+      <div className="status overflow-x-scroll pt-10 mb-8 w-[347px] lg:w-[968px]">
+        <div className="flex space-x-5 lg:w-[200vw] w-[800vw] ">
+
+          {/* <p className="flex items-center ">
           <BsArrowLeft color="gray" />
-        </p>
-        {story
-          ? story.map((story, idx) => (
+        </p> */}
+
+
+          {story
+            ? story.map((story, idx) => (
               <div key={idx} className="story-status  ">
                 <div className="status-image">
                   <img
-                    className="stats w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
+                    className="stats w-[4rem] h-[4rem] p-[1.8px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
                     src={story.image}
                     alt="icon"
                   />
@@ -32,15 +36,16 @@ const Status = () => {
                 </div>
               </div>
             ))
-          : null}
-        <p className="flex items-center">
+            : null}
+          {/* <p className="flex items-center">
           <BsArrowRight
             color="#FF60C8"
           />
-        </p>
+        </p> */}
+        </div>
+        </div>
       </div>
-    </div>
-  );
+      );
 };
 
-export default Status;
+      export default Status;
