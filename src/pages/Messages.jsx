@@ -10,9 +10,10 @@ function Messages(props) {
           <Sidebar />
         </div>
         <div className="ml-[22rem] ">
-
-
           
+
+
+
           
 
 

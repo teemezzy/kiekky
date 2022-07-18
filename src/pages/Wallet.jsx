@@ -24,7 +24,7 @@ const Wallet = () => {
     "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
 
   const activePayout =
-    "w-[255px] text-[#6A52FD] text-[16px] py-[16.5px] px-[53px] m-auto text-center bg-white cursor-pointer outline-none";
+    "lg:w-[255px] w-[270px] text-[#6A52FD] text-[16px] py-[16.5px] px-[53px]  m-auto text-center bg-white cursor-pointer outline-none";
 
   const activeContent = " ";
   const content = "bg-white w-full hidden p-[20px]";
@@ -39,7 +39,7 @@ const Wallet = () => {
         <div className=" mt-10 lg:w-[984px] m-auto ">
           {/* Title For TabMenu */}
           <div className=" lg:w-[58.9rem] w-[327px] overflow-x-scroll lg:overflow-x-auto scale ">
-            <div className="flex lg:w-auto w-[200vw] ">
+            <div className="flex lg:w-auto w-[200vw]">
             <div
               className={toggleState === 1 ? (tabs, activeTabs) : tabs}
               onClick={() => toggleTab(1)}

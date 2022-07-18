@@ -1,12 +1,22 @@
-import React from "react";
-import axios from "axios";
+import React, {useState} from "react";
+// import axios from "axios";
+import TopUpTokenModal from "./TopUpTokenModal";
 import { GiToken } from "react-icons/gi";
 import { IoAdd } from "react-icons/io5";
 import { FaRegEyeSlash, FaRegPaperPlane } from "react-icons/fa";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { transaction } from "./Transaction";
 
 const Tokens = () => {
+  const [openModal, setOpenModal] = useState(false);
+  const [accountModal, setAccountModal] = useState(false);
+
+  const openModalHandler = () => setOpenModal(true);
+  const closeModalHandler = () => setOpenModal(false);
+  
+  const accountModalOpen = () => setAccountModal(true);
+  const accountModalClose = () => setAccountModal(false);
+
   return (
     <div>
       <div className="flex lg:flex-row flex-col lg:justify-around px-[53px] py-[65px] bg-white lg:w-full w-[347px]">
@@ -100,6 +110,9 @@ const Tokens = () => {
           </tbody>
         </table>
       </div>
+
+      <TopUpTokenModal onClose={closeModalHandler} visible={openModal} />
+      {/* <AccountModal onClose={accountModalClose} visible={accountModal} /> */}
     </div>
   );
 };

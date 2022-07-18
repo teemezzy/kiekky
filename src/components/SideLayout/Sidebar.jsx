@@ -79,20 +79,20 @@ const Sidebar = ({ children }) => {
         ))}
 
         <div className="ml-5 pt-5 items-center text-sm text-gray">
-          <a href="#">
-            <button
+            <div
             type="button"
             onClick={onLogout}
             className={`${
               window.location.pathname === "/" ? "active" : null
-            }  flex items-center w-full h-[4rem] pl-5   hover:bg-[#E5E5E5] `}
+            }  flex items-center w-full h-[4rem] pl-5  hover:bg-[#E5E5E5] `}
           >
+              <a href="/">
             <span className="mr-3 ">
               <FiLogOut />
             </span>
             Logout
-          </button>
           </a>
+          </div>
         </div>
       </div>
     </div>

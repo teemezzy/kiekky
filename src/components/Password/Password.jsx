@@ -21,7 +21,7 @@ const Password = () => {
   };
 
   return (
-    <div className='lg:w-[42.125rem] w-[347px] m-auto h-[596px] bg-white px-[70.5px] '>
+    <div className='lg:w-[42.125rem] w-[347px] h-[596px] bg-white px-[70.5px] '>
       <p className='pt-[56px] text-[#828282] text-[15px] font-extralight'>You can change your password by filling the form</p>
       
       <form onSubmit={handleSubmit(onSubmit)} className="py-[29px]">

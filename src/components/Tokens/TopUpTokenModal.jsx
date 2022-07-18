@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 
-const PayoutModal = ({ visible, onClose }) => {
+const TopUpTokenModal = ({ visible, onClose }) => {
   if (!visible) return null;
   return (
     <div className="lg:w-[699px] w-[384px] border-2 lg:h-[575px] h-[480px] mt-[150px] lg:ml-[700px] m-auto fixed inset-0 bg-opacity-80 backdrop-blur-3xl bg-white flex flex-col justify-center items-center">
@@ -41,4 +41,4 @@ const PayoutModal = ({ visible, onClose }) => {
   );
 };
 
-export default PayoutModal;
+export default TopUpTokenModal;
