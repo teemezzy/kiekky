@@ -21,7 +21,7 @@ import reg from './reg.png'
 import link from './link.png'
 import token from "./token.png";
 import nounFace from "./nounFace.png"
-
+import verified from './verified.png'
 
 export {
   Logo,
@@ -43,5 +43,6 @@ export {
   heroVid,
   setupProfileVid,
   bgLogin,
-  co, token, reg, link
+  co, token, reg, link, 
+  verified
 };

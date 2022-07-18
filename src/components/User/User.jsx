@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 import { BiCamera, BiVideoPlus } from "react-icons/bi";
-import { BsArrowLeft } from "react-icons/bs";
+import { BsArrowLeft, BsThreeDotsVertical } from "react-icons/bs";
 import { NavLink } from 'react-router-dom'
 import OpenChat from './OpenChat'
 
@@ -21,26 +21,28 @@ function User() {
   }, []);
 
   return (
-    <div className="flex flex-col mt-10  mx-6  justify-center items-center lg:items-start w-[100vw] lg:w-[60rem] ">
+    <div className="flex flex-col mt-10   lg:w-[984px] w-[327px] h-[246px]  ">
 
       {feed
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="story-status px-4 bg-white py-4 w-[986px] "            >
+            className="story-status px-[18px] lg:px-[64px] bg-white py-4 lg:w-[984px] w-[327px] "            >
 
-            <div className="icons">
+            <div className="icons flex justify-between">
               <p className="flex items-center ">
                 <NavLink to='/home'>
                   <BsArrowLeft color="gray" /> </NavLink>
               </p>
+              <span > <BsThreeDotsVertical color="gray" /> </span>
+
             </div>
 
 
             <div className="pic-not mt-4 flex gap-2 items-start pt-4  ">
               <div className="feed-image ">
                 <img
-                  className=" w-[4rem] h-[4rem] p-[2.7px] rounded-[50%]"
+                  className=" max-w-[50px] h-[50px] lg:max-w-[100px] lg:h-[100px] p-[2.7px] rounded-[50%]"
                   src={feed.image}
                   alt="icon"
                 />

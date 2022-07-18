@@ -11,7 +11,7 @@ function Info() {
   }, []);
 
   return (
-    <div className=" notify flex flex-col  mx-6 justify-center  h-[14rem] bg-white sm:items-center sm:w-[100vw] lg:w-[60rem] ">
+    <div className=" notify flex flex-col justify-center  h-[14rem] bg-white sm:items-center lg:w-[984px] w-[327px] ">
       {/* <table>
                      <thead>
                          <tr>
@@ -27,7 +27,7 @@ function Info() {
         ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="inner-content m-auto w-[20.5rem] md:w-[40rem] text-sm rounded-xl px-5 bg-white border-2 py-4 space-y-5"
+              className="inner-content w-[20.5rem] md:w-[40rem] text-sm rounded-xl px-5 bg-white border-2 py-4 space-y-5"
             >
               <div className="flex justify-evenly">
                 <p className="flex flex-col ">

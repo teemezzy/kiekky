@@ -21,8 +21,8 @@ function UserInfo(props) {
     return (
         <div>
             <MobileInfo />
-            <div className=" scale flex m-auto mt-5 mb-5 w-[100vw] overflow-x-scroll lg:w-[60rem]   ">
-                <div className="width-scale w-[80%] ">
+            <div className=" scale flex m-auto mt-5 mb-5 overflow-x-scroll w-[326px] lg:w-[984px]  ">
+                <div className="width-scale w-[284px] lg:w-[892px]  ">
                     <div
                         className={`${toggleState === 1 ? "input-option-tab em " : "input-option-tab2"
                             } flex h-[3rem] sm:space-x-4 lg:space-x-5 `}
@@ -30,10 +30,10 @@ function UserInfo(props) {
                         <div
                             onClick={() => toggleTab(1)}
                             className={`${toggleState === 1 ? "login-tab-active3" : ""
-                                }  py-[0.3rem] px-[2rem]  self-center  `}
+                                }  py-[0.3rem] px-[1.5rem]  self-center  `}
                         >
                             <div>
-                                <p className="  ">Wall</p>
+                                <p className=" text-center w-[4rem] ">My Wall</p>
                             </div>
                         </div>
 
