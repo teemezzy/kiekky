@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sidebar, UserNav, PPV, PersonalProfileInfo, User, PersonalInfo, MobileNav } from '../../components'
+import { Sidebar, UserNav, PersonalProfileInfo, PersonalInfo, MobileNav } from '../../components'
 
 function PersonalProfile(props) {
 

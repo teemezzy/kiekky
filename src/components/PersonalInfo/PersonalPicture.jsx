@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import Info from "./Info";
 import { AiOutlineEdit } from 'react-icons/ai'
-import { BsPlay } from 'react-icons/bs'
+// import { BsPlay } from 'react-icons/bs'
 
 const PersonalPicture = () => {
   const [feed, setFeed] = useState([]);
