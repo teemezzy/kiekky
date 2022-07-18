@@ -1,0 +1,39 @@
+.chat-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 10px;
+}
+.chat-header .search-holder{
+    border: 1px solid #9E9E9E;
+    border-radius: 30px;
+    padding: 8px 20px;
+    color: #9E9E9E;
+}
+.chat-header .friend-search{
+    border: none;
+    outline: none;
+}
+.chat-header .request-token{
+    border: none;
+    outline: none;
+    color: #FEFEFE;
+    background: #6A52FD;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+.chat-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    height: 70vh;
+    margin: 10px;
+}
+@media only screen and (max-width: 767px) {   
+    .chat-header .search-holder{
+        display: none;
+    }
+    .chat-header .request-token{
+        display: none;
+    }
+}

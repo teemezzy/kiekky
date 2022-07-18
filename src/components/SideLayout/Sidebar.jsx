@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 import { sideList } from "./sideList";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { FiLogOut } from "react-icons/fi";
@@ -14,6 +14,7 @@ const Sidebar = ({ children }) => {
   const [post, setPost] = useState([]);
 
   const url = "https://fakerapi.it/api/v1/books?_quantity=1";
+  const { id } = useParams();
 
   const pathname = useLocation();
   useEffect(() => {
@@ -28,6 +29,7 @@ const Sidebar = ({ children }) => {
     // dispatch(reset());
     localStorage.removeItem("user");
     navigate("/");
+   
   };
   return (
     <div className="side  ">
@@ -47,9 +49,8 @@ const Sidebar = ({ children }) => {
                 <NavLink to="/personal_profile">
                   <div className="names ml-4 ">
                     <h5 className=" font-bold "> {post.author} </h5>
-                    <h5 className="text-sm text-[#828282]  ">
-                      {" "}
-                      @{post.author}{" "}
+                    <h5 className="text-sm text-[#828282]">
+                      @{post.author}
                     </h5>
                   </div>
                 </NavLink>
@@ -68,7 +69,7 @@ const Sidebar = ({ children }) => {
               to={side.path}
               className={`${
                 window.location.pathname === side.path ? "active" : null
-              }  flex items-center w-full h-[3.5rem] pl-5 text-[#828282]   hover:text-[#6a52fd] `}
+              }  flex items-center w-full h-[3.5rem] pl-5 text-[#828282] hover:text-[#6a52fd] `}
               onClick={side.handleClick}
             >
               <span className="mr-3 ">{side.icon}</span>
@@ -78,7 +79,8 @@ const Sidebar = ({ children }) => {
         ))}
 
         <div className="ml-5 pt-5 items-center text-sm text-gray">
-          <button
+          <a href="#">
+            <button
             type="button"
             onClick={onLogout}
             className={`${
@@ -90,6 +92,7 @@ const Sidebar = ({ children }) => {
             </span>
             Logout
           </button>
+          </a>
         </div>
       </div>
     </div>

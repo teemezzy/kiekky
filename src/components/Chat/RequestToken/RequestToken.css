@@ -1,0 +1,55 @@
+.request-token-wrapper{
+    display: flex;
+    gap: 30px;
+}
+.request-token-wrapper .title{
+    font-size: 30px;   
+}
+.request-token-wrapper .request-container .label{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.request-token-wrapper .subtitle{
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.request-token-wrapper .back-arrow{
+    font-size: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.request-token-wrapper .request-container{
+    width: 70vw;
+}
+.request-token-wrapper .request-container input{
+    width: 70%;
+    margin-bottom: 25px;
+    outline: none;
+    padding: 15px;
+    border: 1px solid #A4A4A4;
+    color: #A4A4A4;
+}
+
+.request-token-wrapper .request-container .send-container{
+    text-align: center;
+    width: 70%;
+}
+.request-token-wrapper .request-container .send{
+    background: #6A52FD;
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    color: #fefefe;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .request-token-wrapper .request-container .send-container{
+        width: 100%;
+    }
+    .request-token-wrapper .request-container input{
+        width: 100%;
+    }
+}

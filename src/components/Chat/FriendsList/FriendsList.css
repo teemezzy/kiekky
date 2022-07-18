@@ -1,0 +1,64 @@
+.friend-list{
+    border-radius: 40px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0;
+    overflow-y: scroll;
+    color: #333;
+}
+ /* Hide scrollbar for IE, Edge and Firefox */
+ .friend-list {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .friend-list::-webkit-scrollbar {
+    display: none;
+  }
+.friend-list .item-wrapper{
+    border-bottom: 1px solid #6A52FD;
+    border-top: 1px solid #6A52FD;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.friend-list .item-wrapper:first-child{
+    border-radius: 40px 40px 0 0;
+    border-top: 0;
+}
+
+.friend-list .item-wrapper:last-child{
+    /* border-radius: 0 0 40px 40px; */
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+.selected-friend{
+    background-color: #6A52FD;
+    color: #FEFEFE;
+}
+.friend-list .time{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 10px;
+    padding: 10px;
+}
+.friend-list .item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.friend-list .item img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.friend-list .item p{
+    margin: 0;
+    font-size: 14px;
+}
+.friend-list .item .message{
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 767px) {
+    .friend-list{
+        display: none;
+    }
+}

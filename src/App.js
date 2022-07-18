@@ -1,9 +1,9 @@
 import React from "react";
-import { Routes, Route, useParams, Navigate, Outlet } from "react-router-dom";
+import { Routes, Route, useParams} from "react-router-dom";
 import "./App.css";
-import { Footer } from "./components";
-import ProtectedRoutes from "./components/ProtectedRoutes";
-import InnerElement from "./components/InnerElement";
+// import { Footer } from "./components";
+// import ProtectedRoutes from "./components/ProtectedRoutes";
+// import InnerElement from "./components/InnerElement";
 import {
   KiekkyHome,
   Home,
@@ -30,7 +30,8 @@ import {
   Notifications,
   PersonalProfile,
   UserProfile,
-  UserSubscribe
+  UserSubscribe,
+  Chats
 } from "./pages";
 // import { createBrowserHistory } from "history";
 
@@ -59,7 +60,8 @@ function App(children) {
         {/* <Route path="/" element={<InnerElement />}> */}
         <Route path="home" element={<Home />} />
         <Route path="community" element={<Community />} />
-        <Route path="messages" element={<Messages />} />
+        <Route path="messages" element={<Messages/>} />
+        <Route path="chat" element={<Chats/>} />
         <Route path="dates" element={<Dates />} />
         <Route path="settings" element={<Settings />} />
         <Route path="wallet" element={<Wallet />} />
