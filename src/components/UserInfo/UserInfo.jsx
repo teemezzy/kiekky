@@ -15,7 +15,7 @@ function UserInfo(props) {
 
     return (
         <div>
-            <div className="  mx-6 mt-5 justify-center  sm:items-center lg:items-start sm:w-[100vw] lg:w-[60rem] ">
+            <div className="  mt-5 m-auto lg:w-[984px] w-[327px] ">
               <div
                 className={`${
                   toggleState === 1

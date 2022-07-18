@@ -5,11 +5,11 @@ function UserProfile(props) {
   return (
     <div className="notifications bg-[#F9FAFA]  ">
       <UserNav />
-      <div className="flex mt-[6rem] bg-[#F9FAFA] m-auto">
-        <div className="  fixed h-[100%] hidden lg:block sidebar_prt pt-8">
+      <div className="flex mt-[6rem] bg-[#F9FAFA] ">
+        <div className="  h-[100%] hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className="lg:ml-[24rem] lg:w-[60rem] ">
+        <div className="lg:w-[984px] w-[327px] m-auto  ">
           <User />
           <UserInfo />
           <PPV />

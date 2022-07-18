@@ -15,7 +15,7 @@ function About() {
   }, []);
 
   return (
-    <div className=" notify flex flex-col  mx-6 justify-center h-[14rem] bg-white sm:items-center sm:w-[100vw] lg:w-[60rem] ">
+    <div className=" notify flex flex-col  justify-center h-[14rem] bg-white sm:items-center lg:w-[984px] w-[327px] ">
       
       {feed
         ? feed.map((feed, idx) => (

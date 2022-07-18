@@ -34,7 +34,7 @@ function User() {
           ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="story-status lg:w-full w-[20.5rem] m-auto border-2 px-4 bg-white py-4"
+              className="story-status lg:w-full w-[20.5rem] m-auto  px-4 bg-white py-4"
             >
               <div className="display-section ">
                 <div className="icons flex flex-row justify-between">

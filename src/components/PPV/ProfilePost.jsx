@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 import { NavLink } from 'react-router-dom';
+import { Recommendations } from '../../components'
 
 function ProfilePost() {
   const [feed, setFeed] = useState([]);
@@ -15,6 +16,8 @@ function ProfilePost() {
   }, []);
 
   return (
+    <div className="feed-recommendation flex gap-[50px] lg:w-[986px] m-auto ">
+
     <div className=" lg:w-[672px] w-[327px] ">
       {feed
         ? feed.map((feed, idx) => (
@@ -80,6 +83,8 @@ function ProfilePost() {
         ))
         : null}
     </div>
+    <Recommendations />
+    </div >
   );
 }
 

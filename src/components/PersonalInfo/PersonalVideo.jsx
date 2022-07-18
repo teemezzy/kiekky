@@ -15,7 +15,7 @@ const PersonalVideo = () => {
   }, []);
 
   return (
-    <div className="feed-recommendation flex lg:w-[986px] m-auto ">
+    <div className="feed-recommendation flex lg:w-[986px] w-[327px] m-auto ">
       <Info />
 
       <div className="  w-[672px] pt-10 videos bg-white rounded-xl ">

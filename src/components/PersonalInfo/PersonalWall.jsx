@@ -10,14 +10,14 @@ import Post from '../Post/Post'
 function PersonalWall() {
   const [feed, setFeed] = useState([]);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=50";
+  const url = "https://fakerapi.it/api/v1/persons?_quantity=20";
 
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));
   }, []);
 
   return (
-    <div className=" lg:w-[984px] w-[327px]  flex ">
+    <div className=" lg:w-[984px] w-[327px] mb-[6rem] flex ">
       <Info />
       <div>
       <Post />
@@ -25,7 +25,7 @@ function PersonalWall() {
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="bg-white py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  "
+            className="bg-white  py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  "
           >
             <div>
               <div className="mb-7 lg:w-[586px] w-[294px] m-auto ">
