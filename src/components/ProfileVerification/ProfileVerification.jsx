@@ -4,7 +4,7 @@ import { nounFace } from "../../assets";
 const ProfileVerification = () => {
   return (
     <div className="w-[347px] lg:w-[984px] h-[498px] lg:h-[817px] bg-white lg:pt-[71px] pt-[27px] m-auto">
-      <div className=" bg-[#F6F4FF] lg:w-[682px] w-[284px] lg:h-[603px] h-[401px] m-auto pb-[21px]">
+      <div className=" bg-[#F6F4FF] lg:w-[682px] w-[284px] lg:h-[603px] h-[401px] m-auto pb-[21px] rounded-lg">
         <div className="w-[251px] lg:w-[408px] m-auto text-center lg:pt-[46px] pt-[21px]">
           <h3 className="text-[18px] text-[#212121]">Verify your Profile</h3>
           <p className=" text-[13px] mt-[9px] text-[#828282]">

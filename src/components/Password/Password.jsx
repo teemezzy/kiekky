@@ -19,7 +19,7 @@ const Password = () => {
   };
 
   return (
-    <div className="lg:w-[42.125rem] w-[340px] h-[596px] lg:m-0 m-auto bg-white">
+    <div className="lg:w-[42.125rem] w-[352px] h-[596px] lg:m-0 m-auto bg-white">
       <p className="pt-[56px] text-[#828282] text-[15px] font-extralight lg:w-[464px] w-[282px] m-auto">
         You can change your password by filling the form
       </p>

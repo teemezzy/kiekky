@@ -5,7 +5,7 @@ export const chatList = [
     id: 1,
     name: "John Doe",
     avatar: (
-      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" />
+      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" className='rounded-full'/>
     ),
     lastMessage: "Hello, how are you?",
     timestamp: "3:00pm",
@@ -15,7 +15,7 @@ export const chatList = [
     id: 2,
     name: "John Doe",
     avatar: (
-      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" />
+      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" className='rounded-full'/>
     ),
     lastMessage: "Hello, how are you?",
     timestamp: "3:00pm",
@@ -25,7 +25,7 @@ export const chatList = [
     id: 3,
     name: "John Doe",
     avatar: (
-      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" />
+      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" className='rounded-full'/>
     ),
     lastMessage: "Hello, how are you?",
     timestamp: "3:00pm",
@@ -35,7 +35,7 @@ export const chatList = [
     id: 4,
     name: "John Doe",
     avatar: (
-      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" />
+      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" className='rounded-full'/>
     ),
     lastMessage: "Hello, how are you?",
     timestamp: "3:00pm",
@@ -45,7 +45,7 @@ export const chatList = [
     id: 5,
     name: "John Doe",
     avatar: (
-      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" />
+      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" className='rounded-full'/>
     ),
     lastMessage: "Hello, how are you?",
     timestamp: "3:00pm",
@@ -55,7 +55,7 @@ export const chatList = [
     id: 6,
     name: "John Doe",
     avatar: (
-      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" />
+      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" className='rounded-full'/>
     ),
     lastMessage: "Hello, how are you?",
     timestamp: "3:00pm",
@@ -65,7 +65,7 @@ export const chatList = [
     id: 7,
     name: "John Doe",
     avatar: (
-      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" />
+      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" className='rounded-full'/>
     ),
     lastMessage: "Hello, how are you?",
     timestamp: "3:00pm",
@@ -75,7 +75,7 @@ export const chatList = [
     id: 8,
     name: "John Doe",
     avatar: (
-      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" />
+      <img src=" https://randomuser.me/api/portraits/men/81.jpg" alt="" className='rounded-full'/>
     ),
     lastMessage: "Hello, how are you?",
     timestamp: "3:00pm",

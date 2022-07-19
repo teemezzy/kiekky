@@ -31,7 +31,7 @@ const UserNav = () => {
             <NavLink to='/notifications '  className={`${
                 window.location.pathname === '/notifications' ? " active1 " : null
               }  `}>
-            <p clasName='hover:text-[#6a52fd] bell'><BsBell color="gray"/> </p>
+            <p className='hover:text-[#6a52fd] bell'><BsBell color="gray"/> </p>
             </NavLink>
 
             </div>

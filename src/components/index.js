@@ -38,6 +38,7 @@ import PersonalInfo from './PersonalInfo/PersonalInfo'
 import PersonalProfileInfo from "./PersonalProfileInfo/PersonalProfileInfo";
 import DatesComp from "./DatesComp.jsx/DatesComp";
 import Chat from "./ChatRoom/Chat";
+import ChatRoom from "./ChatRoom/ChatRoom";
 export {
   Navbar,
   HeroSection,
@@ -78,5 +79,5 @@ export {
   PersonalInfo,
   PersonalProfileInfo,
   DatesComp,
-  Chat
+  Chat, ChatRoom
 };
