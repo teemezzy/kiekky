@@ -9,12 +9,17 @@ function Block({ visibleBlock, onCloseBlock }) {
     if (!visibleBlock) return null;
     return (
         <div className=' '>
-            <div className="fixed absolute lg:h-[10rem] lg:w-[14rem]  top-[39rem] shadow left-0 right-24 m-auto z-20 py-3 px-3 mr-5 bg-white">
+            <div className="fixed absolute lg:h-[10rem] lg:w-[14rem]  top-[37.5rem] shadow left-0 right-24 m-auto z-20 py-3  mr-5 bg-white">
                 <button className=' flex justify-between px-2 pb-1 ml-auto ' onClick={onCloseBlock}> x </button>
 
                 <div className="text text-[#828282] cursor-pointer">
-                    <p className='flex hover:text-[#6a52fd] hover:bg-[#F6F4FF] py-3 border-t-[1px]'> Block</p>
-                    <p className='flex hover:text-[#6a52fd] hover:bg-[#F6F4FF] py-3 border-y-[1px]' onClick={() => setShowMyReport(true)}> Report</p>
+                    <p className='flex hover:text-[#6a52fd] hover:bg-[#F6F4FF] py-3 border-t-[1px]'> 
+                     <p className='px-3'>
+                     Block
+                        </p> </p>
+                    <p className=' hover:text-[#6a52fd] hover:bg-[#F6F4FF] py-3 border-y-[1px]' onClick={() => setShowMyReport(true)}> 
+                    <p className='px-3'>Report</p>
+                     </p>
                 </div>
 
             </div>

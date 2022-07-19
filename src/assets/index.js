@@ -22,6 +22,7 @@ import link from './link.png'
 import token from "./token.png";
 import nounFace from "./nounFace.png"
 import verified from './verified.png'
+import ribbon from './ribbon.png'
 
 export {
   Logo,
@@ -44,5 +45,6 @@ export {
   setupProfileVid,
   bgLogin,
   co, token, reg, link, 
-  verified
+  verified,
+  ribbon
 };

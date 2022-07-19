@@ -28,7 +28,7 @@ function UserInfo(props) {
             }  py-[0.3rem] px-[2rem]  self-center  `}
           >
             <div>
-              <p>Post</p>
+              <p className=" text-[#898989]">Post</p>
             </div>
           </div>
           <div
@@ -38,7 +38,7 @@ function UserInfo(props) {
             }  py-[0.3rem]  px-[1.5rem] self-center `}
           >
             <div>
-              <p>Pictures</p>
+              <p className=" text-[#898989]">Pictures</p>
             </div>
           </div>
           <div
@@ -48,7 +48,7 @@ function UserInfo(props) {
             }  py-[0.3rem]  px-[1.8rem] self-center `}
           >
             <div>
-              <p>Videos</p>
+              <p className=" text-[#898989]">Videos</p>
             </div>
           </div>
         </div>
