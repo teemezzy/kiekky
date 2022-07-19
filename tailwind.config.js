@@ -31,6 +31,12 @@ module.exports = {
         homeProfileFont:['28px', {lineHeight:'33.31px'}]
       },
 
+      gradient:{
+        linearGradient:("180deg", "#6a52fd", "#fd52ab")
+      }
+
+      
+
   
     },
   },

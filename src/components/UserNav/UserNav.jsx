@@ -1,5 +1,5 @@
 // import React from 'react';
-import {BsBell, BsFilter} from  "react-icons/bs";
+import {BsBell} from  "react-icons/bs";
 
 
 
@@ -8,7 +8,7 @@ import "../Navbar/Navbar.css";
 import { NavLink } from "react-router-dom";
 import { Logo } from "../../assets";
 import MidNav from "./UserMidNav";
-import CustomRegister from "../../container/CustomButton";
+// import CustomRegister from "../../container/CustomButton";
 // import CustomLogin from "../../container/CustomButton";
 
 const UserNav = () => {

@@ -9,12 +9,10 @@ const Password = () => {
     handleSubmit,
   } = useForm();
   const dispatch = useDispatch();
-
   const onSubmit = (data) => {
     let userdata = {
       password: data.password,
     };
-
     dispatch(userdata);
   };
 
