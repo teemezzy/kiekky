@@ -37,6 +37,7 @@ import ProfileVerification from "./ProfileVerification/ProfileVerification";
 import PersonalInfo from './PersonalInfo/PersonalInfo'
 import PersonalProfileInfo from "./PersonalProfileInfo/PersonalProfileInfo";
 import DatesComp from "./DatesComp.jsx/DatesComp";
+import Chat from "./ChatRoom/Chat";
 export {
   Navbar,
   HeroSection,
@@ -76,5 +77,6 @@ export {
   ProfileVerification,
   PersonalInfo,
   PersonalProfileInfo,
-  DatesComp
+  DatesComp,
+  Chat
 };

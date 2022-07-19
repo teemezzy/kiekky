@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./FriendListMobile.css";
-// import search from "../../../assets/images/chat-search.svg";
+
 
 const FriendsListMobile = ({chatList, emitSelectedFriend}) => {
     const [selectedFriendKey, setSelectedFriendKey] = useState('');

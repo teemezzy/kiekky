@@ -1,11 +1,14 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
-import {chatList} from './ChatList'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { chatList } from "./ChatList";
 
 const Chat = () => {
+  const active = "hover:text-[#6a52fd]";
+  const inActive = "text-[#828282]";
+  
   return (
     <div>
-            <div className="side_list ml-10 bg-white w-[17rem] h-[40rem] divide-y divide-opacity-50  divide-gray-300">
+      <div className="side_list ml-10 bg-white w-[17rem] divide-y divide-opacity-50  divide-gray-300">
         {chatList.map((chat) => (
           <div
             key={chat.id}
@@ -14,19 +17,18 @@ const Chat = () => {
             <NavLink
               to={chat.path}
               className={`${
-                window.location.pathname === chat.path ? "active" : null
-              }  flex items-center w-full h-[3.5rem] pl-5 text-[#828282] hover:text-[#6a52fd] `}
-                onClick={chat.handleClick}
+                window.location.pathname === chat.path ? "active" : "inActive"
+              }  flex items-center w-full h-[3.5rem] pl-5   `}
+              onClick={chat.handleClick}
             >
-              <span className="mr-3 ">{chat.icon}</span>
-              {chat.link}
+              <span className="mr-3 ">{chat.avatar}</span>
+              {chat.name}
             </NavLink>
           </div>
         ))}
-
-            </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Chat
+export default Chat;

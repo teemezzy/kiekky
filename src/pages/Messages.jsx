@@ -1,5 +1,6 @@
 import React from "react";
-import { Sidebar, UserNav, MobileNav } from "../components";
+import { Sidebar, UserNav, MobileNav, Chat } from "../components";
+
 
 function Messages(props) {
   return (
@@ -10,6 +11,8 @@ function Messages(props) {
           <Sidebar />
         </div>
         <div className="ml-[22rem] ">
+
+          <Chat/>
           
 
 
