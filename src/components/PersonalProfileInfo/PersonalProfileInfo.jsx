@@ -29,7 +29,7 @@ function PersonalProfileInfo() {
                                     <div className="icons pt-5">
                                         <p className="flex justify-end">
 
-                                            <label for="small-toggle" className="inline-flex relative items-center mb-5 cursor-pointer">
+                                            <label htmlFor="small-toggle" className="inline-flex relative items-center mb-5 cursor-pointer">
                                                 <input type="checkbox" value="" id="small-toggle" className="sr-only peer" />
                                                 <div className="w-[40px] h-[1.2rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[1rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                                                 <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Stealth mode</span>

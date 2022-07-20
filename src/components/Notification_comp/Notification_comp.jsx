@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { MdOutlineLocationOn } from "react-icons/md";
+// import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
-
 
 function Notification_comp() {
   const [feed, setFeed] = useState([]);
@@ -42,8 +41,6 @@ function Notification_comp() {
 
         ))
         : null}
-
-
     </div>
   );
 }

@@ -1,0 +1,57 @@
+.chat-area-mobile-wrapper{
+    display: none;
+}
+@media only screen and (max-width: 767px) {
+    .chat-area-mobile-wrapper{
+        display: block;
+    }
+    .chat-area-mobile-header{
+        background: #6A52FD;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        color: #FEFEFE;
+    }   
+    .back-arrow-mobile{
+        color: #FFF;
+        margin-right: 15px;
+    }
+    .request-token-mobile{
+        border: none;
+        outline: none;
+        color: #FEFEFE;
+        background-color: #FD52AB;
+        border-radius: 50px;
+        padding: 10px 15px;
+    }
+    .firstName-mobile{
+        margin-left: 10px;
+    }
+    .chat-area-mobile-wrapper .messages{
+        padding: 20px 15px;
+    }
+    .chat-area-mobile-wrapper .my-text{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .chat-area-mobile-wrapper .my-text p{
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0;
+        border-radius: 30px 0px 30px 30px;
+        padding: 12px;
+        background-color: #6A52FD;
+        color: #fff;
+        max-width: 70%;
+    }
+    .chat-area-mobile-wrapper .friend-text{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .chat-area-mobile-wrapper .friend-text p{
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0;
+        background: #F2F2F2;
+        border-radius: 0px 30px 30px 30px;
+        padding: 12px;
+        max-width: 70%;
+    }
+    
+}

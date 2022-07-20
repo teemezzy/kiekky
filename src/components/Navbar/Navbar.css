@@ -54,3 +54,11 @@
   left: 0;
   right: 0;
 }
+
+
+.custom-border{
+  border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  border-image-slice: 4;
+  border-width: 3px;
+  border-style: solid;
+}

@@ -17,7 +17,7 @@ const RequestPayment = () => {
 
   return (
     <div className="bg-white h-screen lg:pl-[55px] m-auto w-[327px] lg:w-[986px]">
-      <p className="pt-[47px] pb-[26px] text-[#828282] flex lg:flex-none justify-center lg:justify-start">
+      <p className="pt-[47px] pb-[26px] text-[#828282] pl-5 flex ">
         You can request for payout
       </p>
       <div className="request flex lg:flex-none justify-center lg:justify-start lg:block ">

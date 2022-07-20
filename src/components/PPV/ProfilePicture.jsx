@@ -24,7 +24,7 @@ const ProfilePicture = () => {
 
   return (
     <div className="mb-[6rem] w-[327px]">
-      <div className="feed-recommendation flex lg:gap-[50px] lg:w-[986px] w-[327px] m-auto  ">
+      <div className="feed-recommendation flex lg:gap-[50px] lg:w-[986px] w-[327px] m-auto">
 
         <div className="  w-[672px] py-10 videos bg-white rounded-xl ">
 

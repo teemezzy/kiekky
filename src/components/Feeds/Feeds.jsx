@@ -56,7 +56,11 @@ function Feeds() {
                   </div>
                 </div>
               </div>
+
+              <div className=" m-auto w-[294px] py-1 lg:w-[586px]">
+
               <div className=" m-auto w-[294px] py-[1rem] lg:w-[586px]">
+
                 <p>{feed.email}.</p>
               </div>
 
@@ -79,10 +83,11 @@ function Feeds() {
             </div>
           </div>
           </div>
+          </div>
         ))
         : null}
     </div>
-    
+   
   );
 }
 
