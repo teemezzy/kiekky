@@ -54,7 +54,7 @@ export {
   UserProfile,
   PersonalProfile,
   UserSubscribe,
-  RequestDates
+  RequestDates,
 
   Chats
 

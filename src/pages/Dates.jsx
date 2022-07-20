@@ -9,7 +9,7 @@ function Dates(props) {
             <UserNav />
             <div className="flex ">
 
-                <div className=" hidden fixed lg:block sidebar_prt pt-8">
+                <div className=" hidden lg:block sidebar_prt pt-8">
                     <Sidebar />
                 </div>
                 

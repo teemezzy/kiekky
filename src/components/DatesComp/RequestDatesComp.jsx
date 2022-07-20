@@ -46,7 +46,7 @@ function RequestDatesComp() {
             <p className="mt-[10px] text-sm text-[#666666]">You can select one or more options</p>
 
             <form className='mt-[16px] ' action="" method="post">
-              <input type="checkbox" className=" accent-[#6a52fd] hover:accent-[#6a52fd] " value="Dinner" />
+              <input type="checkbox" className="  accent-[#6a52fd] hover:accent-[#6a52fd] " value="Dinner" />
               <label for="Dinner"> Male</label><br />
 
               <input type="checkbox" className=" accent-[#6a52fd] hover:accent-[#6a52fd] " value="Female" />
@@ -60,7 +60,7 @@ function RequestDatesComp() {
             <p className="text-sm text-[#666666] my-[12px] ">Select country and city</p>
 
             <div className="relative flex  ">
-              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Pick location" type="text" name="gender" id="test" value="" />
+              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Pick location" type="text" name="gender" id="test" value="" />
               <button>
                 <img className="inline-block w-[74px] h-[70px] " src={dropdown} alt="btn-submit" />
               </button>
@@ -72,7 +72,7 @@ function RequestDatesComp() {
           <div className="w-[520px] m-auto">
             <p className="text-sm text-[#666666] my-[12px] ">Kindly choose your preferred date</p>
             <div className="relative flex  ">
-              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Choose date" type="text" name="gender" id="test" value="" />
+              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Choose date" type="text" name="gender" id="test" value="" />
               <button>
                 <img className="inline-block w-[74px] h-[70px] " src={calendar} alt="btn-submit" />
               </button>
@@ -83,7 +83,7 @@ function RequestDatesComp() {
           <div className="w-[520px] m-auto">
             <p className="text-sm text-[#666666] my-[12px] ">Kindly choose your preferred time</p>
             <div className="relative flex ">
-              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Choose time" type="text" name="gender" id="test" value="" />
+              <input className="  border-[1px] px-[19px] rounded-l-lg outline-none border-[#6a52fd] bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Choose time" type="text" name="gender" id="test" value="" />
               <button>
                 <img className="inline-block w-[74px] h-[70px] " src={clock} alt="btn-submit" />
               </button>

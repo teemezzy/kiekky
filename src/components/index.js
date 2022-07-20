@@ -38,8 +38,6 @@ import PersonalInfo from './PersonalInfo/PersonalInfo'
 import PersonalProfileInfo from "./PersonalProfileInfo/PersonalProfileInfo";
 import DatesComp from "./DatesComp/DatesComp";
 import RequestDatesComp from './DatesComp/RequestDatesComp'
-
-import DatesComp from "./DatesComp.jsx/DatesComp";
 import Chat from "./ChatRoom/Chat";
 import ChatRoom from "./ChatRoom/ChatRoom";
 
@@ -85,6 +83,6 @@ export {
   DatesComp,
   RequestDatesComp
 
-  Chat, ChatRoom
+  ,Chat, ChatRoom
 
 };
