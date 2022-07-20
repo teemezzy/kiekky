@@ -18,7 +18,7 @@ const SetSubscription = () => {
         </p>
       </div>
 
-      <Link to ='/' className="bg-[#FFF0EF] inner-content rounded-md px-[35px] pb-[33px] pt-[31px] mt-[45px] lg:w-[903px] w-[300px] m-auto">
+      <div className="bg-[#FFF0EF] inner-content rounded-md px-[35px] pb-[33px] pt-[31px] mt-[45px] lg:w-[903px] w-[300px] m-auto">
         <h2 className="text-[#EF3D39] mb-[14px]">Upgrade your account</h2>
         <p className="text-[#828282]">
           Please be aware that you can only enable subscriptions if you have a
@@ -29,7 +29,7 @@ const SetSubscription = () => {
         <button className="bg-[#EB5757] mt-[24px] text-white py-[8.5px] rounded-md px-[45.5px]">
           Upgrade
         </button>
-      </Link>
+      </div>
     </div>
   );
 };
