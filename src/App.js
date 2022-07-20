@@ -30,7 +30,8 @@ import {
   Notifications,
   PersonalProfile,
   UserProfile,
-  UserSubscribe
+  UserSubscribe,
+  RequestDates
 } from "./pages";
 // import { createBrowserHistory } from "history";
 
@@ -66,6 +67,7 @@ function App(children) {
         <Route path="logout" element={<Logout />} />
         <Route path="notifications" element={<Notifications />} />
         <Route path="user_profile" element={<UserProfile />} />
+        <Route path="request_dates" element={<RequestDates/>} />
         
         <Route path="subscribe" element={<UserSubscribe />} />
         <Route path="personal_profile" element={<PersonalProfile />} />

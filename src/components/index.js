@@ -36,7 +36,8 @@ import Password from "./Password/Password";
 import ProfileVerification from "./ProfileVerification/ProfileVerification";
 import PersonalInfo from './PersonalInfo/PersonalInfo'
 import PersonalProfileInfo from "./PersonalProfileInfo/PersonalProfileInfo";
-import DatesComp from "./DatesComp.jsx/DatesComp";
+import DatesComp from "./DatesComp/DatesComp";
+import RequestDatesComp from './DatesComp/RequestDatesComp'
 export {
   Navbar,
   HeroSection,
@@ -76,5 +77,6 @@ export {
   ProfileVerification,
   PersonalInfo,
   PersonalProfileInfo,
-  DatesComp
+  DatesComp,
+  RequestDatesComp
 };

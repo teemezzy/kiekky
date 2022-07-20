@@ -11,7 +11,7 @@ function UserInfo(props) {
     console.log(tab);
   };
   const activeContent = " ";
-  const content = "bg-white w-full hidden p-[20px]";
+  const content = "bg-white w-full hidden p-[20px] cursor-pointer ";
 
   return (
     <div>
