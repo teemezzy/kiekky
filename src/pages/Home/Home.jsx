@@ -8,10 +8,12 @@ const Home = () => {
     <div className="bg-[#F9FAFA]">
       <UserNav /> 
       <div className="side-home flex mt-[6rem] bg-[#F9FAFA]">
-        <div className=" h-[100vh] hidden lg:block pt-8">
+        <div className="relative">
+        <div className=" sticky  h-[100vh] hidden lg:block pt-8">
           <Sidebar />
         </div>
-        <div className="  lg:w-[970px] w-[327px]  m-auto ">
+        </div>
+        <div className=" min-h-screen overflow-y-auto lg:w-[970px] w-[327px]  m-auto ">
           <Status />
           <div className=" ">
             <div className=" lg:w-[970px] w-[327px]  ">

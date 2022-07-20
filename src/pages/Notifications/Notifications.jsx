@@ -7,10 +7,10 @@ function Notifications(props) {
     <div className="notifications bg-[#F9FAFA]">
       <UserNav />
       <div className="flex mt-[6rem] bg-[#F9FAFA] ">
-        <div className="  fixed h-[100%] hidden lg:block sidebar_prt pt-8">
+        <div className=" h-[100%] hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className="lg:ml-[20rem] ">
+        <div className=" lg:w-[872px] lg:h-[626px] w-[327px] m-auto ">
           <Notification_comp />
         </div>
       </div>
