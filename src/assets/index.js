@@ -27,6 +27,7 @@ import heart from './heart.gif'
 import dropdown from './dropdown.png'
 import calendar from './calendar.png'
 import clock from './clock.png'
+import success from './success.gif'
 
 export {
   Logo,
@@ -55,4 +56,5 @@ export {
    dropdown,
   calendar,
    clock,
+   success
 };

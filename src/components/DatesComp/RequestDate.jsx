@@ -19,10 +19,10 @@ function Apply() {
   return (
 
     <div className="scale-width ">
-      <div className=" notify flex flex-col items-center justify-center  lg:w-[980px] w-[327px] m-auto lg:h-[940px] h-[600px] bg-white ">
+      <div className=" notify flex flex-col items-center justify-center  lg:w-[980px] w-[327px] m-auto lg:h-[900px] h-[600px] bg-white ">
 
       <img
-          className=' '
+          className='lg:w-[350px] w-[116px] '
           src={heart}
          alt=''
           />
