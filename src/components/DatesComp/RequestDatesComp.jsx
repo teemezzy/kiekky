@@ -11,16 +11,18 @@ function RequestDatesComp() {
 
   const url = "https://fakerapi.it/api/v1/persons?_quantity=21";
 
+
+
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));
   }, []);
 
   return (
 
-    <div className="scale-width mt-[30px] ">
-      <div className=" notify flex flex-col items-center justify-center  lg:w-[779px] w-[327px] m-auto lg:h-[1050px] h-[600px] bg-white rounded-md">
+    <div className="scale-width mt-[30px] mb-[5rem]">
+      <div className=" notify flex flex-col items-center justify-center  lg:w-[779px] w-[327px] m-auto lg:h-[1050px]  bg-white rounded-md">
 
-        <div className="inner w-[559px] m-auto ">
+        <div className="inner lg:w-[559px] w-[327px] m-auto ">
           <p className="font-semibold">Date Request</p>
           <p className=" text-[#666666] text-sm mt-[8px] ">Kindly provide the required details to set up your account</p>
           <p className=" text-[] mt-[35px] ">1. What kind of date do you have in mind?</p>
@@ -60,9 +62,9 @@ function RequestDatesComp() {
             <p className="text-sm text-[#666666] my-[12px] ">Select country and city</p>
 
             <div className="relative flex  ">
-              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Pick location" type="text" name="gender" id="test" value="u" />
+              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] lg:w-[463px] w-[276px] h-[50px] lg:h-[70px] " placeholder="Pick location" type="text" name="gender" id="test" defaultValue="Lagos,Nigeria" />
               <button>
-                <img className="inline-block w-[74px] h-[70px] " src={dropdown} alt="btn-submit" />
+                <img className="inline-block lg:w-[74px] lg:h-[70px] h-[50px] w-[51px] " src={dropdown} alt="btn-submit" />
               </button>
             </div>
           </div>
@@ -72,9 +74,9 @@ function RequestDatesComp() {
           <div className="w-[520px] m-auto">
             <p className="text-sm text-[#666666] my-[12px] ">Kindly choose your preferred date</p>
             <div className="relative flex  ">
-              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Choose date" type="text" name="gender" id="test" value="u" />
+              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] lg:w-[463px] lg:h-[70px] w-[276px] h-[50px]  " placeholder="Choose date" type="text" name="gender" id="test" defaultValue="17/12/2022" />
               <button>
-                <img className="inline-block w-[74px] h-[70px] " src={calendar} alt="btn-submit" />
+                <img className="inline-block lg:w-[74px] lg:h-[70px] h-[50px] w-[51px] " src={calendar} alt="btn-submit" />
               </button>
             </div>
           </div>
@@ -83,16 +85,17 @@ function RequestDatesComp() {
           <div className="w-[520px] m-auto">
             <p className="text-sm text-[#666666] my-[12px] ">Kindly choose your preferred time</p>
             <div className="relative flex ">
-              <input className="  border-[1px] px-[19px] rounded-l-lg outline-none border-[#6a52fd] bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Choose time" type="text" name="gender" id="test" value="u" />
+              <input className="  border-[1px] px-[19px] rounded-l-lg outline-none border-[#6a52fd] bg-[#F6F4FF] lg:w-[463px]
+               w-[276px] lg:h-[70px] " placeholder="Choose time" type="text" name="gender" id="test" defaultValue='7pm' />
               <button>
-                <img className="inline-block w-[74px] h-[70px] " src={clock} alt="btn-submit" />
+                <img className="inline-block lg:w-[74px] lg:h-[70px] h-[50px] w-[51px] " src={clock} alt="btn-submit" />
               </button>
             </div>
           </div>
 
           <div className="w-[520px] m-auto">
 
-            <button className=" mt-[50px] w-[520px] h-[54px] bg-[#6a52fd] rounded-lg text-white">Submit</button>
+            <button className=" mt-[50px] lg:w-[520px] w-[327px] h-[54px] bg-[#6a52fd] rounded-lg text-white">Submit</button>
           </div>
         </div>
 
