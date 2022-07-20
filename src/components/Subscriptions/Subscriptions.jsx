@@ -25,7 +25,7 @@ const Subscriptions = () => {
               />
               <div className="w-[40px] h-[1.2rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[1rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             </label>
-        <div className='w-[89px] '>Bill Annually</div>
+        <div className='w-[89px]'>Bill Annually</div>
     </div>
 
       </div>
@@ -41,26 +41,26 @@ const Subscriptions = () => {
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            Hot Picks Ranking
+            Ranking in Community
           </p>
           <p className="flex items-center mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            Explore Community
+            Monetize Media
           </p>
           <p className="flex items-center mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            Limited Media Upload
+            Unlimited Date Applications
           </p>
-          <p className="flex items-center mt-[31px] text-[#828282]">
+          {/* <p className="flex items-center mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
             Limited Date Applications
-          </p>
+          </p> */}
           <p className="flex items-center mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
@@ -94,13 +94,13 @@ const Subscriptions = () => {
             <span className=" mr-[15.33px]">
               <TiTick />
             </span>
-            Recommendations
+            Ranking in Community
           </p>
           <p className="flex items-center mt-[31px] pr-[15.33px]">
             <span className=" mr-[15.33px]">
               <TiTick />
             </span>
-            Unlimited Media Upload
+            Monetize Media
           </p>
           <p className="flex items-center mt-[31px]">
             <span className=" mr-[15.33px]">
@@ -112,7 +112,7 @@ const Subscriptions = () => {
             <span className=" mr-[15.33px]">
               <TiTick />
             </span>
-            100 Tokens
+            75 Tokens
           </p>
 
           <button
@@ -143,13 +143,13 @@ const Subscriptions = () => {
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            Recommendations
+            Ranking in Community
           </p>
           <p className="flex items-center  mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            Stealth mode
+            Monetize Media
           </p>
           <p className="flex items-center  mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
@@ -161,7 +161,7 @@ const Subscriptions = () => {
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            1500 Tokens
+            100 Tokens
           </p>
 
           <button
