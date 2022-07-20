@@ -14,17 +14,17 @@ const Chat = () => {
   const inActive = "text-[#828282]";
 
   return (
-    <div className="w-[490px] h-[1050px] flex flex-col justify-start">
+    <div className="lg:w-[490px] m-auto lg:m-0 w-[375px] min-h-full flex flex-col justify-start">
       <div className="bg-white divide-y divide-opacity-50 divide-gray-300">
-        <div className=" w-[423px] m-auto relative py-[27px]">
+        <div className=" lg:w-[423px] w-[323px] m-auto relative py-[27px] bg-white ">
           <input
             type="text"
             placeholder="Search in messages..."
-            className=" py-[14px] px-[20px] pr-[60px] border-2 rounded-lg text-[14px] bg-[#F6F4FF] w-[423px] "
+            className=" sticky py-[14px] px-[20px] pr-[60px] border-2 rounded-lg text-[14px] bg-[#F6F4FF] lg:w-[423px] w-[323px]"
           />
           <FiSearch className="absolute top-11 right-5 bg-[#F6F4FF] text-[#828282]" />
         </div>
-        <div className="overflow-y-scroll h-[1000px] ">
+        <div className="overflow-y-scroll h-[890px] ">
           {chatList.map((chat) => (
           <div key={chat.id} >
             <NavLink

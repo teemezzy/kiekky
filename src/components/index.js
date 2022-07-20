@@ -21,8 +21,8 @@ import MobileNav from "./MobileNav/MobileNav";
 import Notification_comp from "./Notification_comp/Notification_comp";
 import User from "./User/User.jsx";
 import UserInfo from "./UserInfo/UserInfo";
-import PPV from './PPV/PPV.jsx'
-import Subscribe from './Subscribe/Subscribe'
+import PPV from "./PPV/PPV.jsx";
+import Subscribe from "./Subscribe/Subscribe";
 import Tokens from "./Tokens/Tokens";
 import Subscriptions from "./Subscriptions/Subscriptions";
 import KYC from "./KYC/KYC";
@@ -34,11 +34,11 @@ import SetSubscription from "./SetSubscription/SetSubscription";
 import Notifications from "./Notifications/Notifications";
 import Password from "./Password/Password";
 import ProfileVerification from "./ProfileVerification/ProfileVerification";
-import PersonalInfo from './PersonalInfo/PersonalInfo'
+import PersonalInfo from "./PersonalInfo/PersonalInfo";
 import PersonalProfileInfo from "./PersonalProfileInfo/PersonalProfileInfo";
 import DatesComp from "./DatesComp.jsx/DatesComp";
-import Chat from "./ChatRoom/Chat";
-import ChatRoom from "./ChatRoom/ChatRoom";
+import ChatRoom from "./Chat/ChatRoom";
+import Chat from "./Chat/Chat";
 export {
   Navbar,
   HeroSection,
@@ -79,5 +79,6 @@ export {
   PersonalInfo,
   PersonalProfileInfo,
   DatesComp,
-  Chat, ChatRoom
+  Chat,
+  ChatRoom,
 };

@@ -6,20 +6,20 @@ function Messages(props) {
   return (
     <div className="messages mt-[6.3rem] bg-[#F9FAFA]">
       <UserNav />
-      <div className="flex pt-8">
+      <div className="flex lg:flex-row  lg:pt-8">
         <div className="hidden lg:block">
           <Sidebar />
         </div>
-        <div className=" w-[980px] h-[1050px] m-auto flex">
+        <div className=" lg:w-[980px] w-[490px] min-h-full m-auto flex">
           <Chat/> 
           <ChatRoom/>
 
         </div>
+          <div className="mobile-nav fixed">
+          <MobileNav />
+        </div>
       </div>
-
-      <div className="mobile-nav">
-        <MobileNav />
-      </div>
+      
     </div>
   );
 }
