@@ -23,6 +23,11 @@ import token from "./token.png";
 import nounFace from "./nounFace.png"
 import verified from './verified.png'
 import ribbon from './ribbon.png'
+import heart from './heart.gif'
+import dropdown from './dropdown.png'
+import calendar from './calendar.png'
+import clock from './clock.png'
+import success from './success.gif'
 
 export {
   Logo,
@@ -46,5 +51,10 @@ export {
   bgLogin,
   co, token, reg, link, 
   verified,
-  ribbon
+  ribbon,
+  heart,
+   dropdown,
+  calendar,
+   clock,
+   success
 };

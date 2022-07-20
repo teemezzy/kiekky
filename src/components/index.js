@@ -18,7 +18,7 @@ import UserNav from "./UserNav/UserNav";
 import HotPicks from "./HotPicks/HotPicks";
 import Members from "./Members/Members";
 import MobileNav from "./MobileNav/MobileNav";
-import Notification_comp from "./Notification_comp/Notification_comp";
+import NotificationComp from "./NotificationComp/NotificationComp";
 import User from "./User/User.jsx";
 import UserInfo from "./UserInfo/UserInfo";
 import PPV from "./PPV/PPV.jsx";
@@ -36,9 +36,11 @@ import Password from "./Password/Password";
 import ProfileVerification from "./ProfileVerification/ProfileVerification";
 import PersonalInfo from "./PersonalInfo/PersonalInfo";
 import PersonalProfileInfo from "./PersonalProfileInfo/PersonalProfileInfo";
-import DatesComp from "./DatesComp.jsx/DatesComp";
-import ChatRoom from "./Chat/ChatRoom";
+import DatesComp from "./DatesComp/DatesComp";
+import RequestDatesComp from "./DatesComp/RequestDatesComp";
 import Chat from "./Chat/Chat";
+import ChatRoom from "./Chat/ChatRoom";
+
 export {
   Navbar,
   HeroSection,
@@ -60,7 +62,7 @@ export {
   HotPicks,
   Members,
   MobileNav,
-  Notification_comp,
+  NotificationComp,
   User,
   UserInfo,
   PPV,
@@ -81,4 +83,5 @@ export {
   DatesComp,
   Chat,
   ChatRoom,
+  RequestDatesComp
 };

@@ -15,8 +15,7 @@ function UserInfo() {
   const tabs = " text-center py-2 px-4 rounded-lg text-[#A8A8A8] flex ";
 
   const activeContent = " ";
-  const content = "bg-white w-full hidden p-[20px] ";
-
+  const content = "bg-white w-full hidden p-[20px] cursor-pointer ";
   return (
     <div>
       <div className=" flex mt-5 mb-5 items-center lg:items-start w-[100vw] lg:w-[60rem] ">

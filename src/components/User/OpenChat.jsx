@@ -14,7 +14,7 @@ function OpenChat({ visible, onClose }) {
   return (
     <div className='fixed inset-0  bg-black bg-opacity-20 z-50
         backdrop-blur-sm flex justify-center items-center'>
-      <div className="bg-white lg:h-[20rem] lg:w-[20rem] ">
+      <div className="bg-white lg:h-[20rem] lg:w-[20rem] rounded-xl  ">
         <button className=' p-5 flex ml-auto' onClick={onClose}> x </button>
 
         <div className=" notify flex flex-col   mx-6 justify-center sm:items-center   ">
@@ -22,13 +22,13 @@ function OpenChat({ visible, onClose }) {
             ? feed.map((feed, idx) => (
               <div
                 key={idx}
-                className="story-status w-full  px-4 bg-white   "
+                className="story-status  px-4 bg-white  rounded-2xl "
               >
                 <div className="display-section ">
                   <p className=" ">
 
                   </p>
-                  <div className=" pic-not  flex flex-col justify-center items-center m-auto pt-4  ">
+                  <div className=" pic-not  flex flex-col justify-center items-center m-auto   ">
                     <div className="">
                       <img
                         className=" feed-image w-[5rem]  h-[5rem] p-[2.7px] rounded-[50%]"
@@ -53,7 +53,8 @@ function OpenChat({ visible, onClose }) {
         </div>
 
 
-        <button className='flex justify-center m-auto w-[8rem] lg:text-base lg:w-[8rem] my-4 px-2 lg:px-6 py-1 bg-[#6a52fd] mb-8 text-white rounded-lg ' type="submit">Open Chat</button>
+        <button className='flex justify-center m-auto w-[8rem] lg:text-base lg:w-[8rem] 
+         px-2 lg:px-6 py-1 bg-[#6a52fd] mb-8 text-white rounded-lg ' type="submit">Open Chat</button>
 
 
       </div>

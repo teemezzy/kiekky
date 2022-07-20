@@ -24,6 +24,7 @@ import Notifications from './Notifications/Notifications.jsx'
 import UserProfile from './UserProfile/UserProfile'
 import PersonalProfile from './PersonalProfile/PersonalProfile'
 import UserSubscribe from './UserSubscribe'
+import RequestDates from "./RequestDates/RequestDates";
 
 export {
   KiekkyHome,
@@ -52,5 +53,6 @@ export {
   UserProfile,
   PersonalProfile,
   UserSubscribe,
- 
+  RequestDates,
+
 };

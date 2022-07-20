@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 
-function Notification_comp() {
+function NotificationComp() {
   const [feed, setFeed] = useState([]);
 
   const url = "https://fakerapi.it/api/v1/persons?_quantity=50";
@@ -12,9 +12,9 @@ function Notification_comp() {
   }, []);
 
   return (
-    <div className=" notify flex flex-col mt-10 divide-y  divide-slate-200 mx-6  justify-center  sm:items-center lg:items-start sm:w-[100vw] lg:w-[50rem] ">
+    <div className=" notify flex flex-col divide-y  divide-slate-200 lg:w-[872px] w-[327px] m-auto ">
 
-      <p className='p-5 '>Notification</p>
+      <p className='px-5 pb-5 '>Notification</p>
       {feed
         ? feed.map((feed, idx) => (
           <div
@@ -45,4 +45,4 @@ function Notification_comp() {
   );
 }
 
-export default Notification_comp;
+export default NotificationComp;
