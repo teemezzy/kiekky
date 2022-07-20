@@ -28,15 +28,15 @@ function RequestDatesComp() {
             <p className=" text-[#828282] text-sm my-[12px] ">You can select one or more options</p>
             <form action="" method="post">
               <input type="checkbox" className=" accent-[#6a52fd] hover:accent-[#6a52fd] " id="" name="breakfast" value="" />
-              <label for="breakfast"> Breakfast</label> <br />
+              <label htmlFor="breakfast"> Breakfast</label> <br />
               <input type="checkbox" className=" accent-[#6a52fd] hover:accent-[#6a52fd] " id="lunch" name="lunch" value="" />
-              <label for="lunch"> Lunch</label><br />
+              <label htmlFor="lunch"> Lunch</label><br />
               <input type="checkbox" className=" accent-[#6a52fd] hover:accent-[#6a52fd] " id="Dinner" name="Dinner" value="" />
-              <label for="Dinner"> Dinner</label><br />
+              <label htmlFor="Dinner"> Dinner</label><br />
               <input type="checkbox" className=" accent-[#6a52fd] hover:accent-[#6a52fd] " value="Submit" />
-              <label for="Drinks"> Drinks</label><br />
+              <label htmlFor="Drinks"> Drinks</label><br />
               <input type="checkbox" className=" accent-[#6a52fd] hover:accent-[#6a52fd] " value="Submit" />
-              <label for="Freaky"> Freaky</label><br />
+              <label htmlFor="Freaky"> Freaky</label><br />
             </form>
           </div>
 
@@ -47,10 +47,10 @@ function RequestDatesComp() {
 
             <form className='mt-[16px] ' action="" method="post">
               <input type="checkbox" className="  accent-[#6a52fd] hover:accent-[#6a52fd] " value="Dinner" />
-              <label for="Dinner"> Male</label><br />
+              <label htmlFor="Dinner"> Male</label><br />
 
               <input type="checkbox" className=" accent-[#6a52fd] hover:accent-[#6a52fd] " value="Female" />
-              <label for="Female"> Female</label><br />
+              <label htmlFor="Female"> Female</label><br />
             </form>
           </div>
 
@@ -60,7 +60,7 @@ function RequestDatesComp() {
             <p className="text-sm text-[#666666] my-[12px] ">Select country and city</p>
 
             <div className="relative flex  ">
-              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Pick location" type="text" name="gender" id="test" value="" />
+              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Pick location" type="text" name="gender" id="test" value="u" />
               <button>
                 <img className="inline-block w-[74px] h-[70px] " src={dropdown} alt="btn-submit" />
               </button>
@@ -72,7 +72,7 @@ function RequestDatesComp() {
           <div className="w-[520px] m-auto">
             <p className="text-sm text-[#666666] my-[12px] ">Kindly choose your preferred date</p>
             <div className="relative flex  ">
-              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Choose date" type="text" name="gender" id="test" value="" />
+              <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Choose date" type="text" name="gender" id="test" value="u" />
               <button>
                 <img className="inline-block w-[74px] h-[70px] " src={calendar} alt="btn-submit" />
               </button>
@@ -83,7 +83,7 @@ function RequestDatesComp() {
           <div className="w-[520px] m-auto">
             <p className="text-sm text-[#666666] my-[12px] ">Kindly choose your preferred time</p>
             <div className="relative flex ">
-              <input className="  border-[1px] px-[19px] rounded-l-lg outline-none border-[#6a52fd] bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Choose time" type="text" name="gender" id="test" value="" />
+              <input className="  border-[1px] px-[19px] rounded-l-lg outline-none border-[#6a52fd] bg-[#F6F4FF] w-[463px] h-[70px] " placeholder="Choose time" type="text" name="gender" id="test" value="u" />
               <button>
                 <img className="inline-block w-[74px] h-[70px] " src={clock} alt="btn-submit" />
               </button>
