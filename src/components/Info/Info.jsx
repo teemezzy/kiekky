@@ -12,17 +12,7 @@ function Info() {
 
   return (
     <div className=" notify flex flex-col justify-center  h-[14rem] bg-white sm:items-center lg:w-[984px] w-[327px] ">
-      {/* <table>
-                     <thead>
-                         <tr>
-                             <th>City</th>
-                             <th> Profession</th>
-                             <th> Hobby</th>
-                             
-                         </tr>
-                     </thead>
-
-                     <tbody> */}
+    
       {feed
         ? feed.map((feed, idx) => (
             <div

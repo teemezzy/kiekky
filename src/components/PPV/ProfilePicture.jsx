@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import { NavLink } from 'react-router-dom';
-import { AiOutlineEdit } from 'react-icons/ai'
 import { VscLock } from 'react-icons/vsc'
 import { Recommendations } from '../../components'
 import { verified } from "../../assets";
+import PopUpModal from './PopUpModal'
 
 const ProfilePicture = () => {
   const [story, setStory] = useState([])
   const [feed, setFeed] = useState([]);
+
+  const [showMyPopUp, setShowMyPopUp] = useState(false);
+  const handleOnClosePopUp = () => setShowMyPopUp(false);
 
   const url = "https://fakerapi.it/api/v1/persons?_quantity=8";
   const urlRec = "https://fakerapi.it/api/v1/persons?_quantity=10";
@@ -38,19 +41,15 @@ const ProfilePicture = () => {
                     <div >
 
 
-                      <div className="image ">
+                      <div className="image " onClick={() => setShowMyPopUp(true)}>
                         <div className="   ">
-
-
-                          <div className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
+                          <div  className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
                             <div className="flex flex-col justify-center items-center">
                               {/* <BsPlay size='2rem ' color='white' /> */}
                               <VscLock color="white" />
                               <p className="text-white mt-3 text-sm lg:text-base">Unlock for 10 tokens</p>
                             </div>
-                            
                           </div>
-
                         </div>
                         <div className="div  ">
                           <img
@@ -106,6 +105,8 @@ const ProfilePicture = () => {
         </div>
 
       </div>
+      <PopUpModal visiblePopUp={showMyPopUp} onClosePopUp={handleOnClosePopUp} />
+
     </div>
 
   );

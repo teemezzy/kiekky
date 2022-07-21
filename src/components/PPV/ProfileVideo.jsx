@@ -5,10 +5,14 @@ import { AiOutlineEdit } from 'react-icons/ai'
 import { BsPlay } from 'react-icons/bs'
 import { Recommendations } from '../../components'
 import { verified } from "../../assets";
+import PopUpModal from './PopUpModal'
 
 const ProfileVideo = () => {
   const [story, setStory] = useState([])
   const [feed, setFeed] = useState([]);
+
+  const [showMyPopUp, setShowMyPopUp] = useState(false);
+  const handleOnClosePopUp = () => setShowMyPopUp(false);
 
   const url = "https://fakerapi.it/api/v1/books?_quantity=8";
   const urlRec = "https://fakerapi.it/api/v1/persons?_quantity=10";
@@ -38,14 +42,13 @@ const ProfileVideo = () => {
                     <div >
 
 
-                      <div className="image ">
+                      <div className="image " onClick={()=> (setShowMyPopUp(true))}>
                         <div className="   ">
 
 
                           <div className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
                             <div className="flex flex-col justify-center items-center">
                               <BsPlay size='2rem ' color='white' />
-                              {/* <VscLock color="white" /> */}
                               <p className="text-white text-sm lg:text-base ">Unlock for 10 tokens</p>
                             </div>
                             
@@ -106,6 +109,8 @@ const ProfileVideo = () => {
         </div>
 
       </div>
+      <PopUpModal visiblePopUp={showMyPopUp} onClosePopUp={handleOnClosePopUp} />
+
     </div>
 
   );

@@ -6,7 +6,7 @@ import './Recommendations.css'
 
 function Recommendations(props) {
   const [story, setStory] = useState([]);
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=50";
+  const url = "https://fakerapi.it/api/v1/persons?_quantity=10";
 
   useEffect(() => {
     axios.get(url).then((response) => setStory(response.data.data));
