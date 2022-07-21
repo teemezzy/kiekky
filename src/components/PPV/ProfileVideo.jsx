@@ -107,7 +107,6 @@ const ProfileVideo = () => {
             </div>
           </div>
         </div>
-
       </div>
       <PopUpModal visiblePopUp={showMyPopUp} onClosePopUp={handleOnClosePopUp} />
 
