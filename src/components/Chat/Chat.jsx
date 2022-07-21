@@ -24,7 +24,7 @@ const Chat = () => {
           />
           <FiSearch className="absolute top-11 right-5 bg-[#F6F4FF] text-[#828282]" />
         </div>
-        <div className="overflow-y-scroll h-[890px] ">
+        <div className="overflow-y-scroll h-[890px]">
           {chatList.map((chat) => (
           <div key={chat.id} >
             <NavLink
