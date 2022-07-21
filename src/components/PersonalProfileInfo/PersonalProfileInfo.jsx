@@ -61,7 +61,7 @@ function PersonalProfileInfo() {
                                             </p>
 
                                             <div className="buttons mt-9 text-sm space-x-5 space-y-7 pb-4  hidden lg:block">
-                                                <button className=' w-[8rem] text-xs lg:text-base lg:w-[8rem] px-2 lg:px-6 py-[0.4rem] bg-[#6a52fd] text-white rounded-lg ' type="submit">Edit Profile</button>
+                                               <NavLink to ='/edit_profile'> <button className=' w-[8rem] text-xs lg:text-base lg:w-[8rem] px-2 lg:px-6 py-[0.4rem] bg-[#6a52fd] text-white rounded-lg ' type="submit">Edit Profile</button> </NavLink>
                                                 <NavLink to='/share'>  <button className=' w-[5rem] text-xs lg:text-base lg:w-[8rem] lg:px-6 py-1 text-[#6a52fd] border-[1px] border-[#6a52fd] rounded-lg ' type="submit">Share</button> </NavLink>
 
                                             </div>
@@ -70,7 +70,7 @@ function PersonalProfileInfo() {
 
                                     </div>
                                     <div className="buttons flex items-center justify-center  py-[2rem] space-x-5 lg:space-y-7   lg:hidden block">
-                                        <button className=' w-[8rem]  lg:w-[8rem]  px-6 py-[0.5rem] bg-[#6a52fd] text-white rounded-lg ' type="submit">Edit Profile</button>
+                                        <NavLink to='/edit_profile'>  <button className=' w-[8rem]  lg:w-[8rem]  px-6 py-[0.5rem] bg-[#6a52fd] text-white rounded-lg ' type="submit">Edit Profile</button> </NavLink>
                                         <NavLink to='/share'>  <button className=' w-[8rem] px-[2.5rem] py-2 text-[#6a52fd] border-[1px] border-[#6a52fd] rounded-lg ' type="submit">Share</button> </NavLink>
                                     </div>
                                 </div>

@@ -37,6 +37,7 @@ import ProfileVerification from "./ProfileVerification/ProfileVerification";
 import PersonalInfo from "./PersonalInfo/PersonalInfo";
 import PersonalProfileInfo from "./PersonalProfileInfo/PersonalProfileInfo";
 import DatesComp from "./DatesComp/DatesComp";
+import EditProfile_Comp from "./EditProfile_Comp/EditProfile_Comp";
 import RequestDatesComp from "./DatesComp/RequestDatesComp";
 import Chat from "./Chat/Chat";
 import ChatRoom from "./Chat/ChatRoom";
@@ -81,7 +82,8 @@ export {
   PersonalInfo,
   PersonalProfileInfo,
   DatesComp,
-  Chat,
-  ChatRoom,
-  RequestDatesComp
+  RequestDatesComp,
+EditProfile_Comp,
+  Chat, ChatRoom
+
 };
