@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import { NavLink } from 'react-router-dom';
-import { AiOutlineEdit } from "react-icons/ai";
+// import { AiOutlineEdit } from "react-icons/ai";
 import { VscLock } from "react-icons/vsc";
 import { Recommendations } from "../../components";
 import { verified } from "../../assets";
@@ -36,7 +36,7 @@ const ProfilePicture = () => {
                       <div>
                         <div className="image ">
                           <div className="   ">
-                            <div className=" inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center">
+                            <div className="inset-0 absolute rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center">
                               <div className="flex flex-col justify-center items-center">
                                 {/* <BsPlay size='2rem ' color='white' /> */}
                                 <VscLock color="white" />
@@ -46,9 +46,9 @@ const ProfilePicture = () => {
                               </div>
                             </div>
                           </div>
-                          <div className="div  ">
+                          <div className="">
                             <img
-                              className=" lg:w-[264px] w-[144px] h-[148px]  lg:h-[271px] rounded-md"
+                              className="lg:w-[264px] w-[144px] h-[148px] lg:h-[271px] rounded-md"
                               src={feed.image}
                               alt="icon"
                             />
@@ -79,10 +79,10 @@ const ProfilePicture = () => {
                       <div className="image relative">
                         <div className=" absolute  inset-x-0 bottom-0 bg-opacity-80 names w-[143px] h-[30px] bg-[#A8A8A8] rounded-b-md ">
                           <p className=" text-center py-[3px]  text-white">
-                            {story.firstname}{" "}
+                            {story.firstname}
                             <span className=" h-[0.8rem]  inline-block">
-                              <img src={verified} alt="" />{" "}
-                            </span>{" "}
+                              <img src={verified} alt="" />
+                            </span>
                           </p>
                         </div>
                         <img
