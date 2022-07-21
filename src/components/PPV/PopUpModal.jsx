@@ -15,7 +15,7 @@ function ReportModal({ visiblePopUp, onClosePopUp }) {
         feed ? feed.map((feed) => (
             <div className='fixed inset-0  bg-black bg-opacity-20 z-50
         backdrop-blur-sm flex justify-center items-center'>
-                <div className="bg-white lg:w-[700px] lg:h-[480px] w-[400px] h-[400px] rounded-lg ">
+                <div className="bg-white lg:w-[700px] lg:h-[480px] w-[400px] h-[380px] rounded-lg ">
                 <button className=' flex justify-between px-5 pt-3 ml-auto ' onClick={onClosePopUp}> x </button>
 
                 <img
