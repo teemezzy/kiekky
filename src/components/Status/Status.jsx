@@ -16,9 +16,9 @@ const Status = () => {
       <div className="status overflow-x-scroll pt-10 mb-8 w-[327px] lg:w-[968px]">
         <div className="flex space-x-5 lg:w-[200vw] w-[800vw] ">
 
-          {/* <p className="flex items-center ">
+          <p className="flex items-center ">
           <BsArrowLeft color="gray" />
-        </p> */}
+        </p>
 
 
           {story
@@ -37,11 +37,11 @@ const Status = () => {
               </div>
             ))
             : null}
-          {/* <p className="flex items-center">
+          <p className="flex items-center">
           <BsArrowRight
             color="#FF60C8"
           />
-        </p> */}
+        </p>
         </div>
         </div>
       </div>

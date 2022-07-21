@@ -14,7 +14,7 @@ const Subscriptions = () => {
     <div className='flex items-center justify-center m-auto lg:w-[960px] h-[24px] w-[] mt-4 '>
           <div className='w-[86px] '>Bill Monthly</div>
             <label
-              for="bill-toggle"
+              htmlFor="bill-toggle"
               className=" relative items-center mb-5 cursor-pointer mt-[19px] flex flex-col justify-center"
             >
               <input
