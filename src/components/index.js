@@ -18,11 +18,11 @@ import UserNav from "./UserNav/UserNav";
 import HotPicks from "./HotPicks/HotPicks";
 import Members from "./Members/Members";
 import MobileNav from "./MobileNav/MobileNav";
-import Notification_comp from "./Notification_comp/Notification_comp";
+import NotificationComp from "./NotificationComp/NotificationComp";
 import User from "./User/User.jsx";
 import UserInfo from "./UserInfo/UserInfo";
-import PPV from './PPV/PPV.jsx'
-import Subscribe from './Subscribe/Subscribe'
+import PPV from "./PPV/PPV.jsx";
+import Subscribe from "./Subscribe/Subscribe";
 import Tokens from "./Tokens/Tokens";
 import Subscriptions from "./Subscriptions/Subscriptions";
 import KYC from "./KYC/KYC";
@@ -34,13 +34,13 @@ import SetSubscription from "./SetSubscription/SetSubscription";
 import Notifications from "./Notifications/Notifications";
 import Password from "./Password/Password";
 import ProfileVerification from "./ProfileVerification/ProfileVerification";
-import PersonalInfo from './PersonalInfo/PersonalInfo'
+import PersonalInfo from "./PersonalInfo/PersonalInfo";
 import PersonalProfileInfo from "./PersonalProfileInfo/PersonalProfileInfo";
 import DatesComp from "./DatesComp/DatesComp";
-import RequestDatesComp from './DatesComp/RequestDatesComp'
-import Chat from "./ChatRoom/Chat";
-import ChatRoom from "./ChatRoom/ChatRoom";
 import EditProfile_Comp from "./EditProfile_Comp/EditProfile_Comp";
+import RequestDatesComp from "./DatesComp/RequestDatesComp";
+import Chat from "./Chat/Chat";
+import ChatRoom from "./Chat/ChatRoom";
 
 export {
   Navbar,
@@ -63,7 +63,7 @@ export {
   HotPicks,
   Members,
   MobileNav,
-  Notification_comp,
+  NotificationComp,
   User,
   UserInfo,
   PPV,

@@ -254,7 +254,7 @@ const Register = () => {
               <label htmlFor="" className="text-[15px]">
                 Confirm Password:
               </label>
-              {/* <input
+              <input
                 type="password"
                 placeholder="Confirm Password"
                 className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
@@ -264,7 +264,7 @@ const Register = () => {
                 {...register("confirmpassword", {
                   required: "Password mismatch",
                 })}
-              /> */}
+              />
               {errors.confirmpassword && (
                 <p className="text-red-600 text-xs">
                   {errors.confirmpassword.message}

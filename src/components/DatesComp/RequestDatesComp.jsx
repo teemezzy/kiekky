@@ -1,21 +1,21 @@
 
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { BiFemaleSign, BiMaleSign } from 'react-icons/bi'
-import { calendar, clock, dropdown, heart } from '../../assets'
+import React from "react";
+// import axios from "axios";
+// import { BiFemaleSign, BiMaleSign } from 'react-icons/bi'
+import { calendar, clock, dropdown} from '../../assets'
 
 
 
 function RequestDatesComp() {
-  const [feed, setFeed] = useState([]);
+  // const [feed, setFeed] = useState([]);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=21";
+  // const url = "https://fakerapi.it/api/v1/persons?_quantity=21";
 
 
 
-  useEffect(() => {
-    axios.get(url).then((response) => setFeed(response.data.data));
-  }, []);
+  // useEffect(() => {
+  //   axios.get(url).then((response) => setFeed(response.data.data));
+  // }, []);
 
   return (
 

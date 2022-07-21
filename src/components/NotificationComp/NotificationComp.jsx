@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 
-function Notification_comp() {
+function NotificationComp() {
   const [feed, setFeed] = useState([]);
 
   const url = "https://fakerapi.it/api/v1/persons?_quantity=50";
@@ -45,4 +45,4 @@ function Notification_comp() {
   );
 }
 
-export default Notification_comp;
+export default NotificationComp;

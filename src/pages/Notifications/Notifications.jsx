@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar, UserNav, Notification_comp } from "../../components";
+import { Sidebar, UserNav, NotificationComp } from "../../components";
 import "./Notification.css";
 
 function Notifications(props) {
@@ -11,7 +11,7 @@ function Notifications(props) {
           <Sidebar />
         </div>
         <div className=" lg:w-[872px] lg:h-[626px] w-[327px] m-auto ">
-          <Notification_comp />
+          <NotificationComp />
         </div>
       </div>
     </div>

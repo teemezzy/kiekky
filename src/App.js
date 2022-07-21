@@ -34,8 +34,6 @@ import {
   RequestDates,
   EditProfile,
 
-  Chats
-
 } from "./pages";
 // import { createBrowserHistory } from "history";
 
@@ -65,7 +63,7 @@ function App(children) {
         <Route path="home" element={<Home />} />
         <Route path="community" element={<Community />} />
         <Route path="messages" element={<Messages/>} />
-        <Route path="chat" element={<Chats/>} />
+        {/* <Route path="chat" element={<Chats/>} /> */}
         <Route path="dates" element={<Dates />} />
         <Route path="settings" element={<Settings />} />
         <Route path="wallet" element={<Wallet />} />
