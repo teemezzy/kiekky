@@ -1,12 +1,10 @@
-// import axios from 'axios';
-import React from 'react';
-
-import { Sidebar, UserNav, Subscribe, MobileNav } from '../components'
+import React from 'react'
+import { Sidebar, UserNav, EditProfile_Comp, MobileNav } from '../components'
 
 
 
 
-function UserSubscribe(props) {
+function EditProfile() {
   return (
     <div className="notifications bg-[#F9FAFA]">
       <UserNav />
@@ -16,7 +14,7 @@ function UserSubscribe(props) {
           <Sidebar />
         </div>
         <div className='w-[327px] lg:w-[984px] m-auto'>
-          <Subscribe />
+          <EditProfile_Comp />
         </div>
         <MobileNav />
       </div>
@@ -24,5 +22,5 @@ function UserSubscribe(props) {
   );
 }
 
-export default UserSubscribe;
+export default EditProfile;
 

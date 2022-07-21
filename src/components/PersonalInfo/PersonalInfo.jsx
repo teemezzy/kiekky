@@ -29,42 +29,38 @@ function UserInfo(props) {
           <div className=" flex h-[3rem] space-x-4 lg:space-x-5 cursor-pointer ">
             <div
               onClick={() => toggleTab(1)}
-              className={`${
-                toggleState === 1 ? activeTabs : tabs
-              }  py-[0.3rem] px-[1.5rem]  self-center  `}
+              className={`${toggleState === 1 ? activeTabs : tabs
+                }  py-[0.3rem] px-[1.5rem]  self-center  `}
             >
-              <div>
+              <div >
                 <p className=" text-center w-[4rem] ">My Wall</p>
               </div>
             </div>
 
             <div
               onClick={() => toggleTab(2)}
-              className={`${
-                toggleState === 2 ? activeTabs : tabs
-              }  py-[0.3rem]  px-[2rem] self-center `}
+              className={`${toggleState === 2 ? activeTabs : tabs
+                }  py-[0.3rem]  px-[2rem] self-center `}
             >
               <div>
                 <p className=" ">Photos</p>
               </div>
             </div>
 
-            <div
+            <div 
               onClick={() => toggleTab(3)}
-              className={`${
-                toggleState === 3 ? activeTabs : tabs
-              }  py-[0.3rem]  px-[2rem] self-center `}
+              className={`${toggleState === 3 ? activeTabs : tabs
+                }  py-[0.3rem]  px-[2rem] self-center `}
             >
-              <div>
+              <div  >
                 <p className="">Videos</p>
               </div>
             </div>
 
             <div
               onClick={() => toggleTab(4)}
-              className={`${
-                toggleState === 4 ? activeTabs : tabs
-              }  py-[0.3rem]  px-[2rem] self-center `}
+              className={`${toggleState === 4 ? activeTabs : tabs
+                }  py-[0.3rem]  px-[2rem] self-center `}
             >
               <div>
                 <p className=" ">Followers</p>
@@ -73,9 +69,8 @@ function UserInfo(props) {
 
             <div
               onClick={() => toggleTab(5)}
-              className={`${
-                toggleState === 5 ? activeTabs : tabs
-              }  py-[0.3rem]  px-[2rem] self-center `}
+              className={`${toggleState === 5 ? activeTabs : tabs
+                }  py-[0.3rem]  px-[2rem] self-center `}
             >
               <div>
                 <p className=" ">Following</p>
@@ -84,9 +79,8 @@ function UserInfo(props) {
 
             <div
               onClick={() => toggleTab(6)}
-              className={`${
-                toggleState === 6 ? activeTabs : tabs
-              }  py-[0.3rem]  px-[2rem] self-center `}
+              className={`${toggleState === 6 ? activeTabs : tabs
+                }  py-[0.3rem]  px-[2rem] self-center `}
             >
               <div>
                 <p className=" ">Subscribers</p>

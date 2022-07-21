@@ -9,7 +9,8 @@ import { Recommendations } from '../../components'
 function ProfilePost() {
   const [feed, setFeed] = useState([]);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=50";
+
+  const url = "https://fakerapi.it/api/v1/persons?_quantity=10";
 
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));
@@ -23,7 +24,7 @@ function ProfilePost() {
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="bg-white py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  "
+            className="bg-white py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px]  "
           >
             <div>
               <div className=" lg:w-[586px] w-[294px] m-auto ">
@@ -65,19 +66,15 @@ function ProfilePost() {
               <div className=" m-auto w-[294px] py-[1rem] lg:w-[586px]">
                   <p>{feed.email}.</p>
                 </div>
-
-              <div className=" m-auto md:h-[10rem] w-[294px] lg:w-[586px] flex justify-between ">
-                <img
-                  className=" w-[142px] h-[130px]  lg:w-[281px] lg:h-[256px] rounded-lg"
-                  src={feed.image}
-                  alt=""
-                />
-                <img
-                  className=" w-[142px] h-[130px]  lg:w-[281px] lg:h-[256px] rounded-lg"
-                  src={feed.image}
-                  alt=""
-                />
-              </div>
+                <div className=" m-auto md:h-[450px] w-[300px] lg:w-[586px] ">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      className=" w-[290px] h-[290px]  lg:w-[586px] lg:h-[430px] rounded-lg"
+                      src={feed.image}
+                      alt=""
+                    />
+                  </div>
             </div>
           </div>
         ))

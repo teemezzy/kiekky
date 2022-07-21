@@ -32,6 +32,7 @@ import {
   UserProfile,
   UserSubscribe,
   RequestDates,
+  EditProfile,
 
 } from "./pages";
 // import { createBrowserHistory } from "history";
@@ -70,6 +71,7 @@ function App(children) {
         <Route path="notifications" element={<Notifications />} />
         <Route path="user_profile" element={<UserProfile />} />
         <Route path="request_dates" element={<RequestDates/>} />
+        <Route path="edit_profile" element={< EditProfile/>} />
         
         <Route path="subscribe" element={<UserSubscribe />} />
         <Route path="personal_profile" element={<PersonalProfile />} />
