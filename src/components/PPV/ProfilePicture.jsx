@@ -5,14 +5,10 @@ import axios from "axios";
 import { VscLock } from "react-icons/vsc";
 import { Recommendations } from "../../components";
 import { verified } from "../../assets";
-import PopUpModal from './PopUpModal'
 
 const ProfilePicture = () => {
   const [story, setStory] = useState([]);
   const [feed, setFeed] = useState([]);
-
-  const [showMyPopUp, setShowMyPopUp] = useState(false);
-  const handleOnClosePopUp = () => setShowMyPopUp(false);
 
   const url = "https://fakerapi.it/api/v1/persons?_quantity=8";
   const urlRec = "https://fakerapi.it/api/v1/persons?_quantity=10";
@@ -32,29 +28,32 @@ const ProfilePicture = () => {
           <div className=" grid grid-cols-2 gap-[7px] lg:gap-[32px] w-[295px] lg:w-[567px]  m-auto ">
             {feed
               ? feed.map((feed, idx) => (
-                <div key={idx} className="story-status relative  border-white ">
-
-                  <div className=" ">
-                    <div >
-
-
-                      <div className="image " onClick={() => setShowMyPopUp(true)}>
-                        <div className="   ">
-                          <div  className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
-                            <div className="flex flex-col justify-center items-center">
-                              {/* <BsPlay size='2rem ' color='white' /> */}
-                              <VscLock color="white" />
-                              <p className="text-white mt-3 text-sm lg:text-base">Unlock for 10 tokens</p>
+                  <div
+                    key={idx}
+                    className="story-status relative  border-white "
+                  >
+                    <div className="">
+                      <div>
+                        <div className="image ">
+                          <div className="   ">
+                            <div className="inset-0 absolute rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center">
+                              <div className="flex flex-col justify-center items-center">
+                                {/* <BsPlay size='2rem ' color='white' /> */}
+                                <VscLock color="white" />
+                                <p className="text-white mt-3 text-sm lg:text-base">
+                                  Unlock for 10 tokens
+                                </p>
+                              </div>
                             </div>
                           </div>
+                          <div className="">
+                            <img
+                              className="lg:w-[264px] w-[144px] h-[148px] lg:h-[271px] rounded-md"
+                              src={feed.image}
+                              alt="icon"
+                            />
+                          </div>
                         </div>
-                        <div className="div  ">
-                          <img
-                            className=" lg:w-[264px] w-[144px] h-[148px]  lg:h-[271px] rounded-md"
-                            src={feed.image}
-                            alt="icon"
-                          />
-         </div>
                       </div>
                     </div>
                   </div>
@@ -99,8 +98,6 @@ const ProfilePicture = () => {
           </div>
         </div>
       </div>
-      <PopUpModal visiblePopUp={showMyPopUp} onClosePopUp={handleOnClosePopUp} />
-
     </div>
   );
 };
