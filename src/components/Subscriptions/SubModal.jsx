@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React from "react";
 import { MdClose } from "react-icons/md";
 
 const SubModal = ({ visible, onClose }) => {
