@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from "react";
+import axios from 'axios'
 import { bgLogin } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import { MidNav } from "../components";
 import { useForm } from "react-hook-form";
-import { country } from "./data";
+// import { country } from "./data";
 import { useDispatch, useSelector } from "react-redux";
 import { regUser, reset } from "../Redux/features/authSlice";
+// import {
+//   country,
+//   city,
+//   states,
+
+// } from "../Redux/features/userLocation/locationSlice";
 import { toast } from "react-toastify";
 import { BiArrowBack } from "react-icons/bi";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
+  const [country, setCountry] = useState(null);
+  const [city, setCity] = useState([]);
+  const [states, setState] = useState([]);
   // Handle Form Event
   const {
     register,
@@ -21,25 +31,24 @@ const Register = () => {
   const navigate = useNavigate();
 
   // Handle Form Submit
-const vb = (data)=> {
-  if (data.password !== data.confirmpassword) {
-    toast.error("Password mismatch");
-  }
-}
+  const vb = (data) => {
+    if (data.password !== data.confirmpassword) {
+      toast.error("Password mismatch");
+    }
+  };
 
   const onSubmit = (data) => {
-    
-      const userdata = {
-        full_name: data.full_name,
-        email: data.email,
-        username: data.username,
-        phone: data.phone,
-        password: data.password,
-        city_id: data.city,
-        country_id: data.country,
-      };
-      dispatch(regUser(userdata));
-    
+    const userdata = {
+      full_name: data.full_name,
+      email: data.email,
+      username: data.username,
+      phone: data.phone,
+      password: data.password,
+      city_id: data.city,
+      country_id: data.country,
+    };
+
+    dispatch(regUser(userdata));
   };
 
   const { user, isError, isSuccess, isLoading, message } = useSelector(
@@ -51,7 +60,7 @@ const vb = (data)=> {
   useEffect(() => {
     if (isError) {
       toast.error(message);
-    }  
+    }
     if (isSuccess) {
       navigate("/otp");
     }
@@ -60,7 +69,7 @@ const vb = (data)=> {
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, dispatch, navigate]);
-     
+
   // Set Page Title
   useEffect(() => {
     document.title = "Register | Kiekky";
@@ -79,16 +88,15 @@ const vb = (data)=> {
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, dispatch, navigate]);
-
+    
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
   
+    const handleClick = () => {
+      setLoading(true);
+    };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  const handleClick = () => {
-    setLoading(true);
-  };
 
   return (
     <div>
@@ -110,7 +118,9 @@ const vb = (data)=> {
           </div>
 
           <h3 className="text-3xl">Get Started</h3>
-          <p className="mb-6 text-[#666666] text-[14px]">Please enter the details to create an account</p>
+          <p className="mb-6 text-[#666666] text-[14px]">
+            Please enter the details to create an account
+          </p>
           <form onSubmit={handleSubmit(onSubmit)} className="">
             <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="full_name" className="text-[15px]">
@@ -213,7 +223,7 @@ const vb = (data)=> {
                   Select Country
                 </option>
 
-                {country.map((country) => (
+                {/* {country.map((country) => (
                   <option
                     key={country.id}
                     value={country.id}
@@ -224,7 +234,7 @@ const vb = (data)=> {
                   >
                     {country.name}
                   </option>
-                ))}
+                ))} */}
               </select>
               {errors.country && (
                 <p className="text-red-600 text-xs ">Country is needed</p>
@@ -317,7 +327,7 @@ const vb = (data)=> {
               )}
             </div>
 
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]" >
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="" className="text-[15px]">
                 Confirm Password:
               </label>
@@ -332,14 +342,12 @@ const vb = (data)=> {
                   required: "Password mismatch",
                 })}
               />
-              
+
               {errors.confirmpassword && (
                 <p className="text-red-600 text-xs">
                   {errors.confirmpassword.message}
                 </p>
-                
               )}
-              
             </div>
 
             <div className="">

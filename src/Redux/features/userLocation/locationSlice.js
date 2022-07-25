@@ -106,7 +106,7 @@ export const locationSlice = createSlice({
         state.user = null
       })
 
-    // City reducers
+    // City reducer
       .addCase(city.pending, (state) => {
         state.isLoading = true;
       })
@@ -123,3 +123,7 @@ export const locationSlice = createSlice({
 
     }
 });
+
+// Action creators are generated for each case reducer function
+export const { resett } = locationSlice.actions;
+export default locationSlice.reducer;
