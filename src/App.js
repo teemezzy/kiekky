@@ -60,10 +60,10 @@ function App(children) {
         <Route path="*" element={<NotFound />} />
         <Route path="forgot-password" element={<ForgotPassword />} />
         <Route path="reset" element={<ResetPassword />} />
-        <Route path="user_setup" element={<AccountSetup />} />
-        <Route path="otp" element={<OTPVerification />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route element={<ProtectedRoutes />}>
+          <Route path="user_setup" element={<AccountSetup />} />
+          <Route path="otp" element={<OTPVerification />} />
           <Route path="feeds" element={<Home />} />
           <Route path="community" element={<Community />} />
           <Route path="messages" element={<Messages />} />
