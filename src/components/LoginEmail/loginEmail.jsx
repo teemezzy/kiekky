@@ -2,25 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login } from "../../Redux/features/authSlice";
+import { login,  reset  } from "../../Redux/features/authSlice";
+import {toast} from 'react-toastify'
 
 const LoginEmail = () => {
   const [errorMsg, setErrorMsg] = useState("");
-  // const [isSignup, setIsSignup] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const {handleSubmit, register, formState: { errors }} = useForm({});
   // const { isLoggedIn } = useSelector((state) => state.auth);
   // const { message } = useSelector((state) => state.message);
-  // const dispatch = useDispatch();
-  const navigate = useNavigate();
   // const location = useLocation();
- 
-
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm({});
-
+  
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { user, isError, isSuccess, isLoading, message } = useSelector(
     (state) => state.auth
   );
@@ -28,7 +22,7 @@ const LoginEmail = () => {
   console.log(user, isError);
 
   const onSubmit = (data) => {
-    let userdata = {
+    const userdata = {
       email: data.email,
       password: data.password,
       client_id: process.env.REACT_APP_CLIENT_ID,
@@ -36,19 +30,27 @@ const LoginEmail = () => {
       grant_type: process.env.REACT_APP_GRANT_TYPE
 
     };
-
     dispatch(login(userdata));
   };
 
   useEffect(() => {
-    if (isError ) {
-      // toast.error(message)
+    if (isError) {
+      toast.error(message)
     }
-    if (isSuccess) {
-      navigate ('/home')
+    if (isSuccess || user) {
+      navigate ('/feeds')
     }
-  });
 
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, dispatch, navigate]);
+     
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  const handleClick = () => {
+    setLoading(true);
+  };
   return (
     <div>
       <div className="form-container ">
@@ -97,7 +99,7 @@ const LoginEmail = () => {
                 Please check your password
               </p>
             )}
-            <button className=" text-white w-full mt-10 rounded-md py-3 px-auto bg-[#6A52FD] ">
+            <button onClick={handleClick} className=" text-white w-full mt-10 rounded-md py-3 px-auto bg-[#6A52FD] ">
               Log In
             </button>
           </form>

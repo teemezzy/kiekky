@@ -14,7 +14,7 @@ const Chat = () => {
   const inActive = "text-[#828282]";
 
   return (
-    <div className="lg:w-[490px] m-auto lg:m-0 w-[375px] min-h-full flex flex-col justify-start">
+    <div className="lg:w-[490px] m-auto lg:m-0 w-[375px] max-h-[80%] flex flex-col justify-start">
       <div className="bg-white divide-y divide-opacity-50 divide-gray-300">
         <div className=" lg:w-[423px] w-[323px] m-auto relative py-[27px] bg-white ">
           <input
@@ -24,7 +24,7 @@ const Chat = () => {
           />
           <FiSearch className="absolute top-11 right-5 bg-[#F6F4FF] text-[#828282]" />
         </div>
-        <div className="overflow-y-scroll h-[890px]">
+        <div className="overflow-y-scroll h-[700px]">
           {chatList.map((chat) => (
           <div key={chat.id} >
             <NavLink

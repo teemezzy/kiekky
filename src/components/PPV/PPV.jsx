@@ -18,10 +18,8 @@ function UserInfo() {
   const content = "bg-white w-full hidden p-[20px] cursor-pointer ";
   return (
     <div>
-      <div className=" flex mt-5 mb-5 items-center lg:items-start w-[100vw] lg:w-[60rem] ">
-        <div className="flex h-[3rem] cursor-pointer"
-         
-        >
+      <div className=" flex mt-5 mb-5 items-center lg:items-start w-[100vw] lg:w-[60rem]">
+        <div className="flex h-[3rem] cursor-pointer">
           <div
             onClick={() => toggleTab(1)}
             className={`${

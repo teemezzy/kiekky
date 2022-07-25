@@ -15,13 +15,13 @@ function UserInfo(props) {
 
     return (
         <div>
-            <div className="  mt-5 m-auto lg:w-[984px] w-[327px] ">
+            <div className="mt-5 m-auto lg:w-[984px] w-[347px]">
               <div
                 className={`${
                   toggleState === 1
                     ? "input-option-tab em "
                     : "input-option-tab"
-                } flex h-[3rem]  `}
+                } flex h-[3rem]`}
               >
                 <div
                   onClick={() => toggleTab(1)}

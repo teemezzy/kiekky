@@ -5,7 +5,7 @@ const RequestTokenModal  =  ({ visible, onClose }) => {
     if (!visible) return null;
   return (
     <div className="backdrop-blur-md bg-opacity-60 inset-0 fixed  m-auto">
-      <div className="lg:w-[699px] w-[384px] border-2 lg:h-[358px] h-[158px] mt-[300px] m-auto bg-white flex flex-col justify-center items-center relative">
+      <div className="lg:w-[699px] w-[384px] border-2 lg:h-[358px] h-[158px] mt-[150px] m-auto bg-white flex flex-col justify-center items-center relative">
         <div className="bg-white ">
           <div
             className="absolute m-auto top-0 right-0 p-10 text-[#BDBDBD]"

@@ -10,7 +10,7 @@ function Messages(props) {
         <div className="hidden lg:block">
           <Sidebar />
         </div>
-        <div className=" lg:w-[980px] w-[490px] min-h-full m-auto flex">
+        <div className=" lg:w-[980px] w-[490px]   m-auto flex">
           <Chat/> 
           <ChatRoom/>
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 export const useAuth = () => {
-  const user = window.localStorage.getItem("user");
+  const user = window.localStorage.getItem('user');
   if (user) {
     return true;
   } else {

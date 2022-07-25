@@ -22,7 +22,7 @@ const ProfilePicture = () => {
   }, []);
 
   return (
-    <div className="mb-[6rem] w-[327px]">
+    <div className="mb-[6rem] w-[347px]">
       <div className="feed-recommendation flex lg:gap-[50px] lg:w-[986px] w-[327px] m-auto">
         <div className="w-[672px] py-10 videos bg-white rounded-xl ">
           <div className=" grid grid-cols-2 gap-[7px] lg:gap-[32px] w-[295px] lg:w-[567px]  m-auto ">
@@ -98,6 +98,7 @@ const ProfilePicture = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };
