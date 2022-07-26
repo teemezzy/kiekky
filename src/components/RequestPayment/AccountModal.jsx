@@ -8,7 +8,7 @@ const AccountModal = ({ visible, onClose }) => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  
+
   if (!visible) return null;
   return (
     <div className="backdrop-blur-md bg-black bg-opacity-20 z-20 inset-0 fixed  m-auto">
@@ -29,15 +29,31 @@ const AccountModal = ({ visible, onClose }) => {
           </div>
           <div className=" mt-[40px]">
             <p className="mb-[10px]">Bank</p>
-            <input type="text"
-            />
+            <select
+              {...register("country", { required: true })}
+              defaultValue={"default"}
+              name="bank"
+              id="bank"
+              className={` bg-[#F6F4FF]  py-[10px] px-5 w-full outline-none rounded-lg ${
+                errors.bank &&
+                "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+              }`}
+            >
+              <option
+                value={"default"}
+                disabled
+                className="text-[13px] py-2 px-4"
+              >
+                Select Bank
+              </option>
+            </select>
           </div>
           <div className="">
             <p className="mb-[10px]">Account Number</p>
             <input
               type="text"
               placeholder="Enter Account Number"
-              className=" bg-[#F6F4FF] rounded-lg  py-[10px] px-[19px] lg:w-[464px] w-[288px]"
+              className=" bg-[#F6F4FF] rounded-lg  py-[10px] px-[19px] lg:w-[464px] w-[288px] outline-[#6A52FD]"
             />
           </div>
           <div className="">
@@ -45,7 +61,7 @@ const AccountModal = ({ visible, onClose }) => {
             <input
               type="text"
               placeholder="Enter Account Name"
-              className="bg-[#F6F4FF] rounded-lg py-[10px] px-[19px] lg:w-[464px] w-[288px]"
+              className="bg-[#F6F4FF] rounded-lg py-[10px] px-[19px] lg:w-[464px] w-[288px] outline-[#6A52FD]"
             />
           </div>
 

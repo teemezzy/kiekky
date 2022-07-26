@@ -10,6 +10,7 @@ import { regUser, reset } from "../Redux/features/authSlice";
 import { country } from "../Redux/features/userLocation/locationSlice";
 import { toast } from "react-toastify";
 import { BiArrowBack } from "react-icons/bi";
+import Spinner from '../container/Spinner'
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
@@ -76,7 +77,7 @@ const Register = () => {
   }, [ isError, message, dispatch]);
     
     if (isLoading) {
-      return <div>Loading...</div>;
+      return <Spinner />;
     }
   
     const handleClick = () => {

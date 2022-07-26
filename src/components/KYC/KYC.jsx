@@ -176,7 +176,7 @@ const KYC = () => {
 
           </div>
 
-          <div className="lg:w-[500px] w-[314px] lg:mr-[400px] m-auto ">
+          <div className="lg:w-[500px] w-[314px]  m-auto ">
             <FileUploader
               multiple={true}
               handleChange={handleChange}
