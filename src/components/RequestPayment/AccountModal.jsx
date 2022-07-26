@@ -1,7 +1,14 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
+import { useForm } from "react-hook-form";
 
 const AccountModal = ({ visible, onClose }) => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+  
   if (!visible) return null;
   return (
     <div className="backdrop-blur-md bg-black bg-opacity-20 z-20 inset-0 fixed  m-auto">

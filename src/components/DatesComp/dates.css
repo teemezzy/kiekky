@@ -7,6 +7,8 @@
     border:1px solid #6a52fd;
     border-radius: 2px;
     -webkit-appearance:none;
+    appearance:none;
+    transition:box-shadow 200ms;
     -webkit-transition:box-shadow 200ms;
     
  };
