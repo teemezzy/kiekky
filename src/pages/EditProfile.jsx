@@ -6,7 +6,7 @@ import { Sidebar, UserNav, EditProfile_Comp, MobileNav } from '../components'
 
 function EditProfile() {
   return (
-    <div className="notifications bg-[#F9FAFA]">
+    <div className="notifications h-screen bg-[#F9FAFA]">
       <UserNav />
       <div className="flex mt-[6rem] mb-[5rem] bg-[#F9FAFA] ">
 
