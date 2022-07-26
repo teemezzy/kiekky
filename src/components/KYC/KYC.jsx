@@ -188,7 +188,7 @@ const KYC = () => {
             <input
               type="submit"
               value="Save"
-              className="border-2 mt-5 lg:w-full w-[276px] m-auto bg-[#6A52FD] py-3 pl-4 rounded-xl text-white"
+              className="border-2 mt-5 text-[14px] lg:w-full w-[276px] m-auto bg-[#6A52FD] py-3 pl-4 rounded-xl text-white"
             />
           </div>
         </form>

@@ -25,7 +25,7 @@ function PersonalWall() {
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="bg-white  py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[440px]  "
+            className="bg-white py:-[17px] lg:py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px]  "
           >
             <div>
               <div className=" lg:w-[586px] w-[294px] m-auto ">
@@ -68,18 +68,15 @@ function PersonalWall() {
                   <p>{feed.email}.</p>
                 </div>
 
-              <div className=" m-auto md:h-[10rem] w-[294px] lg:w-[586px] flex justify-between ">
-                <img
-                  className=" w-[142px] h-[130px]  lg:w-[281px] lg:h-[256px] rounded-lg"
-                  src={feed.image}
-                  alt=""
-                />
-                <img
-                  className=" w-[142px] h-[130px]  lg:w-[281px] lg:h-[256px] rounded-lg"
-                  src={feed.image}
-                  alt=""
-                />
-              </div>
+                <div className=" m-auto md:h-[450px] w-[300px] lg:w-[586px] ">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      className=" w-[290px] h-[290px]  lg:w-[586px] lg:h-[430px] rounded-lg"
+                      src={feed.image}
+                      alt=""
+                    />
+                  </div>
             </div>
           </div>
         ))

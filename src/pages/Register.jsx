@@ -1,23 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+// import axios from 'axios'
 import { bgLogin } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import { MidNav } from "../components";
 import { useForm } from "react-hook-form";
-import { country } from "./data";
+// import { country } from "./data";
 import { useDispatch, useSelector } from "react-redux";
-import { regUser } from "../Redux/features/authSlice";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { regUser, reset } from "../Redux/features/authSlice";
+import { country } from "../Redux/features/userLocation/locationSlice";
+import { toast } from "react-toastify";
+import { BiArrowBack } from "react-icons/bi";
 
 const Register = () => {
-  const dispatch = useDispatch();
-  const { user, isError, isSuccess, isLoading, message } = useSelector(
-    (state) => state.auth
-  );
-
-  console.log(user, isError);
-  let navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  // const [country, setCountry] = useState(null);
 
   // Handle Form Event
   const {
@@ -25,34 +21,68 @@ const Register = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
- 
-  // Handle form submit
-  const onSubmit = (data) => {
-    let userdata = {
-      full_name: data.full_name,
-      email: data.email,
-      username: data.username,
-      phone: data.phone,
-      password: data.password,
-      city: data.city,
-      country: data.country,
-    };
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    dispatch(regUser(userdata));
+  // Handle Form Submit and Password check
+  const onSubmit = (data) => {
+    if (data.password !== data.confirmpassword) {
+      toast.error("Password mismatch");
+    } else {
+      const userdata = {
+        full_name: data.full_name,
+        email: data.email,
+        username: data.username,
+        phone: data.phone,
+        password: data.password,
+        city_id: data.city,
+        country_id: data.country,
+      };
+      dispatch(regUser(userdata));
+    }
+
   };
-  
+
+  const { user, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.auth
+  );
+  console.log(user, isError);
+
+  // Navigate to OTP page || If user exist navigate to home
   useEffect(() => {
     if (isError) {
-      // toast.error(message)
+      toast.error(message);
     }
     if (isSuccess) {
       navigate("/otp");
     }
-  });
+    if (user) {
+      navigate("/home");
+    }
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, dispatch, navigate]);
+
   // Set Page Title
   useEffect(() => {
     document.title = "Register | Kiekky";
   }, []);
+
+  // GET City and Country
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }  
+    dispatch(country());
+  }, [ isError, message, dispatch]);
+    
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
+  
+    const handleClick = () => {
+      setLoading(true);
+    };
+
 
   return (
     <div>
@@ -66,21 +96,28 @@ const Register = () => {
           />
         </div>
 
-        <div className="relative m-auto rounded-lg w-[29rem] lg:mt-[50px] mt-[150px] lg:px-0 px-[24px]">
-          <h3 className="text-4xl">Get Started</h3>
-          <p className="mb-9">Please enter the details to create an account</p>
+        <div className="relative m-auto rounded-lg w-[29rem] lg:mt-[40px] mt-[140px] lg:px-0 px-[24px]">
+          <div className=" mb-14 lg:-translate-x-16 text-2xl w-7 h-0">
+            <Link to="/">
+              <BiArrowBack />
+            </Link> {loading}
+          </div>
+
+          <h3 className="text-3xl">Get Started</h3>
+          <p className="mb-6 text-[#666666] text-[14px]">
+            Please enter the details to create an account
+          </p>
           <form onSubmit={handleSubmit(onSubmit)} className="">
-                  <ToastContainer />
-            <div className="flex flex-col mb-4">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="full_name" className="text-[15px]">
                 Full Name:
               </label>
               <input
                 type="text"
-                placeholder="Firstname and Lastname (Surname)"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
-                  errors.confirmpassword &&
-                  "focus:border-red-600 focus:ring-red-600 border-red-600"
+                placeholder="Enter Firstname and Lastname (Surname)"
+                className={` bg-[#F6F4FF] py-1 px-4 ${
+                  errors.full_name &&
+                  "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
                 {...register("full_name", {
                   required: true,
@@ -96,16 +133,16 @@ const Register = () => {
               )}
             </div>
 
-            <div className="flex flex-col mb-4">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="username" className="text-[15px]">
                 Username:
               </label>
               <input
                 type="text"
-                placeholder="Username"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                placeholder="Enter Username"
+                className={` bg-[#F6F4FF] py-1 px-4 ${
                   errors.username &&
-                  "focus:border-red-600 focus:ring-red-600 border-red-600"
+                  "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
                 {...register("username", { required: true })}
               />
@@ -114,16 +151,16 @@ const Register = () => {
               )}
             </div>
 
-            <div className="flex flex-col mb-4">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="email" className="text-[15px]">
                 Email:
               </label>
               <input
                 type="email"
-                placeholder="Email"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                placeholder="Enter Email"
+                className={`bg-[#F6F4FF] py-1 px-4 ${
                   errors.email &&
-                  "focus:border-red-600 focus:ring-red-600 border-red-600"
+                  "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
                 {...register("email", { required: true })}
               />
@@ -132,16 +169,16 @@ const Register = () => {
               )}
             </div>
 
-            <div className="flex flex-col mb-4">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="phone" className="text-[15px]">
                 Phone Number:
               </label>
               <input
                 type="tel"
-                placeholder="Phone Number"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                placeholder="Enter Phone Number"
+                className={` bg-[#F6F4FF] py-1 px-4 ${
                   errors.phone &&
-                  "focus:border-red-600 focus:ring-red-600 border-red-600"
+                  "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
                 {...register("phone", { required: true })}
               />
@@ -150,7 +187,7 @@ const Register = () => {
               )}
             </div>
 
-            <div className="flex flex-col mb-4">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="" className="text-[15px]">
                 Country:
               </label>
@@ -159,31 +196,72 @@ const Register = () => {
                 defaultValue={"default"}
                 name="country"
                 id="country"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 w-full ${
+                className={` bg-[#F6F4FF] py-2 px-4 w-full ${
                   errors.country &&
-                  "focus:border-red-600 focus:ring-red-600 border-red-600"
+                  "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
               >
-                <option value={"default"} disabled className="text-[15px]">
+                <option
+                  value={"default"}
+                  disabled
+                  className="text-[13px] py-2 px-4"
+                >
                   Select Country
                 </option>
 
-                {country.map((country) => (
+                {/* {country.map((country) => (
                   <option
-                    value={country.name}
-                    className="bg-[#F6F4FF] py-1 pl-4"
                     key={country.id}
+                    value={country.id}
+                    className={` bg-[#F6F4FF] py-2 px-4 ${
+                      errors.password &&
+                      "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+                    }`}
                   >
                     {country.name}
                   </option>
-                ))}
+                ))} */}
               </select>
               {errors.country && (
-                <p className="text-red-600 text-xs">Country is needed</p>
+                <p className="text-red-600 text-xs ">Country is needed</p>
+              )}
+            </div>
+                  {/* States */}
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
+              <label htmlFor="" className="text-[15px]">
+                State:
+              </label>
+
+              <select
+                {...register("state")}
+                defaultValue={"default"}
+                name="state"
+                id="state"
+                className=" bg-[#F6F4FF] py-2 px-4 w-full"
+              >
+                <option
+                  value={"default"}
+                  placeholder="Select State"
+                  disabled
+                  className={` bg-[#F6F4FF] py-2 px-4 ${
+                    errors.state &&
+                    "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+                  }`}
+                >
+                  Select State
+                </option>
+
+                <option className="py-2 px-4" value="city">
+                  Lagos
+                </option>
+              </select>
+              {errors.state && (
+                <p className="text-red-600 text-xs">State is needed</p>
               )}
             </div>
 
-            <div className="flex flex-col mb-4">
+                {/* Cities */}
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="" className="text-[15px]">
                 City:
               </label>
@@ -193,53 +271,39 @@ const Register = () => {
                 defaultValue={"default"}
                 name="city"
                 id="city"
-                className="border-2 bg-[#F6F4FF] py-1 pl-4 w-full"
+                className=" bg-[#F6F4FF] py-2 px-4 w-full"
               >
                 <option
                   value={"default"}
                   placeholder="Select City"
                   disabled
-                  className="text-[15px]"
+                  className={` bg-[#F6F4FF] py-2 px-4 ${
+                    errors.password &&
+                    "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+                  }`}
                 >
                   Select City
                 </option>
 
-                <option value="city">Abia</option>
-                <option value="city">Adamawa</option>
-                <option value="city">Akwa Ibom</option>
-                <option value="city">Anambra</option>
-                <option value="city">Bauchi</option>
-                <option value="city">Benue</option>
-                <option value="city">Borno</option>
-                <option value="city">Cross River</option>
-                <option value="city">Delta</option>
-                <option value="city">Edo</option>
-                <option value="city">Enugu</option>
-                <option value="city">Imo</option>
-                <option value="city">Jigawa</option>
-                <option value="city">Kaduna</option>
-                <option value="city">Katsina</option>
-                <option value="city">Kano</option>
-                <option value="city">Kebbi</option>
-                <option value="city">Kogi</option>
-                <option value="city">Kwara</option>
-                <option value="Lagos">Lagos</option>
-                <option value="city">Niger</option>
+                <option className="py-2 px-4" value="city">
+                  Lekki
+                </option>
               </select>
               {errors.city && (
                 <p className="text-red-600 text-xs">City is needed</p>
               )}
             </div>
-            <div className="flex flex-col mb-4">
+
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="" className="text-[15px]">
                 Password:
               </label>
               <input
                 type="password"
-                placeholder="Password"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                placeholder="Enter Password"
+                className={` bg-[#F6F4FF] py-1 px-4 ${
                   errors.password &&
-                  "focus:border-red-600 focus:ring-red-600 border-red-600"
+                  "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
                 {...register("password", { required: "Password is required" })}
               />
@@ -250,21 +314,22 @@ const Register = () => {
               )}
             </div>
 
-            <div className="flex flex-col mb-4">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="" className="text-[15px]">
                 Confirm Password:
               </label>
-              {/* <input
+              <input
                 type="password"
-                placeholder="Confirm Password"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                placeholder="Enter Confirm Password"
+                className={` bg-[#F6F4FF] focus:border-[#6A52FD] py-1 px-4 ${
                   errors.confirmpassword &&
-                  "focus:border-red-600 focus:ring-red-600 border-red-600"
+                  "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
                 {...register("confirmpassword", {
                   required: "Password mismatch",
                 })}
-              /> */}
+              />
+
               {errors.confirmpassword && (
                 <p className="text-red-600 text-xs">
                   {errors.confirmpassword.message}
@@ -276,17 +341,17 @@ const Register = () => {
               <input
                 type="checkbox"
                 {...register("checked", { required: true })}
-                className={`border-2 py-1 pl-4 ${
+                className={`border-2 bg-[#F6F4FF] py-1 pl-4 accent-[#6A52FD] ${
                   errors.checkbox &&
-                  "focus:border-red-600 focus:ring-red-600 border-red-600"
+                  "focus:border-red-600 focus:ring-red-600 border-red-600 "
                 }`}
               />
               {errors.checkbox && (
                 <p className="text-red-600 text-xs">{errors.checkbox}</p>
               )}
               <label
-                className={`pl-2 text-[13px] ${
-                  errors.checkbox && "text-red-600"
+                className={`pl-2 text-[13px] text-[#666666] ${
+                  errors.checkbox && "focus:text-red-600"
                 }`}
               >
                 I guarantee that I am 18 years and above.
@@ -297,10 +362,14 @@ const Register = () => {
               <input
                 type="checkbox"
                 {...register("checked", { required: true })}
+                className={`border-2 bg-[#F6F4FF] py-1 pl-4 accent-[#6A52FD] ${
+                  errors.checkbox &&
+                  "focus:border-red-600/100 focus:ring-red-600 border-red-600 border-2"
+                }`}
               />
               <label
-                className={`pl-2 text-[13px] ${
-                  errors.checkbox && "text-red-600"
+                className={`pl-2 text-[13px] text-[#666666] lg:w-[408px] ${
+                  errors.checkbox && "focus:text-red-600"
                 }`}
               >
                 I have read and accept the privacy policy and the general terms
@@ -308,11 +377,18 @@ const Register = () => {
               </label>
             </div>
 
-            <input
-              type="submit"
-              value="Continue"
-              className="border-2 mt-5 w-full bg-[#6A52FD] py-2 pl-4 rounded-xl text-white"
-            />
+            <div>
+              <input
+                type="submit"
+                value="Continue"
+                className="border-2 mt-5 w-full  bg-[#6A52FD] py-3 pl-4 rounded-xl text-white"
+                onClick={handleClick}
+              />
+              {/* {loading && (
+            <div className="spinner-border text-white" role="status">Spinner</div>
+            )} */}
+            </div>
+
             <p className="my-4">
               Already have an account?
               <Link className="text-[#6A52FD]" to="/login">

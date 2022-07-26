@@ -6,7 +6,7 @@
 
 .sm-btn {
   border-radius: 0.5rem;
-  border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  -webkit-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-width: 2px;
   border-style: solid;
   border-image-slice: 21;
@@ -15,22 +15,23 @@
 
 .inner-content {
   border-radius: 0.5rem;
-  border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  -webkit-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-width: 2px;
   border-style: solid;
   border-image-slice: 21;
 }
 
 .inner-content1 {
-  border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  -webkit-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-radius: 1rem;
   border-width: 2px;
   border-style: solid;
   border-image-slice: 21;
+  
 }
 
 .input-option-tab .login-tab-active3 {
-  border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  -webkit-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-width: 2px;
   border-style: solid;
   border-image-slice: 4;
@@ -39,7 +40,7 @@
 }
 
 .input-option-tab2 .login-tab-active3 {
-  border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  -webkit-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-width: 2px;
   border-style: solid;
   border-image-slice: 4;
@@ -57,7 +58,7 @@
 
 
 .custom-border{
-  border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  -webkit-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-image-slice: 4;
   border-width: 3px;
   border-style: solid;

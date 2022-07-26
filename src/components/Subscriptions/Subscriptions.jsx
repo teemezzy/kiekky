@@ -1,10 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import { TiTick } from "react-icons/ti";
+import SubModal from './SubModal'
 
 const Subscriptions = () => {
+  const [open500Modal, setOpen500Modal] = useState(false);
+  const [open1000Modal, setOpen1000Modal] = useState(false);
+  const [open1500Modal, setOpen1500Modal] = useState(false);
+
+  const open500ModalHandler = () => setOpen500Modal(true);
+  const close500ModalHandler = () => setOpen500Modal(false);
+
+  const open1000ModalHandler = () => setOpen1000Modal(true);
+  const close1000ModalHandler = () => setOpen1000Modal(false);
+  
+  const open1500ModalHandler = () => setOpen1500Modal(true);
+  const close1500ModalHandler = () => setOpen1500Modal(false);
+
   return (
-    <div className="lg:w-[984px] w-[347px] h-[792px] m-auto bg-white">
-      <div className="text-center  pt-[44px]">
+    <div className="lg:w-[984px] w-[327px] lg:h-[792px] h-[1800px] m-auto bg-white  ">
+      <div className="text-center pt-[44px]">
         <p className="font-bold text-[20px] text-[#6A52FD]">
           Personalized Plans For You
         </p>
@@ -14,7 +28,7 @@ const Subscriptions = () => {
     <div className='flex items-center justify-center m-auto lg:w-[960px] h-[24px] w-[] mt-4 '>
           <div className='w-[86px] '>Bill Monthly</div>
             <label
-              for="bill-toggle"
+              htmlFor="bill-toggle"
               className=" relative items-center mb-5 cursor-pointer mt-[19px] flex flex-col justify-center"
             >
               <input
@@ -25,10 +39,9 @@ const Subscriptions = () => {
               />
               <div className="w-[40px] h-[1.2rem] bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-[#A8A8A8] peer-checked:after:translate-x-[1rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             </label>
-        <div className='w-[89px] '>Bill Annually</div>
+        <div className='w-[89px]'>Bill Annually</div>
     </div>
-
-      </div>
+</div>
       <div className="flex md:flex-row flex-col items-center justify-center m-auto lg:mt-[98px] mt-[28.19px]">
         <div className="w-[260px] bg-[#F6F4FF] pl-[25px] rounded-lg">
           <p className="text-[#6A52FD] font-extrabold text-[32px] mt-[29px]">
@@ -41,26 +54,26 @@ const Subscriptions = () => {
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            Hot Picks Ranking
+            Ranking in Community
           </p>
           <p className="flex items-center mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            Explore Community
+            Monetize Media
           </p>
           <p className="flex items-center mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            Limited Media Upload
+            Unlimited Date Applications
           </p>
-          <p className="flex items-center mt-[31px] text-[#828282]">
+          {/* <p className="flex items-center mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
             Limited Date Applications
-          </p>
+          </p> */}
           <p className="flex items-center mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
@@ -70,7 +83,7 @@ const Subscriptions = () => {
 
           <button
             onClick={() => {}}
-            className="bg-[#6A52FD] text-white rounded-lg py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
+            className="bg-[#6A52FD] text-[14px] text-white rounded-lg py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
           >
             Choose
           </button>
@@ -94,13 +107,13 @@ const Subscriptions = () => {
             <span className=" mr-[15.33px]">
               <TiTick />
             </span>
-            Recommendations
+            Ranking in Community
           </p>
           <p className="flex items-center mt-[31px] pr-[15.33px]">
             <span className=" mr-[15.33px]">
               <TiTick />
             </span>
-            Unlimited Media Upload
+            Monetize Media
           </p>
           <p className="flex items-center mt-[31px]">
             <span className=" mr-[15.33px]">
@@ -112,18 +125,18 @@ const Subscriptions = () => {
             <span className=" mr-[15.33px]">
               <TiTick />
             </span>
-            100 Tokens
+            75 Tokens
           </p>
 
           <button
             onClick={() => {}}
-            className="rounded-lg bg-white text-[#6A52FD] py-[17.5px] px-[77.5px] mt-[42px]"
+            className="rounded-lg text-[14px] bg-white text-[#6A52FD] py-[17.5px] px-[77.5px] mt-[42px]"
           >
             Choose
           </button>
         </div>
 
-        <div className="w-[260px] bg-[#F6F4FF] rounded-lg pl-[25px] lg:mt-0 mt-24">
+        <div className="w-[260px] bg-[#F6F4FF] rounded-lg pl-[25px] lg:mt-0 mt-24 lg:mb-0 mb-[46px]">
           <div className="flex items-center justify-around mt-[29px]">
             <p className="text-[#6A52FD] font-extrabold text-[32px] ">1500</p>
             <p className="text-[12px] py-[5px] px-[8px] bg-white text-[#8645FF] rounded-md">
@@ -143,13 +156,13 @@ const Subscriptions = () => {
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            Recommendations
+            Ranking in Community
           </p>
           <p className="flex items-center  mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            Stealth mode
+            Monetize Media
           </p>
           <p className="flex items-center  mt-[31px] text-[#828282]">
             <span className="text-[#6A52FD] mr-[15.33px]">
@@ -161,17 +174,20 @@ const Subscriptions = () => {
             <span className="text-[#6A52FD] mr-[15.33px]">
               <TiTick />
             </span>
-            1500 Tokens
+            100 Tokens
           </p>
 
           <button
             onClick={() => {}}
-            className="rounded-lg bg-[#6A52FD] text-white py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
+            className="rounded-lg text-[14px] bg-[#6A52FD] text-white py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
           >
             Choose
           </button>
         </div>
       </div>
+      <SubModal onClose={close500ModalHandler} visible={open500Modal} />
+      <SubModal onClose={close1000ModalHandler} visible={open1000Modal} />
+      <SubModal onClose={close1500ModalHandler} visible={open1500Modal} />
     </div>
   );
 };

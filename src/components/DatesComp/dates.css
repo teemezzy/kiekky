@@ -1,0 +1,30 @@
+.inner_ input[type="checkbox"]
+ {
+    height:15px;
+    width:15px;
+    vertical-align:middle;
+    margin:0 0.4em 0.4em 0;
+    border:1px solid #6a52fd;
+    border-radius: 2px;
+    -webkit-appearance:none;
+    -webkit-transition:box-shadow 200ms;
+    
+ };
+
+ .inner_ input[type="checkbox"]:checked {
+    border-color:#6a52fd;
+    background-color:#6a52fd;
+ }
+
+ .inner_ input[type="checkbox"]:checked:before {
+    content:'';
+    display:block;
+    width:4px;
+    height:8px;
+    border:solid #fff;
+    border-width:0 2px 2px 0;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+    margin-left:4px;
+    margin-top:1px;
+ }

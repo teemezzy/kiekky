@@ -38,7 +38,7 @@ const Wallet = () => {
         </div>
         <div className=" mt-10 lg:w-[984px] m-auto ">
           {/* Title For TabMenu */}
-          <div className=" lg:w-[58.9rem] w-[327px] overflow-x-scroll lg:overflow-x-auto scale ">
+          <div className=" lg:w-[58.9rem] w-[327px] overflow-x-scroll lg:overflow-x-auto scale fixed mt-10">
             <div className="flex lg:w-auto w-[200vw]">
             <div
               className={toggleState === 1 ? (tabs, activeTabs) : tabs}

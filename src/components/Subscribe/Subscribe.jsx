@@ -24,17 +24,17 @@ function User() {
 
   return (
 
-    <div className='m-auto w-[20.5rem] lg:w-[60rem]'>
+    <div className=' lg:w-[984px] m-auto'>
 
 
-      <div className="notify flex flex-col mt-10 mx-6 justify-center sm:items-center lg:w-[60rem] w-[20.5rem]  m-auto">
+      <div className="   lg:w-[984px] w-[20.5rem]  m-auto">
 
 
         {feed
           ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="story-status lg:w-full w-[20.5rem] m-auto  px-4 bg-white py-4"
+              className=" mb-[5rem] lg:w-[941px] m-auto px-4 bg-white py-4"
             >
               <div className="display-section ">
                 <div className="icons flex flex-row justify-between">
@@ -47,7 +47,7 @@ function User() {
 
                 </div>
 
-                <div className=" pic-not mt-4 flex flex-col justify-center items-center m-auto pt-4  ">
+                <div className=" pic-not  flex flex-col justify-center items-center m-auto   ">
                   <div className="">
                     <img
                       className=" w-[6rem] feed-image h-[6rem] p-[2.7px] rounded-[50%]"
@@ -60,9 +60,9 @@ function User() {
                     <p className="font-[700]">{feed.firstname}</p>
 
                     <div className="location text-gray text-sm ">
-                      <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
+                      <p className="md:text-sm sm:text-[0.4rem] text-[#BDBDBD] flex items-center">
                         <span>
-                          <MdOutlineLocationOn color="gray" />
+                          <MdOutlineLocationOn color="" />
                         </span>
                         {feed.address.city}, {feed.address.country}
                       </p>
@@ -103,7 +103,7 @@ function User() {
                       <NavLink to="/subscribe">
 
                         <button onClick={() => setShowMyModal(true)}
-                          className=" mt-9 w-[5rem] text-xs lg:text-sm lg:w-[9.5rem] lg:px-6 py-2 bg-[#6a52fd] text-white rounded-lg "
+                          className=" mt-9 w-[153px] text-xs lg:text-sm lg:w-[9.5rem] lg:px-6 py-2 bg-[#6a52fd] text-white rounded-lg "
                           type="submit"
                         >
                           Choose
@@ -144,7 +144,7 @@ function User() {
                       <NavLink to="/subscribe">
                         {" "}
                         <button onClick={() => setShowMyModal(true)}
-                          className=" mt-9 w-[5rem] text-xs lg:text-sm lg:w-[9.5rem] lg:px-6 py-2 bg-[#6a52fd] text-white rounded-lg "
+                          className=" mt-9 w-[153px] text-xs lg:text-sm lg:w-[9.5rem] lg:px-6 py-2 bg-[#6a52fd] text-white rounded-lg "
                           type="submit"
                         >
                           Choose{" "}
@@ -185,7 +185,7 @@ function User() {
                       <NavLink to="/subscribe">
                         {" "}
                         <button onClick={() => setShowMyModal(true)}
-                          className=" mt-9 w-[5rem] text-xs lg:text-sm lg:w-[9.5rem] lg:px-6 py-2 bg-[#6a52fd] text-white rounded-lg "
+                          className=" mt-9 w-[153px] text-xs lg:text-sm lg:w-[9.5rem] lg:px-6 py-2 bg-[#6a52fd] text-white rounded-lg "
                           type="submit"
                         >
                           Choose
@@ -226,7 +226,7 @@ function User() {
                       <NavLink to="/subscribe">
                         {" "}
                         <button onClick={() => setShowMyModal(true)}
-                          className=" mt-9 w-[5rem] text-xs lg:text-sm lg:w-[9.5rem] lg:px-6 py-2 bg-[#6a52fd] text-white rounded-lg "
+                          className=" mt-9 w-[153px] text-xs lg:text-sm lg:w-[9.5rem] lg:px-6 py-2 bg-[#6a52fd] text-white rounded-lg "
                           type="submit"
                         >
                           Choose{" "}

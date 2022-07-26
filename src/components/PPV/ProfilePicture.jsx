@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import { NavLink } from 'react-router-dom';
-import { AiOutlineEdit } from 'react-icons/ai'
 import { VscLock } from 'react-icons/vsc'
 import { Recommendations } from '../../components'
 import { verified } from "../../assets";
@@ -23,7 +22,7 @@ const ProfilePicture = () => {
   }, []);
 
   return (
-    <div className="mb-[6rem] w-[327px]">
+    <div className="mb-[6rem] w-[347px]">
       <div className="feed-recommendation flex lg:gap-[50px] lg:w-[986px] w-[327px] m-auto">
 
         <div className="  w-[672px] py-10 videos bg-white rounded-xl ">
@@ -38,19 +37,24 @@ const ProfilePicture = () => {
                     <div >
 
 
-                      <div className="image ">
+                      <div className="image " 
+                      // onClick={() => setShowMyPopUp(true)}
+                      >
                         <div className="   ">
-
-
                           <div className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
                             <div className="flex flex-col justify-center items-center">
                               {/* <BsPlay size='2rem ' color='white' /> */}
                               <VscLock color="white" />
                               <p className="text-white mt-3 text-sm lg:text-base">Unlock for 10 tokens</p>
                             </div>
-                            
                           </div>
-
+                          <div className="">
+                            <img
+                              className="lg:w-[264px] w-[144px] h-[148px] lg:h-[271px] rounded-md"
+                              src={feed.image}
+                              alt="icon"
+                            />
+                          </div>
                         </div>
                         <div className="div  ">
                           <img
@@ -106,6 +110,7 @@ const ProfilePicture = () => {
         </div>
 
       </div>
+
     </div>
 
   );

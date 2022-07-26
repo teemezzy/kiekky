@@ -11,7 +11,7 @@ export const sideList = [
   {
     id: 1,
     link: "Home",
-    path: "/home",
+    path: "/feeds",
     icon: <BsHouseDoor />,
   },
 
@@ -46,14 +46,13 @@ export const sideList = [
     path: "/settings",
     icon: <FiSettings />,
   },
-  // {
-  //   id: 7,
-  //   link: "Logout",
-  //   path: "/logout",
-  //   icon: <FiLogOut />,
-  //   handleClick: ,
+  {
+    id: 7,
+    link: "Logout",
+    path: "/",
+    icon: <FiLogOut />,
     
  
-  // },
+  },
  
 ];

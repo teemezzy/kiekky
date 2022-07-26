@@ -8,7 +8,6 @@ import NotFound from "./NotFound";
 import Contact from "./Contact";
 import About from "./About";
 import AccountSetup from './AccountSetup/AccountSetup.jsx'
-import Chats from './Chats/Chats.jsx'
 import Faqs from "./Faqs";
 import Community from "./Community";
 import Profile from "./Profile";
@@ -25,6 +24,8 @@ import Notifications from './Notifications/Notifications.jsx'
 import UserProfile from './UserProfile/UserProfile'
 import PersonalProfile from './PersonalProfile/PersonalProfile'
 import UserSubscribe from './UserSubscribe'
+import RequestDates from "./RequestDates/RequestDates";
+import EditProfile from './EditProfile'
 
 export {
   KiekkyHome,
@@ -53,5 +54,9 @@ export {
   UserProfile,
   PersonalProfile,
   UserSubscribe,
-  Chats
+  RequestDates,
+EditProfile,
+
+
+
 };

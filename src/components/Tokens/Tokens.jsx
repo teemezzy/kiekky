@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 // import axios from "axios";
 import TopUpTokenModal from "./TopUpTokenModal";
+import TransferTokenModal from "./TransferTokenModal";
 import { GiToken } from "react-icons/gi";
 import { IoAdd } from "react-icons/io5";
 import { FaRegEyeSlash, FaRegPaperPlane } from "react-icons/fa";
@@ -13,7 +14,7 @@ const Tokens = () => {
 
   const openModalHandler = () => setOpenModal(true);
   const closeModalHandler = () => setOpenModal(false);
-  
+
   const accountModalOpen = () => setAccountModal(true);
   const accountModalClose = () => setAccountModal(false);
 
@@ -31,58 +32,79 @@ const Tokens = () => {
           </div>
         </div>
 
-       
-         {/* Desktop */}
-          <div className=" inner-content1 rounded-2xl hidden lg:block ">
-            <div className=" bg-white w-64 h-36 pl-[22px] rounded-2xl flex flex-col justify-center items-center">
-              <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center mb-[10px]">
-                <IoAdd />
-              </div>
-              <p>Top Up Token</p>
+        {/* Desktop */}
+        <div
+          onClick={openModalHandler}
+          className=" inner-content1 rounded-2xl hidden lg:block "
+        >
+          <div className=" bg-white w-64 h-36 pl-[22px] rounded-2xl flex flex-col justify-center items-center">
+            <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center mb-[10px]">
+              <IoAdd />
             </div>
+            <p>Top Up Token</p>
           </div>
+        </div>
 
-          <div className=" inner-content1 rounded-2xl hidden lg:block ">
-            <div className=" bg-white w-64 h-36 pl-[22px] rounded-2xl flex flex-col justify-center items-center">
-              <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center mb-[10px]">
-                <FaRegPaperPlane />
-              </div>
-              <p>Transfer Token</p>
+        <div
+          onClick={accountModalOpen}
+          className=" inner-content1 rounded-2xl hidden lg:block "
+        >
+          <div className=" bg-white w-64 h-36 pl-[22px] rounded-2xl flex flex-col justify-center items-center">
+            <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center mb-[10px]">
+              <FaRegPaperPlane />
             </div>
+            <p>Transfer Token</p>
           </div>
-         
-        
+        </div>
 
         {/* Mobile */}
         <div className=" lg:hidden block mt-5">
-          <div className='flex justify-around'>
-          <div className="flex flex-col items-center justify-center">
-            <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
-              <IoAdd />
+          <div className="flex justify-around">
+            <div
+              onClick={openModalHandler}
+              className="flex flex-col items-center justify-center"
+            >
+              <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
+                <IoAdd />
+              </div>
+              <p className="pt-[10px]">Top Up Token</p>
             </div>
-            <p className="pt-[10px]">Top Up Token</p>
-          </div>
 
-          <div className="flex flex-col items-center justify-center">
-            <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
-              <FaRegPaperPlane />
+            <div
+              onClick={accountModalOpen}
+              className="flex flex-col items-center justify-center"
+            >
+              <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
+                <FaRegPaperPlane />
+              </div>
+              <p className="pt-[10px]">Transfer Token</p>
             </div>
-            <p className="pt-[10px]">Transfer Token</p>
-          </div>
           </div>
         </div>
       </div>
 
       <div className="mt-[80px] w-[347px] lg:w-full ">
-        <p className="text-2xl font-semibold mb-[24px] text-[#212121]">My Transactions</p>
+        <p className="text-2xl font-semibold mb-[24px] text-[#212121]">
+          My Transactions
+        </p>
 
         <table className=" lg:w-[984px] w-[347px]">
           <thead className="flex order-0 h-[46px] items-center justify-around text-center border-b-2 border-[#F2F2F2] bg-[#F5F3FF]">
-            <th className="lg:w-28 w-8 text-left lg:text-[16px] text-[12px] text-[#212121]">Date</th>
-            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">Description</th>
-            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">Recipient</th>
-            <th className="lg:w-28 w-12 text-left lg:text-[16px] text-[12px] text-[#212121]">Amount</th>
-            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">Status</th>
+            <th className="lg:w-28 w-8 text-left lg:text-[16px] text-[12px] text-[#212121]">
+              Date
+            </th>
+            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">
+              Description
+            </th>
+            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">
+              Recipient
+            </th>
+            <th className="lg:w-28 w-12 text-left lg:text-[16px] text-[12px] text-[#212121]">
+              Amount
+            </th>
+            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">
+              Status
+            </th>
           </thead>
           <tbody className="justify-evenly text-center bg-white">
             {transaction.map((transactions) => (
@@ -112,7 +134,7 @@ const Tokens = () => {
       </div>
 
       <TopUpTokenModal onClose={closeModalHandler} visible={openModal} />
-      {/* <AccountModal onClose={accountModalClose} visible={accountModal} /> */}
+      <TransferTokenModal onClose={accountModalClose} visible={accountModal} />
     </div>
   );
 };

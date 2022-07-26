@@ -21,7 +21,7 @@ const ProfileVerification = () => {
             alt="selfie-face"
             className=" lg:w-[327px] h-[132px] lg:h-[255px]"
           />
-          <button className="text-[16px] rounded-lg bg-[#6A52FD] lg:mt-[50px] mt-[38px] py-[17.5px] px-[60px] text-white w-[204px] lg:w-[364px] h-[54px]">
+          <button className="text-[14px] rounded-lg bg-[#6A52FD] lg:mt-[50px] mt-[38px] py-[17.5px] px-[60px] text-white w-[204px] lg:w-[364px] h-[54px]">
             Snap Photo
           </button>
         </div>
