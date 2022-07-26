@@ -12,7 +12,7 @@ const Status = () => {
   }, []);
 
   return (
-    <div className='lg:w-[968px] m-auto'>
+    <div className='lg:w-[968px] m-auto max-w-full'>
       <div className="status overflow-x-scroll pt-10 mb-8 w-[327px] lg:w-[968px]">
         <div className="flex space-x-5 lg:w-[200vw] w-[800vw] ">
 

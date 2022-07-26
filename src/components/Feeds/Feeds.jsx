@@ -13,7 +13,7 @@ function Feeds() {
   }, []);
 
   return (
-    <div className="lg:w-[672px] w-[327px] ">
+    <div className="lg:w-[672px] w-[327px] lg:max-w-full ">
       {feed
         ? feed.map((feed, idx) => (
           <div

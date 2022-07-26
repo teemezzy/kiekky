@@ -13,7 +13,7 @@ function Recommendations(props) {
   }, []);
 
   return (
-    <div>
+    <div className='max-w-full'>
       <p className="lg:block hidden ">Recommendations </p>
       <div className="recommendations hidden mt-[2rem]  w-[268px] lg:block ">
         {story
