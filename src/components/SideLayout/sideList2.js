@@ -9,7 +9,7 @@ export const sideList2 = [
   {
     id: 1,
     link: "Home",
-    path: "/home",
+    path: "/feeds",
     icon: <BsHouseDoor />,
   },
 
