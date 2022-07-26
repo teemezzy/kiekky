@@ -39,17 +39,17 @@ function HotPicks(props) {
           </div>
         </div>
       </div>
-      <div className="  grid grid-cols-2 lg:grid-cols-4 gap-[7px] w-[295px] lg:gap-[37px]  lg:w-[1001px] m-auto mt-2">
+      <div className="  grid grid-cols-2 lg:grid-cols-4 gap-[7px]  w-[331px] lg:gap-[37px]  lg:w-[1001px] m-auto mt-2">
         {story
           ? story.map((story, idx) => (
             <div key={idx} className=" ">
               <div className=" rounded-xl relative  ">
-                <div className=" absolute  inset-x-0 bottom-0 bg-opacity-70 names w-[145px] h-[29px] lg:w-[219px] lg:h-[43px] bg-[#A8A8A8] rounded-b-md ">
-
-                  <p className=" pr-3  text-white">{story.firstname}  </p>
+                <div className=" absolute  inset-x-0 bottom-0 bg-opacity-70 names w-[160px] h-[29px] lg:w-[219px] lg:h-[43px] bg-[#A8A8A8] rounded-b-md ">
+                  <p className=" pl-3  text-white">{story.firstname}  </p>
                 </div>
+
                 <img
-                  className="stats w-[9rem] h[9.25rem] lg:w-[220px] lg:h-[237px] rounded-md "
+                  className="stats w-[160px] h[160px] lg:w-[220px] lg:h-[237px] rounded-md "
                   src={story.image}
                   alt="icon"
                 />

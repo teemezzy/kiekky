@@ -3,15 +3,15 @@ import axios from "axios";
 const API_URL = "https://kiekky.com/api/public/api/";
 
 // GET USER COUNTRY
-const country = async (userData) => {
-    console.log(userData);
-    const response = await axios.get(API_URL + "location/countries");
+const country = async (data) => {
+    console.log(data);
+    const response = await axios(API_URL + "location/countries");
     localStorage.setItem("country", JSON.stringify(response.data));
     console.log(response.data);
   
     return response.data;
   };
-  
+
 // Get User States
 const states = async (id) => {
     console.log(id);

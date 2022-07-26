@@ -82,8 +82,13 @@ const Subscriptions = () => {
           </p>
 
           <button
+<<<<<<< HEAD
             onClick={open500ModalHandler}
             className="bg-[#6A52FD] text-white rounded-lg py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
+=======
+            onClick={() => {}}
+            className="bg-[#6A52FD] text-[14px] text-white rounded-lg py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
+>>>>>>> 254a8c89575cf83c1b09ebac8f550609c7b83717
           >
             Choose
           </button>
@@ -129,8 +134,13 @@ const Subscriptions = () => {
           </p>
 
           <button
+<<<<<<< HEAD
             onClick={open1000ModalHandler}
             className="rounded-lg bg-white text-[#6A52FD] py-[17.5px] px-[77.5px] mt-[42px]"
+=======
+            onClick={() => {}}
+            className="rounded-lg text-[14px] bg-white text-[#6A52FD] py-[17.5px] px-[77.5px] mt-[42px]"
+>>>>>>> 254a8c89575cf83c1b09ebac8f550609c7b83717
           >
             Choose
           </button>
@@ -178,8 +188,13 @@ const Subscriptions = () => {
           </p>
 
           <button
+<<<<<<< HEAD
             onClick={open1500ModalHandler}
             className="rounded-lg bg-[#6A52FD] text-white py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
+=======
+            onClick={() => {}}
+            className="rounded-lg text-[14px] bg-[#6A52FD] text-white py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
+>>>>>>> 254a8c89575cf83c1b09ebac8f550609c7b83717
           >
             Choose
           </button>

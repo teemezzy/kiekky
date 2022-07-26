@@ -61,8 +61,8 @@ function PersonalProfileInfo() {
                                             </p>
 
                                             <div className="buttons mt-9 text-sm space-x-5 space-y-7 pb-4  hidden lg:block">
-                                               <NavLink to ='/edit_profile'> <button className=' w-[8rem] text-xs lg:text-base lg:w-[8rem] px-2 lg:px-6 py-[0.4rem] bg-[#6a52fd] text-white rounded-lg ' type="submit">Edit Profile</button> </NavLink>
-                                                <NavLink to='/share'>  <button className=' w-[5rem] text-xs lg:text-base lg:w-[8rem] lg:px-6 py-1 text-[#6a52fd] border-[1px] border-[#6a52fd] rounded-lg ' type="submit">Share</button> </NavLink>
+                                               <NavLink to ='/edit_profile'> <button className=' w-[8rem] text-sm  lg:w-[8rem] px-2 lg:px-6 py-[0.6rem] bg-[#6a52fd] text-white rounded-lg ' type="submit">Edit Profile</button> </NavLink>
+                                                <NavLink to='/share'>  <button className=' w-[5rem] text-sm lg:text-base lg:w-[8rem] lg:px-6 py-[7px] text-[#6a52fd] border-[1px] border-[#6a52fd] rounded-lg ' type="submit">Share</button> </NavLink>
 
                                             </div>
                                         </div>

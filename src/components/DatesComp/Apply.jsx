@@ -17,9 +17,9 @@ function Apply() {
   return (
 
     <div className="scale-width ">
-      <div className=" notify  lg:w-[980px] w-[327px] m-auto bg-white ">
+      <div className="  pt-[40px]  lg:w-[980px] w-[327px] m-auto bg-white rounded-lg ">
 
-        <div className="lg:w-[912px]  datess grid lg:grid-cols-3 gap-[30px]  h m-auto  ">
+        <div className="lg:w-[912px] gap-[24px]  grid lg:grid-cols-3 lg:gap-[30px]  h m-auto  ">
 
           {feed
             ? feed.map((feed, idx) => (
@@ -45,9 +45,9 @@ function Apply() {
                     <button className="bg-[#F6F4FF] text-[#999999] px-4 text-xs rounded-[4px] ">Freaky</button>
                   </div>
 
-                  <div className="but flex my-5 space-x-5">
-                    <button className=" w-[7rem]  text-[#BDBDBD] border-[1.5px] rounded-xl outline-[#BDBDBD]  ">Decline</button>
-                    <button className="w-[7rem] py-2 text-white bg-[#6a52fd] rounded-xl ">Apply Now</button>
+                  <div className="but flex mt-[25px] space-x-5">
+                    <button className=" w-[7rem]  text-[#BDBDBD] text-[14px] border-[1.5px] rounded-xl outline-[#BDBDBD]">Decline</button>
+                    <button className="w-[7rem] py-2 text-[14px] text-white bg-[#6a52fd] rounded-xl ">Apply Now</button>
 
 
                   </div>

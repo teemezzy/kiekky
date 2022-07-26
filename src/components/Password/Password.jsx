@@ -80,7 +80,7 @@ const Password = () => {
         <input
           type="submit"
           value="Save Changes"
-          className="border-2 mt-5 bg-[#6A52FD] py-[10px] rounded-lg text-white lg:w-[464px] w-[282px] m-auto "
+          className=" text-[14px] mt-5 bg-[#6A52FD] py-[10px] rounded-lg text-white lg:w-[464px] w-[282px] m-auto "
         />
       </form>
     </div>

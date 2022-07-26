@@ -37,7 +37,7 @@ const Sidebar = ({ children }) => {
         {post
           ? post.map((post, idx) => (
               <div key={idx} className="story-status  ">
-                <div className="user_name ml-10 bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem] ">
+                <div className="user_name ml-10  bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem] ">
                   <div className="display-image">
                     <NavLink to="/personal_profile">
                       <img
@@ -58,7 +58,7 @@ const Sidebar = ({ children }) => {
             ))
           : null}
 
-        <div className="side_list ml-10 bg-white w-[17rem] h-[40rem] divide-y divide-opacity-50  divide-gray-300">
+        <div className="side_list ml-10 h-[540px] bg-white w-[17rem]  divide-y divide-opacity-50  divide-gray-300">
           {sideList.map((side) => (
             <div
               key={side.id}
@@ -77,15 +77,21 @@ const Sidebar = ({ children }) => {
             </div>
           ))}
 
+<<<<<<< HEAD
           {user ? (
           <div className="ml-5 pt-5 items-center text-sm text-gray">
             <button
+=======
+          {/* <div className="ml-5 pt-5 items-center text-sm text-gray">
+            <div
+>>>>>>> 254a8c89575cf83c1b09ebac8f550609c7b83717
               type="button"
               onClick={onLogout}
               className={`${
                 window.location.pathname === "/" ? "active" : null
               }  flex items-center w-full h-[4rem] pl-5  hover:bg-[#E5E5E5] `}
             >
+<<<<<<< HEAD
               <span className="mr-3 ">
                 <FiLogOut />
               </span>
@@ -95,6 +101,16 @@ const Sidebar = ({ children }) => {
           ) : (null)}
 
           
+=======
+              <a href="/">
+                <span className="mr-3 ">
+                  <FiLogOut />
+                </span>
+                Logout
+              </a>
+            </div>
+          </div> */}
+>>>>>>> 254a8c89575cf83c1b09ebac8f550609c7b83717
         </div>
       </div>
     </div>

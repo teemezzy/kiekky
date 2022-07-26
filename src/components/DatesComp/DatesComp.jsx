@@ -9,38 +9,49 @@ function DatesComp(props) {
 
   const toggleTab = (tab) => {
     setToggleState(tab);
-    console.log(tab);
   };
 
+  const activeTabs = " text-[#6a52fd] bg-white "
+  const tabs = "  text-[#BDBDBD] bg-[#F9FAFA] ";
+
+  const activeContent = " ";
+  const content = "  hidden  cursor-pointer ";
 
   return (
     <div>
       <div className="  mt-5  lg:w-[980px] w-[327px] ">
-        <div  className={`${toggleState === 1  ? "input-option-tab " : "input-option-tab"   } flex h-[3rem]  `}   >
+        <div  className={`${toggleState === 1  ? activeTabs : tabs  } flex h-[3rem]  `}   >
           <div
             onClick={() => toggleTab(1)}
-            className={`${toggleState === 1 ? "login-tab-active1" : ""
+            className={`${toggleState === 1 ? activeTabs : tabs
               }  py-[1.5rem] px-[3%] lg:px-[19%]  w-1/2 self-center  `}
           >
 
-            <div>
+            <div className='text-center '>
               <p>Apply for Dates</p>
             </div>
           </div>
           <div
             onClick={() => toggleTab(2)}
-            className={`${toggleState === 2 ? "login-tab-active1" : ""
+            className={`${toggleState === 2 ? activeTabs : tabs
               }  py-[1.5rem] px-[5%] lg:px-[17%]  w-1/2 self-center `}
           >
 
-            <div>
+            <div className='text-center '>
               <p>Date Request</p>
             </div>
           </div>
         </div>
       </div>
 
-      {toggleState === 1 ? <Apply /> : <RequestDate />}
+      <div className={toggleState === 1 ? (content, activeContent) : content}>
+        <Apply />
+      </div>
+
+      <div className={toggleState === 2 ? (content, activeContent) : content}>
+        <RequestDate />
+      </div>
+
 
     </div>
   );

@@ -26,7 +26,7 @@ const SetSubscription = () => {
           and send you a confirmation email as soon as this process has been
           completed.
         </p>
-        <button className="bg-[#EB5757] mt-[24px] text-white py-[8.5px] rounded-md px-[45.5px]">
+        <button className="bg-[#EB5757] text-[14px] mt-[24px] text-white py-[8.5px] rounded-md px-[45.5px]">
           Upgrade
         </button>
       </div>

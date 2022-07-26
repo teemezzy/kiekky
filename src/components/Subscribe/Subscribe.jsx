@@ -34,7 +34,7 @@ function User() {
           ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="  lg:w-[941px] m-auto px-4 bg-white py-4"
+              className=" mb-[5rem] lg:w-[941px] m-auto px-4 bg-white py-4"
             >
               <div className="display-section ">
                 <div className="icons flex flex-row justify-between">
@@ -47,7 +47,7 @@ function User() {
 
                 </div>
 
-                <div className=" pic-not mt-4 flex flex-col justify-center items-center m-auto pt-4  ">
+                <div className=" pic-not  flex flex-col justify-center items-center m-auto   ">
                   <div className="">
                     <img
                       className=" w-[6rem] feed-image h-[6rem] p-[2.7px] rounded-[50%]"
@@ -60,9 +60,9 @@ function User() {
                     <p className="font-[700]">{feed.firstname}</p>
 
                     <div className="location text-gray text-sm ">
-                      <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
+                      <p className="md:text-sm sm:text-[0.4rem] text-[#BDBDBD] flex items-center">
                         <span>
-                          <MdOutlineLocationOn color="gray" />
+                          <MdOutlineLocationOn color="" />
                         </span>
                         {feed.address.city}, {feed.address.country}
                       </p>

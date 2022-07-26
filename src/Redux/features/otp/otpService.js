@@ -18,7 +18,7 @@ const otptoken = async (userData) => {
 const resendotp = async (userData) => {
     const API_URL_2 = `kiekky.com/api/public/api/user/register/resend_otp/${userData}`
     console.log(userData);
-    console.log(API_URL_2);
+    // console.log(API_URL_2);
     const response = await axios.post(API_URL_2);
     if (response.data) {
       localStorage.removeItem("otp");
