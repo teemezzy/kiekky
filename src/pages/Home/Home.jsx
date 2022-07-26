@@ -5,7 +5,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="bg-[#F9FAFA]">
+    <div className="bg-[#F9FAFA] max-w-[1440px]">
       <UserNav /> 
       <div className="side-home flex mt-[6rem] bg-[#F9FAFA]">
         <div className="relative">

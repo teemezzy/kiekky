@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import locationService from "./locationService";
 
 const initialState = {
@@ -10,11 +10,12 @@ const initialState = {
 
 //   Auth for Country
 export const country = createAsyncThunk(
-  "location/country",
-  async (user, thunkAPI) => {
+  "location/getAll",
+  async (name, thunkAPI) => {
+      console.log(name);
     try {
-      console.log(user);
-      return await locationService.country(user);
+        const country = thunkAPI.getState()
+        return await locationService.country(name, country);
     } catch (error) {
       const message =
         (error.response &&

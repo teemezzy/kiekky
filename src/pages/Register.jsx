@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios'
+// import axios from 'axios'
 import { bgLogin } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import { MidNav } from "../components";
@@ -7,20 +7,14 @@ import { useForm } from "react-hook-form";
 // import { country } from "./data";
 import { useDispatch, useSelector } from "react-redux";
 import { regUser, reset } from "../Redux/features/authSlice";
-// import {
-//   country,
-//   city,
-//   states,
-
-// } from "../Redux/features/userLocation/locationSlice";
+import { country } from "../Redux/features/userLocation/locationSlice";
 import { toast } from "react-toastify";
 import { BiArrowBack } from "react-icons/bi";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
-  const [country, setCountry] = useState(null);
-  const [city, setCity] = useState([]);
-  const [states, setState] = useState([]);
+  // const [country, setCountry] = useState(null);
+
   // Handle Form Event
   const {
     register,
@@ -30,25 +24,23 @@ const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // Handle Form Submit
-  const vb = (data) => {
+  // Handle Form Submit and Password check
+  const onSubmit = (data) => {
     if (data.password !== data.confirmpassword) {
       toast.error("Password mismatch");
+    } else {
+      const userdata = {
+        full_name: data.full_name,
+        email: data.email,
+        username: data.username,
+        phone: data.phone,
+        password: data.password,
+        city_id: data.city,
+        country_id: data.country,
+      };
+      dispatch(regUser(userdata));
     }
-  };
 
-  const onSubmit = (data) => {
-    const userdata = {
-      full_name: data.full_name,
-      email: data.email,
-      username: data.username,
-      phone: data.phone,
-      password: data.password,
-      city_id: data.city,
-      country_id: data.country,
-    };
-
-    dispatch(regUser(userdata));
   };
 
   const { user, isError, isSuccess, isLoading, message } = useSelector(
@@ -80,14 +72,8 @@ const Register = () => {
     if (isError) {
       toast.error(message);
     }  
-    if (isSuccess) {
-      navigate("/otp");
-    }
-    if (user) {
-      navigate("/home");
-    }
-    dispatch(reset());
-  }, [user, isError, isSuccess, message, dispatch, navigate]);
+    dispatch(country());
+  }, [ isError, message, dispatch]);
     
     if (isLoading) {
       return <div>Loading...</div>;
@@ -110,11 +96,11 @@ const Register = () => {
           />
         </div>
 
-        <div className="relative m-auto rounded-lg w-[29rem] lg:mt-[50px] mt-[140px] lg:px-0 px-[24px]">
-          <div className=" mb-8 lg:-translate-x-16 text-2xl w-7 h-0">
+        <div className="relative m-auto rounded-lg w-[29rem] lg:mt-[40px] mt-[140px] lg:px-0 px-[24px]">
+          <div className=" mb-14 lg:-translate-x-16 text-2xl w-7 h-0">
             <Link to="/">
               <BiArrowBack />
-            </Link>
+            </Link> {loading}
           </div>
 
           <h3 className="text-3xl">Get Started</h3>
@@ -240,7 +226,7 @@ const Register = () => {
                 <p className="text-red-600 text-xs ">Country is needed</p>
               )}
             </div>
-
+                  {/* States */}
             <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="" className="text-[15px]">
                 State:
@@ -249,13 +235,13 @@ const Register = () => {
               <select
                 {...register("state")}
                 defaultValue={"default"}
-                name="city"
-                id="city"
+                name="state"
+                id="state"
                 className=" bg-[#F6F4FF] py-2 px-4 w-full"
               >
                 <option
                   value={"default"}
-                  placeholder="Select City"
+                  placeholder="Select State"
                   disabled
                   className={` bg-[#F6F4FF] py-2 px-4 ${
                     errors.state &&
@@ -266,7 +252,7 @@ const Register = () => {
                 </option>
 
                 <option className="py-2 px-4" value="city">
-                  Lekki
+                  Lagos
                 </option>
               </select>
               {errors.state && (
@@ -274,6 +260,7 @@ const Register = () => {
               )}
             </div>
 
+                {/* Cities */}
             <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
               <label htmlFor="" className="text-[15px]">
                 City:
@@ -299,7 +286,7 @@ const Register = () => {
                 </option>
 
                 <option className="py-2 px-4" value="city">
-                  Lagos
+                  Lekki
                 </option>
               </select>
               {errors.city && (
