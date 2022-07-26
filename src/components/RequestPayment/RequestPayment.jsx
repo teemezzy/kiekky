@@ -22,7 +22,7 @@ const RequestPayment = () => {
       </p>
       <div className="request flex lg:flex-none justify-center lg:justify-start lg:block ">
         <button onClick={openModalHandler}>
-          <div className=" lg:w-64 w-[293px] m-auto h-[161px] lg:h-36  flex flex-col justify-center items-center border-2 rounded-2xl">
+          <div className=" lg:w-64 w-[293px] m-auto h-[161px] lg:h-36  flex flex-col justify-center items-center border-2 rounded-lg">
             <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center">
               <BsArrowReturnRight />
             </div>
