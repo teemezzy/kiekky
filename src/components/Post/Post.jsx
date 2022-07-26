@@ -50,22 +50,7 @@ function Post() {
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-  );
-=======
-<p className='text-[gray] '>Whats new..</p>
-  </div>
-  
-  <div className="but flex justify-end items-center mr-5 space-x-5 mb-5">
-  <p className='text-xl'><BiCamera color="gray"/>  </p>
- <p className='text-xl'> <BiVideoPlus color="gray"/> </p> 
-<button className='flex px-6 py-[6px] text-sm h-[2rem] bg-[#6a52fd] text-white rounded-lg '  type="submit">Post it!</button>
-  </div>
-
-</div>
-        </div>
-    );
->>>>>>> 254a8c89575cf83c1b09ebac8f550609c7b83717
+  )
 }
 
 export default Post;

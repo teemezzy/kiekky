@@ -77,40 +77,22 @@ const Sidebar = ({ children }) => {
             </div>
           ))}
 
-<<<<<<< HEAD
           {user ? (
-          <div className="ml-5 pt-5 items-center text-sm text-gray">
-            <button
-=======
-          {/* <div className="ml-5 pt-5 items-center text-sm text-gray">
-            <div
->>>>>>> 254a8c89575cf83c1b09ebac8f550609c7b83717
-              type="button"
-              onClick={onLogout}
-              className={`${
-                window.location.pathname === "/" ? "active" : null
-              }  flex items-center w-full h-[4rem] pl-5  hover:bg-[#E5E5E5] `}
-            >
-<<<<<<< HEAD
-              <span className="mr-3 ">
-                <FiLogOut />
-              </span>
-              Logout
-            </button>
-          </div>
-          ) : (null)}
-
-          
-=======
-              <a href="/">
+            <div className="ml-5 pt-5 items-center text-sm text-gray">
+              <button
+                type="button"
+                onClick={onLogout}
+                className={`${
+                  window.location.pathname === "/" ? "active" : null
+                }  flex items-center w-full h-[4rem] pl-5  hover:bg-[#E5E5E5] `}
+              >
                 <span className="mr-3 ">
                   <FiLogOut />
                 </span>
                 Logout
-              </a>
+              </button>
             </div>
-          </div> */}
->>>>>>> 254a8c89575cf83c1b09ebac8f550609c7b83717
+          ) : null}
         </div>
       </div>
     </div>

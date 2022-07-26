@@ -19,19 +19,6 @@ function ProfilePost() {
   return (
     <div className="feed-recommendation flex gap-[50px] lg:w-[986px] m-auto ">
 
-<<<<<<< HEAD
-    <div className=" lg:w-[672px] w-[347px]">
-      {feed
-        ? feed.map((feed, idx) => (
-          <div
-            key={idx}
-            className="bg-white py-[30px] w-[347px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px]"
-          >
-            <div>
-              <div className=" lg:w-[586px] w-[294px] m-auto ">
-                <div className=" flex  space-x-[18px] lg:space-x-[12px] items-center  ">
-                  <div className="feed-image">
-=======
       <div className=" lg:w-[672px] w-[327px] ">
         {feed
           ? feed.map((feed, idx) => (
@@ -43,7 +30,6 @@ function ProfilePost() {
                 <div className=" lg:w-[586px] w-[294px] m-auto ">
                   <div className=" flex  space-x-[18px] lg:space-x-[12px] items-center  ">
                     <div className="feed-image">
->>>>>>> 254a8c89575cf83c1b09ebac8f550609c7b83717
 
                       <NavLink to='/user_profile'>
                         <img

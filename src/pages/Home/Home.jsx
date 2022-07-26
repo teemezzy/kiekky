@@ -5,10 +5,10 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="bg-[#F9FAFA] max-w-full">
+    <div className="bg-[#F9FAFA]  max-w-full">
       <UserNav /> 
-      <div className="side-home flex mt-[6rem] bg-[#F9FAFA]">
-        <div className="relative">
+      <div className=" mt-[6rem] m-auto bg-[#F9FAFA]">
+        <div className="relative flex">
           <div className=" sticky h-[100vh] hidden lg:block pt-8">
             <Sidebar />
           </div>
