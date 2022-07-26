@@ -36,7 +36,7 @@ const Wallet = () => {
         <div className="hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className=" mt-10 lg:w-[984px] m-auto ">
+        <div className="mt-10 lg:w-[984px] m-auto">
           {/* Title For TabMenu */}
           <div className=" lg:w-[58.9rem] w-[327px] overflow-x-scroll lg:overflow-x-auto scale mt-10">
             <div className="flex lg:w-auto w-[200vw]">
