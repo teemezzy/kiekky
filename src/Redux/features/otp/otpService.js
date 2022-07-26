@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://kiekky.com/endpoints/public/api/v2/register/confirm_otp"
+const API_URL = "kiekky.com/api/public/api/user/register/confirm_otp"
 
 
 
@@ -16,7 +16,7 @@ const otptoken = async (userData) => {
 
 
 const resendotp = async (userData) => {
-    const API_URL_2 = `https://kiekky.com/endpoints/public/api/v2/otp/resend/${userData}`
+    const API_URL_2 = `kiekky.com/api/public/api/user/register/resend_otp/${userData}`
     console.log(userData);
     console.log(API_URL_2);
     const response = await axios.post(API_URL_2);
