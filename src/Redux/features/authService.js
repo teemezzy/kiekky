@@ -1,4 +1,4 @@
-import axios from "axios";
+ import axios from "axios";
 
 const API_URL = "https://kiekky.com/endpoints/public/api/v2/";
 

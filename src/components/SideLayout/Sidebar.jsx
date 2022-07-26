@@ -36,7 +36,7 @@ const Sidebar = ({ children }) => {
         {post
           ? post.map((post, idx) => (
               <div key={idx} className="story-status  ">
-                <div className="user_name ml-10 bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem] ">
+                <div className="user_name ml-10  bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem] ">
                   <div className="display-image">
                     <NavLink to="/personal_profile">
                       <img
@@ -57,7 +57,7 @@ const Sidebar = ({ children }) => {
             ))
           : null}
 
-        <div className="side_list ml-10 bg-white w-[17rem] h-[40rem] divide-y divide-opacity-50  divide-gray-300">
+        <div className="side_list ml-10 h-[540px] bg-white w-[17rem]  divide-y divide-opacity-50  divide-gray-300">
           {sideList.map((side) => (
             <div
               key={side.id}
@@ -76,7 +76,7 @@ const Sidebar = ({ children }) => {
             </div>
           ))}
 
-          <div className="ml-5 pt-5 items-center text-sm text-gray">
+          {/* <div className="ml-5 pt-5 items-center text-sm text-gray">
             <div
               type="button"
               onClick={onLogout}
@@ -91,7 +91,7 @@ const Sidebar = ({ children }) => {
                 Logout
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

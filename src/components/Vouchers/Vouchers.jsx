@@ -35,7 +35,7 @@ const Vouchers = () => {
           type="text"
           className="bg-[#F6F4FF] py-[16.5px] pl-[19px] rounded-lg"
         />
-        <button className="bg-[#6A52FD] text-white py-[16.5px] lg:px-[282.5px] px-[111px] rounded-lg mt-[30px]">
+        <button className="bg-[#6A52FD] text-[14px] text-white py-[16.5px] lg:px-[282.5px] px-[111px] rounded-lg mt-[30px]">
           Activate
         </button>
       </div>

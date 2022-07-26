@@ -70,7 +70,7 @@ const Subscriptions = () => {
 
           <button
             onClick={() => {}}
-            className="bg-[#6A52FD] text-white rounded-lg py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
+            className="bg-[#6A52FD] text-[14px] text-white rounded-lg py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
           >
             Choose
           </button>
@@ -117,7 +117,7 @@ const Subscriptions = () => {
 
           <button
             onClick={() => {}}
-            className="rounded-lg bg-white text-[#6A52FD] py-[17.5px] px-[77.5px] mt-[42px]"
+            className="rounded-lg text-[14px] bg-white text-[#6A52FD] py-[17.5px] px-[77.5px] mt-[42px]"
           >
             Choose
           </button>
@@ -166,7 +166,7 @@ const Subscriptions = () => {
 
           <button
             onClick={() => {}}
-            className="rounded-lg bg-[#6A52FD] text-white py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
+            className="rounded-lg text-[14px] bg-[#6A52FD] text-white py-[17.5px] px-[77.5px] mt-[42px] mb-[27px]"
           >
             Choose
           </button>

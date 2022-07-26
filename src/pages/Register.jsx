@@ -78,7 +78,7 @@ const Register = () => {
               <input
                 type="text"
                 placeholder="Firstname and Lastname (Surname)"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                className={`rounded-lg outline-none bg-[#F6F4FF] py-1 pl-4 ${
                   errors.confirmpassword &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -103,7 +103,7 @@ const Register = () => {
               <input
                 type="text"
                 placeholder="Username"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                className={`rounded-lg outline-none bg-[#F6F4FF] py-1 pl-4 ${
                   errors.username &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -121,7 +121,7 @@ const Register = () => {
               <input
                 type="email"
                 placeholder="Email"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                className={`rounded-lg outline-none bg-[#F6F4FF] py-1 pl-4 ${
                   errors.email &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -139,7 +139,7 @@ const Register = () => {
               <input
                 type="tel"
                 placeholder="Phone Number"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                className={`rounded-lg outline-none bg-[#F6F4FF] py-1 pl-4 ${
                   errors.phone &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -159,7 +159,7 @@ const Register = () => {
                 defaultValue={"default"}
                 name="country"
                 id="country"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 w-full ${
+                className={`rounded-lg outline-none bg-[#F6F4FF] py-1 pl-4 w-full ${
                   errors.country &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -193,7 +193,7 @@ const Register = () => {
                 defaultValue={"default"}
                 name="city"
                 id="city"
-                className="border-2 bg-[#F6F4FF] py-1 pl-4 w-full"
+                className="rounded-lg outline-none bg-[#F6F4FF] py-1 pl-4 w-full"
               >
                 <option
                   value={"default"}
@@ -237,7 +237,7 @@ const Register = () => {
               <input
                 type="password"
                 placeholder="Password"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                className={` bg-[#F6F4FF] py-1 pl-4 rounded-lg outline-none ${
                   errors.password &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}
@@ -257,7 +257,7 @@ const Register = () => {
               <input
                 type="password"
                 placeholder="Confirm Password"
-                className={`border-2 bg-[#F6F4FF] py-1 pl-4 ${
+                className={` bg-[#F6F4FF] py-1 pl-4 rounded-lg outline-none ${
                   errors.confirmpassword &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600"
                 }`}

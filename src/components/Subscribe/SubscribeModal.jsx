@@ -6,8 +6,8 @@ function SubscribeModal({ visible, onClose }) {
     return (
         <div className='fixed inset-0  bg-black bg-opacity-20 z-50
         backdrop-blur-sm flex justify-center items-center'>
-            <div className="bg-white lg:h-[22rem] lg:w-[30rem] w-[348px] ">
-                <button className=' flex justify-between px-5 pt-3 ml-auto ' onClick={onClose}> x </button>
+            <div className="bg-white lg:h-[22rem] lg:w-[30rem] w-[348px] rounded-lg ">
+                <button className=' flex justify-between px-5 pt-3 ml-auto text-[#BDBDBD] ' onClick={onClose}> x </button>
 
                 <img className='w-[10rem] m-auto ' src={success} alt="" />
 

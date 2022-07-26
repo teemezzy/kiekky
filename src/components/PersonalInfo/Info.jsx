@@ -13,12 +13,12 @@ function Info(props) {
   return (
     <div className=' lg:mr-[59px] '>
       <p className="lg:block  hidden"> </p>
-      <div className=" hidden pt-5 rounded-md bg-white h-[536px] w-[248px] lg:block">
+      <div className=" hidden pt-2 rounded-md bg-white h-[536px] w-[248px] lg:block">
         {story
           ? story.map((story, idx) => (
               <div key={idx} className=" ">
                 <div className="image  space-y-6 w-[186px] m-auto ">
-               <p className='text-[#6a52fd]'>Bio</p>
+               <p className='text-[#6a52fd] font-thin '>Bio</p>
 
                <div className='data'>
                 <p>Profession</p>

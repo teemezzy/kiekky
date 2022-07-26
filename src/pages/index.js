@@ -56,7 +56,7 @@ export {
   UserSubscribe,
   RequestDates,
 EditProfile,
-  Chats
+
 
 
 };
