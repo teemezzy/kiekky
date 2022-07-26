@@ -8,7 +8,7 @@ import {
   Vouchers,
   RequestPayment,
   Referrals,
-  MobileNav
+  MobileNav,
 } from "../components";
 
 const Wallet = () => {
@@ -19,7 +19,7 @@ const Wallet = () => {
   };
 
   const activeTabs =
-    "text-[#6A52FD] text-[16px] py-[16.5px] w-[157px] m-auto text-center bg-white cursor-pointer outline-none";
+    "text-[#6A52FD] text-[16px] py-[16.5px] w-[167px] m-auto text-center bg-white cursor-pointer outline-none";
   const tabs =
     "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
 
@@ -38,48 +38,47 @@ const Wallet = () => {
         </div>
         <div className=" mt-10 lg:w-[984px] m-auto ">
           {/* Title For TabMenu */}
-          <div className=" lg:w-[58.9rem] w-[327px] overflow-x-scroll lg:overflow-x-auto scale fixed mt-10">
+          <div className=" lg:w-[58.9rem] w-[327px] overflow-x-scroll lg:overflow-x-auto scale mt-10">
             <div className="flex lg:w-auto w-[200vw]">
-            <div
-              className={toggleState === 1 ? (tabs, activeTabs) : tabs}
-              onClick={() => toggleTab(1)}
-            >
-              Token
+              <div
+                className={toggleState === 1 ? (tabs, activeTabs) : tabs}
+                onClick={() => toggleTab(1)}
+              >
+                Token
+              </div>
+              <div
+                className={toggleState === 2 ? (tabs, activeTabs) : tabs}
+                onClick={() => toggleTab(2)}
+              >
+                Subscription
+              </div>
+              <div
+                className={toggleState === 3 ? (tabs, activeTabs) : tabs}
+                onClick={() => toggleTab(3)}
+              >
+                KYC
+              </div>
+              <div
+                className={
+                  toggleState === 4 ? (tabs, activeTabs, activePayout) : tabs
+                }
+                onClick={() => toggleTab(4)}
+              >
+                Request Payout
+              </div>
+              <div
+                className={toggleState === 5 ? (tabs, activeTabs) : tabs}
+                onClick={() => toggleTab(5)}
+              >
+                Referrals
+              </div>
+              <div
+                className={toggleState === 6 ? (tabs, activeTabs) : tabs}
+                onClick={() => toggleTab(6)}
+              >
+                Voucher
+              </div>
             </div>
-            <div
-              className={toggleState === 2 ? (tabs, activeTabs) : tabs}
-              onClick={() => toggleTab(2)}
-            >
-              Subscription
-            </div>
-            <div
-              className={toggleState === 3 ? (tabs, activeTabs) : tabs}
-              onClick={() => toggleTab(3)}
-            >
-              KYC
-            </div>
-            <div
-              className={
-                toggleState === 4 ? (tabs, activeTabs, activePayout) : tabs
-              }
-              onClick={() => toggleTab(4)}
-            >
-              Request Payout
-            </div>
-            <div
-              className={toggleState === 5 ? (tabs, activeTabs) : tabs}
-              onClick={() => toggleTab(5)}
-            >
-              Referrals
-            </div>
-            <div
-              className={toggleState === 6 ? (tabs, activeTabs) : tabs}
-              onClick={() => toggleTab(6)}
-            >
-              Voucher
-            </div>
-            </div>
-
           </div>
 
           {/* The content within each box  */}
@@ -116,7 +115,6 @@ const Wallet = () => {
         </div>
       </div>
       <MobileNav />
-
     </div>
   );
 };
