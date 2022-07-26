@@ -4,7 +4,6 @@ import axios from "axios";
 import { BiCamera } from "react-icons/bi";
 import { BsArrowLeft, BsThreeDotsVertical } from "react-icons/bs";
 import { FiVideo } from "react-icons/fi";
-import { } from "react-icons/bs";
 import { NavLink } from 'react-router-dom'
 import OpenChat from './OpenChat'
 import Block from './Block'
@@ -78,6 +77,25 @@ function User() {
                   <button onClick={() => setShowMyModal(true)} className=' w-[8rem] text-xs lg:text-base lg:w-[8rem] px-2 lg:px-6 py-[0.4rem] bg-[#6a52fd] text-white rounded-lg ' type="submit">Open Chat</button>
                   <NavLink to='/subscribe'>  <button className=' w-[5rem] text-xs lg:text-base lg:w-[8rem] lg:px-6 py-1 text-[#6a52fd] border-[1px] border-[#6a52fd] text-white rounded-lg ' type="submit">Subscribe</button> </NavLink>
                 </div>
+              </div>
+              <div className="buttons flex   py-[2rem] space-x-5 lg:space-y-7   lg:hidden block">
+                <button
+                  onClick={() => setShowMyModal(true)}
+                  className=" w-[8rem] text-[14px] lg:w-[8rem] px-2 py-[0.4rem] bg-[#6a52fd] text-white rounded-lg "
+                  type="submit"
+                >
+                  Open Chat
+                </button>
+
+                <NavLink to="/subscribe">
+                  {" "}
+                  <button
+                    className="  text-[14px] lg:w-[8rem] w-[130px] py-[7px] text-[#6a52fd] border-[1px] border-[#6a52fd] rounded-lg "
+                    type="submit"
+                  >
+                    Subscribe
+                  </button>{" "}
+                </NavLink>
               </div>
             </div>
             <div className="buttons flex   py-[2rem] space-x-5 lg:space-y-7   lg:hidden block">

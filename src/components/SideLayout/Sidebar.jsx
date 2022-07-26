@@ -76,24 +76,25 @@ const Sidebar = ({ children }) => {
             </div>
           ))}
 
-          {/* <div className="ml-5 pt-5 items-center text-sm text-gray">
-            <div
-          type="button"
-          onClick={onLogout}
-          className={`${window.location.pathname === "/" ? "active" : null
-            }  flex items-center w-full h-[4rem] pl-5  hover:bg-[#E5E5E5] `}
-        >
-              <a href="/">
+          {user ? (
+            <div className="ml-5 pt-5 items-center text-sm text-gray">
+              <button
+                type="button"
+                onClick={onLogout}
+                className={`${
+                  window.location.pathname === "/" ? "active" : null
+                }  flex items-center w-full h-[4rem] pl-5  hover:bg-[#E5E5E5] `}
+              >
                 <span className="mr-3 ">
                   <FiLogOut />
                 </span>
                 Logout
-              </a>
+              </button>
             </div>
-          </div> */}
-        </div >
-      </div >
-    </div >
+          ) : null}
+        </div>
+      </div>
+    </div>
   );
 };
 
