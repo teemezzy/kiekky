@@ -4,8 +4,8 @@ import { MdClose } from "react-icons/md";
 const SubModal = ({ visible, onClose }) => {
   if (!visible) return null;
   return (
-    <div className="backdrop-blur-md bg-opacity-60 inset-0 fixed m-auto">
-      <div className="lg:w-[498px] w-[300px] border-2 lg:h-[364px] h-[264px] mt-[250px] m-auto bg-white flex flex-col justify-center items-center relative">
+    <div className="backdrop-blur-md bg-black bg-opacity-25 z-20 inset-0 fixed m-auto">
+      <div className="lg:w-[498px] w-[300px] rounded-lg lg:h-[364px] h-[264px] mt-[250px] m-auto bg-white flex flex-col justify-center items-center relative">
         <div className="bg-white ">
           <div
             onClick={onClose}

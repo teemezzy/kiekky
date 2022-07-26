@@ -2,7 +2,7 @@ import React from "react";
 
 const Vouchers = () => {
   return (
-    <div className="lg:w-[984px] w-[347px] h-[750px] m-auto bg-white">
+    <div className="lg:w-[984px] w-[352px] h-[750px] m-auto bg-white">
       <div className="lg:w-[689px] w-[284px] lg:pt-[98px] pt-[40px] m-auto">
         <h2 className="text-[18px] font-semibold text-[#212121]">
           How do I get a Voucher?

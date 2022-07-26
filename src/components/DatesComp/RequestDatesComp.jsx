@@ -32,7 +32,7 @@ function RequestDatesComp() {
     <div className="scale-width mt-[30px] mb-[5rem]">
       <form onSubmit={handleSubmit(onSubmit)}>
 
-        <div className=" notify flex flex-col items-center justify-center  lg:w-[779px] w-[327px] m-auto lg:h-[1050px]  bg-white rounded-md">
+        <div className=" notify flex flex-col items-center justify-center  lg:w-[779px] w-[327px] m-auto lg:h-[1193px]  bg-white rounded-md">
 
           <div className="inner_ lg:w-[559px] w-[327px] m-auto ">
             <p className="font-semibold">Date Request</p>
@@ -118,7 +118,7 @@ function RequestDatesComp() {
 
             <div className="lg:w-[520px] w-[327px] m-auto">
 
-              <input type='submit' className=" mt-[50px] text-[14px] lg:w-[520px] w-[327px] h-[54px] bg-[#6a52fd] rounded-lg text-white" />
+              <input type='submit' className=" mb mt-[50px] text-[14px] lg:w-[520px] w-[327px] h-[54px] bg-[#6a52fd] rounded-lg text-white" />
             </div>
           </div>
         </div>

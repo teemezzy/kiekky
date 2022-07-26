@@ -6,7 +6,7 @@ import {TbBrandTwitter} from 'react-icons/tb'
 
 const Referrals = () => {
   return (
-    <div className="lg:w-[984px] w-[347px] lg:h-[1044px] h-[1096px] bg-white">
+    <div className="lg:w-[984px] w-[352px] lg:h-[1044px] h-[1096px] bg-white">
     <div className="text-[14px] text-[#828282] lg:pt-[96px] pt-[34px] lg:ml-[80px] lg:w-[527px] w-[264px] m-auto">
         <p>
         Invite your friends Kiekky. Get them to signup and get 5% of what they spend.

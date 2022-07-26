@@ -49,7 +49,7 @@ const Sidebar = ({ children }) => {
                 </div>
                 <NavLink to="/personal_profile">
                   <div className="names ml-4 ">
-                    <h5 className=" font-bold "> {post.author} </h5>
+                    <h5 className=" font-bold text-[#2E2357] "> {post.author} </h5>
                     <h5 className="text-sm text-[#828282]">@{post.author}</h5>
                   </div>
                 </NavLink>

@@ -16,7 +16,7 @@ const RequestPayment = () => {
   const accountModalClose = () => setAccountModal(false);
 
   return (
-    <div className="bg-white h-screen lg:pl-[55px] m-auto w-[327px] lg:w-[986px]">
+    <div className="bg-white h-screen lg:pl-[55px] m-auto w-[352px] lg:w-[986px]">
       <p className="pt-[47px] pb-[26px] text-[#828282] pl-5 flex ">
         You can request for payout
       </p>
