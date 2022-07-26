@@ -35,6 +35,10 @@
   -o-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   -ms-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  -ms-border-radius: 1rem;
   border-radius: 1rem;
   border-width: 2px;
   border-style: solid;

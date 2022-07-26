@@ -37,7 +37,7 @@ const Tokens = () => {
           onClick={openModalHandler}
           className=" inner-content1 rounded-2xl hidden lg:block "
         >
-          <div className=" bg-white w-64 h-36 pl-[22px] rounded-2xl flex flex-col justify-center items-center">
+          <div className=" bg-white w-64 h-36 pl-[22px] rounded-lg flex flex-col justify-center items-center">
             <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center mb-[10px]">
               <IoAdd />
             </div>
@@ -49,7 +49,7 @@ const Tokens = () => {
           onClick={accountModalOpen}
           className=" inner-content1 rounded-2xl hidden lg:block "
         >
-          <div className=" bg-white w-64 h-36 pl-[22px] rounded-2xl flex flex-col justify-center items-center">
+          <div className=" bg-white w-64 h-36 pl-[22px] rounded-lg flex flex-col justify-center items-center">
             <div className="w-[32px] h-[32px] rounded-full text-[#6A52FD] bg-[#F6F4FF] flex justify-center items-center mb-[10px]">
               <FaRegPaperPlane />
             </div>

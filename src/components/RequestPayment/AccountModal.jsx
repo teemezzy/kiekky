@@ -1,7 +1,14 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
+import { useForm } from "react-hook-form";
 
 const AccountModal = ({ visible, onClose }) => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+  
   if (!visible) return null;
   return (
     <div className="backdrop-blur-md bg-opacity-60 inset-0 fixed  m-auto">
@@ -21,8 +28,23 @@ const AccountModal = ({ visible, onClose }) => {
             </p>
           </div>
           <div className=" mt-[40px]">
-            <p className="mb-[10px]">Bank</p>
-            <input type="text" />
+            <p className="mb-[10px]">Bank Name</p>
+            <select {...register("country", { required: true })}
+                defaultValue={"default"}
+                name="country"
+                id="country"
+                className={` bg-[#F6F4FF] py-2 px-4 w-full ${
+                  errors.country &&
+                  "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+                }`}>
+              <option
+                value={"default"}
+                disabled
+                className="text-[13px] py-2 px-4"
+              >
+                Select Bank
+              </option>
+            </select>
           </div>
           <div className="">
             <p className="mb-[10px]">Account Number</p>
