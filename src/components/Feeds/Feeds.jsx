@@ -18,7 +18,7 @@ function Feeds() {
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="bg-white py-[17px] lg:py-[30px] pb-[3px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px]  "
+            className="bg-white py-[17px] lg:py-[30px]  w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px] h-[440px] "
           >
             <div>
               <div className="mb-7 lg:w-[586px] w-[300px] m-auto ">
