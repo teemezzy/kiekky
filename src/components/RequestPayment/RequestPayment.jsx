@@ -31,7 +31,7 @@ const RequestPayment = () => {
         </button>
       </div>
       
-      <div className="mt-[116px] w-[320px] pl-5 ">
+      <div className="mt-[116px] w-[320px] pl-5">
         <div className='flex items-center gap-8 mb-[20px] '>
           <h3 className=" font-semibold">Saved Account</h3>
           <div onClick={accountModalOpen} className='text-[#6A52FD] w-[36px] h-[36px] rounded-full flex items-center justify-center bg-[#F6F4FF]' >
