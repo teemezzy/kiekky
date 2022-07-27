@@ -19,12 +19,12 @@ function ProfilePost() {
   return (
     <div className="feed-recommendation flex gap-[50px] lg:w-[986px] m-auto ">
 
-      <div className=" lg:w-[672px] w-[327px] ">
+      <div className=" lg:w-[672px] w-[352px] ">
         {feed
           ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="bg-white lg:py-[17px] py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px]  "
+              className="bg-white lg:py-[17px] py-[30px] w-[352px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px]  "
             >
               <div>
                 <div className=" lg:w-[586px] w-[294px] m-auto ">

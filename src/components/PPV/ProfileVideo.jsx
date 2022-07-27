@@ -27,12 +27,12 @@ const ProfileVideo = () => {
   }, []);
 
   return (
-    <div className="mb-[6rem] w-[347px]">
+    <div className="mb-[6rem] w-[352px] ">
       <div className="feed-recommendation flex lg:gap-[50px] lg:w-[986px] w-[347px] m-auto">
 
-        <div className="  w-[672px] py-10 videos bg-white rounded-xl ">
+        <div className="  w-[672px] py-5 lg:py-10 videos bg-white rounded-xl ">
 
-          <div className="    grid grid-cols-2 gap-[7px] lg:gap-[32px] w-[295px] lg:w-[567px]  m-auto ">
+          <div className="    grid grid-cols-2 gap-[7px] lg:gap-[32px] w-[320px] lg:w-[567px]  m-auto ">
 
             {feed
               ? feed.map((feed, idx) => (
@@ -57,7 +57,7 @@ const ProfileVideo = () => {
                         </div>
                         <div className="div  ">
                           <img
-                            className=" lg:w-[264px] w-[144px] h-[148px]  lg:h-[271px] rounded-md"
+                            className=" lg:w-[264px] w-[150px] h-[148px]  lg:h-[271px] rounded-md"
                             src={feed.image}
                             alt="icon"
                           />

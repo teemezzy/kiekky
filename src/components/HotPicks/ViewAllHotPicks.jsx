@@ -19,25 +19,27 @@ function ViewAllHotPicks() {
       <NavLink to='/community'> <p className="text-[#BDBDBDBD] "> < BsArrowLeft /> </p> </NavLink>
       <div className="flex justify-between lg:w-[996px] m-auto">
         <div className="flex mt-4 space-x-3 items-center">
-          <p>Hot Picks</p>
-          <p className=" text-sm text-[#999999] py-1 rounded-md ">Gender: </p>
-          <button className=" border-[1px] border-[#E5E5E5]  text-[#999999] px-4 py-1 text-xs  rounded-[0.3rem]">
-            Male
-          </button>
-          <button className="bg-[#6a52fd] text-white rounded-[0.3rem] px-4 text-xs py-1">
-            Female
-          </button>
+        <p>Hot Picks</p>
+          <p className=" text-xs  text-[#999999] py-1 rounded-md ">Gender: </p>
+          <select className="outline-none text-xs  w-[4rem] text-[#999999] bg-[#F6F4FF] " name="" id="">
+            <option className="outline-none hover:bg-[#6a52fd]  border-none" value="Male">Male </option>
+            <option className="outline-none hover:bg-[#6a52fd]  " value="Male">Female </option>
+            <option className="outline-none hover:bg-[#6a52fd]  " value="Male">Both </option>
+          </select>
+
         </div>
-        <div className="hidden lg:block">
-          <div className="flex relative  mb-3  space-x-6 items-center">
+        <div className="block">
+          <div className="flex relative  mb-3 space-x-2 lg:space-x-4 items-center">
             <input
-              className=" p-2 block  pl-12 sm:text-sm focus:outline-none border-[1px] border-[#6a52fd] rounded-lg focus:border-[gray]"
+              className=" p-2 w-[8rem] lg:w-[12rem] h-[25px] lg:h-[38px] block text-sm lg:text-base pl-5 lg:pl-9 sm:text-sm focus:outline-none border-[1px] border-[#6a52fd] rounded-md lg:rounded-lg focus:border-[gray]"
               type="text"
               name=""
-              placeholder="Sort by : Location"
+              placeholder=" Location"
             />
             <div className="absolute h-[100%] flex items-center  ">
-              <BsFilter className="h-5 w-5  text-white bg-[#6a52fd]" />
+
+
+              <BsFilter className="h-3 w-3 lg:w-5 lg:h-5  text-white bg-[#6a52fd]" />
             </div>
           </div>
         </div>

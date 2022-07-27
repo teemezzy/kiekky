@@ -15,13 +15,13 @@ function About() {
   }, []);
 
   return (
-    <div className=" notify flex flex-col  justify-center h-[14rem] bg-white sm:items-center lg:w-[984px] w-[327px] ">
+    <div className=" notify flex flex-col  justify-center h-[14rem] bg-white sm:items-center lg:w-[984px] w-[352px] ">
       
       {feed
         ? feed.map((feed, idx) => (
             <div
               key={idx}
-              className="inner-content lg:w-[40rem] rounded-[2rem] px-8 bg-white border-2 py-4  "            >
+              className="inner-content lg:w-[40rem] rounded-[2rem] m-auto px-8 bg-white border-2 py-4  "            >
                  
                 <p className="content p-5">
                     {feed.description}

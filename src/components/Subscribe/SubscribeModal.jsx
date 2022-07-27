@@ -12,7 +12,7 @@ function SubscribeModal({ visible, onClose }) {
                 <img className='w-[10rem] m-auto ' src={success} alt="" />
 
                 <p className='flex justify-center'> Subscription Succesful</p>
-                <button onClick={onClose} className=" text-white w-[90%] flex justify-center m-auto my-5 sm:mb-[4rem] rounded-md px-7 py-3 bg-[#6A52FD] ">
+                <button onClick={onClose} className=" text-white w-[80%] flex justify-center m-auto my-5 sm:mb-[4rem] rounded-md px-7 py-3 bg-[#6A52FD] ">
                     Go Back
                 </button>
             </div>

@@ -7,26 +7,34 @@ import 'simplebar/dist/simplebar.min.css';
 
 function HotPicks() {
   const [story, setStory] = useState([]);
-  const url = "https://fakerapi.it/api/v1/books?_quantity=20";
+  const url = "https://fakerapi.it/api/v1/books?_quantity=22";
 
   useEffect(() => {
     axios.get(url).then((response) => setStory(response.data.data));
   }, []);
 
   return (
-    <div className=' lg:w-[1000px] mb-[20px] lg:mb-[65px] '>
+    <div className=' lg:w-[1000px] mb-[20px] lg:mb-[50px] '>
       <div className="top-text flex justify-between  lg:w-[995px] ">
-        <div className="sub flex items-center">
+        <div className="sub space-x-2 flex items-center">
           <p>Hot Picks</p>
-          <p className='bg-[#F6F4FF] text-xs text-[#999999] px-3 py-1 rounded-md '>Gender :Female</p>
+          <div className="flex space-x-[1px] bg-[#F6F4FF] " >
+          <p className=" text-xs  text-[#999999] py-1 rounded-md ">Gender: </p>
+          <select className="outline-none text-xs  w-[4rem] text-[#999999] bg-[#F6F4FF] " name="" id="">
+            <option className="outline-none hover:bg-[#6a52fd]  border-none" value="Male">Male </option>
+            <option className="outline-none hover:bg-[#6a52fd]  " value="Male">Female </option>
+            <option className="outline-none hover:bg-[#6a52fd]  " value="Male">Both </option>
+          </select>
+          </div>
+
         </div>
         <NavLink to='/view_all'>  <p className="view text-sm text-[#6a52fd] ">View all <span> {`${'>>'}`}</span></p> </NavLink>
       </div>
 
-      <div className="  lg:w-[1000px] w-[327px]  mt-5 ">
+      <div className="  lg:w-[1000px] w-[327px]  mt-3 ">
         <SimpleBar style={{ width: "800wv", padding: '6px' }} >
 
-          <div className=" flex justify-between lg:gap-[16px] lg:w-[250vw] w-[550vw] ">
+          <div className=" flex justify-between lg:w-[250vw] w-[700vw] ">
 
             {story
               ? story.map((story, idx) => (

@@ -20,7 +20,7 @@ function UserInfo(props) {
 
   return (
     <div>
-      <div className="  mt-5 m-auto lg:w-[984px] w-[327px] ">
+      <div className="  mt-5 m-auto lg:w-[984px] w-[352px] ">
         <div
           className={`${toggleState === 1
               ? activeTabs : tabs

@@ -55,7 +55,7 @@ function EditProfile_Comp() {
 
 
                 <div className="inner lg:w-[849px] w-[300px] m-auto  ">
-                    <p className=' py-[32px]'>Profile Details</p>
+                    <p className='text-[18px] font-semibold py-[32px]'>Profile Details</p>
                     <form onSubmit={handleSubmit(onSubmit)} method="post">
                         <label htmlFor="">Full Name</label>
                         <input className=' mt-2 outline-none bg-[#F6F4FF] px-2 mb-[24px] rounded-lg lg:w-[849px] w-[300px] h-[44px] lg:h-[56px] '
