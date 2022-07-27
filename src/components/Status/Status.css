@@ -1,6 +1,6 @@
-.status::-webkit-scrollbar{
+/* .status::-webkit-scrollbar{
     display:none
-}
+} */
 
  .status-image, .display-image, .feed-image, .post-image{
     border-radius: 50%;

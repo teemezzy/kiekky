@@ -26,6 +26,7 @@ import PersonalProfile from './PersonalProfile/PersonalProfile'
 import UserSubscribe from './UserSubscribe'
 import RequestDates from "./RequestDates/RequestDates";
 import EditProfile from './EditProfile'
+import ViewAll from './ViewAll'
 
 export {
   KiekkyHome,
@@ -56,6 +57,7 @@ export {
   UserSubscribe,
   RequestDates,
 EditProfile,
+ViewAll
 
 
 

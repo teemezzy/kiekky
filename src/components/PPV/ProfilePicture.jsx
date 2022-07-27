@@ -4,6 +4,8 @@ import axios from "axios";
 import { VscLock } from 'react-icons/vsc'
 import { Recommendations } from '../../components'
 import { verified } from "../../assets";
+import PopUpModal from './PopUpModal'
+
 
 const ProfilePicture = () => {
   const [story, setStory] = useState([])
@@ -12,6 +14,8 @@ const ProfilePicture = () => {
   const url = "https://fakerapi.it/api/v1/persons?_quantity=8";
   const urlRec = "https://fakerapi.it/api/v1/persons?_quantity=10";
 
+  const [showMyPopUp, setShowMyPopUp] = useState(false);
+  const handleOnClosePopUp = () => setShowMyPopUp(false);
 
   useEffect(() => {
     axios.get(url).then((response) => setFeed(response.data.data));
@@ -38,7 +42,7 @@ const ProfilePicture = () => {
 
 
                       <div className="image " 
-                      // onClick={() => setShowMyPopUp(true)}
+                      onClick={() => setShowMyPopUp(true)}
                       >
                         <div className="   ">
                           <div className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
@@ -56,13 +60,7 @@ const ProfilePicture = () => {
                             />
                           </div>
                         </div>
-                        <div className="div  ">
-                          <img
-                            className=" lg:w-[264px] w-[144px] h-[148px]  lg:h-[271px] rounded-md"
-                            src={feed.image}
-                            alt="icon"
-                          />
-                        </div>
+                      
                       </div>
                     </div>
                   </div>
@@ -110,6 +108,7 @@ const ProfilePicture = () => {
         </div>
 
       </div>
+      <PopUpModal visiblePopUp={showMyPopUp} onClosePopUp={handleOnClosePopUp} />
 
     </div>
 

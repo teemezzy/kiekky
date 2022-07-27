@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import "./Status.css";
 import axios from "axios";
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 
 const Status = () => {
   const [story, setStory] = useState([]);
@@ -12,8 +14,10 @@ const Status = () => {
   }, []);
 
   return (
-    <div className='lg:w-[968px] m-auto max-w-full'>
-      <div className="status overflow-x-scroll pt-10 mb-8 w-[327px] lg:w-[968px]">
+    <div className='lg:w-[968px] m-auto max-w-full mb-8'>
+        <SimpleBar style={{ width:"800wv" }}>
+
+      <div className="status  pt-10 w-[327px] mb-2 lg:w-[968px]">
         <div className="flex space-x-5 lg:w-[200vw] w-[800vw] ">
 
           <p className="flex items-center ">
@@ -32,7 +36,7 @@ const Status = () => {
                   />
                 </div>
                 <div>
-                  <h5 className="text-sm w-14 truncate"> {story.title} </h5>
+                  <h5 className="text-sm mt-1 w-14 truncate"> {story.title} </h5>
                 </div>
               </div>
             ))
@@ -44,6 +48,7 @@ const Status = () => {
         </p>
         </div>
         </div>
+        </SimpleBar>
       </div>
       );
 };

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Members.css";
-import { BsBell, BsFilter } from "react-icons/bs";
-import { verified } from '../../assets'
+import { NavLink } from "react-router-dom";
+import { BsBell, BsFilter, BsArrowLeft } from "react-icons/bs";
+import { ribbon } from '../../assets'
 
 
-function HotPicks(props) {
+
+function ViewAllHotPicks() {
   const [story, setStory] = useState([]);
   const url = "https://fakerapi.it/api/v1/persons?_quantity=40";
 
@@ -14,10 +15,11 @@ function HotPicks(props) {
   }, []);
 
   return (
-    <div className=" flex flex-col lg:w-[1000px] w-[327px] m-auto">
+    <div className=" pt-[2rem] lg:w-[1000px] w-[327px] m-auto">
+      <NavLink to='/community'> <p className="text-[#BDBDBDBD] "> < BsArrowLeft /> </p> </NavLink>
       <div className="flex justify-between lg:w-[996px] m-auto">
-        <div className="flex  space-x-3 items-center">
-          <p>Members</p>
+        <div className="flex mt-4 space-x-3 items-center">
+          <p>Hot Picks</p>
           <p className=" text-sm text-[#999999] py-1 rounded-md ">Gender: </p>
           <button className=" border-[1px] border-[#E5E5E5]  text-[#999999] px-4 py-1 text-xs  rounded-[0.3rem]">
             Male
@@ -48,14 +50,16 @@ function HotPicks(props) {
                 <div className=" absolute  inset-x-0 bottom-0 bg-opacity-70 names w-[160px] h-[29px] lg:w-[219px] lg:h-[43px] bg-[#A8A8A8] rounded-b-md ">
                   <p className=" pl-3  text-white">{story.firstname}  </p>
                 </div>
-
+                <div className="absolute top-0 right-0">
+                  <img src={ribbon} alt="" />
+                </div>
                 <img
                   className="stats w-[160px] h[160px] lg:w-[220px] lg:h-[237px] rounded-md "
                   src={story.image}
                   alt="icon"
                 />
               </div>
-             
+
             </div>
           ))
           : null}
@@ -64,4 +68,4 @@ function HotPicks(props) {
   );
 }
 
-export default HotPicks;
+export default ViewAllHotPicks;

@@ -40,6 +40,7 @@ import EditProfile_Comp from "./EditProfile_Comp/EditProfile_Comp";
 import RequestDatesComp from "./DatesComp/RequestDatesComp";
 import Chat from "./Chat/Chat";
 import ChatRoom from "./Chat/ChatRoom";
+import ViewAllHotPicks from './HotPicks/ViewAllHotPicks'
 
 export {
   Navbar,
@@ -82,6 +83,7 @@ export {
   DatesComp,
   RequestDatesComp,
 EditProfile_Comp,
-  Chat, ChatRoom
+  Chat, ChatRoom,
+  ViewAllHotPicks
 
 };

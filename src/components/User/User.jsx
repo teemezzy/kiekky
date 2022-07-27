@@ -78,7 +78,7 @@ function User() {
                   <NavLink to='/subscribe'>  <button className=' w-[5rem] text-xs lg:text-base lg:w-[8rem] lg:px-6 py-1 text-[#6a52fd] border-[1px] border-[#6a52fd] text-white rounded-lg ' type="submit">Subscribe</button> </NavLink>
                 </div>
               </div>
-              <div className="buttons flex   py-[2rem] space-x-5 lg:space-y-7   lg:hidden block">
+              <div className="buttons flex   py-[2rem] space-x-5 lg:space-y-7   hidden ">
                 <button
                   onClick={() => setShowMyModal(true)}
                   className=" w-[8rem] text-[14px] lg:w-[8rem] px-2 py-[0.4rem] bg-[#6a52fd] text-white rounded-lg "

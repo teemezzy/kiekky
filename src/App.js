@@ -35,6 +35,7 @@ import {
   UserSubscribe,
   RequestDates,
   EditProfile,
+  ViewAll
 } from "./pages";
 import { useDispatch, useSelector } from "react-redux";
 // import { createBrowserHistory } from "history";
@@ -75,6 +76,7 @@ function App(children) {
           <Route path="user_profile" element={<UserProfile />} />
           <Route path="request_dates" element={<RequestDates />} />
           <Route path="edit_profile" element={<EditProfile />} />
+          <Route path='view_all' element={<ViewAll />}/>
           <Route path="subscribe" element={<UserSubscribe />} />
           <Route path="personal_profile" element={<PersonalProfile />} />
           <Route path="user/:userid" element={<Profile />} />
