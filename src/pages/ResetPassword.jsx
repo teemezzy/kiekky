@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form'
-import { MidNav } from '../components'
+import { LoginNav } from '../components'
 import {bgLogin } from '../assets'
 
 import React from 'react';
@@ -13,7 +13,7 @@ function ResetPassword() {
 
     return (
         <div className="flex relative m-auto ">
-               <MidNav  className="lg:hidden block" />
+               <LoginNav  className="lg:hidden block" />
       
       
         <div className="background w-2/5 hidden lg:block ">

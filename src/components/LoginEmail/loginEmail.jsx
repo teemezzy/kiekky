@@ -68,7 +68,7 @@ const LoginEmail = () => {
             <input
               type="text"
               placeholder="Enter here"
-              className="outline-none w-full mt-1 rounded-md py-2 px-5 bg-[#F6F4FF] "
+              className="outline-none w-full mt-1 rounded-lg h-[56px] px-5 bg-[#F6F4FF] "
               {...register("email", {
                 required: true,
               })}
@@ -89,7 +89,7 @@ const LoginEmail = () => {
             <input
               type="password"
               placeholder="Enter here"
-              className="w-full outline-none mt-1 rounded-md py-2 px-5 bg-[#F6F4FF]"
+              className="w-full outline-none mt-1 rounded-lg h-[56px] px-5 bg-[#F6F4FF]"
               {...register("password", {
                 required: true,
               })}
