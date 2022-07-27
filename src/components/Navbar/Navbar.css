@@ -43,7 +43,7 @@
   border-width: 2px;
   border-style: solid;
   border-image-slice: 1;
-  
+
 }
 
 .input-option-tab .login-tab-active3 {
@@ -54,7 +54,7 @@
   border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-width: 2px;
   border-style: solid;
-  border-image-slice: 4;
+  border-image-slice: 1;
   background: white;
   color: #6a52fd;
 }
@@ -67,7 +67,7 @@
   border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-width: 2px;
   border-style: solid;
-  border-image-slice: 4;
+  border-image-slice: 1;
   background: white;
   color: #6a52fd;
 }
@@ -81,13 +81,13 @@
 }
 
 
-.custom-border{
+.custom-border {
   -webkit-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   -moz-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   -o-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   -ms-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
-  border-image-slice: 4;
+  border-image-slice: 1;
   border-width: 3px;
   border-style: solid;
 }
