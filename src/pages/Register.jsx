@@ -136,7 +136,7 @@ const Register = () => {
               <input
                 type="text"
                 placeholder="Enter Firstname and Lastname (Surname)"
-                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 ${
+                className={` bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 ${
                   errors.full_name &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
@@ -161,7 +161,7 @@ const Register = () => {
               <input
                 type="text"
                 placeholder="Enter Username"
-                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 ${
+                className={` bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 ${
                   errors.username &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
@@ -179,9 +179,9 @@ const Register = () => {
               <input
                 type="email"
                 placeholder="Enter Email"
-                className={`bg-[#F6F4FF] h-[46px] rounded-lg px-4 ${
+                className={`bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none ${
                   errors.email &&
-                  "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+                  "focus:border-red-600 focus:ring-red-600 outline-none border-red-600 border-2"
                 }`}
                 {...register("email", { required: true })}
               />
@@ -197,7 +197,7 @@ const Register = () => {
               <input
                 type="tel"
                 placeholder="Enter Phone Number"
-                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 ${
+                className={` bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 ${
                   errors.phone &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
@@ -217,7 +217,7 @@ const Register = () => {
                 defaultValue={"default"}
                 name="country"
                 id="country"
-                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 w-full ${
+                className={` bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 w-full ${
                   errors.country &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
@@ -225,7 +225,7 @@ const Register = () => {
                 <option
                   value={"default"}
                   disabled
-                  className="text-[13px] py-2 px-4"
+                  className="text-[13px] py-2 outline-none px-4"
                 >
                   Select Country
                 </option>
@@ -248,7 +248,7 @@ const Register = () => {
               )}
             </div>
             {/* States */}
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px] m-auto">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px]  m-auto">
               <label htmlFor="" className="text-[15px]">
                 State:
               </label>
@@ -258,7 +258,7 @@ const Register = () => {
                 defaultValue={"default"}
                 name="state"
                 id="state"
-                className=" bg-[#F6F4FF] h-[46px] rounded-lg px-4 w-full"
+                className=" bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 w-full"
               >
                 <option
                   value={"default"}
@@ -307,7 +307,7 @@ const Register = () => {
                   value={"default"}
                   placeholder="Select City"
                   disabled
-                  className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 ${
+                  className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none ${
                     errors.password &&
                     "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                   }`}
@@ -340,7 +340,7 @@ const Register = () => {
               <input
                 type="password"
                 placeholder="Enter Password"
-                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 ${
+                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none ${
                   errors.password &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
@@ -360,7 +360,7 @@ const Register = () => {
               <input
                 type="password"
                 placeholder="Enter Confirm Password"
-                className={` bg-[#F6F4FF] focus:border-[#6A52FD] h-[46px] rounded-lg px-4 ${
+                className={` bg-[#F6F4FF] focus:border-[#6A52FD] outline-none h-[46px] rounded-lg px-4 ${
                   errors.confirmpassword &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
