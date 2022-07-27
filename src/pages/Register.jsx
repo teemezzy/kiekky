@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from "react";
-// import axios from 'axios'
 import { bgLogin } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginNav } from "../components";
 import { useForm } from "react-hook-form";
-// import { country } from "./data";
 import { useDispatch, useSelector } from "react-redux";
 import { regUser, reset } from "../Redux/features/authSlice";
-import { country } from "../Redux/features/userLocation/locationSlice";
+import { country, city, states, resett } from "../Redux/features/userLocation/locationSlice";
 import { toast } from "react-toastify";
 import { BiArrowBack } from "react-icons/bi";
-import Spinner from '../container/Spinner'
+import Spinner from "../container/Spinner";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
-  // const [country, setCountry] = useState(null);
-
   // Handle Form Event
   const {
     register,
@@ -41,13 +37,18 @@ const Register = () => {
       };
       dispatch(regUser(userdata));
     }
-
   };
 
-  const { user, isError, isSuccess, isLoading, message } = useSelector(
-    (state) => state.auth
+  const { user,  isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.auth,
+    
   );
-  console.log(user, isError);
+  console.log(user, isError, isSuccess, isLoading, message);
+
+  const {location} = useSelector(
+    (state) => state.location
+  );
+  console.log (location)
 
   // Navigate to OTP page || If user exist navigate to home
   useEffect(() => {
@@ -69,24 +70,37 @@ const Register = () => {
   }, []);
 
   // GET City and Country
-  useEffect(() => {
+  useEffect((data) => {
     if (isError) {
       toast.error(message);
-    }  
-    dispatch(country());
-  }, [ isError, message, dispatch]);
-    
-    if (isLoading) {
-      return <Spinner />;
     }
-  
-    const handleClick = () => {
-      setLoading(true);
-    };
+    dispatch(country());
 
+    if (isError) {
+      toast.error(message);
+    }
+    dispatch(city());
+    if (isError) {
+      toast.error(message);
+    }
+    dispatch(states());
+
+    return () => {
+      dispatch(resett());
+    }
+
+  }, [isError, message, dispatch]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  const handleClick = () => {
+    setLoading(true);
+  };
 
   return (
-    <div>
+    <div className="">
       <div className="flex">
         <LoginNav className="lg:hidden block" />
         <div className="z-50 ">
@@ -97,19 +111,25 @@ const Register = () => {
           />
         </div>
 
-        <div className="relative m-auto rounded-lg w-[29rem] lg:mt-[40px] mt-[140px] lg:px-0 px-[30px]">
-          <div className=" mb-14 lg:-translate-x-16 text-2xl w-[4rem] h-0">
+        <div className="relative rounded-lg lg:w-[464px] w-[362px] m-auto lg:mt-[40px] mt-[140px]">
+          <div className=" mb-14 lg:-translate-x-16 text-2xl w-7 h-0">
             <Link to="/">
               <BiArrowBack />
-            </Link> {loading}
+            </Link>
+            {loading}
           </div>
 
-          <h3 className="text-3xl">Get Started</h3>
-          <p className="mb-6 text-[#666666] text-[14px]">
+          <h3 className="text-2xl lg:w-[464px] w-[347px] m-auto text-[#121212]">
+            Get Started
+          </h3>
+          <p className="mb-6 text-[#666666] text-[14px] lg:w-[464px] w-[347px] m-auto">
             Please enter the details to create an account
           </p>
-          <form onSubmit={handleSubmit(onSubmit)} className="">
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="lg:w-[464px] w-[347px] m-auto"
+          >
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px] m-auto">
               <label htmlFor="full_name" className="text-[15px]">
                 Full Name:
               </label>
@@ -134,7 +154,7 @@ const Register = () => {
               )}
             </div>
 
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px] m-auto">
               <label htmlFor="username" className="text-[15px]">
                 Username:
               </label>
@@ -152,7 +172,7 @@ const Register = () => {
               )}
             </div>
 
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px] m-auto">
               <label htmlFor="email" className="text-[15px]">
                 Email:
               </label>
@@ -170,7 +190,7 @@ const Register = () => {
               )}
             </div>
 
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px] m-auto">
               <label htmlFor="phone" className="text-[15px]">
                 Phone Number:
               </label>
@@ -188,7 +208,7 @@ const Register = () => {
               )}
             </div>
 
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px] m-auto">
               <label htmlFor="" className="text-[15px]">
                 Country:
               </label>
@@ -210,25 +230,25 @@ const Register = () => {
                   Select Country
                 </option>
 
-                {/* {country.map((country) => (
+                {location.map((item) => (
                   <option
-                    key={country.id}
-                    value={country.id}
-                    className={` bg-[#F6F4FF] py-2 px-4 ${
+                    key={item.id}
+                    value={item.id}
+                    className={`bg-[#F6F4FF] py-2 px-4 ${
                       errors.password &&
                       "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                     }`}
                   >
-                    {country.name}
+                    {item.name}
                   </option>
-                ))} */}
+                ))}
               </select>
               {errors.country && (
                 <p className="text-red-600 text-xs ">Country is needed</p>
               )}
             </div>
-                  {/* States */}
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
+            {/* States */}
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px] m-auto">
               <label htmlFor="" className="text-[15px]">
                 State:
               </label>
@@ -252,17 +272,26 @@ const Register = () => {
                   Select State
                 </option>
 
-                <option className="py-2 px-4" value="city">
-                  Lagos
-                </option>
+                {location.map((item) => (
+                  <option
+                    key={item.id}
+                    value={item.id}
+                    className={`bg-[#F6F4FF] py-2 px-4 ${
+                      errors.password &&
+                      "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+                    }`}
+                  >
+                    {item.name}
+                  </option>
+                ))}
               </select>
               {errors.state && (
                 <p className="text-red-600 text-xs">State is needed</p>
               )}
             </div>
 
-                {/* Cities */}
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
+            {/* Cities */}
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px] m-auto">
               <label htmlFor="" className="text-[15px]">
                 City:
               </label>
@@ -286,16 +315,25 @@ const Register = () => {
                   Select City
                 </option>
 
-                <option className="h-[46px] rounded-lg px-4" value="city">
-                  Lekki
-                </option>
+                {location.map((item) => (
+                  <option
+                    key={item.id}
+                    value={item.id}
+                    className={`bg-[#F6F4FF] py-2 px-4 ${
+                      errors.password &&
+                      "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+                    }`}
+                  >
+                    {item.name}
+                  </option>
+                ))}
               </select>
               {errors.city && (
                 <p className="text-red-600 text-xs">City is needed</p>
               )}
             </div>
 
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px] m-auto">
               <label htmlFor="" className="text-[15px]">
                 Password:
               </label>
@@ -315,7 +353,7 @@ const Register = () => {
               )}
             </div>
 
-            <div className="flex flex-col mb-4 lg:w-[464px] w-[327px]">
+            <div className="flex flex-col mb-4 lg:w-[464px] w-[347px] m-auto">
               <label htmlFor="" className="text-[15px]">
                 Confirm Password:
               </label>
@@ -338,13 +376,13 @@ const Register = () => {
               )}
             </div>
 
-            <div className="">
+            <div className="lg:w-[464px] w-[347px] m-auto">
               <input
                 type="checkbox"
                 {...register("checked", { required: true })}
                 className={`border-2 bg-[#F6F4FF] py-1 pl-4 accent-[#6A52FD] ${
                   errors.checkbox &&
-                  "focus:border-red-600 focus:ring-red-600 border-red-600 "
+                  "focus:outline-red-600 focus:ring-red-600 border-red-600 "
                 }`}
               />
               {errors.checkbox && (
@@ -358,8 +396,7 @@ const Register = () => {
                 I guarantee that I am 18 years and above.
               </label>
             </div>
-
-            <div className="">
+            <div className="lg:w-[464px] w-[347px] m-auto">
               <input
                 type="checkbox"
                 {...register("checked", { required: true })}
@@ -382,7 +419,7 @@ const Register = () => {
               <input
                 type="submit"
                 value="Continue"
-                className=" mt-5 w-full  bg-[#6A52FD] h-[46px] rounded-lg pl-4 rounded-xl text-white"
+                className=" mt-5 w-full  bg-[#6A52FD] h-[46px] rounded-lg pl-4  text-white"
                 onClick={handleClick}
               />
               {/* {loading && (
@@ -390,9 +427,9 @@ const Register = () => {
             )} */}
             </div>
 
-            <p className="my-4">
+            <p className="my-4  lg:mb-5 mb-16 text-[13px] text-[#666666]">
               Already have an account?
-              <Link className="text-[#6A52FD]" to="/login">
+              <Link className="text-[#6A52FD] text-[18px] px-2" to="/login">
                 Log In
               </Link>
             </p>
