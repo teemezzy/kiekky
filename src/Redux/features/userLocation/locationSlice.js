@@ -6,6 +6,9 @@ const initialState = {
   isError: false,
   isSuccess: false,
   message: "",
+  states_data : null,
+  city_data : null,
+
 };
 
 const API_URL = "https://kiekky.com/api/public/api/";
@@ -20,7 +23,7 @@ export const country = createAsyncThunk("location/country", () => {
 //   Auth for States
 export const states = createAsyncThunk("location/states", (id) => {
   return axios
-    .get(API_URL + `location/country/${id}"`)
+    .get(API_URL + `location/country/${id}`)
     .then((response) => response.data.data);
 });
 

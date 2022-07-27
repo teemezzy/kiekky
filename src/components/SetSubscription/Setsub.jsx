@@ -1,15 +1,18 @@
 import React from "react";
-import { MdClose } from "react-icons/md";
+import { BiArrowBack } from "react-icons/bi";
 
 const Setsub = ({ visible, onClose }) => {
   return (
-    <div div className="lg:w-[699px] w-[384px] border-2 lg:h-[575px] h-[480px] mt-[150px] lg:ml-[700px] m-auto fixed inset-0 bg-opacity-80 backdrop-blur-3xl bg-white flex flex-col justify-center items-center">
+    <div
+      div
+      className="lg:w-[699px] w-[384px] border-2 lg:h-[575px] h-[480px] mt-[150px] lg:ml-[700px] m-auto fixed inset-0 bg-opacity-80 backdrop-blur-3xl bg-white flex flex-col justify-center items-center"
+    >
       <div className="lg:w-[984px] w-[347px] m-auto lg:h-[684px] h-[800px] bg-white">
-      <div
+        <div
           className="absolute m-auto top-0 right-0 p-10 text-[#BDBDBD]"
           onClick={onClose}
         >
-          <MdClose />
+          <BiArrowBack />
         </div>
         <div className="lg:w-[903px] w-[300px] m-auto">
           <h2 className="text-[18px] font-semibold pt-[39px] mb-[12px]">

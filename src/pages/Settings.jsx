@@ -4,12 +4,14 @@ import {
   UserNav,
   Password,
   SetSubscription,
+  SetSub,
   ProfileVerification,
   Notifications,
   MobileNav
 } from "../components";
 
-function Settings() {
+
+const Settings= () => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (tab) => {

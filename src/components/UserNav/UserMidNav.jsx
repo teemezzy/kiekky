@@ -32,7 +32,7 @@ const UserMidNav = () => {
            </div>
      
         
-       <NavLink to='/notification' >  <p><BsBell color="gray"/> </p> </NavLink>
+       <NavLink to='/notifications' >  <p><BsBell color="gray"/> </p> </NavLink>
             
       </div>
 

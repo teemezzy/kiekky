@@ -1,17 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { bgLogin } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginNav } from "../components";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { regUser, reset } from "../Redux/features/authSlice";
-import { country, city, states, resett } from "../Redux/features/userLocation/locationSlice";
+import {
+  country,
+  city,
+  states,
+  resett,
+} from "../Redux/features/userLocation/locationSlice";
 import { toast } from "react-toastify";
 import { BiArrowBack } from "react-icons/bi";
 import Spinner from "../container/Spinner";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
+  const [stateID, setStateID] = useState(null);
+
+  const conTT = useRef();
+  console.log("new");
+  // this si for the form :
+
   // Handle Form Event
   const {
     register,
@@ -33,22 +44,22 @@ const Register = () => {
         phone: data.phone,
         password: data.password,
         city_id: data.city,
+        state_id: data.state,
         country_id: data.country,
       };
       dispatch(regUser(userdata));
     }
   };
 
-  const { user,  isError, isSuccess, isLoading, message } = useSelector(
-    (state) => state.auth,
-    
+  const { user, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.auth
   );
   console.log(user, isError, isSuccess, isLoading, message);
 
-  const {location} = useSelector(
+  const { location, states_data, city_data } = useSelector(
     (state) => state.location
   );
-  console.log (location)
+  console.log(location);
 
   // Navigate to OTP page || If user exist navigate to home
   useEffect(() => {
@@ -59,7 +70,7 @@ const Register = () => {
       navigate("/otp");
     }
     if (user) {
-      navigate("/home");
+      navigate("/feeds");
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, dispatch, navigate]);
@@ -70,26 +81,29 @@ const Register = () => {
   }, []);
 
   // GET City and Country
-  useEffect((data) => {
-    if (isError) {
-      toast.error(message);
-    }
-    dispatch(country());
+  useEffect(
+    (id) => {
+      if (isError) {
+        toast.error(message);
+      }
+      dispatch(country());
 
-    if (isError) {
-      toast.error(message);
-    }
-    dispatch(city());
-    if (isError) {
-      toast.error(message);
-    }
-    dispatch(states());
+      if (isError) {
+        toast.error(message);
+      }
+      dispatch(states(id));
 
-    return () => {
-      dispatch(resett());
-    }
+      if (isError) {
+        toast.error(message);
+      }
+      dispatch(city(id));
 
-  }, [isError, message, dispatch]);
+      return () => {
+        dispatch(resett());
+      };
+    },
+    [isError, message, dispatch]
+  );
 
   if (isLoading) {
     return <Spinner />;
@@ -112,7 +126,7 @@ const Register = () => {
         </div>
 
         <div className="relative rounded-lg lg:w-[464px] w-[362px] m-auto lg:mt-[40px] mt-[140px]">
-          <div className=" mb-14 lg:-translate-x-16 text-2xl w-7 h-0">
+          <div className=" mb-14 text-[#BDBDBD] lg:-translate-x-16 text-2xl w-7 h-0">
             <Link to="/">
               <BiArrowBack />
             </Link>
@@ -136,7 +150,7 @@ const Register = () => {
               <input
                 type="text"
                 placeholder="Enter Firstname and Lastname (Surname)"
-                className={` bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 ${
+                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-[#6A52FD] ${
                   errors.full_name &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
@@ -161,7 +175,7 @@ const Register = () => {
               <input
                 type="text"
                 placeholder="Enter Username"
-                className={` bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 ${
+                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-[#6A52FD] ${
                   errors.username &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
@@ -179,7 +193,7 @@ const Register = () => {
               <input
                 type="email"
                 placeholder="Enter Email"
-                className={`bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none ${
+                className={`bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-[#6A52FD] ${
                   errors.email &&
                   "focus:border-red-600 focus:ring-red-600 outline-none border-red-600 border-2"
                 }`}
@@ -197,7 +211,7 @@ const Register = () => {
               <input
                 type="tel"
                 placeholder="Enter Phone Number"
-                className={` bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 ${
+                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-[#6A52FD] ${
                   errors.phone &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
@@ -230,16 +244,17 @@ const Register = () => {
                   Select Country
                 </option>
 
-                {location.map((item) => (
+                {location.map((country) => (
                   <option
-                    key={item.id}
-                    value={item.id}
+                    // ref={conTT}
+                    key={country.id}
+                    value={country.id}
                     className={`bg-[#F6F4FF] py-2 px-4 ${
                       errors.password &&
                       "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                     }`}
                   >
-                    {item.name}
+                    {country.name}
                   </option>
                 ))}
               </select>
@@ -272,16 +287,16 @@ const Register = () => {
                   Select State
                 </option>
 
-                {location.map((item) => (
+                {location.map((state) => (
                   <option
-                    key={item.id}
-                    value={item.id}
+                    key={state.id}
+                    value={state.id}
                     className={`bg-[#F6F4FF] py-2 px-4 ${
                       errors.password &&
                       "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                     }`}
                   >
-                    {item.name}
+                    {state.name}
                   </option>
                 ))}
               </select>
@@ -315,16 +330,16 @@ const Register = () => {
                   Select City
                 </option>
 
-                {location.map((item) => (
+                {location.map((city) => (
                   <option
-                    key={item.id}
-                    value={item.id}
+                    key={city.id}
+                    value={city.id}
                     className={`bg-[#F6F4FF] py-2 px-4 ${
                       errors.password &&
                       "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                     }`}
                   >
-                    {item.name}
+                    {city.name}
                   </option>
                 ))}
               </select>
@@ -340,7 +355,7 @@ const Register = () => {
               <input
                 type="password"
                 placeholder="Enter Password"
-                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none ${
+                className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-[#6A52FD] ${
                   errors.password &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
@@ -360,7 +375,7 @@ const Register = () => {
               <input
                 type="password"
                 placeholder="Enter Confirm Password"
-                className={` bg-[#F6F4FF] focus:border-[#6A52FD] outline-none h-[46px] rounded-lg px-4 ${
+                className={` bg-[#F6F4FF] focus:border-[#6A52FD] h-[46px] rounded-lg px-4 outline-[#6A52FD] ${
                   errors.confirmpassword &&
                   "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                 }`}
