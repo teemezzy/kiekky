@@ -89,22 +89,24 @@ const Tokens = () => {
         </p>
 
         <table className=" lg:w-[984px] w-[347px]">
-          <thead className="flex order-0 h-[46px] items-center justify-around text-center border-b-2 border-[#F2F2F2] bg-[#F5F3FF]">
-            <th className="lg:w-28 w-8 text-left lg:text-[16px] text-[12px] text-[#212121]">
-              Date
-            </th>
-            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">
-              Description
-            </th>
-            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">
-              Recipient
-            </th>
-            <th className="lg:w-28 w-12 text-left lg:text-[16px] text-[12px] text-[#212121]">
-              Amount
-            </th>
-            <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">
-              Status
-            </th>
+          <thead className="border-b-2 border-[#F2F2F2] bg-[#F5F3FF]">
+            <tr className="flex order-0 items-center justify-around text-center h-[46px]" >
+              <th className="lg:w-28 w-8 text-left lg:text-[16px] text-[12px] text-[#212121]">
+                Date
+              </th>
+              <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">
+                Description
+              </th>
+              <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">
+                Recipient
+              </th>
+              <th className="lg:w-28 w-12 text-left lg:text-[16px] text-[12px] text-[#212121]">
+                Amount
+              </th>
+              <th className="lg:w-28 w-14 text-left lg:text-[16px] text-[12px] text-[#212121]">
+                Status
+              </th>
+            </tr>
           </thead>
           <tbody className="justify-evenly text-center bg-white">
             {transaction.map((transactions) => (

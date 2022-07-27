@@ -13,7 +13,7 @@ function EditProfile() {
         <div className="   h-[100%] hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className='w-[327px] lg:w-[984px] m-auto'>
+        <div className='w-[352px] lg:w-[984px] m-auto'>
           <EditProfile_Comp />
         </div>
         <MobileNav />

@@ -27,7 +27,7 @@ function PersonalProfileInfo() {
                             <div className="">
                                 <div className=" w-[284px] lg:w-[892px] m-auto">
                                     <div className="icons pt-5">
-                                        <p className="flex justify-end">
+                                        <div className="flex justify-end">
 
                                             <label htmlFor="small-toggle" className="inline-flex relative items-center mb-5 cursor-pointer">
                                                 <input type="checkbox" value="" id="small-toggle" className="sr-only peer" />
@@ -35,7 +35,7 @@ function PersonalProfileInfo() {
                                                 <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Stealth mode</span>
                                             </label>
 
-                                        </p>
+                                        </div>
                                     </div>
 
 
@@ -52,10 +52,6 @@ function PersonalProfileInfo() {
 
                                             <p className="font-[700] text-[24px] ">{feed.author}</p>
                                             <p className="text-[#BDBDBD] text-sm ">@{feed.author}</p>
-
-
-
-
                                             <p className="icons text-[#828282] mt-4 mb-5  ">
                                                 {feed.description}
                                             </p>

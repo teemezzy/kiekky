@@ -25,7 +25,7 @@ const PayoutModal = ({ visible, onClose }) => {
             <input
               type="text"
               placeholder="Enter token amount"
-              className="bg-[#F6F4FF] rounded-lg  py-[10px] px-[19px] lg:w-[464px] w-[288px]"
+              className="bg-[#F6F4FF] rounded-lg py-[10px] px-[19px] lg:w-[464px] w-[288px] outline-[#6A52FD]"
             />
           </div>
           <div className="mt-[40px]">
@@ -33,10 +33,11 @@ const PayoutModal = ({ visible, onClose }) => {
             <input
               type="text"
               placeholder="N4000"
-              className="bg-[#F6F4FF] rounded-lg  py-[10px] px-[19px] lg:w-[464px] w-[288px]"
+              className="bg-[#F6F4FF] rounded-lg py-[10px] px-[19px] lg:w-[464px] w-[288px] "
+              disabled
             />
           </div>
-          <button className="bg-[#6A52FD] rounded-lg text-[14px] text-white py-[16.5px] lg:px-[202px] px-[114px] mt-[36px]">
+          <button className="bg-[#6A52FD] rounded-lg text-white py-[16.5px] lg:px-[202px] px-[114px] mt-[36px]">
             Proceed
           </button>
         </div>
