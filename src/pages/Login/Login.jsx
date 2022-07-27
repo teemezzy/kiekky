@@ -18,8 +18,8 @@ const Login = () => {
     setToggleState(tab);
   };
 
-  const activeTabs = " text-[#6a52fd] bg-white  "
-  const tabs = "  text-[#999999] bg-[#F4F4F4] rounded-lg ";
+  const activeTabs = " text-[#6a52fd] bg-white rounded-lg "
+  const tabs = "  text-[#999999]   ";
 
   const activeContent = " ";
   const content = "  hidden  cursor-pointer ";
@@ -39,14 +39,13 @@ const Login = () => {
             <div className="mx-auto mb-6 ">
               <div
                 className={`${toggleState === 1
-                    ? "input-option-tab em "
-                    : "input-option-tab"
-                  } flex h-[60px]  rounded-lg border-[1px] `}
+                    ? activeTabs : tabs
+                  } flex h-[60px]  rounded-lg border-[1px] bg-[#F4F4F4] `}
               >
                 <div
                   onClick={() => toggleTab(1)}
                   className={`${toggleState === 1 ? activeTabs : tabs
-                    }  py-[1.2rem] px-[23%]  w-1/2 self-center  `}
+                    }  w-[176px] lg:w-[260px] flex justify-center items-center `}
                 >
                     
                     <div>
@@ -56,7 +55,7 @@ const Login = () => {
                 <div
                   onClick={() => toggleTab(2)}
                   className={`${toggleState === 2 ? activeTabs : tabs
-                    }  py-[1.2rem] px-[23%]  w-1/2 self-center `}
+                    } w-[176px] lg:w-[260px] flex justify-center items-center `}
                 >     <div>
                       <BsPhone size={"20px"} />
                     </div>

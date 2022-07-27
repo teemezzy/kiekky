@@ -19,7 +19,7 @@ const UserMidNav = () => {
            
            <div className="home-ham flex items-center space-x-5">
 
-           <div>{toggle ? <GrClose onClick={handleClick} /> : <GiHamburgerMenu onClick={handleClick}/>}</div>
+           <div className="text-[#828282]" >{toggle ? <GrClose onClick={handleClick} /> : <GiHamburgerMenu onClick={handleClick}/>}</div>
          
          {navList.map((nav) => (
          <div key={nav.id}>

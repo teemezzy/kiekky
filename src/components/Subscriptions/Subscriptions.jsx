@@ -17,7 +17,7 @@ const Subscriptions = () => {
   const close1500ModalHandler = () => setOpen1500Modal(false);
 
   return (
-    <div className="lg:w-[984px] w-[350px] lg:h-[792px] h-[1800px] m-auto bg-white mb-[7rem] lg:mb-[0rem] ">
+    <div className="lg:w-[984px] w-[350px] lg:h-[792px] h-[1960px] m-auto bg-white mb-[4rem] lg:mb-[0rem] ">
       <div className="text-center pt-[44px]">
         <p className="font-semibold text-[24px] lg:text-[30px] text-[#6A52FD]">
           Personalized Plans For You
