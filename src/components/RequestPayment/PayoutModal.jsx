@@ -24,7 +24,7 @@ const PayoutModal = ({ visible, onClose }) => {
             <p className="mb-[10px]">Token Amount</p>
             <input
               type="text"
-              placeholder="Enter token amount"
+              placeholder="Enter Token Amount"
               className="bg-[#F6F4FF] rounded-lg py-[10px] px-[19px] lg:w-[464px] w-[288px] outline-[#6A52FD]"
             />
           </div>
