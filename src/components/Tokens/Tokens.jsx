@@ -21,7 +21,7 @@ const Tokens = () => {
   return (
     <div>
       <div className="flex lg:flex-row flex-col lg:justify-around px-[53px] py-[65px] bg-white lg:w-full w-[352px]">
-        <div className="border-2 w-64 h-36 pl-[22px] rounded-2xl bg-[#474749] text-white">
+        <div className="border-2 w-64 h-36 pl-[22px] rounded-lg bg-[#474749] text-white">
           <GiToken className="mt-[30.45px]" />
           <p className="font-bold mt-[34.75px] text-[22px]">5000</p>
           <div className="flex items-center w-[120px] justify-between pb-[33px]">

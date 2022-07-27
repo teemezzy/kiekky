@@ -59,7 +59,7 @@ const Referrals = () => {
             <input
               placeholder="kiekky.com/referr..."
               type="text"
-              className="bg-[#F6F4FF] py-[18.5px] px-[19px] lg:w-[327px] w-[207px] rounded-bl-lg rounded-tl-lg"
+              className="bg-[#F6F4FF] py-[18.5px] outline-none px-[19px] lg:w-[327px] w-[207px] rounded-bl-lg rounded-tl-lg"
             />
             <button className="-translate-x-2 bg-[#6A52FD] text-[14px] text-white py-[18.5px] lg:px-[20px] px-[12.17px] lg:w-[130px] w-[97.33px] rounded-lg">
               Copy Link
