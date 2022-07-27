@@ -21,14 +21,14 @@ export const country = createAsyncThunk("location/country", () => {
 export const states = createAsyncThunk("location/states", (id) => {
   return axios
     .get(API_URL + `location/country/${id}"`)
-    .then((response) => response.data.data.states);
+    .then((response) => response.data.data);
 });
 
 //   Auth for City
 export const city = createAsyncThunk("location/city", (id) => {
   return axios
     .get(API_URL + `location/state/${id}"`)
-    .then((response) => response.data.data.country.cities);
+    .then((response) => response.data.data);
 });
 
 export const locationSlice = createSlice({

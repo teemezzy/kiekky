@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-// import axios from 'axios'
 import { bgLogin } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import { MidNav } from "../components";
 import { useForm } from "react-hook-form";
-// import { country } from "./data";
 import { useDispatch, useSelector } from "react-redux";
 import { regUser, reset } from "../Redux/features/authSlice";
 import { country, city, states, resett } from "../Redux/features/userLocation/locationSlice";
@@ -14,8 +12,6 @@ import Spinner from "../container/Spinner";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
-  // const [country, setCountry] = useState(null);
-
   // Handle Form Event
   const {
     register,
@@ -276,7 +272,7 @@ const Register = () => {
                   Select State
                 </option>
 
-                {location && states.map((item) => (
+                {location.map((item) => (
                   <option
                     key={item.id}
                     value={item.id}
