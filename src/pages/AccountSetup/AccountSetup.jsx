@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { useForm } from "react-hook-form";
-import { MidNav } from "../../components";
+import { LoginNav } from "../../components";
 import { bgLogin, woman, male } from "../../assets";
 import "./AccountSetup.css";
 import { IoMdMale } from "react-icons/io";
@@ -19,7 +19,7 @@ function AccountSetup() {
 
   return (
     <div className="flex relative m-auto ">
-      <MidNav className="lg:hidden block" />
+      <LoginNav className="lg:hidden block" />
       <div className="background w-2/5 hidden lg:block ">
         <img className=" h-full" src={bgLogin} alt="Login" />
       </div>

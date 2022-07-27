@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import axios from 'axios'
 import { bgLogin } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
-import { MidNav } from "../components";
+import { LoginNav } from "../components";
 import { useForm } from "react-hook-form";
 // import { country } from "./data";
 import { useDispatch, useSelector } from "react-redux";
@@ -88,7 +88,7 @@ const Register = () => {
   return (
     <div>
       <div className="flex">
-        <MidNav className="lg:hidden block" />
+        <LoginNav className="lg:hidden block" />
         <div className="">
           <img
             src={bgLogin}

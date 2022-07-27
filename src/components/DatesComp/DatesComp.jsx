@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RequestDate from './RequestDate'
 import Apply from './Apply'
 
+
 function DatesComp(props) {
 
-
+  useEffect(() => {
+    document.title = "Dates | Kiekky";
+  }, []);
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (tab) => {
@@ -19,7 +22,7 @@ function DatesComp(props) {
 
   return (
     <div>
-      <div className="  mt-5  lg:w-[980px] w-[327px] ">
+      <div className="  mt-5  lg:w-[980px] w-[352px] ">
         <div  className={`${toggleState === 1  ? activeTabs : tabs  } flex h-[3rem]  `}   >
           <div
             onClick={() => toggleTab(1)}

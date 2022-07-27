@@ -13,7 +13,7 @@ function Dates(props) {
                     <Sidebar />
                 </div>
 
-                <div className='lg:w-[980px] w-327px m-auto bg-[#F9FAFA]  '>
+                <div className='lg:w-[980px] w-[352px] m-auto bg-[#F9FAFA]  '>
                     <DatesComp />
 
                 </div>

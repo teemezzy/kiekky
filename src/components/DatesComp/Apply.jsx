@@ -13,7 +13,7 @@ function Apply() {
 
   return (
     <div className="scale-width ">
-      <div className="  pt-[40px]  lg:w-[980px] w-[327px] m-auto bg-white rounded-lg ">
+      <div className="  pt-[40px]  lg:w-[980px] w-[352px] m-auto bg-white rounded-lg ">
         <div className="lg:w-[912px] gap-[24px]  grid lg:grid-cols-3 lg:gap-[30px]  h m-auto  ">
           {feed
             ? feed.map((feed, idx) => (

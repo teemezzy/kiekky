@@ -34,11 +34,11 @@ function RequestDatesComp() {
 
         <div className=" notify flex flex-col items-center justify-center  lg:w-[779px] w-[327px] m-auto lg:h-[1193px]  bg-white rounded-md">
 
-          <div className="inner_ lg:w-[559px] w-[327px] m-auto ">
-            <p className="font-semibold">Date Request</p>
+          <div className="inner_ lg:w-[559px] w-[352px] m-auto ">
+            <p className="font-semibold">Date Request  </p>
             <p className=" text-[#666666] text-sm mt-[8px] ">Kindly provide the required details to set up your account</p>
             <p className=" text-[] mt-[35px] ">1. What kind of date do you have in mind?</p>
-            <div className="lg:w-[520px] w-[327px] m-auto">
+            <div className="lg:w-[520px] w-[352px] m-auto">
               <p className=" text-[#828282] text-sm my-[12px] ">You can select one or more options</p>
               <input type="checkbox" className=" border-[3px] border-[#6a52fd] accent-[#6a52fd] hover:accent-[#6a52fd] " id="" name="breakfast" value="" />
               <label htmlFor="Lunch"> Lunch</label> <br />
@@ -53,7 +53,7 @@ function RequestDatesComp() {
             </div>
 
             <p className="mt-[29px]">2. What's your preferred gender?</p>
-            <div className="lg:w-[520px] w-[327px] m-auto">
+            <div className="lg:w-[520px] w-[352px] m-auto">
 
               <p className="mt-[10px] text-sm text-[#666666]">You can select one or more options</p>
 
@@ -67,7 +67,7 @@ function RequestDatesComp() {
             </div>
 
             <p className="mt-[32px] ">3. Date location?</p>
-            <div className="lg:w-[520px] w-[327px] m-auto">
+            <div className="lg:w-[520px] w-[352px] m-auto">
 
               <p className="text-sm text-[#666666] my-[12px] ">Select country and city</p>
 
@@ -81,7 +81,7 @@ function RequestDatesComp() {
 
             <p className="mt-[32px] ">4. What day would you like to meet?</p>
 
-            <div className="lg:w-[520px] w-[327px] m-auto">
+            <div className="lg:w-[520px] w-[352px] m-auto">
               <p className="text-sm text-[#666666] my-[12px] ">Kindly choose your preferred date</p>
               <div className="relative flex ">
                 <Controller
@@ -104,7 +104,7 @@ function RequestDatesComp() {
             </div>
 
             <p className="mt-[32px] ">5. When should your date begin?</p>
-            <div className="lg:w-[520px] w-[327px] m-auto">
+            <div className="lg:w-[520px] w-[352px] m-auto">
               <p className="text-sm text-[#666666] my-[12px] ">Kindly choose your preferred time</p>
               <div className="relative flex ">
 
@@ -116,7 +116,7 @@ function RequestDatesComp() {
               </div>
             </div>
 
-            <div className="lg:w-[520px] w-[327px] m-auto">
+            <div className="lg:w-[520px] w-[352px] m-auto">
 
               <input type='submit' className=" mb mt-[50px] text-[14px] lg:w-[520px] w-[327px] h-[54px] bg-[#6a52fd] rounded-lg text-white" />
             </div>
