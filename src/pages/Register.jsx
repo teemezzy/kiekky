@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { bgLogin } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginNav } from "../components";
@@ -10,8 +10,17 @@ import { toast } from "react-toastify";
 import { BiArrowBack } from "react-icons/bi";
 import Spinner from "../container/Spinner";
 
+
 const Register = () => {
   const [loading, setLoading] = useState(false);
+  const [stateID, setStateID] = useState(null);
+
+    const conTT = useRef()
+    console.log("new");
+  // this si for the form :
+
+
+  
   // Handle Form Event
   const {
     register,
@@ -26,6 +35,7 @@ const Register = () => {
     if (data.password !== data.confirmpassword) {
       toast.error("Password mismatch");
     } else {
+    
       const userdata = {
         full_name: data.full_name,
         email: data.email,
@@ -33,6 +43,7 @@ const Register = () => {
         phone: data.phone,
         password: data.password,
         city_id: data.city,
+        state_id: data.state,
         country_id: data.country,
       };
       dispatch(regUser(userdata));
@@ -45,7 +56,7 @@ const Register = () => {
   );
   console.log(user, isError, isSuccess, isLoading, message);
 
-  const {location} = useSelector(
+  const {location, states_data, city_data} = useSelector(
     (state) => state.location
   );
   console.log (location)
@@ -59,7 +70,7 @@ const Register = () => {
       navigate("/otp");
     }
     if (user) {
-      navigate("/home");
+      navigate("/feeds");
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, dispatch, navigate]);
@@ -70,20 +81,21 @@ const Register = () => {
   }, []);
 
   // GET City and Country
-  useEffect((data) => {
+  useEffect((id) => {
     if (isError) {
       toast.error(message);
     }
     dispatch(country());
+    
+    if (isError) {
+      toast.error(message);
+    }
+    dispatch(states(id));
 
     if (isError) {
       toast.error(message);
     }
-    dispatch(city());
-    if (isError) {
-      toast.error(message);
-    }
-    dispatch(states());
+    dispatch(city(id));
 
     return () => {
       dispatch(resett());
@@ -232,6 +244,7 @@ const Register = () => {
 
                 {location.map((item) => (
                   <option
+                  // ref={conTT}
                     key={item.id}
                     value={item.id}
                     className={`bg-[#F6F4FF] py-2 px-4 ${
@@ -240,6 +253,8 @@ const Register = () => {
                     }`}
                   >
                     {item.name}
+                  
+
                   </option>
                 ))}
               </select>
