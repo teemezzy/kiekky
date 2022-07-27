@@ -157,7 +157,7 @@ const KYC = () => {
               defaultValue={"default"}
               name="document_type"
               id="document_type"
-              className="rounded-lg outline-none bg-[#F6F4FF] py-[10px] px-5 w-full text-[#999999] "
+              className="rounded-lg outline-none bg-[#F6F4FF] py-[14px] px-5 w-full text-[#999999] "
             >
               <option
                 value={"default"}

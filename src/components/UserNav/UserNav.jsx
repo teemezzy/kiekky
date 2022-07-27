@@ -1,5 +1,5 @@
 // import React from 'react';
-import {BsBell} from  "react-icons/bs";
+import { BsBell } from "react-icons/bs";
 
 
 
@@ -23,16 +23,14 @@ const UserNav = () => {
               </NavLink>
             </div>
             <div className="flex relative justify-between space-x-6 items-center">
-           
-      <input className="bg-[#F6F4FF] p-2 block rounded-md focus:outline-none w-full pl-5 sm:text-sm focus:border-[gray]" type="text" name="" placeholder="search..." />
-      <div className="absolute h-[100%] flex items-center flex-end pl-[9rem] ">
-            </div>
 
-            <NavLink to='/notifications '  className={`${
-                window.location.pathname === '/notifications' ? " active1 " : null
-              }  `}>
-            <p className='hover:text-[#6a52fd] bell'><BsBell color="gray"/> </p>
-            </NavLink>
+              <input className="bg-[#F6F4FF] p-2 block rounded-md focus:outline-none w-full pl-5 sm:text-sm focus:border-[gray]" type="text" name="" placeholder="search..." />
+            
+
+              <NavLink to='/notifications ' className={`${window.location.pathname === '/notifications' ? " active1 " : null
+                }  `}>
+                <p className='hover:text-[#6a52fd] bell'><BsBell color="gray" /> </p>
+              </NavLink>
 
             </div>
           </div>

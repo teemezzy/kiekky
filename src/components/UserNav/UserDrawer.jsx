@@ -32,16 +32,18 @@ const UserDrawer = () => {
   };
   return (
     <div className=' border-1  '>
-      <div className="flex flex-col overflow-scroll justify-between pr-3 items-center sm:w-80 w-[15rem] h-[100vh] absolute left-0 right-32 m-auto z-10 py-10 px-8 mr-5 bg-white ">
-
+      <div className="  pr-3  sm:w-80  h-[100vh] absolute left-0 w-[18rem] z-10 py-10  bg-white ">
+      <input className="bg-[#F6F4FF] p-2 block rounded-md focus:outline-none w-[250px] m-auto pl-5 sm:text-sm focus:border-[gray]" type="text" name="" placeholder="search..." />
+ 
         {post
           ? post.map((post, idx) => (
             <div key={idx} className="story-status ">
-              <div className="user_name  mx-10 bg-white flex items-center px-8 py-7 mb-8 w-[17rem] h-[7rem]">
+              <div className="user_name   bg-white flex items-center px-8 pt-7  h-[7rem]">
+               
                 <div className="display-image">
                   <NavLink to='/personal_profile'>
                     <img
-                      className="  w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
+                      className="  min-w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
                       src={post.image}
                       alt="icon"
                     />
@@ -59,7 +61,7 @@ const UserDrawer = () => {
           ))
           : null}
 
-        <div className="side_list mx-10 bg-white w-[17rem] h-[40rem] divide-y divide-opacity-50  divide-gray-300">
+        <div className="side_list bg-white h-[40rem] divide-y divide-opacity-50  divide-gray-300">
           {sideList3.map((side) => (
             <div
               key={side.id}
