@@ -26,13 +26,13 @@ function User() {
   }, []);
 
   return (
-    <div className=" mt-10   lg:w-[984px] w-[327px] h-[246px]  ">
+    <div className=" mt-10   lg:w-[984px] w-[352px] h-[246px]  ">
 
       {feed
         ? feed.map((feed, idx) => (
           <div
             key={idx}
-            className="relative px-[18px] lg:px-[64px] bg-white py-4 lg:w-[984px] w-[327px] "    >
+            className="relative px-[18px] lg:px-[64px] bg-white py-4 lg:w-[984px] w-[352px] "    >
 
             <div className="icons flex justify-between">
               <p className="flex items-center ">

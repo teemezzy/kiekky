@@ -18,7 +18,7 @@ const Status = () => {
         <SimpleBar style={{ width:"800wv" }}>
 
       <div className="status  pt-10 w-[327px] mb-2 lg:w-[968px]">
-        <div className="flex space-x-5 lg:w-[200vw] w-[800vw] ">
+        <div className="flex space-x-5 lg:w-[250vw] w-[800vw] ">
 
           <p className="flex items-center ">
           <BsArrowLeft color="gray" />

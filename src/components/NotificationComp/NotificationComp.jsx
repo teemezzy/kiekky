@@ -12,9 +12,9 @@ function NotificationComp() {
   }, []);
 
   return (
-    <div className=" notify flex flex-col divide-y  divide-slate-200 lg:w-[872px] w-[327px] m-auto ">
+    <div className=" notify flex flex-col mt-6 lg:mt-0 divide-y  divide-slate-200 lg:w-[872px] w-[327px] m-auto ">
 
-      <p className='px-5 pb-5 '>Notification</p>
+      <p className='px-5 pb-5 hidden lg:block '>Notification</p>
       {feed
         ? feed.map((feed, idx) => (
           <div
@@ -25,7 +25,7 @@ function NotificationComp() {
               <div className="feed-image">
                 <img
 
-                  className=" w-[4rem] h-[4rem] p-[2.7px] rounded-[50%]"
+                  className=" max-w-[4rem] h-[4rem] p-[2.7px] rounded-[50%]"
                   src={feed.image}
                   alt="icon"
                 />

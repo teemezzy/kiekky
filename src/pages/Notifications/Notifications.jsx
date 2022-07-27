@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar, UserNav, NotificationComp } from "../../components";
+import { Sidebar, UserNav, NotificationComp, MobileNav } from "../../components";
 import "./Notification.css";
 
 function Notifications(props) {
@@ -13,6 +13,7 @@ function Notifications(props) {
         <div className=" lg:w-[872px] lg:h-[626px] w-[327px] m-auto ">
           <NotificationComp />
         </div>
+        <MobileNav />
       </div>
     </div>
   );
