@@ -15,7 +15,7 @@ const UserNav = () => {
   return (
     <>
       <div className="fixed shadow-sm top-0 right-0 left-0 bg-white z-40 pb-5">
-        <nav className="hidden xl:block xl:mx-32">
+        <nav className="hidden xl:block xl:mr-32 xl:ml-12">
           <div className="flex justify-between pt-10 ">
             <div className=" flex items-center ">
               <NavLink to="/">

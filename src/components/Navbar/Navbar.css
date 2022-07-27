@@ -10,6 +10,11 @@
   -o-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   -ms-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  border-radius: 1rem;
   border-radius: 0.5rem;
   border-width: 2px;
   border-style: solid;
@@ -23,10 +28,15 @@
   -o-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   -ms-border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
   border-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  border-radius: 1rem;
   border-radius: 0.5rem;
   border-width: 2px;
   border-style: solid;
-  border-image-slice: 1;
+  border-image-slice: 30%;
 }
 
 .inner-content1 {
