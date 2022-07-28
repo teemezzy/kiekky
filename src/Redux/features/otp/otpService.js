@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "kiekky.com/api/public/api/user/register/confirm_otp"
+const API_URL = "https://kiekky.com/api/public/api/user/register/confirm_otp"
 
 
 

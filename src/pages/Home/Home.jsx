@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect} from "react";
 import { Status, Post, Feeds, Recommendations, UserNav, MobileNav } from "../../components";
 import { Sidebar } from "../../components";
 import "./Home.css";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "My Feeds | Kiekky"
+  }, []);
+ 
+
+
   return (
     <div className="bg-[#F9FAFA]  max-w-full">
       <UserNav /> 

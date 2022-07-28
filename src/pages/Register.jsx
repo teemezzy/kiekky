@@ -44,11 +44,10 @@ const Register = () => {
         username: data.username,
         phone: data.phone,
         password: data.password,
-        country_id: data.country.id,
-        city_id: data.city.id,
-        state_id: data.state.id,
+        country_id: data.country,
+        city_id: data.city,
+        state_id: data.state,
       };
-      console.log(userdata)
       dispatch(regUser(userdata));
     }
   };
@@ -84,9 +83,9 @@ let SelectedState;
     if (isSuccess) {
       navigate("/otp");
     }
-    if (user || otp) {
-      navigate("/feeds");
-    }
+    // if (user ) {
+    //   navigate("/feeds");
+    // }
     dispatch(reset());
   }, [user, otp, isError, isSuccess, message, dispatch, navigate]);
 
@@ -248,7 +247,7 @@ let SelectedState;
               </label>
               <select
                 {...register("country", { required: true })}
-                defaultValue={"default"}
+                defaultValue={country.id}
                 name="country"
                 onChange={(e) => handleCountry(e)}
                 id="country"

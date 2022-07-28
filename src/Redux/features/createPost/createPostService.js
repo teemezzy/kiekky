@@ -1,24 +1,21 @@
-import axios from 'axios'
+import axios from "axios";
 
-const API_URL ='https://kiekky.com/api/post/create'
+const API_URL = "https://kiekky.com/api/public/api/post/create";
 
 //create new gaol
 const createPost = async (postData, token) => {
-    const config= {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    }
-
-const response = await axios.post(API_URL,postData
-    ,config)
-
-return response.data
-
-}
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }; 
+  const response = await axios.post(API_URL, postData, config);
+  localStorage.setItem("user", JSON.stringify(response.data));
+  return response.data;
+};
 
 const createPostService = {
-    createPost
-}
+  createPost,
+};
 
-export default createPostService 
+export default createPostService;

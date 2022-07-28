@@ -22,7 +22,7 @@ export const country = createAsyncThunk("location/country", () => {
 
 //   Auth for States
 export const states = createAsyncThunk("location/states", (id) => {
-  // console.log(`${id} working`);
+  console.log(`${id} working`);
   return axios
     .get(API_URL + `location/country/${id}`)
     .then((response) => response.data.data);
@@ -30,7 +30,7 @@ export const states = createAsyncThunk("location/states", (id) => {
 
 //   Auth for City
 export const city = createAsyncThunk("location/city", (id) => {
-  console.log(`${id} working`);
+  // console.log(`${id} working`);
   return axios
     .get(API_URL + `location/state/${id}`)
     .then((response) => response.data.data);

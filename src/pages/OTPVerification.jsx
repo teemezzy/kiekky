@@ -19,20 +19,23 @@ const OTPVerification = () => {
   const [otp, setOtp] = useState("");
   const handleChange = (otp) => setOtp(otp);
 
-  const { otp:otpdata, isError, isSuccess, isLoading, message } = useSelector(
-    (state) => state.otptoken
-  );
-  const { user,} = useSelector((state) => state.auth);
+  const {
+    otp: otpdata,
+    isError,
+    isSuccess,
+    isLoading,
+    message,
+  } = useSelector((state) => state.otptoken);
+  const { user } = useSelector((state) => state.auth);
   const { data } = user;
   const { email } = data;
   console.log(email);
 
-
   useEffect(() => {
     if (isError) {
-      toast.error(message)
+      toast.error(message);
     }
-    if ( isSuccess || otpdata ) {
+    if (isSuccess || otpdata) {
       navigate("/user_setup");
     }
   });
@@ -42,20 +45,16 @@ const OTPVerification = () => {
   }
 
   const handleresend = () => {
-
-    console.log(email);
+    // console.log(email);
     dispatch(resendotp(email));
   };
 
-  const onSubmit = (errors) => {
-
-    let userdata = {
+  const onSubmit = (data) => {
+    const userdata = {
       email: email,
       otp: otp,
-
     };
-    console.log(userdata);
-
+    // console.log(userdata);
     dispatch(otptoken(userdata));
   };
 
@@ -76,7 +75,7 @@ const OTPVerification = () => {
           <OtpInput
             value={otp}
             onChange={handleChange}
-            numInputs={6}
+            numInputs={4}
             separator={<span style={{ width: "1rem" }}> </span>}
             isInputNum={true}
             shouldAutoFocus={true}
@@ -99,7 +98,10 @@ const OTPVerification = () => {
         </button>
         <p className="text-center text-gray-400 my-5 text-sm ">
           Didn't receive an OTP?
-          <button className="mx-1 text-[#6A52FD]" onClick={handleresend}> Resend OTP</button>
+          <button className="mx-1 text-[#6A52FD]" onClick={handleresend}>
+            {" "}
+            Resend OTP
+          </button>
         </p>
       </form>
     </div>

@@ -12,7 +12,6 @@ const initialState = {
   isSuccess: false,
   isLoading: false,
   message: "",
-  // otp: otp ? otp : null,
 
 };
 
