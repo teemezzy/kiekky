@@ -14,7 +14,7 @@ function HotPicks() {
   }, []);
 
   return (
-    <div className=' lg:w-[1000px] mb-[20px] lg:mb-[50px] '>
+    <div className=' lg:w-[1000px] w-[354px] mb-[20px] lg:mb-[50px] '>
       <div className="top-text flex justify-between  lg:w-[995px] ">
         <div className="sub space-x-2 flex items-center">
           <p>Hot Picks</p>
@@ -31,7 +31,7 @@ function HotPicks() {
         <NavLink to='/view_all'>  <p className="view text-sm text-[#6a52fd] ">View all <span> {`${'>>'}`}</span></p> </NavLink>
       </div>
 
-      <div className="  lg:w-[1000px] w-[327px]  mt-3 ">
+      <div className="  lg:w-[1000px] w-[354px]  mt-3 ">
         <SimpleBar style={{ width: "800wv", padding: '6px' }} >
 
           <div className=" flex justify-between lg:w-[250vw] w-[700vw] ">

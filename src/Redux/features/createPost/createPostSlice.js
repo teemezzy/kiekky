@@ -1,0 +1,46 @@
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+const initialState = {
+    createPost: [],
+    isError: false,
+    isSuccess: false,
+    isLoading: false,
+    message: ''
+}
+ 
+export const createPost = createAsyncThunk('poats/create', async (postData, thunkAPI) => {
+    try {
+        const token = thunkAPI.getState().auth.user.token
+        // return await createPostService.createPost(postData)
+    } catch (error) {
+        const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+})
+
+export const createPostSlice = createSlice({
+    name: 'createPost',
+    initialState,
+    reducers: {
+    reset: (state) => initialState   
+    
+    },
+    extraReducers: (builder) => {
+        builder
+        .addCase(createPost.pending, (state) => {
+            state.isLoading = true
+        } )
+        .addCase(createPost.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.isSuccess =  true
+        })
+    }
+})
+
+export const {reset} = createPostSlice.actions
+export default createPostSlice.reducer

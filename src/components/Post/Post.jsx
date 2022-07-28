@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux/es/exports";
 import { BiCamera, BiVideoPlus } from "react-icons/bi";
-
+import { useForm } from 'react-hook-form'
+import {createPost} from '../../Redux/features/createPost/createPostSlice'
 import axios from "axios";
 
 function Post() {
   const [display, setDisplay] = useState([]);
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+  const onSubmit = data =>{
+    console.log(data);
+dispatch(createPost())
+    
+  } 
+  const dispatch = useDispatch()
+
 
   const url = "https://fakerapi.it/api/v1/books?_quantity=1";
 
@@ -41,6 +55,14 @@ function Post() {
         </div>
 
       </div>
+
+      <form onSubmit={handleSubmit(onSubmit)} action="" method="post">
+        <input {...register("Post")} />
+        <p>{errors.Post?.message}</p>
+        <input type="submit" value="" />
+      </form>
+
+
     </div >
   );
 }
