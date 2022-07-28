@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { MdClose } from "react-icons/md";
 
 const PayoutModal = ({ visible, onClose }) => {
@@ -8,7 +8,7 @@ const PayoutModal = ({ visible, onClose }) => {
       <div className="lg:w-[699px] w-[384px] rounded-lg lg:h-[575px] h-[480px] mt-[150px] m-auto bg-white flex flex-col justify-center items-center relative">
         <div className="bg-white ">
           <div
-            className="absolute m-auto top-0 right-0 p-10 text-[#BDBDBD]"
+            className="absolute m-auto top-0 right-0 lg:p-10 p-5 text-[#BDBDBD]"
             onClick={onClose}
           >
             <MdClose />

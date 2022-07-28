@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { MidNav } from "../components";
 import { bgLogin } from "../assets";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import OtpInput from "react-otp-input";
 import { useDispatch, useSelector } from "react-redux";
 import { otptoken, resendotp } from "../Redux/features/otp/otpSlice";
@@ -45,7 +45,7 @@ const OTPVerification = () => {
     console.log(email);
     dispatch(resendotp(email));
   };
-  // console.log(user, isError);
+
   const onSubmit = (errors) => {
 
     let userdata = {

@@ -15,7 +15,7 @@ const AccountModal = ({ visible, onClose }) => {
       <div className="lg:w-[699px] w-[384px] lg:h-[575px] h-[550px] mt-[150px] m-auto bg-white flex flex-col justify-center items-center rounded-lg relative">
         <div className="bg-white ">
           <div
-            className="absolute m-auto top-0 right-0 p-10 text-[#BDBDBD]"
+            className="absolute m-auto top-0 right-0 lg:p-10 p-5 text-[#BDBDBD]"
             onClick={onClose}
           >
             <MdClose />

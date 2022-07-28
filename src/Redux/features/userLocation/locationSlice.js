@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-  location: [],
+  country: [],
   isError: false,
   isSuccess: false,
   message: "",
@@ -64,34 +64,34 @@ export const locationSlice = createSlice({
       })
 
       //   States reducer
-      .addCase(states.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(states.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.location = action.payload;
-      })
-      .addCase(states.rejected, (state, action) => {
-        state.isSuccess = false;
-        state.isError = true;
-        state.message = action.payload;
-      })
+      // .addCase(states.pending, (state) => {
+      //   state.isLoading = true;
+      // })
+      // .addCase(states.fulfilled, (state, action) => {
+      //   state.isLoading = false;
+      //   state.isSuccess = true;
+      //   state.location = action.payload;
+      // })
+      // .addCase(states.rejected, (state, action) => {
+      //   state.isSuccess = false;
+      //   state.isError = true;
+      //   state.message = action.payload;
+      // })
 
       // City reducer
-      .addCase(city.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(city.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.location = action.payload;
-      })
-      .addCase(city.rejected, (state, action) => {
-        state.isSuccess = false;
-        state.isError = true;
-        state.message = action.payload;
-      });
+      // .addCase(city.pending, (state) => {
+      //   state.isLoading = true;
+      // })
+      // .addCase(city.fulfilled, (state, action) => {
+      //   state.isLoading = false;
+      //   state.isSuccess = true;
+      //   state.location = action.payload;
+      // })
+      // .addCase(city.rejected, (state, action) => {
+      //   state.isSuccess = false;
+      //   state.isError = true;
+      //   state.message = action.payload;
+      // });
   },
 });
 
