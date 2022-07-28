@@ -10,7 +10,6 @@ import {
   country,
   city,
   states,
-  resett,
 } from "../Redux/features/userLocation/locationSlice";
 import { toast } from "react-toastify";
 import { BiArrowBack } from "react-icons/bi";
@@ -45,10 +44,11 @@ const Register = () => {
         username: data.username,
         phone: data.phone,
         password: data.password,
-        city_id: data.city,
-        state_id: data.state,
-        country_id: data.country,
+        country_id: data.country.id,
+        city_id: data.city.id,
+        state_id: data.state.id,
       };
+      console.log(userdata)
       dispatch(regUser(userdata));
     }
   };
@@ -114,16 +114,11 @@ let SelectedState;
     } 
   };
 
-  useEffect(
-    (id) => {
+  useEffect((id) => {
       if (isError) {
         toast.error(message);
       }
-      dispatch(country());
-
-      return () => {
-        dispatch(resett());
-      };
+      dispatch(country(id));
     },
     [isError, message, dispatch]
   );
