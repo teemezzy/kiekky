@@ -5,7 +5,7 @@ import { BsBell, BsFilter } from "react-icons/bs";
 import { verified } from '../../assets'
 
 
-function HotPicks(props) {
+function Members(props) {
   const [story, setStory] = useState([]);
   const url = "https://fakerapi.it/api/v1/persons?_quantity=40";
 
@@ -14,7 +14,7 @@ function HotPicks(props) {
   }, []);
 
   return (
-    <div className=" flex flex-col lg:w-[1000px] w-[327px] m-auto">
+    <div className=" flex flex-col lg:w-[1000px] w-[354px] m-auto">
       <div className="flex justify-between lg:w-[996px] ">
         <div className="flex  space-x-2 items-center">
           <p>Members</p>
@@ -50,17 +50,17 @@ function HotPicks(props) {
         </div>
         
       </div>
-      <div className="  grid grid-cols-2 lg:grid-cols-4 gap-[7px]  w-[331px] lg:gap-[37px]  lg:w-[1001px] m-auto mt-5">
+      <div className="  grid grid-cols-2 lg:grid-cols-4 gap-[7px]  w-[354px] lg:gap-[37px]  lg:w-[1001px] m-auto mt-5">
         {story
           ? story.map((story, idx) => (
             <div key={idx} className=" ">
               <div className=" rounded-xl relative  ">
-                <div className=" absolute  inset-x-0 bottom-0 bg-opacity-70 names w-[160px] h-[29px] lg:w-[219px] lg:h-[43px] bg-[#A8A8A8] rounded-b-md ">
-                  <p className=" pl-3  text-white">{story.firstname}  </p>
+                <div className=" absolute  inset-x-0 bottom-0 bg-opacity-70 names w-[174.5px] h-[36px] lg:w-[219px] lg:h-[43px] bg-[#A8A8A8] rounded-b-md ">
+                  <p className=" flex pt-1 pl-3  text-white">{story.firstname}  </p>
                 </div>
 
                 <img
-                  className="stats w-[160px] h[160px] lg:w-[220px] lg:h-[237px] rounded-md "
+                  className="stats w-[175px] h-[178px] lg:w-[220px] lg:h-[237px] rounded-md "
                   src={story.image}
                   alt="icon"
                 />
@@ -74,4 +74,4 @@ function HotPicks(props) {
   );
 }
 
-export default HotPicks;
+export default Members;

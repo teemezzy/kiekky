@@ -16,7 +16,7 @@ function Community(props) {
         <div className=" hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className=" lg:w-[1000px] m-auto w-[327px] ">
+        <div className=" lg:w-[1000px] m-auto w-[354px] ">
           <Status />
           <HotPicks />
           <Members />
