@@ -25,15 +25,15 @@ const Login = () => {
   const content = "  hidden  cursor-pointer ";
 
   return (
-    <div>
-      <LoginNav className=" lg:hidden block" />
+    <div className='h-[80%]'>
+      <LoginNav/>
 
-      <div className="flex relative m-auto ">
-        <div className="background w-2/5 hidden lg:block ">
-          <img className=" h-full" src={bgLogin} alt="Login" />
+      <div className="flex relative m-auto o ">
+        <div className=" w-2/5  hidden lg:block ">
+          <img className="h-full " src={bgLogin} alt="Login" />
         </div>
 
-        <div className="container w-[352px]  m-auto  lg:w-1/3  mt-[8rem] lg:mt-[10rem] ">
+        <div className=" w-[352px] m-auto object-contain lg:w-1/3 mt-[8rem] lg:mt-[10rem] ">
           <h1 className="welcome mb-5 text-xl text-center ">Welcome Back</h1>
           <div>
             <div className="mx-auto mb-6 ">
@@ -75,7 +75,7 @@ const Login = () => {
       </div>
 
           <p className="text-center my-5 text-sm ">
-            Don't have an account ?
+            Don't have an account?
             <Link to="/register" className="mx-1 text-[#6A52FD]">
               Register
             </Link>

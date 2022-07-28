@@ -115,18 +115,18 @@ const Register = () => {
 
   return (
     <div className="">
-      <div className="flex">
-        <LoginNav className="lg:hidden block" />
-        <div className="z-50 ">
+      <div className="flex ">
+        <LoginNav />
+        <div className="z-50 relative">
           <img
             src={bgLogin}
             alt="bg-hero-signup"
-            className=" bg-center w-[684px]  lg:block hidden"
+            className=" bg-center w-[684px] sticky lg:block hidden"
           />
         </div>
 
-        <div className="relative rounded-lg lg:w-[464px] w-[362px] m-auto lg:mt-[40px] mt-[140px]">
-          <div className=" mb-14 text-[#BDBDBD] lg:-translate-x-16 text-2xl w-7 h-0">
+        <div className="rounded-lg lg:w-[464px] w-[362px] m-auto lg:mt-[40px] mt-[140px]">
+          <div className=" mb-14 lg:-translate-x-16 text-2xl w-7 h-0">
             <Link to="/">
               <BiArrowBack />
             </Link>
@@ -246,7 +246,6 @@ const Register = () => {
 
                 {location.map((country) => (
                   <option
-                    // ref={conTT}
                     key={country.id}
                     value={country.id}
                     className={`bg-[#F6F4FF] py-2 px-4 ${

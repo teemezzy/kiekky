@@ -1,34 +1,41 @@
 import React, { useState } from "react";
-import Setsub from "./Setsub";
+import EditPlan from "./EditPlan";
 import { MdOutlineArrowBack } from "react-icons/md";
+import { TiTick } from "react-icons/ti";
 
 const SetSubscription = () => {
-  const [work, setWork] = useState(false);
+  const [sub, setSub] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
-  const textcli = () => {
-    if (work === false) {
-      setWork(true);
+  const openModalHandler = () => setOpenModal(true);
+  const closeModalHandler = () => setOpenModal(false);
+
+  const upgradeHandler = () => {
+    if (sub === false) {
+      setSub(true);
     } else {
-      setWork(false);
+      setSub(false);
     }
+    window.scrollTo(0, 0)
   };
 
-  const tt = () => {
-    if (work === true) {
-      setWork(false)
-    }
-  }
+  const onClick = () => {
+    if (sub === true) {
+      setSub(false);
+     
+    } 
+    window.scrollTo(0, 0)
+  };
 
-  
   return (
     <>
-      {!work && (
-        <div className="lg:w-[984px] w-[347px] m-auto lg:h-[684px] h-[800px] bg-white">
+      {!sub && (
+        <div className="lg:w-[984px] w-[347px] m-auto lg:h-[684px] h-[900px] bg-white">
           <div className="lg:w-[903px] w-[300px] m-auto">
             <h2 className="text-[18px] font-semibold pt-[39px] mb-[12px]">
               Set the price for your subscriptions
             </h2>
-            <p className="text-[#828282]">
+            <p className="text-[#828282] w-[300px] lg:w-[903px]">
               Offer a subscription and your subscribers can view your photos and
               videos for a set price. You can also offer several months as a
               package or a discounted subscription to attract new subscribers or
@@ -38,35 +45,40 @@ const SetSubscription = () => {
             </p>
           </div>
 
-          <div className="bg-[#FFF0EF] inner-content rounded-md px-[35px] pb-[33px] pt-[31px] mt-[45px] lg:w-[903px] w-[300px] m-auto">
-            <h2 className="text-[#EF3D39] mb-[14px]">Upgrade your account</h2>
-            <p className="text-[#828282]">
+          <div className="bg-[#FFF0EF] inner-content rounded-md lg:px-[35px] px-[22px] lg:pb-[33px] lg:pt-[31px] pt-[33px] pb-[31px]  lg:mt-[45px] mt-[30px] lg:w-[903px] w-[300px] mb-[150px] m-auto">
+            <h2 className="text-[#EF3D39] lg:mb-[14px] mb-[16px] text-lg font-semibold">
+              Upgrade your account
+            </h2>
+            <p className="text-[#828282] lg:w-[807px] w-[256px]">
               Please be aware that you can only enable subscriptions if you have
               a verified profile and bank connection. We will check your
               information and send you a confirmation email as soon as this
               process has been completed.
             </p>
             <button
-              onClick={textcli}
-              className="bg-[#EB5757] text-[14px] mt-[24px] text-white py-[8.5px] rounded-md px-[45.5px]"
+              onClick={upgradeHandler}
+              className="bg-[#EB5757] text-[14px] lg:mt-[24px] mt-[39px] text-white py-[8.5px] rounded-md px-[45.5px]"
             >
-              Upgrade {work}
+              Upgrade {sub}
             </button>
           </div>
         </div>
       )}
 
-      {work && (
-        <div className="lg:w-[984px] w-[347px] m-auto lg:h-[684px] pt-[39px] h-[800px] bg-white">
-          <div className="m-auto px-10 text-[#000000] " onClick={tt}>
-            <MdOutlineArrowBack  />
+      {sub && (
+        <div className="lg:w-[984px] w-[347px] m-auto lg:h-[750px] h-[2170px] bg-white">
+          <div
+            className=" lg:px-10 w-5 px-[24px] text-[#000000] pt-[39px] lg:pt-[39px]"
+            onClick={onClick}
+          >
+            <MdOutlineArrowBack />
           </div>
 
           <div className="lg:w-[903px] w-[300px] m-auto">
-            <h2 className="text-[18px] font-semibold pt-[39px] mb-[12px]">
+            <h2 className="text-[18px] font-semibold mt-10 mb-[12px]">
               Set the price for your subscriptions
             </h2>
-            <p className="text-[#828282]">
+            <p className="text-[#828282] ">
               Offer a subscription and your subscribers can view your photos and
               videos for a set price. You can also offer several months as a
               package or a discounted subscription to attract new subscribers or
@@ -74,10 +86,147 @@ const SetSubscription = () => {
               get access to all published content. Important: Subscribers expect
               you to post high quality photos and videos on a regular basis.
             </p>
-            
+
+            <div className=" lg:w-[903px] w-[300px] mt-[51px] ">
+              <div className="mb-[25px]">
+                <h2 className="text-[18px] font-bold">Plans</h2>
+                <p className="text-[#828282] mt-[13px]">
+                  Choose what to offer your subscribers
+                </p>
+              </div>
+
+              <div className="flex lg:flex-row flex-col justify-between items-center lg:h-[340px] h-[1450px] mb-[81px]">
+                <div className="lg:w-[202px] w-[262px] bg-[#F6F4FF] px-[24px] rounded-lg">
+                  <h3 className="pt-[26px] text-[24px] font-bold text-[#6A52FD]">
+                    100 Token
+                  </h3>
+                  <p className="mt-[24px] text-[#828282]">1 Month</p>
+                 
+                    <p className="flex items-center mt-[19px]">
+                      <span className=" mr-[10px] ">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                    <p className="flex items-center mt-[17px]">
+                      <span className=" mr-[10px] ">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                    <p className="flex items-center mt-[17px]">
+                      <span className=" mr-[10px] ">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                  <button
+                  onClick={openModalHandler}
+                    type="button"
+                    className="rounded-xl mt-[35px] mb-[27px] py-[9px] px-[41px] text-white bg-[#6A52FD] lg:w-[153px] w-[201px]"
+                  >
+                    Edit Plan
+                  </button>
+                </div>
+                <div className="lg:w-[202px] w-[262px] bg-[#F6F4FF] px-[24px] rounded-lg">
+                  <h3 className="pt-[26px] text-[24px] font-bold text-[#6A52FD]">
+                    100 Token
+                  </h3>
+                  <p className="mt-[24px] text-[#828282]">3 Month</p>
+                 
+                    <p className="flex items-center mt-[19px]">
+                      <span className=" mr-[10px] ">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                    <p className="flex items-center mt-[17px]">
+                      <span className=" mr-[10px] ">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                    <p className="flex items-center mt-[17px]">
+                      <span className=" mr-[10px] ">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                  <button
+                  onClick={openModalHandler}
+                    type="button"
+                    className="rounded-xl mt-[35px] mb-[27px] py-[9px] px-[41px] text-white bg-[#6A52FD] lg:w-[153px] w-[201px]"
+                  >
+                    Edit Plan
+                  </button>
+                </div>
+                <div className="lg:w-[202px] w-[262px] bg-[#F6F4FF] px-[24px] rounded-lg">
+                  <h3 className="pt-[26px] text-[24px] font-bold text-[#6A52FD]">
+                    100 Token
+                  </h3>
+                  <p className="mt-[24px] text-[#828282]">6 Month</p>
+                 
+                    <p className="flex items-center mt-[19px]">
+                      <span className="mr-[10px]">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                    <p className="flex items-center mt-[17px]">
+                      <span className="mr-[10px]">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                    <p className="flex items-center mt-[17px]">
+                      <span className="mr-[10px]">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                  <button onClick={openModalHandler} type="button" className="rounded-xl mt-[35px] mb-[27px] py-[9px] px-[41px] text-white bg-[#6A52FD] lg:w-[153px] w-[201px]">
+                    Edit Plan
+                  </button>
+                </div>
+                <div className="lg:w-[202px] w-[262px] bg-[#F6F4FF] px-[24px] rounded-lg">
+                  <h3 className="pt-[26px] text-[24px] font-bold text-[#6A52FD]">
+                    100 Token
+                  </h3>
+                  <p className="mt-[24px] text-[#828282]">12 Month</p>
+                 
+                    <p className="flex items-center mt-[19px]">
+                      <span className=" mr-[10px] ">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                    <p className="flex items-center mt-[17px]">
+                      <span className=" mr-[10px] ">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                    <p className="flex items-center mt-[17px]">
+                      <span className=" mr-[10px] ">
+                        <TiTick />
+                      </span>
+                      View All Post
+                    </p>
+                  <button onClick={openModalHandler}
+                    type="button"
+                    className="rounded-xl mt-[35px] mb-[27px] py-[9px] px-[41px] text-white bg-[#6A52FD] lg:w-[153px] w-[201px] "
+                  >
+                    Edit Plan
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       )}
+
+<EditPlan onClose={closeModalHandler} visible={openModal} />
     </>
   );
 };
