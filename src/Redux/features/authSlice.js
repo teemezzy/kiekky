@@ -1,11 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import OtpInput from "react-otptoken-input";
-
 import authService from "./authService";
 
 // Get user from localstorage
 const user = JSON.parse(localStorage.getItem("user"));
-const otp = JSON.parse(localStorage.getItem("otp"));
+// const otp = JSON.parse(localStorage.getItem("otp"));
 
 
 const initialState = {
@@ -106,6 +104,8 @@ export const authSlice = createSlice({
 
       .addCase(logout.fulfilled, (state) => {
         state.user = null;
+        state.isLoading = true;
+        state.isSuccess = true;
       })
 
       

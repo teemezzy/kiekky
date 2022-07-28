@@ -5,6 +5,7 @@ import { LoginNav } from "../components";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { regUser, reset } from "../Redux/features/authSlice";
+import { otp } from "../Redux/features/otp/otpSlice"
 import {
   country,
   city,
@@ -17,11 +18,9 @@ import Spinner from "../container/Spinner";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
-  const [stateID, setStateID] = useState(null);
 
-  const conTT = useRef();
-  console.log("new");
-  // this si for the form :
+
+
 
   // Handle Form Event
   const {
@@ -56,10 +55,15 @@ const Register = () => {
   );
   console.log(user, isError, isSuccess, isLoading, message);
 
-  const { location, states_data, city_data } = useSelector(
+  const { location } = useSelector(
     (state) => state.location
   );
+
   console.log(location);
+
+  const { otp } = useSelector(
+    (state) => state.otptoken
+  );
 
   // Navigate to OTP page || If user exist navigate to home
   useEffect(() => {
@@ -69,11 +73,11 @@ const Register = () => {
     if (isSuccess) {
       navigate("/otp");
     }
-    if (user) {
+    if (user || otp) {
       navigate("/feeds");
     }
     dispatch(reset());
-  }, [user, isError, isSuccess, message, dispatch, navigate]);
+  }, [user, otp, isError, isSuccess, message, dispatch, navigate]);
 
   // Set Page Title
   useEffect(() => {
