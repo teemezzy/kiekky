@@ -12,7 +12,7 @@ function RequestDates(props) {
                 <div className="  hidden  lg:block sidebar_prt pt-8">
                     <Sidebar />
                 </div>
-                <div className='lg:w-[980px] w-[327px] m-auto '>
+                <div className='lg:w-[980px] w-[353px] m-auto '>
                     <RequestDatesComp />
                     
                 </div>
