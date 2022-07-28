@@ -72,7 +72,7 @@ function RequestDatesComp() {
               <p className="text-sm text-[#666666] my-[12px] ">Select country and city</p>
 
               <div className="relative flex  ">
-                <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] lg:w-[463px] w-[276px] h-[50px] lg:h-[70px] " placeholder="Pick location" type="text" name="gender" id="test" defaultValue="Lagos,Nigeria" />
+                <input className="  border-[1px] px-[19px] rounded-l-lg border-[#6a52fd] outline-none bg-[#F6F4FF] lg:w-[463px] w-[250px] h-[50px] lg:h-[70px] " placeholder="Pick location" type="text" name="gender" id="test" defaultValue="Lagos,Nigeria" />
                 <button>
                   <img className="inline-block lg:w-[74px] lg:h-[70px] h-[50px] w-[51px] " src={dropdown} alt="btn-submit" />
                 </button>
@@ -111,7 +111,7 @@ function RequestDatesComp() {
               <div className="relative flex ">
 
                 <input className="  border-[1px] px-[19px] rounded-l-lg outline-none border-[#6a52fd] bg-[#F6F4FF] lg:w-[463px]
-               w-[276px] lg:h-[70px] " placeholder="Choose time" type="text" name="gender" id="test" defaultValue='7pm' />
+               w-[250px] lg:h-[70px] " placeholder="Choose time" type="text" name="gender" id="test" defaultValue='7pm' />
                 <button>
                   <img className="inline-block lg:w-[74px] lg:h-[70px] h-[50px] w-[51px] " src={clock} alt="btn-submit" />
                 </button>
