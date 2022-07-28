@@ -2,13 +2,10 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-  country: [],
+  location: [],
   isError: false,
   isSuccess: false,
   message: "",
-  states_data : null,
-  city_data : null,
-
 };
 
 const API_URL = "https://kiekky.com/api/public/api/";
@@ -23,7 +20,7 @@ export const country = createAsyncThunk("location/country", () => {
 //   Auth for States
 export const states = createAsyncThunk("location/states", (id) => {
   return axios
-    .get(API_URL + `location/country/${id}`)
+    .get(API_URL + `location/country/${id}"`)
     .then((response) => response.data.data);
 });
 
@@ -64,34 +61,34 @@ export const locationSlice = createSlice({
       })
 
       //   States reducer
-      // .addCase(states.pending, (state) => {
-      //   state.isLoading = true;
-      // })
-      // .addCase(states.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.isSuccess = true;
-      //   state.location = action.payload;
-      // })
-      // .addCase(states.rejected, (state, action) => {
-      //   state.isSuccess = false;
-      //   state.isError = true;
-      //   state.message = action.payload;
-      // })
+      .addCase(states.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(states.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.location = action.payload;
+      })
+      .addCase(states.rejected, (state, action) => {
+        state.isSuccess = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
 
       // City reducer
-      // .addCase(city.pending, (state) => {
-      //   state.isLoading = true;
-      // })
-      // .addCase(city.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.isSuccess = true;
-      //   state.location = action.payload;
-      // })
-      // .addCase(city.rejected, (state, action) => {
-      //   state.isSuccess = false;
-      //   state.isError = true;
-      //   state.message = action.payload;
-      // });
+      .addCase(city.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(city.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.location = action.payload;
+      })
+      .addCase(city.rejected, (state, action) => {
+        state.isSuccess = false;
+        state.isError = true;
+        state.message = action.payload;
+      });
   },
 });
 

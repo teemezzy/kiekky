@@ -55,11 +55,11 @@ const Register = () => {
   );
   console.log(user, isError, isSuccess, isLoading, message);
 
-  const { country } = useSelector(
+  const { location } = useSelector(
     (state) => state.location
   );
 
-  console.log(country);
+  console.log(location);
 
   const { otp } = useSelector(
     (state) => state.otptoken
@@ -90,7 +90,7 @@ const Register = () => {
       if (isError) {
         toast.error(message);
       }
-      // dispatch(location());
+      dispatch(country());
 
       if (isError) {
         toast.error(message);
@@ -106,7 +106,7 @@ const Register = () => {
         dispatch(resett());
       };
     },
-    [ isError, message, dispatch]
+    [isError, message, dispatch]
   );
 
   if (isLoading) {
@@ -248,7 +248,7 @@ const Register = () => {
                   Select Country
                 </option>
 
-                {country.map((country) => (
+                {location.map((country) => (
                   <option
                     key={country.id}
                     value={country.id}
@@ -290,7 +290,7 @@ const Register = () => {
                   Select State
                 </option>
 
-                {country.map((state) => (
+                {location.map((state) => (
                   <option
                     key={state.id}
                     value={state.id}
@@ -333,7 +333,7 @@ const Register = () => {
                   Select City
                 </option>
 
-                {country.map((city) => (
+                {location.map((city) => (
                   <option
                     key={city.id}
                     value={city.id}
