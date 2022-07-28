@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { bgLogin } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginNav } from "../components";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { regUser, reset } from "../Redux/features/authSlice";
-import { otp } from "../Redux/features/otp/otpSlice"
+import { otp } from "../Redux/features/otp/otpSlice";
 import {
   country,
   city,
@@ -19,8 +19,11 @@ import Spinner from "../container/Spinner";
 const Register = () => {
   const [loading, setLoading] = useState(false);
 
+  // const [ids, setIds] = useState(null);
 
-
+  // const [selectedState, setSelectedState] = useState([]);
+  // const [selectedCity, setSelectedCity] = useState();
+  // const [otpLoading, setOtpLoading] = useState(false);
 
   // Handle Form Event
   const {
@@ -53,17 +56,25 @@ const Register = () => {
   const { user, isError, isSuccess, isLoading, message } = useSelector(
     (state) => state.auth
   );
-  console.log(user, isError, isSuccess, isLoading, message);
 
-  const { location } = useSelector(
-    (state) => state.location
-  );
+  const { location, isStateId, citydata } = useSelector((state) => state.location);
+  console.log(citydata);
 
-  console.log(location);
 
-  const { otp } = useSelector(
-    (state) => state.otptoken
-  );
+let SelectedState;
+  // console.log(citydata.data);
+  let selectedCity;
+  // console.log(isStateId)
+  if(isStateId){  
+    console.log(isStateId.states)
+     SelectedState = isStateId.states  }
+
+     if(citydata){  
+      console.log(citydata.cities)
+       selectedCity = citydata.cities  
+    }
+
+  const { otp } = useSelector((state) => state.otptoken);
 
   // Navigate to OTP page || If user exist navigate to home
   useEffect(() => {
@@ -85,22 +96,30 @@ const Register = () => {
   }, []);
 
   // GET City and Country
+  const handleCountry = (e) => {
+    const id = e.target.value;
+    console.log(id);
+    if (id) {
+      // console.log(`${id}`);
+      dispatch(states(id));
+    }
+  };
+
+  const handleStates = (e) => {
+    const id = e.target.value;
+    // console.log(id);
+    if (id) {
+      console.log(`${id}cities`);
+      dispatch(city(id));
+    } 
+  };
+
   useEffect(
     (id) => {
       if (isError) {
         toast.error(message);
       }
       dispatch(country());
-
-      if (isError) {
-        toast.error(message);
-      }
-      dispatch(states(id));
-
-      if (isError) {
-        toast.error(message);
-      }
-      dispatch(city(id));
 
       return () => {
         dispatch(resett());
@@ -116,6 +135,8 @@ const Register = () => {
   const handleClick = () => {
     setLoading(true);
   };
+
+  
 
   return (
     <div className="">
@@ -234,6 +255,7 @@ const Register = () => {
                 {...register("country", { required: true })}
                 defaultValue={"default"}
                 name="country"
+                onChange={(e) => handleCountry(e)}
                 id="country"
                 className={` bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 w-full ${
                   errors.country &&
@@ -270,10 +292,11 @@ const Register = () => {
               <label htmlFor="" className="text-[15px]">
                 State:
               </label>
-
+                
               <select
                 {...register("state")}
                 defaultValue={"default"}
+                onChange= {(e)=> handleStates(e)}
                 name="state"
                 id="state"
                 className=" bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 w-full"
@@ -290,7 +313,7 @@ const Register = () => {
                   Select State
                 </option>
 
-                {location.map((state) => (
+                {isStateId && SelectedState.map((state) => (
                   <option
                     key={state.id}
                     value={state.id}
@@ -317,6 +340,7 @@ const Register = () => {
               <select
                 {...register("city")}
                 defaultValue={"default"}
+                // onChange= {(e)=> handleCity(e)}
                 name="city"
                 id="city"
                 className=" bg-[#F6F4FF] h-[46px] rounded-lg px-4 w-full"
@@ -333,7 +357,7 @@ const Register = () => {
                   Select City
                 </option>
 
-                {location.map((city) => (
+                {citydata && selectedCity.map((city) => (
                   <option
                     key={city.id}
                     value={city.id}

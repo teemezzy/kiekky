@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import OtpInput from "react-otp-input";
 import { useDispatch, useSelector } from "react-redux";
 import { otptoken, resendotp } from "../Redux/features/otp/otpSlice";
+import Spinner from "../container/Spinner";
+import { toast } from "react-toastify";
 
 const OTPVerification = () => {
   useEffect(() => {
@@ -20,25 +22,24 @@ const OTPVerification = () => {
   const { otp:otpdata, isError, isSuccess, isLoading, message } = useSelector(
     (state) => state.otptoken
   );
-
-
   const { user,} = useSelector((state) => state.auth);
-
-
   const { data } = user;
   const { email } = data;
-
   console.log(email);
 
 
   useEffect(() => {
     if (isError) {
-      // toast.error(message)
+      toast.error(message)
     }
-    if (otpdata) {
+    if ( isSuccess || otpdata ) {
       navigate("/user_setup");
     }
   });
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   const handleresend = () => {
 

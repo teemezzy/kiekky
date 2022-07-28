@@ -6,6 +6,9 @@ const initialState = {
   isError: false,
   isSuccess: false,
   message: "",
+  isStateId:null,
+  citydata:null
+
 };
 
 const API_URL = "https://kiekky.com/api/public/api/";
@@ -19,15 +22,17 @@ export const country = createAsyncThunk("location/country", () => {
 
 //   Auth for States
 export const states = createAsyncThunk("location/states", (id) => {
+  // console.log(`${id} working`);
   return axios
-    .get(API_URL + `location/country/${id}"`)
+    .get(API_URL + `location/country/${id}`)
     .then((response) => response.data.data);
 });
 
 //   Auth for City
 export const city = createAsyncThunk("location/city", (id) => {
+  console.log(`${id} working`);
   return axios
-    .get(API_URL + `location/state/${id}"`)
+    .get(API_URL + `location/state/${id}`)
     .then((response) => response.data.data);
 });
 
@@ -40,6 +45,10 @@ export const locationSlice = createSlice({
       state.isError = false;
       state.isSuccess = false;
       state.message = "";
+      state.isStateId = null
+      state.citydata = null
+
+
     },
   },
 
@@ -67,12 +76,13 @@ export const locationSlice = createSlice({
       .addCase(states.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.location = action.payload;
+ 
+        state.isStateId = action.payload;
       })
       .addCase(states.rejected, (state, action) => {
         state.isSuccess = false;
         state.isError = true;
-        state.message = action.payload;
+        state.message = [action.payload];
       })
 
       // City reducer
@@ -82,7 +92,7 @@ export const locationSlice = createSlice({
       .addCase(city.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.location = action.payload;
+        state.citydata = action.payload;
       })
       .addCase(city.rejected, (state, action) => {
         state.isSuccess = false;
