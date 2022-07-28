@@ -59,17 +59,17 @@ const OTPVerification = () => {
   };
 
   return (
-    <div className="flex relative m-auto ">
+    <div className="flex relative w-[352px] m-auto ">
       <MidNav className="lg:hidden block" />
 
-      <div className="background w-2/5 hidden lg:block ">
+      <div className="background  lg:w-2/5 hidden lg:block ">
         <img className=" h-full" src={bgLogin} alt="Login" />
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className=" mx-auto">
         <h1 className=" font-bold text-5xl mt-32">Get Started </h1>
-        <p className="mb-10">
-          Please enter the verification code sent to s************@gmail.com
+        <p className="mb-10 text-[#666666] ">
+          Please enter the verification code sent to {user.data.email}.
         </p>
         <div className="Otp_input flex justify-center items-center">
           <OtpInput

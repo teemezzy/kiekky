@@ -38,7 +38,9 @@ function AccountSetup() {
           </p>
 
           <div className="gender_select flex flex-col mb-8 ">
-            <input type="radio" name="gender" id="test2" value="I am a man"  {...register("man")} />
+            <input type="radio" name="gender" id="test2" value="I am a man" 
+            {...register('gender', { required: false })}
+            />
             <label
               className=" flex flex-row items-center justify-between mb-4 outline-none text-[gray] rounded-md pl-5 bg-[#F6F4FF] "
               htmlFor="test2"
@@ -49,7 +51,9 @@ function AccountSetup() {
               </span>
             </label>
 
-            <input type="radio" name="gender" id="test" value="I am a woman"  {...register("woman")} />
+            <input type="radio" name="gender" id="test" value="I am a woman" 
+             {...register('gender', { required: false })}
+             />
             <label
               className="flex flex-row items-center justify-between outline-none mb-5 text-[gray] rounded-md  pl-5 bg-[#F6F4FF] "
               htmlFor="test"
