@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { LoginNav } from "../../components";
-import { bgLogin, woman, male } from "../../assets";
+import { bgLogin } from "../../assets";
 import "./AccountSetup.css";
 import { IoMdMale } from "react-icons/io";
 import { IoMdFemale } from "react-icons/io";
@@ -23,7 +23,7 @@ function AccountSetup() {
       <div className="background w-2/5 hidden lg:block ">
         <img className=" h-full" src={bgLogin} alt="Login" />
       </div>
-      <div className="container w-4/5 md:w-1/2 m-auto lg:mx-auto  lg:w-1/3 border-1 box-border mt-[4rem] lg:mt-[10rem] ">
+      <div className="container w-4/5 md:w-1/2 m-auto lg:mx-auto  lg:w-1/3 border-1 box-border mt-[6rem] lg:mt-[10rem]">
         <h1 className="welcome text-3xl pt-[3rem] mb-2 font-bold ">
           Account Set Up
         </h1>
@@ -55,7 +55,7 @@ function AccountSetup() {
               htmlFor="test"
             >
               I am a woman
-              <span className="  px-[1.3rem] py-[0.6rem] ">
+              <span className="px-[1.3rem] py-[0.6rem]">
                 <IoMdFemale className="w-full h-[1.7rem]" />
               </span>
             </label>
