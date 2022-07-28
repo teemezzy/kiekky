@@ -1,23 +1,24 @@
 import axios from 'axios'
 
-const API_URL =''
+const API_URL ='https://kiekky.com/api/post/create'
 
 //create new gaol
-const createPostServ = async (postData, token) => {
+const createPost = async (postData, token) => {
     const config= {
         headers: {
             Authorization: `Bearer ${token}`
         }
     }
 
-const response = await axios.post(API_URL,postData,config)
+const response = await axios.post(API_URL,postData
+    ,config)
 
 return response.data
 
 }
 
 const createPostService = {
-    createPostServ
+    createPost
 }
 
 export default createPostService 

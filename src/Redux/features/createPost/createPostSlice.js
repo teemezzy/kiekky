@@ -1,17 +1,20 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import createPostService from "./createPostService";
 
 const initialState = {
-    createPost: [],
+    posts: [],
     isError: false,
     isSuccess: false,
     isLoading: false,
     message: ''
 }
- 
-export const createPost = createAsyncThunk('poats/create', async (postData, thunkAPI) => {
+ //create new goal
+export const createPost = createAsyncThunk('posts/create', async (postData, thunkAPI) => {
     try {
         const token = thunkAPI.getState().auth.user.token
-        // return await createPostService.createPost(postData)
+        return await createPostService.createPost(postData,
+             token
+             )
     } catch (error) {
         const message =
         (error.response &&
@@ -24,7 +27,7 @@ export const createPost = createAsyncThunk('poats/create', async (postData, thun
 })
 
 export const createPostSlice = createSlice({
-    name: 'createPost',
+    name: 'posts',
     initialState,
     reducers: {
     reset: (state) => initialState   
@@ -38,6 +41,12 @@ export const createPostSlice = createSlice({
         .addCase(createPost.fulfilled, (state, action) => {
             state.isLoading = false
             state.isSuccess =  true
+            state.posts.push(action.payload)
+        })
+        .addCase(createPost.rejected, (state, action) => {
+            state.isLoading = false
+            state.isError =  true
+            state.message = (action.payload)
         })
     }
 })

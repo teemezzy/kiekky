@@ -14,7 +14,7 @@ function Post() {
   } = useForm();
   const onSubmit = data =>{
     console.log(data);
-dispatch(createPost())
+dispatch(createPost(data))
     
   } 
   const dispatch = useDispatch()
@@ -56,11 +56,11 @@ dispatch(createPost())
 
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} action="" method="post">
+      {/* <form onSubmit={handleSubmit(onSubmit)} action="" method="post">
         <input {...register("Post")} />
         <p>{errors.Post?.message}</p>
         <input type="submit" value="" />
-      </form>
+      </form> */}
 
 
     </div >

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Members.css";
-import { BsBell, BsFilter } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
+import { BsBell, BsFilter} from "react-icons/bs";
 import { verified } from '../../assets'
 
 
@@ -14,7 +15,7 @@ function Members(props) {
   }, []);
 
   return (
-    <div className=" flex flex-col lg:w-[1000px] w-[354px] m-auto">
+    <div className=" flex flex-col lg:w-[1000px] w-[366px] m-auto">
       <div className="flex justify-between lg:w-[996px] ">
         <div className="flex  space-x-2 items-center">
           <p>Members</p>
@@ -50,20 +51,20 @@ function Members(props) {
         </div>
         
       </div>
-      <div className="  grid grid-cols-2 lg:grid-cols-4 gap-[7px]  w-[354px] lg:gap-[37px]  lg:w-[1001px] m-auto mt-5">
+      <div className="  grid grid-cols-2 lg:grid-cols-4 gap-[7px]  w-[372px] lg:gap-[37px]  lg:w-[1001px] m-auto mt-5">
         {story
           ? story.map((story, idx) => (
             <div key={idx} className=" ">
               <div className=" rounded-xl relative  ">
-                <div className=" absolute  inset-x-0 bottom-0 bg-opacity-70 names w-[174.5px] h-[36px] lg:w-[219px] lg:h-[43px] bg-[#A8A8A8] rounded-b-md ">
+                <div className=" absolute  inset-x-0 bottom-0 bg-opacity-70 names w-[184px] h-[36px] lg:w-[219px] lg:h-[43px] bg-[#A8A8A8] rounded-b-md ">
                   <p className=" flex pt-1 pl-3  text-white">{story.firstname}  </p>
                 </div>
 
-                <img
-                  className="stats w-[175px] h-[178px] lg:w-[220px] lg:h-[237px] rounded-md "
+                <NavLink to='/user_profile' ><img
+                  className="stats w-[184px] h-[178px] lg:w-[220px] lg:h-[237px] rounded-md "
                   src={story.image}
                   alt="icon"
-                />
+                /> </NavLink> 
               </div>
 
             </div>
