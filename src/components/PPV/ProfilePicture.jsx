@@ -25,9 +25,9 @@ const ProfilePicture = () => {
     axios.get(urlRec).then((response) => setStory(response.data.data));
   }, []);
 
-  
+
   return (
-    <div className="mb-[6rem] w-[352px] m-auto">
+    <div className="mb-[6rem] w-[352px] lg:w-[986px] m-auto">
       <div className="feed-recommendation flex lg:gap-[50px] lg:w-[986px] w-[352px] m-auto">
 
         <div className="  w-[672px] py-5 lg:py-10 videos bg-white rounded-xl ">
