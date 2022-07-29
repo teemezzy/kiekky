@@ -55,7 +55,7 @@ const Register = () => {
   );
 
   const { location, isStateId, citydata } = useSelector((state) => state.location);
-  console.log(citydata);
+  // console.log(citydata);
 
 
 let SelectedState;

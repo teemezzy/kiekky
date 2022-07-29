@@ -15,7 +15,8 @@ export const getUserSetup = createAsyncThunk(
   "usersetup/get",
   async (setup, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().auth.user.token;
+      const token = thunkAPI.getState().auth.user.access_token;
+      console.log(token, "my token joan");
       return await setupService.getUserSetup(setup, token);
     } catch (error) {
       const message =
@@ -49,14 +50,15 @@ export const setupSlice = createSlice({
     .addCase (getUserSetup.fulfilled, (state, action) => {
       state.isLoading = false;
       state.isSuccess = true;
-      state.usersetup = action.payload;
+    //   state.goals
+      state.usersetup.push(action.payload);
     })
     .addCase (getUserSetup.rejected, (state, action) => {
       state.isLoading = false;
-      state.isSuccess = false;
+    //   state.isSuccess = false;
       state.isError = true;
       state.message = action.payload;
-      state.usersetup = null;
+    //   state.usersetup = null;
     })
 },
 })

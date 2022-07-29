@@ -5,7 +5,7 @@ import { bgLogin } from "../../assets";
 import "./AccountSetup.css";
 import { IoMdMale } from "react-icons/io";
 import { IoMdFemale } from "react-icons/io";
-import {getUserSetup} from '../../Redux/features/userSetup/setupSlice'
+import {getUserSetup, reset} from '../../Redux/features/userSetup/setupSlice'
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -29,6 +29,7 @@ function AccountSetup() {
       
     };
     dispatch(getUserSetup(userdata))
+    dispatch(reset())
     console.log(data);
   };
 
@@ -87,9 +88,9 @@ function AccountSetup() {
             <input
               className="opacity-0"
               type="checkbox"
-              name="genderM"
+              name="preference[0]"
               id="test4"
-              value="Male"  {...register("lookingForMale")}
+              value="Male"  {...register("preference[0]")}
             />
             <label
               className=" flex flex-row items-center justify-between mb-4 outline-none text-[gray] rounded-md pl-5  bg-[#F6F4FF] "
@@ -104,9 +105,9 @@ function AccountSetup() {
             <input
               className="opacity-0"
               type="checkbox"
-              name="genderF"
+              name="preference[1]"
               id="test3"
-              value="Female" {...register("lookingForFemale")}
+              value="Female" {...register("preference[1]")}
             />
             <label
               className=" flex items-center flex-row justify-between outline-none mb-5 text-[gray] rounded-md pl-5 bg-[#F6F4FF] "

@@ -7,11 +7,10 @@ import {
   SetSub,
   ProfileVerification,
   Notifications,
-  MobileNav
+  MobileNav,
 } from "../components";
 
-
-const Settings= () => {
+const Settings = () => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (tab) => {
@@ -19,10 +18,9 @@ const Settings= () => {
   };
 
   const activeTabs =
-    "text-[#6A52FD] text-[16px] py-[16.5px] w-[167px] m-auto text-center bg-white cursor-pointer outline-none";
+    "text-[#6A52FD] text-[16px] lg:py-[16.5px] lg:w-[167px] w-[126px] m-auto text-center bg-white cursor-pointer outline-none";
   const tabs =
-    "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
-
+    "text-[#BDBDBD] lg:w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
 
   const activeContent = "";
   const content = "bg-white w-full hidden p-[20px]";
@@ -37,7 +35,6 @@ const Settings= () => {
           </div>
         </div>
         <MobileNav />
-
       </div>
       <div className=" mt-[8.5rem] w-[984px] m-auto ">
         {/* Title For TabMenu */}
@@ -86,6 +83,6 @@ const Settings= () => {
       </div>
     </div>
   );
-}
+};
 
 export default Settings;
