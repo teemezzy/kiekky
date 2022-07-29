@@ -5,7 +5,7 @@ import { bgLogin } from "../../assets";
 import "./AccountSetup.css";
 import { IoMdMale } from "react-icons/io";
 import { IoMdFemale } from "react-icons/io";
-import {usersetup} from '../../Redux/features/userSetup/setupSlice'
+import {getUserSetup} from '../../Redux/features/userSetup/setupSlice'
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -24,14 +24,11 @@ function AccountSetup() {
   const onSubmit = (data, errors) => {
     const userdata = {
       gender: data.gender,
-      preference0: data.Female,
-      preference1: data.Male,
+      preference_0: data.Female,
+      preference_1: data.Male,
       
     };
-    dispatch(usersetup(userdata))
-
-
-
+    dispatch(getUserSetup(userdata))
     console.log(data);
   };
 
@@ -54,15 +51,10 @@ function AccountSetup() {
           <p className="text-sm mb-5 text-[gray]">
             Check one option that reflects your gender
           </p>
-{/* 
-{
-  setup.map(()=>(
 
-  ))} 
-  */}
           <div className="gender_select flex flex-col mb-8 ">
             <input type="radio" name="gender" id="test2" value="Male" 
-            {...register('gender', { required: false })}
+            {...register('gender', { required: true })}
             />
             <label
               className=" flex flex-row items-center justify-between mb-4 outline-none text-[gray] rounded-md pl-5 bg-[#F6F4FF] "
@@ -75,7 +67,7 @@ function AccountSetup() {
             </label>
 
             <input type="radio" name="gender" id="test" value="Female" 
-             {...register('gender', { required: false })}
+             {...register('gender', { required: true })}
              />
             <label
               className="flex flex-row items-center justify-between outline-none mb-5 text-[gray] rounded-md  pl-5 bg-[#F6F4FF] "
