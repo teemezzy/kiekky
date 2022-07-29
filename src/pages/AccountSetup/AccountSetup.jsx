@@ -5,15 +5,33 @@ import { bgLogin } from "../../assets";
 import "./AccountSetup.css";
 import { IoMdMale } from "react-icons/io";
 import { IoMdFemale } from "react-icons/io";
+import {usersetup} from '../../Redux/features/userSetup/setupSlice'
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import Spinner from "../../container/Spinner";
 
 
 function AccountSetup() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "Account SetUp | Kiekky";
   }, []);
 
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data, errors) => {
+    const userdata = {
+      gender: data.gender,
+      preference0: data.Female,
+      preference1: data.Male,
+      
+    };
+    dispatch(usersetup(userdata))
+
+
+
     console.log(data);
   };
 
@@ -36,9 +54,14 @@ function AccountSetup() {
           <p className="text-sm mb-5 text-[gray]">
             Check one option that reflects your gender
           </p>
+{/* 
+{
+  setup.map(()=>(
 
+  ))} 
+  */}
           <div className="gender_select flex flex-col mb-8 ">
-            <input type="radio" name="gender" id="test2" value="I am a man" 
+            <input type="radio" name="gender" id="test2" value="Male" 
             {...register('gender', { required: false })}
             />
             <label
@@ -51,7 +74,7 @@ function AccountSetup() {
               </span>
             </label>
 
-            <input type="radio" name="gender" id="test" value="I am a woman" 
+            <input type="radio" name="gender" id="test" value="Female" 
              {...register('gender', { required: false })}
              />
             <label
@@ -74,7 +97,7 @@ function AccountSetup() {
               type="checkbox"
               name="genderM"
               id="test4"
-              value="I am a man"  {...register("lookingForMale")}
+              value="Male"  {...register("lookingForMale")}
             />
             <label
               className=" flex flex-row items-center justify-between mb-4 outline-none text-[gray] rounded-md pl-5  bg-[#F6F4FF] "
@@ -91,7 +114,7 @@ function AccountSetup() {
               type="checkbox"
               name="genderF"
               id="test3"
-              value="I am a woman" {...register("lookingForFemale")}
+              value="Female" {...register("lookingForFemale")}
             />
             <label
               className=" flex items-center flex-row justify-between outline-none mb-5 text-[gray] rounded-md pl-5 bg-[#F6F4FF] "

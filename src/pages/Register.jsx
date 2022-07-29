@@ -20,9 +20,7 @@ const Register = () => {
 
   // const [ids, setIds] = useState(null);
 
-  // const [selectedState, setSelectedState] = useState([]);
-  // const [selectedCity, setSelectedCity] = useState();
-  // const [otpLoading, setOtpLoading] = useState(false);
+
 
   // Handle Form Event
   const {
@@ -83,9 +81,9 @@ let SelectedState;
     if (isSuccess) {
       navigate("/otp");
     }
-    // if (user ) {
-    //   navigate("/feeds");
-    // }
+    if (user ) {
+      navigate("/otp");
+    }
     dispatch(reset());
   }, [user, otp, isError, isSuccess, message, dispatch, navigate]);
 
