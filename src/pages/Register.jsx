@@ -207,7 +207,7 @@ let SelectedState;
               <label htmlFor="email" className="text-[15px]">
                 Email:
               </label>
-              <input
+              <input 
                 type="email"
                 placeholder="Enter Email"
                 className={`bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-[#6A52FD] ${

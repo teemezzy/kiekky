@@ -55,12 +55,12 @@ dispatch(createPost(data))
         </div>
 
       </div>
-
+{/* 
       <form onSubmit={handleSubmit(onSubmit)} action="" method="post">
         <input {...register("Post")} />
         <p>{errors.Post?.message}</p>
         <input type="submit" value="" />
-      </form>
+      </form> */}
 
 
     </div >
