@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_URL = "https://kiekky.com/api/public/api/post/create";
 
-//create new gaol
+//create new post
 const createPost = async (postData, token) => {
   const config = {
     headers: {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Members.css";
 import { NavLink } from "react-router-dom";
-import { BsBell, BsFilter} from "react-icons/bs";
+import { BsBell, BsFilter } from "react-icons/bs";
 import { verified } from '../../assets'
 
 
@@ -15,17 +15,17 @@ function Members(props) {
   }, []);
 
   return (
-    <div className=" flex flex-col lg:w-[1000px] w-[366px] m-auto">
+    <div className=" flex flex-col lg:w-[1000px] w-[374px] m-auto">
       <div className="flex justify-between lg:w-[996px] ">
         <div className="flex  space-x-2 items-center">
           <p>Members</p>
           <div className="flex space-x-[1px] bg-[#F6F4FF] " >
-          <p className=" text-xs  text-[#999999] py-1 rounded-md ">Gender: </p>
-          <select className="outline-none text-xs  w-[4rem] text-[#999999] bg-[#F6F4FF] " name="" id="">
-            <option className="outline-none hover:bg-[#6a52fd]  border-none" value="Male">Male </option>
-            <option className="outline-none hover:bg-[#6a52fd]  " value="Male">Female </option>
-            <option className="outline-none hover:bg-[#6a52fd]  " value="Male">Both </option>
-          </select>
+            <p className=" text-xs  text-[#999999] py-1 rounded-md ">Gender: </p>
+            <select className="outline-none text-xs  w-[4rem] text-[#999999] bg-[#F6F4FF] " name="" id="">
+              <option className="outline-none hover:bg-[#6a52fd]  border-none" value="Male">Male </option>
+              <option className="outline-none hover:bg-[#6a52fd]  " value="Male">Female </option>
+              <option className="outline-none hover:bg-[#6a52fd]  " value="Male">Both </option>
+            </select>
           </div>
           {/* <button className=" border-[1px] border-[#E5E5E5]  text-[#999999] px-4 py-1 text-xs  rounded-[0.3rem]">
             Male
@@ -49,9 +49,9 @@ function Members(props) {
             </div>
           </div>
         </div>
-        
+
       </div>
-      <div className="  grid grid-cols-2 lg:grid-cols-4 gap-[7px]  w-[372px] lg:gap-[37px]  lg:w-[1001px] m-auto mt-5">
+      <div className="  grid grid-cols-2 lg:grid-cols-4 gap-[7px]  w-[376px] lg:gap-[37px]  lg:w-[1001px] m-auto mt-5">
         {story
           ? story.map((story, idx) => (
             <div key={idx} className=" ">
@@ -61,10 +61,10 @@ function Members(props) {
                 </div>
 
                 <NavLink to='/user_profile' ><img
-                  className="stats w-[184px] h-[178px] lg:w-[220px] lg:h-[237px] rounded-md "
+                  className="stats w-[187px] h-[178px] lg:w-[220px] lg:h-[237px] rounded-md "
                   src={story.image}
                   alt="icon"
-                /> </NavLink> 
+                /> </NavLink>
               </div>
 
             </div>
