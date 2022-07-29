@@ -20,9 +20,7 @@ const Register = () => {
 
   // const [ids, setIds] = useState(null);
 
-  // const [selectedState, setSelectedState] = useState([]);
-  // const [selectedCity, setSelectedCity] = useState();
-  // const [otpLoading, setOtpLoading] = useState(false);
+
 
   // Handle Form Event
   const {

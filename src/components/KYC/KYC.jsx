@@ -11,14 +11,11 @@ const KYC = () => {
   const handleChange = (file) => {
     setFile(file);
   };
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+  const { register, formState: { errors }, handleSubmit } = useForm();
+
   const dispatch = useDispatch();
   const onSubmit = (data) => {
-    let userdata = {
+    const userdata = {
       full_name: data.full_name,
       phone: data.phone,
       password: data.password,
@@ -33,7 +30,7 @@ const KYC = () => {
   return (
     <div className="bg-white pb-20">
       <div className="lg:w-[625px] w-[352px] m-auto bg-white">
-        <p className="pt-[47px] pb-[24px] text-[#828282] w-[183px] m-auto">
+        <p className="pt-[47px] pb-[24px] text-[#828282] m-auto">
           Please verify your identity
         </p>
         <form onSubmit={handleSubmit(onSubmit)} className="">

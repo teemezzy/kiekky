@@ -19,12 +19,12 @@ const Wallet = () => {
   };
 
   const activeTabs =
-    "text-[#6A52FD] text-[16px] py-[16.5px] w-[167px] m-auto text-center bg-white cursor-pointer outline-none";
+    "text-[#6A52FD] text-[16px] lg:py-[16.5px] lg:w-[167px] w-[126px] m-auto text-center bg-white cursor-pointer outline-none";
   const tabs =
-    "text-[#BDBDBD] w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
+    "text-[#BDBDBD] lg:w-[157px] text-[16px] text-center m-auto cursor-pointer outline-none";
 
   const activePayout =
-    "lg:w-[255px] w-[270px] text-[#6A52FD] text-[16px] py-[16.5px] px-[53px]  m-auto text-center bg-white cursor-pointer outline-none";
+    "lg:w-[255px] w-[126px] text-[#6A52FD] text-[16px] lg:py-[16.5px] lg:px-[53px]  m-auto text-center bg-white cursor-pointer outline-none";
 
   const activeContent = " ";
   const content = "bg-white w-full hidden p-[20px]";
