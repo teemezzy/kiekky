@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login,  reset  } from "../../Redux/features/authSlice";
 import {toast} from 'react-toastify'
+import Spinner from "../../container/Spinner";
 
 const LoginEmail = () => {
   const [errorMsg, setErrorMsg] = useState("");
@@ -45,7 +46,7 @@ const LoginEmail = () => {
   }, [user, isError, isSuccess, message, dispatch, navigate]);
      
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   const handleClick = () => {

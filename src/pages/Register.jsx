@@ -109,8 +109,7 @@ const Register = () => {
     }
   };
 
-  useEffect(
-    (id) => {
+  useEffect((id) => {
       if (isError) {
         toast.error(message);
       }

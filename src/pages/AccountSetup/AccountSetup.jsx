@@ -28,12 +28,12 @@ const AccountSetup = () => {
 
     const userdata = {
       gender: data.gender,
-      preference:data.preference,
+      preference: data.preference,
       // preference_0: data.Female,
       // preference_1: data.Male,
     
     };
-    dispatch(getUserSetup(userdata, preference[0], preference[1]));
+    dispatch(getUserSetup(userdata));
     console.log(getUserSetup);
     dispatch(reset());
     console.log(data);

@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 import { sideList } from "./sideList";
-import { NavLink, useParams, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { FiLogOut } from "react-icons/fi";
 import { logout, reset } from "../../Redux/features/authSlice";
+import { logoutt } from "../../Redux/features/otp/otpSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Spinner from "../../container/Spinner";
 
-const Sidebar = ({ children }) => {
-  // const dispatch = useDispatch();
+const Sidebar = () => {
+  const [post, setPost] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.auth);
-  const [post, setPost] = useState([]);
+  const { user, isSuccess, isLoading, message} = useSelector((state) => state.auth);
+  const { otp } = useSelector((state) => state.otptoken);
 
   const url = "https://fakerapi.it/api/v1/books?_quantity=1";
-  const { id } = useParams();
+  // const { id } = useParams();
 
   const pathname = useLocation();
   useEffect(() => {
@@ -26,11 +28,29 @@ const Sidebar = ({ children }) => {
     axios.get(url).then((response) => setPost(response.data.data));
   }, []);
   const onLogout = () => {
-    dispatchEvent(logout());
+    dispatch(logout());
+    dispatch(logoutt());
     dispatch(reset());
-    localStorage.removeItem("user");
-    navigate("/");
+    // window.location.reload(true);
+    // localStorage.removeItem("user", "otptoken");
+    // localStorage.removeItem();
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      navigate("/");
+    }
+    // if (isLoading) {
+    //   navigate("/otp");
+    // }
+    dispatch(reset());
+  }, [user, otp, isSuccess, message, dispatch, navigate]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+
   return (
     <div className=" relative">
       <div className=" ">
