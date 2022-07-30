@@ -3,7 +3,7 @@ import token from './setupSlice'
 
 const API_URL = "https://kiekky.com/api/public/api/user/account/setup";
 
-const getUserSetup = async (token) => {
+const getUserSetup = async (setup, token) => {
   console.log(token, 'my token')
   const config = {
     headers: {
@@ -11,7 +11,9 @@ const getUserSetup = async (token) => {
     },
   };
 
-  const response = await axios.post(API_URL, config);
+  console.log(config, 'my config')
+
+  const response = await axios.post(API_URL, setup, config);
   return response.data;
 };
 

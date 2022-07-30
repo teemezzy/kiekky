@@ -50,8 +50,8 @@ export const setupSlice = createSlice({
     .addCase (getUserSetup.fulfilled, (state, action) => {
       state.isLoading = false;
       state.isSuccess = true;
-    //   state.goals
-      state.usersetup.push(action.payload);
+      state.usersetup = action.payload
+    //   state.usersetup.push(action.payload);
     })
     .addCase (getUserSetup.rejected, (state, action) => {
       state.isLoading = false;

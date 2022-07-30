@@ -3,11 +3,11 @@ import axios from "axios";
 
 const initialState = {
   location: [],
+  statedata:null,
+  citydata:null,
   isError: false,
   isSuccess: false,
   message: "",
-  isStateId:null,
-  citydata:null
 
 };
 
@@ -45,7 +45,7 @@ export const locationSlice = createSlice({
       state.isError = false;
       state.isSuccess = false;
       state.message = "";
-      state.isStateId = null
+      state.statedata = null
       state.citydata = null
 
 
@@ -77,7 +77,7 @@ export const locationSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
  
-        state.isStateId = action.payload;
+        state.statedata = action.payload;
       })
       .addCase(states.rejected, (state, action) => {
         state.isSuccess = false;

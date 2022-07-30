@@ -18,10 +18,6 @@ import Spinner from "../container/Spinner";
 const Register = () => {
   const [loading, setLoading] = useState(false);
 
-  // const [ids, setIds] = useState(null);
-
-
-
   // Handle Form Event
   const {
     register,
@@ -54,22 +50,24 @@ const Register = () => {
     (state) => state.auth
   );
 
-  const { location, isStateId, citydata } = useSelector((state) => state.location);
+  const { location, statedata, citydata } = useSelector(
+    (state) => state.location
+  );
   // console.log(citydata);
 
-
-let SelectedState;
+  let SelectedState;
   // console.log(citydata.data);
   let selectedCity;
-  // console.log(isStateId)
-  if(isStateId){  
-    console.log(isStateId.states)
-     SelectedState = isStateId.states  }
+  // console.log(statedata)
+  if (statedata) {
+    // console.log(statedata.states)
+    SelectedState = statedata.states;
+  }
 
-     if(citydata){  
-      console.log(citydata.cities)
-       selectedCity = citydata.cities  
-    }
+  if (citydata) {
+    // console.log(citydata.cities)
+    selectedCity = citydata.cities;
+  }
 
   const { otp } = useSelector((state) => state.otptoken);
 
@@ -81,7 +79,7 @@ let SelectedState;
     if (isSuccess) {
       navigate("/otp");
     }
-    if (user ) {
+    if (user) {
       navigate("/otp");
     }
     dispatch(reset());
@@ -108,10 +106,11 @@ let SelectedState;
     if (id) {
       console.log(`${id}cities`);
       dispatch(city(id));
-    } 
+    }
   };
 
-  useEffect((id) => {
+  useEffect(
+    (id) => {
       if (isError) {
         toast.error(message);
       }
@@ -127,8 +126,6 @@ let SelectedState;
   const handleClick = () => {
     setLoading(true);
   };
-
-  
 
   return (
     <div className="">
@@ -207,7 +204,7 @@ let SelectedState;
               <label htmlFor="email" className="text-[15px]">
                 Email:
               </label>
-              <input 
+              <input
                 type="email"
                 placeholder="Enter Email"
                 className={`bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-[#6A52FD] ${
@@ -284,11 +281,11 @@ let SelectedState;
               <label htmlFor="" className="text-[15px]">
                 State:
               </label>
-                
+
               <select
                 {...register("state")}
                 defaultValue={"default"}
-                onChange= {(e)=> handleStates(e)}
+                onChange={(e) => handleStates(e)}
                 name="state"
                 id="state"
                 className=" bg-[#F6F4FF] h-[46px] outline-none rounded-lg px-4 w-full"
@@ -305,18 +302,19 @@ let SelectedState;
                   Select State
                 </option>
 
-                {isStateId && SelectedState.map((state) => (
-                  <option
-                    key={state.id}
-                    value={state.id}
-                    className={`bg-[#F6F4FF] py-2 px-4 ${
-                      errors.password &&
-                      "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
-                    }`}
-                  >
-                    {state.name}
-                  </option>
-                ))}
+                {statedata &&
+                  SelectedState.map((state) => (
+                    <option
+                      key={state.id}
+                      value={state.id}
+                      className={`bg-[#F6F4FF] py-2 px-4 ${
+                        errors.password &&
+                        "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+                      }`}
+                    >
+                      {state.name}
+                    </option>
+                  ))}
               </select>
               {errors.state && (
                 <p className="text-red-600 text-xs">State is needed</p>
@@ -349,18 +347,19 @@ let SelectedState;
                   Select City
                 </option>
 
-                {citydata && selectedCity.map((city) => (
-                  <option
-                    key={city.id}
-                    value={city.id}
-                    className={`bg-[#F6F4FF] py-2 px-4 ${
-                      errors.password &&
-                      "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
-                    }`}
-                  >
-                    {city.name}
-                  </option>
-                ))}
+                {citydata &&
+                  selectedCity.map((city) => (
+                    <option
+                      key={city.id}
+                      value={city.id}
+                      className={`bg-[#F6F4FF] py-2 px-4 ${
+                        errors.password &&
+                        "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+                      }`}
+                    >
+                      {city.name}
+                    </option>
+                  ))}
               </select>
               {errors.city && (
                 <p className="text-red-600 text-xs">City is needed</p>
