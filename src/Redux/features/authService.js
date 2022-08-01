@@ -1,7 +1,6 @@
- import axios from "axios";
+import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL;
-
 
 // Register user API
 const register = async (userData) => {
@@ -25,6 +24,8 @@ const login = async (data) => {
 // Logout user session
 const logout = () => {
   localStorage.removeItem("user");
+  localStorage.removeItem("otp");
+  // localStorage.removeItem("token");
 };
 
 // Get user from localstorage with token (otpSlice)
@@ -39,7 +40,6 @@ const otptoken = async (userData) => {
 
   return response.data;
 };
-
 
 // RETURN AND EXPORT AUTH SERVICE
 const authService = {

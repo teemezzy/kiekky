@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import "swiper/css";
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import "swiper/css";
 
 function Feeds() {
   const [feed, setFeed] = useState([]);
@@ -69,19 +69,27 @@ function Feeds() {
                         className=" w-[290px] h-[290px]  lg:w-[586px] lg:h-[430px] rounded-lg"
                         src={feed.image}
                         alt=""
-                      /> 
-   <Swiper
+                      />
+                      {/* <Swiper
       spaceBetween={50}
       slidesPerView={3}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>
+      <img
+          loading="lazy"
+          decoding="async"
+          className=" w-[290px] h-[290px] lg:w-[586px] lg:h-[430px] rounded-lg"
+          src={feed.image}
+         alt=""
+          /> 
+          </SwiperSlide>
       <SwiperSlide>Slide 2</SwiperSlide>
       <SwiperSlide>Slide 3</SwiperSlide>
     
       ...
-    </Swiper>
+    </Swiper> */}
                     </div>
                   </div>
                 </div>
