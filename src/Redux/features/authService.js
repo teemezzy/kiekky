@@ -1,6 +1,6 @@
  import axios from "axios";
 
-const API_URL = "https://kiekky.com/api/public/api/";
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 // Register user API

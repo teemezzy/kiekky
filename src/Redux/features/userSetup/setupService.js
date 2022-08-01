@@ -1,7 +1,7 @@
 import axios from "axios";
-import token from './setupSlice'
+// import token from './setupSlice'
 
-const API_URL = "https://kiekky.com/api/public/api/user/account/setup";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const getUserSetup = async (setup, token) => {
   console.log(token, 'my token')
@@ -13,7 +13,7 @@ const getUserSetup = async (setup, token) => {
 
   console.log(config, 'my config')
 
-  const response = await axios.post(API_URL, setup, config);
+  const response = await axios.post(API_URL + "user/account/setup", setup, config);
   return response.data;
 };
 

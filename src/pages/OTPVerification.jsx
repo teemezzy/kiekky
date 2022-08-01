@@ -5,7 +5,7 @@ import { bgLogin } from "../assets";
 import { useNavigate } from "react-router-dom";
 import OtpInput from "react-otp-input";
 import { useDispatch, useSelector } from "react-redux";
-import { otptoken, resendotp } from "../Redux/features/otp/otpSlice";
+import { otptoken, resendotp, reset } from "../Redux/features/otp/otpSlice";
 import Spinner from "../container/Spinner";
 import { toast } from "react-toastify";
 
@@ -56,6 +56,7 @@ const OTPVerification = () => {
     };
     // console.log(userdata);
     dispatch(otptoken(userdata));
+    // dispatch(reset());
   };
 
   return (

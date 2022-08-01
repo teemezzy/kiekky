@@ -8,6 +8,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 const initialState = {
   user: user ? user : null,
+  otp: null,
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -101,11 +102,17 @@ export const authSlice = createSlice({
         state.isError = true;
       })
 
+      // Logout
       .addCase(logout.fulfilled, (state) => {
         state.user = null;
-        state.isLoading = true;
+        state.otp = null
+        state.isLoading = false;
         state.isSuccess = true;
       })
+      .addCase(logout.pending, (state) => {
+        state.isLoading = true;
+      })
+
 
       
   },

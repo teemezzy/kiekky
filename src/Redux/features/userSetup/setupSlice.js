@@ -16,7 +16,7 @@ export const getUserSetup = createAsyncThunk(
   async (setup, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.access_token;
-      console.log(token, "my token joan");
+      console.log(token, setup, "my token joan");
       return await setupService.getUserSetup(setup, token);
     } catch (error) {
       const message =
@@ -40,6 +40,8 @@ export const setupSlice = createSlice({
       state.isSuccess = false;
       state.message = "";
     },
+
+
   },
 
   extraReducers: (builder) => {
@@ -55,7 +57,7 @@ export const setupSlice = createSlice({
     })
     .addCase (getUserSetup.rejected, (state, action) => {
       state.isLoading = false;
-    //   state.isSuccess = false;
+      state.isSuccess = false;
       state.isError = true;
       state.message = action.payload;
     //   state.usersetup = null;

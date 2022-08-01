@@ -11,7 +11,6 @@ const initialState = {
   message: "",
 };
 
-
 export const otptoken = createAsyncThunk(
   "otptoken/otp",
   async (user, thunkAPI) => {
@@ -31,23 +30,26 @@ export const otptoken = createAsyncThunk(
 );
 
 export const resendotp = createAsyncThunk(
-    "otptoken/resendotp",
-    async (user, thunkAPI) => {
-      try {
-        console.log(user);
-        return await otpService.resendotp(user);
-      } catch (error) {
-        const message =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
-        return thunkAPI.rejectWithValue(message);
-      }
+  "otptoken/resendotp",
+  async (user, thunkAPI) => {
+    try {
+      console.log(user);
+      return await otpService.resendotp(user);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
     }
-  );
-  
+  }
+);
+
+export const logoutt = createAsyncThunk("otptoken/logout", async () => {
+  await otpService.logout();
+});
 
 export const otpSlice = createSlice({
   name: "otptoken",
@@ -63,7 +65,7 @@ export const otpSlice = createSlice({
   extraReducers: (builder) => {
     builder
 
-    .addCase(otptoken.pending, (state) => {
+      .addCase(otptoken.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(otptoken.fulfilled, (state, action) => {
@@ -92,7 +94,17 @@ export const otpSlice = createSlice({
         state.message = action.payload;
         state.isError = true;
       })
-    
+
+      // Logout
+      .addCase(logoutt.fulfilled, (state) => {
+        state.user = null;
+        state.otp = null;
+        state.isLoading = false;
+        state.isSuccess = true;
+      })
+      .addCase(logoutt.pending, (state) => {
+        state.isLoading = true;
+      });
   },
 });
 
