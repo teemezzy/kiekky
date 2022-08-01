@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_URL = "https://kiekky.com/api/public/api/post/create";
+const API_URL = process.env.REACT_APP_API_URL
 
 //create new post
 const createPost = async (postData, token) => {
@@ -9,8 +8,9 @@ const createPost = async (postData, token) => {
       Authorization: `Bearer ${token}`,
     },
   }; 
-  const response = await axios.post(API_URL, postData, config);
-  localStorage.setItem("user", JSON.stringify(response.data));
+  console.log(config);
+
+  const response = await axios.post(API_URL + 'post/create', postData, config);
   return response.data;
 };
 

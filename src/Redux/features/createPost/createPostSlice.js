@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import createPostService from "./createPostService";
 
-const initialState = {
+
+const initialState = { 
   posts: [],
   isError: false,
   isSuccess: false,
@@ -41,7 +42,7 @@ export const createPostSlice = createSlice({
       .addCase(createPost.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.posts = action.payload;
+        state.posts.push (action.payload);
       })
       .addCase(createPost.rejected, (state, action) => {
         state.isLoading = false;
