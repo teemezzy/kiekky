@@ -46,7 +46,7 @@ const LoginEmail = () => {
   }, [user, isError, isSuccess, message, dispatch, navigate]);
      
   if (isLoading) {
-    return <Spinner />;
+    return  <Spinner />;
   }
 
   const handleClick = () => {

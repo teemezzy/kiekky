@@ -6,6 +6,8 @@ import { BsPhone } from "react-icons/bs";
 import { BiEnvelope } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { LoginNav } from "../../components";
+import { BiArrowBack } from "react-icons/bi";
+
 import "./Login.css";
 const Login = () => {
   useEffect(() => {
@@ -25,16 +27,23 @@ const Login = () => {
   const content = "  hidden  cursor-pointer ";
 
   return (
-    <div className='h-[80%]'>
+    <div className=''>
       <LoginNav/>
 
-      <div className="flex relative m-auto o ">
-        <div className=" w-2/5  hidden lg:block ">
+      <div className="flex relative m-auto">
+        <div className="w-2/5 hidden lg:block">
           <img className="h-full " src={bgLogin} alt="Login" />
         </div>
 
         <div className=" w-[352px] m-auto object-contain lg:w-1/3 mt-[8rem] lg:mt-[10rem] ">
-          <h1 className="welcome mb-5 text-xl text-center ">Welcome Back</h1>
+         
+        <div className="  ">
+            <Link to="/">
+              <BiArrowBack size='2rem' />
+            </Link>
+          </div>
+         
+          <h1 className="mb-5 text-xl text-center ">Welcome Back</h1>
           <div>
             <div className="mx-auto mb-6 ">
               <div
