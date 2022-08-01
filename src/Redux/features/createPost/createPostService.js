@@ -8,7 +8,7 @@ const createPost = async (postData, token) => {
       Authorization: `Bearer ${token}`,
     },
   }; 
-  console.log(config);
+  // console.log(config);
 
   const response = await axios.post(API_URL + 'post/create', postData, config);
   return response.data;
