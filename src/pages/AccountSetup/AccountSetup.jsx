@@ -26,13 +26,11 @@ const AccountSetup = () => {
     const userdata = {
       gender: data.gender,
       preference: data.preference,
-      // preference_0: data.Female,
-      // preference_1: data.Male,
     
     };
     dispatch(getUserSetup(userdata));
     console.log(getUserSetup);
-    // dispatch(reset());
+    dispatch(reset());
     console.log(data.gender);
   };
 
@@ -51,7 +49,7 @@ const AccountSetup = () => {
     if (isSuccess) {
       navigate("/feeds");
     }
-    dispatch(reset());
+    // dispatch(reset());
   }, [ isError, isLoading, isSuccess, message, dispatch, navigate]);
 
   return (

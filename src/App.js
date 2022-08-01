@@ -64,10 +64,10 @@ function App(children) {
         <Route path="forgot-password" element={<ForgotPassword />} />
         <Route path="reset" element={<ResetPassword />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
-        {/* <Route element={<ProtectedRoutes />}> */}
+        <Route element={<ProtectedRoutes />}>
           <Route path="user_setup" element={<AccountSetup />} />
           <Route path="otp" element={<OTPVerification />} />
-          <Route path="feeds" element={usersetup ? <Home /> : <AccountSetup />} />
+          <Route path="feeds" element={<Home /> } />
           <Route path="community" element={<Community />} />
           <Route path="messages" element={<Messages />} />
           <Route path="dates" element={<Dates />} />
@@ -82,7 +82,7 @@ function App(children) {
           <Route path="subscribe" element={<UserSubscribe />} />
           <Route path="personal_profile" element={<PersonalProfile />} />
           <Route path="user/:userid" element={<Profile />} />
-        {/* </Route> */}
+        </Route>
       </Routes>
       {/* <Footer /> */}
 

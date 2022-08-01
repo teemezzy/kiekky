@@ -18,7 +18,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const [isLoadings, setIsLoadings] = useState(true)
   const { user, isSuccess, isLoading, message} = useSelector((state) => state.auth);
-  const { otp } = useSelector((state) => state.otptoken);
+  // const { otp } = useSelector((state) => state.otptoken);
 
   const url = "https://fakerapi.it/api/v1/books?_quantity=1";
   // const { id } = useParams();
@@ -43,11 +43,9 @@ const Sidebar = () => {
     if (isSuccess) {
       navigate("/");
     }
-    // if (isLoading) {
-    //   navigate("/otp");
-    // }
+
     dispatch(reset());
-  }, [user, otp, isSuccess, message, dispatch, navigate]);
+  }, [user, isSuccess, message, dispatch, navigate]);
 
   if (isLoading) {
     return <Spinner />;

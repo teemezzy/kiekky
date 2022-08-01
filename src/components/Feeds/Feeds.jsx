@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import Skeleton from 'react-loading-skeleton'
 import FeedsSkeleton from "./FeedsSkeleton";
-import 'react-loading-skeleton/dist/skeleton.css'
-
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import "swiper/css";
 
 function Feeds() {
   const [feed, setFeed] = useState([]);
