@@ -9,6 +9,7 @@ const createPost = async (postData, token) => {
       Authorization: `Bearer ${token}`,
     },
   }; 
+  console.log(config)
   const response = await axios.post(API_URL, postData, config);
   localStorage.setItem("user", JSON.stringify(response.data));
   return response.data;
