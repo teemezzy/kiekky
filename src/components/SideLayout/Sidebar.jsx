@@ -6,6 +6,9 @@ import axios from "axios";
 import { FiLogOut } from "react-icons/fi";
 import { logout, reset } from "../../Redux/features/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import SidebarSkeleton from './SidebarSkeleton'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Sidebar = ({ children }) => {
   // const dispatch = useDispatch();
@@ -13,6 +16,7 @@ const Sidebar = ({ children }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const [post, setPost] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   const url = "https://fakerapi.it/api/v1/books?_quantity=1";
   const { id } = useParams();
@@ -23,7 +27,7 @@ const Sidebar = ({ children }) => {
   }, [pathname]);
 
   useEffect(() => {
-    axios.get(url).then((response) => setPost(response.data.data));
+    axios.get(url).then((response) => { setPost(response.data.data); setIsLoading(false) });
   }, []);
   const onLogout = () => {
     dispatchEvent(logout());
@@ -33,11 +37,14 @@ const Sidebar = ({ children }) => {
   };
   return (
     <div className=" relative">
+      {isLoading && <SidebarSkeleton cards={1} />}
+
       <div className=" ">
         {post
           ? post.map((post, idx) => (
             <div key={idx} className="story-status  ">
               <div className="user_name ml-10  bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem] ">
+
                 <div className="display-image">
                   <NavLink to="/personal_profile">
                     <img
@@ -59,6 +66,7 @@ const Sidebar = ({ children }) => {
           : null}
 
         <div className="side_list ml-10 h-[540px] bg-white w-[17rem]  divide-y divide-opacity-50  divide-gray-300">
+
           {sideList.map((side) => (
             <div
               key={side.id}
@@ -71,7 +79,7 @@ const Sidebar = ({ children }) => {
                 onClick={side.handleClick}
               >
                 <span className="mr-3 ">{side.icon}</span>
-                {side.link}
+                {side.link || <Skeleton />}
               </NavLink>
             </div>
           ))}
@@ -81,9 +89,8 @@ const Sidebar = ({ children }) => {
               <button
                 type="button"
                 onClick={onLogout}
-                className={`${
-                  window.location.pathname === "/" ? "active" : null
-                }  flex items-center w-full h-[4rem] pl-5  hover:bg-[#E5E5E5] `}
+                className={`${window.location.pathname === "/" ? "active" : null
+                  }  flex items-center w-full h-[4rem] pl-5  hover:bg-[#E5E5E5] `}
               >
                 <span className="mr-3 ">
                   <FiLogOut />

@@ -1,6 +1,8 @@
 import React, { useEffect} from "react";
 import { Status, Post, Feeds, Recommendations, UserNav, MobileNav } from "../../components";
 import { Sidebar } from "../../components";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import "./Home.css";
 
 const Home = () => {
@@ -16,7 +18,7 @@ const Home = () => {
       <div className=" mt-[6rem] m-auto bg-[#F9FAFA]">
         <div className="relative flex">
           <div className=" sticky h-[100vh] hidden lg:block pt-8">
-            <Sidebar />
+            <Sidebar  />
           </div>
           <div className=" min-h-screen  lg:w-[970px] w-[327px]  m-auto ">
             <Status />

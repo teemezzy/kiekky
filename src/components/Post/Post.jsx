@@ -36,7 +36,7 @@ dispatch(createPost(data))
                 <div key={idx} className="story-status ">
                   <div className="post-image">
                     <img
-                      className=" w-[4rem] h-[4rem]  p-[2.7px]  cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
+                      className=" min-w-[4rem] h-[4rem]  p-[2.7px]  cursor-pointer  rounded-full"
                       src={display.image}
                       alt="icon"
                     />
@@ -45,21 +45,23 @@ dispatch(createPost(data))
               ))
               : null}
           </div>
-          <p className="text-[gray] ">Whats new..</p>
+
+          <textarea className="outline-none w-full  text-[#212121] lg:mt-7" type="text" placeholder="Whats new.." name="" id="" />
         </div>
 
         <div className="but flex justify-end items-center mr-5 space-x-5 mb-5">
           <p className='text-xl'><BiCamera color="gray" />  </p>
           <p className='text-xl'> <BiVideoPlus color="gray" /> </p>
-          <button className='flex px-6 py-[6px] text-sm h-[2rem] bg-[#6a52fd] text-white rounded-lg ' type="submit">Post it!</button>
+          <input className='flex px-6 py-[6px] text-sm h-[2rem] bg-[#6a52fd] text-white rounded-lg ' type="submit" value="Post It!" />
+
+          {/* <button  type="submit">Post it!</button> */}
         </div>
 
       </div>
-{/* 
-      <form onSubmit={handleSubmit(onSubmit)} action="" method="post">
+
+      {/* <form onSubmit={handleSubmit(onSubmit)} action="" method="post">
         <input {...register("Post")} />
         <p>{errors.Post?.message}</p>
-        <input type="submit" value="" />
       </form> */}
 
 

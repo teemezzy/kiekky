@@ -59,7 +59,7 @@ const OTPVerification = () => {
   };
 
   return (
-    <div className="flex relative w-[352px] m-auto ">
+    <div className="flex relative w-[352px] lg:w-full m-auto ">
       <MidNav className="lg:hidden block" />
 
       <div className="background  lg:w-2/5 hidden lg:block ">

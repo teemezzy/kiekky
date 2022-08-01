@@ -2,18 +2,27 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import Skeleton from 'react-loading-skeleton'
+import FeedsSkeleton from "./FeedsSkeleton";
+import 'react-loading-skeleton/dist/skeleton.css'
+
 
 function Feeds() {
   const [feed, setFeed] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
 
   const url = "https://fakerapi.it/api/v1/persons?_quantity=5";
 
   useEffect(() => {
-    axios.get(url).then((response) => setFeed(response.data.data));
+    axios.get(url).then((response) => {setFeed(response.data.data)
+    setIsLoading(false)});
   }, []);
 
   return (
     <div className="lg:w-[672px] w-[327px] lg:max-w-full ">
+      { isLoading &&<FeedsSkeleton cards={10} />}
+
       {feed
         ? feed.map((feed, idx) => (
           <div
@@ -38,7 +47,7 @@ function Feeds() {
                   <div className="  w-[17rem]  md:w-[23rem] lg:w-[506.67px]">
                     <NavLink to='/user_profile'>
 
-                      <p className="font-[700] ">{feed.firstname}</p>
+                      <p className="font-[700] ">{feed.firstname  }</p>
                     </NavLink>
 
                     <div className="location flex justify-between lg:w-[506.67px] text-gray text-sm ">
@@ -47,7 +56,7 @@ function Feeds() {
                           <MdOutlineLocationOn color="gray" />
                         </span>
                         {feed.address.country},
-                        {feed.address.city}
+                        {feed.address.city }
                         {/* Lagos, Nigeria */}
                       </p>
                       <p className="text-[gray] hidden lg:block text-sm">
@@ -61,7 +70,7 @@ function Feeds() {
 
                   <div className=" m-auto w-[300px] py-[1rem] lg:w-[586px]">
 
-                    <p>{feed.email}.</p>
+                    <p>{feed.email  }.</p>
                   </div>
 
                   <div className=" m-auto md:h-[450px] w-[300px] lg:w-[586px] ">
@@ -69,7 +78,7 @@ function Feeds() {
                       loading="lazy"
                       decoding="async"
                       className=" w-[290px] h-[290px]  lg:w-[586px] lg:h-[430px] rounded-lg"
-                      src={feed.image}
+                      src={feed.image }
                       alt=""
                     />
                   </div>

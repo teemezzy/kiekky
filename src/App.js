@@ -37,6 +37,7 @@ import {
   EditProfile,
   ViewAll
 } from "./pages";
+import { SkeletonTheme } from "react-loading-skeleton";
 import { useDispatch, useSelector } from "react-redux";
 // import { createBrowserHistory } from "history";
 
@@ -49,7 +50,7 @@ function App(children) {
 
   return (
     <div className="App">
-      <Routes>
+      <SkeletonTheme baseColor="#BDBDBD" highlightColor="#ffffff">      <Routes>
         <Route exact path="/" element={user ? <Home /> : <KiekkyHome />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
@@ -85,6 +86,8 @@ function App(children) {
       {/* <Footer /> */}
 
       <ToastContainer />
+      </SkeletonTheme>
+
     </div>
   );
 }
