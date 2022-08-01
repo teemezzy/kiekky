@@ -5,7 +5,7 @@ import { LoginNav } from "../components";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { regUser, reset } from "../Redux/features/authSlice";
-import { otp } from "../Redux/features/otp/otpSlice";
+// import { otp } from "../Redux/features/otp/otpSlice";
 import {
   country,
   city,
@@ -69,7 +69,7 @@ const Register = () => {
     selectedCity = citydata.cities;
   }
 
-  const { otp } = useSelector((state) => state.otptoken);
+  // const { otp } = useSelector((state) => state.otptoken);
 
   // Navigate to OTP page || If user exist navigate to home
   useEffect(() => {
@@ -83,7 +83,7 @@ const Register = () => {
       navigate("/otp");
     }
     dispatch(reset());
-  }, [user, otp, isError, isSuccess, message, dispatch, navigate]);
+  }, [user, isError, isSuccess, message, dispatch, navigate]);
 
   // Set Page Title
   useEffect(() => {

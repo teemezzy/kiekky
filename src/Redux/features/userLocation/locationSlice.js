@@ -11,7 +11,7 @@ const initialState = {
 
 };
 
-const API_URL = "https://kiekky.com/api/public/api/";
+const API_URL = process.env.REACT_APP_API_URL;
 
 //   Auth for Country
 export const country = createAsyncThunk("location/country", () => {

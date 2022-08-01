@@ -17,14 +17,11 @@ const AccountSetup = () => {
   const navigate = useNavigate();
 
   const { register, handleSubmit} = useForm();
-  const { accountsetup, isError, isSuccess, isLoading, message } = useSelector(
+  const { usersetup, isError, isSuccess, isLoading, message } = useSelector(
     (state) => state.accountsetup
   );
 
   const onSubmit = (data, errors) => {
-    // const preference_0 =
-    // const preference_1 =
-    const preference = ["preference[0]", "preference[1]"];
 
     const userdata = {
       gender: data.gender,
@@ -35,8 +32,8 @@ const AccountSetup = () => {
     };
     dispatch(getUserSetup(userdata));
     console.log(getUserSetup);
-    dispatch(reset());
-    console.log(data);
+    // dispatch(reset());
+    console.log(data.gender);
   };
 
   useEffect(() => {
@@ -55,7 +52,7 @@ const AccountSetup = () => {
       navigate("/feeds");
     }
     dispatch(reset());
-  }, [isError, isLoading, isSuccess, message, dispatch, navigate]);
+  }, [ isError, isLoading, isSuccess, message, dispatch, navigate]);
 
   return (
     <div className="flex relative m-auto ">

@@ -1,12 +1,10 @@
 import axios from "axios";
 
-const API_URL = "https://kiekky.com/api/public/api/user/register/"
-
-
+const API_URL = process.env.REACT_APP_API_URL
 
 const otptoken = async (userData) => {
   console.log(userData);
-  const response = await axios.post(API_URL + "confirm_otp", userData);
+  const response = await axios.post(API_URL + "user/register/confirm_otp", userData);
   if (response.data) {
     localStorage.setItem("otp", JSON.stringify(response.data));
   }
@@ -16,10 +14,10 @@ const otptoken = async (userData) => {
 
 
 const resendotp = async (userData) => {
-    const API_URL_2 = `https://kiekky.com/api/public/api/user/register/resend_otp/${userData}`
-    console.log(userData);
+    // const API_URL_2 = API_URL + `"user/register/resend_otp/${userData}"`
     // console.log(API_URL_2);
-    const response = await axios.post(API_URL_2);
+    const response = await axios.post(API_URL + `"user/register/resend_otp/${userData}`);
+    console.log(userData);
     if (response.data) {
       localStorage.removeItem("otp");
       localStorage.setItem("otp", JSON.stringify(response.data));
@@ -28,16 +26,16 @@ const resendotp = async (userData) => {
     return response.data;
   };
 
-  const logoutt = () => {
-    localStorage.removeItem("otp");
-  };
+  // const logoutt = () => {
+  //   localStorage.removeItem("otp");
+  // };
   
 
 
 const otpService = {
   otptoken,
   resendotp,
-  logoutt
+  // logoutt
 };
 
 export default otpService;

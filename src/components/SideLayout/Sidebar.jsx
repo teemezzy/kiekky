@@ -5,7 +5,7 @@ import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { FiLogOut } from "react-icons/fi";
 import { logout, reset } from "../../Redux/features/authSlice";
-import { logoutt } from "../../Redux/features/otp/otpSlice";
+// import { logoutt } from "../../Redux/features/otp/otpSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "../../container/Spinner";
 
@@ -18,7 +18,6 @@ const Sidebar = () => {
 
   const url = "https://fakerapi.it/api/v1/books?_quantity=1";
   // const { id } = useParams();
-
   const pathname = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,9 +28,9 @@ const Sidebar = () => {
   }, []);
   const onLogout = () => {
     dispatch(logout());
-    dispatch(logoutt());
+    // dispatch(logoutt());
     dispatch(reset());
-    // window.location.reload(true);
+    window.location.reload(true);
     // localStorage.removeItem("user", "otptoken");
     // localStorage.removeItem();
   };
@@ -97,7 +96,7 @@ const Sidebar = () => {
           ))}
 
           {user ? (
-            <div className="ml-5 pt-5 items-center text-sm text-gray">
+            <div className="ml-5 pt-5 items-center text-sm text-gray" onClick={()=> window.location.reload(true)}>
               <button
                 type="button"
                 onClick={onLogout}
