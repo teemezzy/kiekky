@@ -4,7 +4,7 @@ import { BiEdit } from 'react-icons/bi'
 import {useForm } from 'react-hook-form'
 
 function PopUpModal({ visiblePopUp, onClosePopUp }) {
-    const [register, handleSubmit ] = useForm()
+    // const [register, handleSubmit ] = useForm()
     const [feed, setFeed] = useState([]);
 
     const url = "https://fakerapi.it/api/v1/books?_quantity=1";
