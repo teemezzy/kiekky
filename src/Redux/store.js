@@ -5,6 +5,7 @@ import otpReducer from "./features/otp/otpSlice";
 import createPostreducer from "./features/createPost/createPostSlice";
 import countryReducer from "./features/userLocation/locationSlice";
 import getUserSetupReducer from "./features/userSetup/setupSlice";
+import getTokenBalanceReducer from "./features/token/tokenSlice";
 
 const store = configureStore({
   reducer: {
@@ -13,8 +14,8 @@ const store = configureStore({
     createPost: createPostreducer,
     location: countryReducer,
     accountsetup: getUserSetupReducer,
+    wallet: getTokenBalanceReducer,
   },
 
-  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 export default store;

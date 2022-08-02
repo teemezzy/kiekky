@@ -67,7 +67,7 @@ function App(children) {
         <Route element={<ProtectedRoutes />}>
           <Route path="user_setup" element={<AccountSetup />} />
           <Route path="otp" element={<OTPVerification />} />
-          <Route path="feeds" element={<Home /> } />
+          <Route path="feeds/:id" element={<Home /> } />
           <Route path="community" element={<Community />} />
           <Route path="messages" element={<Messages />} />
           <Route path="dates" element={<Dates />} />
@@ -75,7 +75,7 @@ function App(children) {
           <Route path="wallet" element={<Wallet />} />
           <Route path="logout" element={<Logout />} />
           <Route path="notifications" element={<Notifications />} />
-          <Route path="user_profile" element={<UserProfile />} />
+          <Route path="user_profile/:id" element={<UserProfile />} />
           <Route path="request_dates" element={<RequestDates />} />
           <Route path="edit_profile" element={<EditProfile />} />
           <Route path='view_all' element={<ViewAll />}/>

@@ -33,7 +33,7 @@ const Wallet = () => {
     <div className="mt-[2.3rem] bg-[#F9FAFA] pb-[117px]">
       <UserNav />
       <div className="flex">
-        <div className="hidden lg:block sidebar_prt pt-8">
+        <div className="hidden lg:block mt-20">
           <Sidebar />
         </div>
         <div className="mt-10 lg:w-[984px] m-auto">

@@ -16,7 +16,7 @@ export const getUserSetup = createAsyncThunk(
   async (setup, thunkAPI) => {
     try {
       const token = thunkAPI.getState().otptoken.otp.access_token;
-      console.log(token, setup, "my token joan");
+      // console.log(token, setup, "my token joan");
       return await setupService.getUserSetup(setup, token);
     } catch (error) {
       const message =

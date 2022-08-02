@@ -53,19 +53,14 @@ const Register = () => {
   const { location, statedata, citydata } = useSelector(
     (state) => state.location
   );
-  // console.log(citydata);
 
   let SelectedState;
-  // console.log(citydata.data);
   let selectedCity;
-  // console.log(statedata)
   if (statedata) {
-    // console.log(statedata.states)
     SelectedState = statedata.states;
   }
 
   if (citydata) {
-    // console.log(citydata.cities)
     selectedCity = citydata.cities;
   }
 
@@ -95,14 +90,12 @@ const Register = () => {
     const id = e.target.value;
     console.log(id);
     if (id) {
-      // console.log(`${id}`);
       dispatch(states(id));
     }
   };
 
   const handleStates = (e) => {
     const id = e.target.value;
-    // console.log(id);
     if (id) {
       console.log(`${id}cities`);
       dispatch(city(id));
