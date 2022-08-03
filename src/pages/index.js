@@ -19,7 +19,6 @@ import Messages from "./Messages";
 import Wallet from "./Wallet";
 import Settings from "./Settings";
 import Dashboard from "./Dashboard";
-import Logout from "./Logout";
 import Notifications from './Notifications/Notifications.jsx'
 import UserProfile from './UserProfile/UserProfile'
 import PersonalProfile from './PersonalProfile/PersonalProfile'
@@ -50,7 +49,7 @@ export {
   Wallet,
   Dates,
   Dashboard,
-  Logout,
+ 
   Notifications,
   UserProfile,
   PersonalProfile,

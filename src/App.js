@@ -73,7 +73,6 @@ function App(children) {
           <Route path="dates" element={<Dates />} />
           <Route path="settings" element={<Settings />} />
           <Route path="wallet" element={<Wallet />} />
-          <Route path="logout" element={<Logout />} />
           <Route path="notifications" element={<Notifications />} />
           <Route path="user_profile" element={<UserProfile />} />
           <Route path="request_dates" element={<RequestDates />} />

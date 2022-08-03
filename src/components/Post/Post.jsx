@@ -1,43 +1,46 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BiCamera, BiVideoPlus } from "react-icons/bi";
-import { useForm } from 'react-hook-form'
+import { useController, useForm } from "react-hook-form";
+
 import { createPost } from '../../Redux/features/createPost/createPostSlice'
 import PopUpModal from "./PopUpModal";
 
 import axios from "axios";
-import { data } from "autoprefixer";
+// import { data } from "autoprefixer";
 
 
 
 function Post() {
   const [showMyPopUp, setShowMyPopUp] = useState(false);
-const handleOnClosePopUp = () => setShowMyPopUp(false);
+  const handleOnClosePopUp = () => setShowMyPopUp(false);
   const [display, setDisplay] = useState([]);
   const dispatch = useDispatch()
 
   const {
     register,
-    formState: { errors }, reset,
+    formState: { errors }, reset, control,
     handleSubmit,
   } = useForm();
 
-  const onSubmit = (data) => {
+
+  const onSubmit = (data, base_image) => {
+    // const image = new FormData()
+    // image.append("base_image", data.base_image)
     const postData = {
       body: data.body,
       images: data.images,
       moneytize: 1,
       amount: 20,
-      base_image: data.base_image,
+      base_image: data.images[0],
       video: data.video
     }
-    console.log(postData);
+    console.log(data);
     dispatch(createPost(postData));
-    reset()
+    // reset()
 
 
   }
-
 
   const url = "https://fakerapi.it/api/v1/books?_quantity=1";
 
@@ -70,11 +73,18 @@ const handleOnClosePopUp = () => setShowMyPopUp(false);
 
             <textarea className="outline-none w-full  text-[#212121] lg:mt-7" type="text"
               placeholder="Whats new.." name="" id="" {...register("body")} />
+
           </div>
 
+          {/* <FileInput name="base_image" control={control} /> */}
+          {/* <FileInput name="file" control={control} /> */}
+          <input type="file" accept="image" alt='' {...register("images")} id='files' />
+
+
+
           <div className="but flex justify-end items-center mr-5 space-x-5 mb-5">
-            <p onClick={()=> (setShowMyPopUp(true))} className='text-xl cursor-pointer '><BiCamera color="gray" />  </p>
-            <p onClick={()=> (setShowMyPopUp(true))} className='text-xl cursor-pointer'> <BiVideoPlus color="gray" /> </p>
+            <p onClick={() => (setShowMyPopUp(true))} className='text-xl cursor-pointer '><BiCamera color="gray" />  </p>
+            <p onClick={() => (setShowMyPopUp(true))} className='text-xl cursor-pointer'> <BiVideoPlus color="gray" /> </p>
             <input className='flex px-6 py-[6px] text-sm h-[2rem]
              bg-[#6a52fd] text-white rounded-lg cursor-pointer' type="submit" value="Post It!" />
 
@@ -85,12 +95,11 @@ const handleOnClosePopUp = () => setShowMyPopUp(false);
       </div>
 
       <PopUpModal visiblePopUp={showMyPopUp} onClosePopUp={handleOnClosePopUp} />
-
-
-
-
     </div >
   );
 }
 
 export default Post;
+
+
+

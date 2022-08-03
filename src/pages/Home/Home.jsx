@@ -1,8 +1,6 @@
 import React, { useEffect} from "react";
 import { Status, Post, Feeds, Recommendations, UserNav, MobileNav } from "../../components";
 import { Sidebar } from "../../components";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
 import "./Home.css";
 
 const Home = () => {
@@ -23,8 +21,8 @@ const Home = () => {
           <div className=" min-h-screen  lg:w-[970px] w-[327px]  m-auto ">
             <Status />
             <div className=" ">
+              {/* <Post /> */}
               <div className=" lg:w-[970px] w-[327px] m-auto ">
-                <Post />
                 <div className="flex gap-7 justify-between">
                   <Feeds />
                   <Recommendations />
