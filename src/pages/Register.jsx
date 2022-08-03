@@ -5,7 +5,6 @@ import { LoginNav } from "../components";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { regUser, reset } from "../Redux/features/authSlice";
-// import { otp } from "../Redux/features/otp/otpSlice";
 import {
   country,
   city,
@@ -17,12 +16,11 @@ import Spinner from "../container/Spinner";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
-
   // Handle Form Event
   const {
     register,
     formState: { errors },
-    handleSubmit,
+    handleSubmit
   } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -52,23 +50,16 @@ const Register = () => {
   const { location, statedata, citydata } = useSelector(
     (state) => state.location
   );
-  // console.log(citydata);
 
   let SelectedState;
-  // console.log(citydata.data);
   let selectedCity;
-  // console.log(statedata)
   if (statedata) {
-    // console.log(statedata.states)
     SelectedState = statedata.states;
   }
 
   if (citydata) {
-    // console.log(citydata.cities)
     selectedCity = citydata.cities;
   }
-
-  // const { otp } = useSelector((state) => state.otptoken);
 
   // Navigate to OTP page || If user exist navigate to home
   useEffect(() => {
@@ -94,14 +85,12 @@ const Register = () => {
     const id = e.target.value;
     console.log(id);
     if (id) {
-      // console.log(`${id}`);
       dispatch(states(id));
     }
   };
 
   const handleStates = (e) => {
     const id = e.target.value;
-    // console.log(id);
     if (id) {
       console.log(`${id}cities`);
       dispatch(city(id));

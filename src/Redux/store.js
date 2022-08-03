@@ -6,6 +6,7 @@ import createPostreducer from "./features/createPost/createPostSlice";
 import countryReducer from "./features/userLocation/locationSlice";
 import getUserSetupReducer from "./features/userSetup/setupSlice";
 import feedsReducer from './features/feeds/feedsSlice'
+import getTokenBalanceReducer from "./features/token/tokenSlice";
 
 const store = configureStore({
   reducer: {
@@ -14,9 +15,9 @@ const store = configureStore({
     posts: createPostreducer,
     location: countryReducer,
     accountsetup: getUserSetupReducer,
-    feeds: feedsReducer
+    feeds: feedsReducer,
+    wallet: getTokenBalanceReducer,
   },
 
-  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 export default store;

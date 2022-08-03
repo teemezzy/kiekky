@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 import { Post } from '../../components'
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import FeedsSkeleton from "./FeedsSkeleton";
 import { useDispatch, useSelector } from 'react-redux'
 import PostItem from "./PostItem";
@@ -20,6 +20,7 @@ function Feeds() {
   const { feeds } = useSelector((state) => state.feeds);
   console.log('Jojo', feeds);
 
+  const { id } = useParams();
 
   useEffect(() => {
     if (isError) {
@@ -124,7 +125,6 @@ function Feeds() {
         }
       </div>
     </div>
-
   );
 }
 

@@ -1,13 +1,12 @@
-
-
 import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { Recommendations } from '../../components'
 
 function ProfilePost() {
   const [feed, setFeed] = useState([]);
+  const {id} = useParams();
 
 
   const url = "https://fakerapi.it/api/v1/persons?_quantity=10";
@@ -31,7 +30,7 @@ function ProfilePost() {
                   <div className=" flex  space-x-[18px] lg:space-x-[12px] items-center  ">
                     <div className="feed-image">
 
-                      <NavLink to='/user_profile'>
+                      <NavLink to={`/user_profile/${id}`}>
                         <img
 
                           className="  max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
@@ -42,7 +41,7 @@ function ProfilePost() {
                     </div>
 
                     <div className="  w-[17rem] md:w-[23rem] lg:w-[506.67px]">
-                      <NavLink to='/user_profile'>
+                      <NavLink to={`/user_profile/${id}`}>
 
                         <p className="font-[700] ">{feed.firstname}</p>
                       </NavLink>

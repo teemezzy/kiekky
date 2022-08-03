@@ -27,11 +27,11 @@ const Login = () => {
   const content = "  hidden  cursor-pointer ";
 
   return (
-    <div className='h-[80%]'>
+    <div className=''>
       <LoginNav/>
 
-      <div className="flex relative m-auto o ">
-        <div className=" w-2/5  hidden lg:block ">
+      <div className="flex relative m-auto">
+        <div className="w-2/5 hidden lg:block">
           <img className="h-full " src={bgLogin} alt="Login" />
         </div>
 
@@ -43,7 +43,7 @@ const Login = () => {
             </Link>
           </div>
          
-          <h1 className="welcome mb-5 text-xl text-center ">Welcome Back</h1>
+          <h1 className="mb-5 text-xl text-center ">Welcome Back</h1>
           <div>
             <div className="mx-auto mb-6 ">
               <div

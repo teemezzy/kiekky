@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { login,  reset  } from "../../Redux/features/authSlice";
-import {toast} from 'react-toastify'
+import { useNavigate, useParams } from "react-router-dom";
+import { login, reset } from "../../Redux/features/authSlice";
+import { toast } from "react-toastify";
 import Spinner from "../../container/Spinner";
 
 const LoginEmail = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
-  const {handleSubmit, register, formState: { errors }} = useForm({});
-  // const { isLoggedIn } = useSelector((state) => state.auth);
-  // const { message } = useSelector((state) => state.message);
-  // const location = useLocation();
-  
+  const { handleSubmit, register, formState: { errors }} = useForm({});
+
+  const { id } = useParams();
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user, isError, isSuccess, isLoading, message } = useSelector(
@@ -28,25 +27,27 @@ const LoginEmail = () => {
       password: data.password,
       client_id: process.env.REACT_APP_CLIENT_ID,
       client_secret: process.env.REACT_APP_CLIENT_SECRET,
-      grant_type: process.env.REACT_APP_GRANT_TYPE
-
+      grant_type: process.env.REACT_APP_GRANT_TYPE,
     };
     dispatch(login(userdata));
   };
 
-  useEffect(() => {
-    if (isError) {
-      toast.error(message)
-    }
-    if (isSuccess || user) {
-      navigate ('/feeds')
-    }
+  useEffect(
+    (id) => {
+      if (isError) {
+        toast.error(message);
+      }
+      if (isSuccess || user) {
+        navigate(`/feeds/${id}`);
+      }
 
-    dispatch(reset());
-  }, [user, isError, isSuccess, message, dispatch, navigate]);
-     
+      dispatch(reset());
+    },
+    [user, isError, isSuccess, message, dispatch, navigate]
+  );
+
   if (isLoading) {
-    return  <Spinner />;
+    return <Spinner />;
   }
 
   const handleClick = () => {
@@ -100,7 +101,10 @@ const LoginEmail = () => {
                 Please check your password
               </p>
             )}
-            <button onClick={handleClick} className=" text-white w-full mt-10 rounded-md py-3 px-auto bg-[#6A52FD] ">
+            <button
+              onClick={handleClick}
+              className=" text-white w-full mt-10 rounded-md py-3 px-auto bg-[#6A52FD] "
+            >
               Log In
             </button>
           </form>

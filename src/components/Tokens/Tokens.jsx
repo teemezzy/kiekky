@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-// import axios from "axios";
+import React, { useState, useEffect } from "react";
 import TopUpTokenModal from "./TopUpTokenModal";
 import TransferTokenModal from "./TransferTokenModal";
 import { GiToken } from "react-icons/gi";
 import { IoAdd } from "react-icons/io5";
 import { FaRegEyeSlash, FaRegPaperPlane } from "react-icons/fa";
-// import { useEffect } from "react";
 import { transaction } from "./Transaction";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { getTokenBalance, reset } from "../../Redux/features/token/tokenSlice";
 
 const Tokens = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -17,13 +18,35 @@ const Tokens = () => {
 
   const accountModalOpen = () => setAccountModal(true);
   const accountModalClose = () => setAccountModal(false);
+  const dispatch = useDispatch();
+  const { userbalance, isError, message } = useSelector(
+    (state) => state.wallet
+  );
+  console.log(userbalance);
+
+  useEffect((data) => {
+    if (isError) {
+      toast.error(message);
+    }
+    dispatch(getTokenBalance(data));
+    if (userbalance) {
+      dispatch(reset());
+    };
+  }, [ userbalance.data, isError, message, dispatch ]);
 
   return (
     <div>
-      <div className="flex lg:flex-row flex-col lg:justify-around px-[53px] py-[65px] bg-white lg:w-full w-[352px]">
+      <div className="flex lg:flex-row flex-col lg:justify-around px-[53px] py-[65px] bg-white lg:w-full w-[352px">
         <div className="border-2 w-64 h-36 pl-[22px] rounded-lg bg-[#474749] text-white">
           <GiToken className="mt-[30.45px]" />
-          <p className="font-bold mt-[34.75px] text-[22px]">5000</p>
+          {userbalance.map((userBalance) => (
+            <div
+              key={userBalance.status}
+              className="font-bold mt-[34.75px] text-[22px]"
+            >
+              {userBalance.data}
+            </div>
+          ))}
           <div className="flex items-center w-[120px] justify-between pb-[33px]">
             <p className="font-normal text-[12px]">Token Balance</p>
             <div>
@@ -90,7 +113,7 @@ const Tokens = () => {
 
         <table className=" lg:w-[984px] w-[347px]">
           <thead className="border-b-2 border-[#F2F2F2] bg-[#F5F3FF]">
-            <tr className="flex order-0 items-center justify-around text-center h-[46px]" >
+            <tr className="flex order-0 items-center justify-around text-center h-[46px]">
               <th className="lg:w-28 w-8 text-left lg:text-[16px] text-[12px] text-[#212121]">
                 Date
               </th>

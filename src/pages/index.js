@@ -10,7 +10,6 @@ import About from "./About";
 import AccountSetup from './AccountSetup/AccountSetup.jsx'
 import Faqs from "./Faqs";
 import Community from "./Community";
-import Profile from "./Profile";
 import ForgotPassword from "./ForgotPassword";
 import ResetPassword from "./ResetPassword";
 import OTPVerification from "./OTPVerification";
@@ -33,7 +32,6 @@ export {
   Login,
   Register,
   Community,
-  Profile,
   Privacy,
   TermsConditions,
   NotFound,
@@ -49,7 +47,6 @@ export {
   Wallet,
   Dates,
   Dashboard,
- 
   Notifications,
   UserProfile,
   PersonalProfile,

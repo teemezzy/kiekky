@@ -29,6 +29,7 @@ const TopUpTokenModal = ({ visible, onClose }) => {
           <div className="mt-[40px]">
             <p className="mb-[10px]">Token Value</p>
             <input
+              disabled
               type="text"
               placeholder="N4000"
               className="bg-[#F6F4FF] py-[10px] px-[19px] lg:w-[464px] w-[288px] rounded-lg  "

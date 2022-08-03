@@ -12,7 +12,6 @@ import {
   TermsConditions,
   Privacy,
   NotFound,
-  Profile,
   Dashboard,
   Community,
   Login,
@@ -28,7 +27,6 @@ import {
   Messages,
   Wallet,
   Settings,
-  Logout,
   Notifications,
   PersonalProfile,
   UserProfile,
@@ -46,8 +44,8 @@ function App(children) {
 
   // const history = createBrowserHistory();
   const { user } = useSelector((state) => state.auth);
-  const { usersetup } = useSelector((state) => state.accountsetup);
-  const dispatch = useDispatch();
+  // const { usersetup } = useSelector((state) => state.accountsetup);
+  // const dispatch = useDispatch();
 
   return (
     <div className="App">
@@ -67,20 +65,19 @@ function App(children) {
         <Route element={<ProtectedRoutes />}>
           <Route path="user_setup" element={<AccountSetup />} />
           <Route path="otp" element={<OTPVerification />} />
-          <Route path="feeds" element={<Home /> } />
+          <Route path="feeds/:id" element={<Home /> } />
           <Route path="community" element={<Community />} />
           <Route path="messages" element={<Messages />} />
           <Route path="dates" element={<Dates />} />
           <Route path="settings" element={<Settings />} />
           <Route path="wallet" element={<Wallet />} />
           <Route path="notifications" element={<Notifications />} />
-          <Route path="user_profile" element={<UserProfile />} />
+          <Route path="user_profile/:id" element={<UserProfile />} />
           <Route path="request_dates" element={<RequestDates />} />
           <Route path="edit_profile" element={<EditProfile />} />
           <Route path='view_all' element={<ViewAll />}/>
           <Route path="subscribe" element={<UserSubscribe />} />
           <Route path="personal_profile" element={<PersonalProfile />} />
-          <Route path="user/:userid" element={<Profile />} />
         </Route>
       </Routes>
       {/* <Footer /> */}

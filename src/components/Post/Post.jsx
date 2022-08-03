@@ -5,7 +5,6 @@ import { useController, useForm } from "react-hook-form";
 
 import { createPost } from '../../Redux/features/createPost/createPostSlice'
 import PopUpModal from "./PopUpModal";
-
 import axios from "axios";
 // import { data } from "autoprefixer";
 
@@ -15,7 +14,7 @@ function Post() {
   const [showMyPopUp, setShowMyPopUp] = useState(false);
   const handleOnClosePopUp = () => setShowMyPopUp(false);
   const [display, setDisplay] = useState([]);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -52,22 +51,20 @@ function Post() {
     <div>
       <div className="bg-white rounded-lg items-center mb-9 pb-[1px] w-[327px] lg:w-[672px] max-w-Full ">
         <form onSubmit={handleSubmit(onSubmit)} action="" method="post">
-
           <div className="flex items-center">
-
             <div className="img-container pt-5 pr-5 pl-5">
               {display
                 ? display.map((display, idx) => (
-                  <div key={idx} className="story-status ">
-                    <div className="post-image">
-                      <img
-                        className=" min-w-[4rem] h-[4rem]  p-[2.7px]  cursor-pointer  rounded-full"
-                        src={display.image}
-                        alt="icon"
-                      />
+                    <div key={idx} className="story-status ">
+                      <div className="post-image">
+                        <img
+                          className=" min-w-[4rem] h-[4rem]  p-[2.7px]  cursor-pointer  rounded-full"
+                          src={display.image}
+                          alt="icon"
+                        />
+                      </div>
                     </div>
-                  </div>
-                ))
+                  ))
                 : null}
             </div>
 
@@ -91,7 +88,6 @@ function Post() {
             {/* <button  type="submit">Post it!</button> */}
           </div>
         </form>
-
       </div>
 
       <PopUpModal visiblePopUp={showMyPopUp} onClosePopUp={handleOnClosePopUp} />

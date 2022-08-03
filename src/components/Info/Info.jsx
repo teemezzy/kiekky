@@ -37,36 +37,19 @@ function Info() {
                   Age <span className="text-sm text-[#828282]">Lagos </span>
                 </p>
                 <p className="flex flex-col  ">
-                  Language{" "}
-                  <span className="text-sm text-[#828282]">Lagos </span>{" "}
+                  Language
+                  <span className="text-sm text-[#828282]">Lagos </span>
                 </p>
                 <p className="flex flex-col mr-[-1.7rem] ">
-                  {" "}
-                  <p>
-                    Height <span className="text-xs text-[#828282]">(cm)</span>{" "}
-                  </p>{" "}
-                  <span className="text-sm text-[#828282]">Lagos </span>{" "}
+                  <div>
+                    Height <span className="text-xs text-[#828282]">(cm)</span>
+                  </div>
+                  <span className="text-sm text-[#828282]">Lagos </span>
                 </p>
               </div>
-              {/* 
-<tr >
-                             <td> 
-                                 <p>
-                                     <span> {feed.firstname}</span>
-                                     <span> {feed.lastname}</span>
-                                 </p>
-                                 
-                                </td>
-                             <td> {feed.email}</td>
-                             <td> {feed.phone}</td>
-                             <td> {feed.gender}</td>
-                         </tr> */}
             </div>
           ))
         : null}
-
-      {/* </tbody>
-  </table> */}
     </div>
   );
 }

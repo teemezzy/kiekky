@@ -4,7 +4,7 @@ import axios from "axios";
 const API_URL = process.env.REACT_APP_API_URL;
 
 const getUserSetup = async (setup, token) => {
-  console.log(token, 'my token')
+  // console.log(token, 'my token')
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
