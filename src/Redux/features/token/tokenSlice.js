@@ -1,8 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import tokenService from "./tokenService";
 
+// const userbalance = JSON.parse(localStorage.getItem("userbalance"));
+
 const initialState = {
-  userBalance: [],
+  userbalance: [],
   isLoading: false,
   isError: false,
   isSuccess: false,
@@ -11,12 +13,12 @@ const initialState = {
 
 // Token Balance Thunk
 export const getTokenBalance = createAsyncThunk(
-  "userBalance/get",
+  "userbalance/get",
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.access_token;
-      console.log(token, "my token joan");
-      return await tokenService.getTokenBalance(token);
+      // console.log(token, "my token joan");
+      return await tokenService.getTokenBalance( token);
     } catch (error) {
       const message =
         (error.response &&
@@ -43,14 +45,14 @@ export const tokenSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-    // Token Balance Reducer
+      // Token Balance Reducer
       .addCase(getTokenBalance.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getTokenBalance.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.userBalance = action.payload;
+        state.userbalance = [action.payload];
       })
       .addCase(getTokenBalance.rejected, (state, action) => {
         state.isLoading = false;
@@ -58,7 +60,7 @@ export const tokenSlice = createSlice({
         state.isError = true;
         state.message = action.payload;
       });
-  },
+  },  
 });
 
 export default tokenSlice.reducer;

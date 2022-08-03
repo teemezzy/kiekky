@@ -47,10 +47,10 @@ const AccountSetup = () => {
       return <Spinner />
     }
     if (isSuccess) {
-      navigate("/feeds/:id");
+      navigate(`feeds/${id}`);
     }
     // dispatch(reset());
-  }, [ isError, isLoading, isSuccess, message, dispatch, navigate]);
+  }, [ isError, isLoading, isSuccess, message, dispatch, id, navigate]);
 
   return (
     <div className="flex relative m-auto ">

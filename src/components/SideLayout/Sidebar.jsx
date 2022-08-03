@@ -5,7 +5,6 @@ import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { FiLogOut } from "react-icons/fi";
 import { logout, reset } from "../../Redux/features/authSlice";
-// import { logoutt } from "../../Redux/features/otp/otpSlice";
 import { useDispatch, useSelector } from "react-redux";
 import SidebarSkeleton from './SidebarSkeleton'
 import Skeleton from 'react-loading-skeleton'
@@ -32,7 +31,6 @@ const Sidebar = () => {
   }, []);
   const onLogout = () => {
     dispatch(logout());
-    // dispatch(logoutt());
     dispatch(reset());
     window.location.reload(true);
     // localStorage.removeItem("user", "otptoken");

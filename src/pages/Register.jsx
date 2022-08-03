@@ -5,7 +5,6 @@ import { LoginNav } from "../components";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { regUser, reset } from "../Redux/features/authSlice";
-// import { otp } from "../Redux/features/otp/otpSlice";
 import {
   country,
   city,
@@ -17,12 +16,11 @@ import Spinner from "../container/Spinner";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
-
   // Handle Form Event
   const {
     register,
     formState: { errors },
-    handleSubmit,
+    handleSubmit
   } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -63,8 +61,6 @@ const Register = () => {
   if (citydata) {
     selectedCity = citydata.cities;
   }
-
-  // const { otp } = useSelector((state) => state.otptoken);
 
   // Navigate to OTP page || If user exist navigate to home
   useEffect(() => {

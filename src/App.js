@@ -12,7 +12,6 @@ import {
   TermsConditions,
   Privacy,
   NotFound,
-  Profile,
   Dashboard,
   Community,
   Login,
@@ -28,7 +27,6 @@ import {
   Messages,
   Wallet,
   Settings,
-  Logout,
   Notifications,
   PersonalProfile,
   UserProfile,
@@ -46,8 +44,8 @@ function App(children) {
 
   // const history = createBrowserHistory();
   const { user } = useSelector((state) => state.auth);
-  const { usersetup } = useSelector((state) => state.accountsetup);
-  const dispatch = useDispatch();
+  // const { usersetup } = useSelector((state) => state.accountsetup);
+  // const dispatch = useDispatch();
 
   return (
     <div className="App">
@@ -73,7 +71,6 @@ function App(children) {
           <Route path="dates" element={<Dates />} />
           <Route path="settings" element={<Settings />} />
           <Route path="wallet" element={<Wallet />} />
-          <Route path="logout" element={<Logout />} />
           <Route path="notifications" element={<Notifications />} />
           <Route path="user_profile/:id" element={<UserProfile />} />
           <Route path="request_dates" element={<RequestDates />} />
@@ -81,7 +78,6 @@ function App(children) {
           <Route path='view_all' element={<ViewAll />}/>
           <Route path="subscribe" element={<UserSubscribe />} />
           <Route path="personal_profile" element={<PersonalProfile />} />
-          <Route path="user/:userid" element={<Profile />} />
         </Route>
       </Routes>
       {/* <Footer /> */}

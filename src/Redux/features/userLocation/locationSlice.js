@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+
 const initialState = {
   location: [],
   statedata:null,
@@ -76,7 +77,6 @@ export const locationSlice = createSlice({
       .addCase(states.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
- 
         state.statedata = action.payload;
       })
       .addCase(states.rejected, (state, action) => {
