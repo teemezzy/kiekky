@@ -49,7 +49,8 @@ const AccountSetup = () => {
       return <Spinner />
     }
     if (isSuccess) {
-      navigate(``);
+      navigate('/redirect');
+      window.localStorage.clear();
     }
     // dispatch(reset());
   }, [ isError, isLoading, isSuccess, message, dispatch, id, navigate]);

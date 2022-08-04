@@ -28,8 +28,10 @@ import dropdown from './dropdown.png'
 import calendar from './calendar.png'
 import clock from './clock.png'
 import success from './success.gif'
+import Notfound from './Notfound.png'
 
 export {
+  Notfound,
   Logo,
   nounFace,
   LogoFooter,
