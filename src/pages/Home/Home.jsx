@@ -21,7 +21,6 @@ const Home = () => {
           <div className=" min-h-screen  lg:w-[970px] w-[327px]  m-auto ">
             <Status />
             <div className=" ">
-              {/* <Post /> */}
               <div className=" lg:w-[970px] w-[327px] m-auto ">
                 <div className="flex gap-7 justify-between">
                   <Feeds />

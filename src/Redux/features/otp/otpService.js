@@ -26,23 +26,14 @@ const resendotp = async (userData) => {
     return response.data;
   };
 
-  // Forgot Password API initialization
-  const getPassword = async (userdata) => {
-    const response = await axios.post(API_URL + "user/forgot_pass/init", userdata);
-    if (response.data) {
-      localStorage.setItem("otp", JSON.stringify(response.data.data));
-    }
-    // console.log(userdata);
-    // console.log(response.data);
-    return response.data.data;
-  }
+ 
   
   
 
 const otpService = {
   otptoken,
   resendotp,
-  getPassword,
+
   
   // logoutt
 };

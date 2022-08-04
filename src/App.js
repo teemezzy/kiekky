@@ -12,7 +12,7 @@ import {
   TermsConditions,
   Privacy,
   NotFound,
-  Dashboard,
+  Redirect,
   Community,
   Login,
   Register,
@@ -63,7 +63,7 @@ function App(children) {
         <Route path="forgot-password" element={<ForgotPassword />} />
         <Route path="reset_password" element={<ResetPassword />} />
         <Route path="success" element={<PasswordSuccess />} />
-        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route path="/dashboard/*" element={<Redirect />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="user_setup" element={<AccountSetup />} />
           <Route path="otp" element={<OTPVerification />} />

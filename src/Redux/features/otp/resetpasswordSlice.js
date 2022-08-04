@@ -1,23 +1,22 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import resetpasswordService from "./resetpasswordService";
 
-const otp = JSON.parse(localStorage.getItem("otp"));
+
+// const resetpass = JSON.parse(localStorage.getItem("otp"));
 
 const initialState = {
-  resetpass: otp ? otp : null,
+  resetpass: [],
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: "",
 };
 
-export const resetPass = createAsyncThunk(
-    "otptoken/forgotPass",
+export const getPass = createAsyncThunk(
+    "resetpassword/forgotPass",
     async (passData, thunkAPI) => {
       try {
-        const userdata = thunkAPI.getState().otptoken.otp.userdata;
-        // console.log(userdata);
-        return await resetpasswordService.getstate(userdata, passData);
+        return await resetpasswordService.resetPass(passData);
       } catch (error) {
         const message =
           (error.response &&
@@ -30,8 +29,23 @@ export const resetPass = createAsyncThunk(
     }
   );
 
+
+//  export const getPass = createAsyncThunk("resetpassword/forgotPass", async (passData, thunkAPI) => {
+//     try {
+//       return await authService.login(user);
+//     } catch (error) {
+//       const message =
+//         (error.response && error.response.data && error.response.data.message) ||
+//         error.message ||
+//         error.toString();
+//       return thunkAPI.rejectWithValue(message);
+//     }
+//   });
+
+
+
   export const resetpasswordSlice = createSlice({
-    name: "otptoken",
+    name: "resetpassword",
     initialState,
     reducers: {
       reset: (state) => {
@@ -44,15 +58,15 @@ export const resetPass = createAsyncThunk(
     extraReducers: (builder) => {
       builder
       // Reset Password Reducer
-   .addCase(resetPass.pending, (state) => {
+   .addCase(getPass.pending, (state) => {
     state.isLoading = true;
   })
-  .addCase(resetPass.fulfilled, (state, action) => {
+  .addCase(getPass.fulfilled, (state, action) => {
     state.isLoading = false;
     state.isSuccess = true;
-    state.otp = action.payload;
+    state.resetpass = action.payload;
   })
-  .addCase(resetPass.rejected, (state, action) => {
+  .addCase(getPass.rejected, (state, action) => {
     state.isLoading = false;
     state.isSuccess = false;
     state.message = action.payload;

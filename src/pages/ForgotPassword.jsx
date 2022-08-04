@@ -5,23 +5,24 @@ import { bgLogin } from "../assets";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { getPassword, reset } from "../Redux/features/otp/otpSlice";
+import { getPassword, reset } from "../Redux/features/otp/forPassSlice";
 import Spinner from "../container/Spinner";
 
 function ForgotPassword() {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const { otp, isError, isSuccess, isLoading, message } = useSelector(
-    (state) => state.otptoken
+  const { isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.verifyEmail
   );
 
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit} = useForm();
   const navigate = useNavigate();
   const onSubmit = (data, errors) => {
     const userdata = {
       email: data.email.toLowerCase(),
     };
     // console.log(userdata);
+    
     dispatch(getPassword(userdata));
     dispatch(reset())
   };

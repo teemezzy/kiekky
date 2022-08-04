@@ -4,7 +4,7 @@ import { LoginNav } from "../components";
 import { bgLogin } from "../assets";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { resetPass, reset } from "../Redux/features/otp/resetpasswordSlice";
+import { getPass, reset } from "../Redux/features/otp/resetpasswordSlice";
 import Spinner from "../container/Spinner";
 import { toast } from "react-toastify";
 import OtpInput from "react-otp-input";
@@ -14,9 +14,10 @@ function ResetPassword(userdata) {
   const [otp, setOtp] = useState("");
   const handleChange = (otp) => setOtp(otp);
   const { register, handleSubmit, errors } = useForm();
-  const { resetPass, isError, isSuccess, isLoading, message } = useSelector(
-    (state) => state.otptoken
+  const { resetpass, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.resetpassword
   );
+  const { forgotPassword } = useSelector((state) => state.verifyEmail);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -25,25 +26,22 @@ function ResetPassword(userdata) {
       toast.error("Password mismatch");
     } else {
       const passData = {
-        email: {userdata},
+        email: forgotPassword.dataB.email,
         otp: otp,
-        new_password: data.password,     
-      }
-
-      console.log(passData)
-      dispatch(resetPass(passData))
-      dispatch(reset())
-    };
+        new_password: data.password,
+      };
+      dispatch(getPass(passData));
+      dispatch(reset());
+    }
   };
-  
   useEffect(() => {
     if (isError) {
       toast.error(message);
     }
 
-    if (isSuccess && isLoading) {
+    if (isSuccess && resetpass) {
       navigate("/success");
-      return <Spinner />;
+      window.localStorage.clear();
     }
   });
 
@@ -68,27 +66,27 @@ function ResetPassword(userdata) {
         <p className="text-sm mb-5 text-[gray]">Please enter a new password.</p>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="Otp_input flex justify-center items-center">
-          <OtpInput
-            value={otp}
-            onChange={handleChange}
-            numInputs={4}
-            separator={<span style={{ width: "1rem" }}> </span>}
-            isInputNum={true}
-            shouldAutoFocus={true}
-            inputStyle={{
-              border: "1px solid #6A52FD",
-              borderRadius: "8px",
-              width: "3rem",
-              height: "54px",
-              fontSize: "16px",
-              color: "#000",
-              fontWeight: "400",
-              careColor: "blue",
-            }}
-            focusStyle={{ outline: "none" }}
-          />
-        </div>
+          <div className="Otp_input flex justify-center items-center">
+            <OtpInput
+              value={otp}
+              onChange={handleChange}
+              numInputs={4}
+              separator={<span style={{ width: "1rem" }}> </span>}
+              isInputNum={true}
+              shouldAutoFocus={true}
+              inputStyle={{
+                border: "1px solid #6A52FD",
+                borderRadius: "8px",
+                width: "3rem",
+                height: "54px",
+                fontSize: "16px",
+                color: "#000",
+                fontWeight: "400",
+                careColor: "blue",
+              }}
+              focusStyle={{ outline: "none" }}
+            />
+          </div>
 
           <label>New Password</label>
           <input

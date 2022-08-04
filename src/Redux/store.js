@@ -8,6 +8,7 @@ import getUserSetupReducer from "./features/userSetup/setupSlice";
 import feedsReducer from './features/feeds/feedsSlice'
 import getTokenBalanceReducer from "./features/token/tokenSlice";
 import resetpasswordReducer from "./features/otp/resetpasswordSlice";
+import forPassReducer from "./features/otp/forPassSlice";
 
 const store = configureStore({
   reducer: {
@@ -18,7 +19,8 @@ const store = configureStore({
     accountsetup: getUserSetupReducer,
     feeds: feedsReducer,
     wallet: getTokenBalanceReducer,
-    reset: resetpasswordReducer,
+    resetpassword: resetpasswordReducer,
+    verifyEmail:forPassReducer,
   },
 
 });

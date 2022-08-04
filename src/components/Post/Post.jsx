@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BiCamera, BiVideoPlus } from "react-icons/bi";
 import { useController, useForm } from "react-hook-form";
-import { Avatar } from "@mui/material";
+// import { Avatar } from "@mui/material";
 import { createPost } from '../../Redux/features/createPost/createPostSlice'
 import PopUpModal from "./PopUpModal";
 import axios from "axios";
@@ -25,20 +25,19 @@ function Post() {
   const onSubmit = (data) => {
     const formData = new FormData()
     formData.append("images", data.images[0])
-    const Uploads = formData.get('images')
-    // image
+    const uploads = formData.get('images')
+    //image
     // const showImages = image
     const postData = {
       body: data.body,
-      images: Uploads,
+      images: uploads,
       moneytize: 1,
       amount: data.amount,
       // base_image: data.images[0],
       video: data.video
     }
-    console.log(Uploads);
+    console.log(uploads);
     console.log(data.images[0]);
-    // console.log(image);
     console.log(postData);
     dispatch(createPost(postData));
     dispatch(reset());
@@ -62,7 +61,6 @@ function Post() {
     <div>
       <div className="bg-white rounded-lg items-center mb-9 pb-[1px] w-[327px] lg:w-[672px] max-w-Full ">
         {data.images}
-
         <form onSubmit={handleSubmit(onSubmit)} action="" method="post" encType="multipart/form-data" >
           <div className="flex items-center">
             <div className="img-container pt-5 pr-5 pl-5">

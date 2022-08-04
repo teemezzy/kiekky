@@ -18,7 +18,7 @@ import Dates from "./Dates";
 import Messages from "./Messages";
 import Wallet from "./Wallet";
 import Settings from "./Settings";
-import Dashboard from "./Dashboard";
+import Redirect from "./Redirect";
 import Notifications from './Notifications/Notifications.jsx'
 import UserProfile from './UserProfile/UserProfile'
 import PersonalProfile from './PersonalProfile/PersonalProfile'
@@ -48,7 +48,7 @@ export {
   Messages,
   Wallet,
   Dates,
-  Dashboard,
+  Redirect,
   Notifications,
   UserProfile,
   PersonalProfile,

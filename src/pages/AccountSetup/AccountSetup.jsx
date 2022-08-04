@@ -5,9 +5,10 @@ import { bgLogin } from "../../assets";
 import "./AccountSetup.css";
 import { IoMdMale } from "react-icons/io";
 import { IoMdFemale } from "react-icons/io";
-import { getUserSetup, reset } from "../../Redux/features/userSetup/setupSlice";
+import { getUserSetup  } from "../../Redux/features/userSetup/setupSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { logout, reset } from "../../Redux/features/authSlice";
 import { toast } from "react-toastify";
 import Spinner from "../../container/Spinner";
 
@@ -20,6 +21,7 @@ const AccountSetup = () => {
   const { usersetup, isError, isSuccess, isLoading, message } = useSelector(
     (state) => state.accountsetup
   );
+  const { user } = useSelector((state) => state.auth);
 
   const onSubmit = (data, errors) => {
 
@@ -47,7 +49,7 @@ const AccountSetup = () => {
       return <Spinner />
     }
     if (isSuccess) {
-      navigate(`feeds/${id}`);
+      navigate(``);
     }
     // dispatch(reset());
   }, [ isError, isLoading, isSuccess, message, dispatch, id, navigate]);
