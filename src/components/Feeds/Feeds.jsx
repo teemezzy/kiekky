@@ -18,7 +18,8 @@ function Feeds() {
   // const {user } = useSelector((state)=> state.auth)
   const { posts, isError, isLoading, message } = useSelector((state) => state.posts);
   const { feeds } = useSelector((state) => state.feeds);
-  // console.log('Jojo', feeds);
+  console.log('toromo', feeds[0]);
+  // console.log(feeds.images.map(e=>e.url));
 
   const { id } = useParams();
 
@@ -26,6 +27,8 @@ function Feeds() {
     if (isError) {
       console.log(message)
     }
+
+    console.log();
     dispatch(getfeeds())
 
   }, [getfeeds, isLoading, isError, message, dispatch,])
@@ -103,14 +106,17 @@ function Feeds() {
                     <p>{feed.body}.</p>
                   </div>
 
-                  <div className=" m-auto md:h-[450px] w-[300px] lg:w-[586px] ">
+                  <div
+                  className=" m-auto md:h-[450px] w-[300px] lg:w-[586px] ">
                     <img
                       loading="lazy"
                       decoding="async"
                       className=" z-50 w-[290px] h-[290px]  lg:w-[586px] lg:h-[430px] rounded-lg"
-                      src={feed.images[0]}
-                      alt=""
+                      src=''
+                      alt={feed.map(e=>e.url)}
                     />
+
+{/* {feed.base_image.url} */}
                   </div>
 
                 </div>
