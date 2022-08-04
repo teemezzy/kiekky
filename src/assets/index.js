@@ -17,18 +17,18 @@ import setupProfileVid from "./setupProfileVid.mp4";
 import bgLogin from "./bgLogin.png";
 import elena from "./elena.png";
 import co from "./co.png";
-import reg from './reg.png'
-import link from './link.png'
+import reg from "./reg.png";
+import link from "./link.png";
 import token from "./token.png";
-import nounFace from "./nounFace.png"
-import verified from './verified.png'
-import ribbon from './ribbon.png'
-import heart from './heart.gif'
-import dropdown from './dropdown.png'
-import calendar from './calendar.png'
-import clock from './clock.png'
-import success from './success.gif'
-import Notfound from './Notfound.png'
+import nounFace from "./nounFace.png";
+import verified from "./verified.png";
+import ribbon from "./ribbon.png";
+import heart from "./heart.gif";
+import dropdown from "./dropdown.png";
+import calendar from "./calendar.png";
+import clock from "./clock.png";
+import success from "./success.gif";
+import Notfound from "./Notfound.png";
 
 export {
   Notfound,
@@ -51,12 +51,15 @@ export {
   heroVid,
   setupProfileVid,
   bgLogin,
-  co, token, reg, link, 
+  co,
+  token,
+  reg,
+  link,
   verified,
   ribbon,
   heart,
-   dropdown,
+  dropdown,
   calendar,
-   clock,
-   success
+  clock,
+  success,
 };
