@@ -85,9 +85,9 @@ const OTPVerification = () => {
               borderRadius: "8px",
               width: "3rem",
               height: "54px",
-              fontSize: "12px",
+              fontSize: "16px",
               color: "#000",
-              fontWeight: "400",
+              fontWeight: "600",
               careColor: "blue",
             }}
             focusStyle={{ outline: "none" }}

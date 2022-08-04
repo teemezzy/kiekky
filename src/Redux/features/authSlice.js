@@ -5,7 +5,6 @@ import authService from "./authService";
 const user = JSON.parse(localStorage.getItem("user"));
 // const otp = JSON.parse(localStorage.getItem("otp"));
 
-
 const initialState = {
   user: user ? user : null,
   otp: null,
@@ -13,7 +12,6 @@ const initialState = {
   isSuccess: false,
   isLoading: false,
   message: "",
-
 };
 
 // Register User
@@ -51,10 +49,6 @@ export const logout = createAsyncThunk("auth/logout", async () => {
   await authService.logout();
 });
 
-
-
-
-
 export const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -72,7 +66,7 @@ export const authSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(regUser.fulfilled, (state, action) => {
-        state.isLoading = false; 
+        state.isLoading = false;
         state.isSuccess = true;
         state.user = action.payload;
       })
@@ -81,7 +75,7 @@ export const authSlice = createSlice({
         state.isSuccess = false;
         state.isError = true;
         state.message = action.payload;
-        state.user = null
+        state.user = null;
       })
 
       // For login
@@ -105,16 +99,13 @@ export const authSlice = createSlice({
       // Logout
       .addCase(logout.fulfilled, (state) => {
         state.user = null;
-        state.otp = null
+        state.otp = null;
         state.isLoading = false;
         state.isSuccess = true;
       })
       .addCase(logout.pending, (state) => {
         state.isLoading = true;
-      })
-
-
-      
+      });
   },
 });
 

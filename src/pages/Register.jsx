@@ -45,8 +45,7 @@ const Register = () => {
   };
 
   const { user, isError, isSuccess, isLoading, message } = useSelector(
-    (state) => state.auth
-  );
+    (state) => state.auth);
 
   const { location, statedata, citydata } = useSelector(
     (state) => state.location

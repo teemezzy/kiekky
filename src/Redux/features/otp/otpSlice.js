@@ -15,7 +15,6 @@ export const otptoken = createAsyncThunk(
   "otptoken/otp",
   async (user, thunkAPI) => {
     try {
-      console.log(user);
       return await otpService.otptoken(user);
     } catch (error) {
       const message =
@@ -33,7 +32,6 @@ export const resendotp = createAsyncThunk(
   "otptoken/resendotp",
   async (user, thunkAPI) => {
     try {
-      console.log(user);
       return await otpService.resendotp(user);
     } catch (error) {
       const message =
@@ -46,6 +44,26 @@ export const resendotp = createAsyncThunk(
     }
   }
 );
+
+  export const getPassword = createAsyncThunk(
+  "otptoken/forgotPass",
+  async (userdata, thunkAPI) => {
+    try {
+      // console.log(otp);
+      return await otpService.getPassword(userdata);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+
 
 export const logoutt = createAsyncThunk("otptoken/logout", async () => {
   await otpService.logout();
@@ -89,6 +107,21 @@ export const otpSlice = createSlice({
         state.otp = action.payload;
       })
       .addCase(resendotp.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.message = action.payload;
+        state.isError = true;
+      })
+// Forgot Password Reducer
+      .addCase(getPassword.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getPassword.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.otp = action.payload;
+      })
+      .addCase(getPassword.rejected, (state, action) => {
         state.isLoading = false;
         state.isSuccess = false;
         state.message = action.payload;

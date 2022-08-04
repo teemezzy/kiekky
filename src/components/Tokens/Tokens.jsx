@@ -39,9 +39,9 @@ const Tokens = () => {
       <div className="flex lg:flex-row flex-col lg:justify-around px-[53px] py-[65px] bg-white lg:w-full w-[352px">
         <div className="border-2 w-64 h-36 pl-[22px] rounded-lg bg-[#474749] text-white">
           <GiToken className="mt-[30.45px]" />
-          {userbalance.map((userBalance) => (
+          {userbalance.map((userBalance, index) => (
             <div
-              key={userBalance.status}
+              key={index}
               className="font-bold mt-[34.75px] text-[22px]"
             >
               {userBalance.data}

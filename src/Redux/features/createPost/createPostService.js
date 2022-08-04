@@ -6,14 +6,29 @@ const createPost = async (postData, token) => {
     headers: {
       Authorization: `Bearer ${token}`,
     },
-  };
+  }; 
+  console.log(config);
+const response = await axios.post(API_URL + 'post/create', postData, config);
+console.log(response.data); 
+console.log(response); 
+return response.data;
+};
 
-  const response = await axios.post(API_URL + "post/create", postData, config);
+// get user post
+const getPost = async (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }; 
+  // console.log(config);
+  const response = await axios.get(API_URL + 'post/create', config);
   return response.data;
 };
 
 const createPostService = {
   createPost,
+  getPost
 };
 
 export default createPostService;

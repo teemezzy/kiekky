@@ -12,6 +12,7 @@ import Faqs from "./Faqs";
 import Community from "./Community";
 import ForgotPassword from "./ForgotPassword";
 import ResetPassword from "./ResetPassword";
+import PasswordSuccess from "./PasswordSuccess";
 import OTPVerification from "./OTPVerification";
 import Dates from "./Dates";
 import Messages from "./Messages";
@@ -40,6 +41,7 @@ export {
   Contact,
   ForgotPassword,
   ResetPassword,
+  PasswordSuccess,
   AccountSetup,
   OTPVerification,
   Settings,

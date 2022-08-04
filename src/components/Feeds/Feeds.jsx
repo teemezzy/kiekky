@@ -1,33 +1,63 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
+import { Post } from '../../components'
 import { NavLink, useParams } from "react-router-dom";
 import FeedsSkeleton from "./FeedsSkeleton";
+import { useDispatch, useSelector } from 'react-redux'
+import PostItem from "./PostItem";
+import { getPost, reset } from "../../Redux/features/createPost/createPostSlice";
+import { getfeeds } from '../../Redux/features/feeds/feedsSlice'
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import "swiper/css";
 
 function Feeds() {
   const [feed, setFeed] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isloading, setIsLoading] = useState(true);
+  const dispatch = useDispatch()
+  // const {user } = useSelector((state)=> state.auth)
+  const { posts, isError, isLoading, message } = useSelector((state) => state.posts);
+  const { feeds } = useSelector((state) => state.feeds);
+  console.log('Jojo', feeds);
+
   const { id } = useParams();
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=5";
-
   useEffect(() => {
-    axios.get(url).then((response) => {
-      setFeed(response.data.data);
-      setIsLoading(false);
-    });
-  }, []);
+    if (isError) {
+      console.log(message)
+    }
+    dispatch(getfeeds())
+    
+  }, [getfeeds,isLoading, isError, message, dispatch,])
+
 
   return (
-    <div className="lg:w-[672px] w-[327px] lg:max-w-full ">
-      {isLoading && <FeedsSkeleton cards={10} />}
+    <div className="div">
 
-      {feed
-        ? feed.map((feed, idx) => (
+      <Post />
+
+      {/* <div className="new">
+        {(posts.length > 0) ? (
+          <div className="post">
+            {posts.map((post) => (
+              <PostItem key={post.data.id} post={post} />
+            ))}
+          </div>
+        ) : (
+          <p> No post yet </p>
+        )}
+
+      </div> */}
+
+      <div className="lg:w-[672px] w-[327px] lg:max-w-full ">
+
+        {/* {isloading && <FeedsSkeleton cards={10} />} */}
+
+
+
+        { feeds.map((feed) => (
             <div
-              key={idx}
+              key={feed.id}
               className="bg-white py-[17px] lg:py-[30px]  w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px] h-[440px] "
             >
               <div>
@@ -39,15 +69,18 @@ function Feeds() {
                           loading="lazy"
                           decoding="async"
                           className=" max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
-                          src={feed.image}
+                          // src={feed.data.images}
                           alt="icon"
                         />
                       </NavLink>
                     </div>
 
                     <div className="  w-[17rem]  md:w-[23rem] lg:w-[506.67px]">
-                      <NavLink to={`/user_profile/${feed.id}`}>
-                        <p className="font-[700] ">{feed.firstname}</p>
+                      <NavLink to='/user_profile'>
+
+                        <p className="font-[700] ">{feed.user.username}
+                        {/* {this.state.lists.length >0 ?this.state.lists[0].username:null */}
+                        </p>
                       </NavLink>
 
                       <div className="location flex justify-between lg:w-[506.67px] text-gray text-sm ">
@@ -55,7 +88,8 @@ function Feeds() {
                           <span>
                             <MdOutlineLocationOn color="gray" />
                           </span>
-                          {feed.address.country},{feed.address.city}
+                          {feed.user.city.name},
+                          {feed.user.country.name}
                           {/* Lagos, Nigeria */}
                         </p>
                         <p className="text-[gray] hidden lg:block text-sm">
@@ -66,8 +100,10 @@ function Feeds() {
                   </div>
 
                   <div className=" m-auto w-[300px] py-1 lg:w-[586px]">
+
                     <div className=" m-auto w-[300px] py-[1rem] lg:w-[586px]">
-                      <p>{feed.email}.</p>
+
+                      <p>{feed.body}.</p>
                     </div>
 
                     <div className=" m-auto md:h-[450px] w-[300px] lg:w-[586px] ">
@@ -75,16 +111,19 @@ function Feeds() {
                         loading="lazy"
                         decoding="async"
                         className=" w-[290px] h-[290px]  lg:w-[586px] lg:h-[430px] rounded-lg"
-                        src={feed.image}
+                        src= {feed.images}
                         alt=""
                       />
                     </div>
+
                   </div>
                 </div>
               </div>
             </div>
           ))
-        : null}
+          // : null
+        }
+      </div>
     </div>
   );
 }
