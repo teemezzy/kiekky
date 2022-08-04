@@ -67,7 +67,7 @@ function App(children) {
         <Route element={<ProtectedRoutes />}>
           <Route path="user_setup" element={<AccountSetup />} />
           <Route path="otp" element={<OTPVerification />} />
-          <Route path="feeds/:id" element={<Home /> } />
+          <Route path="feeds" element={<Home /> } />
           <Route path="community" element={<Community />} />
           <Route path="messages" element={<Messages />} />
           <Route path="dates" element={<Dates />} />

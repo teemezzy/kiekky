@@ -1,10 +1,25 @@
-import React, { useEffect, useState } from "react";
-// import { useForm } from "react-hook-form";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { LoginNav } from "../components";
 import { bgLogin } from "../assets";
-const Redirect = () => {
+import { useSelector, useDispatch } from "react-redux";
+import Spinner from "../container/Spinner";
+import { reset } from "../Redux/features/authSlice";
 
+const Redirect = () => {
+  const [loading, setLoading] = useState(false);
+  const { isLoading, message } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    setLoading(true);
+    window.location.reload(true);
+  };
+
+  if (isLoading) {
+    dispatch(reset());
+    return <Spinner />;
+  }
 
   return (
     <div className="flex relative w-[352px] lg:w-full m-auto ">
@@ -20,7 +35,10 @@ const Redirect = () => {
           Your account has been successfully created. Please continue to login.
         </p>
         <NavLink to="/login">
-          <button className=" text-white w-full mt-10 mb-4 rounded-md py-3 px-auto bg-[#6A52FD] ">
+          <button
+            onClick={handleClick}
+            className=" text-white w-full mt-10 mb-4 rounded-md py-3 px-auto bg-[#6A52FD] "
+          >
             Login
           </button>
         </NavLink>

@@ -5,7 +5,7 @@ import { bgLogin } from "../../assets";
 import "./AccountSetup.css";
 import { IoMdMale } from "react-icons/io";
 import { IoMdFemale } from "react-icons/io";
-import { getUserSetup } from "../../Redux/features/userSetup/setupSlice";
+import { getUserSetup  } from "../../Redux/features/userSetup/setupSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, reset } from "../../Redux/features/authSlice";
@@ -15,18 +15,20 @@ import Spinner from "../../container/Spinner";
 const AccountSetup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { id } = useParams();
+  const {id} = useParams()
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit} = useForm();
   const { usersetup, isError, isSuccess, isLoading, message } = useSelector(
     (state) => state.accountsetup
   );
   const { user } = useSelector((state) => state.auth);
 
   const onSubmit = (data, errors) => {
+
     const userdata = {
       gender: data.gender,
       preference: data.preference,
+    
     };
     dispatch(getUserSetup(userdata));
     console.log(getUserSetup);
@@ -43,17 +45,19 @@ const AccountSetup = () => {
     if (isError) {
       toast.error(message);
     }
-
-    if (isLoading) {
-      dispatch(reset());
-      return <Spinner />;
+    if (isSuccess && isLoading) {
+      navigate('/redirect');
+      window.localStorage.clear();
     }
-  }, [isError, isLoading, isSuccess, message, dispatch, id, navigate]);
+  }, [ isError, isLoading, isSuccess, message, dispatch, navigate]);
 
-  if (isSuccess) {
-    navigate("/redirect");
-    window.localStorage.clear();
+  if (isLoading) {
+    dispatch(reset());
+    return <Spinner />
   }
+  // const handleClick = () => {
+  //   setLoading(true);
+  // };
 
   return (
     <div className="flex relative m-auto ">

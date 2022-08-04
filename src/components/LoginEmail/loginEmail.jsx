@@ -38,9 +38,8 @@ const LoginEmail = () => {
         toast.error(message);
       }
       if (isSuccess || user) {
-        navigate(`/feeds/${id}`);
+        navigate(`/feeds`);
       }
-
       dispatch(reset());
     },
     [user, isError, isSuccess, message, dispatch, navigate]
