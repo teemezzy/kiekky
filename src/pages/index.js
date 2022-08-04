@@ -25,6 +25,7 @@ import UserSubscribe from './UserSubscribe'
 import RequestDates from "./RequestDates/RequestDates";
 import EditProfile from './EditProfile'
 import ViewAll from './ViewAll'
+import { PopUpModal } from "../components";
 
 export {
   KiekkyHome,
@@ -53,7 +54,7 @@ export {
   UserSubscribe,
   RequestDates,
 EditProfile,
-ViewAll
+ViewAll, PopUpModal
 
 
 

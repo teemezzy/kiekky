@@ -9,7 +9,7 @@ const feeds = async (postfeeds,token) => {
     }; 
     // console.log(config);
     const response = await axios.post(API_URL + 'user/feeds', postfeeds, config);
-   console.log(response.data.data);
+   console.log('jojo', response.data.data);
   //  console.log(response);
     return response.data.data;
   };

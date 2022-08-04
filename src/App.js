@@ -33,7 +33,7 @@ import {
   UserSubscribe,
   RequestDates,
   EditProfile,
-  ViewAll
+  ViewAll, PopUpModal
 } from "./pages";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { useDispatch, useSelector } from "react-redux";
@@ -78,6 +78,7 @@ function App(children) {
           <Route path='view_all' element={<ViewAll />}/>
           <Route path="subscribe" element={<UserSubscribe />} />
           <Route path="personal_profile" element={<PersonalProfile />} />
+          <Route path="post" element={ <PopUpModal />} />
         </Route>
       </Routes>
       {/* <Footer /> */}
