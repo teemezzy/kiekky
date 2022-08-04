@@ -19,9 +19,9 @@ const NotFound = () => {
             The page you requested for was not found
           </p>
 
-          <div className='w-[512px]'>
-          <button>Go Back</button>
-          <button className='w-[236px]'><NavLink to='/'>Home</NavLink></button>
+          <div className='lg:w-[512px]'>
+          <button className='w-[236px] bg-[#6A52FD] border-2 text-white'>Go Back</button>
+          <button className='w-[236px] text-[#6A52FD] border-2 border-[#6A52FD]'><NavLink to='/'>Home</NavLink></button>
           </div>
         </div>
       </div>

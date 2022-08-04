@@ -15,28 +15,25 @@ function ForgotPassword() {
     (state) => state.verifyEmail
   );
 
-  const { register, handleSubmit} = useForm();
+  const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   const onSubmit = (data, errors) => {
     const userdata = {
       email: data.email.toLowerCase(),
     };
-    // console.log(userdata);
-    
     dispatch(getPassword(userdata));
-    dispatch(reset())
+    dispatch(reset());
   };
 
   useEffect(() => {
     if (isError) {
       toast.error(message);
     }
-
     if (isSuccess) {
       navigate("/reset_password");
     }
   });
-
+  
   if (isLoading) {
     return <Spinner />;
   }
