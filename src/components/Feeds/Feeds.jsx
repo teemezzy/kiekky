@@ -18,7 +18,7 @@ function Feeds() {
   // const {user } = useSelector((state)=> state.auth)
   const { posts, isError, isLoading, message } = useSelector((state) => state.posts);
   const { feeds } = useSelector((state) => state.feeds);
-  console.log('Jojo', feeds);
+  // console.log('Jojo', feeds);
 
   const { id } = useParams();
 
@@ -27,8 +27,8 @@ function Feeds() {
       console.log(message)
     }
     dispatch(getfeeds())
-    
-  }, [getfeeds,isLoading, isError, message, dispatch,])
+
+  }, [getfeeds, isLoading, isError, message, dispatch,])
 
 
   return (
@@ -51,76 +51,75 @@ function Feeds() {
 
       <div className="lg:w-[672px] w-[327px] lg:max-w-full ">
 
-        {/* {isloading && <FeedsSkeleton cards={10} />} */}
+        {isLoading && <FeedsSkeleton cards={10} />}
 
 
 
-        { feeds.map((feed, id) => (
-            <div
-              key={feed.id}
-              className="bg-white py-[17px] lg:py-[30px]  w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px] h-[440px] "
-            >
-              <div>
-                <div className="mb-7 lg:w-[586px] w-[300px] m-auto ">
-                  <div className=" flex space-x-[15px] w-full lg:space-x-[12px] items-center  ">
-                    <div className="feed-image">
-                      <NavLink to="/user_profile">
-                        <img
-                          loading="lazy"
-                          decoding="async"
-                          className=" max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
-                          // src={feed.data.images}
-                          alt="icon"
-                        />
-                      </NavLink>
-                    </div>
-
-                    <div className="  w-[17rem]  md:w-[23rem] lg:w-[506.67px]">
-                      <NavLink to='/user_profile'>
-
-                        <p className="font-[700] ">{feed.user.username}
-                        {/* {this.state.lists.length >0 ?this.state.lists[0].username:null */}
-                        </p>
-                      </NavLink>
-
-                      <div className="location flex justify-between lg:w-[506.67px] text-gray text-sm ">
-                        <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
-                          <span>
-                            <MdOutlineLocationOn color="gray" />
-                          </span>
-                          {feed.user.city.name},
-                          {feed.user.country.name}
-                          {/* Lagos, Nigeria */}
-                        </p>
-                        <p className="text-[gray] hidden lg:block text-sm">
-                          2 days ago
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className=" m-auto w-[300px] py-1 lg:w-[586px]">
-
-                    <div className=" m-auto w-[300px] py-[1rem] lg:w-[586px]">
-
-                      <p>{feed.body}.</p>
-                    </div>
-
-                    <div className=" m-auto md:h-[450px] w-[300px] lg:w-[586px] ">
+        {feeds.map((feed, id) => (
+          <div
+            key={feed.id}
+            className="bg-white py-[17px] lg:py-[30px]  w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px] h-[440px] "
+          >
+            <div>
+              <div className="mb-7 lg:w-[586px] w-[300px] m-auto ">
+                <div className=" flex space-x-[15px] w-full lg:space-x-[12px] items-center  ">
+                  <div className="feed-image">
+                    <NavLink to="/user_profile">
                       <img
                         loading="lazy"
                         decoding="async"
-                        className=" w-[290px] h-[290px]  lg:w-[586px] lg:h-[430px] rounded-lg"
-                        src={feed.images}
-                        alt=""
+                        className=" max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
+                        // src={feed.data.images}
+                        alt="icon"
                       />
-                    </div>
-
+                    </NavLink>
                   </div>
+
+                  <div className="  w-[17rem]  md:w-[23rem] lg:w-[506.67px]">
+                    <NavLink to='/user_profile'>
+
+                      <p className="font-[700] ">{feed.user.username}
+                      </p>
+                    </NavLink>
+
+                    <div className="location flex justify-between lg:w-[506.67px] text-gray text-sm ">
+                      <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
+                        <span>
+                          <MdOutlineLocationOn color="gray" />
+                        </span>
+                        {feed.user.city.name},
+                        {feed.user.country.name}
+                        {/* Lagos, Nigeria */}
+                      </p>
+                      <p className="text-[gray] hidden lg:block text-sm">
+                        2 days ago
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className=" m-auto w-[300px] py-1 lg:w-[586px]">
+
+                  <div className=" m-auto w-[300px] py-[1rem] lg:w-[586px]">
+
+                    <p>{feed.body}.</p>
+                  </div>
+
+                  <div className=" m-auto md:h-[450px] w-[300px] lg:w-[586px] ">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      className=" z-50 w-[290px] h-[290px]  lg:w-[586px] lg:h-[430px] rounded-lg"
+                      src={feed.images[0]}
+                      alt=""
+                    />
+                  </div>
+
                 </div>
               </div>
             </div>
-          ))
+          </div>
+        ))
           // : null
         }
       </div>

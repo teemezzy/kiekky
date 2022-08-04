@@ -1,6 +1,6 @@
 
 
-input[type='radio']{
+.container input[type='radio']{
     display: none;
 }
 
