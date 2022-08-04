@@ -21,7 +21,7 @@ function ResetPassword(userdata) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const onSubmit = (data, userdata, errors) => {
+  const onSubmit = (data) => {
     if (data.password !== data.confirmpassword) {
       toast.error("Password mismatch");
     } else {

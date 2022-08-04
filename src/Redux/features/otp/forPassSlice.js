@@ -52,7 +52,7 @@ export const forPassSlice = createSlice({
       .addCase(getPassword.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.forgotPassword= action.payload;
+        state.forgotPassword = action.payload;
       })
       .addCase(getPassword.rejected, (state, action) => {
         state.isLoading = false;
