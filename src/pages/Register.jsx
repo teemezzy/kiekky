@@ -339,7 +339,7 @@ const Register = () => {
                     <option
                       key={city.id}
                       value={city.id}
-                      className={`bg-[#F6F4FF] py-2 px-4 ${
+                      className={`bg-[#F6F4FF] py-2 px-4 outline-none ${
                         errors.password &&
                         "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
                       }`}

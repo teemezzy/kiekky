@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BiCamera, BiVideoPlus } from "react-icons/bi";
 import { useController, useForm } from "react-hook-form";
-
-import { createPost } from "../../Redux/features/createPost/createPostSlice";
+import { Avatar } from "@mui/material";
+import { createPost } from '../../Redux/features/createPost/createPostSlice'
 import PopUpModal from "./PopUpModal";
 import axios from "axios";
+import { data } from "autoprefixer";
 // import { data } from "autoprefixer";
 
 function Post() {
@@ -16,24 +17,29 @@ function Post() {
 
   const {
     register,
-    formState: { errors },
-    reset,
-    control,
+    formState: { errors }, reset,
     handleSubmit,
   } = useForm();
 
-  const onSubmit = (data, base_image) => {
-    // const image = new FormData()
-    // image.append("base_image", data.images)
+
+  const onSubmit = (data) => {
+    const formData = new FormData()
+    formData.append("images", data.images[0])
+    const Uploads = formData.get('images')
+    // image
+    // const showImages = image
     const postData = {
       body: data.body,
-      images: data.images,
+      images: Uploads,
       moneytize: 1,
-      amount: 20,
+      amount: data.amount,
       // base_image: data.images[0],
-      video: data.video,
-    };
-    console.log(data.images);
+      video: data.video
+    }
+    console.log(Uploads);
+    console.log(data.images[0]);
+    // console.log(image);
+    console.log(postData);
     dispatch(createPost(postData));
     dispatch(reset());
   };
@@ -55,21 +61,24 @@ function Post() {
   return (
     <div>
       <div className="bg-white rounded-lg items-center mb-9 pb-[1px] w-[327px] lg:w-[672px] max-w-Full ">
-        <form onSubmit={handleSubmit(onSubmit)} action="" method="post">
+        {data.images}
+
+        <form onSubmit={handleSubmit(onSubmit)} action="" method="post" encType="multipart/form-data" >
           <div className="flex items-center">
             <div className="img-container pt-5 pr-5 pl-5">
               {display
                 ? display.map((display, idx) => (
-                    <div key={idx} className="story-status ">
-                      <div className="post-image">
-                        <img
-                          className=" min-w-[4rem] h-[4rem]  p-[2.7px]  cursor-pointer  rounded-full"
-                          src={display.image}
-                          alt="icon"
-                        />
-                      </div>
+                  <div key={idx} className="story-status ">
+                    <div className="post-image">
+                      <img
+                        className=" min-w-[4rem] h-[4rem]  p-[2.7px]  cursor-pointer  rounded-full"
+                        src={display.image}
+                        alt="icon"
+                      />
+                      {/* <Avatar alt={data.image} src="/static/images/avatar/1.jpg" /> */}
                     </div>
-                  ))
+                  </div>
+                ))
                 : null}
             </div>
 
@@ -85,15 +94,33 @@ function Post() {
 
           {/* <FileInput name="base_image" control={control} /> */}
           {/* <FileInput name="file" control={control} /> */}
+          <input type="file" accept="image" alt='' {...register("images")} name='images' id='files' multiple />
+
+          <p className='lg:w-[250px] '>Who Can See This Post</p>
+          <input {...register("public")} className='border-2 my-[26px] ' name="subs" id="Public" type="radio" value="Public" />
+          <label htmlFor="Public" className='my-[26px] ' >Public </label> <br />
+          <input className='my-[26px]' {...register("moneytize", { required: true })} type="radio" name="subs" id="subscribers" value="subscribers" />
+          <label htmlFor="Subscribers" className='my-[26px]'> Subscribers </label>
+          <p>Set Token for Non-Subscribers</p>
           <input
-            onChange={handleImage}
-            files="png/jpg/gif/jpeg"
-            type="file"
-            accept="image"
-            alt=""
-            {...register("images")}
-            multiple
+            type="text"
+            placeholder="Enter Token"
+            className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none ${errors.amount &&
+              "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+              }`}
+            {...register("amount", {
+              required: true,
+              pattern: {
+                value: /\b(0?[1-9]|1[0-9]|2[0-5])\b/g,
+                message:
+                  "token must not be more than 25 tokens",
+              },
+            })}
           />
+          {errors.amount && (
+            <p className="text-red-600 text-xs"> Token must not be more than 25 tokens</p>
+          )}
+
 
           <div className="but flex justify-end items-center mr-5 space-x-5 mb-5">
             <p

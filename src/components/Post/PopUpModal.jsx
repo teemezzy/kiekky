@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import axios from 'axios';
 import { BiEdit } from 'react-icons/bi'
 import { BsImage } from 'react-icons/bs'
@@ -13,6 +13,11 @@ function PopUpModal({ visiblePopUp, onClosePopUp, onDrop, accept, open }) {
         formState: { errors }, reset, resetField,
         handleSubmit,
     } = useForm();
+
+    const [toggle, setToggle] = useState(false);
+
+    const handleClick = () => {
+      setToggle(!toggle);}
 
     const dispatch = useDispatch()
     const onSubmit = (data) => {
@@ -33,11 +38,11 @@ function PopUpModal({ visiblePopUp, onClosePopUp, onDrop, accept, open }) {
     const handleImage = (e) => {
         const id = e.target.value;
         if (id) {
-          console.log(`${id}image`);
-          dispatch('base_image');
+            console.log(`${id}image`);
+            dispatch('base_image');
         }
-      };
-    
+    };
+
     const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({ accept, onDrop })
     const files = acceptedFiles.map((file) => (
         <li key={file.path}>
@@ -83,7 +88,7 @@ function PopUpModal({ visiblePopUp, onClosePopUp, onDrop, accept, open }) {
                             <aside>
                                 <ul>{files}</ul>
                             </aside>
-                            <input  onChange={(e) => handleImage(e)} {...register("base_image")} className=' ' id='base_image' name="base_image" type="file" value="" />
+                            <input onChange={(e) => handleImage(e)} {...register("base_image")} className=' ' id='base_image' name="base_image" type="file" value="" />
 
                         </div>
                     </div>
@@ -93,17 +98,47 @@ function PopUpModal({ visiblePopUp, onClosePopUp, onDrop, accept, open }) {
                         <div className=' lg:w-[360px] m-auto ' >
 
                             <p className='lg:w-[250px] '>Who Can See This Post</p>
-                            <input {...register("radio")} className='border-2 my-[26px] ' name="public" id="Public" type="radio" value="Public" />
-                            <label htmlFor="Public" className='my-[26px] ' >Public </label> <br />
-                            <input className='my-[26px]' {...register("radio", { required: true })} type="radio" name="sub" id="subscribers" value="subscribers" />
-                            <label htmlFor="Subscribers" className='my-[26px]'> Subscribers </label>
+                            <input {...register("public")} className='border-2  ' name="subs" id="Public" type="radio" value="Public" />
+                            <label htmlFor="Public" className='mt-[16px] ' >Public </label> <br />
+                            
+                             <div>{toggle ? (<div>  <input className='my-[26px]' {...register("moneytize", { required: true })} type="radio"  name="subs" id="subscribers" value="subscribers" onClick={handleClick} />
+                            <label htmlFor="Subscribers" className='my-[16px]'> Subscribers </label> </div>) : null }</div>
+                            
+                           
+                            <p>Set Token for Non-Subscribers</p>
+
+                            <div>
+        {toggle && (
+          <div>
+          <input
+          type="text"
+          placeholder="Enter Token"
+          className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none ${errors.amount &&
+              "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
+              }`}
+          {...register("amount", {
+              required: true,
+              pattern: {
+                  value: /\b(0?[1-9]|1[0-9]|2[0-5])\b/g,
+                  message:
+                      "token must not be more than 25 tokens",
+              },
+          })}
+      />
+      {errors.amount && (
+          <p className="text-red-600 text-xs"> Token must not be more than 25 tokens</p>
+      )}</div>
+        )}
+      </div>
+
+
                             {/* <input type="checkbox" name="" id="" /> */}
 
                             <div className=" flex lg:mt-[24px] justify-between w-[300px] ">
                                 <input className='text-sm lg:w-[141px] lg:h-[39px]
                                  bg-[#6a52fd] text-white rounded-lg cursor-pointer' type="submit" value="Post It!" />
                                 <input className=' lg:w-[141px] text-sm lg:h-[39px]
-                                  text-[#6a52fd] border-[#6a52fd] border-[0.5px] rounded-lg cursor-pointer' type="button" onClick={()=> resetField('body')} value="Delete" />
+                                  text-[#6a52fd] border-[#6a52fd] border-[0.5px] rounded-lg cursor-pointer' type="button" onClick={() => resetField()} value="Delete" />
 
                             </div>
                         </div>
