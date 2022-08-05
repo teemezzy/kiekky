@@ -51,7 +51,7 @@ function SetPost() {
                     <div className="posts lg:w-[800px] w-[352px] rounded-lg bg-white lg:h-[55vh] ">
                         <div className=' pb-3 flex justify-between w-[320px] border-b-[0.5px] lg:w-[700px]   pt-9 m-auto'>
                             <div className='text-[#6a52fd] flex items-center space-x-1'><BiEdit size='1.2rem' /> <span> Post </span>  </div>
-                            <NavLink to='/feeds/:id'> <button className=' text-[#BDBDBD] '> x </button></NavLink>
+                            <NavLink to='/feeds'> <button className=' text-[#BDBDBD] '> x </button></NavLink>
                         </div>
 
                         <div className="text lg:w-[700px] m-auto w-[313px] ">
@@ -107,7 +107,7 @@ function SetPost() {
                             <div className=" flex lg:mt-[10px] py-7 lg:py-0 justify-between lg:w-[300px]  w-[313px] m-auto ">
 
                                 <div className='' >
-                                    <NavLink to='/feeds/:id' > <input className='text-sm w-[141px] h-[39px]
+                                    <NavLink to='/feeds' > <input className='text-sm w-[141px] h-[39px]
                              bg-[#6a52fd] text-white rounded-lg cursor-pointer'  type="submit" value="Post It!" />
                                     </NavLink>
                                 </div>
