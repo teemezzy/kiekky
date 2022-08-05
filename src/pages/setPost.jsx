@@ -1,20 +1,42 @@
-import React, { useCallback, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BiEdit } from 'react-icons/bi'
 import { BsImage } from 'react-icons/bs'
-import { useDropzone } from 'react-dropzone'
+import { useSelector } from 'react-redux';
+import * as Yup from 'yup'
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
+import { reset } from '../Redux/features/createPost/createPostSlice';
 import { createPost } from '../Redux/features/createPost/createPostSlice'
 import { useForm } from 'react-hook-form'
 import { UserNav } from '../components'
+import { toast } from "react-toastify";
+
+
 
 function SetPost() {
+    const {isLoading, isSuccess, isError, message } = useSelector((state) => state.posts);
+    
     const {
         register,
-        formState: { errors }, reset, resetField,
+        formState: { errors }, resetField,
         handleSubmit,
     } = useForm();
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (isError) {
+          toast.error(message);
+        }
+    if(isSuccess){
+         navigate('/feeds')  
+         }
+         return ()=> {
+            dispatch( reset() ) 
+    }
+      }, [isLoading, isError, isSuccess, reset, navigate, message]);
+     
 
     const [toggle, setToggle] = useState(false);
 
@@ -22,7 +44,6 @@ function SetPost() {
         setToggle(!toggle);
     }
 
-    const dispatch = useDispatch()
     const onSubmit = (data) => {
         const formData = new FormData()
         formData.append("images", data.images[0])
@@ -35,8 +56,8 @@ function SetPost() {
             // base_image: data.images[0],
             video: data.video
         }
-        console.log(Uploads);
-        console.log(data.images[0]);
+        // console.log(Uploads);
+        // console.log(data.images[0]);
         // console.log(image);
         console.log(postData);
         dispatch(createPost(postData));
@@ -74,11 +95,11 @@ function SetPost() {
                         <div className=' lg:w-[360px] w-[352px] m-auto ' >
 
                             <p className='lg:w-[250px] w-[312px] m-auto lg:m-0 '>Who Can See This Post</p>
-                            <input {...register("public")} className='  ' name="subs" id="Public" type="radio" value="Public" />
+                            <input {...register("moneytize", {required:true})} className='  ' name="moneytize" id="Public" type="radio" value="Public" />
                             <label htmlFor="Public" className='mt-[16px] ' >Public </label> <br />
 
-                            <div>{toggle ? (<div>  <input className='my-[26px]  ' {...register("moneytize", { required: true })} type="radio" name="subs" id="subscribers" value="subscribers" onClick={handleClick} />
-                                <label htmlFor="Subscribers" className='my-[16px]'> Subscribers </label> </div>) : (<div>  <input className='my-[26px]' {...register("moneytize", { required: true })} type="radio" name="subs" id="subscribers" value="subscribers" onClick={handleClick} />
+                            <div>{toggle ? (<div>  <input className='my-[26px]  ' {...register("moneytize", { required: true })} type="radio" name="moneytize" id="subscribers" value="subscribers" onClick={handleClick} />
+                                <label htmlFor="Subscribers" className='my-[16px]'> Subscribers </label> </div>) : (<div>  <input className='my-[26px]' {...register("moneytize", { required: true })} type="radio" name="moneytize" id="subscribers" value="subscribers" onClick={handleClick} />
                                     <label htmlFor="Subscribers" className='my-[16px]'> Subscribers </label> </div>)}</div>
                             <div>
                                 {toggle && (
@@ -91,7 +112,6 @@ function SetPost() {
                                                 "focus:border-red-600 focus:ring-red-600 border-red-600 border-[0.5px]"
                                                 }`}
                                             {...register("amount", {
-                                                required: true,
                                                 pattern: {
                                                     value: /\b(0?[1-9]|1[0-9]|2[0-5])\b/g,
                                                     message:
@@ -104,6 +124,8 @@ function SetPost() {
                                         )}</div>
                                 )}
                             </div>
+                          <p className='text-[#b43030] '>  {errors.moneytize?.type === 'required' &&
+            'Select a type of user that will view your post'}</p>
                             <div className=" flex lg:mt-[10px] py-7 lg:py-0 justify-between lg:w-[300px]  w-[313px] m-auto ">
                             
                                 <div className='' >
