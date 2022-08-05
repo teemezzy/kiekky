@@ -39,7 +39,7 @@ function Feeds() {
   }, [getfeeds, isLoading, isError, message, dispatch]);
 
   return (
-    <div className="div">
+    <div className="lg:w-[672px] m-auto w-full lg:max-w-full ">
       <Post />
 
       <div className="lg:w-[672px] m-auto w-full lg:max-w-full ">
