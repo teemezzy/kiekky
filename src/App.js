@@ -34,8 +34,9 @@ import {
   UserSubscribe,
   RequestDates,
   EditProfile,
-  ViewAll, PopUpModal
+  ViewAll, SetPost
 } from "./pages";
+// import PopUpModal from "./components/PPV/PopUpModal";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { useDispatch, useSelector } from "react-redux";
 // import { createBrowserHistory } from "history";
@@ -80,7 +81,7 @@ function App(children) {
           <Route path='view_all' element={<ViewAll />}/>
           <Route path="subscribe" element={<UserSubscribe />} />
           <Route path="personal_profile" element={<PersonalProfile />} />
-          <Route path="post" element={ <PopUpModal />} />
+          <Route path="post" element={ <SetPost />} />
         </Route>
       </Routes>
       {/* <Footer /> */}

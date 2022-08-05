@@ -41,8 +41,6 @@ function PopUpModal({ visiblePopUp, onClosePopUp, onDrop, accept, open }) {
         console.log(postData);
         dispatch(createPost(postData));
         // reset()
-
-
     }
 
     const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({ accept, onDrop })
@@ -52,10 +50,15 @@ function PopUpModal({ visiblePopUp, onClosePopUp, onDrop, accept, open }) {
         </li>
     ));
 
-    
-var forms = (
-    <div className="div">
 
+{/* // (document.body).append(forms) */}
+
+    if (!visiblePopUp) return null;
+    return (
+        <div 
+        // className='fixed inset-0  bg-black bg-opacity-20 z-50
+        //                 backdrop-blur-sm flex justify-center items-center'
+                        >
 <form onSubmit={handleSubmit(onSubmit)} action="" method="post">
 
 <div className=" lg:w-[1320px] lg:h-[680px] justify-between  flex bg-[#E5E5E5] w-[400px] h-[380px] rounded-lg ">
@@ -147,16 +150,7 @@ var forms = (
 </div>
 </form>
     </div>
-)
-
-// (document.body).append(forms)
-
-    if (!visiblePopUp) return null;
-    return (
-        <div className='fixed inset-0  bg-black bg-opacity-20 z-50
-                        backdrop-blur-sm flex justify-center items-center'>
-{forms}
-        </div>
+        
 
 
     );
