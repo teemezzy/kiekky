@@ -42,7 +42,7 @@ function Feeds() {
     <div className="div">
       <Post />
 
-      <div className="lg:w-[672px] w-full lg:max-w-full ">
+      <div className="lg:w-[672px] m-auto w-full lg:max-w-full ">
         {isLoading && <FeedsSkeleton cards={10} />}
 
         {
@@ -55,11 +55,11 @@ function Feeds() {
             return (
               <div
                 key={feed.id}
-                className="bg-white py-[17px] lg:py-[30px]  w- rounded-lg mb-5 lg:w-[672px] lg:h-[625px] h-[440px] "
+                className="bg-white py-[17px] lg:py-[30px] m-auto rounded-lg mb-5 lg:w-[672px] lg:h-[625px] h-[440px] "
               >
                 <div>
-                  <div className="mb-7 lg:w-[672px] w-[375px] m-auto ">
-                    <div className=" flex space-x-[15px] w-[300px] m-auto lg:space-x-[12px] items-center  ">
+                  <div className="mb-7 lg:w-[672px] w-[375px] m-auto">
+                    <div className=" flex space-x-[15px] w-[300px] px-[1rem] lg:space-x-[12px] items-center">
                       <div className="feed-image">
                         <NavLink to="/user_profile">
                           <img
@@ -72,12 +72,12 @@ function Feeds() {
                         </NavLink>
                       </div>
 
-                      <div className="  w-[17rem]  md:w-[23rem] lg:w-[506.67px]">
+                      <div className="w-[17rem] md:w-[23rem] lg:w-[506.67px]">
                         <NavLink to="/user_profile">
                           <p className="font-[700] ">{feed.user.username}</p>
                         </NavLink>
 
-                        <div className="location flex justify-between lg:w-[506.67px] text-gray text-sm ">
+                        <div className="flex justify-between lg:w-[506.67px] text-gray text-sm ">
                           <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
                             <span>
                               <MdOutlineLocationOn color="gray" />
@@ -92,15 +92,16 @@ function Feeds() {
                     </div>
 
                     <div className=" m-auto w-[375px] py-1 lg:w-[672px]">
-                      <div className=" m-auto w-[300px] py-[1rem] lg:w-[586px] ">
+                      <div className="  w-[300px] p-[1rem] lg:w-[586px] ">
                         <p>{feed.body}.</p>
                       </div>
+                      {/* className="  md:h-[450px] w-[375px] lg:w-[672px] " */}
 
-                      <div className="  md:h-[450px] w-[375px] lg:w-[672px] ">
+                      <div className=" m-auto w-[375px] h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg">
                         <img
                           loading="lazy"
                           decoding="async"
-                          className=" z-50 w-[375px] h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg"
+                          className="object-contain w-full h-full"
                           src={result}
                           alt=""
                         />
