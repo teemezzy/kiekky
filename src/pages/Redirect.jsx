@@ -13,11 +13,12 @@ const Redirect = () => {
 
   const handleClick = () => {
     setLoading(true);
-    window.location.reload(true);
+    
   };
 
   if (isLoading) {
     dispatch(reset());
+    window.location.reload(true);
     return <Spinner />;
   }
 
@@ -34,14 +35,13 @@ const Redirect = () => {
         <p className="my-7 text-[#666666] ">
           Your account has been successfully created. Please continue to login.
         </p>
-        <NavLink to="/login">
-          <button
-            onClick={handleClick}
-            className=" text-white w-full mt-10 mb-4 rounded-md py-3 px-auto bg-[#6A52FD] "
-          >
-            Login
-          </button>
-        </NavLink>
+
+        <button
+          onClick={handleClick}
+          className=" text-white w-full mt-10 mb-4 rounded-md py-3 px-auto bg-[#6A52FD] "
+        >
+          <NavLink to="/login">Login</NavLink>
+        </button>
       </div>
     </div>
   );

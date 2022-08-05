@@ -37,8 +37,6 @@ function Post() {
       // base_image:'',
       video: {},
     }
-    // console.log(uploads);
-    // console.log(data.images);
     console.log(postData);
     dispatch(createPost(postData));
     dispatch(reset());
