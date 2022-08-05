@@ -24,7 +24,7 @@ const Home = () => {
             </div>
 
             <div className=" lg:w-[970px] w-screen ">
-              <div className="flex gap-7 justify-between">
+              <div className="flex lg;gap-7 justify-between">
                 <Feeds />
                 <Recommendations />
               </div>

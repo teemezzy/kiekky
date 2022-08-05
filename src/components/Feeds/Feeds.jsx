@@ -15,8 +15,7 @@ import { getfeeds } from "../../Redux/features/feeds/feedsSlice";
 // import "swiper/css";
 
 function Feeds() {
-  // const [feed, setFeed] = useState([]);
-  const [isloading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   // const {user } = useSelector((state)=> state.auth)
   const { posts, isError, isLoading, message } = useSelector(
@@ -34,8 +33,8 @@ function Feeds() {
       console.log(message);
     }
 
-    console.log();
     dispatch(getfeeds());
+    setLoading(false);
   }, [getfeeds, isLoading, isError, message, dispatch]);
 
   return (
@@ -43,8 +42,7 @@ function Feeds() {
       <Post />
 
       <div className="lg:w-[672px] m-auto w-full lg:max-w-full ">
-        {isLoading && <FeedsSkeleton cards={10} />}
-
+        {loading && <FeedsSkeleton cards={5} />}
         {
           data.map(function (feed, id) {
             let res = feed?.images;
@@ -60,13 +58,13 @@ function Feeds() {
                 <div>
                   <div className="mb-7 lg:w-[672px] w-[375px] m-auto">
                     <div className=" flex space-x-[15px] w-[300px] px-[1rem] lg:space-x-[12px] items-center">
-                      <div className="feed-image">
+                      <div className="feed-image max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full z-50">
                         <NavLink to="/user_profile">
                           <img
                             loading="lazy"
                             decoding="async"
-                            className=" max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
-                            // src={feed.data.images}
+                            className=" object-fill rounded-full"
+                            src={result}
                             alt="icon"
                           />
                         </NavLink>
