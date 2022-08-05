@@ -46,7 +46,7 @@ function SetPost() {
         <div className=' bg-[#F9FAFA] h-screen m-auto flex ' >
             <UserNav />
 
-            <form onSubmit={handleSubmit(onSubmit)} action="" method="post" className='lg:w-[90%] h-full mt-[7.5rem] lg:mt-0  m-auto'>
+            <form onSubmit={handleSubmit(onSubmit)} action="" method="post" className='lg:w-[90%] h-full mt-[7.5rem]   m-auto'>
                 <div className="  m-auto justify-between lg:flex rounded-lg ">
                     <div className="posts lg:w-[800px] w-[352px] rounded-lg bg-white lg:h-[55vh] ">
                         <div className=' pb-3 flex justify-between w-[320px] border-b-[0.5px] lg:w-[700px]   pt-9 m-auto'>
@@ -105,11 +105,11 @@ function SetPost() {
                                 )}
                             </div>
                             <div className=" flex lg:mt-[10px] py-7 lg:py-0 justify-between lg:w-[300px]  w-[313px] m-auto ">
-
+                            
                                 <div className='' >
-                                    <NavLink to='/feeds' > <input className='text-sm w-[141px] h-[39px]
+                                    <input className='text-sm w-[141px] h-[39px]
                              bg-[#6a52fd] text-white rounded-lg cursor-pointer'  type="submit" value="Post It!" />
-                                    </NavLink>
+                                    
                                 </div>
 
                                 <input className=' w-[141px] text-sm h-[39px]
