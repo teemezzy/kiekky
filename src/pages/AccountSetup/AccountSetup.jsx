@@ -45,14 +45,19 @@ const AccountSetup = () => {
     if (isError) {
       toast.error(message);
     }
-    if (isLoading) {
-      return <Spinner />
+    if (isSuccess && isLoading) {
+      navigate('/redirect');
+      window.localStorage.clear();
     }
-    if (isSuccess) {
-      navigate(``);
-    }
-    // dispatch(reset());
-  }, [ isError, isLoading, isSuccess, message, dispatch, id, navigate]);
+  }, [ isError, isLoading, isSuccess, message, dispatch, navigate]);
+
+  if (isLoading) {
+    dispatch(reset());
+    return <Spinner />
+  }
+  // const handleClick = () => {
+  //   setLoading(true);
+  // };
 
   return (
     <div className="flex relative m-auto ">
