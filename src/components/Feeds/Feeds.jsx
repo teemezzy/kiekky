@@ -58,12 +58,12 @@ function Feeds() {
                 <div>
                   <div className="mb-7 lg:w-[672px] w-[375px] m-auto">
                     <div className=" flex space-x-[15px] w-[300px] px-[1rem] lg:space-x-[12px] items-center">
-                      <div className="feed-image max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full z-50">
+                      <div className="feed-image max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full">
                         <NavLink to="/user_profile">
                           <img
                             loading="lazy"
                             decoding="async"
-                            className=" object-fill rounded-full"
+                            className="object-fill rounded-full"
                             src={result}
                             alt="icon"
                           />

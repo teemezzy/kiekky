@@ -14,8 +14,8 @@ const UserMidNav = () => {
     setToggle(!toggle);
   };
   return (
-    <div className="set-position">
-      <div className=" xl:hidden pt-10 flex justify-between items-center px-5 bg-white pb-4 ">
+    <div className="set-position bg-white  ">
+      <div className=" xl:hidden pt-10 flex justify-between items-center px-5 pb-4 ">
            
            <div className="home-ham flex items-center space-x-5">
 

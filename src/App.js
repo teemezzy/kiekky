@@ -46,13 +46,14 @@ function App(children) {
 
   // const history = createBrowserHistory();
   const { user } = useSelector((state) => state.auth);
+  const { otp } = useSelector((state) => state.otptoken);
   // const { usersetup } = useSelector((state) => state.accountsetup);
   // const dispatch = useDispatch();
 
   return (
     <div className="App">
       <SkeletonTheme baseColor="#BDBDBD" highlightColor="#ffffff">      <Routes>
-        <Route exact path="/" element={user ? <Home /> : <KiekkyHome />} />
+        <Route exact path="/" element={user && otp ? <Home /> : <KiekkyHome />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="contact" element={<Contact />} />
