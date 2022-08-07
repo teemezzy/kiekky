@@ -76,7 +76,7 @@ function App(children) {
           <Route path="settings" element={<Settings />} />
           <Route path="wallet" element={<Wallet />} />
           <Route path="notifications" element={<Notifications />} />
-          <Route path="user_profile/:id" element={<UserProfile />} />
+          <Route path="user_profilegit" element={<UserProfile />} />
           <Route path="request_dates" element={<RequestDates />} />
           <Route path="edit_profile" element={<EditProfile />} />
           <Route path='view_all' element={<ViewAll />}/>

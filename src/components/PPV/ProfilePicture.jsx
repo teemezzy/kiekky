@@ -48,7 +48,6 @@ const ProfilePicture = () => {
                         <div className="   ">
                           <div className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
                             <div className="flex flex-col justify-center items-center">
-                              {/* <BsPlay size='2rem ' color='white' /> */}
                               <VscLock color="white" />
                               <p className="text-white mt-3 text-sm lg:text-base">Unlock for 10 tokens</p>
                             </div>
