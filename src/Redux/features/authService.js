@@ -25,28 +25,32 @@ const login = async (data) => {
 const logout = () => {
   localStorage.removeItem("user");
   localStorage.removeItem("otp");
-  // localStorage.removeItem("token");
+  localStorage.removeItem("resetpass");
+  localStorage.removeItem("usersetup");
+  localStorage.removeItem("feeds");
+  localStorage.removeItem("posts");
+  localStorage.clear()
 };
 
 // Get user from localstorage with token (otpSlice)
-const otptoken = async (userData) => {
-  console.log(userData);
-  const response = await axios.post(API_URL + "register/confirm_otp", userData);
-  if (response.data) {
-    localStorage.setItem("otp", JSON.stringify(response.data));
-  }
+// const otptoken = async (userData) => {
+//   console.log(userData);
+//   const response = await axios.post(API_URL + "register/confirm_otp", userData);
+//   if (response.data) {
+//     localStorage.setItem("otp", JSON.stringify(response.data));
+//   }
 
-  console.log(response.data);
+//   console.log(response.data);
 
-  return response.data;
-};
+//   return response.data;
+// };
 
 // RETURN AND EXPORT AUTH SERVICE
 const authService = {
   register,
   login,
   logout,
-  otptoken,
+  // otptoken,
 };
 
 export default authService;

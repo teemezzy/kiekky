@@ -6,19 +6,16 @@ import { NavLink, useParams } from "react-router-dom";
 import FeedsSkeleton from "./FeedsSkeleton";
 import { useDispatch, useSelector } from "react-redux";
 import PostItem from "./PostItem";
-import {
-  getPost,
-  reset,
-} from "../../Redux/features/createPost/createPostSlice";
 import { getfeeds } from "../../Redux/features/feeds/feedsSlice";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import "swiper/css";
 
 function Feeds() {
-  const [loading, setLoading] = useState(true);
+  // const [feed, setFeed] = useState([]);
+  const [isloading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
   // const {user } = useSelector((state)=> state.auth)
-  const { posts, isError, isLoading, message } = useSelector(
+  const {isError, isLoading, message } = useSelector(
     (state) => state.posts
   );
   const { feeds } = useSelector((state) => state.feeds);
@@ -26,23 +23,24 @@ function Feeds() {
     return value;
   });
 
-  const { id } = useParams();
+  // const {id} = useParams();
 
   useEffect(() => {
     if (isError) {
       console.log(message);
     }
 
+    console.log();
     dispatch(getfeeds());
-    setLoading(false);
-  }, [getfeeds, isLoading, isError, message, dispatch]);
+  }, [isLoading, isError, message, dispatch]);
 
   return (
-    <div className="lg:w-[672px] m-auto w-full lg:max-w-full ">
+    <div className="div">
       <Post />
 
       <div className="lg:w-[672px] m-auto w-full lg:max-w-full ">
-        {loading && <FeedsSkeleton cards={5} />}
+        {isLoading && <FeedsSkeleton cards={10} />}
+
         {
           data.map(function (feed, id) {
             let res = feed?.images;
@@ -83,7 +81,7 @@ function Feeds() {
                             {feed.user.city.name}, {feed.user.country.name}
                           </p>
                           <p className="text-[gray] hidden lg:block text-sm">
-                            2 days ago
+                            {new Date(feed.created_at).toLocaleString('en-NG')}
                           </p>
                         </div>
                       </div>
@@ -91,7 +89,7 @@ function Feeds() {
 
                     <div className=" m-auto w-[375px] py-1 lg:w-[672px]">
                       <div className="  w-[300px] p-[1rem] lg:w-[586px] ">
-                        <p>{feed.body}.</p>
+                        <p>{feed.body ? feed.body : " " }</p>
                       </div>
                       {/* className="  md:h-[450px] w-[375px] lg:w-[672px] " */}
 

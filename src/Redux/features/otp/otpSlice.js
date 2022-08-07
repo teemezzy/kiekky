@@ -137,6 +137,7 @@ export const otpSlice = createSlice({
       })
       .addCase(logoutt.pending, (state) => {
         state.isLoading = true;
+       
       });
   },
 });
