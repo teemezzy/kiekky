@@ -45,19 +45,19 @@ function SetPost() {
 
   const onSubmit = (data) => {
     const formData = new FormData()
-    formData.append("images[{}]", data.images[0])
-    const uploads = formData.get('images[{}]')
-    // const formData = new FormData().append("images[]", data.images[0]);
+    // formData.append("images", data.images)
+ 
+    const uploads = formData.get(data.images[0])
     const postData = {
+      
       body: data.body,
-      images: uploads,
+      images: [uploads],
       moneytize: 1,
       amount: data.amount,
-      // base_image: data.images[],
       video: data.video,
     };
 
-    console.log(postData);
+    console.log(data.images);
     dispatch(createPost(postData));
     // console.log(data.images[0]);
   };
@@ -103,12 +103,12 @@ function SetPost() {
               <input
                 className="lg:w-[700px] m-auto"
                 type="file"
-                accept="image"
+                accept="image/*"
                 alt=""
                 {...register("images")}
                 name="images"
                 id="files"
-                multiple
+           
               />
             </div>
           </div>
