@@ -6,14 +6,14 @@ const feeds = async (postfeeds,token) => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }; 
+    };
     // console.log(config);
     const response = await axios.post(API_URL + 'user/feeds', postfeeds, config);
-   console.log('jojo', response.data.data);
+  //  console.log('jojo', response.data.data);
   //  console.log(response);
     return response.data.data;
   };
-  
+
   const feedService = {
     feeds
   };
