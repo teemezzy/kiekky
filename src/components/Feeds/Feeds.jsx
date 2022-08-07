@@ -3,6 +3,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
 import { Post } from "../../components";
 import { NavLink, useParams } from "react-router-dom";
+import { VscLock } from 'react-icons/vsc'
 import FeedsSkeleton from "./FeedsSkeleton";
 import { useDispatch, useSelector } from "react-redux";
 import PostItem from "./PostItem";
@@ -93,7 +94,21 @@ function Feeds() {
                       </div>
                       {/* className="  md:h-[450px] w-[375px] lg:w-[672px] " */}
 
-                      <div className=" m-auto w-[375px] h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg">
+                     
+                      <div className=" relative m-auto w-[375px] h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg">
+                     {feed.amount ?  <div className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
+                            <div className="flex flex-col justify-center items-center">
+                              <VscLock color="white" />
+                              <p className="text-white mt-3 text-sm lg:text-base">Unlock for {feed.amount} tokens</p>
+                            </div>
+                          </div>: ''}                     
+                      <div className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
+                            <div className="flex flex-col justify-center items-center">
+                              <VscLock color="white" />
+                              <p className="text-white mt-3 text-sm lg:text-base">Unlock for {feed.amount} tokens</p>
+                            </div>
+                          </div>
+                       
                         <img
                           loading="lazy"
                           decoding="async"
@@ -101,7 +116,28 @@ function Feeds() {
                           src={result}
                           alt=""
                         />
-
+{/* <CarouselProvider
+        totalSlides={8}
+        visibleSlides={1}
+        // isIntrinsicHeight={true}
+      >
+        <Slider>
+          <Slide index={0} className="slide">
+            slide 1
+          </Slide>
+          <Slide index={1} className="slide">
+            slide 2
+          </Slide>
+          <Slide index={2} className="slide">
+            slide 3
+          </Slide>
+          <Slide index={3} className="slide">
+            slide 4
+          </Slide>
+        </Slider>
+        <ButtonBack>Back</ButtonBack>
+        <ButtonNext>Next</ButtonNext>
+      </CarouselProvider> */}
                         {/* {feed.base_image.url} */}
                       </div>
                     </div>
