@@ -15,13 +15,15 @@ function SetPost() {
   const { isLoading, isSuccess, isError, message } = useSelector(
     (state) => state.posts
   );
+  const [images, setImages] = useState("");
+  const [body, setBody] = useState("");
+  const [amount, setAmount] = useState(0);
+  const [moneytize, setMoneytize] = useState(false);
 
-  const {
-    register,
-    formState: { errors },
-    resetField,
-    handleSubmit,
-  } = useForm();
+  // const {
+  //   register,
+  //   formState: { errors },   handleSubmit,
+  // } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -43,30 +45,23 @@ function SetPost() {
     setToggle(!toggle);
   };
 
-  const onSubmit = (data) => {
-    const formData = new FormData()
-    // formData.append("images", data.images)
- 
-    const uploads = formData.get(data.images[0])
-    const postData = {
-      
-      body: data.body,
-      images: [uploads],
-      moneytize: 1,
-      amount: data.amount,
-      video: data.video,
-    };
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("body", body);
+    formData.append("images[]", images[0]);
+    formData.append("images[]", images[1]);
+    formData.append("moneytize", 1);
+    formData.append("amount", amount);
 
-    console.log(data.images);
-    dispatch(createPost(postData));
-    // console.log(data.images[0]);
+    dispatch(createPost(formData));
   };
   return (
     <div className=" bg-[#F9FAFA] h-screen m-auto flex ">
       <UserNav />
 
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmitForm}
         action=""
         method="post"
         className="lg:w-[90%] h-full mt-[7.5rem]   m-auto"
@@ -90,7 +85,9 @@ function SetPost() {
                 placeholder="Whats new.."
                 name=""
                 id=""
-                {...register("body")}
+                onChange={(e) => {
+                  setBody(e.target.value);
+                }}
               />
             </div>
             <div className="img lg:w-[700px] w-[313px] m-auto ">
@@ -98,17 +95,17 @@ function SetPost() {
                 <BsImage size="1.2rem" /> <span> Media </span>
               </div>
             </div>
-{/* Images */}
+            {/* Images */}
             <div className="img lg:w-[700px] w-[313px] py-5 lg:py-0 m-auto lg:mt-7">
               <input
+                onChange={(e) => setImages(e.target.files)}
                 className="lg:w-[700px] m-auto"
                 type="file"
                 accept="image/*"
-                alt=""
-                {...register("images")}
+                alt="img"
                 name="images"
                 id="files"
-           
+                multiple
               />
             </div>
           </div>
@@ -119,7 +116,9 @@ function SetPost() {
                 Who Can See This Post
               </p>
               <input
-                {...register("moneytize", { required: true })}
+                onChange={(e) => {
+                  moneytize(e.target.value);
+                }}
                 className="  "
                 name="moneytize"
                 id="Public"
@@ -127,16 +126,17 @@ function SetPost() {
                 value="Public"
               />
               <label htmlFor="Public" className="mt-[16px] ">
-                Public{" "}
-              </label>{" "}
+                Public
+              </label>
               <br />
               <div>
                 {toggle ? (
                   <div>
-                    {" "}
                     <input
                       className="my-[26px]  "
-                      {...register("moneytize", { required: true })}
+                      onChange={(e) => {
+                        setMoneytize(e.target.value);
+                      }}
                       type="radio"
                       name="moneytize"
                       id="subscribers"
@@ -153,7 +153,9 @@ function SetPost() {
                     {" "}
                     <input
                       className="my-[26px]"
-                      {...register("moneytize", { required: true })}
+                      onChange={(e) => {
+                        setMoneytize(e.target.value);
+                      }}
                       type="radio"
                       name="moneytize"
                       id="subscribers"
@@ -174,30 +176,15 @@ function SetPost() {
                     <input
                       type="text"
                       placeholder="Enter Token"
-                      className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none ${
-                        errors.amount &&
-                        "focus:border-red-600 focus:ring-red-600 border-red-600 border-[0.5px]"
-                      }`}
-                      {...register("amount", {
-                        pattern: {
-                          value: /\b(0?[1-9]|1[0-9]|2[0-5])\b/g,
-                          message: "token must not be more than 25 tokens",
-                        },
-                      })}
+                      className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none `}
+                      onChange={(e) => {
+                        setAmount(e.target.value);
+                      }}
                     />
-                    {errors.amount && (
-                      <p className="text-red-600 text-xs">
-                        {" "}
-                        Token must not be more than 25 tokens
-                      </p>
-                    )}
                   </div>
                 )}
               </div>
-              <p className="text-[#b43030] ">
-                {errors.moneytize?.type === "required" &&
-                  "Select a type of user that will view your post"}
-              </p>
+              <p className="text-[#b43030] "></p>
               <div className=" flex lg:mt-[10px] py-7 lg:py-0 justify-between lg:w-[300px]  w-[313px] m-auto ">
                 <div className="">
                   <input
