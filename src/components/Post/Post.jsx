@@ -4,12 +4,10 @@ import { BiCamera, BiVideoPlus } from "react-icons/bi";
 import { useForm } from "react-hook-form";
 // import { Avatar } from "@mui/material";
 import { createPost } from '../../Redux/features/createPost/createPostSlice'
-import PopUpModal from "./PopUpModal";
+
 import axios from "axios";
 import { data } from "autoprefixer";
 import { NavLink } from "react-router-dom";
-// import { data } from "autoprefixer";
-
 function Post() {
   const [showMyPopUp, setShowMyPopUp] = useState(false);
   const handleOnClosePopUp = () => setShowMyPopUp(false);
@@ -151,10 +149,10 @@ function Post() {
         </form>
       </div>
 
-      <PopUpModal
+      {/* <PopUpModal
         visiblePopUp={showMyPopUp}
         onClosePopUp={handleOnClosePopUp}
-      />
+      /> */}
     </div>
   );
 }

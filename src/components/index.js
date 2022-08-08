@@ -42,7 +42,7 @@ import Chat from "./Chat/Chat";
 import ChatRoom from "./Chat/ChatRoom";
 import ViewAllHotPicks from "./HotPicks/ViewAllHotPicks";
 import LoginNav from "./Navbar/LoginNav";
-// import PopUpModal from "./Post/PopUpModal";
+
 
 export {
   Navbar,
