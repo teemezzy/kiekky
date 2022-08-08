@@ -27,8 +27,7 @@ const Home = () => {
             <div className="lg:w-[970px] w-[327px]  m-auto ">
               <Status />
             </div>
-
-            <div className=" lg:w-[970px] w-screen mt-44">
+            <div className="lg:w-[970px] w-screen">
               <div className="lg:flex lg:gap-7 justify-between">
                 <Feeds />
                 <Recommendations />
