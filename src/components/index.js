@@ -40,9 +40,9 @@ import EditProfile_Comp from "./EditProfile_Comp/EditProfile_Comp";
 import RequestDatesComp from "./DatesComp/RequestDatesComp";
 import Chat from "./Chat/Chat";
 import ChatRoom from "./Chat/ChatRoom";
-import ViewAllHotPicks from './HotPicks/ViewAllHotPicks'
+import ViewAllHotPicks from "./HotPicks/ViewAllHotPicks";
 import LoginNav from "./Navbar/LoginNav";
-import PopUpModal from "./Post/PopUpModal";
+// import PopUpModal from "./Post/PopUpModal";
 
 export {
   Navbar,
@@ -84,9 +84,9 @@ export {
   PersonalProfileInfo,
   DatesComp,
   RequestDatesComp,
-EditProfile_Comp,
-  Chat, ChatRoom,
+  EditProfile_Comp,
+  Chat,
+  ChatRoom,
   ViewAllHotPicks,
-  LoginNav, PopUpModal
-
+  LoginNav,
 };

@@ -10,14 +10,14 @@ import {
 
 function Community(props) {
   return (
-    <div className="messages mt-[6.3rem] bg-[#F9FAFA]">
+    <div className=" mt-[6.3rem] bg-[#F9FAFA] ">
       <UserNav />
-      <div className="flex ">
-        <div className=" hidden lg:block sidebar_prt pt-8">
+      <div className="flex">
+        <div className=" hidden lg:block pt-8">
           <Sidebar />
         </div>
-        <div className=" lg:w-[1000px] m-auto w-[378px] ">
-          <Status />
+        <Status />
+        <div className=" lg:w-[1000px] m-auto w-[378px] mt-44">
           <HotPicks />
           <Members />
         </div>
