@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BiCamera, BiVideoPlus } from "react-icons/bi";
-import { useController, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 // import { Avatar } from "@mui/material";
 import { createPost } from '../../Redux/features/createPost/createPostSlice'
 import PopUpModal from "./PopUpModal";

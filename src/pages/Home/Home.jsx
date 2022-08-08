@@ -18,12 +18,12 @@ const Home = () => {
           <div className=" sticky h-[100vh] hidden lg:block pt-8">
             <Sidebar />
           </div>
-          <div className=" min-h-screen  lg:w-[970px] w-screen m-auto ">
+          <div className=" min-h-screen  lg:w-[970px] m-auto ">
             <div className="lg:w-[970px] w-[327px]  m-auto ">
               <Status />
             </div>
 
-            <div className=" lg:w-[970px] w-screen ">
+            <div className=" lg:w-[970px]  ">
               <div className="lg:flex lg:gap-7 justify-between">
                 <Feeds />
                 <Recommendations />
