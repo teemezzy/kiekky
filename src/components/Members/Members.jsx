@@ -15,7 +15,7 @@ function Members(props) {
   }, []);
 
   return (
-    <div className=" flex flex-col lg:w-[1000px] w-[374px] m-auto">
+    <div className=" flex flex-col lg:w-[968px] w-[374px] m-auto">
       <div className="flex justify-between lg:w-[996px] ">
         <div className="flex  space-x-2 items-center">
           <p>Members</p>
@@ -27,12 +27,6 @@ function Members(props) {
               <option className="outline-none hover:bg-[#6a52fd]  " value="Male">Both </option>
             </select>
           </div>
-          {/* <button className=" border-[1px] border-[#E5E5E5]  text-[#999999] px-4 py-1 text-xs  rounded-[0.3rem]">
-            Male
-          </button>
-          <button className="bg-[#6a52fd] text-white rounded-[0.3rem] px-4 text-xs py-1">
-            Female
-          </button> */}
         </div>
         <div className="block">
           <div className="flex relative  mb-3 space-x-2 lg:space-x-4 items-center">
@@ -43,13 +37,10 @@ function Members(props) {
               placeholder=" Location"
             />
             <div className="absolute h-[100%] flex items-center  ">
-
-
               <BsFilter className="h-3 w-3 lg:w-5 lg:h-5  text-white bg-[#6a52fd]" />
             </div>
           </div>
         </div>
-
       </div>
       <div className="  grid grid-cols-2 lg:grid-cols-4 gap-[7px]  w-[376px] lg:gap-[37px]  lg:w-[1001px] m-auto mt-5">
         {story
@@ -59,14 +50,12 @@ function Members(props) {
                 <div className=" absolute  inset-x-0 bottom-0 bg-opacity-70 names w-[184px] h-[36px] lg:w-[219px] lg:h-[43px] bg-[#A8A8A8] rounded-b-md ">
                   <p className=" flex pt-1 pl-3  text-white">{story.firstname}  </p>
                 </div>
-
                 <NavLink to='/user_profile' ><img
                   className="stats w-[187px] h-[178px] lg:w-[220px] lg:h-[237px] rounded-md "
                   src={story.image}
                   alt="icon"
                 /> </NavLink>
               </div>
-
             </div>
           ))
           : null}

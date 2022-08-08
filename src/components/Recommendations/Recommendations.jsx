@@ -20,7 +20,7 @@ function Recommendations(props) {
   }, []);
 
   return (
-      <div className='max-w-full'>
+      <div className='max-w-full '>
 
       <p className="lg:block hidden ">Recommendations </p>
       <div className="recommendations hidden mt-[1rem]  w-[268px] lg:block ">

@@ -14,7 +14,7 @@ function HotPicks() {
   }, []);
 
   return (
-    <div className=' lg:w-[1000px] w-[378px] mb-[20px] lg:mb-[50px] '>
+    <div className=' lg:w-[968px] w-[378px] mb-[20px] lg:mb-[50px] '>
       <div className="top-text flex justify-between  lg:w-[995px] ">
         <div className="sub space-x-2 flex items-center">
           <p>Hot Picks</p>
