@@ -11,32 +11,39 @@ import "./Home.css";
 
 const Home = () => {
   useEffect(() => {
-    document.title = "My Feeds | Kiekky";
+    document.title = "My Feeds | Kiekky"
   }, []);
 
+
+
   return (
-    <div className="bg-[#F9FAFA] max-w-full ">
+    <div className="bg-[#F9FAFA]  max-w-full">
       <UserNav />
       <div className=" mt-[6rem] m-auto bg-[#F9FAFA]">
-        <div className=" flex">
-          <div className=" sidebar_prt h-full hidden lg:block pt-8">
+        <div className="relative flex">
+          <div className=" sticky h-[100vh] hidden lg:block pt-8">
             <Sidebar />
           </div>
-          <div className=" min-h-screen  lg:w-[970px] w-screen m-auto  ">
-            <div className="lg:w-[970px] w-[327px]  m-auto ">
+          <div className=" min-h-screen  lg:w-[970px] w-[375px] m-auto ">
+            <div className="lg:w-[970px] w-[375px]  m-auto ">
               <Status />
             </div>
-            <div className="lg:w-[970px] w-screen">
-              <div className="lg:flex lg:gap-7 justify-between">
-                <Feeds />
-                <Recommendations />
+
+
+            <div className=" lg:w-[970px] w-[375px] ">
+              <div className="lg:w-[970px] w-screen">
+                <div className="lg:flex lg:gap-7 justify-between">
+                  <Feeds />
+                  <Recommendations />
+                </div>
+
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="">
-        <MobileNav />
+        <div className="">
+          <MobileNav />
+        </div>
       </div>
     </div>
   );
