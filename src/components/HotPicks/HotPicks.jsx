@@ -7,7 +7,7 @@ import 'simplebar/dist/simplebar.min.css';
 
 function HotPicks() {
   const [story, setStory] = useState([]);
-  const url = "https://fakerapi.it/api/v1/books?_quantity=22";
+  const url = "https://fakerapi.it/api/v1/books?_quantity=30";
 
   useEffect(() => {
     axios.get(url).then((response) => setStory(response.data.data));
@@ -31,7 +31,7 @@ function HotPicks() {
         <NavLink to='/view_all'>  <p className="view text-sm text-[#6a52fd] ">View all <span> {`${'>>'}`}</span></p> </NavLink>
       </div>
 
-      <div className="  lg:w-[1000px] w-[378px]  mt-3 ">
+      <div className=" lg:w-[968px] w-[378px] mt-3 ">
         <SimpleBar style={{ width: "800wv", padding: '6px' }} >
 
           <div className=" flex justify-between lg:w-[250vw] w-[700vw] ">

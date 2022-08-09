@@ -22,7 +22,7 @@ const Tokens = () => {
   const { userbalance, isError, message } = useSelector(
     (state) => state.wallet
   );
-  console.log(userbalance);
+  // console.log(userbalance);
 
   useEffect((data) => {
     if (isError) {

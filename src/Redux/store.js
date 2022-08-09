@@ -7,6 +7,7 @@ import countryReducer from "./features/userLocation/locationSlice";
 import getUserSetupReducer from "./features/userSetup/setupSlice";
 import feedsReducer from './features/feeds/feedsSlice'
 import getTokenBalanceReducer from "./features/token/tokenSlice";
+import getSubReducer from "./features/subscriptioncat/subSlice";
 import resetpasswordReducer from "./features/otp/resetpasswordSlice";
 import forPassReducer from "./features/otp/forPassSlice";
 
@@ -18,7 +19,8 @@ const store = configureStore({
     location: countryReducer,
     accountsetup: getUserSetupReducer,
     feeds: feedsReducer,
-    wallet: getTokenBalanceReducer,
+    wallet: getTokenBalanceReducer, 
+    subscription: getSubReducer,
     resetpassword: resetpasswordReducer,
     verifyEmail:forPassReducer,
   },

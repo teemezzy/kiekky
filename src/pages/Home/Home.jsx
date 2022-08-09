@@ -1,5 +1,11 @@
 import React, { useEffect } from "react";
-import { Status, Feeds, Recommendations, UserNav, MobileNav } from "../../components";
+import {
+  Status,
+  Feeds,
+  Recommendations,
+  UserNav,
+  MobileNav,
+} from "../../components";
 import { Sidebar } from "../../components";
 import "./Home.css";
 

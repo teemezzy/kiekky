@@ -1,23 +1,22 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import tokenService from "./tokenService";
-
-// const userbalance = JSON.parse(localStorage.getItem("userbalance"));
+import subService from "./subService";
 
 const initialState = {
-  userbalance: [],
+  subscription: [],
   isLoading: false,
   isError: false,
   isSuccess: false,
   message: "",
 };
 
-// Token Balance Thunk
-export const getTokenBalance = createAsyncThunk(
-  "userbalance/get",
+// Subscription Thunk
+export const getSub = createAsyncThunk(
+  "subscription/getSubscription",
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.access_token;
-      return await tokenService.getTokenBalance( token);
+    //   console.log(token, "my token joan");
+      return await subService.getSub(token);
     } catch (error) {
       const message =
         (error.response &&
@@ -30,10 +29,8 @@ export const getTokenBalance = createAsyncThunk(
   }
 );
 
-
-// Wallet Slice
-export const tokenSlice = createSlice({
-  name: "wallet",
+export const subSlice = createSlice({
+  name: "subscription",
   initialState,
   reducers: {
     reset: (state) => {
@@ -45,25 +42,23 @@ export const tokenSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Token Balance Reducer
-      .addCase(getTokenBalance.pending, (state) => {
+      // Subscription Reducer
+      .addCase(getSub.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getTokenBalance.fulfilled, (state, action) => {
+      .addCase(getSub.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.userbalance = [action.payload];
+        state.subscription = action.payload;
       })
-      .addCase(getTokenBalance.rejected, (state, action) => {
+      .addCase(getSub.rejected, (state, action) => {
         state.isLoading = false;
         state.isSuccess = false;
         state.isError = true;
         state.message = action.payload;
-      })
-
-      
-  },  
+      });
+  },
 });
 
-export default tokenSlice.reducer;
-export const { reset } = tokenSlice.actions;
+export default subSlice.reducer;
+export const { reset } = subSlice.actions;

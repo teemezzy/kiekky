@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
-import axios from "axios";
 import { Post } from "../../components";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import { VscLock } from "react-icons/vsc";
 import FeedsSkeleton from "./FeedsSkeleton";
 import { useDispatch, useSelector } from "react-redux";
-import PostItem from "./PostItem";
+
 import { getfeeds } from "../../Redux/features/feeds/feedsSlice";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import "swiper/css";
@@ -44,8 +43,8 @@ function Feeds() {
             let res = feed?.images;
 
             const result = res[0]
-              ? res[0].url
-              : "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg";
+              ? res[0].url: null
+              // : "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg";
             return (
               <div
                 key={feed.id}
@@ -98,18 +97,16 @@ function Feeds() {
                       <div className="  w-[300px] p-[1rem] lg:w-[586px] ">
                         <p>{feed.body ? feed.body : " "}</p>
                       </div>
-                      {/* className="  md:h-[450px] w-[375px] lg:w-[672px] " */}
 
-                      <div className=" relative m-auto w-full h-[290px] lg:w-[672px] lg:h-[460px] py-5 rounded-lg">
+                      {/* className="  md:h-[450px] w-[375px] lg:w-[672px] " */}
+                      <div className="relative hidden m-auto w-full h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg">
+
                         <img
-                          loading="lazy"
-                          decoding="async"
+                          
                           className="object-contain w-full h-full"
-                          src={result}
+                          src={result ? result: null}
                           alt=""
                         />
-
-                       
                       </div>
                     </div>
                   </div>
