@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Status,Feeds, Recommendations, UserNav, MobileNav } from "../../components";
+import { Status, Feeds, Recommendations, UserNav, MobileNav } from "../../components";
 import { Sidebar } from "../../components";
 import "./Home.css";
 
@@ -23,18 +23,21 @@ const Home = () => {
               <Status />
             </div>
 
-            <div className=" lg:w-[970px] w-[375px] ">
-              <div className="lg:flex lg:gap-7 justify-between">
-                <Feeds />
-                <Recommendations />
-              </div>
 
+            <div className=" lg:w-[970px] w-[375px] ">
+              <div className="lg:w-[970px] w-screen">
+                <div className="lg:flex lg:gap-7 justify-between">
+                  <Feeds />
+                  <Recommendations />
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="">
-        <MobileNav />
+        <div className="">
+          <MobileNav />
+        </div>
       </div>
     </div>
   );

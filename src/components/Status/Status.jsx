@@ -20,7 +20,7 @@ const Status = () => {
   }, []);
 
   return (
-    <div className="lg:w-[1050px] m-auto max-w-full mb-8 fixed left-[25%] z-50 bg-[#F9FAFA]">
+    <div className="lg:w-[1050px] m-auto max-w-full mb-8  ">
       <SimpleBar style={{ width: "800wv" }}>
         <div className="status pt-10 w-[327px] mb-2 lg:w-[968px]">
           <div className="flex space-x-5 lg:w-[250vw] w-[800vw]">

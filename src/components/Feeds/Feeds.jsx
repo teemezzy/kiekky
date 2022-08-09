@@ -36,7 +36,6 @@ function Feeds() {
   return (
     <div className="">
       <Post />
-
       <div className="lg:w-[672px] m-auto w-full lg:max-w-full ">
         {isLoading && <FeedsSkeleton cards={10} />}
 
