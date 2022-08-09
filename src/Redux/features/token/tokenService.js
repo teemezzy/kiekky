@@ -12,5 +12,6 @@ const getTokenBalance = async (token) => {
   return response.data;
 };
 
-const tokenService = { getTokenBalance };
+
+const tokenService = { getTokenBalance};
 export default tokenService;

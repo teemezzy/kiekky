@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import {
   Status,
-  Post,
   Feeds,
   Recommendations,
   UserNav,
