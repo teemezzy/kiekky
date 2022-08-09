@@ -10,6 +10,14 @@
     height: 4rem;
     
 }
+ .profile-image{
+    border-radius: 100%;
+    background-image: linear-gradient(180deg, #6a52fd, #fd52ab);
+    border-image-slice: 1;
+    
+}
+
+
 
 
 /* .blink{

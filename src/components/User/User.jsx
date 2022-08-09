@@ -45,9 +45,9 @@ function User() {
 
 
             <div className="pic-not mt-4 flex gap-2 items-start pt-4  ">
-              <div className="feed-image ">
+              <div className="">
                 <img
-                  className=" max-w-[50px] h-[50px] lg:max-w-[100px] lg:h-[100px] p-[2.7px] rounded-[50%]"
+                  className=" profile-image max-w-[50px] h-[50px] lg:max-w-[100px] lg:h-[100px] p-[2.7px] rounded-[50%]"
                   src={feed.image}
                   alt="icon"
                 />

@@ -49,10 +49,10 @@ function Feeds() {
             return (
               <div
                 key={feed.id}
-                className="bg-white py-[17px] lg:py-[30px] m-auto rounded-lg mb-5 lg:w-[672px] lg:h-[625px] h-[440px] "
+                className="bg-white py-[17px] lg:py-[30px] m-auto rounded-lg my-20  lg:w-[672px] lg:h-[625px] h-[440px] "
               >
                 <div>
-                  <div className="mb-7 lg:w-[672px] w-[375px] m-auto">
+                  <div className="mb-7 lg:w-[672px]  m-auto">
                     <div className=" flex space-x-[15px] w-[300px] px-[1rem] lg:space-x-[12px] items-center">
                       <div className="feed-image max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full">
                         <NavLink to="/user_profile">
@@ -72,7 +72,7 @@ function Feeds() {
                         </NavLink>
 
                         <div className="flex justify-between lg:w-[506.67px] text-gray text-sm ">
-                          <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">
+                          <p className="md:text-sm sm:text-[0.4rem] font-thin text-[gray] flex items-center">
                             <span>
                               <MdOutlineLocationOn color="gray" />
                             </span>
@@ -94,13 +94,13 @@ function Feeds() {
                       </div>
                     </div>
 
-                    <div className=" m-auto w-[375px] py-1 lg:w-[672px]">
+                    <div className=" m-auto w-full py-1 lg:w-[672px]">
                       <div className="  w-[300px] p-[1rem] lg:w-[586px] ">
                         <p>{feed.body ? feed.body : " "}</p>
                       </div>
                       {/* className="  md:h-[450px] w-[375px] lg:w-[672px] " */}
 
-                      <div className=" relative m-auto w-[375px] h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg">
+                      <div className=" relative m-auto w-full h-[290px] lg:w-[672px] lg:h-[460px] py-5 rounded-lg">
                         <img
                           loading="lazy"
                           decoding="async"
