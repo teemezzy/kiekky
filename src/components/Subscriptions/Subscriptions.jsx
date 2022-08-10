@@ -214,8 +214,8 @@ const Subscriptions = () => {
             </div>
           </div>
         ))}
-        <SubModalGold onClose={close500ModalHandler} visible={open500Modal} />
-        <SubModalBasic
+        <SubModalBasic onClose={close500ModalHandler} visible={open500Modal} />
+        <SubModalGold
           onClose={close1000ModalHandler}
           visible={open1000Modal}
         />

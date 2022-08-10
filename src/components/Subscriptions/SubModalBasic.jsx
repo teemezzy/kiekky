@@ -2,33 +2,37 @@ import React, { useState, useEffect } from "react";
 import { MdClose } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { getSubid, reset } from "../../Redux/features/subscriptioncat/subscribeSlice";
+import {
+  getSubid,
+  reset,
+} from "../../Redux/features/subscriptioncat/subscribeSlice";
 
 const SubModal = ({ visible, onClose }) => {
   const dispatch = useDispatch();
-  const { subscribe, isError, isSuccess, message } = useSelector(
-    (state) => state.subscribe
-  );
+  // const { subscribe, isError, isSuccess, message } = useSelector(
+  //   (state) => state.subscribe
+  // );
 
-  useEffect(
-    (sub_id) => {
-      if (isError) {
-        toast.error(message);
-      }
-     
-      dispatch(getSubid(sub_id));
+  // useEffect(
+  //   (sub_id) => {
+  //     if (isError) {
+  //       toast.error(message);
+  //     }
+
+  //     if (isSuccess) {
+  //       // dispatch(getSubid(sub_id));
+  //     }
       
-    },
-    [subscribe, isError, message, dispatch]
-  );
+  //   },
+  //   [subscribe, isError, isSuccess, message, dispatch]
+  // );
 
-  const formdata = new FormData();
-  formdata.append("sub_id", subscribe.sub_id);
+  // const formdata = new FormData();
+  // formdata.append();
 
-  const handleClick = (e) => {
-    e.preventDefault();
-   
-  };
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  // };
 
   if (!visible) return null;
   return (
@@ -43,7 +47,7 @@ const SubModal = ({ visible, onClose }) => {
           </div>
           <div className="lg:w-[270px] w-[170px] m-auto">
             <h2 className="lg:text-[24px] text-[18px] text-center">
-              You are about to subscribe to this plan
+           You are about to subscribe to this plan  
             </h2>
           </div>
 
@@ -54,8 +58,8 @@ const SubModal = ({ visible, onClose }) => {
             >
               Go Back
             </button>
-            {/* onClick={handleClick} */}
-            <button className="bg-[#6A52FD] text-white lg:py-[17.5px] py-[14px] lg:px-[64px] px-[30px]  rounded-lg lg:text-[16px] text-[12px] mt-[36px]">
+           
+            <button   className="bg-[#6A52FD] text-white lg:py-[17.5px] py-[14px] lg:px-[64px] px-[30px]  rounded-lg lg:text-[16px] text-[12px] mt-[36px]">
               Proceed
             </button>
           </div>

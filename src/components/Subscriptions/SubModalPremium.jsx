@@ -58,7 +58,7 @@ const SubModal = ({ visible, onClose }) => {
             >
               Go Back
             </button>
-              {/* onClick={handleClick} */}
+              
             <button
               className="bg-[#6A52FD] text-white lg:py-[17.5px] py-[14px] lg:px-[64px] px-[30px]  rounded-lg lg:text-[16px] text-[12px] mt-[36px]"
             >

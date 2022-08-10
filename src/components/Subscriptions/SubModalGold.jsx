@@ -52,14 +52,15 @@ const SubModal = ({ visible, onClose }) => {
           </div>
 
           <div className="flex lg:w-[424px] w-[224px] justify-between m-auto">
+            
             <button
               onClick={onClose}
               className="text-[#6A52FD] border-2 border-[#6A52FD]  lg:py-[17.5px] py-[14px] lg:px-[64px] px-[30px] lg:text-[16px] text-[12px] rounded-lg mt-[36px]"
             >
               Go Back
             </button>
-              {/* onClick={handleClick} */}
             <button
+              // onClick={handleClick}
               className="bg-[#6A52FD] text-white lg:py-[17.5px] py-[14px] lg:px-[64px] px-[30px]  rounded-lg lg:text-[16px] text-[12px] mt-[36px]"
             >
               Proceed
