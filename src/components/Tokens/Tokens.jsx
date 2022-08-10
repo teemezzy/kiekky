@@ -38,16 +38,16 @@ const Tokens = () => {
     <div>
       <div className="flex lg:flex-row flex-col lg:justify-around px-[53px] py-[65px] bg-white lg:w-full w-[352px">
         <div className="border-2 w-64 h-36 pl-[22px] rounded-lg bg-[#474749] text-white">
-          <GiToken className="mt-[30.45px]" />
+          <GiToken className="mt-[30.45px] mb-[34.75px]" />
           {userbalance.map((userBalance, index) => (
             <div
               key={index}
-              className="font-bold mt-[34.75px] text-[22px]"
+              className="font-bold  text-[22px]"
             >
               {userBalance.data}
             </div>
           ))}
-          <div className="flex items-center w-[120px] justify-between pb-[33px]">
+          <div className="flex items-center w-[120px] justify-between ">
             <p className="font-normal text-[12px]">Token Balance</p>
             <div>
               <FaRegEyeSlash />

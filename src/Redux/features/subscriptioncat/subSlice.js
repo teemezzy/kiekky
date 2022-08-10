@@ -15,7 +15,7 @@ export const getSub = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.access_token;
-    //   console.log(token, "my token joan");
+      // console.log(token, "my token joan");
       return await subService.getSub(token);
     } catch (error) {
       const message =
@@ -49,7 +49,7 @@ export const subSlice = createSlice({
       .addCase(getSub.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.subscription = action.payload;
+        state.subscription = [action.payload];
       })
       .addCase(getSub.rejected, (state, action) => {
         state.isLoading = false;

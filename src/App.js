@@ -55,8 +55,8 @@ function App(children) {
     <div className="App">
       <SkeletonTheme baseColor="#BDBDBD" highlightColor="#ffffff">
         <Routes>
-          <Route exact path="/" element={user && otp ? <Home /> : <KiekkyHome />}/>
-          <Route path="login" element={<Login />} />
+          <Route exact path="/" element={ user ? <Home /> : <KiekkyHome />}/>
+          <Route path="login" element={ user ? <Home /> : <Login />} />
           <Route path="register" element={<Register />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />

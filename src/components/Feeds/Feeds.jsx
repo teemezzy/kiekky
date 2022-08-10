@@ -3,50 +3,45 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import { Post } from "../../components";
 import { NavLink} from "react-router-dom";
 import { VscLock } from "react-icons/vsc";
+
 import FeedsSkeleton from "./FeedsSkeleton";
 import Avatar from 'react-avatar'
 
 import { useDispatch, useSelector } from "react-redux";
-
 import { getfeeds } from "../../Redux/features/feeds/feedsSlice";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import "swiper/css";
 
 function Feeds() {
-  // const [feed, setFeed] = useState([]);
-  const [isloading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
-  // const {user } = useSelector((state)=> state.auth)
   const { isError, isLoading, message } = useSelector((state) => state.posts);
   const { feeds } = useSelector((state) => state.feeds);
   const data = Object.entries(feeds).map(([key, value]) => {
     return value;
   });
 
-  // const {id} = useParams();
-
   useEffect(() => {
     if (isError) {
       console.log(message);
     }
 
-    console.log();
     dispatch(getfeeds());
+    // setLoading(data)
   }, [isLoading, isError, message, dispatch]);
 
   return (
     <div className="">
       <Post />
       <div className="lg:w-[672px] m-auto w-full lg:max-w-full ">
-        {isLoading && <FeedsSkeleton cards={10} />}
+        {/* {loading && <FeedsSkeleton cards={10} />} */}
 
         {
           data.map(function (feed, id) {
             let res = feed?.images;
+            const result = res[0] ? res[0].url : null;
+            // : "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg";
 
-            const result = res[0]
-              ? res[0].url
-              : "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg";
             return (
               <div
                 key={feed.id}
@@ -82,7 +77,7 @@ function Feeds() {
                             </span>
                             {feed.user.city.name}, {feed.user.country.name}
                           </p>
-                          <p className="text-[gray] hidden lg:block text-sm w-20">
+                          <p className="text-[gray] hidden lg:block text-sm w-24">
                             {new Date(feed.created_at).toLocaleString("en-us", {
                               month: "short",
                               day: "numeric",
@@ -105,6 +100,7 @@ function Feeds() {
 
                       {/* className="  md:h-[450px] w-[375px] lg:w-[672px] " */}
                       <div className="relative m-auto w-full h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg">
+
                         <img
                           className="object-contain w-full h-full"
                           src={result}
