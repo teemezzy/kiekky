@@ -4,7 +4,8 @@ import { Post } from "../../components";
 import { NavLink} from "react-router-dom";
 import { VscLock } from "react-icons/vsc";
 import FeedsSkeleton from "./FeedsSkeleton";
-import Avatar from 'react-avatar';
+import Avatar from 'react-avatar'
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { getfeeds } from "../../Redux/features/feeds/feedsSlice";
@@ -103,7 +104,7 @@ function Feeds() {
                       </div>
 
                       {/* className="  md:h-[450px] w-[375px] lg:w-[672px] " */}
-                      <div className="relative hidden m-auto w-full h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg">
+                      <div className="relative m-auto w-full h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg">
                         <img
                           className="object-contain w-full h-full"
                           src={result}
