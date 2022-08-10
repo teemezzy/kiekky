@@ -4,6 +4,7 @@ import { Post } from "../../components";
 import { NavLink} from "react-router-dom";
 import { VscLock } from "react-icons/vsc";
 import FeedsSkeleton from "./FeedsSkeleton";
+import Avatar from 'react-avatar';
 import { useDispatch, useSelector } from "react-redux";
 
 import { getfeeds } from "../../Redux/features/feeds/feedsSlice";
@@ -43,8 +44,8 @@ function Feeds() {
             let res = feed?.images;
 
             const result = res[0]
-              ? res[0].url: null
-              // : "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg";
+              ? res[0].url
+              : "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg";
             return (
               <div
                 key={feed.id}
@@ -53,15 +54,18 @@ function Feeds() {
                 <div>
                   <div className="mb-7 lg:w-[672px]  m-auto">
                     <div className=" flex space-x-[15px] w-[300px] px-[1rem] lg:space-x-[12px] items-center">
-                      <div className="feed-image max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full">
+                      <div className=" ">
                         <NavLink to="/user_profile">
-                          <img
+                          {res[0] ? <img
                             loading="lazy"
                             decoding="async"
-                            className="object-fill rounded-full"
-                            src={result}
-                            alt="icon"
-                          />
+                            className=" feed-image max-w-[60px] h-[60px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
+                            src=  {result}
+                            alt=""
+                          /> :  
+                       <p className="rounded-full "> <Avatar color='#6a52fd' size="60"  round={true} name={feed.user.username} /> </p>   
+                          
+                          } 
                         </NavLink>
                       </div>
 
@@ -100,11 +104,9 @@ function Feeds() {
 
                       {/* className="  md:h-[450px] w-[375px] lg:w-[672px] " */}
                       <div className="relative hidden m-auto w-full h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg">
-
                         <img
-                          
                           className="object-contain w-full h-full"
-                          src={result ? result: null}
+                          src={result}
                           alt=""
                         />
                       </div>

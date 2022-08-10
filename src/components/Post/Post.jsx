@@ -77,7 +77,7 @@ function Post() {
                 : null}
             </div>
 
-            <NavLink to='/post' >
+            <NavLink to='/feeds/post' >
               <textarea
                 className="outline-none w-full  text-[#212121] lg:mt-7"
                 type="text"
@@ -89,39 +89,8 @@ function Post() {
             </NavLink>
           </div>
 
-
-          {/* <FileInput name="base_image" control={control} /> */}
-          {/* <FileInput name="file" control={control} /> */}
-          {/* <input type="file" accept="image" alt='' {...register("images")} name='images' id='files' multiple />
-
-          <p className='lg:w-[250px] '>Who Can See This Post</p>
-          <input {...register("public")} className='border-2 my-[26px] ' name="subs" id="Public" type="radio" value="Public" />
-          <label htmlFor="Public" className='my-[26px] ' >Public </label> <br />
-          <input className='my-[26px]' {...register("moneytize", { required: true })} type="radio" name="subs" id="subscribers" value="subscribers" />
-          <label htmlFor="Subscribers" className='my-[26px]'> Subscribers </label>
-          <p>Set Token for Non-Subscribers</p>
-          <input
-            type="text"
-            placeholder="Enter Token"
-            className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none ${errors.amount &&
-              "focus:border-red-600 focus:ring-red-600 border-red-600 border-2"
-              }`}
-            {...register("amount", {
-              required: true,
-              pattern: {
-                value: /\b(0?[1-9]|1[0-9]|2[0-5])\b/g,
-                message:
-                  "token must not be more than 25 tokens",
-              },
-            })}
-          />
-          {errors.amount && (
-            <p className="text-red-600 text-xs"> Token must not be more than 25 tokens</p>
-          )}
- */}
-
           <div className="but flex justify-end items-center mr-5 space-x-5 mb-5">
-            <NavLink to='/post'>
+            <NavLink to='/feeds/post'>
 
               <p
                 // onClick={() => setShowMyPopUp(true)}
@@ -136,7 +105,7 @@ function Post() {
                 <BiVideoPlus color="gray" />  </p>
             </NavLink>
 
-            <NavLink to='/post'>
+            <NavLink to='/feeds/post'>
               <input
                 className="flex px-6 py-[6px] text-sm h-[2rem]
              bg-[#6a52fd] text-white rounded-lg cursor-pointer"
