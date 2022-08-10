@@ -19,11 +19,6 @@ function SetPost() {
   const [body, setBody] = useState("");
   const [amount, setAmount] = useState(0);
   const [moneytize, setMoneytize] = useState(false);
-
-  // const {
-  //   register,
-  //   formState: { errors },   handleSubmit,
-  // } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -51,7 +46,8 @@ function SetPost() {
     formData.append("body", body);
     formData.append("images[]", images[0]);
     formData.append("images[]", images[1]);
-    formData.append("moneytize", 1);
+    formData.append("images[]", images[2]);
+    formData.append("moneytize", 0);
     formData.append("amount", amount);
 
     dispatch(createPost(formData));
@@ -73,7 +69,6 @@ function SetPost() {
                 <BiEdit size="1.2rem" /> <span> Post </span>{" "}
               </div>
               <NavLink to="/feeds">
-                {" "}
                 <button className=" text-[#BDBDBD] "> x </button>
               </NavLink>
             </div>

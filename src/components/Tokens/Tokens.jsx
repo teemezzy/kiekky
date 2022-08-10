@@ -12,23 +12,24 @@ import { getTokenBalance, reset } from "../../Redux/features/token/tokenSlice";
 const Tokens = () => {
   const [openModal, setOpenModal] = useState(false);
   const [accountModal, setAccountModal] = useState(false);
-
   const openModalHandler = () => setOpenModal(true);
   const closeModalHandler = () => setOpenModal(false);
-
   const accountModalOpen = () => setAccountModal(true);
   const accountModalClose = () => setAccountModal(false);
   const dispatch = useDispatch();
-  const { userbalance, isError, message } = useSelector(
+  const { userbalance, isSuccess, isError, message } = useSelector(
     (state) => state.wallet
   );
-  // console.log(userbalance);
+  
 
   useEffect((data) => {
     if (isError) {
       toast.error(message);
     }
-    dispatch(getTokenBalance(data));
+    if (isSuccess){
+
+      dispatch(getTokenBalance(data));
+    }
     if (userbalance) {
       dispatch(reset());
     };
