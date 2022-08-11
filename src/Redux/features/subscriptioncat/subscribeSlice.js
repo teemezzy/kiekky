@@ -11,11 +11,11 @@ const initialState = {
 
 export const getSubid = createAsyncThunk(
   "subscribe/getSubscriptionId",
-  async (subData, thunkAPI) => {
+  async (usersubid, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.access_token;
       // console.log(token, "my token joan");
-      return await subscribeService.getSubid(subData, token);
+      return await subscribeService.getSubid(usersubid, token);
     } catch (error) {
       const message =
         (error.response &&
