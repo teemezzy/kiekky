@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import axios from "axios";
-import { NavLink } from 'react-router-dom';
 import Info from './Info'
 import Post from '../Post/Post'
 
@@ -30,23 +29,21 @@ function PersonalWall() {
             <div>
               <div className=" lg:w-[586px] w-[294px] m-auto ">
                 <div className=" flex  space-x-[18px] lg:space-x-[12px] items-center  ">
-                  <div className="feed-image">
-
-                    <NavLink to='/user_profile'>
+                  <div className="">
                       <img
 
-                        className="  max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
+                        className=" profile-image max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
                         src={feed.image}
                         alt="icon"
                       />
-                    </NavLink>
+                   
                   </div>
 
                   <div className="  w-[17rem] md:w-[23rem] lg:w-[506.67px]">
-                    <NavLink to='/user_profile'>
+                    
 
                       <p className="font-[700] ">{feed.firstname}</p>
-                    </NavLink>
+                    
 
                     <div className="location flex justify-between lg:w-[506.67px] text-gray text-sm ">
                       <p className="md:text-sm sm:text-[0.4rem] text-[gray] flex items-center">

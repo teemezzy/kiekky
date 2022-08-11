@@ -2,38 +2,41 @@ import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 import { sideList } from "./sideList";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
 import { FiLogOut } from "react-icons/fi";
 import { logout, reset } from "../../Redux/features/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import SidebarSkeleton from "./SidebarSkeleton";
 import Skeleton from "react-loading-skeleton";
+import { toast } from "react-toastify";
 import "react-loading-skeleton/dist/skeleton.css";
 import Spinner from "../../container/Spinner";
+import { personalProfile } from '../../Redux/features/personalProfile/personalProfileSlice'
+
 
 const Sidebar = () => {
-  const [post, setPost] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [isLoadings, setIsLoadings] = useState(true);
   const { user, isSuccess, isLoading, message } = useSelector(
     (state) => state.auth
   );
-  // const { otp } = useSelector((state) => state.otptoken);
+  const { profile, isError } = useSelector((state) => state.personalProfile)
 
-  const url = "https://fakerapi.it/api/v1/books?_quantity=1";
-  // const { id } = useParams();
+  useEffect(() => {
+      if (isError) {
+          toast.error(message);
+      }
+      dispatch(personalProfile())
+
+      return () => {
+          dispatch(reset())
+      }
+  }, [isError, dispatch, message])
+
   const pathname = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  useEffect(() => {
-    axios.get(url).then((response) => {
-      setPost(response.data.data);
-      setIsLoadings(false);
-    });
-  }, []);
   const onLogout = () => {
     dispatch(logout());
     dispatch(reset());
@@ -56,18 +59,18 @@ const Sidebar = () => {
 
   return (
     <div className="  max-w-full">
-      {isLoadings && <SidebarSkeleton cards={1} />}
+      {/* {isLoadings && <SidebarSkeleton cards={1} />} */}
 
       <div className=" ">
-        {post
-          ? post.map((post, idx) => (
+        {profile
+          ? profile.map((profiles, idx) => (
               <div key={idx} className="story-status">
                 <div className="ml-10 bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem] ">
                   <div className="display-image">
                     <NavLink to="/personal_profile">
                       <img
                         className="w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
-                        src={post.image}
+                        src=''
                         alt="icon"
                       />
                     </NavLink>
@@ -75,9 +78,9 @@ const Sidebar = () => {
                   <NavLink to="/personal_profile">
                     <div className=" ml-4 ">
                       <h5 className="font-bold text-[#2E2357]">
-                        {post.author}
+                        {profiles.username}
                       </h5>
-                      <h5 className="text-sm text-[#828282]">@{post.author}</h5>
+                      <h5 className="text-sm text-[#828282]">@{profiles.username}</h5>
                     </div>
                   </NavLink>
                 </div>

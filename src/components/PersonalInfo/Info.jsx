@@ -1,22 +1,37 @@
 
-import React, {useState, useEffect} from 'react';
-import axios from 'axios'
+import React, {useEffect} from 'react';
+import {useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import Spinner from "../../container/Spinner";
+import {personalProfile, reset } from '../../Redux/features/personalProfile/personalProfileSlice'
 
-function Info(props) {
-  const [story, setStory] = useState([]);
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=1";
+function Info() {
+  const dispatch = useDispatch()
+  const {profile, isLoading, isError, message } = useSelector((state)=> state.personalProfile)
 
   useEffect(() => {
-    axios.get(url).then((response) => setStory(response.data.data));
-  }, []);
+    if(isError){
+      toast.error(message);
+    }
+    dispatch(personalProfile())
+
+    return () => {
+      dispatch(reset())
+    }
+  }, [isError, dispatch, message])
+  
+if (isLoading) {
+  return <Spinner />
+}
 
   return (
     <div className=' lg:mr-[59px] '>
       <p className="lg:block  hidden"> </p>
       <div className=" hidden pt-2 rounded-md bg-white h-[536px] w-[248px] lg:block">
-        {story
-          ? story.map((story, idx) => (
-              <div key={idx} className=" ">
+        {profile
+          ? profile.map((profiles, id) => (
+              <div key={id} className=" ">
                 <div className="image  space-y-6 w-[186px] m-auto ">
                <p className='text-[#6a52fd] font-thin '>Bio</p>
 
@@ -45,7 +60,7 @@ function Info(props) {
                </div>
                <div className='data'>
                 <p>City</p>
-                <p className='text-[#828282] text-sm'>{story.address.city}</p>
+                <p className='text-[#828282] text-sm'>{profiles.city.name}</p>
 
                </div>
 

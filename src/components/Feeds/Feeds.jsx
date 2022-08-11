@@ -10,7 +10,7 @@ import { getfeeds } from "../../Redux/features/feeds/feedsSlice";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import "swiper/css";
 
-function Feeds() {
+const Feeds = () => {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const { isError, isLoading, message } = useSelector((state) => state.posts);
@@ -23,7 +23,9 @@ function Feeds() {
     if (isError) {
       console.log(message);
     }
+
     dispatch(getfeeds());
+    // setLoading(data)
   }, [isLoading, isError, message, dispatch]);
 
   return (
@@ -31,11 +33,11 @@ function Feeds() {
       <Post />
       <div className="lg:w-[672px] m-auto w-full lg:max-w-full ">
         {/* {loading && <FeedsSkeleton cards={10} />} */}
+
         {data.map(function (feed, id) {
           let res = feed?.images;
           const result = res[0] ? res[0].url : null;
           // : "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg";
-
           return (
             <div
               key={feed.id}
@@ -55,7 +57,7 @@ function Feeds() {
                             alt=""
                           />
                         ) : (
-                          <div className="rounded-full ">
+                          <div className="rounded-full">
                             <Avatar
                               color="#6a52fd"
                               size="60"
@@ -117,6 +119,6 @@ function Feeds() {
       </div>
     </div>
   );
-}
+};
 
 export default Feeds;

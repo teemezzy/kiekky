@@ -18,7 +18,7 @@ function UserInfo() {
   const content = "bg-white w-full hidden p-[20px] cursor-pointer ";
   return (
     <div>
-      <div className=" flex my-5 lg:my-10 items-center lg:items-start w-[352px] lg:w-[984px] ">
+      <div className=" flex my-5 lg:my-10 lg:w-[984px] w-[352px] m-auto ">
         <div className="flex h-[3rem] cursor-pointer"
          
         >

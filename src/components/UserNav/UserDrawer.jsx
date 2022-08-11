@@ -4,28 +4,36 @@ import React, { useState, useEffect } from "react";
 import "../SideLayout/Sidebar.css";
 import { sideList3 } from "../SideLayout/sideList3";
 import { useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
 import { FiLogOut } from "react-icons/fi";
 import { logout, reset } from "../../Redux/features/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "../../container/Spinner";
+import { toast } from "react-toastify";
+import { personalProfile } from '../../Redux/features/personalProfile/personalProfileSlice'
+
 
 const UserDrawer = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [post, setPost] = useState([]);
   const { user, isSuccess, isLoading, message} = useSelector((state) => state.auth);
+  const { profile, isError } = useSelector((state) => state.personalProfile)
 
-  const url = "https://fakerapi.it/api/v1/books?_quantity=1";
+  useEffect(() => {
+    if (isError) {
+        toast.error(message);
+    }
+    dispatch(personalProfile())
+
+    return () => {
+        dispatch(reset())
+    }
+}, [isError, dispatch, message])
 
   const pathname = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  useEffect(() => {
-    axios.get(url).then((response) => setPost(response.data.data));
-  }, []);
   const onLogout = () => {
     dispatch(logout());
     dispatch(reset());
@@ -36,7 +44,7 @@ const UserDrawer = () => {
     if (isSuccess) {
       navigate("/");
     }
-    // dispatch(reset());
+   
   }, [user, isSuccess, message, dispatch, navigate]);
 
   if (isLoading) {
@@ -52,25 +60,25 @@ const UserDrawer = () => {
           placeholder="search..."
         />
 
-        {post
-          ? post.map((post, idx) => (
-              <div key={idx} className="story-status ">
+        {profile
+          ? profile.map((profiles, id) => (
+              <div key={id} className="story-status ">
                 <div className="user_name   bg-white flex items-center px-8 pt-7  h-[7rem]">
                   <div className="display-image">
                     <NavLink to="/personal_profile">
                       <img
                         className="  min-w-[4rem] h-[4rem] p-[2.7px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
-                        src={post.image}
+                        src=''
                         alt="icon"
                       />
                     </NavLink>
                   </div>
                   <NavLink to="/personal_profile">
                     <div className="names ml-4 ">
-                      <h5 className=" font-bold "> {post.author} </h5>
+                      <h5 className=" font-bold "> {profiles.username} </h5>
                       <h5 className="text-sm text-[#828282]  ">
                         {" "}
-                        @{post.author}{" "}
+                        @{profiles.username}{" "}
                       </h5>
                     </div>
                   </NavLink>

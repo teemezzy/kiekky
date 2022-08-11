@@ -9,10 +9,15 @@ function UserProfile(props) {
         <div className="  h-[100%] hidden lg:block sidebar_prt pt-8">
           <Sidebar />
         </div>
-        <div className="lg:w-[984px] w-[352px] m-auto  ">
-          <User />
-          <UserInfo />
-          <PPV />
+        <div className="lg:w-[984px] w-[100vw] m-auto  ">
+          <div className="lg:w-[984px] w-[352px] m-auto  ">
+            <User />
+            <UserInfo />
+          </div>
+          <div className="">
+            <PPV />
+
+          </div>
         </div>
       </div>
       <MobileNav />

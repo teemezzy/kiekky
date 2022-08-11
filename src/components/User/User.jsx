@@ -7,11 +7,16 @@ import { FiVideo } from "react-icons/fi";
 import { NavLink } from 'react-router-dom'
 import OpenChat from './OpenChat'
 import Block from './Block'
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import Spinner from "../../container/Spinner";
+import { userProfile, reset } from '../../Redux/features/userProfile/userProfileSlice'
 
 function User() {
-  const [feed, setFeed] = useState([]);
+  const dispatch = useDispatch()
+  const { profileUser, isError, message } = useSelector((state) => state.userProfile)
+
+ 
 
   const [showMyModal, setShowMyModal] = useState(false);
   const handleOnClose = () => setShowMyModal(false);
@@ -19,17 +24,26 @@ function User() {
   const [showMyBlock, setShowMyBlock] = useState(false);
   const handleOnCloseBlock = () => setShowMyBlock(false);
 
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=1";
-
   useEffect(() => {
-    axios.get(url).then((response) => setFeed(response.data.data));
-  }, []);
+    if (isError) {
+        toast.error(message);
+    }
+    dispatch(userProfile())
+
+    return () => {
+        dispatch(reset())
+    }
+}, [isError, dispatch, message])
+
+
+
+ 
 
   return (
     <div className=" mt-10   lg:w-[984px] w-[352px] h-[246px]  ">
 
-      {feed
-        ? feed.map((feed, idx) => (
+      {profileUser
+        ? profileUser.map((profile, idx) => (
           <div
             key={idx}
             className="relative px-[18px] lg:px-[64px] bg-white py-4 lg:w-[984px] w-[352px] "    >
@@ -45,25 +59,25 @@ function User() {
 
 
             <div className="pic-not mt-4 flex gap-2 items-start pt-4  ">
-              <div className="feed-image ">
+              <div className="">
                 <img
-                  className=" max-w-[50px] h-[50px] lg:max-w-[100px] lg:h-[100px] p-[2.7px] rounded-[50%]"
-                  src={feed.image}
-                  alt="icon"
+                  className=" feed-image max-w-[50px] h-[50px] lg:max-w-[100px] lg:h-[100px] p-[2.7px] rounded-[50%]"
+                  src=''
+                  alt="dp"
                 />
               </div>
 
               <div className="lg:w-[42rem] w-[17rem]  lg:pt-[1rem] ml-[15px] md:w-[23rem]">
 
-                <p className="font-[700]">{feed.firstname}</p>
+                <p className="font-[700]">{profile.username}</p>
 
                 <div className="location flex justify-between  pr-5 text-gray text-sm ">
                   <p className="md:text-[13px] sm:text-[0.4rem] text-[#BDBDBD] font-[100] flex items-center">
                     <span>
                       <MdOutlineLocationOn color="" />
                     </span>
-                    {feed.address.country},
-                    {feed.address.city}
+                    {profile.country.name},
+                    {profile.city.name}
                     {/* Lagos, Nigeria */}
                   </p>
 
