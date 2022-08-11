@@ -26,7 +26,7 @@ const SubModal = ({ visible, onClose, id1500 }) => {
 
   const subData =() => {
     const usersubid =  {sub_id : 2}
-    console.log("great")
+    // console.log("great")
     dispatch(getSubid(usersubid));
 
     

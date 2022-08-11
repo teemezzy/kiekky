@@ -20,6 +20,7 @@ const Sidebar = () => {
     (state) => state.auth
   );
   const { profile, isError } = useSelector((state) => state.personalProfile)
+  console.log(profile)
 
   useEffect(() => {
       if (isError) {
@@ -62,9 +63,8 @@ const Sidebar = () => {
       {/* {isLoadings && <SidebarSkeleton cards={1} />} */}
 
       <div className=" ">
-        {profile
-          ? profile.map((profiles, idx) => (
-              <div key={idx} className="story-status">
+        {profile.map((profiles, index) => (
+              <div key={index} className="story-status">
                 <div className="ml-10 bg-white flex items-center px-5 py-7 mb-8 w-[17rem] h-[7rem] ">
                   <div className="display-image">
                     <NavLink to="/personal_profile">
@@ -78,15 +78,14 @@ const Sidebar = () => {
                   <NavLink to="/personal_profile">
                     <div className=" ml-4 ">
                       <h5 className="font-bold text-[#2E2357]">
-                        {profiles.username}
+                        {profiles.fullname}
                       </h5>
                       <h5 className="text-sm text-[#828282]">@{profiles.username}</h5>
                     </div>
                   </NavLink>
                 </div>
               </div>
-            ))
-          : null}
+            ))}
 
         <div className="side_list ml-10 h-[540px] bg-white w-[17rem] divide-y divide-opacity-50  divide-gray-300">
           {sideList.map((side) => (

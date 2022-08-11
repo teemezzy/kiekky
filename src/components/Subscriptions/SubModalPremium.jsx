@@ -15,7 +15,7 @@ const SubModal = ({ visible, onClose, id1500 }) => {
         toast.error(message);
       }
       // if (isSuccess) {
-      //   dispatch(getSubid(id1500));
+      //   navigate("/sub_active");
       // }
      
     },
@@ -25,10 +25,8 @@ const SubModal = ({ visible, onClose, id1500 }) => {
 
   const subData =() => {
     const usersubid =  {sub_id : 3}
-    console.log("great")
+    // console.log("great")
     dispatch(getSubid(usersubid));
-
-    
 
  }
   if (!visible) return null;

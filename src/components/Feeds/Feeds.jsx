@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { Post } from "../../components";
 import { NavLink } from "react-router-dom";
-import { VscLock } from "react-icons/vsc";
 import FeedsSkeleton from "./FeedsSkeleton";
 import Avatar from "react-avatar";
 import { useDispatch, useSelector } from "react-redux";
