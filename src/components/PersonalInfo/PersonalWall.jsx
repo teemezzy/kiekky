@@ -2,29 +2,47 @@
 
 import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
-import axios from "axios";
-import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import Spinner from "../../container/Spinner";
+import {personalProfile, reset } from '../../Redux/features/personalProfile/personalProfileSlice'
 import Info from './Info'
 import Post from '../Post/Post'
 
 function PersonalWall() {
-  const [feed, setFeed] = useState([]);
-
-  const url = "https://fakerapi.it/api/v1/persons?_quantity=20";
+  const dispatch = useDispatch()
+  const {profile, isLoading, isError, message } = useSelector((state)=> state.personalProfile)
 
   useEffect(() => {
-    axios.get(url).then((response) => setFeed(response.data.data));
-  }, []);
+    if(isError){
+      toast.error(message);
+    }
+    // dispatch(personalProfile())
+
+    return () => {
+      dispatch(reset())
+    }
+  }, [isError, dispatch, message])
+  console.log(profile[0].posts);
+
+if (isLoading) {
+  return <Spinner />
+}
+
+
 
   return (
     <div className=" lg:w-[984px] w-[327px] mb-[6rem] flex ">
-      <Info />
+      {/* <Info /> */}
       <div>
-      <Post />
-      {feed
-        ? feed.map((feed, idx) => (
+      {/* <Post /> */}
+      {
+      
+
+      (profile[0].posts)
+        ? (profile[0].posts).map((profiles, id) => (
           <div
-            key={idx}
+            key={id}
             className="bg-white py:-[17px] lg:py-[30px] w-[327px] rounded-lg mb-5 lg:w-[672px] lg:h-[625px]  "
           >
             <div>
@@ -34,7 +52,7 @@ function PersonalWall() {
                       <img
 
                         className=" profile-image max-w-[50px] h-[50px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
-                        src={feed.image}
+                        src=''
                         alt="icon"
                       />
                    
@@ -43,7 +61,7 @@ function PersonalWall() {
                   <div className="  w-[17rem] md:w-[23rem] lg:w-[506.67px]">
                     
 
-                      <p className="font-[700] ">{feed.firstname}</p>
+                      <p className="font-[700] ">{profiles.user.username}</p>
                     
 
                     <div className="location flex justify-between lg:w-[506.67px] text-gray text-sm ">
@@ -51,19 +69,28 @@ function PersonalWall() {
                         <span>
                           <MdOutlineLocationOn color="gray" />
                         </span>
-                        {feed.address.country},
-                        {feed.address.city}
-                        {/* Lagos, Nigeria */}
+                        {profiles.user.country.name},
+                        {profiles.user.city.name}
+                       
                       </p>
-                      <p className="text-[gray] hidden lg:block text-sm">
-                        2 days ago
-                      </p>
+                      <div className="text-[gray] hidden lg:block text-sm w-24">
+                            {new Date(profiles.created_at).toLocaleString("en-us", {
+                              month: "short",
+                              day: "numeric",
+                              year: "numeric",
+                              hour: "numeric",
+                              minute: "numeric",
+                              second: "numeric",
+                              hour12: true,
+                             
+                            })}
+                          </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className=" m-auto py-[1rem] w-[294px]  lg:w-[586px]">
-                  <p>{feed.email}.</p>
+                  <p>{profiles.body}.</p>
                 </div>
 
                 <div className=" m-auto md:h-[450px] w-[300px] lg:w-[586px] ">
@@ -71,7 +98,7 @@ function PersonalWall() {
                       loading="lazy"
                       decoding="async"
                       className=" w-[290px] h-[290px]  lg:w-[586px] lg:h-[430px] rounded-lg"
-                      src={feed.image}
+                      src={profiles.images.url}
                       alt=""
                     />
                   </div>

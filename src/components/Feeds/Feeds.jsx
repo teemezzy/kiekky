@@ -46,7 +46,7 @@ function Feeds() {
               <div
                 key={feed.id}
                 className="bg-white py-[17px] lg:py-[30px] m-auto rounded-lg my-20  lg:w-[672px] lg:h-[625px] h-[440px] "
-              >
+               >
                 <div>
                   <div className="mb-7 lg:w-[672px]  m-auto">
                     <div className=" flex space-x-[15px] w-[300px] px-[1rem] lg:space-x-[12px] items-center">
@@ -59,7 +59,7 @@ function Feeds() {
                             src=  {result}
                             alt=""
                           /> :  
-                       <p className="rounded-full "> <Avatar color='#6a52fd' size="60"  round={true} name={feed.user.username} /> </p>   
+                       <div className="rounded-full "> <Avatar color='#6a52fd' size="60"  round={true} name={feed.user.username} /> </div>   
                           
                           } 
                         </NavLink>

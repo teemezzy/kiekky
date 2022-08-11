@@ -52,8 +52,7 @@ function SetPost() {
     formData.append("body", body);
     formData.append("images[]", images[0]);
     formData.append("images[]", images[1]);
-   formData.append("video[]", video[0]);
-    formData.append("images[]", images[2]);
+   formData.append("video", video[0]);
     formData.append("moneytize", 0);
     formData.append("amount", amount);
 console.log(video);
