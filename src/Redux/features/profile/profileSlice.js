@@ -1,21 +1,23 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import subscribeService from "./subscribeService";
-const subscribe = JSON.parse(localStorage.getItem("subscribe"));
+import tokenService from "./tokenService";
+
+// const profile = JSON.parse(localStorage.getItem("profile"));
+
 const initialState = {
-  subscribe: subscribe ? subscribe : null,
+  profile: [],
   isLoading: false,
   isError: false,
   isSuccess: false,
   message: "",
 };
 
-export const getSubid = createAsyncThunk(
-  "subscribe/getSubscriptionId",
-  async (subData, thunkAPI) => {
+// Token Balance Thunk
+export const getUserProfile = createAsyncThunk(
+  "profile/get",
+  async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.access_token;
-      // console.log(token, "my token joan");
-      return await subscribeService.getSubid(subData, token);
+      return await tokenService.getUserProfile( token);
     } catch (error) {
       const message =
         (error.response &&
@@ -28,8 +30,10 @@ export const getSubid = createAsyncThunk(
   }
 );
 
-export const subscribeSlice = createSlice({
-  name: "subscribe",
+
+// Wallet Slice
+export const tokenSlice = createSlice({
+  name: "profile",
   initialState,
   reducers: {
     reset: (state) => {
@@ -41,23 +45,25 @@ export const subscribeSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Subscription for Subscribed Reducer
-      .addCase(getSubid.pending, (state) => {
+      // Token Balance Reducer
+      .addCase(getUserProfile.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getSubid.fulfilled, (state, action) => {
+      .addCase(getUserProfile.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.subscribe = action.payload;
+        state.profile = [action.payload];
       })
-      .addCase(getSubid.rejected, (state, action) => {
+      .addCase(getUserProfile.rejected, (state, action) => {
         state.isLoading = false;
         state.isSuccess = false;
         state.isError = true;
         state.message = action.payload;
-      });
-  },
+      })
+
+      
+  },  
 });
 
-export default subscribeSlice.reducer;
-export const { reset } = subscribeSlice.actions;
+export default tokenSlice.reducer;
+export const { reset } = tokenSlice.actions;

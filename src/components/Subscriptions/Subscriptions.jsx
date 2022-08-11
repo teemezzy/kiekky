@@ -11,8 +11,22 @@ const Subscriptions = () => {
   const [open500Modal, setOpen500Modal] = useState(false);
   const [open1000Modal, setOpen1000Modal] = useState(false);
   const [open1500Modal, setOpen1500Modal] = useState(false);
+  const { subscription, isError, message } = useSelector(
+    (state) => state.subscription
+  );
+  // console.log(subscription[0])
+  // console.log(subscription[0][1])
+  // console.log(subscription.data.id)
 
-  const open500ModalHandler = () => setOpen500Modal(true);
+
+  const open500ModalHandler = () => {
+    setOpen500Modal(true);
+    handle500();
+    // console.log(subscription.data[1].id)
+  };
+  const handle500 = (index, sub) => {
+    console.log(index[1].id)
+  };
   const close500ModalHandler = () => setOpen500Modal(false);
 
   const open1000ModalHandler = () => setOpen1000Modal(true);
@@ -21,9 +35,6 @@ const Subscriptions = () => {
   const open1500ModalHandler = () => setOpen1500Modal(true);
   const close1500ModalHandler = () => setOpen1500Modal(false);
   const dispatch = useDispatch();
-  const { subscription, isError, message } = useSelector(
-    (state) => state.subscription
-  );
   // console.log(subscription);
 
   useEffect(() => {
@@ -106,6 +117,7 @@ const Subscriptions = () => {
               </p>
 
               <button
+                id={sub[0].id}
                 onClick={open500ModalHandler}
                 className="bg-[#6A52FD] text-[14px] text-white rounded-lg w-[222px] h-[48px] mt-[42px] mb-[27px]"
               >
@@ -215,10 +227,7 @@ const Subscriptions = () => {
           </div>
         ))}
         <SubModalBasic onClose={close500ModalHandler} visible={open500Modal} />
-        <SubModalGold
-          onClose={close1000ModalHandler}
-          visible={open1000Modal}
-        />
+        <SubModalGold onClose={close1000ModalHandler} visible={open1000Modal} />
         <SubModalPremium
           onClose={close1500ModalHandler}
           visible={open1500Modal}

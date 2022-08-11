@@ -9,30 +9,29 @@ import {
 
 const SubModal = ({ visible, onClose }) => {
   const dispatch = useDispatch();
-  // const { subscribe, isError, isSuccess, message } = useSelector(
-  //   (state) => state.subscribe
-  // );
+  const { subscribe, isError, isSuccess, message } = useSelector(
+    (state) => state.subscribe
+  );
+  console.log(subscribe)
 
-  // useEffect(
-  //   (sub_id) => {
-  //     if (isError) {
-  //       toast.error(message);
-  //     }
+  useEffect(() => {
+      if (isError) {
+        toast.error(message);
+      }
+      if (isSuccess) {
+        dispatch(getSubid(1));
+      }
+      dispatch(reset());
+    },
+    [subscribe, isError, isSuccess, message, dispatch]
+  );
 
-  //     if (isSuccess) {
-  //       // dispatch(getSubid(sub_id));
-  //     }
-      
-  //   },
-  //   [subscribe, isError, isSuccess, message, dispatch]
-  // );
-
-  // const formdata = new FormData();
-  // formdata.append();
-
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  // };
+  const handleClick = (e, sub_id) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("sub_id", 1);
+   
+  };
 
   if (!visible) return null;
   return (
@@ -47,7 +46,7 @@ const SubModal = ({ visible, onClose }) => {
           </div>
           <div className="lg:w-[270px] w-[170px] m-auto">
             <h2 className="lg:text-[24px] text-[18px] text-center">
-           You are about to subscribe to this plan  
+              You are about to subscribe to this plan
             </h2>
           </div>
 
@@ -58,8 +57,8 @@ const SubModal = ({ visible, onClose }) => {
             >
               Go Back
             </button>
-           
-            <button   className="bg-[#6A52FD] text-white lg:py-[17.5px] py-[14px] lg:px-[64px] px-[30px]  rounded-lg lg:text-[16px] text-[12px] mt-[36px]">
+
+            <button onClick={handleClick} className="bg-[#6A52FD] text-white lg:py-[17.5px] py-[14px] lg:px-[64px] px-[30px]  rounded-lg lg:text-[16px] text-[12px] mt-[36px]">
               Proceed
             </button>
           </div>

@@ -8,7 +8,7 @@ const getSubid = async (subData, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.post(API_URL + "subscription/subscribe", subData, config);
+  const response = await axios.post(API_URL + "subscription/subscribe", subData, config, );
   console.log(response.data, "my response");
   return response.data;
 }
