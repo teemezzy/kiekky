@@ -26,8 +26,7 @@ function MobileInfo() {
   return (
     <div className=" notify flex flex-col mt-10 block lg:hidden  justify-center  sm:items-center lg:items-start sm:w-[100vw] lg:w-[60rem] ">
 
-      {profile
-        ? profile.map((profiles, id) => (
+      {profile ? profile.map((profiles, id) => (
           <div
             key={id}
             className="story-status w-full  bg-white py-4  " >

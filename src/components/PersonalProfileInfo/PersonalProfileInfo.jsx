@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
-// import { MdOutlineLocationOn } from "react-icons/md";
-import axios from "axios";
-// import { BsArrowLeft } from "react-icons/bs";
 import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import Spinner from "../../container/Spinner";
 import { personalProfile, reset } from '../../Redux/features/personalProfile/personalProfileSlice'
 
 function PersonalProfileInfo() {
 
     const dispatch = useDispatch()
-    const { profile, isLoading, isError, message } = useSelector((state) => state.personalProfile)
+    const { profile, isError, message } = useSelector((state) => state.personalProfile)
 
     useEffect(() => {
         if (isError) {
@@ -23,10 +19,6 @@ function PersonalProfileInfo() {
             dispatch(reset())
         }
     }, [isError, dispatch, message])
-
-    if (isLoading) {
-        return <Spinner />
-    }
 
     return (
         <div className=" flex mt-10  w-[326px] lg:w-[984px]  ">

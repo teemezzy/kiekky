@@ -1,7 +1,7 @@
 import axios from "axios";
 const API_URL = process.env.REACT_APP_API_URL;
 
-const profile = async ( token) => {
+const profileUser = async (token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -9,15 +9,15 @@ const profile = async ( token) => {
     },
   }; 
   // console.log(config);
-const response = await axios.get(API_URL + 'user/profile/private', config); 
+const response = await axios.get(API_URL + 'user/profile/public/tholscoa', config); 
 console.log(response.data.data);
 return response.data.data;
 };
 
 
-const personalProfileService = {
-  profile,
+const userProfileService = {
+  profileUser,
   
 };
 
-export default personalProfileService;
+export default userProfileService;

@@ -52,11 +52,11 @@ function SetPost() {
     formData.append("body", body);
     formData.append("images[]", images[0]);
     formData.append("images[]", images[1]);
-   formData.append("video", video[0]);
+    formData.append("video", video[0]);
     formData.append("moneytize", 0);
     formData.append("amount", amount);
-console.log(video);
-console.log(formData);
+    console.log(video);
+    console.log(formData);
     dispatch(createPost(formData));
   };
   return (
@@ -192,7 +192,7 @@ console.log(formData);
                       placeholder="Enter Token"
                       className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none `}
                       // pattern='/\b(0?[1-9]|1[0-9]|2[0-5])\b/g' 
-                      onInvalid="setCustomValidity('tokens must not be more than 25')" onInput="setCustomValidity('')"
+                     
                       onChange={(e) => {
                         setAmount(e.target.value);
                       }}

@@ -31,7 +31,7 @@ export const personalProfile = createAsyncThunk(
 );
 
 export const personalProfileSlice = createSlice({
-  name: "profiles",
+  name: "profile",
   initialState,
   reducers: {
      reset: (state) => {

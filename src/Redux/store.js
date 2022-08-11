@@ -12,6 +12,7 @@ import getSubReducer from "./features/subscriptioncat/subSlice";
 import resetpasswordReducer from "./features/otp/resetpasswordSlice";
 import forPassReducer from "./features/otp/forPassSlice";
 import personalProfileReducer from "./features/personalProfile/personalProfileSlice";
+import userProfileReducer from "./features/userProfile/userProfileSlice";
 
 const store = configureStore({
   reducer: {
@@ -26,7 +27,8 @@ const store = configureStore({
     // subscribe: getSubidReducer,
     resetpassword: resetpasswordReducer,
     verifyEmail:forPassReducer,
-    personalProfile: personalProfileReducer
+    personalProfile: personalProfileReducer,
+    userProfile: userProfileReducer
   },
 
 });
