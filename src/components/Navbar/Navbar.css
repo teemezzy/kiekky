@@ -101,3 +101,19 @@
   border-width: 3px;
   border-style: solid;
 }
+
+.money input{
+  border: 1px solid #F6F4FF;
+}
+.money input:invalid {
+  border-color: rgb(213, 16, 16);
+}
+.error-message{
+  display: none;
+}
+.error-message {
+  color: rgb(213, 16, 16)
+}
+input:invalid + .error-message{
+  display: block;
+}

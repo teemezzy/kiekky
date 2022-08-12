@@ -7,10 +7,11 @@ import { useDispatch } from "react-redux";
 import { useNavigate, NavLink } from "react-router-dom";
 import { reset } from "../Redux/features/createPost/createPostSlice";
 import { createPost } from "../Redux/features/createPost/createPostSlice";
-import { useForm } from "react-hook-form";
 import { UserNav } from "../components";
 import { toast } from "react-toastify";
 import Spinner from "../container/Spinner";
+import './'
+
 
 
 function SetPost() {
@@ -98,29 +99,34 @@ function SetPost() {
               </div>
             </div>
             {/* Images */}
-            <div className="img lg:w-[700px] w-[313px] py-5 lg:py-0 m-auto lg:mt-7">
-              <label htmlFor="images">select an image</label>
-              <input
-                onChange={(e) => setImages(e.target.files)}
-                className="lg:w-[700px] m-auto"
-                type="file"
-                accept="image/*"
-                alt="img"
-                name="images"
-                id="images"
-                multiple
-              />
-              <label htmlFor="video">select a video</label>
-              <input
-                onChange={(e) => setVideo(e.target.files)}
-                className="lg:w-[700px] m-auto"
-                type="file"
-                accept="video/*"
-                alt="vid"
-                name="video"
-                id="video"
+            <div className="lg:flex lg:w-[700px]   w-[313px] m-auto py-5 lg:py-0  lg:mt-7">
+              <div className="div">
+                <label htmlFor="images">select an image</label>
+                <input
+                  onChange={(e) => setImages(e.target.files)}
+                  className="lg:w-[300px] m-auto"
+                  type="file"
+                  accept="image/*"
+                  alt="img"
+                  name="images"
+                  id="images"
+                  multiple
+                />
+              </div>
+              <div className="div">
+                <label htmlFor="video">select a video</label>
+                <input
+                  onChange={(e) => setVideo(e.target.files)}
+                  className="lg:w-[300px] m-auto"
+                  type="file"
+                  accept="video/*"
+                  alt="vid"
+                  name="video"
+                  id="video"
 
-              />
+                />
+              </div>
+
             </div>
           </div>
 
@@ -139,7 +145,7 @@ function SetPost() {
                 id="Public"
                 type="radio"
                 value="Public"
-                
+
               />
               <label htmlFor="Public" className="mt-[16px] ">
                 Public
@@ -185,18 +191,21 @@ function SetPost() {
               </div>
               <div>
                 {toggle && (
-                  <div className=" w-[312px] m-auto">
+                  <div className=" money w-[312px] m-auto">
                     <p>Set Token for Non-Subscribers</p>
                     <input
                       type="text"
                       placeholder="Enter Token"
                       className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none `}
-                      pattern='\b(0?[1-9]|1[0-9]|2[0-5])\b'
+                      pattern="\b(0?[1-9]|1[0-9]|2[0-5])\b" title="Token cannot be more than 25"
 
                       onChange={(e) => {
                         setAmount(e.target.value);
                       }}
                     />
+                    <span class="error-message">
+                    Token cannot be more than 25
+                   </span>
                   </div>
                 )}
               </div>

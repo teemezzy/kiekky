@@ -45,7 +45,7 @@ function Feeds() {
             return (
               <div
                 key={feed.id}
-                className="bg-white py-[17px] lg:py-[30px] m-auto rounded-lg my-20  lg:w-[672px] lg:h-[625px] h-[440px] "
+                className="bg-white pt-[17px] lg:pt-[30px] m-auto rounded-lg my-20  lg:w-[672px] h-full  "
               >
                 <div>
                   <div className="mb-7 lg:w-[672px]  m-auto">
@@ -98,20 +98,20 @@ function Feeds() {
                         <p>{feed.body ? feed.body : " "}</p>
                       </div>
 
-
-                      <div className="relative m-auto w-full h-[290px] lg:w-[672px] lg:h-[460px] rounded-lg">
-                        <div className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
-                          <div className="flex flex-col justify-center items-center">
+                          {result ?  <div className="relative m-auto w-full h-[290px] lg:w-[672px] lg:h-[460px] rounded-lg">
+                        {feed.amount ? <div className=' inset-0 absolute   rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-sm flex justify-center items-center'>
+                           <div className="flex flex-col justify-center items-center">
                             <VscLock color="white" />
                             <p className="text-white mt-3 text-sm lg:text-base">Unlock for {feed.amount} tokens</p>
-                          </div>
-                        </div>
+                           </div>
+                           </div> : null }  
                         <img
                           className="object-contain w-full h-full"
                           src={result}
                           alt=""
                         />
-                      </div>
+                      </div> : null  }
+                     
                     </div>
                   </div>
                 </div>
