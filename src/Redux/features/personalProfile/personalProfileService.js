@@ -10,7 +10,7 @@ const profile = async ( token) => {
   }; 
   // console.log(config);
 const response = await axios.get(API_URL + 'user/profile/private', config); 
-console.log(response.data.data);
+// console.log(response.data.data);
 return response.data.data;
 };
 

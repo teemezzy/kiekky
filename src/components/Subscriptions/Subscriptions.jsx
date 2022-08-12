@@ -6,13 +6,28 @@ import SubModalGold from "./SubModalGold";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { getSub, reset } from "../../Redux/features/subscriptioncat/subSlice";
+import {Button500, Button1000, Button1500} from "./Button";
+import SUb2 from "./SUb2";
+
+
 
 const Subscriptions = () => {
   const [open500Modal, setOpen500Modal] = useState(false);
   const [open1000Modal, setOpen1000Modal] = useState(false);
   const [open1500Modal, setOpen1500Modal] = useState(false);
+  const { subscription, isError, message } = useSelector(
+    (state) => state.subscription
+  );
+  // console.log(subscription[0][1].id)
+  // console.log(subscription[0][1])
+  // console.log(subscription.data.id)
 
-  const open500ModalHandler = () => setOpen500Modal(true);
+  const open500ModalHandler = () => {
+    setOpen500Modal(true);
+   
+    // console.log(subscription.data[1].id)
+  };
+ 
   const close500ModalHandler = () => setOpen500Modal(false);
 
   const open1000ModalHandler = () => setOpen1000Modal(true);
@@ -21,9 +36,6 @@ const Subscriptions = () => {
   const open1500ModalHandler = () => setOpen1500Modal(true);
   const close1500ModalHandler = () => setOpen1500Modal(false);
   const dispatch = useDispatch();
-  const { subscription, isError, message } = useSelector(
-    (state) => state.subscription
-  );
   // console.log(subscription);
 
   useEffect(() => {
@@ -104,12 +116,14 @@ const Subscriptions = () => {
                 </span>
                 {sub[0].sub_token} Tokens
               </p>
-
+              {/* <Button500 subid={sub[0].id}  btnDetails='Choose' onClick={() => open500ModalHandler("500")} /> */}
               <button
                 onClick={open500ModalHandler}
                 className="bg-[#6A52FD] text-[14px] text-white rounded-lg w-[222px] h-[48px] mt-[42px] mb-[27px]"
               >
                 Choose
+                {/* {console.log(sub[0].id)} */}
+
               </button>
             </div>
 
@@ -153,7 +167,7 @@ const Subscriptions = () => {
                 </span>
                 {sub[1].sub_token} Tokens
               </p>
-
+              {/* <Button1000 subid={sub[1].id}  btnDetails='Choose' onClick={() => open500ModalHandler("1000")} /> */}
               <button
                 onClick={open1000ModalHandler}
                 className="rounded-lg text-[14px] bg-white text-[#6A52FD] w-[222px] h-[48px] mt-[42px]"
@@ -204,21 +218,18 @@ const Subscriptions = () => {
                 </span>
                 {sub[2].sub_token} Tokens
               </p>
-
-              <button
+              {/* <Button1500 subid={sub[2].id}  btnDetails='Choose' onClick={() => open500ModalHandler("1500")} /> */}
+               <button
                 onClick={open1500ModalHandler}
                 className="rounded-lg text-[14px] bg-[#6A52FD] text-white w-[222px] h-[48px] mt-[42px] mb-[27px]"
               >
                 Choose
               </button>
-            </div>
+            </div> 
           </div>
         ))}
         <SubModalBasic onClose={close500ModalHandler} visible={open500Modal} />
-        <SubModalGold
-          onClose={close1000ModalHandler}
-          visible={open1000Modal}
-        />
+        <SubModalGold onClose={close1000ModalHandler} visible={open1000Modal} />
         <SubModalPremium
           onClose={close1500ModalHandler}
           visible={open1500Modal}

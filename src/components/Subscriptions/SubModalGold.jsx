@@ -4,36 +4,34 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { getSubid, reset } from "../../Redux/features/subscriptioncat/subscribeSlice";
 
-const SubModal = ({ visible, onClose }) => {
-  // const dispatch = useDispatch();
-  // const { subscribe, isError, isSuccess, message } = useSelector(
-  //   (state) => state.subscribe
-  // );
+const SubModal = ({ visible, onClose, id1500 }) => {
+  const dispatch = useDispatch();
+  const { subscribe, isError, isSuccess, message } = useSelector(
+    (state) => state.subscribe
+  );
 
-  // useEffect(
-  //   () => {
-  //     if (isError) {
-  //       toast.error(message);
-  //     }
-  //     if (isSuccess) {
-  //       dispatch(getSubid());
-  //     }
-      
-  //   },
-  //   [subscribe, isError, message, dispatch]
-  // );
+  useEffect(
+    (id) => {
+      if (isError) {
+        toast.error(message);
+      }
+      // if (isSuccess) {
+      //   dispatch(getSubid(id1500));
+      // }
+     
+    },
+    [subscribe, isError, message, dispatch]
+  );
 
-  // const formdata = new FormData();
-  // formdata.append("sub_id", subscribe.sub_id);
 
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   if (isSuccess) {
-  //     dispatch(getSubid(formdata));
+  const subData =() => {
+    const usersubid =  {sub_id : 2}
+    // console.log("great")
+    dispatch(getSubid(usersubid));
 
-  //   }
-  // }
+    
 
+ }
   if (!visible) return null;
   return (
     <div className="backdrop-blur-md bg-black bg-opacity-25 z-20 inset-0 fixed m-auto">
@@ -49,19 +47,21 @@ const SubModal = ({ visible, onClose }) => {
             <h2 className="lg:text-[24px] text-[18px] text-center">
               You are about to subscribe to this plan
             </h2>
+            <h1> {id1500}</h1> 
           </div>
 
           <div className="flex lg:w-[424px] w-[224px] justify-between m-auto">
-            
             <button
               onClick={onClose}
               className="text-[#6A52FD] border-2 border-[#6A52FD]  lg:py-[17.5px] py-[14px] lg:px-[64px] px-[30px] lg:text-[16px] text-[12px] rounded-lg mt-[36px]"
             >
               Go Back
             </button>
+              
             <button
-              // onClick={handleClick}
               className="bg-[#6A52FD] text-white lg:py-[17.5px] py-[14px] lg:px-[64px] px-[30px]  rounded-lg lg:text-[16px] text-[12px] mt-[36px]"
+
+              onClick={subData}
             >
               Proceed
             </button>
