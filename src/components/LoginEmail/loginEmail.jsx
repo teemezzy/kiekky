@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { login, reset } from "../../Redux/features/authSlice";
 import { toast } from "react-toastify";
 import Spinner from "../../container/Spinner";
@@ -9,17 +9,16 @@ import Spinner from "../../container/Spinner";
 const LoginEmail = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
-  const { handleSubmit, register, formState: { errors }} = useForm({});
-
-  const { id } = useParams();
-
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({});
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user, isError, isSuccess, isLoading, message } = useSelector(
     (state) => state.auth
   );
-
-  console.log(user, isError);
 
   const onSubmit = (data) => {
     const userdata = {
@@ -52,6 +51,7 @@ const LoginEmail = () => {
   const handleClick = () => {
     setLoading(true);
   };
+
   return (
     <div>
       <div className="form-container ">

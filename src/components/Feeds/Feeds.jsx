@@ -51,7 +51,7 @@ const Feeds = () => {
                           <img
                             loading="lazy"
                             decoding="async"
-                            className=" feed-image max-w-[60px] h-[60px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
+                            className="feed-image max-w-[60px] h-[60px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
                             src={result}
                             alt=""
                           />
@@ -101,14 +101,16 @@ const Feeds = () => {
                       <p>{feed.body ? feed.body : " "}</p>
                     </div>
 
-                    {/* className="  md:h-[450px] w-[375px] lg:w-[672px] " */}
-                    <div className="relative m-auto w-full h-[290px] lg:w-[672px] lg:h-[490px] rounded-lg">
+                    {res[0] ? (
+                      <div className="relative m-auto w-full h-[290px] max-h-full lg:w-[672px] lg:h-[490px] rounded-lg">
                       <img
                         className="object-contain w-full h-full"
                         src={result}
                         alt=""
                       />
                     </div>
+                    ):(null)}
+                    
                   </div>
                 </div>
               </div>

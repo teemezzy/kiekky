@@ -20,7 +20,6 @@ const Sidebar = () => {
     (state) => state.auth
   );
   const { profile, isError } = useSelector((state) => state.personalProfile)
-  console.log(profile)
 
   useEffect(() => {
       if (isError) {
@@ -40,7 +39,7 @@ const Sidebar = () => {
 
   const onLogout = () => {
     dispatch(logout());
-    dispatch(reset());
+    // dispatch(reset());
     window.location.reload(true);
     // localStorage.removeItem("user", "otptoken");
     // localStorage.removeItem();
