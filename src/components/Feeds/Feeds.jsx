@@ -25,7 +25,6 @@ function Feeds() {
     if (isError) {
       console.log(message);
     }
-
     dispatch(getfeeds());
     // setLoading(data)
   }, [isLoading, isError, message, dispatch]);
@@ -38,9 +37,9 @@ function Feeds() {
 
         {data.map(function (feed, id) {
           let res = feed?.images;
+          let vid = feed?.video;
           const result = res[0] ? res[0].url : null;
-          // : "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg";
-
+          const video = vid ? vid.url : null;
           return (
             <div
               key={feed.id}
@@ -61,13 +60,12 @@ function Feeds() {
                           />
                         ) : (
                           <div className="rounded-full ">
-                            {" "}
                             <Avatar
                               color="#6a52fd"
                               size="60"
                               round={true}
                               name={feed.user.username}
-                            />{" "}
+                            />
                           </div>
                         )}
                       </NavLink>
@@ -125,6 +123,12 @@ function Feeds() {
                         />
                       </div>
                     ) : null}
+
+                    <video
+                      className="object-contain w-full h-full"
+                      src={video}
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>

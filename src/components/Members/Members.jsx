@@ -16,7 +16,7 @@ function Members(props) {
 
   return (
     <div className=" flex flex-col lg:w-[968px] w-[374px] m-auto">
-      <div className="flex justify-between lg:w-[996px] ">
+      <div className="flex justify-between lg:w-[968px] ">
         <div className="flex  space-x-2 items-center">
           <p>Members</p>
           <div className="flex space-x-[1px] bg-[#F6F4FF] " >
@@ -42,16 +42,17 @@ function Members(props) {
           </div>
         </div>
       </div>
-      <div className="  grid grid-cols-2 lg:grid-cols-4 gap-[7px]  w-[376px] lg:gap-[37px]  lg:w-[1001px] m-auto mt-5">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-[7px]  w-[376px] lg:gap-[37px]  lg:w-[968px] m-auto mt-5">
         {story
           ? story.map((story, idx) => (
             <div key={idx} className=" ">
-              <div className=" rounded-xl relative  ">
-                <div className=" absolute  inset-x-0 bottom-0 bg-opacity-70 names w-[184px] h-[36px] lg:w-[219px] lg:h-[43px] bg-[#A8A8A8] rounded-b-md ">
-                  <p className=" flex pt-1 pl-3  text-white">{story.firstname}  </p>
+              <div className="rounded-xl relative">
+                <div className="absolute inset-x-0 bottom-0 bg-opacity-70 names w-[184px] h-[36px] lg:w-[214px] lg:h-[43px] bg-[#A8A8A8] rounded-b-md ">
+                  <p className=" flex py-1 px-3  text-white">{story.firstname}  </p>
                 </div>
-                <NavLink to='/user_profile' ><img
-                  className="stats w-[187px] h-[178px] lg:w-[220px] lg:h-[237px] rounded-md "
+                <NavLink to='/user_profile' >
+                  <img
+                  className="w-[187px] h-[178px] lg:w-[220px] lg:h-[237px] rounded-md"
                   src={story.image}
                   alt="icon"
                 /> </NavLink>

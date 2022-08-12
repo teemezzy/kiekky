@@ -85,7 +85,7 @@ function SetPost() {
               <textarea
                 className="outline-none  text-[#212121] bg-[#F6F4FF] w-[313px] lg:w-[700px] h-[132px] p-7 rounded-lg my-6"
                 type="text"
-                placeholder="Whats new.."
+                placeholder="What's new..."
                 name=""
                 id=""
                 onChange={(e) => {
@@ -101,7 +101,7 @@ function SetPost() {
             {/* Images */}
             <div className="lg:flex lg:w-[700px]   w-[313px] m-auto py-5 lg:py-0  lg:mt-7">
               <div className="div">
-                <label htmlFor="images">select an image</label>
+                <label htmlFor="images">Select an image</label>
                 <input
                   onChange={(e) => setImages(e.target.files)}
                   className="lg:w-[300px] m-auto"
@@ -114,7 +114,7 @@ function SetPost() {
                 />
               </div>
               <div className="div">
-                <label htmlFor="video">select a video</label>
+                <label htmlFor="video">Select a video</label>
                 <input
                   onChange={(e) => setVideo(e.target.files)}
                   className="lg:w-[300px] m-auto"

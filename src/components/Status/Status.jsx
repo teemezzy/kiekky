@@ -20,9 +20,9 @@ const Status = () => {
   }, []);
 
   return (
-    <div className="lg:w-[1050px] m-auto max-w-full mb-8  ">
+    <div className="lg:w-[1050px] m-auto max-w-full mb-8">
       <SimpleBar style={{ width: "800wv" }}>
-        <div className="status pt-10 w-[327px] mb-2 lg:w-[968px]">
+        <div className="status pt-10 w-[327px] mb-2 lg:w-[1050px]">
           <div className="flex space-x-5 lg:w-[250vw] w-[800vw]">
             {isLoading && <StatusSkeleton className="flex" cards={10} />}
             <p className="flex items-center ">
@@ -30,7 +30,7 @@ const Status = () => {
             </p>
             {story
               ? story.map((story, idx) => (
-                  <div key={idx} className="story-status  ">
+                  <div key={idx} className="story-status">
                     <div className="status-image">
                       <img
                         className="stats w-[4rem] h-[4rem] p-[1.8px] cursor-pointer hover:scale-110 transition transform duration-200 ease-out rounded-full"
