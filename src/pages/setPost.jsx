@@ -21,7 +21,7 @@ function SetPost() {
   const [video, setVideo] = useState("");
   const [body, setBody] = useState("");
   const [amount, setAmount] = useState(0);
-  const [moneytize, setMoneytize] = useState(false);
+  const [moneytize, setMoneytize] = useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -32,14 +32,14 @@ function SetPost() {
     if (isSuccess) {
       navigate("/feeds");
     }
-    if (isLoading) {
-      <Spinner />
-    }
+
     return () => {
       dispatch(reset());
     };
   }, [isLoading, isError, isSuccess, navigate, dispatch, message]);
-
+  if (isLoading) {
+    <Spinner />
+  }
   const [toggle, setToggle] = useState(false);
 
   const handleClick = () => {
@@ -53,7 +53,7 @@ function SetPost() {
     formData.append("images[]", images[0]);
     formData.append("images[]", images[1]);
     formData.append("video", video[0]);
-    formData.append("moneytize", 0);
+    formData.append("moneytize", moneytize);
     formData.append("amount", amount);
     console.log(video);
     console.log(formData);
@@ -129,15 +129,17 @@ function SetPost() {
               <p className="lg:w-[250px] w-[312px] m-auto lg:m-0 ">
                 Who Can See This Post
               </p>
+
               <input
                 onChange={(e) => {
-                  moneytize(e.target.value);
+                  setMoneytize(0);
                 }}
                 className="  "
                 name="moneytize"
                 id="Public"
                 type="radio"
                 value="Public"
+                
               />
               <label htmlFor="Public" className="mt-[16px] ">
                 Public
@@ -149,7 +151,7 @@ function SetPost() {
                     <input
                       className="my-[26px]  "
                       onChange={(e) => {
-                        setMoneytize(e.target.value);
+                        setMoneytize(1);
                       }}
                       type="radio"
                       name="moneytize"
@@ -158,17 +160,15 @@ function SetPost() {
                       onClick={handleClick}
                     />
                     <label htmlFor="Subscribers" className="my-[16px]">
-                      {" "}
-                      Subscribers{" "}
-                    </label>{" "}
+                      Subscribers
+                    </label>
                   </div>
                 ) : (
                   <div>
-                    {" "}
                     <input
                       className="my-[26px]"
                       onChange={(e) => {
-                        setMoneytize(e.target.value);
+                        setMoneytize(1);
                       }}
                       type="radio"
                       name="moneytize"
@@ -177,9 +177,9 @@ function SetPost() {
                       onClick={handleClick}
                     />
                     <label htmlFor="Subscribers" className="my-[16px]">
-                      {" "}
-                      Subscribers{" "}
-                    </label>{" "}
+
+                      Subscribers
+                    </label>
                   </div>
                 )}
               </div>
@@ -191,8 +191,8 @@ function SetPost() {
                       type="text"
                       placeholder="Enter Token"
                       className={` bg-[#F6F4FF] h-[46px] rounded-lg px-4 outline-none `}
-                      // pattern='/\b(0?[1-9]|1[0-9]|2[0-5])\b/g' 
-                     
+                      pattern='\b(0?[1-9]|1[0-9]|2[0-5])\b'
+
                       onChange={(e) => {
                         setAmount(e.target.value);
                       }}
