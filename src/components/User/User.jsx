@@ -42,8 +42,7 @@ function User() {
   return (
     <div className=" mt-10   lg:w-[984px] w-[352px] h-[246px]  ">
 
-      {profileUser
-        ? profileUser.map((profile, idx) => (
+      {profileUser.map((profile, idx) => (
           <div
             key={idx}
             className="relative px-[18px] lg:px-[64px] bg-white py-4 lg:w-[984px] w-[352px] "    >
@@ -120,7 +119,7 @@ function User() {
           </div>
 
         ))
-        : null}
+       }
 
       <OpenChat onClose={handleOnClose} visible={showMyModal} />
       <Block visibleBlock={showMyBlock} onCloseBlock={handleOnCloseBlock} />

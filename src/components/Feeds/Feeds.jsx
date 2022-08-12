@@ -2,14 +2,17 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { Post } from "../../components";
 import { NavLink } from "react-router-dom";
+import { VscLock } from "react-icons/vsc";
+
 import FeedsSkeleton from "./FeedsSkeleton";
 import Avatar from "react-avatar";
+
 import { useDispatch, useSelector } from "react-redux";
 import { getfeeds } from "../../Redux/features/feeds/feedsSlice";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import "swiper/css";
 
-const Feeds = () => {
+function Feeds() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const { isError, isLoading, message } = useSelector((state) => state.posts);
@@ -37,10 +40,11 @@ const Feeds = () => {
           let res = feed?.images;
           const result = res[0] ? res[0].url : null;
           // : "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg";
+
           return (
             <div
               key={feed.id}
-              className="bg-white py-[17px] lg:py-[30px] m-auto rounded-lg my-20  lg:w-[672px] lg:h-[625px] h-[440px] "
+              className="bg-white pt-[17px] lg:pt-[30px] m-auto rounded-lg my-5  lg:w-[672px] h-full"
             >
               <div>
                 <div className="mb-7 lg:w-[672px]  m-auto">
@@ -51,18 +55,19 @@ const Feeds = () => {
                           <img
                             loading="lazy"
                             decoding="async"
-                            className="feed-image max-w-[60px] h-[60px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
+                            className=" feed-image max-w-[60px] h-[60px] lg:max-w-[4rem] lg:h-[4rem] p-[2.6px] rounded-full"
                             src={result}
                             alt=""
                           />
                         ) : (
-                          <div className="rounded-full">
+                          <div className="rounded-full ">
+                            {" "}
                             <Avatar
                               color="#6a52fd"
                               size="60"
                               round={true}
                               name={feed.user.username}
-                            />
+                            />{" "}
                           </div>
                         )}
                       </NavLink>
@@ -101,16 +106,25 @@ const Feeds = () => {
                       <p>{feed.body ? feed.body : " "}</p>
                     </div>
 
-                    {res[0] ? (
-                      <div className="relative m-auto w-full h-[290px] max-h-full lg:w-[672px] lg:h-[490px] rounded-lg">
-                      <img
-                        className="object-contain w-full h-full"
-                        src={result}
-                        alt=""
-                      />
-                    </div>
-                    ):(null)}
-                    
+                    {result ? (
+                      <div className="relative m-auto w-full h-[290px] lg:w-[672px] lg:h-[460px] rounded-lg">
+                        {feed.amount ? (
+                          <div className="inset-0 absolute rounded-md bg-black bg-opacity-20 z-5 backdrop-blur-3xl flex justify-center items-center">
+                            <div className="flex flex-col justify-center items-center">
+                              <VscLock color="white" />
+                              <p className="text-white mt-3 text-sm lg:text-base">
+                                Unlock for {feed.amount} tokens
+                              </p>
+                            </div>
+                          </div>
+                        ) : null}
+                        <img
+                          className="object-contain w-full h-full"
+                          src={result}
+                          alt=""
+                        />
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -120,6 +134,6 @@ const Feeds = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Feeds;
