@@ -124,11 +124,11 @@ function Feeds() {
                       </div>
                     ) : null}
 
-                    <video
+                    {/* <video
                       className="object-contain w-full h-full"
                       src={video}
                       alt=""
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
