@@ -47,7 +47,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      navigate("/");
+      navigate("/login");
     }
 
     dispatch(reset());
